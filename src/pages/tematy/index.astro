@@ -1,0 +1,270 @@
+---
+// src/pages/tematy/index.astro
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import SmartEduCTA from '../../components/SmartEduCTA.astro';
+
+const kierunki = [
+  { name: 'Pedagogika', slug: 'pedagogika', icon: '📚', description: 'Tematy prac z pedagogiki, dydaktyki i edukacji' },
+  { name: 'Zarządzanie', slug: 'zarzadzanie', icon: '📊', description: 'Zarządzanie organizacją, HR, strategia' },
+  { name: 'Psychologia', slug: 'psychologia', icon: '🧠', description: 'Psychologia społeczna, kliniczna, rozwojowa' },
+  { name: 'Prawo', slug: 'prawo', icon: '⚖️', description: 'Prawo cywilne, karne, administracyjne' },
+  { name: 'Marketing', slug: 'marketing', icon: '📈', description: 'Marketing cyfrowy, reklama, branding' },
+  { name: 'Pielęgniarstwo', slug: 'pielegniarstwo', icon: '🏥', description: 'Opieka medyczna, zdrowie publiczne' },
+  { name: 'Logistyka', slug: 'logistyka', icon: '🚚', description: 'Łańcuch dostaw, transport, magazynowanie' },
+  { name: 'Administracja', slug: 'administracja', icon: '🏢', description: 'Administracja publiczna, samorząd' },
+  { name: 'Historia', slug: 'historia', icon: '🏛️', description: 'Historia Polski i powszechna' },
+  { name: 'Socjologia', slug: 'socjologia', icon: '👥', description: 'Badania społeczne, struktury społeczne' },
+  { name: 'Ekonomia', slug: 'ekonomia', icon: '💰', description: 'Makro i mikroekonomia, finanse' },
+  { name: 'Finanse', slug: 'finanse', icon: '💵', description: 'Rachunkowość, bankowość, inwestycje' },
+  { name: 'Turystyka', slug: 'turystyka', icon: '✈️', description: 'Hotelarstwo, turystyka, rekreacja' },
+  { name: 'Informatyka', slug: 'informatyka', icon: '💻', description: 'Programowanie, systemy, bazy danych' },
+  { name: 'Bezpieczeństwo', slug: 'bezpieczenstwo', icon: '🛡️', description: 'Bezpieczeństwo wewnętrzne, obrona' },
+  { name: 'Filologia angielska', slug: 'filologia-angielska', icon: '🇬🇧', description: 'Językoznawstwo, literatura angielska' },
+  { name: 'Politologia', slug: 'politologia', icon: '🏛️', description: 'Nauki polityczne, stosunki międzynarodowe' },
+  { name: 'Dziennikarstwo', slug: 'dziennikarstwo', icon: '📰', description: 'Media, komunikacja, PR' },
+  { name: 'Budownictwo', slug: 'budownictwo', icon: '🏗️', description: 'Konstrukcje, materiały budowlane' },
+  { name: 'Architektura', slug: 'architektura', icon: '🏠', description: 'Projektowanie, urbanistyka' },
+];
+
+// Group by category
+const categories = [
+  {
+    name: 'Nauki społeczne',
+    items: ['pedagogika', 'psychologia', 'socjologia', 'politologia', 'dziennikarstwo'],
+  },
+  {
+    name: 'Biznes i ekonomia',
+    items: ['zarzadzanie', 'marketing', 'ekonomia', 'finanse', 'logistyka'],
+  },
+  {
+    name: 'Prawo i administracja',
+    items: ['prawo', 'administracja', 'bezpieczenstwo'],
+  },
+  {
+    name: 'Nauki medyczne',
+    items: ['pielegniarstwo'],
+  },
+  {
+    name: 'Humanistyczne',
+    items: ['historia', 'filologia-angielska'],
+  },
+  {
+    name: 'Techniczne',
+    items: ['informatyka', 'budownictwo', 'architektura'],
+  },
+  {
+    name: 'Inne',
+    items: ['turystyka'],
+  },
+];
+
+const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
+---
+
+<Layout 
+  title="Tematy prac magisterskich - 20+ kierunków studiów | Praca-Magisterska.pl"
+  description="Tematy prac magisterskich z pedagogiki, zarządzania, psychologii, prawa, marketingu i 20+ innych kierunków. Znajdź inspirację i wskazówki."
+>
+  <Navbar />
+  
+  <main class="pt-20 md:pt-24">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-accent/10 via-white to-primary-50 py-16">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="badge badge-accent mb-4">🎯 Tematy prac</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+            Tematy prac magisterskich
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            Wybierz kierunek studiów i znajdź inspirujące tematy prac magisterskich oraz szczegółowe wskazówki, jak je realizować.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex items-center gap-2 text-gray-600">
+              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>20+ kierunków</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600">
+              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>100+ tematów na kierunek</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600">
+              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Szczegółowe opisy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Kierunki Grid -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Wybierz kierunek studiów
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Kliknij w wybrany kierunek, aby zobaczyć listę tematów i szczegółowe wskazówki
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+          {kierunki.map((kierunek, index) => (
+            <a 
+              href={`/tematy/${kierunek.slug}/`}
+              class="card card-hover text-center group animate-on-scroll"
+              style={`transition-delay: ${index * 0.03}s;`}
+            >
+              <span class="text-4xl mb-3 block group-hover:scale-110 transition-transform">{kierunek.icon}</span>
+              <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors text-sm">
+                {kierunek.name}
+              </h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart-Edu CTA -->
+    <section class="py-12 bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <SmartEduCTA variant="full" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Kierunki by Category -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Kierunki według kategorii
+          </h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto space-y-12">
+          {categories.map((category) => (
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
+                {category.name}
+              </h3>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {category.items.map((slug) => {
+                  const kierunek = getKierunek(slug);
+                  return kierunek && (
+                    <a 
+                      href={`/tematy/${kierunek.slug}/`}
+                      class="card card-hover group flex items-center gap-4"
+                    >
+                      <span class="text-3xl flex-shrink-0">{kierunek.icon}</span>
+                      <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                          {kierunek.name}
+                        </h4>
+                        <p class="text-sm text-gray-500 line-clamp-1">
+                          {kierunek.description}
+                        </p>
+                      </div>
+                      <svg class="w-5 h-5 text-gray-400 group-hover:text-primary-600 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              Jak wybrać temat pracy magisterskiej?
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary-600 font-bold">1</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-2">Wybierz obszar zainteresowań</h3>
+                  <p class="text-sm text-gray-600">
+                    Temat powinien być związany z Twoimi zainteresowaniami - łatwiej będzie Ci nad nim pracować przez wiele miesięcy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary-600 font-bold">2</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-2">Sprawdź dostępność źródeł</h3>
+                  <p class="text-sm text-gray-600">
+                    Upewnij się, że istnieje wystarczająca literatura i możliwość przeprowadzenia badań.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary-600 font-bold">3</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-2">Skonsultuj z promotorem</h3>
+                  <p class="text-sm text-gray-600">
+                    Promotor pomoże Ci zawęzić temat i upewnić się, że jest on odpowiedni na pracę magisterską.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary-600 font-bold">4</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-2">Oceń swoją motywację</h3>
+                  <p class="text-sm text-gray-600">
+                    Pisanie pracy zajmie kilka miesięcy - wybierz temat, który Cię naprawdę interesuje.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-10">
+            <a href="/poradniki/wybor-tematu/" class="btn-secondary">
+              Czytaj więcej o wyborze tematu →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

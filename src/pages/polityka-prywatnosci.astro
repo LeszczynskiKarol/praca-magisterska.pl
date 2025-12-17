@@ -1,0 +1,101 @@
+---
+// src/pages/polityka-prywatnosci.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Polityka prywatności | Praca-Magisterska.pl"
+  description="Polityka prywatności serwisu Praca-Magisterska.pl. Informacje o przetwarzaniu danych osobowych."
+>
+  <Navbar />
+
+  <main class="pt-20 md:pt-24">
+    <div class="container-custom py-16">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          Polityka prywatności
+        </h1>
+
+        <div class="prose prose-lg max-w-none">
+          <h2>1. Informacje ogólne</h2>
+          <p>
+            Niniejsza polityka prywatności określa zasady przetwarzania i
+            ochrony danych osobowych przekazanych przez Użytkowników w związku z
+            korzystaniem z serwisu Praca-Magisterska.pl.
+          </p>
+
+          <h2>2. Administrator danych</h2>
+          <p>
+            Administratorem danych osobowych jest właściciel serwisu
+            Praca-Magisterska.pl.
+          </p>
+
+          <h2>3. Cel przetwarzania danych</h2>
+          <p>Dane osobowe przetwarzane są w celu:</p>
+          <ul>
+            <li>Zapewnienia prawidłowego funkcjonowania serwisu</li>
+            <li>Analizy ruchu na stronie (Google Analytics)</li>
+            <li>Odpowiedzi na zapytania kontaktowe</li>
+          </ul>
+
+          <h2>4. Pliki cookies</h2>
+          <p>
+            Serwis wykorzystuje pliki cookies w celu zapewnienia prawidłowego
+            funkcjonowania strony oraz analizy ruchu. Użytkownik może w każdej
+            chwili zmienić ustawienia przeglądarki dotyczące plików cookies.
+          </p>
+
+          <h2>5. Prawa użytkownika</h2>
+          <p>Użytkownik ma prawo do:</p>
+          <ul>
+            <li>Dostępu do swoich danych osobowych</li>
+            <li>Sprostowania danych</li>
+            <li>Usunięcia danych</li>
+            <li>Ograniczenia przetwarzania</li>
+            <li>Przenoszenia danych</li>
+            <li>Wniesienia sprzeciwu</li>
+          </ul>
+
+          <h2>6. Kontakt</h2>
+          <p>
+            W sprawach związanych z ochroną danych osobowych prosimy o kontakt
+            poprzez formularz kontaktowy lub adres e-mail podany na stronie.
+          </p>
+
+          <h2>7. Zmiany polityki prywatności</h2>
+          <p>
+            Administrator zastrzega sobie prawo do wprowadzania zmian w polityce
+            prywatności. O wszelkich zmianach Użytkownicy będą informowani
+            poprzez publikację nowej wersji na stronie serwisu.
+          </p>
+
+          <p class="text-sm text-gray-500 mt-8">
+            Ostatnia aktualizacja: Grudzień 2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    @apply text-xl font-bold text-gray-900 mt-8 mb-4;
+  }
+
+  .prose p {
+    @apply text-gray-600 mb-4;
+  }
+
+  .prose ul {
+    @apply list-disc pl-6 mb-4 text-gray-600;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+</style>

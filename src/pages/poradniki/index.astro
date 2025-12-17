@@ -1,0 +1,188 @@
+---
+// src/pages/poradniki/index.astro
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import SmartEduCTA from '../../components/SmartEduCTA.astro';
+
+const categories = [
+  {
+    id: 'start',
+    name: '🚀 Jak zacząć',
+    description: 'Pierwsze kroki w pisaniu pracy',
+    articles: [
+      { title: 'Wybór tematu pracy magisterskiej', description: 'Jak wybrać temat, który będzie interesujący i realny do zrealizowania.', href: '/poradniki/wybor-tematu/', icon: '💡' },
+      { title: 'Konspekt pracy magisterskiej', description: 'Jak stworzyć plan pracy, który ułatwi pisanie.', href: '/poradniki/konspekt/', icon: '📋' },
+      { title: 'Cel pracy magisterskiej', description: 'Jak prawidłowo sformułować cel główny i cele szczegółowe.', href: '/poradniki/cel-pracy/', icon: '🎯' },
+    ],
+  },
+  {
+    id: 'struktura',
+    name: '📋 Struktura pracy',
+    description: 'Elementy składowe pracy magisterskiej',
+    articles: [
+      { title: 'Jak napisać wstęp', description: 'Struktura wstępu, co powinien zawierać i jak go napisać.', href: '/poradniki/wstep/', icon: '📝' },
+      { title: 'Spis treści', description: 'Jak stworzyć profesjonalny spis treści.', href: '/poradniki/spis-tresci/', icon: '📑' },
+      { title: 'Streszczenie pracy', description: 'Jak napisać streszczenie w języku polskim i angielskim.', href: '/poradniki/streszczenie/', icon: '📃' },
+      { title: 'Zakończenie pracy', description: 'Struktura zakończenia, wnioski i podsumowanie.', href: '/poradniki/zakonczenie/', icon: '✅' },
+    ],
+  },
+  {
+    id: 'badania',
+    name: '🔬 Badania',
+    description: 'Metodologia i prowadzenie badań',
+    articles: [
+      { title: 'Metodologia badań', description: 'Kompletny przewodnik po metodologii: metody, techniki, narzędzia.', href: '/poradniki/metodologia/', icon: '🔬', featured: true },
+    ],
+  },
+  {
+    id: 'pisanie',
+    name: '✍️ Pisanie',
+    description: 'Cytowanie, bibliografia i formatowanie',
+    articles: [
+      { title: 'Bibliografia', description: 'Style cytowania, tworzenie bibliografii i unikanie plagiatu.', href: '/poradniki/bibliografia/', icon: '📚' },
+      { title: 'Cytowanie i cytaty', description: 'Jak prawidłowo cytować źródła.', href: '/poradniki/cytowanie/', icon: '💬' },
+      { title: 'Formatowanie pracy', description: 'Normy edytorskie, marginesy, czcionki, numeracja stron.', href: '/poradniki/formatowanie/', icon: '📄' },
+    ],
+  },
+  {
+    id: 'finalizacja',
+    name: '🎓 Finalizacja',
+    description: 'Zakończenie i obrona pracy',
+    articles: [
+      { title: 'Obrona pracy magisterskiej', description: 'Przygotowanie do obrony, typowe pytania komisji.', href: '/poradniki/obrona/', icon: '🎓' },
+    ],
+  },
+];
+
+const metodologiaHighlights = [
+  { title: 'Badania ilościowe', href: '/poradniki/metodologia/badania-ilosciowe/' },
+  { title: 'Badania jakościowe', href: '/poradniki/metodologia/badania-jakosciowe/' },
+  { title: 'Jak przeprowadzić ankietę', href: '/poradniki/metodologia/ankieta/' },
+  { title: 'Jak przeprowadzić wywiad', href: '/poradniki/metodologia/wywiad/' },
+];
+---
+
+<Layout 
+  title="Poradniki - jak napisać pracę magisterską | Praca-Magisterska.pl"
+  description="Kompletne poradniki pisania pracy magisterskiej. Wstęp, zakończenie, bibliografia, metodologia badań i wiele więcej. Krok po kroku."
+>
+  <Navbar />
+  
+  <main class="pt-20 md:pt-24">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent/10 py-16">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="badge badge-primary mb-4">📖 Poradniki</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+            Jak napisać pracę magisterską?
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Kompletny zbiór poradników dla studentów. Od wyboru tematu, przez badania i pisanie, aż po obronę.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-8 bg-white border-b border-gray-100">
+      <div class="container-custom">
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-center">
+          <div>
+            <div class="text-3xl font-bold text-primary-600">15+</div>
+            <div class="text-gray-600 text-sm">Poradników</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary-600">10+</div>
+            <div class="text-gray-600 text-sm">Artykułów o metodologii</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold text-primary-600">100%</div>
+            <div class="text-gray-600 text-sm">Za darmo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles by Category -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto">
+          {categories.map((category) => (
+            <div class="mb-12 last:mb-0">
+              <div class="flex flex-wrap items-center gap-2 mb-6">
+                <h2 class="text-2xl font-bold text-gray-900">{category.name}</h2>
+                <span class="text-gray-500 text-sm hidden sm:inline">— {category.description}</span>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.articles.map((article) => (
+                  <a 
+                    href={article.href} 
+                    class={`card card-hover group ${'featured' in article && article.featured ? 'ring-2 ring-primary-400 bg-primary-50/50' : ''}`}
+                  >
+                    <div class="flex items-start gap-4">
+                      <span class="text-3xl flex-shrink-0">{article.icon}</span>
+                      <div class="flex-1 min-w-0">
+                        <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors mb-2 flex items-center flex-wrap gap-2">
+                          {article.title}
+                          {'featured' in article && article.featured && (
+                            <span class="text-xs bg-primary-600 text-white px-2 py-0.5 rounded font-medium">10+ artykułów</span>
+                          )}
+                        </h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                          {article.description}
+                        </p>
+                        <div class="mt-3 flex items-center text-primary-600 font-medium text-sm">
+                          Czytaj więcej
+                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Extra links for metodologia */}
+              {category.id === 'badania' && (
+                <div class="mt-6 bg-white rounded-xl p-6 border-2 border-dashed border-gray-200">
+                  <p class="text-sm text-gray-500 mb-3 font-medium">Popularne artykuły z metodologii:</p>
+                  <div class="flex flex-wrap gap-2">
+                    {metodologiaHighlights.map((item) => (
+                      <a 
+                        href={item.href} 
+                        class="text-sm bg-gray-100 hover:bg-primary-100 text-gray-700 hover:text-primary-700 px-4 py-2 rounded-full transition-colors"
+                      >
+                        {item.title} →
+                      </a>
+                    ))}
+                    <a 
+                      href="/poradniki/metodologia/" 
+                      class="text-sm bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-full transition-colors font-medium"
+                    >
+                      Zobacz wszystkie →
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart-Edu CTA -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <SmartEduCTA variant="full" />
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

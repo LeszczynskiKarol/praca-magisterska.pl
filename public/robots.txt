@@ -1,0 +1,14 @@
+# robots.txt for praca-magisterska.pl
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://praca-magisterska.pl/sitemap-index.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Block admin/system paths (if any)
+Disallow: /api/
+Disallow: /_astro/

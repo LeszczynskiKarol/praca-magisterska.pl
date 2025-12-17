@@ -1,0 +1,216 @@
+---
+// src/layouts/TematyLayout.astro
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SmartEduCTA from '../components/SmartEduCTA.astro';
+
+interface Temat {
+  title: string;
+  description?: string;
+  difficulty?: 'łatwy' | 'średni' | 'trudny';
+  tags?: string[];
+}
+
+interface Props {
+  kierunek: string;
+  kierunekSlug: string;
+  icon: string;
+  description: string;
+  tematy: Temat[];
+  metaTips?: string[];
+}
+
+const { 
+  kierunek, 
+  kierunekSlug, 
+  icon, 
+  description,
+  tematy,
+  metaTips = [],
+} = Astro.props;
+
+const breadcrumbs = [
+  { label: 'Start', href: '/' },
+  { label: 'Tematy prac', href: '/tematy/' },
+  { label: kierunek, href: `/tematy/${kierunekSlug}/` },
+];
+
+const difficultyColors = {
+  'łatwy': 'bg-green-100 text-green-700',
+  'średni': 'bg-yellow-100 text-yellow-700',
+  'trudny': 'bg-red-100 text-red-700',
+};
+---
+
+<Layout 
+  title={`Tematy prac magisterskich z ${kierunek.toLowerCase()} - 100+ propozycji | Praca-Magisterska.pl`}
+  description={`Tematy prac magisterskich z ${kierunek.toLowerCase()}. ${tematy.length}+ propozycji tematów, wskazówki i porady. Znajdź inspirację na swoją pracę magisterską.`}
+>
+  <Navbar />
+  
+  <main class="pt-20 md:pt-24">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-accent/10 py-16">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <!-- Breadcrumbs -->
+          <nav class="mb-6" aria-label="Breadcrumb">
+            <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+              {breadcrumbs.map((crumb, index) => (
+                <>
+                  {index > 0 && (
+                    <li>
+                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </li>
+                  )}
+                  <li>
+                    {index === breadcrumbs.length - 1 ? (
+                      <span class="text-gray-900 font-medium">{crumb.label}</span>
+                    ) : (
+                      <a href={crumb.href} class="hover:text-primary-600 transition-colors">{crumb.label}</a>
+                    )}
+                  </li>
+                </>
+              ))}
+            </ol>
+          </nav>
+
+          <div class="text-center">
+            <span class="text-6xl mb-4 block">{icon}</span>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+              Tematy prac magisterskich z {kierunek.toLowerCase()}
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+              {description}
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+              <span class="badge badge-primary">{tematy.length}+ tematów</span>
+              <span class="badge bg-gray-100 text-gray-700">Szczegółowe opisy</span>
+              <span class="badge bg-gray-100 text-gray-700">Wskazówki dla studentów</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <div class="container-custom py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-8">
+          <!-- Intro content from slot -->
+          <div class="article-content mb-12">
+            <slot />
+          </div>
+
+          <!-- Tematy List -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+              Lista tematów prac magisterskich z {kierunek.toLowerCase()}
+            </h2>
+
+            <div class="space-y-4">
+              {tematy.map((temat, index) => (
+                <div class="card card-hover">
+                  <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-primary-600 font-bold text-sm">{index + 1}</span>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-bold text-gray-900 mb-2">
+                        {temat.title}
+                      </h3>
+                      {temat.description && (
+                        <p class="text-sm text-gray-600 mb-3">
+                          {temat.description}
+                        </p>
+                      )}
+                      <div class="flex flex-wrap gap-2">
+                        {temat.difficulty && (
+                          <span class={`text-xs px-2 py-1 rounded-full font-medium ${difficultyColors[temat.difficulty]}`}>
+                            {temat.difficulty}
+                          </span>
+                        )}
+                        {temat.tags?.map(tag => (
+                          <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Tips Section -->
+          {metaTips.length > 0 && (
+            <section class="mt-12 p-6 bg-primary-50 rounded-2xl border border-primary-100">
+              <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                Wskazówki dla prac z {kierunek.toLowerCase()}
+              </h3>
+              <ul class="space-y-2">
+                {metaTips.map(tip => (
+                  <li class="flex items-start gap-2 text-gray-700">
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <!-- CTA -->
+          <div class="mt-12">
+            <SmartEduCTA variant="inline" />
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4">
+          <div class="sticky top-28 space-y-6">
+            <!-- Smart-Edu CTA -->
+            <SmartEduCTA variant="sidebar" />
+            
+            <!-- Quick Links -->
+            <div class="card">
+              <h3 class="font-bold text-gray-900 mb-4">Inne kierunki</h3>
+              <ul class="space-y-2">
+                <li><a href="/tematy/pedagogika/" class="text-sm text-gray-600 hover:text-primary-600">📚 Pedagogika</a></li>
+                <li><a href="/tematy/zarzadzanie/" class="text-sm text-gray-600 hover:text-primary-600">📊 Zarządzanie</a></li>
+                <li><a href="/tematy/psychologia/" class="text-sm text-gray-600 hover:text-primary-600">🧠 Psychologia</a></li>
+                <li><a href="/tematy/prawo/" class="text-sm text-gray-600 hover:text-primary-600">⚖️ Prawo</a></li>
+                <li><a href="/tematy/marketing/" class="text-sm text-gray-600 hover:text-primary-600">📈 Marketing</a></li>
+              </ul>
+              <a href="/tematy/" class="mt-4 block text-sm text-primary-600 font-medium hover:underline">
+                Zobacz wszystkie kierunki →
+              </a>
+            </div>
+            
+            <!-- Poradniki -->
+            <div class="card bg-gray-50">
+              <h3 class="font-bold text-gray-900 mb-4">Przydatne poradniki</h3>
+              <ul class="space-y-2">
+                <li><a href="/poradniki/wybor-tematu/" class="text-sm text-gray-600 hover:text-primary-600">→ Jak wybrać temat</a></li>
+                <li><a href="/poradniki/metodologia/" class="text-sm text-gray-600 hover:text-primary-600">→ Metodologia badań</a></li>
+                <li><a href="/poradniki/wstep/" class="text-sm text-gray-600 hover:text-primary-600">→ Jak napisać wstęp</a></li>
+                <li><a href="/poradniki/bibliografia/" class="text-sm text-gray-600 hover:text-primary-600">→ Bibliografia</a></li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>

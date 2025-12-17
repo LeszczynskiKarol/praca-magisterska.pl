@@ -1,0 +1,195 @@
+---
+// src/layouts/ArticleLayout.astro
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SmartEduCTA from '../components/SmartEduCTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate?: string;
+  updateDate?: string;
+  readingTime?: string;
+  breadcrumbs?: Array<{ label: string; href: string }>;
+  relatedLinks?: Array<{ label: string; href: string }>;
+  showSidebar?: boolean;
+}
+
+const { 
+  title, 
+  description,
+  publishDate = new Date().toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' }),
+  updateDate,
+  readingTime = '10 min',
+  breadcrumbs = [],
+  relatedLinks = [],
+  showSidebar = true,
+} = Astro.props;
+
+const allBreadcrumbs = [
+  { label: 'Start', href: '/' },
+  ...breadcrumbs,
+];
+---
+
+<Layout title={title} description={description}>
+  <Navbar />
+  
+  <main class="pt-20 md:pt-24">
+    <!-- Article Header -->
+    <div class="bg-gradient-to-br from-primary-50 via-white to-accent/10 border-b border-gray-200">
+      <div class="container-custom py-12 lg:py-16">
+        <div class="max-w-4xl mx-auto">
+          <!-- Breadcrumbs -->
+          <nav class="mb-6" aria-label="Breadcrumb">
+            <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+              {allBreadcrumbs.map((crumb, index) => (
+                <>
+                  {index > 0 && (
+                    <li>
+                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </li>
+                  )}
+                  <li>
+                    {index === allBreadcrumbs.length - 1 ? (
+                      <span class="text-gray-900 font-medium truncate max-w-[200px] sm:max-w-none">{crumb.label}</span>
+                    ) : (
+                      <a href={crumb.href} class="hover:text-primary-600 transition-colors">{crumb.label}</a>
+                    )}
+                  </li>
+                </>
+              ))}
+            </ol>
+          </nav>
+
+          <!-- Title -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+            {title}
+          </h1>
+          
+          <!-- Description -->
+          <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+            {description}
+          </p>
+
+          <!-- Meta -->
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>{publishDate}</span>
+            </div>
+            {updateDate && (
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                <span>Aktualizacja: {updateDate}</span>
+              </div>
+            )}
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{readingTime} czytania</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="container-custom py-12">
+      <div class={`grid grid-cols-1 gap-12 ${showSidebar ? 'lg:grid-cols-12' : 'max-w-4xl mx-auto'}`}>
+        <!-- Main Content -->
+        <article class={showSidebar ? 'lg:col-span-8' : ''}>
+          <div class="article-content">
+            <slot />
+          </div>
+
+          <!-- Article Footer -->
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <!-- Inline CTA -->
+            <SmartEduCTA variant="inline" />
+            
+            <!-- Navigation -->
+            <div class="mt-8 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between gap-4">
+              <a href="/" class="inline-flex items-center text-gray-600 hover:text-primary-600 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Strona główna
+              </a>
+              <a href="/poradniki/" class="inline-flex items-center text-gray-600 hover:text-primary-600 transition-colors">
+                Wszystkie poradniki
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        {showSidebar && (
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-6">
+              <!-- Smart-Edu CTA -->
+              <SmartEduCTA variant="sidebar" />
+              
+              <!-- Related Links -->
+              {relatedLinks.length > 0 && (
+                <div class="card">
+                  <h3 class="font-bold text-gray-900 mb-4">Powiązane artykuły</h3>
+                  <ul class="space-y-3">
+                    {relatedLinks.map(link => (
+                      <li>
+                        <a 
+                          href={link.href} 
+                          class="text-sm text-gray-600 hover:text-primary-600 transition-colors flex items-center gap-2"
+                        >
+                          <svg class="w-4 h-4 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                          </svg>
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              <!-- Quick Links -->
+              <div class="card bg-gray-50">
+                <h3 class="font-bold text-gray-900 mb-4">Przydatne linki</h3>
+                <ul class="space-y-3">
+                  <li>
+                    <a href="/poradniki/" class="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                      → Wszystkie poradniki
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/tematy/" class="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                      → Tematy prac magisterskich
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/poradniki/metodologia/" class="text-sm text-gray-600 hover:text-primary-600 transition-colors">
+                      → Metodologia badań
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        )}
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
