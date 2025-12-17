@@ -1,9 +1,9 @@
 ---
 // src/layouts/ArticleLayout.astro
-import Layout from './Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
 import SmartEduCTA from '../components/SmartEduCTA.astro';
+import Layout from './Layout.astro';
 
 interface Props {
   title: string;
@@ -40,7 +40,7 @@ const allBreadcrumbs = [
     <!-- Article Header -->
     <div class="bg-gradient-to-br from-primary-50 via-white to-accent/10 border-b border-gray-200">
       <div class="container-custom py-12 lg:py-16">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-8xl mx-auto">
           <!-- Breadcrumbs -->
           <nav class="mb-6" aria-label="Breadcrumb">
             <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-500">
