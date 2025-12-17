@@ -238,35 +238,13 @@ Na stronie praca-magisterska.pl używamy 5 kategorii:
 Użyj tego promptu w Smart-Copy do generowania artykułów:
 
 ```
-Napisz kompleksowy, profesjonalny artykuł poradnikowy na temat: [TYTUŁ]
-
-Artykuł jest przeznaczony dla studentów piszących pracę magisterską.
-
-Wymagania:
-- Długość: 2000-3000 słów
-- Język: polski, formalny ale przystępny
-- Struktura: nagłówki H2 i H3
-- Elementy: listy punktowane, przykłady, wskazówki praktyczne
-- Ton: ekspercki, pomocny, konkretny
-- Unikaj ogólników - podawaj konkretne przykłady i wskazówki
-
-Struktura artykułu:
-1. Wprowadzenie - co to jest, dlaczego ważne
-2. Główne sekcje tematyczne (3-5 sekcji H2)
-3. Praktyczne wskazówki / checklisty
-4. Najczęstsze błędy do uniknięcia
-5. Podsumowanie
-
-Cel: [OPIS Z TABELI]
-```
-
----
 
 ## 🗂️ STRUKTURA FOLDERÓW
 
 ```
+
 src/pages/poradniki/
-├── index.astro                    ← HUB poradników
+├── index.astro ← HUB poradników
 ├── wybor-tematu/index.astro
 ├── konspekt/index.astro
 ├── cel-pracy/index.astro
@@ -279,35 +257,38 @@ src/pages/poradniki/
 ├── rozdzial-metodologiczny/index.astro
 ├── rozdzial-badawczy/index.astro
 ├── bibliografia/
-│   ├── index.astro               ← HUB bibliografii
-│   ├── apa/index.astro
-│   ├── harvard/index.astro
-│   └── chicago/index.astro
+│ ├── index.astro ← HUB bibliografii
+│ ├── apa/index.astro
+│ ├── harvard/index.astro
+│ └── chicago/index.astro
 ├── cytowanie/index.astro
 ├── formatowanie/index.astro
 ├── przypisy/index.astro
 ├── zrodla/index.astro
 ├── metodologia/
-│   ├── index.astro               ← HUB metodologii
-│   ├── badania-ilosciowe/index.astro
-│   ├── badania-jakosciowe/index.astro
-│   ├── ankieta/index.astro
-│   ├── wywiad/index.astro
-│   ├── hipotezy/index.astro
-│   ├── dobor-proby/index.astro
-│   ├── pytania-badawcze/index.astro
-│   ├── problemy-badawcze/index.astro
-│   ├── zmienne/index.astro
-│   ├── analiza-ilosciowa/index.astro
-│   ├── analiza-jakosciowa/index.astro
-│   ├── metody/index.astro
-│   ├── narzedzia/index.astro
-│   ├── case-study/index.astro
-│   ├── obserwacja/index.astro
-│   └── etyka/index.astro
+│ ├── index.astro ← HUB metodologii
+│ ├── badania-ilosciowe/index.astro
+│ ├── badania-jakosciowe/index.astro
+│ ├── ankieta/index.astro
+│ ├── wywiad/index.astro
+│ ├── hipotezy/index.astro
+│ ├── dobor-proby/index.astro
+│ ├── pytania-badawcze/index.astro
+│ ├── problemy-badawcze/index.astro
+│ ├── zmienne/index.astro
+│ ├── analiza-ilosciowa/index.astro
+│ ├── analiza-jakosciowa/index.astro
+│ ├── metody/index.astro
+│ ├── narzedzia/index.astro
+│ ├── case-study/index.astro
+│ ├── obserwacja/index.astro
+│ └── etyka/index.astro
 ├── obrona/index.astro
 ├── prezentacja/index.astro
 ├── pytania-obrona/index.astro
 ├── korekta/index.astro
 └── antyplagiat/index.astro
+
+```
+
 ```
