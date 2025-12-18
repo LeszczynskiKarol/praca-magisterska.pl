@@ -1,0 +1,473 @@
+---
+// src/pages/poradniki/spis-tresci/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+];
+
+const relatedLinks = [
+  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Spis treści w pracy magisterskiej - jak napisać + wzór"
+  description="Kompletny poradnik dotyczący tworzenia spisu treści do pracy magisterskiej"
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Spis treści stanowi kluczowy element każdej pracy magisterskiej, pełniąc
+    funkcję mapy nawigacyjnej dla czytelnika oraz prezentując logiczną strukturę
+    całego dokumentu. Prawidłowo sporządzony spis treści ułatwia orientację w
+    pracy, pokazuje hierarchię rozdziałów i podrozdziałów, a także wskazuje
+    konkretne strony, na których znajdują się poszczególne fragmenty. Dla
+    komisji egzaminacyjnej spis treści jest pierwszym elementem merytorycznym,
+    który ocenia kompletność i spójność pracy dyplomowej. W niniejszym artykule
+    przedstawimy kompleksowy przewodnik dotyczący tworzenia profesjonalnego
+    spisu treści, omówimy wymogi formalne, techniczne aspekty jego generowania
+    oraz zaprezentujemy gotowe wzory dostosowane do różnych kierunków studiów.
+    Dowiesz się, jak uniknąć najczęstszych błędów oraz jak wykorzystać
+    automatyczne narzędzia edytorów tekstu do sprawnego przygotowania tego
+    obowiązkowego elementu pracy magisterskiej.
+  </p>
+
+  <h2>Czym jest spis treści i dlaczego jest niezbędny w pracy magisterskiej</h2>
+
+  <p>
+    Spis treści w pracy magisterskiej to uporządkowany wykaz wszystkich
+    elementów strukturalnych dokumentu, zawierający tytuły rozdziałów,
+    podrozdziałów oraz innych części składowych wraz z numerami stron, na
+    których się rozpoczynają. Jego podstawową funkcją jest umożliwienie szybkiej
+    nawigacji po obszernym dokumencie, który w przypadku prac magisterskich może
+    liczyć od sześćdziesięciu do stu dwudziestu stron. Spis treści pełni również
+    rolę informacyjną, prezentując zakres tematyczny pracy oraz logikę wywodu
+    naukowego zastosowaną przez autora. Dla promotora i recenzentów jest to
+    pierwszy element pozwalający ocenić przemyślenie struktury pracy oraz jej
+    zgodność z przyjętą metodologią badawczą.
+  </p>
+
+  <p>
+    Znaczenie spisu treści wykracza poza aspekty czysto techniczne i
+    nawigacyjne. Stanowi on wizytówkę pracy magisterskiej, pokazując
+    profesjonalizm autora oraz jego umiejętność logicznego organizowania
+    materiału badawczego. Dobrze skonstruowany spis treści odzwierciedla
+    proporcje między częściami teoretycznymi a empirycznymi, wskazuje na
+    zastosowane metody badawcze oraz prezentuje zakres analizy problemu
+    badawczego. Komisja egzaminacyjna często rozpoczyna ocenę pracy właśnie od
+    analizy spisu treści, wyciągając wstępne wnioski dotyczące kompletności
+    opracowania oraz zgodności struktury z wymogami akademickimi obowiązującymi
+    na danym kierunku studiów.
+  </p>
+
+  <p>
+    W kontekście formalnym spis treści jest elementem obligatoryjnym każdej
+    pracy dyplomowej, a jego brak lub nieprawidłowe sporządzenie może skutkować
+    niedopuszczeniem pracy do obrony. Regulaminy uczelni wyższych jednoznacznie
+    wskazują na konieczność umieszczenia spisu treści bezpośrednio po stronie
+    tytułowej, przed wstępem do pracy. Niektóre uczelnie wymagają dodatkowo
+    umieszczenia rozszerzonego spisu treści w wersji angielskiej, szczególnie na
+    kierunkach o profilu międzynarodowym. Spis treści musi być kompletny,
+    zawierając wszystkie elementy pracy: od streszczeń i wykazu skrótów, przez
+    rozdziały merytoryczne, aż po bibliografię i załączniki. Pominięcie
+    któregokolwiek z tych elementów uznawane jest za poważne uchybienie
+    formalne.
+  </p>
+
+  <p>
+    Różnica między spisem treści a planem pracy magisterskiej jest istotna i
+    często błędnie rozumiana przez studentów. Plan pracy przygotowywany jest na
+    wczesnym etapie pisania, zazwyczaj w pierwszym semestrze seminarium
+    dyplomowego, i podlega akceptacji promotora. Ma charakter roboczy i może
+    ulegać modyfikacjom w trakcie realizacji badań. Spis treści natomiast
+    tworzony jest na samym końcu procesu pisania, gdy wszystkie rozdziały są już
+    ukończone i zaakceptowane. Zawiera dokładne numery stron, wszystkie
+    podrozdziały oraz elementy dodatkowe takie jak spisy tabel czy wykresów.
+    Plan pracy może być prostym wyliczeniem zamierzonych rozdziałów, podczas gdy
+    spis treści musi być precyzyjnym, hierarchicznym zestawieniem faktycznej
+    zawartości pracy z dokładnością do pojedynczych punktów i podpunktów.
+  </p>
+
+  <ul>
+    <li>
+      prezentuje kompletną strukturę pracy magisterskiej w uporządkowany sposób
+    </li>
+    <li>
+      umożliwia szybkie odnalezienie konkretnych fragmentów w obszernym
+      dokumencie
+    </li>
+    <li>stanowi podstawę oceny formalnej poprawności pracy przez komisję</li>
+    <li>
+      odzwierciedla logikę wywodu naukowego oraz proporcje między częściami
+      pracy
+    </li>
+    <li>
+      jest obligatoryjnym elementem wymaganym przez regulaminy wszystkich
+      uczelni
+    </li>
+    <li>
+      różni się od planu pracy przede wszystkim momentem tworzenia i stopniem
+      szczegółowości
+    </li>
+    <li>
+      zawiera numery stron oraz wszystkie elementy dodatkowe pracy dyplomowej
+    </li>
+  </ul>
+
+  <h2>Zasady tworzenia spisu treści - wymogi formalne i techniczne</h2>
+
+  <p>
+    Tworzenie spisu treści w pracy magisterskiej podlega ścisłym wymogom
+    formalnym, które różnią się w zależności od uczelni, wydziału, a czasem
+    nawet katedry. Podstawową zasadą jest zachowanie kompletności - spis musi
+    zawierać wszystkie elementy strukturalne pracy, począwszy od wstępu, przez
+    wszystkie rozdziały i podrozdziały, aż po bibliografię, spisy pomocnicze i
+    załączniki. Każda pozycja w spisie treści musi mieć przypisany numer strony,
+    na której się rozpoczyna. Tytuły rozdziałów i podrozdziałów w spisie treści
+    muszą być identyczne jak w tekście głównym pracy, włącznie z wielkością
+    liter, znakami interpunkcyjnymi i formatowaniem. Najczęstszym błędem
+    studentów jest niezgodność tytułów między spisem treści a treścią główną, co
+    natychmiast zwraca uwagę komisji egzaminacyjnej i obniża ocenę formalną
+    pracy.
+  </p>
+
+  <p>
+    Formatowanie spisu treści wymaga szczególnej dbałości o estetykę i
+    czytelność. Standardowo stosuje się czcionkę Times New Roman w rozmiarze 12
+    punktów dla całego spisu, z wyjątkiem tytułów głównych rozdziałów, które
+    mogą być pogrubione. Interlinia powinna wynosić 1,5, choć niektóre uczelnie
+    dopuszczają pojedynczą interlinię dla samego spisu treści w celu
+    zaoszczędzenia miejsca. Wyrównanie tekstu powinno być do lewej strony, z
+    numerami stron wyrównanymi do prawej. Między tytułem a numerem strony
+    stosuje się linię kropkowaną (tabulatory z wypełnieniem kropkami), co
+    znacznie poprawia czytelność. Wcięcia dla podrozdziałów powinny być
+    konsekwentne - zazwyczaj każdy kolejny poziom hierarchii jest wcięty o 0,5
+    cm lub 1 cm względem poziomu wyższego.
+  </p>
+
+  <h3>Numeracja i hierarchia rozdziałów</h3>
+
+  <p>
+    System numeracji rozdziałów w pracy magisterskiej opiera się najczęściej na
+    numeracji arabskiej dziesiętnej, która najlepiej oddaje hierarchiczną
+    strukturę pracy. Główne rozdziały oznacza się pojedynczymi cyframi arabskimi
+    (1, 2, 3), podrozdziały pierwszego poziomu - dwoma cyframi oddzielonymi
+    kropką (1.1, 1.2, 1.3), a podrozdziały drugiego poziomu - trzema cyframi
+    (1.1.1, 1.1.2). Większość promotorów zaleca ograniczenie głębokości podziału
+    do trzech poziomów, gdyż dalsze rozdrobnienie utrudnia czytelność i może
+    świadczyć o problemach z logiczną organizacją materiału. Ważną zasadą jest
+    to, że jeśli w rozdziale pojawia się podrozdział, musi być ich co najmniej
+    dwa - pojedynczy podrozdział jest błędem logicznym, sugerującym, że podział
+    nie był konieczny.
+  </p>
+
+  <p>
+    Numeracji nie stosuje się do elementów wstępnych i końcowych pracy, takich
+    jak wstęp, zakończenie, bibliografia, spisy czy załączniki. Elementy te
+    wymieniane są w spisie treści bez numerów, choć z podaniem numeru strony.
+    Niektóre uczelnie wymagają stosowania numeracji rzymskiej dla rozdziałów
+    głównych (I, II, III), jednak jest to coraz rzadziej spotykane. Tytuły
+    rozdziałów powinny być rzeczowe, konkretne i odzwierciedlać faktyczną
+    zawartość danej części pracy. Należy unikać tytułów zbyt ogólnych typu
+    "Wprowadzenie teoretyczne" na rzecz precyzyjnych sformułowań odnoszących się
+    do konkretnej problematyki badawczej, na przykład "Teoretyczne podstawy
+    zarządzania jakością w przedsiębiorstwach produkcyjnych".
+  </p>
+
+  <h3>Formatowanie i układ graficzny</h3>
+
+  <p>
+    Układ graficzny spisu treści powinien być przejrzysty i konsekwentny na
+    wszystkich poziomach hierarchii. Tytuły rozdziałów głównych często zapisuje
+    się wielkimi literami lub wyróżnia pogrubieniem, aby wyraźnie oddzielić je
+    od podrozdziałów. Podrozdziały pierwszego poziomu zazwyczaj zapisuje się
+    czcionką zwykłą bez pogrubienia, z wcięciem od lewego marginesu.
+    Podrozdziały drugiego poziomu mają większe wcięcie. Odstępy między pozycjami
+    spisu treści powinny być jednolite - zazwyczaj stosuje się pojedynczy odstęp
+    między pozycjami tego samego poziomu i podwójny przed nowym rozdziałem
+    głównym. Numery stron wyrównane do prawej krawędzi powinny znajdować się w
+    jednej linii pionowej, co osiąga się stosując tabulatory z wyrównaniem do
+    prawej.
+  </p>
+
+  <p>
+    Linia kropkowana łącząca tytuł z numerem strony nie jest obowiązkowa, ale
+    znacznie poprawia czytelność, szczególnie w przypadku długich tytułów. W
+    edytorach tekstu realizuje się to poprzez ustawienie tabulatora z
+    wypełnieniem kropkowym. Ważne jest, aby kropki były równomiernie
+    rozmieszczone i nie zlewały się w ciągłą linię. Jeśli spis treści zajmuje
+    więcej niż jedną stronę, na każdej kolejnej stronie powinien być
+    kontynuowany bez powtarzania nagłówka "Spis treści". Niektóre uczelnie
+    wymagają umieszczenia na górze każdej kolejnej strony spisu informacji "Spis
+    treści (cd.)", co należy sprawdzić w wytycznych uczelnianych.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Element spisu treści</th>
+        <th>Czcionka</th>
+        <th>Rozmiar</th>
+        <th>Formatowanie</th>
+        <th>Wcięcie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nagłówek "Spis treści"</td>
+        <td>Times New Roman</td>
+        <td>14 pt</td>
+        <td>Pogrubienie, wyśrodkowanie</td>
+        <td>Brak</td>
+      </tr>
+      <tr>
+        <td>Rozdziały główne (1, 2, 3)</td>
+        <td>Times New Roman</td>
+        <td>12 pt</td>
+        <td>Pogrubienie, wielkie litery opcjonalnie</td>
+        <td>0 cm</td>
+      </tr>
+      <tr>
+        <td>Podrozdziały (1.1, 1.2)</td>
+        <td>Times New Roman</td>
+        <td>12 pt</td>
+        <td>Zwykła czcionka</td>
+        <td>0,5-1 cm</td>
+      </tr>
+      <tr>
+        <td>Punkty (1.1.1, 1.1.2)</td>
+        <td>Times New Roman</td>
+        <td>12 pt</td>
+        <td>Zwykła czcionka</td>
+        <td>1-1,5 cm</td>
+      </tr>
+      <tr>
+        <td>Elementy nienumerowane</td>
+        <td>Times New Roman</td>
+        <td>12 pt</td>
+        <td>Zwykła czcionka lub pogrubienie</td>
+        <td>0 cm</td>
+      </tr>
+      <tr>
+        <td>Numery stron</td>
+        <td>Times New Roman</td>
+        <td>12 pt</td>
+        <td>Wyrównanie do prawej</td>
+        <td>Tabulator</td>
+      </tr>
+      <tr>
+        <td>Linia kropkowana</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Tabulator z wypełnieniem</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Interlinia</td>
+        <td>-</td>
+        <td>1,5 lub 1,0</td>
+        <td>Konsekwentnie w całym spisie</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>
+    Jak automatycznie wygenerować spis treści w MS Word i innych programach
+  </h2>
+
+  <p>
+    Automatyczne generowanie spisu treści w programie Microsoft Word jest
+    najefektywniejszą metodą tworzenia tego elementu pracy magisterskiej,
+    eliminującą ryzyko błędów i oszczędzającą znaczną ilość czasu. Kluczem do
+    sukcesu jest prawidłowe zastosowanie stylów nagłówków w całym dokumencie
+    jeszcze na etapie pisania pracy. W MS Word dostępne są predefiniowane style:
+    Nagłówek 1, Nagłówek 2, Nagłówek 3, które należy przypisać odpowiednio do
+    rozdziałów, podrozdziałów i punktów. Aby to zrobić, należy zaznaczyć tytuł
+    rozdziału, następnie w zakładce "Narzędzia główne" wybrać odpowiedni styl z
+    galerii stylów. Przed zastosowaniem stylów warto je zmodyfikować zgodnie z
+    wymogami uczelni - kliknąć prawym przyciskiem myszy na wybrany styl, wybrać
+    "Modyfikuj" i ustawić właściwą czcionkę, rozmiar, pogrubienie i wyrównanie.
+  </p>
+
+  <p>
+    Po oznaczeniu wszystkich tytułów odpowiednimi stylami nagłówków, generowanie
+    spisu treści jest bardzo proste. Należy ustawić kursor w miejscu, gdzie ma
+    się znaleźć spis treści (zazwyczaj na drugiej lub trzeciej stronie pracy,
+    zaraz po stronie tytułowej), następnie przejść do zakładki "Odwołania",
+    kliknąć "Spis treści" i wybrać jeden z automatycznych wariantów. Word
+    natychmiast wygeneruje kompletny spis ze wszystkimi tytułami i aktualnymi
+    numerami stron. Spis ten jest interaktywny - przytrzymanie klawisza Ctrl i
+    kliknięcie na dowolny tytuł w spisie przenosi bezpośrednio do odpowiedniego
+    miejsca w dokumencie. Po każdej zmianie w pracy, która wpływa na numerację
+    stron lub tytuły rozdziałów, wystarczy kliknąć prawym przyciskiem myszy na
+    spis treści i wybrać "Aktualizuj pole", a następnie "Aktualizuj cały spis".
+  </p>
+
+  <p>
+    Najczęstsze problemy przy automatycznym generowaniu spisu treści wynikają z
+    nieprawidłowego stosowania stylów nagłówków. Jeśli w spisie brakuje któregoś
+    rozdziału, oznacza to, że jego tytuł nie został oznaczony odpowiednim stylem
+    nagłówka. Jeśli w spisie pojawiają się fragmenty zwykłego tekstu, oznacza
+    to, że przypadkowo zastosowano do nich styl nagłówka. Problem zbyt wielu
+    poziomów w spisie treści rozwiązuje się modyfikując ustawienia spisu - po
+    kliknięciu "Spis treści" należy wybrać "Niestandardowy spis treści" i w polu
+    "Pokaż poziomy" ustawić liczbę 2 lub 3. Aby spis treści nie zajmował zbyt
+    wiele miejsca, można zmniejszyć odstępy między pozycjami, modyfikując style
+    TOC 1, TOC 2 i TOC 3, które kontrolują formatowanie poszczególnych poziomów
+    w spisie.
+  </p>
+
+  <ul>
+    <li>
+      oznacz wszystkie tytuły rozdziałów stylem Nagłówek 1 z zakładki Narzędzia
+      główne
+    </li>
+    <li>podrozdziały oznacz stylem Nagłówek 2, a punkty stylem Nagłówek 3</li>
+    <li>
+      zmodyfikuj style nagłówków aby dostosować czcionkę i formatowanie do
+      wymogów uczelni
+    </li>
+    <li>
+      ustaw kursor w miejscu gdzie ma być spis i wybierz Odwołania → Spis treści
+      → Automatyczny
+    </li>
+    <li>
+      po każdej zmianie w pracy aktualizuj spis klikając prawym przyciskiem →
+      Aktualizuj pole
+    </li>
+    <li>
+      dostosuj wygląd spisu modyfikując opcje w Niestandardowy spis treści
+    </li>
+    <li>
+      sprawdź czy wszystkie tytuły są w spisie i czy numery stron są aktualne
+      przed drukiem
+    </li>
+  </ul>
+
+  <p>
+    W innych edytorach tekstu proces jest podobny, choć szczegóły interfejsu
+    różnią się. W LibreOffice Writer należy użyć stylów Nagłówek 1, 2, 3, a
+    następnie wybrać Wstaw → Spis treści i indeksy → Spis treści, indeksy lub
+    bibliografia. W Google Docs funkcjonalność jest bardziej ograniczona - po
+    zastosowaniu stylów nagłówków należy wybrać Wstaw → Spis treści, ale
+    możliwości formatowania są mniejsze niż w MS Word. LaTeX oferuje
+    najpotężniejsze narzędzia do tworzenia spisów treści poprzez komendę
+    \tableofcontents, która automatycznie generuje spis na podstawie komend
+    \chapter, \section i \subsection, ale wymaga znajomości składni tego języka
+    znaczników. Dla większości studentów MS Word pozostaje optymalnym wyborem ze
+    względu na powszechność, intuicyjność i zgodność z wymaganiami uczelni.
+  </p>
+
+  <h2>Wzór spisu treści pracy magisterskiej z przykładami</h2>
+
+  <p>
+    Poniżej przedstawiamy uniwersalny wzór spisu treści dla typowej pracy
+    magisterskiej o charakterze badawczym, który można dostosować do specyfiki
+    różnych kierunków studiów. Przykładowy spis zawiera wszystkie kluczowe
+    elementy: część teoretyczną składającą się z dwóch rozdziałów, rozdział
+    metodologiczny przedstawiający założenia badawcze oraz rozdział analityczny
+    prezentujący wyniki badań. Taka struktura jest najbardziej powszechna i
+    akceptowana przez większość promotorów na uczelniach humanistycznych,
+    społecznych i ekonomicznych. Numery stron w poniższym wzorze mają charakter
+    przykładowy i będą różnić się w zależności od objętości poszczególnych
+    rozdziałów w konkretnej pracy.
+  </p>
+
+  <p><strong>SPIS TREŚCI</strong></p>
+
+  <p>WSTĘP ..... 5</p>
+
+  <p>
+    <strong
+      >1. TEORETYCZNE PODSTAWY ZARZĄDZANIA ZASOBAMI LUDZKIMI W ORGANIZACJI</strong
+    > ..... 9
+  </p>
+
+  <p>1.1. Istota i zakres zarządzania zasobami ludzkimi ..... 9</p>
+
+  <p>1.2. Funkcje zarządzania zasobami ludzkimi ..... 15</p>
+
+  <p>1.3. Modele zarządzania zasobami ludzkimi ..... 22</p>
+
+  <p>1.4. Współczesne wyzwania w zarządzaniu kapitałem ludzkim ..... 29</p>
+
+  <p>
+    <strong>2. MOTYWOWANIE PRACOWNIKÓW JAKO ELEMENT SYSTEMU ZARZĄDZANIA</strong> .....
+    35
+  </p>
+
+  <p>2.1. Teorie motywacji w miejscu pracy ..... 35</p>
+
+  <p>2.2. Materialne systemy motywacyjne ..... 42</p>
+
+  <p>2.3. Pozapłacowe formy motywowania pracowników ..... 49</p>
+
+  <p>2.4. Rola przywództwa w procesie motywowania zespołu ..... 56</p>
+
+  <p><strong>3. METODOLOGIA BADAŃ WŁASNYCH</strong> ..... 63</p>
+
+  <p>3.1. Cel i problemy badawcze ..... 63</p>
+
+  <p>3.2. Hipotezy badawcze ..... 66</p>
+
+  <p>3.3. Metody i techniki badawcze ..... 68</p>
+
+  <p>3.4. Charakterystyka badanej organizacji i próby badawczej ..... 72</p>
+
+  <p>
+    <strong>4. ANALIZA SYSTEMU MOTYWOWANIA W BADANYM PRZEDSIĘBIORSTWIE</strong> .....
+    77
+  </p>
+
+  <p>4.1. Diagnoza obecnego systemu motywacyjnego ..... 77</p>
+
+  <p>4.2. Ocena efektywności stosowanych narzędzi motywacyjnych ..... 85</p>
+
+  <p>4.3. Identyfikacja potrzeb i oczekiwań pracowników ..... 93</p>
+
+  <p>
+    4.4. Rekomendacje dotyczące doskonalenia systemu motywacyjnego ..... 101
+  </p>
+
+  <p>ZAKOŃCZENIE ..... 108</p>
+
+  <p>BIBLIOGRAFIA ..... 112</p>
+
+  <p>SPIS TABEL ..... 118</p>
+
+  <p>SPIS RYSUNKÓW ..... 119</p>
+
+  <p>ZAŁĄCZNIKI ..... 120</p>
+
+  <p>
+    Prezentowany wzór można dostosować do specyfiki każdej dyscypliny naukowej,
+    zmieniając tytuły rozdziałów i liczbę podrozdziałów. W pracach o charakterze
+    teoretycznym rozdział metodologiczny może być krótszy lub włączony do
+    wstępu, natomiast w pracach empirycznych część badawcza może obejmować
+    więcej rozdziałów analitycznych.
+  </p>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Prawidłowo skonstruowany spis treści pracy magisterskiej to nie tylko wymóg
+    formalny, ale przede wszystkim narzędzie ułatwiające nawigację po dokumencie
+    i świadczące o uporządkowanym sposobie myślenia autora. Jego przygotowanie
+    wymaga staranności, konsekwencji w stosowaniu zasad numeracji oraz dbałości
+    o szczegóły techniczne. Wykorzystanie automatycznych funkcji edytora tekstu
+    znacząco ułatwia pracę i eliminuje ryzyko błędów, zapewniając jednocześnie
+    spójność z treścią pracy.
+  </p>
+
+  <p>
+    Pamiętaj, że spis treści to pierwszy element, który ocenia promotor po
+    przeczytaniu wstępu - jego przejrzystość i logiczność budują pozytywne
+    pierwsze wrażenie i świadczą o profesjonalnym podejściu do pisania pracy
+    magisterskiej.
+  </p>
+</ArticleLayout>

@@ -1,0 +1,541 @@
+---
+// src/pages/poradniki/bibliografia/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+];
+
+const relatedLinks = [
+  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Bibliografia w pracy magisterskiej - poradnik"
+  description="Kompletny poradnik dotyczący tworzenia bibliografii w pracy magisterskiej"
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Bibliografia stanowi nieodzowny element każdej pracy magisterskiej, będący
+    świadectwem rzetelności przeprowadzonych badań oraz umożliwiający
+    czytelnikom weryfikację wykorzystanych źródeł. Prawidłowe sporządzenie
+    bibliografii wymaga nie tylko znajomości obowiązujących norm cytowania, lecz
+    także umiejętności krytycznego doboru materiałów źródłowych oraz
+    konsekwentnego stosowania zasad formatowania. W niniejszym opracowaniu
+    przedstawiono kompleksowe wskazówki dotyczące tworzenia profesjonalnej
+    bibliografii, która spełni najwyższe wymogi akademickie. Omówiono zarówno
+    teoretyczne podstawy konstruowania wykazu literatury, jak i praktyczne
+    aspekty związane z różnorodnymi typami źródeł, stylami cytowania oraz
+    narzędziami wspomagającymi proces zarządzania literaturą przedmiotu.
+  </p>
+
+  <h2>
+    Czym jest bibliografia i dlaczego jest niezbędna w pracy magisterskiej
+  </h2>
+
+  <p>
+    Bibliografia to uporządkowany alfabetycznie wykaz wszystkich źródeł
+    wykorzystanych podczas pisania pracy naukowej. Stanowi ona integralną część
+    struktury pracy magisterskiej, umieszczaną tradycyjnie na jej końcu, tuż
+    przed ewentualnymi załącznikami. Funkcja bibliografii wykracza daleko poza
+    zwykłe wyliczenie przeczytanych publikacji – jest ona dowodem na to, że
+    autor zapoznał się z dorobkiem naukowym w danej dziedzinie oraz oparł swoje
+    rozważania na solidnych podstawach teoretycznych. Bibliografia pełni kilka
+    kluczowych ról w pracy naukowej. Po pierwsze, dokumentuje źródła informacji,
+    pozwalając czytelnikom na zweryfikowanie przytoczonych danych oraz
+    pogłębienie wiedzy na dany temat. Po drugie, chroni autora przed zarzutem
+    plagiatu, jasno wskazując, które fragmenty stanowią cytaty lub parafrazy
+    cudzych myśli. Po trzecie, świadczy o zakresie przeprowadzonej kwerendy
+    bibliotecznej oraz stopniu zaangażowania studenta w proces badawczy.
+  </p>
+
+  <p>
+    Należy wyraźnie odróżnić bibliografię od przypisów, choć oba te elementy są
+    ze sobą ściśle powiązane. Przypisy to objaśnienia umieszczane na dole strony
+    lub na końcu rozdziału, które wskazują konkretne źródło danego cytatu lub
+    informacji. Bibliografia natomiast to kompletny wykaz wszystkich
+    wykorzystanych materiałów, niezależnie od tego, czy zostały bezpośrednio
+    zacytowane w tekście. Każda pozycja wymieniona w przypisach musi znaleźć się
+    w bibliografii, ale nie każda pozycja bibliograficzna musi być cytowana w
+    tekście głównym. Student może bowiem korzystać z literatury pomocniczej,
+    która wpłynęła na jego rozumienie tematu, choć nie została bezpośrednio
+    przywołana.
+  </p>
+
+  <p>
+    Konsekwencje błędów w bibliografii mogą być poważne. Niekompletna
+    bibliografia, zawierająca braki w danych bibliograficznych lub niespójności
+    w formatowaniu, może skutkować obniżeniem oceny końcowej pracy. W skrajnych
+    przypadkach, gdy brakuje istotnych źródeł lub występują nieprawidłowości
+    sugerujące nierzetelność naukową, praca może zostać skierowana do poprawy
+    lub nawet odrzucona. Promotor ocenia bibliografię pod kątem jej
+    kompletności, aktualności wykorzystanych źródeł, różnorodności typów
+    dokumentów oraz poprawności formalnej zapisów. Dlatego tak istotne jest
+    poświęcenie odpowiedniej uwagi temu elementowi pracy już na etapie zbierania
+    materiałów.
+  </p>
+
+  <ul>
+    <li>
+      dokumentowanie rzetelności przeprowadzonych badań i kwerendy literaturowej
+    </li>
+    <li>
+      umożliwienie czytelnikom weryfikacji wykorzystanych informacji oraz źródeł
+      danych
+    </li>
+    <li>
+      ochrona przed zarzutem plagiatu poprzez jasne wskazanie autorstwa
+      poszczególnych koncepcji
+    </li>
+    <li>
+      prezentacja zakresu wiedzy autora oraz jego znajomości literatury
+      przedmiotu
+    </li>
+    <li>
+      ułatwienie innym badaczom odnalezienia cennych publikacji na dany temat
+    </li>
+    <li>spełnienie wymogów formalnych obowiązujących w pracach naukowych</li>
+    <li>
+      budowanie wiarygodności autora jako osoby znającej dorobek naukowy w danej
+      dziedzinie
+    </li>
+  </ul>
+
+  <h2>Style cytowania - APA, Harvard, Chicago i Vancouver</h2>
+
+  <p>
+    Wybór odpowiedniego stylu cytowania stanowi fundamentalną decyzję, którą
+    należy podjąć na początku pracy nad bibliografią. Różne dyscypliny naukowe
+    preferują odmienne systemy, a uczelnie często mają własne wytyczne w tym
+    zakresie. Najważniejsze jest zachowanie konsekwencji – raz wybrany styl musi
+    być stosowany jednolicie w całej pracy. Podstawowe style bibliograficzne
+    różnią się sposobem prezentacji informacji o autorze, roku wydania, tytule
+    publikacji oraz szczegółach wydawniczych. Różnice te mogą wydawać się
+    subtelne, ale mają istotne znaczenie dla przejrzystości i profesjonalizmu
+    pracy. Przed rozpoczęciem pisania należy bezwzględnie sprawdzić wymagania
+    swojej uczelni oraz skonsultować się z promotorem, który może mieć własne
+    preferencje dotyczące stylu cytowania.
+  </p>
+
+  <h3>Styl APA - zasady i przykłady</h3>
+
+  <p>
+    Styl APA, opracowany przez Amerykańskie Towarzystwo Psychologiczne, jest
+    najczęściej stosowany w naukach społecznych, psychologii, pedagogice oraz
+    naukach o zarządzaniu. Charakteryzuje się systemem autor-data, w którym w
+    tekście głównym umieszcza się w nawiasie nazwisko autora oraz rok wydania
+    publikacji. Pełne dane bibliograficzne znajdują się w wykazie literatury na
+    końcu pracy. W stylu APA nazwisko autora podaje się odwrócone, po czym
+    następuje inicjał imienia zakończony kropką. Rok wydania umieszcza się w
+    nawiasie bezpośrednio po nazwisku. Tytuł książki zapisuje się kursywą,
+    natomiast tytuł artykułu czcionką prostą. Istotną cechą stylu APA jest
+    stosowanie wielkiej litery tylko na początku tytułu oraz po dwukropku w
+    przypadku podtytułu. Dla książek podaje się miejsce wydania oraz nazwę
+    wydawnictwa, natomiast dla artykułów z czasopism wskazuje się nazwę
+    periodyku, numer tomu, numer zeszytu oraz zakres stron.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Typ źródła</th>
+        <th>Przykład zapisu w stylu APA</th>
+        <th>Elementy obowiązkowe</th>
+        <th>Uwagi dodatkowe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Książka jednego autora</td>
+        <td
+          >Kowalski, J. (2020). Metodologia badań społecznych. Warszawa: PWN.</td
+        >
+        <td>Autor, rok, tytuł, miejsce, wydawnictwo</td>
+        <td>Tytuł kursywą</td>
+      </tr>
+      <tr>
+        <td>Książka dwóch autorów</td>
+        <td
+          >Nowak, A., & Wiśniewski, P. (2019). Psychologia rozwojowa. Kraków:
+          Impuls.</td
+        >
+        <td>Autorzy połączeni &, rok, tytuł</td>
+        <td>Przecinek przed &</td>
+      </tr>
+      <tr>
+        <td>Rozdział w książce</td>
+        <td
+          >Lewandowski, M. (2021). Teoria uczenia się. W: K. Jankowski (Red.),
+          Pedagogika ogólna (s. 45-67). Gdańsk: GWP.</td
+        >
+        <td>Autor rozdziału, tytuł, redaktor, strony</td>
+        <td>W: poprzedza tytuł książki</td>
+      </tr>
+      <tr>
+        <td>Artykuł w czasopiśmie</td>
+        <td
+          >Kowalczyk, E. (2022). Motywacja w pracy. Psychologia Stosowana,
+          15(3), 123-145.</td
+        >
+        <td>Autor, tytuł, czasopismo, tom, numer, strony</td>
+        <td>Nazwa czasopisma kursywą</td>
+      </tr>
+      <tr>
+        <td>Artykuł online</td>
+        <td
+          >Mazur, T. (2023). Zmiany klimatu. Nauka Polska, 8(2), 78-92.
+          https://doi.org/10.xxxx</td
+        >
+        <td>Standardowe dane + DOI lub URL</td>
+        <td>DOI preferowany nad URL</td>
+      </tr>
+      <tr>
+        <td>Strona internetowa</td>
+        <td
+          >Ministerstwo Edukacji. (2023). Reforma oświaty. Pobrano z:
+          https://www.gov.pl</td
+        >
+        <td>Autor, rok, tytuł, adres URL</td>
+        <td>Data pobrania opcjonalna</td>
+      </tr>
+      <tr>
+        <td>Raport instytucji</td>
+        <td
+          >GUS. (2022). Rocznik statystyczny Polski. Warszawa: Główny Urząd
+          Statystyczny.</td
+        >
+        <td>Instytucja, rok, tytuł, miejsce</td>
+        <td>Instytucja jako autor</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Cytowanie w tekście głównym w stylu APA przybiera różne formy w zależności
+    od kontekstu. Gdy nazwisko autora pojawia się naturalnie w zdaniu, rok
+    podaje się w nawiasie bezpośrednio po nazwisku, na przykład: Kowalski (2020)
+    twierdzi, że motywacja jest kluczowym czynnikiem sukcesu. Gdy autor nie jest
+    wymieniony w zdaniu, zarówno nazwisko, jak i rok umieszcza się w nawiasie na
+    końcu zdania: Motywacja jest kluczowym czynnikiem sukcesu (Kowalski, 2020).
+    W przypadku cytatu dosłownego należy dodatkowo podać numer strony: Według
+    Kowalskiego (2020, s. 45) motywacja stanowi podstawowy mechanizm działania.
+    Dla prac dwóch autorów stosuje się łącznik &, natomiast dla trzech i więcej
+    autorów przy pierwszym cytowaniu wymienia się wszystkich, a przy kolejnych
+    używa skrótu et al.
+  </p>
+
+  <h3>Różnice między stylami - porównanie</h3>
+
+  <p>
+    Porównanie najpopularniejszych stylów bibliograficznych pozwala zrozumieć
+    ich specyfikę oraz wybrać najbardziej odpowiedni dla danej dyscypliny
+    naukowej. Styl Harvard, podobnie jak APA, wykorzystuje system autor-data,
+    ale różni się szczegółami formatowania. W stylu Harvard tytuły książek
+    zapisuje się kursywą, ale stosuje się wielkie litery na początku każdego
+    znaczącego słowa w tytule. Rok wydania może być umieszczony w różnych
+    miejscach opisu, w zależności od przyjętej konwencji. Styl Chicago występuje
+    w dwóch wariantach: system notowy z pełnymi przypisami oraz system
+    autor-data podobny do APA. System notowy Chicago jest popularny w naukach
+    humanistycznych i wymaga szczegółowych przypisów dolnych lub końcowych. Styl
+    Vancouver, stosowany głównie w naukach medycznych i przyrodniczych, opiera
+    się na numeracji kolejnych źródeł w tekście, a w bibliografii źródła są
+    uporządkowane według kolejności ich pojawienia się w pracy, nie
+    alfabetycznie.
+  </p>
+
+  <ul>
+    <li>
+      różnice w zapisie nazwiska autora – odwrócone lub naturalne, z inicjałami
+      lub pełnymi imionami
+    </li>
+    <li>
+      odmienne umiejscowienie roku wydania – po nazwisku, na końcu opisu lub w
+      nawiasie
+    </li>
+    <li>
+      zróżnicowane formatowanie tytułów – kursywa, cudzysłów, wielkie lub małe
+      litery
+    </li>
+    <li>
+      różne sposoby prezentacji wydawnictwa – pełna nazwa, skrót lub bez
+      wydawnictwa
+    </li>
+    <li>
+      odmienne systemy cytowania w tekście – autor-data, numery lub przypisy
+      dolne
+    </li>
+    <li>
+      zróżnicowana interpunkcja – kropki, przecinki, dwukropki w różnych
+      miejscach
+    </li>
+    <li>
+      różne wymagania dotyczące elementów opcjonalnych – ISBN, DOI, liczba stron
+    </li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Styl APA</th>
+        <th>Styl Harvard</th>
+        <th>Styl Chicago</th>
+        <th>Styl Vancouver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dyscypliny</td>
+        <td>Psychologia, nauki społeczne</td>
+        <td>Nauki społeczne, ekonomia</td>
+        <td>Historia, humanistyka</td>
+        <td>Medycyna, nauki przyrodnicze</td>
+      </tr>
+      <tr>
+        <td>System cytowania</td>
+        <td>Autor-data</td>
+        <td>Autor-data</td>
+        <td>Przypisy lub autor-data</td>
+        <td>Numeracja kolejna</td>
+      </tr>
+      <tr>
+        <td>Rok w opisie</td>
+        <td>Po nazwisku w nawiasie</td>
+        <td>Po nazwisku lub na końcu</td>
+        <td>Na końcu opisu</td>
+        <td>Po tytule czasopisma</td>
+      </tr>
+      <tr>
+        <td>Tytuł książki</td>
+        <td>Kursywa, mała litera</td>
+        <td>Kursywa, wielkie litery</td>
+        <td>Kursywa, wielkie litery</td>
+        <td>Czcionka prosta</td>
+      </tr>
+      <tr>
+        <td>Inicjały imion</td>
+        <td>Po nazwisku</td>
+        <td>Po nazwisku</td>
+        <td>Przed nazwiskiem</td>
+        <td>Po nazwisku</td>
+      </tr>
+      <tr>
+        <td>Kolejność w bibliografii</td>
+        <td>Alfabetyczna</td>
+        <td>Alfabetyczna</td>
+        <td>Alfabetyczna</td>
+        <td>Numeryczna</td>
+      </tr>
+      <tr>
+        <td>Miejsce wydania</td>
+        <td>Wymagane</td>
+        <td>Wymagane</td>
+        <td>Wymagane</td>
+        <td>Opcjonalne</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Jak prawidłowo formatować różne typy źródeł</h2>
+
+  <p>
+    Różnorodność źródeł wykorzystywanych w pracach magisterskich wymaga
+    znajomości specyficznych zasad formatowania dla każdego typu dokumentu.
+    Podstawowe kategorie to wydawnictwa zwarte, czyli książki w różnych
+    wariantach, wydawnictwa ciągłe, obejmujące artykuły z czasopism i gazet,
+    oraz źródła elektroniczne, które zyskują coraz większe znaczenie w erze
+    cyfryzacji. Każdy typ źródła charakteryzuje się odmiennymi elementami, które
+    należy uwzględnić w opisie bibliograficznym. Dla książek istotne są dane o
+    autorze, tytule, wydawnictwie, miejscu i roku wydania. Dla artykułów
+    kluczowe znaczenie ma nazwa czasopisma, numer tomu i zeszytu oraz zakres
+    stron. Źródła elektroniczne wymagają dodatkowych informacji o adresie URL
+    lub identyfikatorze DOI oraz dacie dostępu.
+  </p>
+
+  <p>
+    Książki jednego autora stanowią najprostszy przypadek opisu
+    bibliograficznego. Schemat obejmuje nazwisko i inicjał imienia autora, rok
+    wydania, tytuł książki, miejsce wydania oraz nazwę wydawnictwa. Książki
+    wielu autorów wymagają wymienienia wszystkich twórców, przy czym konwencje
+    różnią się w zależności od stylu – niektóre wymagają wymieniania wszystkich
+    autorów, inne pozwalają na skrót et al. po pierwszym autorze, gdy autorów
+    jest więcej niż trzech. Publikacje zbiorowe pod redakcją wymagają oznaczenia
+    redaktora skrótem Red. lub Ed. Rozdziały w pracach zbiorowych opisuje się
+    wskazując najpierw autora rozdziału, jego tytuł, a następnie poprzedzając
+    dane o całej książce wyrażeniem W: lub In:. Istotne jest również podanie
+    zakresu stron, na których znajduje się dany rozdział.
+  </p>
+
+  <ul>
+    <li>
+      książki jednego autora – najprostsza forma z pełnymi danymi wydawniczymi
+    </li>
+    <li>
+      książki wielu autorów – wymienienie wszystkich twórców lub zastosowanie
+      skrótu et al.
+    </li>
+    <li>
+      prace pod redakcją – oznaczenie osoby redagującej odpowiednim skrótem
+    </li>
+    <li>
+      rozdziały w monografiach – wskazanie autora rozdziału oraz danych całej
+      książki
+    </li>
+    <li>
+      artykuły z czasopism naukowych – nazwa periodyku, tom, numer, strony
+    </li>
+    <li>artykuły z gazet – tytuł gazety, data wydania, numer strony</li>
+    <li>
+      źródła internetowe – URL lub DOI, data dostępu, tytuł strony lub dokumentu
+    </li>
+  </ul>
+
+  <p>
+    Artykuły z czasopism naukowych wymagają szczególnej precyzji w podawaniu
+    danych. Oprócz standardowych informacji o autorze i tytule artykułu,
+    konieczne jest wskazanie pełnej nazwy czasopisma, numeru tomu, numeru
+    zeszytu oraz dokładnego zakresu stron. W przypadku czasopism elektronicznych
+    należy dodatkowo podać identyfikator DOI, jeśli jest dostępny, lub adres
+    URL. Artykuły z gazet codziennych formatuje się nieco inaczej, podając datę
+    wydania zamiast numeru tomu oraz wskazując sekcję gazety, jeśli jest to
+    istotne. Materiały konferencyjne, raporty techniczne i inne dokumenty
+    specjalistyczne mają własne konwencje opisu, które należy dostosować do
+    przyjętego stylu bibliograficznego. Kluczowe jest zapewnienie, że czytelnik
+    będzie w stanie jednoznacznie zidentyfikować i odnaleźć każde przywołane
+    źródło.
+  </p>
+
+  <h2>Narzędzia do zarządzania bibliografią</h2>
+
+  <p>
+    Współczesne oprogramowanie do zarządzania bibliografią znacząco ułatwia
+    proces gromadzenia, organizowania i formatowania źródeł. Programy takie jak
+    Zotero, Mendeley, EndNote czy RefWorks automatyzują wiele żmudnych zadań,
+    pozwalając studentom skupić się na merytorycznej pracy nad tekstem.
+    Narzędzia te oferują funkcje importowania danych bibliograficznych
+    bezpośrednio z baz naukowych, automatycznego generowania cytatów w wybranym
+    stylu oraz tworzenia bibliografii końcowej zgodnej z wymogami uczelni.
+    Integracja z edytorami tekstu, takimi jak Microsoft Word czy LibreOffice,
+    umożliwia wstawianie cytatów podczas pisania oraz automatyczną aktualizację
+    bibliografii przy dodawaniu nowych źródeł. Większość programów oferuje
+    również funkcje synchronizacji w chmurze, co pozwala na pracę z różnych
+    urządzeń oraz współdzielenie bibliotek z innymi użytkownikami.
+  </p>
+
+  <p>
+    Zotero to darmowe narzędzie open source, które cieszy się dużą popularnością
+    wśród studentów i naukowców. Program działa jako wtyczka do przeglądarki
+    internetowej, umożliwiając zapisywanie źródeł jednym kliknięciem podczas
+    przeglądania katalogów bibliotecznych lub baz naukowych. Zotero
+    automatycznie pobiera metadane publikacji, a użytkownik może je następnie
+    edytować i organizować w kolekcje tematyczne. Program obsługuje ponad osiem
+    tysięcy stylów bibliograficznych, w tym wszystkie popularne standardy
+    akademickie. Mendeley to kolejne popularne rozwiązanie, oferujące dodatkowo
+    funkcje społecznościowe, takie jak możliwość śledzenia publikacji innych
+    badaczy oraz odkrywania nowych artykułów na podstawie własnych
+    zainteresowań. EndNote, choć płatny, jest standardem w wielu instytucjach
+    naukowych i oferuje zaawansowane funkcje zarządzania dużymi bibliotekami
+    oraz współpracy zespołowej.
+  </p>
+
+  <ul>
+    <li>
+      automatyczny import danych bibliograficznych z baz naukowych i katalogów
+      bibliotecznych
+    </li>
+    <li>organizacja źródeł w kolekcje tematyczne i foldery projektowe</li>
+    <li>
+      generowanie cytatów i bibliografii w setkach różnych stylów
+      bibliograficznych
+    </li>
+    <li>
+      integracja z edytorami tekstu umożliwiająca wstawianie cytatów podczas
+      pisania
+    </li>
+    <li>
+      synchronizacja bibliotek w chmurze zapewniająca dostęp z różnych urządzeń
+    </li>
+    <li>
+      możliwość przechowywania i adnotowania plików PDF artykułów i książek
+    </li>
+    <li>funkcje współpracy zespołowej przy wspólnych projektach badawczych</li>
+  </ul>
+
+  <p>
+    Microsoft Word posiada wbudowane narzędzia do zarządzania źródłami, dostępne
+    w zakładce Bibliografia. Funkcja ta pozwala na dodawanie nowych źródeł
+    poprzez wypełnienie formularza z polami dla różnych typów dokumentów. Po
+    wprowadzeniu danych, można wstawiać cytaty w tekście oraz automatycznie
+    generować bibliografię końcową w wybranym stylu. Choć funkcjonalność ta jest
+    mniej zaawansowana niż w dedykowanych programach, może być wystarczająca dla
+    mniejszych projektów. Istotną zaletą jest natywna integracja z edytorem,
+    eliminująca potrzebę instalowania dodatkowego oprogramowania. Dla prac
+    wymagających większej liczby źródeł lub częstych zmian stylu cytowania,
+    zaleca się jednak korzystanie z profesjonalnych narzędzi bibliograficznych,
+    które oferują większą elastyczność i automatyzację.
+  </p>
+
+  <h2>Najczęstsze błędy i jak ich unikać</h2>
+
+  <p>
+    Analiza prac dyplomowych wskazuje na powtarzające się błędy w tworzeniu
+    bibliografii, które mogą negatywnie wpłynąć na ocenę końcową. Najczęstszym
+    problemem jest niekompletność danych bibliograficznych – brakujące
+    informacje o miejscu wydania, roku publikacji lub numerach stron. Studenci
+    często pomijają również istotne elementy, takie jak nazwiska redaktorów w
+    pracach zbiorowych czy numery tomów w czasopismach. Innym powszechnym błędem
+    jest niespójność w formatowaniu poszczególnych pozycji. Jeśli student
+    rozpoczyna bibliografię stosując jeden styl, musi go konsekwentnie utrzymać
+    we wszystkich pozycjach. Mieszanie konwencji, na przykład stosowanie różnych
+    systemów zapisu imion autorów lub odmiennych zasad interpunkcji, świadczy o
+    niedbałości i może być surowo ocenione przez promotora.
+  </p>
+
+  <p>
+    Problemy z polskimi znakami diakrytycznymi stanowią kolejne wyzwanie,
+    szczególnie gdy źródła są importowane z zagranicznych baz danych. Nazwiska
+    polskich autorów muszą być zapisane z prawidłowymi ogonkami i kreskami,
+    podobnie jak tytuły polskojęzycznych publikacji. Błędy w tym zakresie nie
+    tylko są rażące wizualnie, ale mogą również utrudnić odnalezienie źródła
+    przez czytelników. Studenci często zapominają również o aktualizacji
+    bibliografii po wprowadzeniu zmian w tekście głównym. Jeśli cytowane źródło
+    zostało usunięte z pracy, musi również zniknąć z bibliografii. Odwrotna
+    sytuacja – obecność w bibliografii pozycji, które nie zostały przywołane w
+    tekście – jest również nieprawidłowa, choć niektóre uczelnie dopuszczają
+    wyodrębnienie literatury przedmiotu od literatury cytowanej.
+  </p>
+
+  <p>
+    Weryfikacja bibliografii przed oddaniem pracy powinna obejmować kilka
+    kluczowych aspektów. Po pierwsze, należy sprawdzić kompletność każdej
+    pozycji, upewniając się, że zawiera wszystkie wymagane elementy zgodnie z
+    przyjętym stylem. Po drugie, trzeba zweryfikować poprawność zapisu nazwisk,
+    tytułów i danych wydawniczych, najlepiej porównując je z oryginalnymi
+    źródłami. Po trzecie, konieczne jest sprawdzenie spójności formatowania –
+    czy wszystkie pozycje są zapisane według tych samych zasad interpunkcji,
+    kapitalizacji i kolejności elementów. Po czwarte, warto porównać
+    bibliografię z przypisami lub cytatami w tekście, upewniając się, że każde
+    przywołane źródło znajduje się w wykazie końcowym. Pomocne może być również
+    skorzystanie z automatycznych narzędzi do sprawdzania bibliografii lub
+    poproszenie kolegę o przejrzenie wykazu świeżym okiem.
+  </p>
+
+  <p>
+    Prawidłowo sporządzona bibliografia to fundament wiarygodności każdej pracy
+    magisterskiej. Inwestycja czasu w systematyczne gromadzenie źródeł od
+    początku procesu pisania, konsekwentne stosowanie wybranego stylu cytowania
+    oraz regularne weryfikowanie poprawności danych zaowocuje profesjonalnym
+    dokumentem spełniającym najwyższe standardy akademickie. Pamiętaj o
+    regularnych konsultacjach z promotorem, który może wskazać specyficzne
+    wymagania Twojej uczelni lub kierunku studiów. Korzystaj z dostępnych
+    narzędzi informatycznych, ale nie polegaj wyłącznie na automatyzacji –
+    ostateczna weryfikacja powinna zawsze odbywać się ręcznie. Bibliografia to
+    nie tylko formalny wymóg, ale dowód Twojej rzetelności naukowej oraz
+    szacunku dla pracy innych badaczy, na której oparłeś własne rozważania.
+  </p>
+</ArticleLayout>

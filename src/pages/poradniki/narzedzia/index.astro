@@ -1,0 +1,426 @@
+---
+// src/pages/poradniki/narzedzia/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+];
+
+const relatedLinks = [
+  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Narzędzia, programy i aplikacje do pisania pracy magisterskiej - z czego korzystać?"
+  description="Kompletny poradnik dotyczący korzystania z aplikacji, programów i narzędzia do pisania pracy mgr"
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Pisanie pracy magisterskiej to złożony proces, który wymaga nie tylko wiedzy
+    merytorycznej, ale także odpowiedniego wsparcia technologicznego.
+    Współczesny student ma do dyspozycji szereg zaawansowanych narzędzi, które
+    mogą znacząco usprawnić pracę nad tekstem dyplomowym. Właściwie dobrane
+    oprogramowanie pozwala zaoszczędzić dziesiątki godzin, które w przeciwnym
+    razie zostałyby poświęcone na żmudne formatowanie, ręczne tworzenie
+    bibliografii czy chaotyczne gromadzenie materiałów źródłowych. Nowoczesne
+    aplikacje oferują kompleksowe wsparcie na każdym etapie pisania - od
+    wstępnej organizacji pomysłów, przez redagowanie i formatowanie tekstu, aż
+    po finalne sprawdzenie poprawności i oryginalności pracy. W tym artykule
+    przedstawiamy sprawdzone narzędzia, które pomogą Ci efektywnie przejść przez
+    wszystkie fazy tworzenia pracy magisterskiej, minimalizując stres i
+    maksymalizując jakość końcowego rezultatu.
+  </p>
+
+  <h2>Edytory tekstu i programy do formatowania pracy magisterskiej</h2>
+
+  <p>
+    Wybór odpowiedniego edytora tekstu to fundamentalna decyzja, która wpłynie
+    na cały proces pisania pracy magisterskiej. Microsoft Word pozostaje
+    najpopularniejszym rozwiązaniem wśród studentów polskich uczelni, głównie ze
+    względu na powszechną znajomość interfejsu oraz pełną kompatybilność z
+    wymaganiami większości promotorów. Program oferuje zaawansowane funkcje
+    automatycznego formatowania, w tym style nagłówków, automatyczną numerację
+    rozdziałów i podrozdziałów, generowanie spisów treści oraz wstawianie
+    przypisów dolnych i końcowych. Szczególnie przydatna jest funkcja śledzenia
+    zmian, która ułatwia współpracę z promotorem i pozwala na przejrzyste
+    dokumentowanie kolejnych wersji pracy. Word umożliwia także tworzenie
+    szablonów dostosowanych do wymagań konkretnej uczelni, co eliminuje
+    konieczność wielokrotnego ustawiania tych samych parametrów formatowania.
+  </p>
+
+  <p>
+    LibreOffice Writer stanowi doskonałą bezpłatną alternatywę dla komercyjnego
+    Worda. Ten otwarty edytor tekstu oferuje niemal identyczne funkcjonalności,
+    włączając w to zaawansowane narzędzia do formatowania akademickiego. Writer
+    radzi sobie znakomicie z długimi dokumentami, obsługuje style i szablony, a
+    także posiada wbudowane narzędzia do tworzenia bibliografii. Jedyną istotną
+    różnicą może być nieco odmienny interfejs oraz sporadyczne problemy z
+    kompatybilnością formatowania przy wymianie plików z użytkownikami Worda.
+    Google Docs z kolei rewolucjonizuje sposób pracy nad dokumentami poprzez
+    chmurowe przechowywanie i możliwość edycji w czasie rzeczywistym. To
+    rozwiązanie sprawdza się idealnie, gdy potrzebujesz dostępu do pracy z
+    różnych urządzeń lub chcesz łatwo udostępnić dokument promotorowi do
+    komentowania. Automatyczne zapisywanie zmian eliminuje ryzyko utraty danych,
+    a historia wersji pozwala cofnąć się do dowolnego wcześniejszego stanu
+    dokumentu.
+  </p>
+
+  <p>
+    LaTeX to wybór dla studentów kierunków ścisłych, którzy cenią perfekcyjną
+    typografię i mają w pracy wiele wzorów matematycznych. System ten wymaga
+    nauki specjalnej składni, ale w zamian oferuje niespotykaną precyzję
+    formatowania i automatyzację wielu procesów. LaTeX doskonale radzi sobie z
+    numeracją równań, tworzeniem złożonych tabel i wykresów oraz generowaniem
+    profesjonalnie wyglądających bibliografii. Dokumenty tworzone w LaTeX-u
+    wyróżniają się profesjonalnym wyglądem i są standardem w publikacjach
+    naukowych z dziedzin matematyki, fizyki czy informatyki. Dla osób
+    rozpoczynających przygodę z tym systemem dostępne są przyjazne edytory
+    graficzne jak Overleaf, które znacznie ułatwiają naukę i pracę.
+  </p>
+
+  <ul>
+    <li>
+      Microsoft Word - najpopularniejszy edytor z pełnym wsparciem dla polskich
+      norm akademickich i szeroką gamą szablonów
+    </li>
+    <li>
+      LibreOffice Writer - darmowa alternatywa oferująca porównywalne możliwości
+      bez ograniczeń licencyjnych
+    </li>
+    <li>
+      Google Docs - idealne rozwiązanie do współpracy online z automatycznym
+      zapisywaniem i dostępem z każdego urządzenia
+    </li>
+    <li>
+      LaTeX - profesjonalny system składu dla prac zawierających złożone wzory
+      matematyczne i wymagających najwyższej jakości typografii
+    </li>
+    <li>
+      Overleaf - przyjazny edytor online dla LaTeX-a umożliwiający współpracę i
+      eliminujący problemy z instalacją
+    </li>
+  </ul>
+
+  <p>
+    Przy wyborze edytora warto uwzględnić wymagania swojej uczelni oraz
+    charakter pisanej pracy. Jeśli promotor wymaga plików w formacie .docx,
+    wybór jest oczywisty. Dla prac humanistycznych i społecznych Word lub
+    LibreOffice będą najwygodniejsze, podczas gdy dla prac technicznych warto
+    rozważyć LaTeX. Niezależnie od wyboru, kluczowe jest opanowanie
+    zaawansowanych funkcji wybranego narzędzia - inwestycja czasu w naukę
+    obsługi stylów, szablonów i automatyzacji zwróci się wielokrotnie podczas
+    pisania pracy.
+  </p>
+
+  <h2>Programy do zarządzania bibliografią i przypisami</h2>
+
+  <p>
+    Zarządzanie źródłami bibliograficznymi to jeden z najbardziej czasochłonnych
+    aspektów pisania pracy magisterskiej. Manualne tworzenie bibliografii i
+    przypisów jest nie tylko żmudne, ale także podatne na błędy - literówki w
+    nazwiskach autorów, błędna kolejność elementów opisu czy niespójność
+    formatowania mogą skutkować uwagami podczas obrony. Profesjonalne menedżery
+    bibliografii rozwiązują te problemy, automatyzując proces gromadzenia,
+    organizowania i cytowania źródeł. Zotero to jedno z najpopularniejszych
+    darmowych narzędzi tego typu, oferujące intuicyjny interfejs i szeroką
+    funkcjonalność. Program pozwala na błyskawiczne zapisywanie źródeł
+    bezpośrednio z przeglądarki internetowej - wystarczy jedno kliknięcie, aby
+    dodać do biblioteki artykuł naukowy, książkę czy stronę internetową wraz z
+    wszystkimi metadanymi. Zotero automatycznie pobiera informacje o autorach,
+    tytule, dacie publikacji i innych szczegółach, eliminując konieczność
+    ręcznego przepisywania.
+  </p>
+
+  <p>
+    Mendeley to kolejne zaawansowane narzędzie, które łączy funkcje menedżera
+    bibliografii z czytnikiem PDF i platformą społecznościową dla naukowców.
+    Program umożliwia nie tylko gromadzenie i organizowanie źródeł, ale także
+    ich adnotowanie - możesz podkreślać fragmenty, dodawać notatki i tworzyć
+    własne komentarze bezpośrednio w plikach PDF. Szczególnie przydatna jest
+    funkcja automatycznego wyodrębniania metadanych z plików PDF - po prostu
+    przeciągasz plik do programu, a Mendeley sam rozpoznaje tytuł, autorów i
+    inne dane bibliograficzne. Aplikacja oferuje także synchronizację w chmurze,
+    dzięki czemu Twoja biblioteka jest dostępna na wszystkich urządzeniach.
+    EndNote, choć płatny, jest standardem w wielu instytucjach akademickich i
+    oferuje najbogatszy zestaw funkcji, w tym zaawansowane narzędzia do
+    współpracy zespołowej i integrację z bazami danych naukowymi.
+  </p>
+
+  <p>
+    Kluczową zaletą tych programów jest integracja z edytorami tekstu. Po
+    zainstalowaniu wtyczki do Worda lub LibreOffice możesz wstawiać cytowania
+    bezpośrednio podczas pisania - wystarczy wybrać źródło z biblioteki, a
+    program automatycznie utworzy przypis lub cytowanie w tekście oraz doda
+    pozycję do bibliografii. Co więcej, jeśli promotor poprosi o zmianę stylu
+    cytowania (np. z APA na Chicago), wystarczy jedno kliknięcie, aby
+    automatycznie przeformatować wszystkie cytowania i bibliografię w całym
+    dokumencie. To oszczędza dosłownie godziny pracy i eliminuje ryzyko pomyłek.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Program</th>
+        <th>Cena</th>
+        <th>Główne zalety</th>
+        <th>Najlepszy dla</th>
+        <th>Integracja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Zotero</td>
+        <td>Darmowy</td>
+        <td>Prosty interfejs, wtyczka do przeglądarki, open source</td>
+        <td>Początkujących i studentów humanistyki</td>
+        <td>Word, LibreOffice, Google Docs</td>
+      </tr>
+      <tr>
+        <td>Mendeley</td>
+        <td>Darmowy</td>
+        <td>Czytnik PDF, adnotacje, sieć społecznościowa</td>
+        <td>Studentów nauk przyrodniczych</td>
+        <td>Word, LibreOffice</td>
+      </tr>
+      <tr>
+        <td>EndNote</td>
+        <td>Płatny (licencja uczelni)</td>
+        <td>Najbogatsze funkcje, wsparcie techniczne</td>
+        <td>Zaawansowanych użytkowników</td>
+        <td>Word, pełna integracja</td>
+      </tr>
+      <tr>
+        <td>Citavi</td>
+        <td>Płatny</td>
+        <td>Organizacja wiedzy, planowanie</td>
+        <td>Projektów badawczych</td>
+        <td>Word</td>
+      </tr>
+      <tr>
+        <td>JabRef</td>
+        <td>Darmowy</td>
+        <td>Dedykowany dla BibTeX</td>
+        <td>Użytkowników LaTeX</td>
+        <td>LaTeX, BibTeX</td>
+      </tr>
+      <tr>
+        <td>Paperpile</td>
+        <td>Płatny</td>
+        <td>Integracja z Google Scholar</td>
+        <td>Użytkowników Google Docs</td>
+        <td>Google Docs, Word</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Jak wybrać odpowiedni menedżer bibliografii?</h3>
+
+  <p>
+    Wybór narzędzia do zarządzania bibliografią powinien uwzględniać kilka
+    kluczowych czynników. Po pierwsze, sprawdź wymagania swojej uczelni i
+    promotora - niektóre instytuty preferują konkretne programy lub style
+    cytowania. Po drugie, weź pod uwagę dziedzinę nauki - studenci nauk ścisłych
+    często wybierają Mendeley ze względu na doskonałą obsługę publikacji
+    naukowych, podczas gdy humaniści doceniają prostotę Zotero. Po trzecie,
+    zastanów się nad długoterminowym wykorzystaniem - jeśli planujesz karierę
+    naukową, warto zainwestować czas w naukę bardziej zaawansowanego narzędzia.
+    Większość programów oferuje darmowe wersje próbne, więc najlepiej
+    przetestować kilka opcji przed podjęciem decyzji. Pamiętaj, że zmiana
+    programu w trakcie pisania pracy jest możliwa, ale kłopotliwa, dlatego warto
+    wybrać odpowiednie narzędzie na samym początku.
+  </p>
+
+  <h2>Aplikacje do organizacji pracy i zarządzania czasem</h2>
+
+  <p>
+    Pisanie pracy magisterskiej to projekt rozciągnięty w czasie, wymagający
+    systematyczności i dobrej organizacji. Bez odpowiedniego planowania łatwo o
+    prokrastynację, chaos w materiałach i stresujący pośpiech w ostatnich
+    tygodniach przed terminem oddania. Narzędzia do zarządzania projektami
+    pomagają uporządkować proces pisania, podzielić go na mniejsze, osiągalne
+    etapy i śledzić postępy. Trello to wizualne narzędzie oparte na metodologii
+    Kanban, które pozwala tworzyć tablice z listami zadań. Możesz stworzyć
+    osobne listy dla różnych etapów pracy - "Do zrobienia", "W trakcie", "Do
+    sprawdzenia przez promotora", "Ukończone" - i przesuwać karty zadań między
+    nimi w miarę postępów. Każda karta może zawierać szczegółowy opis zadania,
+    termin wykonania, załączniki, listę kontrolną podpunktów oraz komentarze. To
+    idealne rozwiązanie dla osób myślących wizualnie, które lubią mieć przegląd
+    całego projektu na jednym ekranie.
+  </p>
+
+  <p>
+    Notion to wszechstronne narzędzie łączące funkcje notatnika, bazy danych,
+    kalendarza i menedżera zadań. Możesz w nim stworzyć kompleksowy system do
+    zarządzania pracą magisterską - od gromadzenia notatek z literatury, przez
+    planowanie rozdziałów, aż po śledzenie postępów w pisaniu. Notion pozwala
+    tworzyć połączone ze sobą strony, dzięki czemu łatwo organizujesz wiedzę i
+    szybko nawigujesz między różnymi częściami projektu. Możesz stworzyć bazę
+    danych przeczytanych artykułów ze streszczeniami i cytatami, kalendarz z
+    terminami spotkań z promotorem, listę zadań do wykonania oraz osobne strony
+    dla każdego rozdziału pracy. Elastyczność Notion sprawia, że możesz
+    dostosować narzędzie do swojego indywidualnego stylu pracy. Evernote to
+    klasyk wśród aplikacji do notowania, oferujący potężne możliwości
+    gromadzenia i organizowania informacji. Możesz zapisywać notatki tekstowe,
+    zdjęcia, nagrania audio, wycinki ze stron internetowych i dokumenty w jednym
+    miejscu, a następnie organizować je w notatniki i oznaczać tagami.
+  </p>
+
+  <p>
+    Todoist to minimalistyczny menedżer zadań, który sprawdza się idealnie do
+    codziennego planowania pracy nad magisterką. Możesz tworzyć projekty,
+    zadania i podzadania, ustawiać priorytety, terminy i przypomnienia.
+    Aplikacja oferuje także funkcję "produktywności", która wizualizuje Twoje
+    postępy i motywuje do systematycznej pracy. Integracja z kalendarzem Google
+    pozwala synchronizować zadania z innymi zobowiązaniami. Technika Pomodoro,
+    polegająca na pracy w 25-minutowych interwałach przedzielonych krótkimi
+    przerwami, świetnie sprawdza się przy pisaniu pracy dyplomowej. Aplikacje
+    typu Pomodoro Timer (dostępne na wszystkich platformach) pomagają utrzymać
+    koncentrację i zapobiegają wypaleniu. Regularne przerwy zwiększają
+    produktywność i pomagają utrzymać świeży umysł przez cały dzień pracy.
+  </p>
+
+  <ul>
+    <li>
+      Trello - wizualna organizacja zadań metodą Kanban z możliwością współpracy
+      i integracją z innymi narzędziami
+    </li>
+    <li>
+      Notion - kompleksowy system do zarządzania wiedzą łączący notatki, bazy
+      danych i planowanie
+    </li>
+    <li>
+      Asana - zaawansowane zarządzanie projektami z harmonogramami,
+      zależnościami między zadaniami i raportami postępów
+    </li>
+    <li>
+      Evernote - potężne narzędzie do gromadzenia i organizowania notatek z
+      różnych źródeł
+    </li>
+    <li>
+      Todoist - prosty menedżer zadań z funkcjami produktywności i integracją z
+      kalendarzem
+    </li>
+    <li>
+      Forest - aplikacja gamifikująca koncentrację poprzez "sadzone drzew"
+      podczas pracy bez rozpraszania
+    </li>
+    <li>
+      RescueTime - automatyczne śledzenie czasu spędzanego przy komputerze i
+      analiza produktywności
+    </li>
+  </ul>
+
+  <h2>Narzędzia pomocnicze - sprawdzanie tekstu i współpraca</h2>
+
+  <p>
+    Jakość językowa pracy magisterskiej ma fundamentalne znaczenie dla jej
+    odbioru. Błędy ortograficzne, gramatyczne czy stylistyczne mogą zepsuć
+    wrażenie nawet najlepszej merytorycznie pracy. LanguageTool to zaawansowane
+    narzędzie do sprawdzania poprawności języka polskiego, oferujące znacznie
+    więcej niż standardowy korektor w Wordzie. Program wykrywa nie tylko
+    oczywiste błędy ortograficzne, ale także pomyłki gramatyczne, błędy
+    interpunkcyjne, niefortunne sformułowania i powtórzenia. LanguageTool
+    dostępny jest jako rozszerzenie do przeglądarki, wtyczka do edytorów tekstu
+    oraz aplikacja desktopowa. Wersja darmowa oferuje podstawowe funkcje,
+    podczas gdy płatna wersja Premium zapewnia zaawansowaną analizę stylu i
+    sugestie dotyczące poprawy czytelności tekstu. Narzędzie to jest szczególnie
+    przydatne dla osób, które nie są native speakerami lub mają trudności ze
+    stylistyką akademicką.
+  </p>
+
+  <p>
+    Grammarly, choć pierwotnie stworzony dla języka angielskiego, ma już
+    wsparcie dla polskiego i oferuje kompleksową analizę tekstu. Program nie
+    tylko wskazuje błędy, ale także wyjaśnia zasady gramatyczne i sugeruje
+    alternatywne sformułowania. Funkcja sprawdzania tonu pomoże upewnić się, że
+    Twoja praca brzmi odpowiednio formalnie i akademicko. Plagiat.pl i Turnitin
+    to narzędzia antyplagiatowe, które porównują Twój tekst z milionami
+    dokumentów w internecie i bazach danych akademickich. Sprawdzenie pracy
+    przed oddaniem pozwala upewnić się, że wszystkie cytaty są prawidłowo
+    oznaczone i nie ma przypadkowego plagiatu. Większość uczelni ma dostęp do
+    systemów antyplagiatowych, więc lepiej samodzielnie sprawdzić pracę
+    wcześniej niż dostać nieprzyjemną niespodziankę.
+  </p>
+
+  <p>
+    Microsoft Excel i Google Sheets to niezbędne narzędzia, jeśli Twoja praca
+    zawiera analizę danych liczbowych. Programy te pozwalają nie tylko na
+    organizowanie danych w tabelach, ale także na tworzenie wykresów,
+    wykonywanie obliczeń statystycznych i wizualizację wyników badań. Canva to
+    przyjazne narzędzie do tworzenia profesjonalnie wyglądających grafik,
+    schematów i infografik. Nawet bez umiejętności graficznych możesz stworzyć
+    atrakcyjne wizualizacje, które wzbogacą Twoją pracę. Canva oferuje tysiące
+    szablonów i elementów graficznych, które możesz dostosować do swoich
+    potrzeb. Dropbox, Google Drive i OneDrive to usługi chmurowe, które
+    zapewniają bezpieczne przechowywanie plików i dostęp do nich z dowolnego
+    urządzenia. Regularne tworzenie kopii zapasowych pracy to absolutna
+    konieczność - awaria komputera lub przypadkowe usunięcie pliku tuż przed
+    terminem oddania to koszmar każdego studenta.
+  </p>
+
+  <p>
+    Slack lub Microsoft Teams sprawdzają się doskonale do komunikacji z
+    promotorem, szczególnie gdy pracujesz zdalnie. Możesz szybko wymieniać się
+    wiadomościami, udostępniać pliki i organizować wideokonferencje. Historia
+    konwersacji pozwala łatwo wrócić do wcześniejszych ustaleń i sugestii. Zoom
+    lub Google Meet to standardowe narzędzia do wideokonferencji, niezbędne do
+    zdalnych konsultacji z promotorem. Dobrej jakości połączenie wideo i
+    możliwość udostępniania ekranu pozwalają na efektywne omawianie pracy mimo
+    fizycznego dystansu. Funkcja nagrywania spotkań może być przydatna, jeśli
+    chcesz wrócić do omówionych kwestii. Hemingway Editor to narzędzie
+    analizujące czytelność tekstu i wskazujące zbyt skomplikowane zdania,
+    nadużywanie strony biernej czy trudne sformułowania. Choć stworzony dla
+    języka angielskiego, może być pomocny przy sprawdzaniu fragmentów pracy w
+    języku obcym.
+  </p>
+
+  <h3>Zabezpieczenie pracy przed utratą danych</h3>
+
+  <p>
+    Utrata danych to najgorszy koszmar każdego studenta piszącego pracę
+    magisterską. Awaria dysku twardego, kradzież laptopa, przypadkowe usunięcie
+    pliku czy atak wirusa mogą w sekundę zniszczyć miesiące pracy. Dlatego
+    absolutnie kluczowe jest wdrożenie strategii tworzenia kopii zapasowych.
+    Zasada 3-2-1 mówi, że powinieneś mieć trzy kopie danych, na dwóch różnych
+    nośnikach, z czego jedna poza domem. W praktyce oznacza to: oryginał na
+    komputerze, kopia na zewnętrznym dysku twardym i kopia w chmurze (Dropbox,
+    Google Drive, OneDrive). Synchronizacja plików z chmurą powinna odbywać się
+    automatycznie po każdej zmianie - większość usług oferuje aplikacje
+    desktopowe, które robią to w tle. Warto także regularnie (np. raz w
+    tygodniu) tworzyć kopię zapasową całego folderu z pracą na zewnętrznym
+    dysku. System kontroli wersji, jak Git, może być przydatny dla osób
+    technicznych - pozwala śledzić każdą zmianę w dokumencie i wrócić do
+    dowolnej wcześniejszej wersji. Nawet prosty system numerowania wersji pliku
+    (np. praca_v1.docx, praca_v2.docx, praca_final.docx) pomoże Ci wrócić do
+    wcześniejszej wersji, jeśli coś pójdzie nie tak. Pamiętaj, żeby kopie
+    zapasowe przechowywać w różnych lokalizacjach fizycznych - nie ma sensu
+    trzymać laptopa i dysku zewnętrznego w tej samej torbie, bo kradzież lub
+    zalanie pozbawi Cię obu kopii jednocześnie.
+  </p>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Pisanie pracy magisterskiej to złożony proces, który wymaga nie tylko wiedzy
+    merytorycznej, ale także umiejętnego korzystania z odpowiednich narzędzi.
+    Właściwy dobór programów do edycji tekstu, zarządzania bibliografią,
+    organizacji czasu i zabezpieczenia danych może znacząco ułatwić pracę i
+    pozwolić Ci skupić się na tym, co najważniejsze - na wartości merytorycznej
+    Twojej rozprawy. Pamiętaj, że najlepsze narzędzia to te, które odpowiadają
+    Twoim indywidualnym potrzebom i stylowi pracy. Nie musisz korzystać ze
+    wszystkich opisanych programów - wybierz te, które realnie pomogą Ci w
+    realizacji Twojego projektu.
+  </p>
+
+  <p>
+    Kluczem do sukcesu jest wczesne zapoznanie się z wybranymi narzędziami i
+    konsekwentne ich stosowanie przez cały okres pisania pracy. Inwestycja czasu
+    w naukę obsługi programów na początku zwróci się wielokrotnie w postaci
+    zaoszczędzonego czasu i nerwów w dalszych etapach. Powodzenia w pisaniu!
+  </p>
+</ArticleLayout>
