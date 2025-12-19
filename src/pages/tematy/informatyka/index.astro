@@ -1,0 +1,261 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Informatyka", href: "/kierunki/informatyka/" },
+];
+
+const relatedLinks = [
+  { label: "Jak napisać pracę magisterską", href: "/poradniki/jak-napisac-prace-magisterska/" },
+  { label: "Metodologia badań", href: "/poradniki/metodologia/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+];
+---
+
+<ArticleLayout
+  title="115 tematów prac magisterskich z informatyki - inspiracje 2025"
+  description="Profesjonalne tematy prac magisterskich i inżynierskich z informatyki. Sztuczna inteligencja, machine learning, cyberbezpieczeństwo, aplikacje webowe, bazy danych, IoT i blockchain. Konkretne tematy z implementacją systemów i analizą algorytmów."
+  readingTime="28 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Informatyka to dynamicznie rozwijająca się dziedzina oferująca szeroki wachlarz możliwości badawczych i projektowych. Prace magisterskie z informatyki mogą mieć charakter teoretyczny (analiza algorytmów, złożoność obliczeniowa), implementacyjny (projektowanie i budowa systemów) lub badawczy (eksperymenty, testy wydajnościowe, analiza danych). Wybór tematu wymaga uwzględnienia aktualnych trendów technologicznych, dostępnych narzędzi i frameworków oraz możliwości przeprowadzenia eksperymentów. Poniżej przedstawiamy 115 starannie wyselekcjonowanych tematów, które spełniają wymogi akademickie – są konkretne, wykonalne technicznie i pozwalają na wykazanie się umiejętnościami programistycznymi oraz wiedzą teoretyczną.
+  </p>
+
+  <h2>Sztuczna inteligencja i uczenie maszynowe</h2>
+
+  <p>
+    Sztuczna inteligencja i uczenie maszynowe to obecnie najbardziej dynamicznie rozwijające się obszary informatyki. Prace magisterskie z tego zakresu mogą dotyczyć projektowania i trenowania modeli ML, analizy ich skuteczności lub zastosowań w konkretnych domenach. Badania wymagają znajomości frameworków takich jak TensorFlow, PyTorch lub scikit-learn oraz dostępu do zbiorów danych treningowych.
+  </p>
+
+  <ol>
+    <li>Porównanie skuteczności modeli transformer i LSTM w klasyfikacji sentymentu opinii produktowych w języku polskim</li>
+    <li>System rekomendacji filmów oparty na filtracji kolaboratywnej i content-based z wykorzystaniem deep learning</li>
+    <li>Detekcja anomalii w ruchu sieciowym z wykorzystaniem autoenkoderów i sieci GAN</li>
+    <li>Rozpoznawanie emocji na podstawie analizy mowy z wykorzystaniem sieci konwolucyjnych</li>
+    <li>Automatyczna klasyfikacja dokumentów prawnych z wykorzystaniem modeli BERT fine-tuned na polskim korpusie</li>
+    <li>Predykcja cen akcji na GPW z wykorzystaniem sieci LSTM i analizy sentymentu wiadomości</li>
+    <li>System wykrywania fake newsów w języku polskim oparty na modelach NLP</li>
+    <li>Segmentacja semantyczna obrazów medycznych z wykorzystaniem architektury U-Net</li>
+    <li>Chatbot wspomagający obsługę klienta z wykorzystaniem RAG i large language models</li>
+    <li>Automatyczne generowanie opisów produktów e-commerce z wykorzystaniem GPT fine-tuned</li>
+    <li>Rozpoznawanie mowy polskiej w czasie rzeczywistym z wykorzystaniem modeli Whisper</li>
+    <li>System przewidywania awarii maszyn przemysłowych na podstawie danych IoT z wykorzystaniem ML</li>
+    <li>Detekcja deepfake w materiałach wideo z wykorzystaniem sieci konwolucyjnych</li>
+    <li>Automatyczna ekstrakcja informacji z faktur i dokumentów z wykorzystaniem OCR i NLP</li>
+  </ol>
+
+  <h2>Cyberbezpieczeństwo</h2>
+
+  <p>
+    Cyberbezpieczeństwo to krytyczny obszar informatyki obejmujący ochronę systemów, sieci i danych przed zagrożeniami. Prace magisterskie mogą dotyczyć analizy podatności, projektowania systemów bezpieczeństwa, kryptografii lub wykrywania włamań. Badania wymagają znajomości narzędzi bezpieczeństwa, protokołów sieciowych oraz etyki badań (odpowiedzialne ujawnianie podatności).
+  </p>
+
+  <ol start="15">
+    <li>Analiza skuteczności systemów IDS/IPS w wykrywaniu ataków typu zero-day</li>
+    <li>Implementacja systemu wykrywania phishingu z wykorzystaniem uczenia maszynowego</li>
+    <li>Analiza bezpieczeństwa aplikacji mobilnych na platformie Android – przegląd podatności OWASP Top 10</li>
+    <li>System honeypot do analizy zachowań atakujących w sieciach korporacyjnych</li>
+    <li>Bezpieczeństwo protokołów IoT – analiza podatności MQTT, CoAP i Zigbee</li>
+    <li>Implementacja systemu uwierzytelniania wieloskładnikowego opartego na FIDO2/WebAuthn</li>
+    <li>Analiza i wykrywanie ataków ransomware z wykorzystaniem analizy behawioralnej</li>
+    <li>Bezpieczeństwo smart kontraktów na platformie Ethereum – analiza typowych podatności</li>
+    <li>System automatycznej analizy malware z wykorzystaniem sandboxingu i machine learning</li>
+    <li>Implementacja protokołu zero-knowledge proof do weryfikacji tożsamości bez ujawniania danych</li>
+    <li>Audyt bezpieczeństwa aplikacji webowej – metodologia i narzędzia penetration testing</li>
+    <li>Analiza ataków side-channel na implementacje algorytmów kryptograficznych</li>
+  </ol>
+
+  <h2>Aplikacje webowe i mobilne</h2>
+
+  <p>
+    Projektowanie i implementacja aplikacji webowych i mobilnych to praktyczny obszar informatyki wymagający znajomości współczesnych frameworków i wzorców architektonicznych. Prace magisterskie mogą dotyczyć budowy kompletnych systemów, porównania technologii lub optymalizacji wydajności. Implementacje wykorzystują React, Angular, Vue.js, Node.js, Flutter, React Native i inne technologie.
+  </p>
+
+  <ol start="27">
+    <li>Progresywna aplikacja webowa (PWA) do zarządzania zadaniami z synchronizacją offline-first</li>
+    <li>Porównanie wydajności aplikacji mobilnych natywnych, React Native i Flutter</li>
+    <li>System e-commerce oparty na architekturze mikroserwisowej z wykorzystaniem Docker i Kubernetes</li>
+    <li>Aplikacja webowa do wideokonferencji z wykorzystaniem WebRTC i Node.js</li>
+    <li>System zarządzania treścią (CMS) oparty na headless architecture z Next.js i Strapi</li>
+    <li>Aplikacja mobilna do rozpoznawania roślin z wykorzystaniem TensorFlow Lite</li>
+    <li>Portal społecznościowy z funkcją real-time chat oparty na WebSocket i Redis</li>
+    <li>System rezerwacji online z kalendarzem i płatnościami – architektura i implementacja</li>
+    <li>Aplikacja mobilna fitness tracker z integracją z urządzeniami wearable przez Bluetooth LE</li>
+    <li>Dashboard analityczny z wizualizacją danych w czasie rzeczywistym – React i D3.js</li>
+    <li>Aplikacja do nauki języków obcych z wykorzystaniem spaced repetition i gamifikacji</li>
+    <li>System obsługi pacjentów kliniki z rejestracją online i powiadomieniami SMS</li>
+  </ol>
+
+  <h2>Bazy danych i Big Data</h2>
+
+  <p>
+    Zarządzanie danymi to fundamentalny obszar informatyki obejmujący projektowanie baz danych, przetwarzanie big data oraz analitykę. Prace magisterskie mogą dotyczyć optymalizacji zapytań, porównania systemów bazodanowych lub przetwarzania strumieni danych. Badania wykorzystują SQL, NoSQL, Apache Spark, Kafka i inne technologie big data.
+  </p>
+
+  <ol start="39">
+    <li>Porównanie wydajności baz relacyjnych i NoSQL w aplikacjach e-commerce wysokiego ruchu</li>
+    <li>Implementacja data warehouse z procesem ETL dla systemu analityki sprzedaży</li>
+    <li>Przetwarzanie strumieni danych IoT w czasie rzeczywistym z Apache Kafka i Spark Streaming</li>
+    <li>Optymalizacja zapytań SQL w bazach danych o dużej objętości – indeksy, partycjonowanie, materialized views</li>
+    <li>System rekomendacji oparty na grafowej bazie danych Neo4j</li>
+    <li>Implementacja rozproszonej bazy danych z mechanizmem replikacji i shardingu</li>
+    <li>Data lake dla danych nieustrukturyzowanych z wykorzystaniem Apache Hadoop i Hive</li>
+    <li>Porównanie wydajności MongoDB, Cassandra i PostgreSQL w scenariuszach OLTP i OLAP</li>
+    <li>System cache'owania z Redis dla aplikacji webowej wysokiego ruchu</li>
+    <li>Implementacja mechanizmu wyszukiwania pełnotekstowego z Elasticsearch</li>
+    <li>Automatyzacja pipeline'ów danych z Apache Airflow – projektowanie i monitoring</li>
+    <li>Anonimizacja i pseudonimizacja danych osobowych zgodna z RODO w bazach danych</li>
+  </ol>
+
+  <h2>Internet rzeczy (IoT)</h2>
+
+  <p>
+    Internet rzeczy łączy świat fizyczny z cyfrowym poprzez sieć połączonych urządzeń. Prace magisterskie mogą dotyczyć projektowania systemów IoT, protokołów komunikacyjnych, edge computing lub zastosowań w konkretnych domenach. Implementacje wykorzystują platformy takie jak Arduino, Raspberry Pi, ESP32 oraz protokoły MQTT, CoAP, LoRaWAN.
+  </p>
+
+  <ol start="51">
+    <li>System smart home z automatyzacją opartą na uczeniu maszynowym i analizie wzorców użytkownika</li>
+    <li>Platforma monitoringu środowiskowego z siecią sensorów LoRaWAN i wizualizacją danych</li>
+    <li>System zarządzania flotą pojazdów z GPS tracking i analizą telemetrii</li>
+    <li>Inteligentny system nawadniania ogrodu z predykcją pogody i optymalizacją zużycia wody</li>
+    <li>Edge computing w IoT – przetwarzanie danych na urządzeniach brzegowych z TensorFlow Lite</li>
+    <li>System monitoringu parametrów zdrowotnych z urządzeniami wearable i alertami</li>
+    <li>Platforma Industry 4.0 do monitoringu maszyn przemysłowych z predictive maintenance</li>
+    <li>System kontroli dostępu z wykorzystaniem RFID/NFC i biometrii</li>
+    <li>Inteligentny parking z detekcją wolnych miejsc i nawigacją dla kierowców</li>
+    <li>Sieć sensorów jakości powietrza z mapowaniem i alertami zanieczyszczeń</li>
+    <li>System zarządzania energią w budynku z optymalizacją kosztów i źródłami odnawialnymi</li>
+    <li>Digital twin maszyny przemysłowej – synchronizacja stanu fizycznego i cyfrowego</li>
+  </ol>
+
+  <h2>Blockchain i technologie rozproszone</h2>
+
+  <p>
+    Blockchain to technologia rozproszonego rejestru zapewniająca niezmienność i transparentność danych. Prace magisterskie mogą dotyczyć projektowania smart kontraktów, analizy protokołów konsensusu lub zastosowań poza kryptowalutami. Implementacje wykorzystują Ethereum, Solidity, Hyperledger Fabric oraz narzędzia do testowania.
+  </p>
+
+  <ol start="63">
+    <li>System głosowania elektronicznego oparty na blockchain z weryfikacją tożsamości</li>
+    <li>Platforma śledzenia łańcucha dostaw z wykorzystaniem Hyperledger Fabric</li>
+    <li>Implementacja tokena NFT z marketplace i smart kontraktami na Ethereum</li>
+    <li>Decentralizowana aplikacja (dApp) do crowdfundingu z Solidity i React</li>
+    <li>Analiza skalowalności protokołów konsensusu – PoW, PoS, PBFT, DAG</li>
+    <li>System zarządzania certyfikatami edukacyjnymi na blockchain</li>
+    <li>Implementacja prywatnego blockchaina dla systemu rozliczeń wewnątrzkorporacyjnych</li>
+    <li>DeFi protocol – implementacja zdecentralizowanej giełdy (DEX) na Ethereum</li>
+    <li>System rejestracji własności intelektualnej z timestampingiem na blockchain</li>
+    <li>Analiza bezpieczeństwa smart kontraktów – typowe podatności i metody audytu</li>
+  </ol>
+
+  <h2>Grafika komputerowa i wizualizacja</h2>
+
+  <p>
+    Grafika komputerowa obejmuje renderowanie obrazów, animację, wizualizację danych oraz rzeczywistość wirtualną i rozszerzoną. Prace magisterskie mogą dotyczyć implementacji algorytmów renderowania, silników graficznych lub aplikacji VR/AR. Implementacje wykorzystują OpenGL, Vulkan, Unity, Unreal Engine oraz biblioteki wizualizacyjne.
+  </p>
+
+  <ol start="73">
+    <li>Implementacja silnika ray tracing z globalnym oświetleniem i caustics</li>
+    <li>Aplikacja AR do wizualizacji mebli w przestrzeni z wykorzystaniem ARKit/ARCore</li>
+    <li>Symulator fizyki ciał miękkich i tkanin w czasie rzeczywistym</li>
+    <li>System wizualizacji danych geograficznych 3D z wykorzystaniem WebGL i Three.js</li>
+    <li>Wirtualny spacer po budynku historycznym z fotogrametrią i Unity</li>
+    <li>Implementacja algorytmu proceduralnego generowania terenu dla gier</li>
+    <li>Aplikacja VR do treningu procedur medycznych z haptic feedback</li>
+    <li>System motion capture z wykorzystaniem kamery RGB-D i uczenia maszynowego</li>
+    <li>Renderowanie fotorealistyczne z PBR (Physically Based Rendering) w czasie rzeczywistym</li>
+    <li>Wizualizacja sieci społecznych z algorytmami force-directed layout</li>
+  </ol>
+
+  <h2>Algorytmy i struktury danych</h2>
+
+  <p>
+    Algorytmy i struktury danych stanowią teoretyczną podstawę informatyki. Prace magisterskie mogą dotyczyć projektowania nowych algorytmów, analizy złożoności lub optymalizacji istniejących rozwiązań. Badania wymagają solidnych podstaw matematycznych i umiejętności analizy teoretycznej oraz eksperymentalnej.
+  </p>
+
+  <ol start="83">
+    <li>Porównanie algorytmów wyszukiwania najkrótszej ścieżki w grafach drogowych – A*, Dijkstra, bidirectional search</li>
+    <li>Implementacja i analiza wydajności probabilistycznych struktur danych – Bloom filter, Count-Min Sketch</li>
+    <li>Algorytmy aproksymacyjne dla problemu komiwojażera – porównanie heurystyk</li>
+    <li>Optymalizacja algorytmu sortowania dla specyficznych rozkładów danych</li>
+    <li>Implementacja drzewa przedziałowego z lazy propagation do zapytań zakresowych</li>
+    <li>Algorytmy strumieniowe dla przetwarzania danych o nieograniczonym rozmiarze</li>
+    <li>Analiza wydajności algorytmów pattern matching – KMP, Boyer-Moore, Aho-Corasick</li>
+    <li>Równoległe algorytmy grafowe z wykorzystaniem GPU – CUDA i OpenCL</li>
+  </ol>
+
+  <h2>DevOps i automatyzacja</h2>
+
+  <p>
+    DevOps łączy rozwój oprogramowania z operacjami IT, automatyzując procesy budowania, testowania i wdrażania. Prace magisterskie mogą dotyczyć projektowania pipeline'ów CI/CD, infrastruktury jako kodu lub monitoringu systemów. Implementacje wykorzystują Docker, Kubernetes, Jenkins, GitLab CI, Terraform i Ansible.
+  </p>
+
+  <ol start="91">
+    <li>Automatyzacja wdrożeń z GitOps i ArgoCD na klastrze Kubernetes</li>
+    <li>Infrastructure as Code dla środowiska AWS z Terraform i automatycznymi testami</li>
+    <li>System monitoringu i alertowania dla architektury mikroserwisowej – Prometheus, Grafana, ELK</li>
+    <li>Pipeline CI/CD z automatycznymi testami bezpieczeństwa (SAST, DAST) w GitLab</li>
+    <li>Chaos engineering – implementacja eksperymentów odporności z Chaos Monkey</li>
+    <li>Automatyzacja konfiguracji serwerów z Ansible i zarządzanie sekretami z Vault</li>
+    <li>Platforma Platform-as-a-Service dla zespołów developerskich z Kubernetes</li>
+    <li>System automatycznego skalowania aplikacji na podstawie predykcji obciążenia</li>
+  </ol>
+
+  <h2>Przetwarzanie języka naturalnego (NLP)</h2>
+
+  <p>
+    Przetwarzanie języka naturalnego zajmuje się analizą i generowaniem tekstu w językach ludzkich. Prace magisterskie mogą dotyczyć konkretnych zadań NLP, budowy korpusów dla języka polskiego lub aplikacji wykorzystujących modele językowe. Implementacje wykorzystują transformery, BERT, GPT oraz biblioteki spaCy, HuggingFace.
+  </p>
+
+  <ol start="99">
+    <li>System automatycznego streszczania artykułów prasowych w języku polskim</li>
+    <li>Named Entity Recognition dla dokumentów prawnych w języku polskim</li>
+    <li>Chatbot FAQ z wykorzystaniem semantic search i sentence embeddings</li>
+    <li>Automatyczne tagowanie i kategoryzacja postów na forum dyskusyjnym</li>
+    <li>System wykrywania plagiatu z analizą semantyczną tekstu</li>
+    <li>Tłumaczenie maszynowe polsko-ukraińskie z wykorzystaniem transformer neural networks</li>
+    <li>Analiza dyskursu politycznego w mediach społecznościowych z wykorzystaniem NLP</li>
+    <li>System automatycznej korekty tekstów w języku polskim z uczeniem maszynowym</li>
+  </ol>
+
+  <h2>Systemy wbudowane i programowanie niskopoziomowe</h2>
+
+  <p>
+    Systemy wbudowane to specjalizowane systemy komputerowe zintegrowane z urządzeniami fizycznymi. Prace magisterskie mogą dotyczyć programowania mikrokontrolerów, systemów czasu rzeczywistego lub optymalizacji niskopoziomowej. Implementacje wykorzystują C/C++, RTOS, platformy ARM i narzędzia debugowania sprzętowego.
+  </p>
+
+  <ol start="107">
+    <li>System czasu rzeczywistego na FreeRTOS do sterowania robotem mobilnym</li>
+    <li>Implementacja stosu protokołów sieciowych dla mikrokontrolera z ograniczonymi zasobami</li>
+    <li>Optymalizacja zużycia energii w systemach wbudowanych IoT z trybami uśpienia</li>
+    <li>Bootloader z mechanizmem bezpiecznej aktualizacji firmware over-the-air (OTA)</li>
+    <li>System detekcji kolizji dla drona z fuzją danych z wielu sensorów</li>
+    <li>Implementacja protokołu CAN bus dla komunikacji w systemach motoryzacyjnych</li>
+    <li>Sterownik silnika BLDC z wektorowym sterowaniem momentem na STM32</li>
+    <li>System akwizycji danych z wysoką częstotliwością próbkowania i przetwarzaniem DSP</li>
+    <li>Bezpieczny element (secure element) do przechowywania kluczy kryptograficznych</li>
+  </ol>
+
+  <h2>Jak wybrać temat pracy z informatyki?</h2>
+
+  <p>
+    Wybór tematu pracy magisterskiej z informatyki wymaga uwzględnienia kilku aspektów. Po pierwsze, określ charakter pracy – czy będzie to implementacja systemu, analiza porównawcza technologii, czy badania eksperymentalne? Prace implementacyjne wymagają więcej czasu na kodowanie, ale dają praktyczny rezultat. Po drugie, oceń dostępność technologii i narzędzi – czy masz dostęp do sprzętu, chmury obliczeniowej, zbiorów danych? Po trzecie, wybierz obszar zgodny z Twoimi zainteresowaniami i planami kariery – praca magisterska to okazja do pogłębienia specjalizacji.
+  </p>
+
+  <p>
+    Przedstawione tematy stanowią punkt wyjścia – każdy można dostosować do własnych zainteresowań i dostępnych zasobów. Przed rozpoczęciem pracy sprawdź, czy temat nie został już wielokrotnie opracowany i czy możesz wnieść coś nowego. Skonsultuj temat z promotorem, który pomoże określić zakres i wymagania. Pamiętaj o dokumentacji kodu, testach jednostkowych i przygotowaniu środowiska umożliwiającego odtworzenie wyników.
+  </p>
+
+  <h2>Struktura pracy magisterskiej z informatyki</h2>
+
+  <p>
+    Praca magisterska z informatyki zazwyczaj składa się z części teoretycznej (przegląd literatury, analiza istniejących rozwiązań), projektowej (architektura systemu, wybór technologii) oraz implementacyjnej (opis rozwiązania, testy, wyniki). W przypadku prac badawczych dodatkowe rozdziały obejmują metodologię eksperymentów, analizę wyników i wnioski. Część praktyczna powinna być dobrze udokumentowana – diagramy UML, schematy architektury, fragmenty kodu.
+  </p>
+
+  <p>
+    Kluczowe znaczenie ma ewaluacja rozwiązania – testy wydajnościowe, porównanie z alternatywami, metryki jakości. W przypadku systemów ML należy przedstawić metryki dokładności, macierze pomyłek, krzywe ROC. Kod źródłowy powinien być dostępny w repozytorium (GitHub, GitLab) z instrukcją uruchomienia i dokumentacją API. Praca powinna również zawierać dyskusję ograniczeń rozwiązania i propozycje dalszego rozwoju.
+  </p>
+</ArticleLayout>
