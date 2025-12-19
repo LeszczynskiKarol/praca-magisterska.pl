@@ -6,57 +6,66 @@ import Footer from '../../components/Footer.astro';
 import SmartEduCTA from '../../components/SmartEduCTA.astro';
 
 const kierunki = [
-  { name: 'Pedagogika', slug: 'pedagogika', icon: '📚', description: 'Tematy prac z pedagogiki, dydaktyki i edukacji' },
-  { name: 'Zarządzanie', slug: 'zarzadzanie', icon: '📊', description: 'Zarządzanie organizacją, HR, strategia' },
-  { name: 'Psychologia', slug: 'psychologia', icon: '🧠', description: 'Psychologia społeczna, kliniczna, rozwojowa' },
-  { name: 'Prawo', slug: 'prawo', icon: '⚖️', description: 'Prawo cywilne, karne, administracyjne' },
-  { name: 'Marketing', slug: 'marketing', icon: '📈', description: 'Marketing cyfrowy, reklama, branding' },
-  { name: 'Pielęgniarstwo', slug: 'pielegniarstwo', icon: '🏥', description: 'Opieka medyczna, zdrowie publiczne' },
-  { name: 'Logistyka', slug: 'logistyka', icon: '🚚', description: 'Łańcuch dostaw, transport, magazynowanie' },
   { name: 'Administracja', slug: 'administracja', icon: '🏢', description: 'Administracja publiczna, samorząd' },
-  { name: 'Historia', slug: 'historia', icon: '🏛️', description: 'Historia Polski i powszechna' },
-  { name: 'Socjologia', slug: 'socjologia', icon: '👥', description: 'Badania społeczne, struktury społeczne' },
-  { name: 'Ekonomia', slug: 'ekonomia', icon: '💰', description: 'Makro i mikroekonomia, finanse' },
-  { name: 'Finanse', slug: 'finanse', icon: '💵', description: 'Rachunkowość, bankowość, inwestycje' },
-  { name: 'Turystyka', slug: 'turystyka', icon: '✈️', description: 'Hotelarstwo, turystyka, rekreacja' },
-  { name: 'Informatyka', slug: 'informatyka', icon: '💻', description: 'Programowanie, systemy, bazy danych' },
-  { name: 'Bezpieczeństwo', slug: 'bezpieczenstwo', icon: '🛡️', description: 'Bezpieczeństwo wewnętrzne, obrona' },
+  { name: 'Bezpieczeństwo narodowe', slug: 'bezpieczenstwo-narodowe', icon: '🛡️', description: 'Bezpieczeństwo wewnętrzne i międzynarodowe' },
+  { name: 'Budownictwo', slug: 'budownictwo', icon: '🏗️', description: 'Konstrukcje, materiały budowlane, BIM' },
+  { name: 'Dziennikarstwo', slug: 'dziennikarstwo', icon: '📰', description: 'Media, komunikacja społeczna, PR' },
+  { name: 'Ekonomia', slug: 'ekonomia', icon: '💰', description: 'Makro i mikroekonomia, rynki' },
   { name: 'Filologia angielska', slug: 'filologia-angielska', icon: '🇬🇧', description: 'Językoznawstwo, literatura angielska' },
-  { name: 'Politologia', slug: 'politologia', icon: '🏛️', description: 'Nauki polityczne, stosunki międzynarodowe' },
-  { name: 'Dziennikarstwo', slug: 'dziennikarstwo', icon: '📰', description: 'Media, komunikacja, PR' },
-  { name: 'Budownictwo', slug: 'budownictwo', icon: '🏗️', description: 'Konstrukcje, materiały budowlane' },
-  { name: 'Architektura', slug: 'architektura', icon: '🏠', description: 'Projektowanie, urbanistyka' },
+  { name: 'Filologia polska', slug: 'filologia-polska', icon: '🇵🇱', description: 'Literatura polska, językoznawstwo' },
+  { name: 'Finanse i rachunkowość', slug: 'finanse-i-rachunkowosc', icon: '💵', description: 'Rachunkowość, bankowość, inwestycje' },
+  { name: 'Fizjoterapia', slug: 'fizjoterapia', icon: '💪', description: 'Rehabilitacja, kinezyterapia, masaż' },
+  { name: 'Informatyka', slug: 'informatyka', icon: '💻', description: 'Programowanie, systemy, bazy danych' },
+  { name: 'Logistyka', slug: 'logistyka', icon: '🚚', description: 'Łańcuch dostaw, transport, magazynowanie' },
+  { name: 'Marketing', slug: 'marketing', icon: '📈', description: 'Marketing cyfrowy, reklama, branding' },
+  { name: 'Ochrona środowiska', slug: 'ochrona-srodowiska', icon: '🌱', description: 'Ekologia, ochrona przyrody, klimat' },
+  { name: 'Pedagogika', slug: 'pedagogika', icon: '📚', description: 'Tematy prac z pedagogiki, dydaktyki i edukacji' },
+  { name: 'Pielęgniarstwo', slug: 'pielegniarstwo', icon: '🏥', description: 'Opieka medyczna i pielęgniarska' },
+  { name: 'Politologia', slug: 'politologia', icon: '🏛️', description: 'Systemy polityczne, partie, wybory' },
+  { name: 'Praca socjalna', slug: 'praca-socjalna', icon: '🤝', description: 'Pomoc społeczna, wykluczenie, polityka socjalna' },
+  { name: 'Prawo', slug: 'prawo', icon: '⚖️', description: 'Prawo cywilne, karne, administracyjne' },
+  { name: 'Psychologia', slug: 'psychologia', icon: '🧠', description: 'Psychologia społeczna, kliniczna, rozwojowa' },
+  { name: 'Rolnictwo', slug: 'rolnictwo', icon: '🌾', description: 'Produkcja roślinna, zwierzęca, agrotechnika' },
+  { name: 'Socjologia', slug: 'socjologia', icon: '👥', description: 'Badania społeczne, struktury społeczne' },
+  { name: 'Stosunki międzynarodowe', slug: 'stosunki-miedzynarodowe', icon: '🌍', description: 'Dyplomacja, polityka zagraniczna, UE' },
+  { name: 'Turystyka i rekreacja', slug: 'turystyka-i-rekreacja', icon: '✈️', description: 'Hotelarstwo, turystyka, rekreacja' },
+  { name: 'Zarządzanie', slug: 'zarzadzanie', icon: '📊', description: 'Zarządzanie organizacją, HR, strategia' },
+  { name: 'Zdrowie publiczne', slug: 'zdrowie-publiczne', icon: '🏨', description: 'Epidemiologia, promocja zdrowia, system ochrony zdrowia' },
 ];
 
-// Group by category
+// Group by category - items sorted alphabetically A-Z
 const categories = [
   {
     name: 'Nauki społeczne',
-    items: ['pedagogika', 'psychologia', 'socjologia', 'politologia', 'dziennikarstwo'],
+    items: ['dziennikarstwo', 'pedagogika', 'politologia', 'psychologia', 'socjologia', 'stosunki-miedzynarodowe'],
   },
   {
     name: 'Biznes i ekonomia',
-    items: ['zarzadzanie', 'marketing', 'ekonomia', 'finanse', 'logistyka'],
+    items: ['ekonomia', 'finanse-i-rachunkowosc', 'logistyka', 'marketing', 'zarzadzanie'],
   },
   {
     name: 'Prawo i administracja',
-    items: ['prawo', 'administracja', 'bezpieczenstwo'],
+    items: ['administracja', 'bezpieczenstwo-narodowe', 'prawo'],
   },
   {
-    name: 'Nauki medyczne',
-    items: ['pielegniarstwo'],
+    name: 'Nauki medyczne i o zdrowiu',
+    items: ['fizjoterapia', 'pielegniarstwo', 'zdrowie-publiczne'],
   },
   {
     name: 'Humanistyczne',
-    items: ['historia', 'filologia-angielska'],
+    items: ['filologia-angielska', 'filologia-polska'],
   },
   {
-    name: 'Techniczne',
-    items: ['informatyka', 'budownictwo', 'architektura'],
+    name: 'Techniczne i inżynieryjne',
+    items: ['budownictwo', 'informatyka'],
+  },
+  {
+    name: 'Przyrodnicze i środowiskowe',
+    items: ['ochrona-srodowiska', 'rolnictwo'],
   },
   {
     name: 'Inne',
-    items: ['turystyka'],
+    items: ['praca-socjalna', 'turystyka-i-rekreacja'],
   },
 ];
 
@@ -64,8 +73,8 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
 ---
 
 <Layout 
-  title="Tematy prac magisterskich - 20+ kierunków studiów | Praca-Magisterska.pl"
-  description="Tematy prac magisterskich z pedagogiki, zarządzania, psychologii, prawa, marketingu i 20+ innych kierunków. Znajdź inspirację i wskazówki."
+  title="Tematy prac magisterskich - 25 kierunków studiów | Praca-Magisterska.pl"
+  description="Ponad 2500 tematów prac magisterskich z 25 kierunków: pedagogika, zarządzanie, psychologia, prawo, informatyka i inne. Znajdź inspirację i wskazówki metodologiczne."
 >
   <Navbar />
   
@@ -86,19 +95,19 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>20+ kierunków</span>
+              <span>25 kierunków studiów</span>
             </div>
             <div class="flex items-center gap-2 text-gray-600">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>100+ tematów na kierunek</span>
+              <span>Ponad 2500 tematów</span>
             </div>
             <div class="flex items-center gap-2 text-gray-600">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Szczegółowe opisy</span>
+              <span>Wskazówki metodologiczne</span>
             </div>
           </div>
         </div>

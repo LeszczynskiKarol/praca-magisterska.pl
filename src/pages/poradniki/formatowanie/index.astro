@@ -1,0 +1,72 @@
+---
+// src/pages/poradniki/formatowanie/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Formatowanie", href: "/poradniki/formatowanie" },
+];
+
+const relatedLinks = [
+  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Formatowanie pracy magisterskiej - jak formatować mgr?"
+  description="Kompletny poradnik dotyczący formatowania pracy magisterskiej"
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+
+
+<p>Prawidłowe formatowanie pracy magisterskiej stanowi kluczowy element, który wpływa na ostateczną ocenę Twojego wielomiesięcznego trudu akademickiego. Nieodpowiednia struktura dokumentu, błędne marginesy czy niewłaściwy układ bibliografii mogą znacząco obniżyć wartość merytoryczną nawet najlepiej napisanej pracy. Formatowanie to nie tylko kwestia estetyki – to przede wszystkim profesjonalizm, czytelność i zgodność z wymogami akademickimi. W tym kompleksowym przewodniku przedstawimy wszystkie aspekty formatowania – od podstawowych ustawień strony, przez hierarchię nagłówków, aż po zaawansowane elementy graficzne i zasady cytowania źródeł.</p>
+
+<h2>Podstawowe ustawienia strony i dokumentu</h2>
+
+<p>Fundamentem poprawnie sformatowanej pracy magisterskiej są właściwe ustawienia strony. Format papieru A4 (210 × 297 mm) stanowi uniwersalny standard obowiązujący na wszystkich polskich uczelniach. Orientacja strony powinna być pionowa, z wyjątkiem sytuacji, gdy umieszczamy szerokie tabele, wykresy lub schematy wymagające większej przestrzeni poziomej. Numeracja stron rozpoczyna się zwykle od wstępu, przy czym strony wstępne (spis treści, wykaz skrótów) mogą być numerowane cyframi rzymskimi, a właściwa część pracy – cyframi arabskimi. Kluczowe znaczenie ma także właściwe ustawienie marginesów oraz interlinii, które zapewniają czytelność tekstu i pozostawiają miejsce na ewentualne uwagi recenzenta.</p>
+
+<h3>Marginesy i odstępy</h3>
+
+<p>Marginesy w pracy magisterskiej muszą być dostosowane zarówno do wymogów czytelności, jak i późniejszej oprawy. Lewy margines powinien wynosić 3,5 cm – ta dodatkowa przestrzeń jest niezbędna dla bindowania lub innego rodzaju oprawy. Prawy margines ustawiamy na 2,5 cm, podobnie jak górny i dolny. Interlinia dla tekstu głównego powinna wynosić 1,5 wiersza, co znacząco poprawia czytelność i pozwala na wygodne czytanie dłuższych fragmentów. Odstępy między akapitami ustawiamy na 6 punktów przed i po akapicie, chyba że wytyczne uczelni stanowią inaczej. Wcięcie pierwszego wiersza akapitu powinno wynosić standardowo 1,25 cm – to klasyczne rozwiązanie typograficzne ułatwiające rozróżnienie kolejnych akapitów.</p>
+
+<h3>Numeracja stron</h3>
+
+<p>System numeracji stron w pracy magisterskiej wymaga szczególnej uwagi. Strony wstępne – obejmujące spis treści, wykaz skrótów, spis tabel i rysunków – numerujemy cyframi rzymskimi (I, II, III). Właściwa część pracy, rozpoczynająca się od wstępu, otrzymuje numerację arabską (1, 2, 3). Numer strony umieszczamy zazwyczaj w prawym górnym rogu lub na środku stopki, zachowując konsekwencję w całym dokumencie. Strona tytułowa nie otrzymuje widocznego numeru, choć jest liczona jako strona pierwsza. Podobnie pierwsza strona każdego rozdziału może nie zawierać widocznej numeracji – to kwestia indywidualnych wytycznych uczelni. Ważne, aby numeracja była ciągła i spójna w całym dokumencie.</p>
+
+<h3>Orientacja i układ strony</h3>
+
+<p>Chociaż standardową orientacją dla pracy magisterskiej jest układ pionowy, niektóre elementy mogą wymagać orientacji poziomej. Dotyczy to przede wszystkim szerokich tabel zawierających wiele kolumn, złożonych wykresów czy rozbudowanych schematów. Zmiana orientacji dla pojedynczych stron wymaga zastosowania podziału na sekcje w edytorze tekstu. Ważne, aby przy zmianie orientacji zachować ciągłość numeracji stron oraz jednolitość marginesów. Strony w orientacji poziomej powinny stanowić wyjątek, a nie regułę – nadmierne ich stosowanie może zakłócić spójność wizualną pracy. Przed zastosowaniem orientacji poziomej warto rozważyć alternatywne rozwiązania, takie jak zmniejszenie czcionki w tabeli czy podział danych na kilka mniejszych zestawień.</p>
+
+<h2>Czcionki i formatowanie tekstu</h2>
+
+<p>Wybór odpowiedniej czcionki i jej konsekwentne stosowanie w całej pracy to podstawa profesjonalnego formatowania. Czcionka powinna być czytelna, klasyczna i szeroko dostępna. Najczęściej zalecane to Times New Roman o rozmiarze 12 punktów, Arial 11 punktów lub Calibri 11 punktów. Kluczowe jest zachowanie hierarchii wizualnej – tytuły rozdziałów powinny być większe i wyraźniejsze niż podrozdziały, a te z kolei powinny wyróżniać się na tle tekstu głównego. Stosowanie wyróżnień takich jak pogrubienie czy kursywa musi być przemyślane i konsekwentne. Unikamy nadmiernego różnicowania czcionek – w całej pracy powinny występować maksymalnie dwie rodziny czcionek, np. jedna dla tekstu głównego i druga dla tytułów.</p>
+
+<h3>Rodzaje i rozmiary czcionek</h3>
+
+<p>Times New Roman 12 punktów to najpopularniejszy wybór dla tekstu głównego pracy magisterskiej – ta klasyczna czcionka szeryfowa zapewnia doskonałą czytelność w druku. Alternatywnie można zastosować Arial 11 punktów lub Calibri 11 punktów, szczególnie jeśli praca zawiera wiele elementów technicznych. Przypisy dolne formatujemy czcionką o rozmiarze 10 punktów, co pozwala je wizualnie odróżnić od tekstu głównego. Tytuły rozdziałów powinny mieć rozmiar 14-16 punktów z pogrubieniem, podczas gdy tytuły podrozdziałów – 12-14 punktów, również pogrubione. Bezwzględnie unikamy czcionek dekoracyjnych, pisanych czy nietypowych – praca naukowa wymaga profesjonalizmu i powagi. Wybrana czcionka musi być zainstalowana na komputerze promotora i recenzentów, dlatego stawiamy na standardowe, systemowe rozwiązania.</p>
+
+<h3>Wyróżnienia w tekście</h3>
+
+<p>Stosowanie wyróżnień w tekście pracy magisterskiej musi być przemyślane i funkcjonalne. <strong>Pogrubienie</strong> rezerwujemy dla kluczowych terminów przy ich pierwszym wystąpieniu w tekście – pozwala to czytelnikowi łatwo odnaleźć definicje i najważniejsze pojęcia. <em>Kursywę</em> stosujemy dla cytatów w językach obcych, tytułów publikacji przywołanych w tekście głównym oraz terminów łacińskich (np. <em>ibidem</em>, <em>op. cit.</em>). WIELKIE LITERY używamy wyłącznie dla skrótów i akronimów, takich jak UNESCO, NATO czy PKB. Podkreślenia tekstu należy unikać w pracach drukowanych – ten sposób wyróżnienia jest reliktem czasów maszyn do pisania. Kolory w tekście głównym są niedopuszczalne, z wyjątkiem hiperłączy w wersji elektronicznej pracy. Pamiętajmy, że nadmiar wyróżnień prowadzi do efektu odwrotnego – zamiast podkreślać ważne elementy, tworzy chaos wizualny.</p>
+
+<h3>Formatowanie akapitów</h3>
+
+<p>Akapity w pracy magisterskiej powinny być wyjustowane obustronnie, co oznacza wyrównanie zarówno do lewego, jak i prawego marginesu. Taki układ nadaje tekstowi uporządkowany, profesjonalny wygląd. Wcięcie pierwszego wiersza akapitu (1,25 cm) stanowi klasyczne rozwiązanie typograficzne, choć niektóre uczelnie dopuszczają alternatywny system – brak wcięcia przy jednoczesnym zwiększeniu odstępu między akapitami. Ważne jest unikanie tzw. "wdów" i "sierot" typograficznych, czyli pojedynczych linii akapitu pozostawionych na końcu lub początku strony. Nowoczesne edytory tekstu oferują funkcję kontroli wierszy, która automatycznie zapobiega tym niedogodnościom. Automatyczne dzielenie wyrazów powinno być włączone, ale wymaga weryfikacji – czasem algorytm dzieli wyrazy w niewłaściwych miejscach, szczególnie w przypadku terminów specjalistycznych czy nazwisk obcych.</p>
+
+<h2>Struktura pracy magisterskiej</h2>
+
+<p>Prawidłowa struktura pracy magisterskiej obejmuje elementy wstępne, część główną oraz elementy końcowe. Każdy z tych segmentów pełni określoną funkcję i musi być odpowiednio sformatowany. Elementy wstępne wprowadzają czytelnika w tematykę pracy i prezentują jej organizację. Część główna zawiera merytoryczną treść rozprawy – od wstępu, przez rozdziały teoretyczne i badawcze, aż po zakończenie. Elementy końcowe obejmują bibliografię, spisy pomocnicze oraz ewentualne załączniki. Hierarchia wizualna poszczególnych elementów musi być czytelna i konsekwentna, co ułatwia nawigację po dokumencie i podkreśla logiczną strukturę wywodu naukowego.</p>
+
+<h3>Strona tytułowa i strony wstępne</h3>
+
+<p>Strona tytułowa pracy magisterskiej musi zawierać wszystkie wymagane elementy formalne: pełną nazwę uczelni i wydziału, logo uczelni (jeśli wymagane), tytuł pracy, ewentualny podtytuł, imię i nazwisko autora wraz z numerem albumu, imię i nazwisko promotora wraz z tytułem naukowym, a także miejsce i rok złożenia pracy. Układ tych elementów powinien być zgodny z szablonem udostępnionym przez uczelnię. Po stronie tytułowej następuje zazwyczaj oświadczenie o autorstwie pracy, dedykacja (element opcjonalny), spis treści, wykaz skrótów oraz spisy tabel i rysunków. Spis treści generujemy automatycznie z wykorzystaniem stylów formatowania – zapewnia to zgodność numeracji stron i ułatwia późniejsze aktualizacje. Wszystkie elementy wstępne powinny być numerowane cyframi rzymskimi, co pozwala odróżnić je od właściwej części pracy.</p>
+
+<h3>Rozdziały i podrozdziały</h3>
+
+<p>System numeracji rozdziałów i podrozdziałów w pracy magisterskiej opiera się najczęściej na systemie dziesiętnym: 1., 1.1., 1.1.1. itd. Maksymalna głębokość podziału nie powinna przekraczać trzech-czterech poziomów – zbyt rozbudowana hierarchia utrudnia orientację w strukturze pracy. Formatowanie tytułów musi odzwierciedlać tę hierarchię: rozdziały główne otrzymują największą czcionkę i są wyśrodkowane lub wyrównane do lewej (zgodnie z wytycznymi), podrozdziały są nieco mniejsze, ale nadal wyraźnie wyróżnione. Każdy tytuł powinien być oddzielony od poprzedzającego go tekstu większym odstępem (.</p>
+
+<p><strong>Podsumowanie:</strong> W artykule przedstawiono kluczowe aspekty tematu "formatowanie pracy magisterskiej - kompleksowy przewodnik".</p>
+</ArticleLayout>
