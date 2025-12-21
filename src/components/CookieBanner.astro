@@ -1,0 +1,410 @@
+---
+/**
+ * CookieBanner.astro
+ * GDPR-compliant cookie consent banner with Google Consent Mode v2
+ * For praca-magisterska.pl
+ *
+ * GTM: GTM-KW8LPCS4
+ * GA4: G-134V26CSVF
+ */
+---
+
+<!-- Cookie Banner -->
+<div
+  id="cookie-banner"
+  class="fixed inset-0 z-[9999] hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookie-title"
+>
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <!-- Banner Container -->
+  <div class="absolute bottom-0 left-0 right-0 md:bottom-6 md:left-6 md:right-6 lg:left-auto lg:right-6 lg:max-w-lg">
+    <div class="bg-white border border-gray-200 rounded-t-2xl md:rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Header -->
+      <div class="p-6 pb-4">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-accent flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <div>
+            <h2 id="cookie-title" class="text-lg font-bold text-gray-900">
+              Szanujemy Twoją prywatność
+            </h2>
+            <p class="text-sm text-gray-600 mt-1">
+              Używamy plików cookies, aby zapewnić najlepsze doświadczenia na naszej stronie.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cookie Categories (collapsible) -->
+      <div id="cookie-details" class="hidden px-6 pb-4">
+        <div class="space-y-3">
+          <!-- Necessary Cookies -->
+          <div class="p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="font-semibold text-gray-900 text-sm">Niezbędne</span>
+                  <p class="text-xs text-gray-500">Wymagane do działania strony</p>
+                </div>
+              </div>
+              <div class="relative">
+                <input type="checkbox" id="cookie-necessary" checked disabled class="sr-only peer" />
+                <div class="w-11 h-6 bg-emerald-500 rounded-full opacity-70 cursor-not-allowed"></div>
+                <div class="absolute left-[22px] top-0.5 w-5 h-5 bg-white rounded-full shadow"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics Cookies -->
+          <div class="p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="font-semibold text-gray-900 text-sm">Analityczne</span>
+                  <p class="text-xs text-gray-500">Google Analytics, statystyki</p>
+                </div>
+              </div>
+              <label class="relative cursor-pointer">
+                <input type="checkbox" id="cookie-analytics" class="sr-only peer" />
+                <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-emerald-500 transition-colors"></div>
+                <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform peer-checked:translate-x-5"></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Marketing Cookies -->
+          <div class="p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="font-semibold text-gray-900 text-sm">Marketingowe</span>
+                  <p class="text-xs text-gray-500">Remarketing, personalizacja reklam</p>
+                </div>
+              </div>
+              <label class="relative cursor-pointer">
+                <input type="checkbox" id="cookie-marketing" class="sr-only peer" />
+                <div class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-emerald-500 transition-colors"></div>
+                <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform peer-checked:translate-x-5"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy Policy Link -->
+        <p class="text-xs text-gray-500 mt-4">
+          Więcej informacji znajdziesz w naszej
+          <a href="/polityka-prywatnosci/" class="text-primary-600 hover:underline">
+            Polityce Prywatności
+          </a>.
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <div class="p-6 pt-2 space-y-3">
+        <!-- Toggle Details Button -->
+        <button
+          id="cookie-toggle-details"
+          class="w-full text-sm text-gray-600 hover:text-gray-900 transition-colors flex items-center justify-center gap-2"
+        >
+          <span id="toggle-text">Dostosuj preferencje</span>
+          <svg id="toggle-icon" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button
+            id="cookie-reject"
+            class="flex-1 px-4 py-3 text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors"
+          >
+            Tylko niezbędne
+          </button>
+          <button
+            id="cookie-accept-selected"
+            class="hidden flex-1 px-4 py-3 text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors"
+          >
+            Zapisz wybrane
+          </button>
+          <button
+            id="cookie-accept-all"
+            class="flex-1 px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-accent hover:opacity-90 rounded-xl transition-opacity"
+          >
+            Akceptuj wszystkie
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  // Configuration for praca-magisterska.pl
+  const COOKIE_NAME = 'praca_magisterska_consent';
+  const GA_ID = 'G-134V26CSVF';
+  const GTM_ID = 'GTM-KW8LPCS4';
+
+  // DOM Elements
+  const banner = document.getElementById('cookie-banner');
+  const details = document.getElementById('cookie-details');
+  const toggleBtn = document.getElementById('cookie-toggle-details');
+  const toggleText = document.getElementById('toggle-text');
+  const toggleIcon = document.getElementById('toggle-icon');
+  const acceptAllBtn = document.getElementById('cookie-accept-all');
+  const acceptSelectedBtn = document.getElementById('cookie-accept-selected');
+  const rejectBtn = document.getElementById('cookie-reject');
+  const analyticsCheckbox = document.getElementById('cookie-analytics');
+  const marketingCheckbox = document.getElementById('cookie-marketing');
+
+  // State
+  let detailsVisible = false;
+
+  // ============================================
+  // Google Consent Mode v2 - Initialize FIRST
+  // ============================================
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  // Set default consent state (denied by default - GDPR compliant)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'personalization_storage': 'denied',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  // Enable URL passthrough for better measurement
+  gtag('set', 'url_passthrough', true);
+  gtag('set', 'ads_data_redaction', true);
+
+  // ============================================
+  // Cookie Utilities
+  // ============================================
+  function getConsent() {
+    try {
+      const consent = localStorage.getItem(COOKIE_NAME);
+      return consent ? JSON.parse(consent) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setConsent(consent) {
+    const data = {
+      ...consent,
+      timestamp: new Date().toISOString(),
+      version: '2.0'
+    };
+    localStorage.setItem(COOKIE_NAME, JSON.stringify(data));
+  }
+
+  // ============================================
+  // Update Google Consent
+  // ============================================
+  function updateGoogleConsent(consent) {
+    const analyticsGranted = consent.analytics ? 'granted' : 'denied';
+    const marketingGranted = consent.marketing ? 'granted' : 'denied';
+
+    gtag('consent', 'update', {
+      'ad_storage': marketingGranted,
+      'ad_user_data': marketingGranted,
+      'ad_personalization': marketingGranted,
+      'analytics_storage': analyticsGranted,
+      'personalization_storage': marketingGranted
+    });
+
+    // Push consent event to dataLayer
+    dataLayer.push({
+      'event': 'consent_update',
+      'consent_analytics': consent.analytics,
+      'consent_marketing': consent.marketing
+    });
+  }
+
+  // ============================================
+  // Load Google Scripts (only after consent)
+  // ============================================
+  function loadGoogleScripts(consent) {
+    // Load GTM (always load, it respects consent mode)
+    if (!document.getElementById('gtm-script')) {
+      const gtmScript = document.createElement('script');
+      gtmScript.id = 'gtm-script';
+      gtmScript.innerHTML = `
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','${GTM_ID}');
+      `;
+      document.head.appendChild(gtmScript);
+    }
+
+    // Load GA4 if analytics consented
+    if (consent.analytics && !document.getElementById('ga4-script')) {
+      const ga4Script = document.createElement('script');
+      ga4Script.id = 'ga4-script';
+      ga4Script.async = true;
+      ga4Script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(ga4Script);
+
+      ga4Script.onload = function() {
+        gtag('js', new Date());
+        gtag('config', GA_ID, {
+          'anonymize_ip': true,
+          'cookie_flags': 'SameSite=None;Secure'
+        });
+      };
+    }
+  }
+
+  // ============================================
+  // Banner Control
+  // ============================================
+  function showBanner() {
+    banner.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hideBanner() {
+    banner.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  function toggleDetails() {
+    detailsVisible = !detailsVisible;
+    details.classList.toggle('hidden', !detailsVisible);
+    toggleIcon.style.transform = detailsVisible ? 'rotate(180deg)' : '';
+    toggleText.textContent = detailsVisible ? 'Ukryj opcje' : 'Dostosuj preferencje';
+    acceptSelectedBtn.classList.toggle('hidden', !detailsVisible);
+  }
+
+  // ============================================
+  // Consent Handlers
+  // ============================================
+  function handleAcceptAll() {
+    const consent = {
+      necessary: true,
+      analytics: true,
+      marketing: true
+    };
+    setConsent(consent);
+    updateGoogleConsent(consent);
+    loadGoogleScripts(consent);
+    hideBanner();
+  }
+
+  function handleAcceptSelected() {
+    const consent = {
+      necessary: true,
+      analytics: analyticsCheckbox.checked,
+      marketing: marketingCheckbox.checked
+    };
+    setConsent(consent);
+    updateGoogleConsent(consent);
+    loadGoogleScripts(consent);
+    hideBanner();
+  }
+
+  function handleReject() {
+    const consent = {
+      necessary: true,
+      analytics: false,
+      marketing: false
+    };
+    setConsent(consent);
+    updateGoogleConsent(consent);
+    loadGoogleScripts(consent);
+    hideBanner();
+  }
+
+  // ============================================
+  // Open Settings (for footer link)
+  // ============================================
+  window.openCookieSettings = function() {
+    const consent = getConsent();
+    if (consent) {
+      analyticsCheckbox.checked = consent.analytics;
+      marketingCheckbox.checked = consent.marketing;
+    }
+    if (!detailsVisible) {
+      toggleDetails();
+    }
+    showBanner();
+  };
+
+  // ============================================
+  // Initialize
+  // ============================================
+  function init() {
+    const consent = getConsent();
+
+    if (consent) {
+      updateGoogleConsent(consent);
+      loadGoogleScripts(consent);
+    } else {
+      showBanner();
+    }
+
+    // Event Listeners
+    toggleBtn.addEventListener('click', toggleDetails);
+    acceptAllBtn.addEventListener('click', handleAcceptAll);
+    acceptSelectedBtn.addEventListener('click', handleAcceptSelected);
+    rejectBtn.addEventListener('click', handleReject);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<style>
+  #cookie-banner {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  #cookie-details {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

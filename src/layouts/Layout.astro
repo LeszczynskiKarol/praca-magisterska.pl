@@ -1,5 +1,7 @@
 ---
 // src/layouts/Layout.astro
+import CookieBanner from '../components/CookieBanner.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -59,15 +61,33 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
+  <!-- Preconnect to Google domains for faster loading after consent -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+  
   <slot name="head" />
 </head>
 <body class="min-h-screen flex flex-col bg-white">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe 
+      src="https://www.googletagmanager.com/ns.html?id=GTM-KW8LPCS4"
+      height="0" 
+      width="0" 
+      style="display:none;visibility:hidden"
+      title="Google Tag Manager"
+    ></iframe>
+  </noscript>
+
   <slot />
+  
+  <!-- Cookie Consent Banner -->
+  <CookieBanner />
   
   <!-- Scroll to top button -->
   <button 
     id="scroll-top" 
-    class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 text-white rounded-full shadow-lg opacity-0 invisible hover:bg-primary-700 transition-all duration-300 z-50 flex items-center justify-center"
+    class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 text-white rounded-full shadow-lg opacity-0 invisible hover:bg-primary-700 transition-all duration-300 z-40 flex items-center justify-center"
     aria-label="Przewiń do góry"
   >
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

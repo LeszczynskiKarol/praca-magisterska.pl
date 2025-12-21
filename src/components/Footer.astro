@@ -133,10 +133,16 @@ const footerLinks = {
         <p class="text-gray-500 text-sm">
           © {currentYear} Praca-Magisterska.pl. Wszelkie prawa zastrzeżone.
         </p>
-        <div class="flex items-center gap-6">
+        <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
           <a href="/polityka-prywatnosci/" class="text-gray-500 hover:text-gray-300 text-sm transition-colors">
             Polityka prywatności
           </a>
+          <button 
+            onclick="openCookieSettings()"
+            class="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer"
+          >
+            Ustawienia cookies
+          </button>
           <span class="text-gray-600 text-sm">
             Realizacja: <a href="https://torweb.pl" target="_blank" rel="noopener noreferrer" class="text-primary-400 hover:text-primary-300 transition-colors">TorWeb.pl</a>
           </span>
