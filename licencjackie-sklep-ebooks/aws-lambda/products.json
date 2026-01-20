@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": "ebook-pisanie-pracy-licencjackiej",
+      "name": "Kompletny Poradnik Pisania Pracy Licencjackiej",
+      "description": "150 stron praktycznych wskazówek jak napisać pracę licencjacką krok po kroku. Zawiera szablony, przykłady i checklisty.",
+      "price": 4900,
+      "currency": "pln",
+      "image": "/ebooks/praca-licencjacka-cover.jpg",
+      "file": "ebooks/poradnik-praca-licencjacka.pdf",
+      "features": [
+        "150 stron praktycznej wiedzy",
+        "Szablony rozdziałów",
+        "Przykłady bibliografii",
+        "Checklisty przed oddaniem"
+      ]
+    },
+    {
+      "id": "ebook-metodologia-badan",
+      "name": "Metodologia Badań w Pracy Dyplomowej",
+      "description": "Kompletny przewodnik po metodach badawczych. Ankiety, wywiady, analiza danych - wszystko co potrzebujesz.",
+      "price": 3900,
+      "currency": "pln",
+      "image": "/ebooks/metodologia-cover.jpg",
+      "file": "ebooks/metodologia-badan.pdf",
+      "features": [
+        "Metody ilościowe i jakościowe",
+        "Gotowe szablony ankiet",
+        "Analiza statystyczna krok po kroku",
+        "Przykłady z różnych kierunków"
+      ]
+    },
+    {
+      "id": "ebook-pakiet-kompletny",
+      "name": "Pakiet Kompletny - Wszystkie Ebooki",
+      "description": "Wszystkie nasze ebooki w jednym pakiecie ze zniżką 30%. Idealne przygotowanie do napisania pracy dyplomowej.",
+      "price": 6900,
+      "currency": "pln",
+      "image": "/ebooks/pakiet-cover.jpg",
+      "file": "ebooks/pakiet-kompletny.zip",
+      "features": [
+        "Wszystkie ebooki w pakiecie",
+        "30% zniżki",
+        "Dożywotnie aktualizacje",
+        "Bonus: szablony Word"
+      ],
+      "badge": "BESTSELLER"
+    }
+  ],
+  "settings": {
+    "successUrl": "https://www.licencjackie.pl/sklep/sukces",
+    "cancelUrl": "https://www.licencjackie.pl/sklep/anulowano",
+    "emailFrom": "sklep@licencjackie.pl",
+    "emailFromName": "Licencjackie.pl",
+    "s3Bucket": "licencjackie-ebooks",
+    "downloadLinkExpiry": 604800
+  }
+}

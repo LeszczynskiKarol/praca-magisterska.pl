@@ -1,6 +1,6 @@
 ---
 // src/layouts/Layout.astro
-import CookieBanner from '../components/CookieBanner.astro';
+import CookieBanner from "../components/CookieBanner.astro";
 
 interface Props {
   title: string;
@@ -10,130 +10,138 @@ interface Props {
   noindex?: boolean;
 }
 
-const { 
-  title, 
-  description, 
+const {
+  title,
+  description,
   canonical,
-  ogImage = '/og-default.jpg',
-  noindex = false 
+  ogImage = "/og-default.jpg",
+  noindex = false,
 } = Astro.props;
 
-const siteUrl = 'https://praca-magisterska.pl';
+const siteUrl = "https://www.praca-magisterska.pl";
 const fullCanonical = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content={Astro.generator} />
-  
-  <!-- Primary Meta Tags -->
-  <title>{title}</title>
-  <meta name="title" content={title} />
-  <meta name="description" content={description} />
-  <link rel="canonical" href={fullCanonical} />
-  
-  {noindex && <meta name="robots" content="noindex, nofollow" />}
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={fullCanonical} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
-  <meta property="og:locale" content="pl_PL" />
-  <meta property="og:site_name" content="Praca-Magisterska.pl" />
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={fullCanonical} />
-  <meta property="twitter:title" content={title} />
-  <meta property="twitter:description" content={description} />
-  <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  
-  <!-- Fonts preload -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-  <!-- Preconnect to Google domains for faster loading after consent -->
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link rel="preconnect" href="https://www.google-analytics.com" />
-  
-  <slot name="head" />
-</head>
-<body class="min-h-screen flex flex-col bg-white">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe 
-      src="https://www.googletagmanager.com/ns.html?id=GTM-KW8LPCS4"
-      height="0" 
-      width="0" 
-      style="display:none;visibility:hidden"
-      title="Google Tag Manager"
-    ></iframe>
-  </noscript>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
 
-  <slot />
-  
-  <!-- Cookie Consent Banner -->
-  <CookieBanner />
-  
-  <!-- Scroll to top button -->
-  <button 
-    id="scroll-top" 
-    class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 text-white rounded-full shadow-lg opacity-0 invisible hover:bg-primary-700 transition-all duration-300 z-40 flex items-center justify-center"
-    aria-label="Przewiń do góry"
-  >
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-    </svg>
-  </button>
-  
-  <script>
-    // Scroll to top functionality
-    const scrollBtn = document.getElementById('scroll-top');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        scrollBtn?.classList.remove('opacity-0', 'invisible');
-        scrollBtn?.classList.add('opacity-100', 'visible');
-      } else {
-        scrollBtn?.classList.add('opacity-0', 'invisible');
-        scrollBtn?.classList.remove('opacity-100', 'visible');
-      }
-    });
-    
-    scrollBtn?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    
-    // Animate on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={fullCanonical} />
+
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="Praca-Magisterska.pl" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={fullCanonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Fonts preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preconnect to Google domains for faster loading after consent -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KW8LPCS4"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        title="Google Tag Manager"></iframe>
+    </noscript>
+
+    <slot />
+
+    <!-- Cookie Consent Banner -->
+    <CookieBanner />
+
+    <!-- Scroll to top button -->
+    <button
+      id="scroll-top"
+      class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 text-white rounded-full shadow-lg opacity-0 invisible hover:bg-primary-700 transition-all duration-300 z-40 flex items-center justify-center"
+      aria-label="Przewiń do góry"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+
+    <script>
+      // Scroll to top functionality
+      const scrollBtn = document.getElementById("scroll-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          scrollBtn?.classList.remove("opacity-0", "invisible");
+          scrollBtn?.classList.add("opacity-100", "visible");
+        } else {
+          scrollBtn?.classList.add("opacity-0", "invisible");
+          scrollBtn?.classList.remove("opacity-100", "visible");
         }
       });
-    }, observerOptions);
-    
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
-</body>
+
+      scrollBtn?.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Animate on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
 </html>
 
 <style is:global>
-  @import '../styles/global.css';
+  @import "../styles/global.css";
 </style>

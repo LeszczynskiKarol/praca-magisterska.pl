@@ -1,0 +1,259 @@
+---
+// src/pages/sklep/index.astro
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+// Definicja produktów (możesz przenieść do osobnego pliku)
+const products = [
+  {
+    id: "ebook-pisanie-pracy-licencjackiej",
+    name: "Kompletny Poradnik Pisania Pracy Licencjackiej",
+    description: "150 stron praktycznych wskazówek jak napisać pracę licencjacką krok po kroku. Zawiera szablony, przykłady i checklisty.",
+    price: 49,
+    image: "/ebooks/praca-licencjacka-cover.jpg",
+    features: [
+      "150 stron praktycznej wiedzy",
+      "Szablony rozdziałów",
+      "Przykłady bibliografii",
+      "Checklisty przed oddaniem"
+    ]
+  },
+  {
+    id: "ebook-metodologia-badan",
+    name: "Metodologia Badań w Pracy Dyplomowej",
+    description: "Kompletny przewodnik po metodach badawczych. Ankiety, wywiady, analiza danych - wszystko co potrzebujesz.",
+    price: 39,
+    image: "/ebooks/metodologia-cover.jpg",
+    features: [
+      "Metody ilościowe i jakościowe",
+      "Gotowe szablony ankiet",
+      "Analiza statystyczna krok po kroku",
+      "Przykłady z różnych kierunków"
+    ]
+  },
+  {
+    id: "ebook-pakiet-kompletny",
+    name: "Pakiet Kompletny - Wszystkie Ebooki",
+    description: "Wszystkie nasze ebooki w jednym pakiecie ze zniżką 30%. Idealne przygotowanie do napisania pracy dyplomowej.",
+    price: 69,
+    originalPrice: 88,
+    image: "/ebooks/pakiet-cover.jpg",
+    features: [
+      "Wszystkie ebooki w pakiecie",
+      "30% zniżki",
+      "Dożywotnie aktualizacje",
+      "Bonus: szablony Word"
+    ],
+    badge: "BESTSELLER"
+  }
+];
+
+const API_URL = import.meta.env.PUBLIC_API_URL || "https://YOUR_API_ID.execute-api.eu-central-1.amazonaws.com/prod";
+---
+
+<Layout 
+  title="Sklep z Ebookami - Licencjackie.pl"
+  description="Kup ebooki o pisaniu prac dyplomowych. Praktyczne poradniki, szablony i metodologia badań."
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-gray-50">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-primary-600 to-accent py-16">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+          📚 Sklep z Ebookami
+        </h1>
+        <p class="text-xl text-white/90 max-w-2xl mx-auto">
+          Praktyczne poradniki, które pomogą Ci napisać doskonałą pracę dyplomową
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow relative">
+              {product.badge && (
+                <div class="absolute top-4 right-4 bg-accent text-white text-sm font-bold px-3 py-1 rounded-full">
+                  {product.badge}
+                </div>
+              )}
+              
+              <!-- Product Image -->
+              <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-accent/20 flex items-center justify-center p-8">
+                <div class="text-6xl">📖</div>
+              </div>
+              
+              <!-- Product Info -->
+              <div class="p-6">
+                <h2 class="text-xl font-bold text-gray-900 mb-2">
+                  {product.name}
+                </h2>
+                <p class="text-gray-600 text-sm mb-4">
+                  {product.description}
+                </p>
+                
+                <!-- Features -->
+                <ul class="space-y-2 mb-6">
+                  {product.features.map((feature) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <span class="text-accent mt-0.5">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <!-- Price -->
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span class="text-3xl font-bold text-gray-900">{product.price} zł</span>
+                  {product.originalPrice && (
+                    <span class="text-lg text-gray-400 line-through">{product.originalPrice} zł</span>
+                  )}
+                </div>
+                
+                <!-- Buy Button -->
+                <button 
+                  class="buy-button w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-2"
+                  data-product-id={product.id}
+                >
+                  <span>🛒</span>
+                  <span>Kup teraz</span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust badges -->
+    <section class="py-12 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl mb-2">🔒</div>
+            <h3 class="font-semibold text-gray-900">Bezpieczna płatność</h3>
+            <p class="text-sm text-gray-600">Płatności przez Stripe</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-2">⚡</div>
+            <h3 class="font-semibold text-gray-900">Natychmiastowy dostęp</h3>
+            <p class="text-sm text-gray-600">Link na email po płatności</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-2">📧</div>
+            <h3 class="font-semibold text-gray-900">Wsparcie email</h3>
+            <p class="text-sm text-gray-600">Odpowiadamy w 24h</p>
+          </div>
+          <div>
+            <div class="text-4xl mb-2">💯</div>
+            <h3 class="font-semibold text-gray-900">Gwarancja jakości</h3>
+            <p class="text-sm text-gray-600">Zwrot w ciągu 14 dni</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+          Najczęstsze pytania
+        </h2>
+        
+        <div class="space-y-4">
+          <details class="bg-white rounded-xl p-6 shadow-sm">
+            <summary class="font-semibold text-gray-900 cursor-pointer">
+              W jakim formacie są ebooki?
+            </summary>
+            <p class="mt-4 text-gray-600">
+              Wszystkie ebooki są w formacie PDF, który możesz otworzyć na dowolnym urządzeniu - komputerze, tablecie czy telefonie.
+            </p>
+          </details>
+          
+          <details class="bg-white rounded-xl p-6 shadow-sm">
+            <summary class="font-semibold text-gray-900 cursor-pointer">
+              Jak długo mam dostęp do ebooka?
+            </summary>
+            <p class="mt-4 text-gray-600">
+              Po zakupie otrzymasz link do pobrania ważny 7 dni. Po pobraniu ebook jest Twój na zawsze - możesz go przechowywać na swoim urządzeniu.
+            </p>
+          </details>
+          
+          <details class="bg-white rounded-xl p-6 shadow-sm">
+            <summary class="font-semibold text-gray-900 cursor-pointer">
+              Jakie metody płatności akceptujecie?
+            </summary>
+            <p class="mt-4 text-gray-600">
+              Akceptujemy karty płatnicze (Visa, Mastercard), BLIK oraz przelewy Przelewy24.
+            </p>
+          </details>
+          
+          <details class="bg-white rounded-xl p-6 shadow-sm">
+            <summary class="font-semibold text-gray-900 cursor-pointer">
+              Czy mogę dostać fakturę?
+            </summary>
+            <p class="mt-4 text-gray-600">
+              Tak, faktura jest automatycznie generowana i wysyłana na email po zaksięgowaniu płatności.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- Loading overlay -->
+  <div id="loading-overlay" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-8 text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+      <p class="text-gray-700">Przekierowuję do płatności...</p>
+    </div>
+  </div>
+
+  <script define:vars={{ API_URL }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.buy-button');
+      const loadingOverlay = document.getElementById('loading-overlay');
+      
+      buttons.forEach(button => {
+        button.addEventListener('click', async () => {
+          const productId = button.dataset.productId;
+          
+          // Show loading
+          loadingOverlay.classList.remove('hidden');
+          button.disabled = true;
+          
+          try {
+            const response = await fetch(`${API_URL}/create-checkout`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ productId }),
+            });
+            
+            const data = await response.json();
+            
+            if (data.url) {
+              // Redirect to Stripe Checkout
+              window.location.href = data.url;
+            } else {
+              throw new Error(data.error || 'Błąd podczas tworzenia płatności');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            loadingOverlay.classList.add('hidden');
+            button.disabled = false;
+            alert('Wystąpił błąd. Spróbuj ponownie lub skontaktuj się z nami.');
+          }
+        });
+      });
+    });
+  </script>
+</Layout>
