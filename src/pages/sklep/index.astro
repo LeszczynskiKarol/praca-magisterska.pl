@@ -16,27 +16,238 @@ const ebook = {
   format: "PDF",
 };
 
-const chapters = [
-  { title: "Wybór tematu", desc: "Jak znaleźć idealny temat i go zawęzić" },
+const tableOfContents = [
   {
-    title: "Przegląd literatury",
-    desc: "Gdzie szukać źródeł i jak je oceniać",
+    part: "CZĘŚĆ I",
+    title: "Zanim zaczniesz pisać",
+    chapters: [
+      {
+        num: 1,
+        title: "Czym jest praca licencjacka i po co ją piszesz?",
+        topics: [
+          "Cel pracy licencjackiej w procesie edukacyjnym",
+          "Czego oczekuje od Ciebie uczelnia (i promotor)",
+          "Kompetencje, które rozwiniesz pisząc pracę",
+          "Typowe błędy na starcie — jak ich uniknąć",
+        ],
+      },
+      {
+        num: 2,
+        title: "Wybór tematu — fundament Twojej pracy",
+        topics: [
+          "Skąd brać pomysły na temat?",
+          "Kryteria dobrego tematu (wąski, realny, interesujący)",
+          'Jak sprawdzić, czy temat nie jest "przerobiony"?',
+          "Rozmowa z promotorem — jak ją przygotować",
+          "Formularz zgłoszenia tematu",
+        ],
+      },
+      {
+        num: 3,
+        title: "Przegląd literatury — jak szukać i co czytać",
+        topics: [
+          "Gdzie szukać literatury? (biblioteki, bazy danych, Google Scholar)",
+          'Jak odróżnić źródło naukowe od "śmieciowego"?',
+          "System notatek i fiszek",
+          "Ile pozycji w bibliografii?",
+        ],
+      },
+      {
+        num: 4,
+        title: "Plan pracy i harmonogram działań",
+        topics: [
+          "Struktura pracy licencjackiej — szablon",
+          "Jak podzielić temat na rozdziały?",
+          "Realny harmonogram: od tematu do obrony",
+          "Zarządzanie czasem — techniki dla zapracowanych",
+        ],
+      },
+    ],
   },
   {
-    title: "Struktura pracy",
-    desc: "Wstęp, rozdziały teoretyczne, zakończenie",
+    part: "CZĘŚĆ II",
+    title: "Struktura pracy — co gdzie pisać",
+    chapters: [
+      {
+        num: 5,
+        title: "Strona tytułowa i formalności wstępne",
+        topics: [
+          "Elementy strony tytułowej (z szablonem)",
+          "Oświadczenia i streszczenie (abstrakt)",
+          "Słowa kluczowe — jak je dobrać?",
+        ],
+      },
+      {
+        num: 6,
+        title: "Wstęp — wizytówka Twojej pracy",
+        topics: [
+          "Co MUSI znaleźć się we wstępie (checklist)",
+          "Cel pracy, pytania badawcze, hipotezy",
+          "Czego NIE pisać we wstępie",
+          "Kiedy pisać wstęp? (spoiler: na końcu)",
+        ],
+      },
+      {
+        num: 7,
+        title: "Rozdziały teoretyczne",
+        topics: [
+          "Jak budować rozdział teoretyczny krok po kroku",
+          "Synteza vs kompilacja — pisz własnymi słowami",
+          "Proporcje między rozdziałami",
+        ],
+      },
+      {
+        num: 8,
+        title: "Rozdział metodologiczny i badawczy",
+        topics: [
+          "Przedmiot i cel badań",
+          "Problemy badawcze i hipotezy",
+          "Metody, techniki, narzędzia badawcze",
+          "Dobór próby badawczej",
+        ],
+      },
+      {
+        num: 9,
+        title: "Analiza wyników i wnioski",
+        topics: [
+          "Jak prezentować wyniki badań?",
+          "Tabele i wykresy — kiedy stosować?",
+          "Weryfikacja hipotez",
+        ],
+      },
+      {
+        num: 10,
+        title: "Zakończenie",
+        topics: [
+          "Zakończenie vs podsumowanie — różnica",
+          "Jak odnieść się do celów z wstępu?",
+          "Perspektywy dalszych badań",
+        ],
+      },
+    ],
   },
-  { title: "Metodologia badań", desc: "Metody, techniki, narzędzia badawcze" },
-  { title: "Cytaty i przypisy", desc: "System harwardzki i przypisy dolne" },
-  { title: "Formatowanie", desc: "MS Word - spis treści, numeracja, style" },
+  {
+    part: "CZĘŚĆ III",
+    title: "Warsztat pisarski i redakcja",
+    chapters: [
+      {
+        num: 11,
+        title: "Jak pisać teksty naukowe?",
+        topics: [
+          "Styl naukowy — prostota, precyzja, treściwość",
+          "Najczęstsze błędy stylistyczne studentów",
+          'Jak unikać "lania wody"?',
+        ],
+      },
+      {
+        num: 12,
+        title: "Cytaty i cytowania",
+        topics: [
+          "Kiedy cytować dosłownie, kiedy parafrazować?",
+          "Jak nie wpaść w pułapkę plagiatu?",
+          "System antyplagiatowy — co wykrywa?",
+        ],
+      },
+      {
+        num: 13,
+        title: "Przypisy — dolne vs harwardzkie",
+        topics: [
+          "Przypisy dolne — zasady i przykłady",
+          "System harwardzki — zasady i przykłady",
+          "Skróty: ibidem, op.cit., tamże",
+        ],
+      },
+      {
+        num: 14,
+        title: "Bibliografia — jak ją poprawnie sporządzić",
+        topics: [
+          "Opis bibliograficzny książki, artykułu, źródła internetowego",
+          "Akty prawne i orzecznictwo",
+        ],
+      },
+      {
+        num: 15,
+        title: "Formatowanie w MS Word",
+        topics: [
+          "Czcionka, marginesy, interlinia",
+          "Automatyczny spis treści",
+          "Numerowanie stron, tabele, wykresy",
+        ],
+      },
+    ],
+  },
+  {
+    part: "CZĘŚĆ IV",
+    title: "Współpraca z promotorem i obrona",
+    chapters: [
+      {
+        num: 16,
+        title: "Promotor — Twój sojusznik",
+        topics: [
+          "Rola promotora — czego możesz oczekiwać?",
+          "Jak przygotować się do konsultacji?",
+          "Jak reagować na uwagi i krytykę?",
+        ],
+      },
+      {
+        num: 17,
+        title: "Ostatnie szlify przed oddaniem",
+        topics: [
+          "Checklist końcowy",
+          "Korekta językowa",
+          "Wydruk i oprawa — wymogi formalne",
+        ],
+      },
+      {
+        num: 18,
+        title: "Obrona pracy licencjackiej",
+        topics: [
+          "Jak przebiega obrona? (scenariusz)",
+          "Typowe pytania komisji",
+          "Jak radzić sobie ze stresem?",
+        ],
+      },
+    ],
+  },
+];
+
+const extras = [
+  {
+    title: "Dodatek A: Szablony do pobrania",
+    items: [
+      "Szablon strony tytułowej",
+      "Szablon spisu treści",
+      "Checklist przed oddaniem",
+    ],
+  },
+  {
+    title: "Dodatek B: Przykładowe formułowania",
+    items: [
+      "Zdania do wstępu",
+      "Zdania do zakończenia",
+      "Formuły przejść między rozdziałami",
+    ],
+  },
+  {
+    title: "Dodatek C: Lista przydatnych stron i narzędzi",
+    items: [
+      "Bazy danych naukowych",
+      "Biblioteki cyfrowe",
+      "Narzędzia do bibliografii",
+    ],
+  },
+  {
+    title: "Dodatek D: Najczęstsze pytania (FAQ)",
+    items: [
+      "Ile stron powinna mieć praca?",
+      "Czy mogę pisać w pierwszej osobie?",
+      "Co jeśli badania nie potwierdziły hipotezy?",
+    ],
+  },
 ];
 
 const features = [
-  {
-    icon: "📖",
-    title: "300 stron",
-    desc: "Praktycznej wiedzy bez lania wody",
-  },
+  { icon: "📖", title: "300 stron", desc: "Praktycznej wiedzy bez lania wody" },
   {
     icon: "✅",
     title: "Checklisty",
@@ -57,7 +268,7 @@ const features = [
 
 <Layout
   title="Ebook: Jak napisać pracę licencjacką - Poradnik PDF 300 stron"
-  description="Kompletny przewodnik po pisaniu pracy licencjackiej. 300 stron praktycznej wiedzy, szablony, checklisty i przykłady."
+  description="Kompletny przewodnik po pisaniu pracy licencjackiej. 300 stron praktycznej wiedzy, szablony, checklisty i przykłady. Tylko 29 zł."
 >
   <Navbar />
 
@@ -68,21 +279,18 @@ const features = [
     >
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-          <!-- Left: Text -->
           <div>
             <div
               class="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-6"
             >
-              📚 Ebook PDF
+              📚 Ebook PDF • 300 stron
             </div>
             <h1
               class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white"
             >
               {ebook.name}
             </h1>
-            <p class="text-xl text-slate-300 mb-6">
-              {ebook.subtitle}
-            </p>
+            <p class="text-xl text-slate-300 mb-6">{ebook.subtitle}</p>
             <p class="text-slate-400 mb-8 leading-relaxed">
               Przestań się stresować pisaniem pracy licencjackiej. Ten poradnik
               przeprowadzi Cię krok po kroku przez cały proces — od wyboru
@@ -90,16 +298,16 @@ const features = [
               oddaniem.
             </p>
 
-            <!-- Price & CTA -->
             <div
               class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8"
             >
               <div>
-                <span class="text-4xl font-bold">{ebook.price} zł</span>
+                <span class="text-4xl font-bold text-white"
+                  >{ebook.price} zł</span
+                >
                 <span class="text-slate-400 ml-2">jednorazowo</span>
               </div>
               <button
-                id="buy-button-hero"
                 class="buy-button bg-accent hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-accent/25"
                 data-product-id={ebook.id}
               >
@@ -119,7 +327,6 @@ const features = [
               </button>
             </div>
 
-            <!-- Quick info -->
             <div class="flex flex-wrap gap-6 text-sm text-slate-400">
               <div class="flex items-center gap-2">
                 <svg
@@ -148,10 +355,9 @@ const features = [
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  ></path>
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span>Format {ebook.format}</span>
+                <span>Dostęp natychmiast</span>
               </div>
               <div class="flex items-center gap-2">
                 <svg
@@ -164,14 +370,13 @@ const features = [
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span>Dostęp natychmiast</span>
+                <span>18 rozdziałów + dodatki</span>
               </div>
             </div>
           </div>
 
-          <!-- Right: Book mockup -->
           <div class="relative">
             <div
               class="bg-gradient-to-br from-primary-500 to-accent rounded-2xl p-8 shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform"
@@ -189,7 +394,6 @@ const features = [
                 </div>
               </div>
             </div>
-            <!-- Decorative elements -->
             <div
               class="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"
             >
@@ -200,6 +404,38 @@ const features = [
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section class="py-16 bg-gradient-to-b from-slate-900 to-slate-800">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          🔍 Zobacz fragment za darmo
+        </h2>
+        <p class="text-slate-300 mb-8">
+          Przeczytaj pierwszy rozdział i przekonaj się, czy ten ebook jest dla
+          Ciebie.
+        </p>
+        <button
+          id="preview-btn"
+          class="bg-white text-slate-900 font-semibold py-4 px-8 rounded-xl hover:bg-slate-100 transition-all inline-flex items-center gap-3 shadow-lg"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
+          </svg>
+          <span>Przeczytaj rozdział 1</span>
+        </button>
       </div>
     </section>
 
@@ -269,68 +505,222 @@ const features = [
       </div>
     </section>
 
-    <!-- Table of Contents -->
+    <!-- Full Table of Contents -->
     <section class="py-16 bg-slate-50">
       <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center text-slate-900 mb-4">
-          Spis treści
+          📑 Pełny spis treści
         </h2>
-        <p class="text-center text-slate-600 mb-12">
-          18 rozdziałów + dodatki z szablonami
+        <p class="text-center text-slate-600 mb-8">
+          18 rozdziałów • 4 części • 300 stron praktycznej wiedzy
         </p>
 
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div class="divide-y divide-slate-100">
-            <div class="p-6 bg-slate-800">
-              <span class="text-sm font-medium text-slate-300">CZĘŚĆ I</span>
-              <h3 class="text-lg font-bold text-white">
-                Zanim zaczniesz pisać
-              </h3>
-            </div>
-            {
-              chapters.slice(0, 3).map((ch, i) => (
-                <div class="p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
-                  <span class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold text-sm">
-                    {i + 1}
-                  </span>
+        <div class="space-y-4" id="toc">
+          {
+            tableOfContents.map((part, partIndex) => (
+              <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <button
+                  class="toc-part-btn w-full p-6 bg-slate-800 text-left flex justify-between items-center hover:bg-slate-700 transition-colors"
+                  data-part={partIndex}
+                >
                   <div>
-                    <h4 class="font-semibold text-slate-900">{ch.title}</h4>
-                    <p class="text-sm text-slate-500">{ch.desc}</p>
+                    <span class="text-sm font-medium text-accent">
+                      {part.part}
+                    </span>
+                    <h3 class="text-lg font-bold text-white">{part.title}</h3>
                   </div>
+                  <svg
+                    class="w-6 h-6 text-white transform transition-transform toc-arrow"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div class="toc-content hidden" data-part={partIndex}>
+                  {part.chapters.map((chapter) => (
+                    <details class="group border-b border-slate-100 last:border-0">
+                      <summary class="p-5 flex items-start gap-4 cursor-pointer hover:bg-slate-50 transition-colors">
+                        <span class="flex-shrink-0 w-10 h-10 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold">
+                          {chapter.num}
+                        </span>
+                        <div class="flex-1">
+                          <h4 class="font-semibold text-slate-900 group-open:text-primary-600 transition-colors">
+                            {chapter.title}
+                          </h4>
+                          <p class="text-sm text-slate-500 mt-1">
+                            {chapter.topics.length} podrozdziałów
+                          </p>
+                        </div>
+                        <svg
+                          class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform mt-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </summary>
+                      <div class="px-5 pb-5 pl-20">
+                        <ul class="space-y-2">
+                          {chapter.topics.map((topic) => (
+                            <li class="flex items-start gap-2 text-sm text-slate-600">
+                              <svg
+                                class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                              {topic}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </details>
+                  ))}
                 </div>
-              ))
-            }
+              </div>
+            ))
+          }
 
-            <div class="p-6 bg-slate-800">
-              <span class="text-sm font-medium text-slate-300">CZĘŚĆ II</span>
-              <h3 class="text-lg font-bold text-white">Struktura i badania</h3>
-            </div>
-            {
-              chapters.slice(3).map((ch, i) => (
-                <div class="p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
-                  <span class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold text-sm">
-                    {i + 4}
-                  </span>
-                  <div>
-                    <h4 class="font-semibold text-slate-900">{ch.title}</h4>
-                    <p class="text-sm text-slate-500">{ch.desc}</p>
-                  </div>
-                </div>
-              ))
-            }
-
-            <div class="p-6 bg-slate-100 text-center">
-              <p class="text-slate-600">
-                <strong>+ 12 kolejnych rozdziałów</strong> o pisaniu, redakcji, obronie
-                i więcej...
-              </p>
+          <!-- Dodatki -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <button
+              class="toc-part-btn w-full p-6 bg-gradient-to-r from-accent to-primary-500 text-left flex justify-between items-center hover:opacity-90 transition-opacity"
+              data-part="extras"
+            >
+              <div>
+                <span class="text-sm font-medium text-white/80">BONUS</span>
+                <h3 class="text-lg font-bold text-white">Dodatki i szablony</h3>
+              </div>
+              <svg
+                class="w-6 h-6 text-white transform transition-transform toc-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="toc-content hidden" data-part="extras">
+              {
+                extras.map((extra) => (
+                  <details class="group border-b border-slate-100 last:border-0">
+                    <summary class="p-5 flex items-start gap-4 cursor-pointer hover:bg-slate-50 transition-colors">
+                      <span class="flex-shrink-0 w-10 h-10 bg-accent/10 text-accent rounded-full flex items-center justify-center">
+                        <svg
+                          class="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                          />
+                        </svg>
+                      </span>
+                      <div class="flex-1">
+                        <h4 class="font-semibold text-slate-900 group-open:text-accent transition-colors">
+                          {extra.title}
+                        </h4>
+                      </div>
+                      <svg
+                        class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform mt-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </summary>
+                    <div class="px-5 pb-5 pl-20">
+                      <ul class="space-y-2">
+                        {extra.items.map((item) => (
+                          <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <svg
+                              class="w-4 h-4 text-accent mt-0.5 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))
+              }
             </div>
           </div>
+        </div>
+
+        <!-- CTA after TOC -->
+        <div class="mt-12 text-center">
+          <p class="text-slate-600 mb-4">To wszystko za jedyne</p>
+          <div class="text-5xl font-bold text-slate-900 mb-4">
+            {ebook.price} zł
+          </div>
+          <button
+            class="buy-button bg-accent hover:bg-green-600 text-white font-semibold py-4 px-10 rounded-xl transition-all hover:scale-105 inline-flex items-center gap-2 shadow-lg shadow-accent/25"
+            data-product-id={ebook.id}
+          >
+            <span>Kupuję ebook</span>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Testimonial / Social proof -->
+    <!-- Testimonial -->
     <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <div
@@ -365,7 +755,6 @@ const features = [
           </p>
 
           <button
-            id="buy-button-bottom"
             class="buy-button w-full bg-accent hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-accent/25"
             data-product-id={ebook.id}
           >
@@ -448,7 +837,7 @@ const features = [
             </summary>
             <p class="mt-4 text-slate-600">
               Ebook jest w formacie PDF. Możesz go otworzyć na komputerze,
-              tablecie lub telefonie. Działa na każdym systemie.
+              tablecie lub telefonie.
             </p>
           </details>
 
@@ -472,7 +861,7 @@ const features = [
             </summary>
             <p class="mt-4 text-slate-600">
               Natychmiast po płatności otrzymasz email z linkiem do pobrania.
-              Link jest ważny 7 dni — po pobraniu ebook jest Twój na zawsze.
+              Link jest ważny 7 dni.
             </p>
           </details>
 
@@ -496,8 +885,7 @@ const features = [
             </summary>
             <p class="mt-4 text-slate-600">
               Tak! Zasady pisania pracy licencjackiej są uniwersalne. Ebook
-              zawiera przykłady z różnych kierunków: zarządzania, pedagogiki,
-              psychologii, prawa i innych.
+              zawiera przykłady z różnych kierunków.
             </p>
           </details>
 
@@ -505,7 +893,7 @@ const features = [
             <summary
               class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
             >
-              A jeśli link do pobrania wygaśnie?
+              A jeśli link wygaśnie?
               <svg
                 class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
                 fill="none"
@@ -521,32 +909,6 @@ const features = [
             </summary>
             <p class="mt-4 text-slate-600">
               Napisz do nas na kontakt@praca-magisterska.pl — wyślemy nowy link.
-              Bez problemu.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-xl p-6 shadow-sm group">
-            <summary
-              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
-            >
-              Jakie metody płatności akceptujecie?
-              <svg
-                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <p class="mt-4 text-slate-600">
-              Karty (Visa, Mastercard), BLIK oraz Przelewy24. Płatności
-              obsługuje Stripe — jeden z najbezpieczniejszych systemów na
-              świecie.
             </p>
           </details>
         </div>
@@ -555,6 +917,148 @@ const features = [
   </main>
 
   <Footer />
+
+  <!-- Preview Modal -->
+  <div
+    id="preview-modal"
+    class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4"
+  >
+    <div
+      class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl"
+    >
+      <!-- Modal Header -->
+      <div
+        class="p-6 border-b border-slate-200 flex justify-between items-center"
+      >
+        <div>
+          <span class="text-sm text-accent font-medium">Rozdział 1</span>
+          <h3 class="text-xl font-bold text-slate-900">
+            Czym jest praca licencjacka i po co ją piszesz?
+          </h3>
+        </div>
+        <button
+          id="close-preview"
+          class="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+        >
+          <svg
+            class="w-6 h-6 text-slate-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-6 overflow-y-auto flex-1 prose prose-slate max-w-none">
+        <p class="text-lg text-slate-600 italic mb-6">
+          Zanim zanurzysz się w techniczne aspekty pisania, warto zrozumieć,
+          czym właściwie jest praca licencjacka i jaką rolę pełni w Twojej
+          edukacji.
+        </p>
+
+        <h4 class="text-lg font-bold text-slate-900 mt-8 mb-4">
+          1.1. Cel pracy licencjackiej w procesie edukacyjnym
+        </h4>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          Praca licencjacka to <strong
+            >Twoje pierwsze poważne dzieło naukowe</strong
+          >. Nie jest to jednak praca naukowa w ścisłym sensie — nie musisz
+          odkrywać czegoś nowego dla nauki. Twoim zadaniem jest pokazanie, że:
+        </p>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-start gap-2">
+            <span class="text-accent">✓</span>
+            <span>Potrafisz samodzielnie zgłębiać wybrany temat</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent">✓</span>
+            <span>Umiesz korzystać z literatury naukowej i ją analizować</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent">✓</span>
+            <span
+              >Potrafisz formułować wnioski na podstawie zebranych materiałów</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-accent">✓</span>
+            <span>Znasz zasady pisania tekstów naukowych</span>
+          </li>
+        </ul>
+
+        <h4 class="text-lg font-bold text-slate-900 mt-8 mb-4">
+          1.2. Czego oczekuje od Ciebie uczelnia (i promotor)
+        </h4>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          Każda uczelnia ma swoje wytyczne, ale pewne oczekiwania są
+          uniwersalne:
+        </p>
+        <div class="bg-slate-50 p-4 rounded-lg mb-6">
+          <p class="text-slate-700">
+            <strong>Samodzielność</strong> — praca musi być Twoim własnym dziełem.
+            Promotor doradza i wskazuje kierunek, ale to Ty piszesz.<br /><br />
+            <strong>Zgodność z tematem</strong> — jeśli tytuł obiecuje analizę X,
+            to praca musi zawierać analizę X, nie Y.<br /><br />
+            <strong>Poprawność formalna</strong> — odpowiednia struktura, formatowanie,
+            bibliografia.
+          </p>
+        </div>
+
+        <h4 class="text-lg font-bold text-slate-900 mt-8 mb-4">
+          1.3. Typowe błędy na starcie — jak ich uniknąć
+        </h4>
+        <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg mb-6">
+          <p class="text-slate-700">
+            <strong>❌ Błąd #1:</strong> Odkładanie pisania na ostatnią chwilę<br
+            />
+            <strong>❌ Błąd #2:</strong> Wybór zbyt szerokiego tematu<br />
+            <strong>❌ Błąd #3:</strong> Pisanie bez planu i struktury<br />
+            <strong>❌ Błąd #4:</strong> Ignorowanie uwag promotora
+          </p>
+        </div>
+
+        <p class="text-slate-500 italic text-center mt-8">
+          [Fragment rozdziału — pełna wersja w ebooku]
+        </p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-6 border-t border-slate-200 bg-slate-50 rounded-b-2xl">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-slate-600">
+            Podoba Ci się? <strong>Zostało jeszcze 17 rozdziałów!</strong>
+          </p>
+          <button
+            class="buy-button bg-accent hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-xl transition-all hover:scale-105 flex items-center gap-2"
+            data-product-id={ebook.id}
+          >
+            <span>Kup cały ebook za {ebook.price} zł</span>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Loading overlay -->
   <div
@@ -572,27 +1076,24 @@ const features = [
 
   <script define:vars={{ API_URL }}>
     document.addEventListener("DOMContentLoaded", () => {
+      // Buy buttons
       const buttons = document.querySelectorAll(".buy-button");
       const loadingOverlay = document.getElementById("loading-overlay");
 
       buttons.forEach((button) => {
         button.addEventListener("click", async () => {
           const productId = button.dataset.productId;
-
           loadingOverlay.classList.remove("hidden");
           button.disabled = true;
 
           try {
             const response = await fetch(`${API_URL}/create-checkout`, {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
+              headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ productId }),
             });
 
             const data = await response.json();
-
             if (data.url) {
               window.location.href = data.url;
             } else {
@@ -602,10 +1103,56 @@ const features = [
             console.error("Error:", error);
             loadingOverlay.classList.add("hidden");
             button.disabled = false;
-            alert("Wystąpił błąd. Spróbuj ponownie lub skontaktuj się z nami.");
+            alert("Wystąpił błąd. Spróbuj ponownie.");
           }
         });
       });
+
+      // TOC accordion
+      const tocButtons = document.querySelectorAll(".toc-part-btn");
+      tocButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const partId = btn.dataset.part;
+          const content = document.querySelector(
+            `.toc-content[data-part="${partId}"]`,
+          );
+          const arrow = btn.querySelector(".toc-arrow");
+
+          content.classList.toggle("hidden");
+          arrow.classList.toggle("rotate-180");
+        });
+      });
+
+      // Preview modal
+      const previewBtn = document.getElementById("preview-btn");
+      const previewModal = document.getElementById("preview-modal");
+      const closePreview = document.getElementById("close-preview");
+
+      previewBtn.addEventListener("click", () => {
+        previewModal.classList.remove("hidden");
+        previewModal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      });
+
+      closePreview.addEventListener("click", () => {
+        previewModal.classList.add("hidden");
+        previewModal.classList.remove("flex");
+        document.body.style.overflow = "";
+      });
+
+      previewModal.addEventListener("click", (e) => {
+        if (e.target === previewModal) {
+          previewModal.classList.add("hidden");
+          previewModal.classList.remove("flex");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // Open first part by default
+      const firstPartBtn = document.querySelector(
+        '.toc-part-btn[data-part="0"]',
+      );
+      if (firstPartBtn) firstPartBtn.click();
     });
   </script>
 </Layout>

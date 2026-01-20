@@ -1,0 +1,1489 @@
+---
+// src/pages/sklep/index.astro
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+
+const API_URL =
+  "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
+
+// ====== ZMIEŃ TEN URL NA SWÓJ PLIK PREVIEW Z S3 ======
+const PREVIEW_PDF_URL =
+  "https://praca-magisterska-ebooks.s3.eu-central-1.amazonaws.com/preview/rozdzial-preview.pdf";
+
+const ebook = {
+  id: "ebook-pisanie-pracy-licencjackiej",
+  name: "Jak napisać pracę licencjacką",
+  subtitle: "Kompletny przewodnik od A do Z",
+  price: 29,
+  oldPrice: 49,
+  pages: "300",
+  chapters: 18,
+  format: "PDF",
+};
+---
+
+<Layout
+  title="Ebook PDF: Jak napisać pracę licencjacką - Poradnik 300 stron | Pisanie pracy licencjackiej krok po kroku"
+  description="Kompletny poradnik pisania pracy licencjackiej w PDF. 300 stron praktycznej wiedzy: wybór tematu, przegląd literatury, metodologia badań, formatowanie, obrona. Szablony, checklisty, przykłady. Tylko 29 zł."
+>
+  <Navbar />
+
+  <main class="min-h-screen">
+    <!-- ============ HERO ============ -->
+    <section
+      class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 md:py-24"
+    >
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium"
+                >📚 Ebook PDF</span
+              >
+              <span
+                class="bg-white/10 text-white px-3 py-1 rounded-full text-sm"
+                >300 stron</span
+              >
+              <span
+                class="bg-white/10 text-white px-3 py-1 rounded-full text-sm"
+                >18 rozdziałów</span
+              >
+            </div>
+
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white"
+            >
+              Jak napisać pracę licencjacką
+            </h1>
+            <p class="text-2xl text-accent font-medium mb-4">
+              Kompletny przewodnik od A do Z
+            </p>
+            <p class="text-slate-300 mb-6 leading-relaxed text-lg">
+              Przestań się stresować i błądzić po omacku. Ten poradnik
+              przeprowadzi Cię <strong class="text-white">krok po kroku</strong> przez
+              cały proces pisania pracy licencjackiej — od wyboru tematu, przez przegląd
+              literatury i metodologię badań, aż po formatowanie w Wordzie i obronę
+              przed komisją.
+            </p>
+
+            <p class="text-slate-400 mb-8">
+              <strong class="text-white">Zacznij pisać już dziś.</strong> Bez stresu.
+              Bez marnowania czasu. Za cenę 3 kaw ☕
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8"
+            >
+              <div class="bg-white/10 rounded-xl px-6 py-3">
+                <span class="text-slate-400 line-through text-lg"
+                  >{ebook.oldPrice} zł</span
+                >
+                <span class="text-4xl font-bold text-white ml-2"
+                  >{ebook.price} zł</span
+                >
+              </div>
+              <button
+                class="buy-button bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-accent/30 text-lg"
+                data-product-id={ebook.id}
+              >
+                <span>Kup teraz i zacznij pisać</span>
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex flex-wrap gap-4 text-sm text-slate-400">
+              <span class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path></svg
+                >
+                Dostęp w 30 sekund
+              </span>
+              <span class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path></svg
+                >
+                Bezpieczna płatność
+              </span>
+              <span class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path></svg
+                >
+                PDF na każde urządzenie
+              </span>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="bg-gradient-to-br from-primary-500 to-accent rounded-2xl p-8 shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform"
+            >
+              <div class="bg-white rounded-lg p-6">
+                <div class="text-center">
+                  <div class="text-6xl mb-4">📘</div>
+                  <h3 class="text-xl font-bold text-slate-800 mb-2">
+                    {ebook.name}
+                  </h3>
+                  <p class="text-slate-500 text-sm">{ebook.subtitle}</p>
+                  <div
+                    class="mt-4 pt-4 border-t border-slate-200 flex justify-center gap-4 text-xs text-slate-400"
+                  >
+                    <span>PDF</span>
+                    <span>•</span>
+                    <span>300 stron</span>
+                    <span>•</span>
+                    <span>2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL PROOF BAR ============ -->
+    <section class="bg-accent py-4">
+      <div class="max-w-6xl mx-auto px-4">
+        <div
+          class="flex flex-wrap justify-center gap-8 text-white text-sm font-medium"
+        >
+          <span>✓ Ponad 500+ pobrań</span>
+          <span>✓ Średnia ocena: 4.9/5</span>
+          <span>✓ Uniwersalny dla każdego kierunku</span>
+          <span>✓ Aktualizowany na 2025</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM INTRO ============ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          Pisanie pracy licencjackiej Cię przytłacza?
+        </h2>
+        <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+          Nie wiesz od czego zacząć. Promotor nie pomaga. Termin się zbliża.
+          Siedzisz przed pustym dokumentem i czujesz, jak stres rośnie z każdym
+          dniem.
+        </p>
+        <p class="text-lg text-slate-700 font-medium">
+          <strong>Brzmi znajomo?</strong> Nie jesteś sam. Większość studentów przez
+          to przechodzi. Ale nie musi tak być.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ LISTA PROBLEMÓW ============ -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-4">
+          Ten ebook jest dla Ciebie, jeśli:
+        </h2>
+        <p class="text-center text-slate-600 mb-12">
+          Zaznacz w głowie, ile z tych punktów Cię dotyczy 👇
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          {
+            [
+              "Nie wiesz, od czego zacząć pisanie pracy",
+              "Masz temat, ale nie wiesz jak go zawęzić do sensownego zakresu",
+              "Nie wiesz, jakie elementy muszą znaleźć się w Twojej pracy",
+              "Brakuje Ci motywacji do pisania",
+              "Nie wiesz, gdzie szukać literatury naukowej",
+              "Masz problem z odróżnieniem dobrego źródła od śmieciowego",
+              "Twoja część teoretyczna to zlepek cytatów bez sensu",
+              "Nie rozumiesz różnicy między przypisami a bibliografią",
+              "Promotor każe poprawiać, ale nie mówi konkretnie co",
+              "Nie umiesz formatować w Wordzie (spis treści, numeracja...)",
+              "Boisz się plagiatu i systemu antyplagiatowego",
+              "Nie wiesz jak sformułować pytania badawcze i hipotezy",
+              "Boisz się obrony — co jeśli zapytają o coś trudnego?",
+              "Nie chcesz czytać nudnych, akademickich poradników",
+              "Chcesz konkrety do błyskawicznego zastosowania",
+              "Chcesz zaoszczędzić dziesiątki godzin błądzenia po omacku",
+            ].map((item) => (
+              <div class="bg-white p-4 rounded-lg border border-slate-200 flex items-start gap-3">
+                <span class="text-red-500 text-xl">☐</span>
+                <span class="text-slate-700">{item}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-xl text-slate-800 font-medium mb-4">
+            Jeśli zaznaczyłeś chociaż <strong>3 punkty</strong> — ten ebook rozwiąże
+            Twoje problemy.
+          </p>
+          <p class="text-slate-600">
+            Wszystkie te kwestie są szczegółowo omówione na 300 stronach
+            praktycznej wiedzy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DLA KOGO NIE JEST ============ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-green-50 border-2 border-green-200 rounded-2xl p-8">
+            <h3
+              class="text-xl font-bold text-green-800 mb-6 flex items-center gap-2"
+            >
+              <span class="text-2xl">✅</span> Ten ebook JEST dla Ciebie, jeśli:
+            </h3>
+            <ul class="space-y-4 text-slate-700">
+              <li class="flex items-start gap-3">
+                <span class="text-green-600 font-bold">+</span>
+                <span
+                  >Chcesz napisać pracę samodzielnie, ale potrzebujesz
+                  przewodnika</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-600 font-bold">+</span>
+                <span
+                  >Jesteś gotowy włożyć wysiłek, ale chcesz wiedzieć JAK</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-600 font-bold">+</span>
+                <span
+                  >Cenisz swój czas i wolisz uczyć się na cudzych błędach</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-600 font-bold">+</span>
+                <span>Szukasz konkretów, nie akademickiego bełkotu</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-600 font-bold">+</span>
+                <span>Chcesz obronić się z czystym sumieniem</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-8">
+            <h3
+              class="text-xl font-bold text-red-800 mb-6 flex items-center gap-2"
+            >
+              <span class="text-2xl">❌</span> Ten ebook NIE jest dla Ciebie, jeśli:
+            </h3>
+            <ul class="space-y-4 text-slate-700">
+              <li class="flex items-start gap-3">
+                <span class="text-red-600 font-bold">−</span>
+                <span>Szukasz kogoś, kto napisze pracę za Ciebie</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-600 font-bold">−</span>
+                <span>Chcesz gotowca do skopiowania</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-600 font-bold">−</span>
+                <span>Nie zamierzasz włożyć żadnego wysiłku</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-600 font-bold">−</span>
+                <span>Jesteś ekspertem od pisania prac naukowych</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-600 font-bold">−</span>
+                <span>Już obroniłeś pracę i znasz wszystkie zasady</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DLACZEGO TEN EBOOK ============ -->
+    <section class="py-16 bg-slate-900 text-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl text-white font-bold text-center mb-4">
+          Dlaczego akurat TEN ebook?
+        </h2>
+        <p class="text-center text-slate-400 mb-12">
+          W internecie jest mnóstwo darmowych poradników. Czym ten się różni?
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-800 rounded-xl p-6">
+            <h3 class="text-xl text-white font-bold text-red-400 mb-4">
+              ❌ Typowe darmowe poradniki:
+            </h3>
+            <ul class="space-y-3 text-slate-400">
+              <li>• Ogólniki w stylu "napisz dobry wstęp"</li>
+              <li>• Brak konkretnych przykładów</li>
+              <li>• Akademicki język, który usypia</li>
+              <li>• Informacje rozproszone po 100 stronach</li>
+              <li>• Nieaktualne (sprzed 10 lat)</li>
+              <li>• Pisane przez teoretyków</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800 rounded-xl p-6 border-2 border-accent">
+            <h3 class="text-xl font-bold text-accent mb-4">✅ Ten ebook:</h3>
+            <ul class="space-y-3 text-slate-300">
+              <li>• <strong>Konkretne instrukcje</strong> krok po kroku</li>
+              <li>
+                • <strong>Dziesiątki przykładów</strong> z różnych kierunków
+              </li>
+              <li>• <strong>Prosty język</strong> bez akademickiego bełkotu</li>
+              <li>• <strong>Wszystko w jednym miejscu</strong> — 300 stron</li>
+              <li>• <strong>Aktualizowany na 2025</strong> rok</li>
+              <li>• Pisany przez praktyków, nie teoretyków</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-slate-400 mb-4">
+            Możesz spędzić <strong class="text-white">20 godzin</strong> szukając
+            informacji w internecie i składając je w całość...
+          </p>
+          <p class="text-xl text-white font-medium">
+            ...albo kupić ten ebook za <strong class="text-accent">29 zł</strong
+            > i mieć wszystko gotowe w 5 minut.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CO ZAWIERA - MEGA SZCZEGÓŁOWO ============ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-4">
+          Co dokładnie znajdziesz w ebooku?
+        </h2>
+        <p class="text-center text-slate-600 mb-12">
+          300 stron podzielonych na 4 części + dodatki z szablonami
+        </p>
+
+        <!-- CZĘŚĆ 1 -->
+        <div class="mb-12 bg-slate-50 rounded-2xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <span
+              class="bg-primary-600 text-white px-4 py-2 rounded-lg font-bold text-lg"
+              >CZĘŚĆ I</span
+            >
+            <h3 class="text-2xl font-bold text-slate-900">
+              Zanim zaczniesz pisać
+            </h3>
+            <span class="text-slate-500">(~80 stron)</span>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                📍 Rozdział 2: Wybór tematu
+              </h4>
+              <p class="text-slate-600 mb-4">
+                Najważniejsza decyzja, którą podejmiesz. Zły temat = miesiące
+                męczarni.
+              </p>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>
+                  ✓ <strong>6 sprawdzonych źródeł</strong> pomysłów na temat
+                </li>
+                <li>
+                  ✓ <strong>Technika zawężania tematu</strong> — od "Zarządzanie"
+                  do konkretnego problemu badawczego (5 poziomów z przykładami)
+                </li>
+                <li>✓ Jak sprawdzić, czy temat nie jest "przerobiony"</li>
+                <li>
+                  ✓ <strong>7 pytań kontrolnych</strong> przed wyborem tematu
+                </li>
+                <li>✓ Jak rozmawiać z promotorem o temacie</li>
+                <li>✓ Cechy dobrego vs złego tytułu (przykłady)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                📚 Rozdział 3: Przegląd literatury
+              </h4>
+              <p class="text-slate-600 mb-4">
+                Gdzie szukać źródeł i jak nie utopić się w materiałach.
+              </p>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>
+                  ✓ <strong>Tabela 15+ baz danych naukowych</strong> z linkami i charakterystyką
+                </li>
+                <li>
+                  ✓ Google Scholar — jak używać (operatory, filtry, cytowania)
+                </li>
+                <li>
+                  ✓ <strong>Metoda "śnieżnej kuli"</strong> — znajdź 50 źródeł zaczynając
+                  od 1
+                </li>
+                <li>
+                  ✓ <strong>Tabela "Co cytować, czego unikać"</strong> — Wikipedia,
+                  blogi, czasopisma drapieżne
+                </li>
+                <li>✓ System notatek i fiszek (wzór do skopiowania)</li>
+                <li>✓ Ile pozycji w bibliografii? (konkretne liczby)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CZĘŚĆ 2 -->
+        <div class="mb-12 bg-slate-50 rounded-2xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <span
+              class="bg-primary-600 text-white px-4 py-2 rounded-lg font-bold text-lg"
+              >CZĘŚĆ II</span
+            >
+            <h3 class="text-2xl font-bold text-slate-900">
+              Struktura pracy — co gdzie pisać
+            </h3>
+            <span class="text-slate-500">(~100 stron)</span>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                ✍️ Rozdziały 5-7: Wstęp i teoria
+              </h4>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>✓ <strong>Checklist: co MUSI być we wstępie</strong></li>
+                <li>✓ Kiedy pisać wstęp? (spoiler: NA KOŃCU!)</li>
+                <li>
+                  ✓ <strong>Synteza vs kompilacja</strong> — jak pisać, żeby nie było
+                  "zlepkiem cytatów"
+                </li>
+                <li>✓ Przykład złego i dobrego tekstu teoretycznego</li>
+                <li>✓ Jak definiować pojęcia (2-4 definicje + uzasadnienie)</li>
+                <li>
+                  ✓ <strong>Zdania łączące</strong> między akapitami (gotowe formuły)
+                </li>
+                <li>✓ Proporcje rozdziałów (teoria 40-50%)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                🔬 Rozdziały 8-10: Badania i zakończenie
+              </h4>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>
+                  ✓ Jak sformułować <strong>pytania badawcze i hipotezy</strong>
+                </li>
+                <li>
+                  ✓ <strong>Różnica między metodą, techniką a narzędziem</strong
+                  >
+                </li>
+                <li>✓ Jak dobrać próbę badawczą</li>
+                <li>✓ Jak prezentować wyniki (tabele, wykresy)</li>
+                <li>✓ Co jeśli hipoteza się nie potwierdziła?</li>
+                <li>
+                  ✓ <strong>Zakończenie vs podsumowanie</strong> — różnica
+                </li>
+                <li>✓ Jak odnieść się do celów ze wstępu</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CZĘŚĆ 3 -->
+        <div class="mb-12 bg-slate-50 rounded-2xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <span
+              class="bg-primary-600 text-white px-4 py-2 rounded-lg font-bold text-lg"
+              >CZĘŚĆ III</span
+            >
+            <h3 class="text-2xl font-bold text-slate-900">
+              Warsztat pisarski i redakcja
+            </h3>
+            <span class="text-slate-500">(~80 stron)</span>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                📝 Rozdziały 11-14: Cytaty i bibliografia
+              </h4>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>✓ Kiedy cytować dosłownie, kiedy parafrazować?</li>
+                <li>
+                  ✓ <strong>System harwardzki</strong> — wszystkie przypadki z przykładami
+                </li>
+                <li>
+                  ✓ <strong>Przypisy dolne</strong> — ibidem, op.cit., tamże
+                </li>
+                <li>✓ Jak cytować: książkę, artykuł, stronę www, akt prawny</li>
+                <li>✓ <strong>Jak nie wpaść w plagiat</strong></li>
+                <li>✓ Co wykrywa system antyplagiatowy</li>
+                <li>✓ Zotero i Mendeley — jak używać</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                💻 Rozdział 15: Formatowanie w Word
+              </h4>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>
+                  ✓ <strong>Standardy:</strong> czcionka, marginesy, interlinia
+                </li>
+                <li>
+                  ✓ <strong>Automatyczny spis treści</strong> krok po kroku
+                </li>
+                <li>✓ Numerowanie stron (bez strony tytułowej)</li>
+                <li>✓ Jak wstawiać i podpisywać tabele, wykresy</li>
+                <li>✓ Style nagłówków — jak ustawić raz na zawsze</li>
+                <li>✓ Dzielenie wyrazów, justowanie</li>
+                <li>✓ <strong>Najczęstsze błędy formatowania</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CZĘŚĆ 4 -->
+        <div class="mb-12 bg-slate-50 rounded-2xl p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <span
+              class="bg-primary-600 text-white px-4 py-2 rounded-lg font-bold text-lg"
+              >CZĘŚĆ IV</span
+            >
+            <h3 class="text-2xl font-bold text-slate-900">Promotor i obrona</h3>
+            <span class="text-slate-500">(~40 stron)</span>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                🤝 Rozdział 16-17: Współpraca z promotorem
+              </h4>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>✓ Rola promotora — czego możesz oczekiwać (a czego nie)</li>
+                <li>✓ <strong>Jak przygotować się do konsultacji</strong></li>
+                <li>✓ Jak reagować na krytykę (bez emocji)</li>
+                <li>✓ Komunikacja mailowa — wzory wiadomości</li>
+                <li>✓ <strong>Checklist przed oddaniem pracy</strong></li>
+                <li>✓ Korekta językowa — na co zwrócić uwagę</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-slate-900 mb-4 text-lg">
+                🎤 Rozdział 18: Obrona
+              </h4>
+              <ul class="space-y-2 text-slate-700 text-sm">
+                <li>
+                  ✓ <strong>Jak przebiega obrona?</strong> (scenariusz krok po kroku)
+                </li>
+                <li>✓ Jak przygotować prezentację</li>
+                <li>✓ <strong>Lista typowych pytań komisji</strong></li>
+                <li>✓ Jak radzić sobie ze stresem</li>
+                <li>
+                  ✓ <strong>Co powiedzieć, gdy nie znasz odpowiedzi</strong>
+                </li>
+                <li>✓ Dress code i mowa ciała</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- DODATKI -->
+        <div
+          class="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-8"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <span
+              class="bg-amber-500 text-white px-4 py-2 rounded-lg font-bold text-lg"
+              >🎁 BONUS</span
+            >
+            <h3 class="text-2xl font-bold text-slate-900">
+              Dodatki i materiały praktyczne
+            </h3>
+          </div>
+
+          <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl p-5 shadow-sm">
+              <div class="text-3xl mb-3">📄</div>
+              <h4 class="font-bold text-slate-900 mb-2">Szablony Word</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Strona tytułowa</li>
+                <li>• Spis treści</li>
+                <li>• Harmonogram pracy</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-5 shadow-sm">
+              <div class="text-3xl mb-3">💬</div>
+              <h4 class="font-bold text-slate-900 mb-2">Gotowe zdania</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Formuły do wstępu</li>
+                <li>• Formuły do zakończenia</li>
+                <li>• Przejścia między rozdziałami</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-5 shadow-sm">
+              <div class="text-3xl mb-3">🔗</div>
+              <h4 class="font-bold text-slate-900 mb-2">Lista narzędzi</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• 15+ baz danych z linkami</li>
+                <li>• Biblioteki cyfrowe</li>
+                <li>• Programy do bibliografii</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-5 shadow-sm">
+              <div class="text-3xl mb-3">✅</div>
+              <h4 class="font-bold text-slate-900 mb-2">Checklisty</h4>
+              <ul class="text-sm text-slate-600 space-y-1">
+                <li>• Przed oddaniem pracy</li>
+                <li>• Przed obroną</li>
+                <li>• Formatowanie</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREVIEW PDF ============ -->
+    <section class="py-16 bg-slate-900">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-white mb-4">
+            📖 Zajrzyj do środka — przeczytaj fragment za darmo
+          </h2>
+          <p class="text-slate-300">
+            Zobacz jak wygląda ebook od środka. Pełny rozdział o przeglądarce
+            literatury do przejrzenia.
+          </p>
+        </div>
+
+        <!-- PDF EMBED -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <div class="bg-slate-800 px-6 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <span class="text-sm text-slate-300"
+                >Fragment ebooka — Przegląd literatury</span
+              >
+            </div>
+            <a
+              href={PREVIEW_PDF_URL}
+              target="_blank"
+              class="text-sm text-accent hover:text-green-400 flex items-center gap-1"
+            >
+              Otwórz w nowej karcie ↗
+            </a>
+          </div>
+
+          <iframe
+            src={PREVIEW_PDF_URL}
+            class="w-full h-[600px] md:h-[700px] border-0"
+            title="Preview rozdziału ebooka"></iframe>
+        </div>
+
+        <div class="text-center mt-8">
+          <p class="text-slate-400 mb-6">
+            Podoba Ci się? To zaledwie <strong class="text-white"
+              >1 z 18 rozdziałów</strong
+            >. Pełny ebook to 300 stron takiej wiedzy.
+          </p>
+          <button
+            class="buy-button bg-accent hover:bg-green-600 text-white font-bold py-4 px-10 rounded-xl transition-all hover:scale-105 inline-flex items-center gap-2 shadow-lg shadow-accent/30 text-lg"
+            data-product-id={ebook.id}
+          >
+            <span>Kup pełny ebook za {ebook.price} zł</span>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CO ZYSKUJESZ ============ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
+          Co zyskujesz kupując ten ebook?
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-3xl">⏰</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Oszczędzasz czas
+            </h3>
+            <p class="text-slate-600">
+              Zamiast szukać informacji po całym internecie — masz wszystko w
+              jednym miejscu. <strong>Oszczędzasz 20-30 godzin</strong> błądzenia
+              po omacku.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-3xl">🎯</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Unikasz błędów
+            </h3>
+            <p class="text-slate-600">
+              Uczysz się na cudzych błędach, nie na swoich. <strong
+                >Nie tracisz tygodni</strong
+              > na poprawianie tego, co mogłeś zrobić dobrze od razu.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-3xl">😌</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Redukujesz stres
+            </h3>
+            <p class="text-slate-600">
+              Wiesz dokładnie co robić na każdym etapie. <strong
+                >Koniec z pustką w głowie</strong
+              > i paraliżującym strachem przed pisaniem.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-3xl">📈</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Piszesz lepiej
+            </h3>
+            <p class="text-slate-600">
+              Twoja praca będzie <strong
+                >spójna, logiczna i poprawnie sformatowana</strong
+              >. Promotor nie będzie miał się do czego przyczepić.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-3xl">🛡️</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Unikasz plagiatu
+            </h3>
+            <p class="text-slate-600">
+              Wiesz jak cytować, parafrazować i tworzyć bibliografię. <strong
+                >System antyplagiatowy nie jest zagrożeniem</strong
+              >.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-3xl">🎓</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Obronisz się spokojnie
+            </h3>
+            <p class="text-slate-600">
+              Znasz typowe pytania komisji i wiesz jak na nie odpowiadać. <strong
+                >Obrona przestaje być koszmarem</strong
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PORÓWNANIE BEZ VS Z EBOOKIEM ============ -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
+          Pisanie pracy BEZ ebooka vs Z ebookiem
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-2xl p-8 border-2 border-red-200">
+            <h3 class="text-xl font-bold text-red-700 mb-6 text-center">
+              ❌ Bez tego ebooka
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-red-500">✗</span>
+                <span class="text-slate-700"
+                  >Godziny szukania rozproszonych informacji w internecie</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-500">✗</span>
+                <span class="text-slate-700"
+                  >Stres przed pustym dokumentem — nie wiesz od czego zacząć</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-500">✗</span>
+                <span class="text-slate-700"
+                  >Ciągłe poprawki od promotora — "coś jest nie tak"</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-500">✗</span>
+                <span class="text-slate-700"
+                  >Ryzyko plagiatu przez nieumiejętne cytowanie</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-500">✗</span>
+                <span class="text-slate-700"
+                  >Chaos w bibliografii i przypisach</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-500">✗</span>
+                <span class="text-slate-700"
+                  >Panika przed obroną — co jeśli zapytają?</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 border-2 border-green-400 shadow-lg"
+          >
+            <h3 class="text-xl font-bold text-green-700 mb-6 text-center">
+              ✅ Z tym ebookiem
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-green-500">✓</span>
+                <span class="text-slate-700"
+                  ><strong>Wszystko w jednym miejscu</strong> — 300 stron gotowej
+                  wiedzy</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500">✓</span>
+                <span class="text-slate-700"
+                  ><strong>Jasny plan działania</strong> — wiesz co robić na każdym
+                  etapie</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500">✓</span>
+                <span class="text-slate-700"
+                  ><strong>Mniej poprawek</strong> — robisz dobrze od początku</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500">✓</span>
+                <span class="text-slate-700"
+                  ><strong>Bezpieczeństwo</strong> — wiesz jak cytować poprawnie</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500">✓</span>
+                <span class="text-slate-700"
+                  ><strong>Porządek</strong> — szablony i wzory gotowe do użycia</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-green-500">✓</span>
+                <span class="text-slate-700"
+                  ><strong>Spokój</strong> — znasz typowe pytania i odpowiedzi</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL PROOF ============ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
+          Co mówią studenci?
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex gap-1 mb-4">
+              {
+                [1, 2, 3, 4, 5].map(() => (
+                  <span class="text-yellow-400">★</span>
+                ))
+              }
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Gdybym miał ten poradnik na początku studiów, zaoszczędziłbym
+              dziesiątki godzin błądzenia po omacku. Wszystko wyjaśnione
+              konkretnie, bez akademickiego bełkotu."
+            </p>
+            <p class="text-slate-500 text-sm">— Mateusz, Zarządzanie</p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex gap-1 mb-4">
+              {
+                [1, 2, 3, 4, 5].map(() => (
+                  <span class="text-yellow-400">★</span>
+                ))
+              }
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Rozdział o literaturze to złoto. Wreszcie wiem gdzie szukać i jak
+              oceniać źródła. Metoda śnieżnej kuli działa rewelacyjnie!"
+            </p>
+            <p class="text-slate-500 text-sm">— Karolina, Pedagogika</p>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="flex gap-1 mb-4">
+              {
+                [1, 2, 3, 4, 5].map(() => (
+                  <span class="text-yellow-400">★</span>
+                ))
+              }
+            </div>
+            <p class="text-slate-700 mb-4 italic">
+              "Obroniłam się na 5! Pytania komisji były dokładnie takie jak w
+              ebooku. Polecam każdemu studentowi."
+            </p>
+            <p class="text-slate-500 text-sm">— Anna, Psychologia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CENA I CTA ============ -->
+    <section class="py-16 bg-slate-900">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+          Ile jest wart Twój spokój i zaoszczędzony czas?
+        </h2>
+        <p class="text-xl text-slate-300 mb-8">
+          Korepetycje z pisania pracy? <span class="line-through"
+            >100-200 zł/h</span
+          ><br />
+          Kurs online? <span class="line-through">200-500 zł</span><br />
+          Stres i godziny błądzenia? <span class="line-through">Bezcenne</span>
+        </p>
+
+        <div class="bg-slate-800 rounded-2xl p-8 max-w-lg mx-auto mb-8">
+          <p class="text-slate-400 mb-2">
+            Cena regularna: <span class="line-through">{ebook.oldPrice} zł</span
+            >
+          </p>
+          <div class="text-5xl font-bold mb-2 text-white">{ebook.price} zł</div>
+          <p class="text-accent font-medium mb-6">
+            Za cenę 3 kaw ☕ dostajesz 300 stron konkretnej wiedzy
+          </p>
+
+          <button
+            class="buy-button w-full bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-accent/30 text-lg mb-4"
+            data-product-id={ebook.id}
+          >
+            <span>Kupuję ebook — zaczynam pisać!</span>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+
+          <p class="text-slate-500 text-sm">
+            Płatność jednorazowa • Dostęp natychmiast • PDF na zawsze
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+          <span class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path></svg
+            >
+            Bezpieczna płatność Stripe
+          </span>
+          <span class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path></svg
+            >
+            BLIK, karta, Przelewy24
+          </span>
+          <span class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5 text-accent"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path></svg
+            >
+            Link na email w 30 sekund
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-4">
+          Najczęściej zadawane pytania
+        </h2>
+        <p class="text-center text-slate-600 mb-12">
+          Masz wątpliwości? Znajdź odpowiedź poniżej.
+        </p>
+
+        <div class="space-y-4">
+          <details class="bg-slate-50 rounded-xl p-6 group" open>
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              W jakim formacie jest ebook?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              Ebook jest w formacie <strong>PDF</strong>. Otworzysz go na każdym
+              urządzeniu — komputerze (Windows, Mac), tablecie, telefonie
+              (Android, iOS). Nie potrzebujesz żadnego specjalnego programu.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Jak szybko otrzymam ebook po zakupie?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              <strong>Natychmiast</strong> — dosłownie w 30 sekund po płatności. Otrzymasz
+              email z linkiem do pobrania. Link jest ważny 7 dni. Jeśli wygaśnie —
+              napisz do nas, wyślemy nowy.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Czy ebook jest dla każdego kierunku studiów?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              <strong>Tak!</strong> Zasady pisania pracy licencjackiej są uniwersalne.
+              Ebook zawiera przykłady z różnych kierunków: zarządzania, pedagogiki,
+              psychologii, socjologii, ekonomii, prawa, filologii i innych nauk społecznych
+              i humanistycznych.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Czy ten ebook pomoże też przy pracy magisterskiej?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              <strong>Tak</strong> — zasady są bardzo podobne. Różnica polega głównie
+              na objętości i głębokości badań. Wszystkie wskazówki dotyczące struktury,
+              literatury, cytowania i formatowania są uniwersalne dla obu typów prac.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Mam już część pracy napisaną. Czy ebook mi się przyda?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              <strong>Jak najbardziej!</strong> Możesz przejść od razu do rozdziału,
+              który Cię interesuje — np. metodologia, bibliografia, formatowanie czy
+              obrona. Każdy rozdział jest samodzielną całością.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Co jeśli moja praca wymaga badań?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              W ebooku znajdziesz cały rozdział o metodologii badań — jak
+              sformułować pytania badawcze, hipotezy, jak dobrać próbę, jak
+              przeprowadzić ankietę/wywiad i jak opisać wyniki. Jeśli masz
+              zaawansowaną statystykę — to wymaga dodatkowej wiedzy.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Jakie metody płatności akceptujecie?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              <strong>BLIK, karty (Visa, Mastercard) i Przelewy24.</strong> Płatności
+              obsługuje Stripe — jeden z najbezpieczniejszych systemów płatności na
+              świecie, używany przez miliony firm.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Czy mogę dostać fakturę?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              Tak — napisz do nas na <strong
+                >kontakt@praca-magisterska.pl</strong
+              > z danymi do faktury, a wyślemy ją mailem.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              W internecie jest dużo darmowych poradników. Czym ten się różni?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path></svg
+              >
+            </summary>
+            <p class="mt-4 text-slate-600">
+              Możesz spędzić 20 godzin szukając i składając rozproszone
+              informacje... albo kupić ten ebook za 29 zł i mieć <strong
+                >wszystko w jednym miejscu</strong
+              >. Tutaj liczy się Twój czas — 300 stron konkretów, bez lania
+              wody, z przykładami i szablonami.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OSTATNIE CTA ============ -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">
+          Masz dwie drogi do wyboru:
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="text-xl font-bold text-red-700 mb-4">❌ Droga trudna</h3>
+            <p class="text-slate-600">
+              Szukasz informacji po całym internecie. Błądzisz po omacku.
+              Stresujesz się. Poprawiasz pracę 10 razy. Odkładasz na później.
+              Może się uda... a może nie.
+            </p>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-green-50 to-accent/10 rounded-xl p-6 border-2 border-accent"
+          >
+            <h3 class="text-xl font-bold text-green-700 mb-4">
+              ✅ Droga prosta
+            </h3>
+            <p class="text-slate-700">
+              Kupujesz ebook za <strong>29 zł</strong>. Masz wszystko w jednym
+              miejscu. Wiesz co robić. Piszesz pracę spokojnie, bez stresu.
+              Obronisz się z czystym sumieniem.
+            </p>
+          </div>
+        </div>
+
+        <button
+          class="buy-button bg-accent hover:bg-green-600 text-white font-bold py-4 px-10 rounded-xl transition-all hover:scale-105 inline-flex items-center gap-2 shadow-lg shadow-accent/30 text-lg"
+          data-product-id={ebook.id}
+        >
+          <span>Wybieram prostą drogę — kupuję ebook</span>
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </button>
+
+        <p class="text-slate-500 mt-4">
+          {ebook.price} zł • PDF • 300 stron • Dostęp natychmiast
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SEO TEXT ============ -->
+    <section class="py-12 bg-white border-t border-slate-200">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="prose prose-slate prose-sm max-w-none text-slate-600">
+          <h2 class="text-lg font-bold text-slate-800">
+            Jak napisać pracę licencjacką? Kompletny poradnik PDF
+          </h2>
+          <p>
+            <strong>Pisanie pracy licencjackiej</strong> to wyzwanie, przed którym
+            staje każdy student. Wybór tematu, przegląd literatury, metodologia badań,
+            cytaty i przypisy, formatowanie w Wordzie — wszystko to może przytłaczać.
+            Nasz ebook "Jak napisać pracę licencjacką" to <strong
+              >praktyczny przewodnik</strong
+            >, który przeprowadzi Cię przez każdy etap tego procesu.
+          </p>
+          <p>
+            W poradniku znajdziesz nie tylko teorię, ale przede wszystkim <strong
+              >konkretne przykłady, szablony, checklisty i gotowe formuły zdań</strong
+            >. Dowiesz się jak zawęzić temat pracy licencjackiej, gdzie szukać
+            literatury naukowej (Google Scholar, JSTOR, BazEkon i inne), jak
+            pisać rozdziały teoretyczne metodą syntezy (a nie kompilacji), jak
+            robić przypisy w systemie harwardzkim i przypisach dolnych, oraz jak
+            przygotować się do obrony przed komisją.
+          </p>
+          <p>
+            Ebook jest uniwersalny — sprawdzi się na każdym kierunku studiów:
+            zarządzaniu, pedagogice, psychologii, socjologii, ekonomii, prawie,
+            filologii i wielu innych. 300 stron praktycznej wiedzy, która
+            zaoszczędzi Ci dziesiątki godzin błądzenia po omacku.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- Loading overlay -->
+  <div
+    id="loading-overlay"
+    class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden"
+  >
+    <div class="bg-white rounded-2xl p-8 text-center">
+      <div
+        class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"
+      >
+      </div>
+      <p class="text-slate-700">Przekierowuję do płatności...</p>
+    </div>
+  </div>
+
+  <script define:vars={{ API_URL }}>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".buy-button");
+      const loadingOverlay = document.getElementById("loading-overlay");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const productId = button.dataset.productId;
+          loadingOverlay.classList.remove("hidden");
+          button.disabled = true;
+
+          try {
+            const response = await fetch(`${API_URL}/create-checkout`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ productId }),
+            });
+
+            const data = await response.json();
+            if (data.url) {
+              window.location.href = data.url;
+            } else {
+              throw new Error(data.error || "Błąd");
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            loadingOverlay.classList.add("hidden");
+            button.disabled = false;
+            alert("Wystąpił błąd. Spróbuj ponownie.");
+          }
+        });
+      });
+    });
+  </script>
+</Layout>
