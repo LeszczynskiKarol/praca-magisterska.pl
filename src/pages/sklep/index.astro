@@ -4,201 +4,549 @@ import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 
-// Definicja produktów (możesz przenieść do osobnego pliku)
-const products = [
+const API_URL =
+  "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
+
+const ebook = {
+  id: "ebook-pisanie-pracy-licencjackiej",
+  name: "Jak napisać pracę licencjacką",
+  subtitle: "Kompletny przewodnik od A do Z",
+  price: 29,
+  pages: "300",
+  format: "PDF",
+};
+
+const chapters = [
+  { title: "Wybór tematu", desc: "Jak znaleźć idealny temat i go zawęzić" },
   {
-    id: "ebook-pisanie-pracy-licencjackiej",
-    name: "Kompletny Poradnik Pisania Pracy Licencjackiej",
-    description: "150 stron praktycznych wskazówek jak napisać pracę licencjacką krok po kroku. Zawiera szablony, przykłady i checklisty.",
-    price: 49,
-    image: "/ebooks/praca-licencjacka-cover.jpg",
-    features: [
-      "150 stron praktycznej wiedzy",
-      "Szablony rozdziałów",
-      "Przykłady bibliografii",
-      "Checklisty przed oddaniem"
-    ]
+    title: "Przegląd literatury",
+    desc: "Gdzie szukać źródeł i jak je oceniać",
   },
   {
-    id: "ebook-metodologia-badan",
-    name: "Metodologia Badań w Pracy Dyplomowej",
-    description: "Kompletny przewodnik po metodach badawczych. Ankiety, wywiady, analiza danych - wszystko co potrzebujesz.",
-    price: 39,
-    image: "/ebooks/metodologia-cover.jpg",
-    features: [
-      "Metody ilościowe i jakościowe",
-      "Gotowe szablony ankiet",
-      "Analiza statystyczna krok po kroku",
-      "Przykłady z różnych kierunków"
-    ]
+    title: "Struktura pracy",
+    desc: "Wstęp, rozdziały teoretyczne, zakończenie",
   },
-  {
-    id: "ebook-pakiet-kompletny",
-    name: "Pakiet Kompletny - Wszystkie Ebooki",
-    description: "Wszystkie nasze ebooki w jednym pakiecie ze zniżką 30%. Idealne przygotowanie do napisania pracy dyplomowej.",
-    price: 69,
-    originalPrice: 88,
-    image: "/ebooks/pakiet-cover.jpg",
-    features: [
-      "Wszystkie ebooki w pakiecie",
-      "30% zniżki",
-      "Dożywotnie aktualizacje",
-      "Bonus: szablony Word"
-    ],
-    badge: "BESTSELLER"
-  }
+  { title: "Metodologia badań", desc: "Metody, techniki, narzędzia badawcze" },
+  { title: "Cytaty i przypisy", desc: "System harwardzki i przypisy dolne" },
+  { title: "Formatowanie", desc: "MS Word - spis treści, numeracja, style" },
 ];
 
-const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
+const features = [
+  {
+    icon: "📖",
+    title: "300 stron",
+    desc: "Praktycznej wiedzy bez lania wody",
+  },
+  {
+    icon: "✅",
+    title: "Checklisty",
+    desc: "Gotowe listy kontrolne przed oddaniem",
+  },
+  {
+    icon: "📝",
+    title: "Szablony",
+    desc: "Strona tytułowa, spis treści, wzory zdań",
+  },
+  {
+    icon: "💡",
+    title: "Przykłady",
+    desc: "Konkretne przykłady z różnych kierunków",
+  },
+];
 ---
 
-<Layout 
-  title="Sklep z Ebookami - Praca-Magisterska.pl"
-  description="Kup ebooki o pisaniu prac dyplomowych. Praktyczne poradniki, szablony i metodologia badań."
+<Layout
+  title="Ebook: Jak napisać pracę licencjacką - Poradnik PDF 300 stron"
+  description="Kompletny przewodnik po pisaniu pracy licencjackiej. 300 stron praktycznej wiedzy, szablony, checklisty i przykłady."
 >
   <Navbar />
-  
-  <main class="min-h-screen bg-gray-50">
-    <!-- Hero -->
-    <section class="bg-gradient-to-br from-primary-600 to-accent py-16">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-          📚 Sklep z Ebookami
-        </h1>
-        <p class="text-xl text-white/90 max-w-2xl mx-auto">
-          Praktyczne poradniki, które pomogą Ci napisać doskonałą pracę dyplomową
-        </p>
-      </div>
-    </section>
 
-    <!-- Products Grid -->
-    <section class="py-16">
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 md:py-24"
+    >
       <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow relative">
-              {product.badge && (
-                <div class="absolute top-4 right-4 bg-accent text-white text-sm font-bold px-3 py-1 rounded-full">
-                  {product.badge}
-                </div>
-              )}
-              
-              <!-- Product Image -->
-              <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-accent/20 flex items-center justify-center p-8">
-                <div class="text-6xl">📖</div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Left: Text -->
+          <div>
+            <div
+              class="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-6"
+            >
+              📚 Ebook PDF
+            </div>
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white"
+            >
+              {ebook.name}
+            </h1>
+            <p class="text-xl text-slate-300 mb-6">
+              {ebook.subtitle}
+            </p>
+            <p class="text-slate-400 mb-8 leading-relaxed">
+              Przestań się stresować pisaniem pracy licencjackiej. Ten poradnik
+              przeprowadzi Cię krok po kroku przez cały proces — od wyboru
+              tematu, przez metodologię badań, aż po ostatnie szlify przed
+              oddaniem.
+            </p>
+
+            <!-- Price & CTA -->
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8"
+            >
+              <div>
+                <span class="text-4xl font-bold">{ebook.price} zł</span>
+                <span class="text-slate-400 ml-2">jednorazowo</span>
               </div>
-              
-              <!-- Product Info -->
-              <div class="p-6">
-                <h2 class="text-xl font-bold text-gray-900 mb-2">
-                  {product.name}
-                </h2>
-                <p class="text-gray-600 text-sm mb-4">
-                  {product.description}
-                </p>
-                
-                <!-- Features -->
-                <ul class="space-y-2 mb-6">
-                  {product.features.map((feature) => (
-                    <li class="flex items-start gap-2 text-sm text-gray-700">
-                      <span class="text-accent mt-0.5">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <!-- Price -->
-                <div class="flex items-baseline gap-2 mb-4">
-                  <span class="text-3xl font-bold text-gray-900">{product.price} zł</span>
-                  {product.originalPrice && (
-                    <span class="text-lg text-gray-400 line-through">{product.originalPrice} zł</span>
-                  )}
-                </div>
-                
-                <!-- Buy Button -->
-                <button 
-                  class="buy-button w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-2"
-                  data-product-id={product.id}
+              <button
+                id="buy-button-hero"
+                class="buy-button bg-accent hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-accent/25"
+                data-product-id={ebook.id}
+              >
+                <span>Kup teraz</span>
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <span>🛒</span>
-                  <span>Kup teraz</span>
-                </button>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Quick info -->
+            <div class="flex flex-wrap gap-6 text-sm text-slate-400">
+              <div class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
+                <span>{ebook.pages} stron</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <span>Format {ebook.format}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Dostęp natychmiast</span>
               </div>
             </div>
-          ))}
+          </div>
+
+          <!-- Right: Book mockup -->
+          <div class="relative">
+            <div
+              class="bg-gradient-to-br from-primary-500 to-accent rounded-2xl p-8 shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform"
+            >
+              <div class="bg-white rounded-lg p-6 shadow-inner">
+                <div class="text-center">
+                  <div class="text-6xl mb-4">📘</div>
+                  <h3 class="text-xl font-bold text-slate-800 mb-2">
+                    {ebook.name}
+                  </h3>
+                  <p class="text-slate-500 text-sm">{ebook.subtitle}</p>
+                  <div class="mt-4 pt-4 border-t border-slate-200">
+                    <p class="text-xs text-slate-400">Smart-Edu • 2025</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative elements -->
+            <div
+              class="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"
+            >
+            </div>
+            <div
+              class="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-500/20 rounded-full blur-2xl"
+            >
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Trust badges -->
-    <section class="py-12 bg-white">
+    <!-- Problem Section -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">
+          Czy to brzmi znajomo?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-400"
+          >
+            <p class="text-slate-700">
+              "Nie wiem od czego zacząć — mam pustkę w głowie"
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-400"
+          >
+            <p class="text-slate-700">
+              "Temat jest za szeroki, nie wiem jak go zawęzić"
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-400"
+          >
+            <p class="text-slate-700">
+              "Nie rozumiem różnicy między przypisami a bibliografią"
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-red-400"
+          >
+            <p class="text-slate-700">
+              "Promotor każe poprawiać, ale nie wiem co jest źle"
+            </p>
+          </div>
+        </div>
+        <p class="mt-8 text-lg text-slate-600">
+          Ten ebook rozwiązuje wszystkie te problemy. <strong
+            >Krok po kroku.</strong
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div class="text-4xl mb-2">🔒</div>
-            <h3 class="font-semibold text-gray-900">Bezpieczna płatność</h3>
-            <p class="text-sm text-gray-600">Płatności przez Stripe</p>
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
+          Co znajdziesz w środku?
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            features.map((feature) => (
+              <div class="text-center p-6">
+                <div class="text-5xl mb-4">{feature.icon}</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p class="text-slate-600">{feature.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-4">
+          Spis treści
+        </h2>
+        <p class="text-center text-slate-600 mb-12">
+          18 rozdziałów + dodatki z szablonami
+        </p>
+
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div class="divide-y divide-slate-100">
+            <div class="p-6 bg-slate-800">
+              <span class="text-sm font-medium text-slate-300">CZĘŚĆ I</span>
+              <h3 class="text-lg font-bold text-white">
+                Zanim zaczniesz pisać
+              </h3>
+            </div>
+            {
+              chapters.slice(0, 3).map((ch, i) => (
+                <div class="p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
+                  <span class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold text-sm">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h4 class="font-semibold text-slate-900">{ch.title}</h4>
+                    <p class="text-sm text-slate-500">{ch.desc}</p>
+                  </div>
+                </div>
+              ))
+            }
+
+            <div class="p-6 bg-slate-800">
+              <span class="text-sm font-medium text-slate-300">CZĘŚĆ II</span>
+              <h3 class="text-lg font-bold text-white">Struktura i badania</h3>
+            </div>
+            {
+              chapters.slice(3).map((ch, i) => (
+                <div class="p-6 flex items-start gap-4 hover:bg-slate-50 transition-colors">
+                  <span class="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold text-sm">
+                    {i + 4}
+                  </span>
+                  <div>
+                    <h4 class="font-semibold text-slate-900">{ch.title}</h4>
+                    <p class="text-sm text-slate-500">{ch.desc}</p>
+                  </div>
+                </div>
+              ))
+            }
+
+            <div class="p-6 bg-slate-100 text-center">
+              <p class="text-slate-600">
+                <strong>+ 12 kolejnych rozdziałów</strong> o pisaniu, redakcji, obronie
+                i więcej...
+              </p>
+            </div>
           </div>
-          <div>
-            <div class="text-4xl mb-2">⚡</div>
-            <h3 class="font-semibold text-gray-900">Natychmiastowy dostęp</h3>
-            <p class="text-sm text-gray-600">Link na email po płatności</p>
-          </div>
-          <div>
-            <div class="text-4xl mb-2">📧</div>
-            <h3 class="font-semibold text-gray-900">Wsparcie email</h3>
-            <p class="text-sm text-gray-600">Odpowiadamy w 24h</p>
-          </div>
-          <div>
-            <div class="text-4xl mb-2">💯</div>
-            <h3 class="font-semibold text-gray-900">Gwarancja jakości</h3>
-            <p class="text-sm text-gray-600">Zwrot w ciągu 14 dni</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial / Social proof -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <div
+          class="bg-gradient-to-br from-primary-50 to-accent/10 rounded-2xl p-8 md:p-12"
+        >
+          <div class="text-5xl mb-6">💬</div>
+          <blockquote class="text-xl md:text-2xl text-slate-700 mb-6 italic">
+            "Gdybym miał ten poradnik na początku studiów, zaoszczędziłbym
+            dziesiątki godzin błądzenia po omacku. Wszystko wyjaśnione
+            konkretnie, bez akademickiego bełkotu."
+          </blockquote>
+          <p class="text-slate-500">— Student, który obronił się na 5</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-slate-900">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+          Przestań się stresować.<br />Zacznij pisać.
+        </h2>
+        <p class="text-xl text-slate-300 mb-8">
+          Jeden ebook. Wszystko, czego potrzebujesz, żeby napisać pracę
+          licencjacką.
+        </p>
+
+        <div class="bg-slate-800 rounded-2xl p-8 max-w-md mx-auto">
+          <div class="text-5xl font-bold mb-2 text-white">{ebook.price} zł</div>
+          <p class="text-slate-400 mb-6">
+            Jednorazowa płatność • Dostęp na zawsze
+          </p>
+
+          <button
+            id="buy-button-bottom"
+            class="buy-button w-full bg-accent hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-accent/25"
+            data-product-id={ebook.id}
+          >
+            <span>Kupuję ebook</span>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+
+          <div class="mt-6 flex justify-center gap-6 text-sm text-slate-400">
+            <span class="flex items-center gap-1">
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              Bezpieczna płatność
+            </span>
+            <span class="flex items-center gap-1">
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              Natychmiastowy dostęp
+            </span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-slate-50">
       <div class="max-w-3xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
           Najczęstsze pytania
         </h2>
-        
+
         <div class="space-y-4">
-          <details class="bg-white rounded-xl p-6 shadow-sm">
-            <summary class="font-semibold text-gray-900 cursor-pointer">
-              W jakim formacie są ebooki?
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              W jakim formacie jest ebook?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
             </summary>
-            <p class="mt-4 text-gray-600">
-              Wszystkie ebooki są w formacie PDF, który możesz otworzyć na dowolnym urządzeniu - komputerze, tablecie czy telefonie.
+            <p class="mt-4 text-slate-600">
+              Ebook jest w formacie PDF. Możesz go otworzyć na komputerze,
+              tablecie lub telefonie. Działa na każdym systemie.
             </p>
           </details>
-          
-          <details class="bg-white rounded-xl p-6 shadow-sm">
-            <summary class="font-semibold text-gray-900 cursor-pointer">
-              Jak długo mam dostęp do ebooka?
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Jak otrzymam ebook po zakupie?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
             </summary>
-            <p class="mt-4 text-gray-600">
-              Po zakupie otrzymasz link do pobrania ważny 7 dni. Po pobraniu ebook jest Twój na zawsze - możesz go przechowywać na swoim urządzeniu.
+            <p class="mt-4 text-slate-600">
+              Natychmiast po płatności otrzymasz email z linkiem do pobrania.
+              Link jest ważny 7 dni — po pobraniu ebook jest Twój na zawsze.
             </p>
           </details>
-          
-          <details class="bg-white rounded-xl p-6 shadow-sm">
-            <summary class="font-semibold text-gray-900 cursor-pointer">
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              Czy ebook jest dla każdego kierunku?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-slate-600">
+              Tak! Zasady pisania pracy licencjackiej są uniwersalne. Ebook
+              zawiera przykłady z różnych kierunków: zarządzania, pedagogiki,
+              psychologii, prawa i innych.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
+              A jeśli link do pobrania wygaśnie?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-slate-600">
+              Napisz do nas na kontakt@praca-magisterska.pl — wyślemy nowy link.
+              Bez problemu.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-xl p-6 shadow-sm group">
+            <summary
+              class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center"
+            >
               Jakie metody płatności akceptujecie?
+              <svg
+                class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
             </summary>
-            <p class="mt-4 text-gray-600">
-              Akceptujemy karty płatnicze (Visa, Mastercard), BLIK oraz przelewy Przelewy24.
-            </p>
-          </details>
-          
-          <details class="bg-white rounded-xl p-6 shadow-sm">
-            <summary class="font-semibold text-gray-900 cursor-pointer">
-              Czy mogę dostać fakturę?
-            </summary>
-            <p class="mt-4 text-gray-600">
-              Tak, faktura jest automatycznie generowana i wysyłana na email po zaksięgowaniu płatności.
+            <p class="mt-4 text-slate-600">
+              Karty (Visa, Mastercard), BLIK oraz Przelewy24. Płatności
+              obsługuje Stripe — jeden z najbezpieczniejszych systemów na
+              świecie.
             </p>
           </details>
         </div>
@@ -209,52 +557,55 @@ const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod"
   <Footer />
 
   <!-- Loading overlay -->
-  <div id="loading-overlay" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+  <div
+    id="loading-overlay"
+    class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden"
+  >
     <div class="bg-white rounded-2xl p-8 text-center">
-      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-      <p class="text-gray-700">Przekierowuję do płatności...</p>
+      <div
+        class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"
+      >
+      </div>
+      <p class="text-slate-700">Przekierowuję do płatności...</p>
     </div>
   </div>
 
   <script define:vars={{ API_URL }}>
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.buy-button');
-      const loadingOverlay = document.getElementById('loading-overlay');
-      
-      buttons.forEach(button => {
-        button.addEventListener('click', async () => {
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".buy-button");
+      const loadingOverlay = document.getElementById("loading-overlay");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", async () => {
           const productId = button.dataset.productId;
-          
-          // Show loading
-          loadingOverlay.classList.remove('hidden');
+
+          loadingOverlay.classList.remove("hidden");
           button.disabled = true;
-          
+
           try {
             const response = await fetch(`${API_URL}/create-checkout`, {
-              method: 'POST',
+              method: "POST",
               headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
               },
               body: JSON.stringify({ productId }),
             });
-            
+
             const data = await response.json();
-            
+
             if (data.url) {
-              // Redirect to Stripe Checkout
               window.location.href = data.url;
             } else {
-              throw new Error(data.error || 'Błąd podczas tworzenia płatności');
+              throw new Error(data.error || "Błąd podczas tworzenia płatności");
             }
           } catch (error) {
-            console.error('Error:', error);
-            loadingOverlay.classList.add('hidden');
+            console.error("Error:", error);
+            loadingOverlay.classList.add("hidden");
             button.disabled = false;
-            alert('Wystąpił błąd. Spróbuj ponownie lub skontaktuj się z nami.');
+            alert("Wystąpił błąd. Spróbuj ponownie lub skontaktuj się z nami.");
           }
         });
       });
     });
   </script>
 </Layout>
-
