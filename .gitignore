@@ -26,3 +26,5 @@ pnpm-debug.log*
 
 # astro
 .astro/
+
+aws-lambda/webhook-handler/node_modules/
