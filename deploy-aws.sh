@@ -8,29 +8,34 @@ set -e
 
 # Konfiguracja - ZMIEŃ TE WARTOŚCI
 REGION="eu-central-1"
+SES_REGION="us-east-1"  # Region gdzie masz SES w trybie produkcyjnym
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-S3_BUCKET="licencjackie-ebooks"
-LAMBDA_BUCKET="licencjackie-lambda-deploy"
-API_NAME="licencjackie-sklep-api"
+S3_BUCKET="praca-magisterska-ebooks"
+LAMBDA_BUCKET="praca-magisterska-lambda-deploy"
+API_NAME="praca-magisterska-sklep-api"
 STAGE_NAME="prod"
 
 # Zmienne Stripe - ustaw przed uruchomieniem lub jako env vars
 STRIPE_SECRET_KEY="${STRIPE_SECRET_KEY:-sk_test_XXXXXXXX}"
 STRIPE_WEBHOOK_SECRET="${STRIPE_WEBHOOK_SECRET:-whsec_XXXXXXXX}"
 
-# Email settings
-EMAIL_FROM="sklep@licencjackie.pl"
-EMAIL_FROM_NAME="Licencjackie.pl"
+# Email settings - ZMIEŃ na zweryfikowaną domenę!
+EMAIL_FROM="sklep@praca-magisterska.pl"
+EMAIL_FROM_NAME="Praca-Magisterska.pl"
 
 # URLs
-SUCCESS_URL="https://www.licencjackie.pl/sklep/sukces"
-CANCEL_URL="https://www.licencjackie.pl/sklep/anulowano"
+SUCCESS_URL="https://www.praca-magisterska.pl/sklep/sukces"
+CANCEL_URL="https://www.praca-magisterska.pl/sklep/anulowano"
 
 echo "================================================"
-echo "Deploying Licencjackie.pl Ebook Store"
+echo "Deploying Praca-Magisterska.pl Ebook Store"
 echo "Region: $REGION"
 echo "Account: $ACCOUNT_ID"
 echo "================================================"
+
+# Utwórz lokalny katalog tymczasowy (kompatybilny z Windows)
+TEMP_DIR="$(pwd)/.deploy-tmp"
+mkdir -p "$TEMP_DIR"
 
 # -----------------------------------------------------------------------------
 # 1. Tworzenie S3 bucket na ebooki (jeśli nie istnieje)
@@ -76,68 +81,25 @@ fi
 echo ""
 echo "[3/8] Creating IAM role for Lambda..."
 
-ROLE_NAME="licencjackie-sklep-lambda-role"
+ROLE_NAME="praca-magisterska-sklep-lambda-role"
 
-# Trust policy
-cat > /tmp/trust-policy.json << EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "lambda.amazonaws.com"
-      },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-EOF
+# Trust policy jako string
+TRUST_POLICY='{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":"sts:AssumeRole"}]}'
 
 # Sprawdź czy rola istnieje
 if ! aws iam get-role --role-name "$ROLE_NAME" 2>/dev/null; then
     aws iam create-role \
         --role-name "$ROLE_NAME" \
-        --assume-role-policy-document file:///tmp/trust-policy.json
+        --assume-role-policy-document "$TRUST_POLICY"
     
     echo "Waiting for role to propagate..."
     sleep 10
 fi
 
-# Policy dla Lambda
-cat > /tmp/lambda-policy.json << EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "logs:CreateLogGroup",
-        "logs:CreateLogStream",
-        "logs:PutLogEvents"
-      ],
-      "Resource": "arn:aws:logs:*:*:*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetObject"
-      ],
-      "Resource": "arn:aws:s3:::${S3_BUCKET}/*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ses:SendEmail",
-        "ses:SendRawEmail"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-EOF
+# Policy dla Lambda jako string
+LAMBDA_POLICY="{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"logs:CreateLogGroup\",\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Resource\":\"arn:aws:logs:*:*:*\"},{\"Effect\":\"Allow\",\"Action\":[\"s3:GetObject\"],\"Resource\":\"arn:aws:s3:::${S3_BUCKET}/*\"},{\"Effect\":\"Allow\",\"Action\":[\"ses:SendEmail\",\"ses:SendRawEmail\"],\"Resource\":\"*\"}]}"
 
-POLICY_NAME="licencjackie-sklep-lambda-policy"
+POLICY_NAME="praca-magisterska-sklep-lambda-policy"
 
 # Usuń starą policy jeśli istnieje
 aws iam delete-role-policy --role-name "$ROLE_NAME" --policy-name "$POLICY_NAME" 2>/dev/null || true
@@ -146,7 +108,7 @@ aws iam delete-role-policy --role-name "$ROLE_NAME" --policy-name "$POLICY_NAME"
 aws iam put-role-policy \
     --role-name "$ROLE_NAME" \
     --policy-name "$POLICY_NAME" \
-    --policy-document file:///tmp/lambda-policy.json
+    --policy-document "$LAMBDA_POLICY"
 
 ROLE_ARN="arn:aws:iam::${ACCOUNT_ID}:role/${ROLE_NAME}"
 echo "✅ IAM role configured: $ROLE_ARN"
@@ -159,13 +121,13 @@ echo "[4/8] Deploying create-checkout Lambda..."
 
 cd aws-lambda/create-checkout
 npm install --production
-zip -r /tmp/create-checkout.zip .
+zip -r ${TEMP_DIR}/create-checkout.zip .
 cd ../..
 
-aws s3 cp /tmp/create-checkout.zip "s3://${LAMBDA_BUCKET}/create-checkout.zip"
+aws s3 cp ${TEMP_DIR}/create-checkout.zip "s3://${LAMBDA_BUCKET}/create-checkout.zip"
 
 # Tworzenie lub aktualizacja funkcji
-CHECKOUT_FUNCTION="licencjackie-create-checkout"
+CHECKOUT_FUNCTION="praca-magisterska-create-checkout"
 
 if aws lambda get-function --function-name "$CHECKOUT_FUNCTION" 2>/dev/null; then
     aws lambda update-function-code \
@@ -200,12 +162,12 @@ echo "[5/8] Deploying webhook-handler Lambda..."
 
 cd aws-lambda/webhook-handler
 npm install --production
-zip -r /tmp/webhook-handler.zip .
+zip -r ${TEMP_DIR}/webhook-handler.zip .
 cd ../..
 
-aws s3 cp /tmp/webhook-handler.zip "s3://${LAMBDA_BUCKET}/webhook-handler.zip"
+aws s3 cp ${TEMP_DIR}/webhook-handler.zip "s3://${LAMBDA_BUCKET}/webhook-handler.zip"
 
-WEBHOOK_FUNCTION="licencjackie-webhook-handler"
+WEBHOOK_FUNCTION="praca-magisterska-webhook-handler"
 
 if aws lambda get-function --function-name "$WEBHOOK_FUNCTION" 2>/dev/null; then
     aws lambda update-function-code \
@@ -221,13 +183,13 @@ else
         --code "S3Bucket=${LAMBDA_BUCKET},S3Key=webhook-handler.zip" \
         --timeout 30 \
         --memory-size 256 \
-        --environment "Variables={STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY},STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET},S3_BUCKET=${S3_BUCKET},EMAIL_FROM=${EMAIL_FROM},EMAIL_FROM_NAME=${EMAIL_FROM_NAME}}"
+        --environment "Variables={STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY},STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET},S3_BUCKET=${S3_BUCKET},EMAIL_FROM=${EMAIL_FROM},EMAIL_FROM_NAME=${EMAIL_FROM_NAME},SES_REGION=${SES_REGION}}"
 fi
 
 # Aktualizuj zmienne środowiskowe
 aws lambda update-function-configuration \
     --function-name "$WEBHOOK_FUNCTION" \
-    --environment "Variables={STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY},STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET},S3_BUCKET=${S3_BUCKET},EMAIL_FROM=${EMAIL_FROM},EMAIL_FROM_NAME=${EMAIL_FROM_NAME}}" \
+    --environment "Variables={STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY},STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET},S3_BUCKET=${S3_BUCKET},EMAIL_FROM=${EMAIL_FROM},EMAIL_FROM_NAME=${EMAIL_FROM_NAME},SES_REGION=${SES_REGION}}" \
     > /dev/null
 
 echo "✅ webhook-handler Lambda deployed"
@@ -245,7 +207,7 @@ if [ -z "$API_ID" ] || [ "$API_ID" = "None" ]; then
     API_ID=$(aws apigatewayv2 create-api \
         --name "$API_NAME" \
         --protocol-type HTTP \
-        --cors-configuration "AllowOrigins=https://www.licencjackie.pl,AllowMethods=POST,OPTIONS,AllowHeaders=Content-Type" \
+        --cors-configuration "AllowOrigins=https://www.praca-magisterska.pl,AllowMethods=POST,OPTIONS,AllowHeaders=Content-Type" \
         --query "ApiId" --output text)
     echo "Created API: $API_ID"
 fi
@@ -361,3 +323,7 @@ REGION=${REGION}
 EOF
 
 echo "Configuration saved to .env.production"
+
+# Wyczyść katalog tymczasowy
+rm -rf "$TEMP_DIR"
+echo "Temporary files cleaned up."

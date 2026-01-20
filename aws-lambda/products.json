@@ -48,11 +48,11 @@
     }
   ],
   "settings": {
-    "successUrl": "https://www.licencjackie.pl/sklep/sukces",
-    "cancelUrl": "https://www.licencjackie.pl/sklep/anulowano",
-    "emailFrom": "sklep@licencjackie.pl",
-    "emailFromName": "Licencjackie.pl",
-    "s3Bucket": "licencjackie-ebooks",
+    "successUrl": "https://www.praca-magisterska.pl/sklep/sukces",
+    "cancelUrl": "https://www.praca-magisterska.pl/sklep/anulowano",
+    "emailFrom": "sklep@praca-magisterska.pl",
+    "emailFromName": "Praca-Magisterska.pl",
+    "s3Bucket": "praca-magisterska-ebooks",
     "downloadLinkExpiry": 604800
   }
 }

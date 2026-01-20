@@ -1,56 +1,60 @@
-import Stripe from 'stripe';
-import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3';
-import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
+import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const s3 = new S3Client({ region: process.env.AWS_REGION });
-const ses = new SESClient({ region: process.env.AWS_REGION });
+const ses = new SESClient({
+  region: process.env.SES_REGION || process.env.AWS_REGION,
+});
 
 // Mapowanie produktów na pliki w S3
 const PRODUCT_FILES = {
-  'ebook-pisanie-pracy-licencjackiej': 'ebooks/poradnik-praca-licencjacka.pdf',
-  'ebook-metodologia-badan': 'ebooks/metodologia-badan.pdf',
-  'ebook-pakiet-kompletny': 'ebooks/pakiet-kompletny.zip',
+  "ebook-pisanie-pracy-licencjackiej": "ebooks/poradnik-praca-licencjacka.pdf",
+  "ebook-metodologia-badan": "ebooks/metodologia-badan.pdf",
+  "ebook-pakiet-kompletny": "ebooks/pakiet-kompletny.zip",
 };
 
 const PRODUCT_NAMES = {
-  'ebook-pisanie-pracy-licencjackiej': 'Kompletny Poradnik Pisania Pracy Licencjackiej',
-  'ebook-metodologia-badan': 'Metodologia Badań w Pracy Dyplomowej',
-  'ebook-pakiet-kompletny': 'Pakiet Kompletny - Wszystkie Ebooki',
+  "ebook-pisanie-pracy-licencjackiej":
+    "Kompletny Poradnik Pisania Pracy Licencjackiej",
+  "ebook-metodologia-badan": "Metodologia Badań w Pracy Dyplomowej",
+  "ebook-pakiet-kompletny": "Pakiet Kompletny - Wszystkie Ebooki",
 };
 
 export const handler = async (event) => {
-  const sig = event.headers['stripe-signature'] || event.headers['Stripe-Signature'];
-  
+  const sig =
+    event.headers["stripe-signature"] || event.headers["Stripe-Signature"];
+
   let stripeEvent;
-  
+
   try {
     stripeEvent = stripe.webhooks.constructEvent(
       event.body,
       sig,
-      process.env.STRIPE_WEBHOOK_SECRET
+      process.env.STRIPE_WEBHOOK_SECRET,
     );
   } catch (err) {
-    console.error('Webhook signature verification failed:', err.message);
+    console.error("Webhook signature verification failed:", err.message);
     return {
       statusCode: 400,
-      body: JSON.stringify({ error: 'Webhook signature verification failed' }),
+      body: JSON.stringify({ error: "Webhook signature verification failed" }),
     };
   }
 
   // Obsługa udanej płatności
-  if (stripeEvent.type === 'checkout.session.completed') {
+  if (stripeEvent.type === "checkout.session.completed") {
     const session = stripeEvent.data.object;
-    
+
     // Sprawdź czy płatność została zrealizowana
-    if (session.payment_status === 'paid') {
+    if (session.payment_status === "paid") {
       await handleSuccessfulPayment(session);
     }
   }
 
   // Obsługa opóźnionej płatności (np. BLIK)
-  if (stripeEvent.type === 'checkout.session.async_payment_succeeded') {
+  if (stripeEvent.type === "checkout.session.async_payment_succeeded") {
     const session = stripeEvent.data.object;
     await handleSuccessfulPayment(session);
   }
@@ -63,16 +67,17 @@ export const handler = async (event) => {
 
 async function handleSuccessfulPayment(session) {
   const productId = session.metadata.productId;
-  const customerEmail = session.customer_details?.email || session.customer_email;
-  
+  const customerEmail =
+    session.customer_details?.email || session.customer_email;
+
   if (!productId || !customerEmail) {
-    console.error('Missing productId or customerEmail');
+    console.error("Missing productId or customerEmail");
     return;
   }
 
   const s3Key = PRODUCT_FILES[productId];
   if (!s3Key) {
-    console.error('Unknown product:', productId);
+    console.error("Unknown product:", productId);
     return;
   }
 
@@ -82,17 +87,17 @@ async function handleSuccessfulPayment(session) {
       Bucket: process.env.S3_BUCKET,
       Key: s3Key,
     });
-    
+
     const downloadUrl = await getSignedUrl(s3, command, {
       expiresIn: 7 * 24 * 60 * 60, // 7 dni
     });
 
     // Wyślij email z linkiem
     await sendDownloadEmail(customerEmail, productId, downloadUrl, session);
-    
+
     console.log(`Email sent to ${customerEmail} for product ${productId}`);
   } catch (error) {
-    console.error('Error handling payment:', error);
+    console.error("Error handling payment:", error);
     throw error;
   }
 }
@@ -100,7 +105,7 @@ async function handleSuccessfulPayment(session) {
 async function sendDownloadEmail(email, productId, downloadUrl, session) {
   const productName = PRODUCT_NAMES[productId];
   const amountPaid = (session.amount_total / 100).toFixed(2);
-  
+
   const htmlBody = `
 <!DOCTYPE html>
 <html>
@@ -121,7 +126,7 @@ async function sendDownloadEmail(email, productId, downloadUrl, session) {
   <div class="container">
     <div class="header">
       <h1 style="margin: 0;">🎉 Dziękujemy za zakup!</h1>
-      <p style="margin: 10px 0 0 0; opacity: 0.9;">Licencjackie.pl</p>
+      <p style="margin: 10px 0 0 0; opacity: 0.9;">Praca-Magisterska.pl</p>
     </div>
     <div class="content">
       <p>Cześć!</p>
@@ -145,12 +150,12 @@ async function sendDownloadEmail(email, productId, downloadUrl, session) {
       
       <p style="margin-top: 30px;">
         Pozdrawiamy,<br>
-        <strong>Zespół Licencjackie.pl</strong>
+        <strong>Zespół Praca-Magisterska.pl</strong>
       </p>
     </div>
     <div class="footer">
-      <p>Licencjackie.pl - Twój przewodnik po pracy dyplomowej</p>
-      <p><a href="https://www.licencjackie.pl" style="color: #0ea5e9;">www.licencjackie.pl</a></p>
+      <p>Praca-Magisterska.pl - Twój przewodnik po pracy dyplomowej</p>
+      <p><a href="https://www.praca-magisterska.pl" style="color: #0ea5e9;">www.praca-magisterska.pl</a></p>
     </div>
   </div>
 </body>
@@ -173,8 +178,8 @@ Jeśli masz pytania, odpowiedz na tego maila.
 Powodzenia w pisaniu pracy!
 
 Pozdrawiamy,
-Zespół Licencjackie.pl
-https://www.licencjackie.pl
+Zespół Praca-Magisterska.pl
+https://www.praca-magisterska.pl
   `;
 
   const command = new SendEmailCommand({
@@ -185,16 +190,16 @@ https://www.licencjackie.pl
     Message: {
       Subject: {
         Data: `📚 Twój ebook jest gotowy do pobrania - ${productName}`,
-        Charset: 'UTF-8',
+        Charset: "UTF-8",
       },
       Body: {
         Html: {
           Data: htmlBody,
-          Charset: 'UTF-8',
+          Charset: "UTF-8",
         },
         Text: {
           Data: textBody,
-          Charset: 'UTF-8',
+          Charset: "UTF-8",
         },
       },
     },
