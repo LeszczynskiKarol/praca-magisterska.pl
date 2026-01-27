@@ -12,13 +12,16 @@ const ses = new SESClient({
 // Mapowanie produktów na pliki w S3
 const PRODUCT_FILES = {
   "ebook-pisanie-pracy-licencjackiej": "ebooks/poradnik-praca-licencjacka.pdf",
+  "ebook-pisanie-pracy-magisterskiej": "ebooks/poradnik-praca-magisterska.pdf",
   "ebook-metodologia-badan": "ebooks/metodologia-badan.pdf",
   "ebook-pakiet-kompletny": "ebooks/pakiet-kompletny.zip",
 };
 
 const PRODUCT_NAMES = {
   "ebook-pisanie-pracy-licencjackiej":
-    "Kompletny Poradnik Pisania Pracy Licencjackiej",
+    "Jak napisać pracę licencjacką - Kompletny Poradnik",
+  "ebook-pisanie-pracy-magisterskiej":
+    "Jak napisać pracę magisterską od A do Z",
   "ebook-metodologia-badan": "Metodologia Badań w Pracy Dyplomowej",
   "ebook-pakiet-kompletny": "Pakiet Kompletny - Wszystkie Ebooki",
 };
@@ -114,10 +117,10 @@ async function sendDownloadEmail(email, productId, downloadUrl, session) {
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: linear-gradient(135deg, #0ea5e9, #10b981); color: white; padding: 30px; border-radius: 10px 10px 0 0; }
+    .header { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 30px; border-radius: 10px 10px 0 0; }
     .content { background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px; }
-    .button { display: inline-block; background: #10b981; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 20px 0; }
-    .button:hover { background: #059669; }
+    .button { display: inline-block; background: #8b5cf6; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 20px 0; }
+    .button:hover { background: #7c3aed; }
     .footer { text-align: center; margin-top: 30px; color: #6b7280; font-size: 14px; }
     .warning { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 4px; }
   </style>
@@ -125,12 +128,12 @@ async function sendDownloadEmail(email, productId, downloadUrl, session) {
 <body>
   <div class="container">
     <div class="header">
-      <h1 style="margin: 0;">🎉 Dziękujemy za zakup!</h1>
+      <h1 style="margin: 0;">🎓 Dziękujemy za zakup!</h1>
       <p style="margin: 10px 0 0 0; opacity: 0.9;">Praca-Magisterska.pl</p>
     </div>
     <div class="content">
       <p>Cześć!</p>
-      <p>Dziękujemy za zakup <strong>${productName}</strong>!</p>
+      <p>Dziękujemy za zakup ebooka <strong>${productName}</strong>!</p>
       <p><strong>Kwota:</strong> ${amountPaid} PLN</p>
       
       <p>Kliknij poniższy przycisk, aby pobrać swój ebook:</p>
@@ -155,7 +158,7 @@ async function sendDownloadEmail(email, productId, downloadUrl, session) {
     </div>
     <div class="footer">
       <p>Praca-Magisterska.pl - Twój przewodnik po pracy dyplomowej</p>
-      <p><a href="https://www.praca-magisterska.pl" style="color: #0ea5e9;">www.praca-magisterska.pl</a></p>
+      <p><a href="https://www.praca-magisterska.pl" style="color: #6366f1;">www.praca-magisterska.pl</a></p>
     </div>
   </div>
 </body>

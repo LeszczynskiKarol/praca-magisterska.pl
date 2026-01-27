@@ -5,8 +5,13 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 // Produkty - w produkcji możesz trzymać w DynamoDB lub S3
 const PRODUCTS = {
   "ebook-pisanie-pracy-licencjackiej": {
-    name: "Kompletny Poradnik Pisania Pracy Licencjackiej",
-    price: 2900, // w groszach
+    name: "Jak napisać pracę licencjacką - Kompletny Poradnik",
+    price: 2900, // w groszach (29 zł)
+    currency: "pln",
+  },
+  "ebook-pisanie-pracy-magisterskiej": {
+    name: "Jak napisać pracę magisterską od A do Z",
+    price: 3900, // w groszach (39 zł)
     currency: "pln",
   },
   "ebook-metodologia-badan": {
@@ -22,7 +27,7 @@ const PRODUCTS = {
 };
 
 const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "https://www.licencjackie.pl",
+  "Access-Control-Allow-Origin": "https://www.praca-magisterska.pl",
   "Access-Control-Allow-Headers": "Content-Type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
@@ -60,7 +65,7 @@ export const handler = async (event) => {
             currency: product.currency,
             product_data: {
               name: product.name,
-              description: `Ebook - ${product.name}`,
+              description: `Ebook PDF - ${product.name}`,
             },
             unit_amount: product.price,
           },
