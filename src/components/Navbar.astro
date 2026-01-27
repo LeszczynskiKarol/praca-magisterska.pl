@@ -8,10 +8,17 @@ const navLinks = [
   { href: '/tematy/', label: 'Tematy prac' },
 ];
 
+const shopLinks = [
+  { href: '/sklep/praca-magisterska-ebook/', label: '🎓 Ebook Magisterka', desc: 'Jak napisać pracę magisterską' },
+  { href: '/sklep/praca-licencjacka-ebook/', label: '📘 Ebook Licencjat', desc: 'Jak napisać pracę licencjacką' },
+];
+
 const isActive = (href: string) => {
   if (href === '/') return currentPath === '/';
   return currentPath.startsWith(href);
 };
+
+const isShopActive = currentPath.startsWith('/sklep');
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
@@ -45,6 +52,40 @@ const isActive = (href: string) => {
             {link.label}
           </a>
         ))}
+        
+        <!-- Sklep Dropdown -->
+        <div class="relative" id="shop-dropdown">
+          <button 
+            id="shop-dropdown-btn"
+            class={`px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-1 ${
+              isShopActive
+                ? 'bg-primary-100 text-primary-700'
+                : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
+            }`}
+          >
+            <span>Sklep</span>
+            <svg class="w-4 h-4 transition-transform duration-200" id="shop-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <!-- Dropdown Menu -->
+          <div 
+            id="shop-dropdown-menu"
+            class="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible translate-y-2 transition-all duration-200"
+          >
+            {shopLinks.map(link => (
+              <a 
+                href={link.href}
+                class="block px-4 py-3 hover:bg-gray-50 transition-colors"
+              >
+                <div class="font-medium text-gray-900">{link.label}</div>
+                <div class="text-sm text-gray-500">{link.desc}</div>
+              </a>
+            ))}
+            
+          </div>
+        </div>
       </div>
       
       <!-- CTA Button -->
@@ -93,6 +134,25 @@ const isActive = (href: string) => {
           {link.label}
         </a>
       ))}
+      
+      <!-- Mobile Sklep Section -->
+      <div class="border-t border-gray-100 pt-2 mt-2">
+        <div class="px-4 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wide">Sklep</div>
+        {shopLinks.map(link => (
+          <a 
+            href={link.href}
+            class={`block px-4 py-3 rounded-lg transition-all ${
+              currentPath === link.href
+                ? 'bg-primary-100 text-primary-700'
+                : 'text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            <div class="font-medium">{link.label}</div>
+            <div class="text-sm text-gray-500">{link.desc}</div>
+          </a>
+        ))}
+      </div>
+      
       <div class="pt-4 border-t border-gray-100">
         <a 
           href="https://smart-edu.ai" 
@@ -108,6 +168,7 @@ const isActive = (href: string) => {
 </nav>
 
 <script>
+  // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.getElementById('menu-icon');
@@ -117,6 +178,51 @@ const isActive = (href: string) => {
     mobileMenu?.classList.toggle('hidden');
     menuIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
+  });
+  
+  // Desktop Shop dropdown
+  const shopDropdownBtn = document.getElementById('shop-dropdown-btn');
+  const shopDropdownMenu = document.getElementById('shop-dropdown-menu');
+  const shopDropdownArrow = document.getElementById('shop-dropdown-arrow');
+  const shopDropdown = document.getElementById('shop-dropdown');
+  
+  let isDropdownOpen = false;
+  
+  function openDropdown() {
+    shopDropdownMenu?.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+    shopDropdownMenu?.classList.add('opacity-100', 'visible', 'translate-y-0');
+    shopDropdownArrow?.classList.add('rotate-180');
+    isDropdownOpen = true;
+  }
+  
+  function closeDropdown() {
+    shopDropdownMenu?.classList.add('opacity-0', 'invisible', 'translate-y-2');
+    shopDropdownMenu?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    shopDropdownArrow?.classList.remove('rotate-180');
+    isDropdownOpen = false;
+  }
+  
+  shopDropdownBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isDropdownOpen) {
+      closeDropdown();
+    } else {
+      openDropdown();
+    }
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!shopDropdown?.contains(e.target as Node)) {
+      closeDropdown();
+    }
+  });
+  
+  // Close dropdown on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeDropdown();
+    }
   });
   
   // Navbar shadow on scroll
