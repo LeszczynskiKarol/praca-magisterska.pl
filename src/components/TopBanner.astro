@@ -1,0 +1,128 @@
+---
+// src/components/TopBanner.astro
+interface Props {
+  href?: string;
+  text?: string;
+  ctaText?: string;
+  emoji?: string;
+  dismissable?: boolean;
+}
+
+const {
+  href = '/sklep/praca-magisterska-ebook/',
+  text = 'Zamów ebook „Jak napisać pracę magisterską” — kompleksowy przewodnik!',
+  ctaText = 'Sprawdź',
+  emoji = '📚',
+  dismissable = true,
+} = Astro.props;
+---
+
+<div 
+  id="top-banner" 
+  class="fixed top-0 left-0 right-0 bg-gradient-to-r from-primary-600 via-primary-700 to-accent text-white py-2.5 px-4 z-[60] transition-all duration-300"
+  data-dismissable={dismissable.toString()}
+>
+  <div class="container-custom">
+    <div class="flex items-center justify-center gap-2 sm:gap-3 text-sm md:text-base pr-8">
+      <span class="text-lg md:text-xl animate-bounce hidden sm:inline">{emoji}</span>
+      
+      <a href={href} class="flex items-center gap-2 sm:gap-3 group flex-wrap justify-center">
+        <span class="font-medium text-center sm:text-left">
+          {text}
+        </span>
+        
+        <span class="inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full font-semibold transition-all whitespace-nowrap group-hover:bg-white group-hover:text-primary-700">
+          {ctaText}
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </span>
+      </a>
+      
+      {dismissable && (
+        <button 
+          id="close-top-banner"
+          class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-1.5 hover:bg-white/20 rounded-full transition-colors"
+          aria-label="Zamknij banner"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      )}
+    </div>
+  </div>
+  
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -inset-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 animate-shine"></div>
+  </div>
+</div>
+
+<style>
+  @keyframes shine {
+    0% { transform: translateX(-100%) skewX(-12deg); }
+    100% { transform: translateX(200%) skewX(-12deg); }
+  }
+  .animate-shine {
+    animation: shine 3s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  const banner = document.getElementById('top-banner');
+  const closeBtn = document.getElementById('close-top-banner');
+  const STORAGE_KEY = 'top-banner-dismissed-v1';
+  const DISMISS_DAYS = 7;
+  
+  function setBannerHeight(height: number) {
+    document.documentElement.style.setProperty('--top-banner-height', `${height}px`);
+  }
+  
+  function hideBanner() {
+    if (banner) {
+      banner.style.transform = 'translateY(-100%)';
+      setTimeout(() => {
+        banner.style.display = 'none';
+        setBannerHeight(0);
+      }, 300);
+    }
+  }
+  
+  function checkDismissed(): boolean {
+    const dismissed = localStorage.getItem(STORAGE_KEY);
+    if (dismissed) {
+      const dismissedTime = parseInt(dismissed, 10);
+      const daysPassed = (Date.now() - dismissedTime) / (1000 * 60 * 60 * 24);
+      if (daysPassed < DISMISS_DAYS) {
+        return true;
+      }
+      localStorage.removeItem(STORAGE_KEY);
+    }
+    return false;
+  }
+  
+  // Inicjalizacja
+  if (checkDismissed()) {
+    if (banner) {
+      banner.style.display = 'none';
+    }
+    setBannerHeight(0);
+  } else if (banner) {
+    setBannerHeight(banner.offsetHeight);
+  }
+  
+  // Zamykanie
+  closeBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    hideBanner();
+  });
+  
+  // Aktualizacja przy resize
+  window.addEventListener('resize', () => {
+    if (banner && banner.style.display !== 'none') {
+      setBannerHeight(banner.offsetHeight);
+    }
+  });
+</script>

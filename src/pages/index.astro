@@ -27,6 +27,136 @@ const kierunki = [
   { name: 'Administracja', href: '/tematy/administracja/', icon: '🏢', count: '100+ tematów' },
 ];
 
+// Etapy pisania pracy
+const etapyPisania = [
+  { 
+    step: 1, 
+    title: 'Wybór tematu i promotora', 
+    description: 'Znajdź temat, który Cię interesuje i skonsultuj go z promotorem. Dobry temat to połowa sukcesu.',
+    duration: '2-4 tygodnie',
+    href: '/poradniki/wybor-tematu/'
+  },
+  { 
+    step: 2, 
+    title: 'Przegląd literatury', 
+    description: 'Zbierz źródła naukowe, książki i artykuły. Stwórz bazę wiedzy na temat swojego zagadnienia.',
+    duration: '4-6 tygodni',
+    href: '/poradniki/bibliografia/'
+  },
+  { 
+    step: 3, 
+    title: 'Konspekt i struktura', 
+    description: 'Opracuj szczegółowy plan pracy z podziałem na rozdziały i podrozdziały.',
+    duration: '1-2 tygodnie',
+    href: '/poradniki/konspekt/'
+  },
+  { 
+    step: 4, 
+    title: 'Część teoretyczna', 
+    description: 'Napisz rozdziały teoretyczne, definiując pojęcia i omawiając stan wiedzy.',
+    duration: '6-8 tygodni',
+    href: '/poradniki/rozdzial-teoretyczny/'
+  },
+  { 
+    step: 5, 
+    title: 'Badania własne', 
+    description: 'Przeprowadź badania empiryczne - ankiety, wywiady lub analizy danych.',
+    duration: '4-8 tygodni',
+    href: '/poradniki/metodologia/'
+  },
+  { 
+    step: 6, 
+    title: 'Analiza i wnioski', 
+    description: 'Opracuj wyniki badań, wyciągnij wnioski i napisz zakończenie.',
+    duration: '3-4 tygodnie',
+    href: '/poradniki/zakonczenie/'
+  },
+  { 
+    step: 7, 
+    title: 'Redakcja i formatowanie', 
+    description: 'Dopracuj tekst, sprawdź cytowania, sformatuj pracę zgodnie z wymogami.',
+    duration: '2-3 tygodnie',
+    href: '/poradniki/formatowanie/'
+  },
+  { 
+    step: 8, 
+    title: 'Obrona pracy', 
+    description: 'Przygotuj prezentację i odpowiedzi na potencjalne pytania komisji.',
+    duration: '1-2 tygodnie',
+    href: '/poradniki/obrona/'
+  },
+];
+
+// Najczęstsze błędy
+const najczestszeBłędy = [
+  {
+    title: 'Zbyt późne rozpoczęcie pisania',
+    description: 'Pisanie pracy magisterskiej wymaga czasu. Rozpocznij minimum 6-9 miesięcy przed planowanym terminem obrony.',
+    icon: '⏰'
+  },
+  {
+    title: 'Brak regularnego kontaktu z promotorem',
+    description: 'Konsultuj postępy co 2-3 tygodnie. Unikniesz przepisywania całych rozdziałów.',
+    icon: '💬'
+  },
+  {
+    title: 'Kopiowanie bez cytowania',
+    description: 'Programy antyplagiatowe wykrywają nawet drobne zapożyczenia. Zawsze oznaczaj źródła.',
+    icon: '📋'
+  },
+  {
+    title: 'Zbyt ogólny temat',
+    description: 'Zawęź temat do konkretnego problemu. "Marketing internetowy" to za mało - lepiej "Marketing w social mediach dla branży kosmetycznej".',
+    icon: '🎯'
+  },
+  {
+    title: 'Ignorowanie wymogów formalnych',
+    description: 'Sprawdź wytyczne swojej uczelni dotyczące formatowania, marginesów i stylu cytowania.',
+    icon: '📐'
+  },
+  {
+    title: 'Słaba metodologia badań',
+    description: 'Dobrze zaplanuj badania - określ próbę, narzędzia i metody analizy przed rozpoczęciem.',
+    icon: '🔬'
+  },
+];
+
+// FAQ
+const faqItems = [
+  {
+    question: 'Ile stron powinna mieć praca magisterska?',
+    answer: 'Standardowa praca magisterska liczy od 60 do 100 stron (bez załączników). Dokładne wymagania zależą od uczelni i kierunku studiów. Prace z kierunków humanistycznych są często dłuższe niż techniczne.'
+  },
+  {
+    question: 'Ile czasu zajmuje napisanie pracy magisterskiej?',
+    answer: 'Przy regularnej pracy potrzebujesz 6-9 miesięcy. Obejmuje to wybór tematu, przegląd literatury, przeprowadzenie badań, napisanie tekstu oraz korektę. Zacznij odpowiednio wcześnie, aby uniknąć stresu.'
+  },
+  {
+    question: 'Czy mogę pisać pracę magisterską sam, bez pomocy?',
+    answer: 'Tak, większość studentów pisze prace samodzielnie. Kluczowe jest regularne konsultowanie się z promotorem i korzystanie z poradników takich jak nasz. Ważne, żeby nie kopiować cudzych prac.'
+  },
+  {
+    question: 'Jak wybrać temat pracy magisterskiej?',
+    answer: 'Wybierz temat, który Cię interesuje i ma praktyczne zastosowanie. Sprawdź dostępność literatury i możliwość przeprowadzenia badań. Skonsultuj pomysł z promotorem - pomoże zawęzić zakres.'
+  },
+  {
+    question: 'Co to jest plagiat i jak go uniknąć?',
+    answer: 'Plagiat to przypisywanie sobie cudzych myśli lub tekstów. Unikniesz go poprzez prawidłowe cytowanie źródeł, parafrazowanie i używanie programu antyplagiatowego przed oddaniem pracy.'
+  },
+  {
+    question: 'Jak wygląda obrona pracy magisterskiej?',
+    answer: 'Obrona trwa 20-40 minut. Prezentujesz główne tezy pracy (10-15 min), następnie odpowiadasz na pytania komisji i recenzenta. Przygotuj się na pytania o metodologię i wnioski.'
+  },
+  {
+    question: 'Ile źródeł powinna zawierać bibliografia?',
+    answer: 'Minimum 30-50 pozycji dla pracy magisterskiej. Staraj się korzystać z aktualnych źródeł (nie starszych niż 10 lat) oraz publikacji naukowych, a nie tylko stron internetowych.'
+  },
+  {
+    question: 'Czy AI może pomóc w pisaniu pracy magisterskiej?',
+    answer: 'Narzędzia AI mogą pomóc w generowaniu pomysłów, strukturyzowaniu tekstu czy poprawie stylistyki. Pamiętaj jednak, że ostateczna praca musi być Twoim dziełem. Sprawdź politykę swojej uczelni dotyczącą AI.'
+  },
+];
+
 // Schema.org
 const schema = {
   "@context": "https://schema.org",
@@ -35,6 +165,20 @@ const schema = {
   "description": "Kompletny poradnik pisania prac magisterskich. Tematy, metodologia, struktura i profesjonalne wskazówki dla studentów.",
   "url": "https://praca-magisterska.pl",
 };
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 ---
 
 <Layout 
@@ -42,6 +186,7 @@ const schema = {
   description="Kompletny poradnik pisania prac magisterskich. Tematy prac z 20+ kierunków, metodologia badań, struktura pracy i profesjonalne wskazówki dla studentów."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
   
   <Navbar />
   
@@ -118,13 +263,84 @@ const schema = {
       </div>
     </section>
 
+    <!-- NOWA SEKCJA: Proces pisania krok po kroku -->
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <span class="badge badge-primary mb-4">📖 Poradnik krok po kroku</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Pisanie pracy magisterskiej - 8 etapów do sukcesu
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Sprawdzony proces, który pomoże Ci napisać pracę magisterską bez stresu i w terminie
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <!-- Linia pionowa łącząca kroki -->
+            <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 via-primary-500 to-accent hidden md:block"></div>
+            
+            <div class="space-y-6">
+              {etapyPisania.map((etap, index) => (
+                <a 
+                  href={etap.href}
+                  class="block relative pl-0 md:pl-20 animate-on-scroll group"
+                  style={`transition-delay: ${index * 0.05}s;`}
+                >
+                  <!-- Numer kroku -->
+                  <div class="hidden md:flex absolute left-0 w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform z-10">
+                    {etap.step}
+                  </div>
+                  
+                  <!-- Karta z treścią -->
+                  <div class="card card-hover">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                      <div class="flex md:hidden w-12 h-12 bg-primary-600 text-white rounded-xl items-center justify-center font-bold text-lg flex-shrink-0">
+                        {etap.step}
+                      </div>
+                      <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                          <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors text-lg">
+                            {etap.title}
+                          </h3>
+                          <span class="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full font-medium">
+                            {etap.duration}
+                          </span>
+                        </div>
+                        <p class="text-gray-600">
+                          {etap.description}
+                        </p>
+                      </div>
+                      <svg class="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a href="/poradniki/od-czego-zaczac-mgr/" class="btn-primary">
+            Rozpocznij od podstaw
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Poradniki Section -->
     <section class="py-16 bg-gray-50">
       <div class="container-custom">
         <div class="text-center mb-12">
           <span class="badge badge-primary mb-4">📖 Poradniki</span>
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Jak napisać pracę magisterską krok po kroku
+            Jak napisać pracę magisterską - szczegółowe poradniki
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Kompletne przewodniki po każdym elemencie pracy dyplomowej
@@ -170,8 +386,57 @@ const schema = {
       </div>
     </section>
 
-    <!-- Tematy prac Section -->
+    <!-- NOWA SEKCJA: Najczęstsze błędy -->
     <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <span class="badge bg-red-100 text-red-700 mb-4">⚠️ Uwaga</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Najczęstsze błędy przy pisaniu pracy magisterskiej
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Unikaj tych pułapek, które opóźniają ukończenie pracy i obniżają jej jakość
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {najczestszeBłędy.map((błąd, index) => (
+            <div 
+              class="card border-l-4 border-l-red-400 hover:border-l-red-500 animate-on-scroll"
+              style={`transition-delay: ${index * 0.05}s;`}
+            >
+              <div class="flex items-start gap-4">
+                <span class="text-2xl flex-shrink-0">{błąd.icon}</span>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-2">{błąd.title}</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">{błąd.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 max-w-3xl mx-auto">
+          <div class="bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+            <span class="text-3xl mb-3 block">💡</span>
+            <h3 class="font-bold text-green-800 mb-2">Dobra wiadomość</h3>
+            <p class="text-green-700">
+              Dzięki naszym poradnikom i szablonom unikniesz większości typowych błędów. 
+              Sprawdź nasze materiały i pisz pracę pewnie i bez stresu.
+            </p>
+            <a href="/poradniki/" class="inline-flex items-center text-green-700 font-semibold mt-3 hover:text-green-800">
+              Przejdź do poradników
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tematy prac Section -->
+    <section class="py-16 bg-gray-50">
       <div class="container-custom">
         <div class="text-center mb-12">
           <span class="badge badge-accent mb-4">🎯 Tematy prac</span>
@@ -238,6 +503,49 @@ const schema = {
       </div>
     </section>
 
+    <!-- NOWA SEKCJA: FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <span class="badge badge-primary mb-4">❓ FAQ</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Najczęściej zadawane pytania o pisanie pracy magisterskiej
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Odpowiedzi na pytania, które nurtują większość studentów
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-4">
+            {faqItems.map((item, index) => (
+              <details 
+                class="group card cursor-pointer animate-on-scroll"
+                style={`transition-delay: ${index * 0.03}s;`}
+              >
+                <summary class="flex items-center justify-between font-bold text-gray-900 list-none">
+                  <span class="pr-4">{item.question}</span>
+                  <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <p class="text-gray-600 mb-4">Masz inne pytania? Sprawdź nasze szczegółowe poradniki.</p>
+          <a href="/poradniki/" class="btn-secondary">
+            Przejdź do poradników →
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Why Us Section -->
     <section class="py-16 bg-gray-50">
       <div class="container-custom">
@@ -294,15 +602,65 @@ const schema = {
       </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- NOWA SEKCJA: Rozbudowany SEO Content -->
     <section class="py-16 bg-white">
       <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <article class="article-content">
+            <h2>Jak napisać pracę magisterską - kompletny przewodnik</h2>
+            
+            <p>
+              Pisanie pracy magisterskiej to jedno z największych wyzwań akademickich, z którym mierzy się każdy student kończący studia II stopnia. Dla wielu osób jest to pierwszy tak obszerny tekst naukowy, wymagający nie tylko szerokiej wiedzy merytorycznej, ale również umiejętności prowadzenia badań, analizy danych oraz formułowania wniosków. Dobrze napisana praca magisterska stanowi zwieńczenie edukacji uniwersyteckiej i otwiera drzwi do kariery zawodowej lub dalszej ścieżki naukowej.
+            </p>
+
+            <p>
+              Portal Praca-Magisterska.pl powstał z myślą o studentach, którzy potrzebują praktycznego wsparcia na każdym etapie pisania. Oferujemy kompleksowe poradniki obejmujące wszystkie elementy pracy dyplomowej - od wyboru tematu i promotora, przez metodologię badań, aż po przygotowanie do obrony. Nasze materiały opierają się na aktualnych standardach akademickich i uwzględniają specyfikę polskiego szkolnictwa wyższego.
+            </p>
+
+            <h2>Struktura pracy magisterskiej - co powinna zawierać?</h2>
+
+            <p>
+              Typowa praca magisterska składa się z kilku stałych elementów, których obecność i jakość wpływają na końcową ocenę. Strona tytułowa zawiera podstawowe informacje o autorze, temacie i promotorze. Spis treści umożliwia szybką nawigację po dokumencie. Wstęp wprowadza czytelnika w problematykę, określa cele i zakres pracy oraz formułuje główne tezy lub hipotezy badawcze.
+            </p>
+
+            <p>
+              Rozdziały teoretyczne stanowią podstawę merytoryczną pracy - przedstawiają przegląd literatury, definiują kluczowe pojęcia i omawiają dotychczasowy stan wiedzy na dany temat. W pracach empirycznych kolejne rozdziały poświęcone są metodologii badań oraz prezentacji i analizie wyników. Zakończenie zawiera podsumowanie ustaleń, wnioski końcowe oraz ewentualne rekomendacje praktyczne. Całość dopełnia bibliografia i ewentualne załączniki.
+            </p>
+
+            <h2>Porady dotyczące pisania pracy magisterskiej</h2>
+
+            <p>
+              Sukces w pisaniu pracy magisterskiej zależy w dużej mierze od dobrej organizacji czasu i systematycznej pracy. Zacznij odpowiednio wcześnie - minimum 6-9 miesięcy przed planowanym terminem obrony. Podziel proces na mniejsze etapy i wyznacz sobie realistyczne terminy dla każdego z nich. Regularnie spotykaj się z promotorem i konsultuj postępy, aby uniknąć konieczności przepisywania całych fragmentów.
+            </p>
+
+            <p>
+              Podczas pisania dbaj o jasność i precyzję języka. Unikaj zdań zbyt długich i skomplikowanych, ale jednocześnie zachowaj akademicki styl wypowiedzi. Każde twierdzenie popieraj źródłami - prawidłowe cytowanie chroni przed zarzutem plagiatu i buduje wiarygodność naukową pracy. Korzystaj z różnorodnych źródeł: książek, artykułów naukowych, raportów branżowych i aktualnych publikacji z Twojej dziedziny.
+            </p>
+
+            <h2>Wsparcie na każdym etapie</h2>
+
+            <p>
+              Na portalu Praca-Magisterska.pl znajdziesz szczegółowe poradniki dotyczące każdego elementu pracy dyplomowej. Nasz dział metodologii pomaga zaplanować i przeprowadzić badania naukowe - zarówno ilościowe (ankiety, analizy statystyczne), jak i jakościowe (wywiady, studia przypadków). Oferujemy także ponad 2000 gotowych tematów prac z ponad 20 kierunków studiów, które mogą stanowić inspirację lub punkt wyjścia do własnych rozważań.
+            </p>
+
+            <p>
+              Wszystkie materiały są dostępne bezpłatnie i stale aktualizowane. Niezależnie od tego, czy dopiero zaczynasz przygodę z pisaniem, czy potrzebujesz pomocy na konkretnym etapie - znajdziesz u nas praktyczne wskazówki, przykłady i szablony, które ułatwią Ci pracę. Zapraszamy do korzystania z naszych zasobów i życzymy powodzenia w pisaniu!
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-gradient-to-br from-primary-50 to-accent/10">
+      <div class="container-custom">
         <div class="max-w-3xl mx-auto text-center">
+          <span class="text-5xl mb-4 block">🚀</span>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">
-            Zaczynamy?
+            Zaczynaj już teraz!
           </h2>
           <p class="text-xl text-gray-600 mb-8">
-            Wybierz temat i zacznij pisać swoją pracę magisterską już dziś
+            Wybierz temat, zapoznaj się z poradnikami i napisz swoją pracę magisterską krok po kroku
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/tematy/" class="btn-primary">

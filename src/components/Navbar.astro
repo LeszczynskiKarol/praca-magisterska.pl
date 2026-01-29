@@ -21,7 +21,7 @@ const isActive = (href: string) => {
 const isShopActive = currentPath.startsWith('/sklep');
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+<nav class="fixed left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar" style="top: var(--top-banner-height, 0px);">
   <div class="container-custom">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
@@ -83,7 +83,6 @@ const isShopActive = currentPath.startsWith('/sklep');
                 <div class="text-sm text-gray-500">{link.desc}</div>
               </a>
             ))}
-            
           </div>
         </div>
       </div>
@@ -211,14 +210,12 @@ const isShopActive = currentPath.startsWith('/sklep');
     }
   });
   
-  // Close dropdown when clicking outside
   document.addEventListener('click', (e) => {
     if (!shopDropdown?.contains(e.target as Node)) {
       closeDropdown();
     }
   });
   
-  // Close dropdown on escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeDropdown();
