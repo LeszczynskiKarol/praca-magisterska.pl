@@ -1,0 +1,55 @@
+name: Deploy praca-magisterska.pl
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Sync to S3
+        run: aws s3 sync dist/ s3://www.praca-magisterska.pl --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2FEZZEGU1WQAP \
+            --paths "/*"
+
+      - name: Ping Google Sitemap
+        run: curl -s "https://www.google.com/ping?sitemap=https://www.praca-magisterska.pl/sitemap-index.xml" > /dev/null
+
+      - name: Notify Google Indexing
+        continue-on-error: true
+        run: |
+          aws lambda invoke \
+            --function-name google-indexing-notifier \
+            --payload '{"siteUrl":"https://www.praca-magisterska.pl"}' \
+            --cli-binary-format raw-in-base64-out \
+            --region eu-central-1 \
+            /tmp/indexing-result.json
+          cat /tmp/indexing-result.json
