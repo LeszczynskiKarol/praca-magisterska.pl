@@ -1539,38 +1539,59 @@ const ebook = {
     </div>
   </div>
 
-  <script define:vars={{ API_URL }}>
-    document.addEventListener("DOMContentLoaded", () => {
-      const buttons = document.querySelectorAll(".buy-button");
-      const loadingOverlay = document.getElementById("loading-overlay");
+<script define:vars={{ API_URL }}>
+  // cSpell:ignore gtag
+  document.addEventListener("DOMContentLoaded", function() {
+    var PRODUCTS = {
+      'ebook-pisanie-pracy-licencjackiej': { name: 'Jak napisać pracę licencjacką', price: 29.00 },
+      'ebook-pisanie-pracy-magisterskiej': { name: 'Jak napisać pracę magisterską od A do Z', price: 39.00 },
+    };
 
-      buttons.forEach((button) => {
-        button.addEventListener("click", async () => {
-          const productId = button.dataset.productId;
-          loadingOverlay.classList.remove("hidden");
-          button.disabled = true;
+    var buttons = document.querySelectorAll(".buy-button");
+    var loadingOverlay = document.getElementById("loading-overlay");
 
-          try {
-            const response = await fetch(`${API_URL}/create-checkout`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ productId }),
-            });
+    buttons.forEach(function(button) {
+      button.addEventListener("click", async function() {
+        var productId = button.dataset.productId;
+        var product = PRODUCTS[productId] || { name: 'Ebook', price: 0 };
 
-            const data = await response.json();
-            if (data.url) {
-              window.location.href = data.url;
-            } else {
-              throw new Error(data.error || "Błąd");
-            }
-          } catch (error) {
-            console.error("Error:", error);
-            loadingOverlay.classList.add("hidden");
-            button.disabled = false;
-            alert("Wystąpił błąd. Spróbuj ponownie.");
+        // GA4: add_to_cart + begin_checkout
+        if (typeof window.gtag === 'function') {
+          var gaItem = {
+            item_id: productId,
+            item_name: product.name,
+            price: product.price,
+            quantity: 1,
+            item_category: 'Ebook',
+          };
+          window.gtag('event', 'add_to_cart', { value: product.price, currency: 'PLN', items: [gaItem] });
+          window.gtag('event', 'begin_checkout', { value: product.price, currency: 'PLN', items: [gaItem] });
+        }
+
+        loadingOverlay.classList.remove("hidden");
+        button.disabled = true;
+
+        try {
+          var response = await fetch(API_URL + "/create-checkout", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ productId: productId }),
+          });
+          var data = await response.json();
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            throw new Error(data.error || "Błąd");
           }
-        });
+        } catch (error) {
+          console.error("Error:", error);
+          loadingOverlay.classList.add("hidden");
+          button.disabled = false;
+          alert("Wystąpił błąd. Spróbuj ponownie.");
+        }
       });
     });
-  </script>
+  });
+</script>
+
 </Layout>

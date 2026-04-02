@@ -14,27 +14,13 @@ import Layout from "../../layouts/Layout.astro";
   <main class="min-h-screen bg-gray-50 flex items-center justify-center py-16">
     <div class="max-w-lg mx-auto px-4 text-center">
       <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-        <!-- Success icon -->
-        <div
-          class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
-        >
-          <svg
-            class="w-10 h-10 text-green-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 13l4 4L19 7"></path>
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
         </div>
 
-        <h1 class="text-3xl font-bold text-gray-900 mb-4">
-          🎉 Dziękujemy za zakup!
-        </h1>
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">🎉 Dziękujemy za zakup!</h1>
 
         <p class="text-gray-600 mb-6">
           Twoja płatność została zrealizowana pomyślnie.
@@ -44,35 +30,18 @@ import Layout from "../../layouts/Layout.astro";
         <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
           <p class="text-sm text-blue-800">
             <strong>📧 Sprawdź swoją skrzynkę</strong><br />
-            Email powinien dotrzeć w ciągu kilku minut. Jeśli nie widzisz wiadomości,
-            sprawdź folder SPAM.
+            Email powinien dotrzeć w ciągu kilku minut. Jeśli nie widzisz wiadomości, sprawdź folder SPAM.
           </p>
         </div>
 
         <div class="space-y-4">
-          <a
-            href="/sklep"
-            class="block w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
-          >
-            Wróć do sklepu
-          </a>
-
-          <a
-            href="/"
-            class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-xl transition-colors"
-          >
-            Strona główna
-          </a>
+          <a href="/sklep" class="block w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors">Wróć do sklepu</a>
+          <a href="/" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-xl transition-colors">Strona główna</a>
         </div>
 
         <p class="text-sm text-gray-500 mt-8">
           Masz pytania? Napisz do nas:
-          <a
-            href="mailto:kontakt@praca-magisterska.pl"
-            class="text-primary-600 hover:underline"
-          >
-            kontakt@praca-magisterska.pl
-          </a>
+          <a href="mailto:kontakt@praca-magisterska.pl" class="text-primary-600 hover:underline">kontakt@praca-magisterska.pl</a>
         </p>
       </div>
     </div>
@@ -80,3 +49,33 @@ import Layout from "../../layouts/Layout.astro";
 
   <Footer />
 </Layout>
+
+<script>
+// cSpell:ignore gtag
+(function() {
+  'use strict';
+  var PRODUCTS = {
+    'ebook-pisanie-pracy-licencjackiej': { name: 'Jak napisać pracę licencjacką', price: 29.00 },
+    'ebook-pisanie-pracy-magisterskiej': { name: 'Jak napisać pracę magisterską od A do Z', price: 39.00 },
+  };
+  var params = new URLSearchParams(window.location.search);
+  var sessionId = params.get('session_id');
+  var productId = params.get('productId');
+  if (!sessionId) return;
+  var product = PRODUCTS[productId] || { name: 'Ebook', price: 0 };
+  var storageKey = 'purchase_tracked_' + sessionId;
+  try { if (sessionStorage.getItem(storageKey)) return; } catch(e) {}
+  function fire() {
+    if (typeof window.gtag !== 'function') return false;
+    window.gtag('event', 'purchase', {
+      transaction_id: sessionId,
+      value: product.price,
+      currency: 'PLN',
+      items: [{ item_id: productId || 'unknown', item_name: product.name, price: product.price, quantity: 1, item_category: 'Ebook' }]
+    });
+    try { sessionStorage.setItem(storageKey, '1'); } catch(e) {}
+    return true;
+  }
+  if (!fire()) { var a = 0; var i = setInterval(function() { a++; if (fire() || a >= 20) clearInterval(i); }, 500); }
+})();
+</script>

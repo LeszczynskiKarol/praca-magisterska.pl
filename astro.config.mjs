@@ -10,4 +10,14 @@ export default defineConfig({
       theme: "github-light",
     },
   },
+  vite: {
+    server: {
+      allowedHosts: ["dev.torweb.pl"],
+    },
+    define: {
+      "import.meta.env.API_URL": JSON.stringify(
+        process.env.API_URL || "http://localhost:4000",
+      ),
+    },
+  },
 });

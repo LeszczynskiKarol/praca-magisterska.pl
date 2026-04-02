@@ -2,61 +2,57 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// Produkty - w produkcji możesz trzymać w DynamoDB lub S3
 const PRODUCTS = {
   "ebook-pisanie-pracy-licencjackiej": {
     name: "Jak napisać pracę licencjacką - Kompletny Poradnik",
-    price: 2900, // w groszach (29 zł)
+    price: 2900,
     currency: "pln",
   },
   "ebook-pisanie-pracy-magisterskiej": {
     name: "Jak napisać pracę magisterską od A do Z",
-    price: 3900, // w groszach (39 zł)
-    currency: "pln",
-  },
-  "ebook-metodologia-badan": {
-    name: "Metodologia Badań w Pracy Dyplomowej",
     price: 3900,
     currency: "pln",
   },
-  "ebook-pakiet-kompletny": {
-    name: "Pakiet Kompletny - Wszystkie Ebooki",
-    price: 6900,
-    currency: "pln",
-  },
 };
 
-const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "https://www.praca-magisterska.pl",
-  "Access-Control-Allow-Headers": "Content-Type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-};
+const ALLOWED_ORIGINS = [
+  "https://www.praca-magisterska.pl",
+  "https://dev.torweb.pl",
+];
+
+function getCorsHeaders(event) {
+  const origin = event.headers?.origin || event.headers?.Origin || "";
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin)
+    ? origin
+    : ALLOWED_ORIGINS[0];
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin,
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+  };
+}
 
 export const handler = async (event) => {
-  // Handle CORS preflight
-  if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers: CORS_HEADERS,
-      body: "",
-    };
+  if (
+    event.httpMethod === "OPTIONS" ||
+    event.requestContext?.http?.method === "OPTIONS"
+  ) {
+    return { statusCode: 200, headers: getCorsHeaders(event), body: "" };
   }
 
   try {
     const { productId, customerEmail } = JSON.parse(event.body);
 
-    // Walidacja
     if (!productId || !PRODUCTS[productId]) {
       return {
         statusCode: 400,
-        headers: CORS_HEADERS,
+        headers: getCorsHeaders(event),
         body: JSON.stringify({ error: "Nieprawidłowy produkt" }),
       };
     }
 
     const product = PRODUCTS[productId];
 
-    // Tworzenie Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card", "blik"],
       line_items: [
@@ -73,33 +69,24 @@ export const handler = async (event) => {
         },
       ],
       mode: "payment",
-      success_url: `${process.env.SUCCESS_URL}?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${process.env.SUCCESS_URL}?session_id={CHECKOUT_SESSION_ID}&productId=${productId}`,
       cancel_url: process.env.CANCEL_URL,
       customer_email: customerEmail || undefined,
-      metadata: {
-        productId: productId,
-      },
-      // Opcjonalnie: zbieranie adresu do faktury
+      metadata: { productId },
       billing_address_collection: "auto",
-      // Automatyczne generowanie faktury
-      invoice_creation: {
-        enabled: true,
-      },
+      invoice_creation: { enabled: true },
     });
 
     return {
       statusCode: 200,
-      headers: CORS_HEADERS,
-      body: JSON.stringify({
-        sessionId: session.id,
-        url: session.url,
-      }),
+      headers: getCorsHeaders(event),
+      body: JSON.stringify({ sessionId: session.id, url: session.url }),
     };
   } catch (error) {
     console.error("Error creating checkout session:", error);
     return {
       statusCode: 500,
-      headers: CORS_HEADERS,
+      headers: getCorsHeaders(event),
       body: JSON.stringify({ error: "Błąd serwera" }),
     };
   }

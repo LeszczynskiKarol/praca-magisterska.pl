@@ -9,12 +9,9 @@ const ses = new SESClient({
   region: process.env.SES_REGION || process.env.AWS_REGION,
 });
 
-// Mapowanie produktów na pliki w S3
 const PRODUCT_FILES = {
   "ebook-pisanie-pracy-licencjackiej": "ebooks/poradnik-praca-licencjacka.pdf",
   "ebook-pisanie-pracy-magisterskiej": "ebooks/poradnik-praca-magisterska.pdf",
-  "ebook-metodologia-badan": "ebooks/metodologia-badan.pdf",
-  "ebook-pakiet-kompletny": "ebooks/pakiet-kompletny.zip",
 };
 
 const PRODUCT_NAMES = {
@@ -22,8 +19,6 @@ const PRODUCT_NAMES = {
     "Jak napisać pracę licencjacką - Kompletny Poradnik",
   "ebook-pisanie-pracy-magisterskiej":
     "Jak napisać pracę magisterską od A do Z",
-  "ebook-metodologia-badan": "Metodologia Badań w Pracy Dyplomowej",
-  "ebook-pakiet-kompletny": "Pakiet Kompletny - Wszystkie Ebooki",
 };
 
 export const handler = async (event) => {
@@ -46,17 +41,13 @@ export const handler = async (event) => {
     };
   }
 
-  // Obsługa udanej płatności
   if (stripeEvent.type === "checkout.session.completed") {
     const session = stripeEvent.data.object;
-
-    // Sprawdź czy płatność została zrealizowana
     if (session.payment_status === "paid") {
       await handleSuccessfulPayment(session);
     }
   }
 
-  // Obsługa opóźnionej płatności (np. BLIK)
   if (stripeEvent.type === "checkout.session.async_payment_succeeded") {
     const session = stripeEvent.data.object;
     await handleSuccessfulPayment(session);
@@ -85,17 +76,15 @@ async function handleSuccessfulPayment(session) {
   }
 
   try {
-    // Generuj presigned URL (ważny 7 dni)
     const command = new GetObjectCommand({
       Bucket: process.env.S3_BUCKET,
       Key: s3Key,
     });
 
     const downloadUrl = await getSignedUrl(s3, command, {
-      expiresIn: 7 * 24 * 60 * 60, // 7 dni
+      expiresIn: 7 * 24 * 60 * 60,
     });
 
-    // Wyślij email z linkiem
     await sendDownloadEmail(customerEmail, productId, downloadUrl, session);
 
     console.log(`Email sent to ${customerEmail} for product ${productId}`);
