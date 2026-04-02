@@ -27,4 +27,8 @@ pnpm-debug.log*
 # astro
 .astro/
 
-aws-lambda/webhook-handler/node_modules/
+aws-lambda/webhook-handler/node_modules/deploy.sh
+stripe-switch.sh
+deploy.sh
+stripe-switch.sh
+.deploy-tmp/

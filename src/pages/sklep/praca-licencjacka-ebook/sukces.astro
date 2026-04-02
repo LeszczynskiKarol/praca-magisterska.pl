@@ -3,6 +3,8 @@
 import Footer from "../../../components/Footer.astro";
 import Navbar from "../../../components/Navbar.astro";
 import Layout from "../../../layouts/Layout.astro";
+
+const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
 ---
 
 <Layout
@@ -24,15 +26,23 @@ import Layout from "../../../layouts/Layout.astro";
 
         <p class="text-gray-600 mb-6">
           Twoja płatność została zrealizowana pomyślnie.
-          <strong>Za chwilę otrzymasz email</strong> z linkiem do pobrania ebooka
-          "Jak napisać pracę licencjacką".
         </p>
 
-        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
-          <p class="text-sm text-blue-800">
-            <strong>📧 Sprawdź swoją skrzynkę</strong><br />
-            Email powinien dotrzeć w ciągu kilku minut. Jeśli nie widzisz wiadomości, sprawdź folder SPAM.
-          </p>
+        <!-- Download section -->
+        <div id="download-section" class="mb-8">
+          <div id="download-loading" class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto mb-3"></div>
+            <p class="text-sm text-blue-800">Przygotowuję link do pobrania...</p>
+          </div>
+          <div id="download-ready" class="hidden">
+            <a id="download-link" href="#" class="block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition-colors text-lg mb-3">
+              📥 Pobierz ebook
+            </a>
+            <p class="text-xs text-gray-500">Link ważny 24 godziny. Sprawdź też email — wysłaliśmy kopię zapasową.</p>
+          </div>
+          <div id="download-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-4">
+            <p class="text-sm text-red-800"><strong>Wystąpił błąd.</strong> Sprawdź email — link do pobrania powinien dotrzeć w ciągu kilku minut. Sprawdź też SPAM.</p>
+          </div>
         </div>
 
         <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
@@ -48,8 +58,7 @@ import Layout from "../../../layouts/Layout.astro";
         </div>
 
         <p class="text-sm text-gray-500 mt-8">
-          Masz pytania? Napisz do nas:
-          <a href="mailto:kontakt@praca-magisterska.pl" class="text-primary-600 hover:underline">kontakt@praca-magisterska.pl</a>
+          Masz pytania? <a href="mailto:kontakt@praca-magisterska.pl" class="text-primary-600 hover:underline">kontakt@praca-magisterska.pl</a>
         </p>
       </div>
     </div>
@@ -58,8 +67,8 @@ import Layout from "../../../layouts/Layout.astro";
   <Footer />
 </Layout>
 
-<script>
-  // @ts-nocheck
+<script define:vars={{ API_URL }}>
+// @ts-nocheck
 // cSpell:ignore gtag
 (function() {
   'use strict';
@@ -70,21 +79,31 @@ import Layout from "../../../layouts/Layout.astro";
   var params = new URLSearchParams(window.location.search);
   var sessionId = params.get('session_id');
   var productId = params.get('productId');
-  if (!sessionId) return;
-  var product = (productId && PRODUCTS[productId]) ? PRODUCTS[productId] : { name: 'Ebook', price: 0 };
-  var storageKey = 'purchase_tracked_' + sessionId;
-  try { if (sessionStorage.getItem(storageKey)) return; } catch(e) {}
-  function fire() {
-    if (typeof window.gtag !== 'function') return false;
-    window.gtag('event', 'purchase', {
-      transaction_id: sessionId,
-      value: product.price,
-      currency: 'PLN',
-      items: [{ item_id: productId || 'unknown', item_name: product.name, price: product.price, quantity: 1, item_category: 'Ebook' }]
-    });
-    try { sessionStorage.setItem(storageKey, '1'); } catch(e) {}
-    return true;
+  if (sessionId) {
+    var product = (productId && PRODUCTS[productId]) ? PRODUCTS[productId] : { name: 'Ebook', price: 0 };
+    var storageKey = 'purchase_tracked_' + sessionId;
+    try { if (!sessionStorage.getItem(storageKey)) {
+      function fire() {
+        if (typeof window.gtag !== 'function') return false;
+        window.gtag('event', 'purchase', { transaction_id: sessionId, value: product.price, currency: 'PLN', items: [{ item_id: productId || 'unknown', item_name: product.name, price: product.price, quantity: 1, item_category: 'Ebook' }] });
+        try { sessionStorage.setItem(storageKey, '1'); } catch(e) {}
+        return true;
+      }
+      if (!fire()) { var a = 0; var i = setInterval(function() { a++; if (fire() || a >= 20) clearInterval(i); }, 500); }
+    }} catch(e) {}
   }
-  if (!fire()) { var a = 0; var i = setInterval(function() { a++; if (fire() || a >= 20) clearInterval(i); }, 500); }
+  var loadingEl = document.getElementById('download-loading');
+  var readyEl = document.getElementById('download-ready');
+  var errorEl = document.getElementById('download-error');
+  var linkEl = document.getElementById('download-link');
+  if (!sessionId) { loadingEl.classList.add('hidden'); errorEl.classList.remove('hidden'); return; }
+  fetch(API_URL + '/get-download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sessionId: sessionId }) })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    loadingEl.classList.add('hidden');
+    if (data.downloadUrl) { linkEl.href = data.downloadUrl; linkEl.textContent = '📥 Pobierz: ' + (data.productName || 'Ebook'); readyEl.classList.remove('hidden'); }
+    else { errorEl.classList.remove('hidden'); }
+  })
+  .catch(function() { loadingEl.classList.add('hidden'); errorEl.classList.remove('hidden'); });
 })();
 </script>

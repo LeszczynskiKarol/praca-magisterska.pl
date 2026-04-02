@@ -41,16 +41,3 @@ import Layout from "../../layouts/Layout.astro";
 
   <Footer />
 </Layout>
-
-<script>
-// cSpell:ignore gtag
-(function() {
-  'use strict';
-  function fire() {
-    if (typeof window.gtag !== 'function') return false;
-    window.gtag('event', 'checkout_cancelled', { currency: 'PLN', items: [{ item_category: 'Ebook' }] });
-    return true;
-  }
-  if (!fire()) { var a = 0; var i = setInterval(function() { a++; if (fire() || a >= 20) clearInterval(i); }, 500); }
-})();
-</script>
