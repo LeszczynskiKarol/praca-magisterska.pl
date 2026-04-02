@@ -54,7 +54,7 @@ export const handler = async (event) => {
     const product = PRODUCTS[productId];
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card", "blik"],
+      payment_method_types: ["card", "blik", "revolut_pay"],
       line_items: [
         {
           price_data: {
