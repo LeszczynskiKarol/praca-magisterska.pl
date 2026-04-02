@@ -59,6 +59,7 @@ import Layout from "../../../layouts/Layout.astro";
 </Layout>
 
 <script>
+  // @ts-nocheck
 // cSpell:ignore gtag
 (function() {
   'use strict';
@@ -70,7 +71,7 @@ import Layout from "../../../layouts/Layout.astro";
   var sessionId = params.get('session_id');
   var productId = params.get('productId');
   if (!sessionId) return;
-  var product = PRODUCTS[productId] || { name: 'Ebook', price: 0 };
+  var product = (productId && PRODUCTS[productId]) ? PRODUCTS[productId] : { name: 'Ebook', price: 0 };
   var storageKey = 'purchase_tracked_' + sessionId;
   try { if (sessionStorage.getItem(storageKey)) return; } catch(e) {}
   function fire() {
