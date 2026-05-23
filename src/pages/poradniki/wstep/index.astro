@@ -10,16 +10,75 @@ const breadcrumbs = [
 const relatedLinks = [
   { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
   { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+  { label: "Cel pracy magisterskiej", href: "/poradniki/cel-pracy/" },
+  { label: "Konspekt pracy", href: "/poradniki/konspekt/" },
 ];
+
+const faqItems = [
+  {
+    question: "Ile stron powinien mieć wstęp do pracy magisterskiej?",
+    answer:
+      "Wstęp do pracy magisterskiej powinien zajmować od 2 do 4 stron znormalizowanego maszynopisu (czcionka 12 pt, interlinia 1,5). To około 600-1200 słów. Krótszy wstęp nie pomieści wszystkich wymaganych elementów, dłuższy zaczyna powielać treść rozdziałów teoretycznych.",
+  },
+  {
+    question: "Kiedy pisać wstęp - na początku czy na końcu?",
+    answer:
+      "Zdecydowanie na końcu, gdy cała praca jest już gotowa. Wtedy wiesz dokładnie, co się w niej znalazło, jaką metodologię faktycznie zastosowałeś i jakie wnioski wyciągnąłeś. Pisanie wstępu z konspektu prowadzi do rozbieżności między obietnicą a treścią pracy.",
+  },
+  {
+    question: "Czy wstęp musi zawierać hipotezy?",
+    answer:
+      "Hipotezy są obowiązkowe w pracach o charakterze empirycznym (badania własne). W pracach typowo teoretycznych lub komparatystycznych zamiast hipotez stawia się tezy lub pytania badawcze. Zawsze sprawdź wymogi swojej uczelni i kierunku — niektóre wydziały wymagają obu.",
+  },
+  {
+    question: "Czym różni się wstęp od wprowadzenia teoretycznego?",
+    answer:
+      'Wstęp to syntetyczna prezentacja całej pracy (cel, problem, metoda, struktura) — 2-4 strony. Wprowadzenie teoretyczne to osobny rozdział lub jego część, w której rozwijasz stan badań, definicje pojęć i ramy teoretyczne — kilkanaście stron. Wstęp odpowiada na pytanie „o czym jest praca", wprowadzenie teoretyczne — „co już wiemy na ten temat".',
+  },
+  {
+    question: "Czy we wstępie używać pierwszej osoby?",
+    answer:
+      'W polskiej tradycji akademickiej preferowana jest forma bezosobowa („podjęto próbę", „analizie poddano") lub liczba mnoga („w niniejszej pracy przedstawiamy"). Pierwszej osoby liczby pojedynczej („ja zbadałem") unika się — wyjątkiem są niektóre kierunki humanistyczne i prace, w których promotor wyraźnie ją dopuszcza.',
+  },
+  {
+    question: "Jak rozpocząć wstęp do pracy magisterskiej?",
+    answer:
+      'Najlepiej od konkretnego faktu, danych statystycznych lub cytatu, które pokazują aktualność i wagę tematu. Unikaj banalnych otwarć typu „Od zarania dziejów…" czy „W dzisiejszym świecie pełnym…". Pierwsze zdanie powinno przyciągać uwagę i osadzać czytelnika w konkretnym problemie.',
+  },
+  {
+    question: "Czy wstęp wlicza się do limitu stron pracy?",
+    answer:
+      "Tak, wstęp wlicza się do całkowitej objętości pracy magisterskiej. Standardowa praca ma 60-100 stron — wstęp zajmuje 2-4 z nich. Nie wlicza się do limitu jedynie strona tytułowa, spis treści, bibliografia i załączniki (w zależności od regulaminu uczelni).",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 ---
 
 <ArticleLayout
-  title="Jak napisać wstęp do pracy magisterskiej - porady + wzór"
-  description="Kompletny poradnik jak napisać wstęp do pracy magisterskiej."
+  title="Jak napisać wstęp do pracy magisterskiej - wzór, struktura, przykład"
+  description="Jak napisać wstęp do pracy magisterskiej krok po kroku. 7 obowiązkowych elementów, gotowy wzór, przykłady i najczęstsze błędy do uniknięcia. Praktyczny poradnik 2026."
   readingTime="18 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
   <p>
     Wstęp do pracy magisterskiej stanowi pierwszą część merytoryczną, z którą
     zetknąć się musi każdy czytelnik Twojego dzieła naukowego. To właśnie on
@@ -65,9 +124,9 @@ const relatedLinks = [
     szczegółowych analiz. Wprowadzenie teoretyczne natomiast stanowi osobny
     rozdział lub część rozdziału, w którym szczegółowo omawiasz stan wiedzy na
     dany temat, prezentujesz definicje kluczowych pojęć oraz budujesz
-    teoretyczne ramy dla swoich badań. Wstęp odpowiada na pytanie "o czym jest
+    teoretyczne ramy dla swoich badań. Wstęp odpowiada na pytanie „o czym jest
     ta praca i jak jest zbudowana", podczas gdy wprowadzenie teoretyczne
-    odpowiada na pytanie "co wiemy na ten temat z dotychczasowych badań i
+    odpowiada na pytanie „co wiemy na ten temat z dotychczasowych badań i
     teorii".
   </p>
 
@@ -93,7 +152,10 @@ const relatedLinks = [
     współczesnych wyzwań, problemów społecznych, gospodarczych czy naukowych.
     Ten fragment powinien stopniowo zawężać perspektywę od ogółu do szczegółu,
     prowadząc czytelnika od szerokiego kontekstu do konkretnego problemu
-    badawczego. Warto tutaj również nawiązać do procesu, jak doszedłeś do tego konkretnego zagadnienia - <a href="/poradniki/wybor-tematu/">wybór tematu pracy</a> powinien być logiczny i uzasadniony.
+    badawczego. Warto tutaj również nawiązać do procesu, jak doszedłeś do tego
+    konkretnego zagadnienia - <a href="/poradniki/wybor-tematu/"
+      >wybór tematu pracy</a
+    > powinien być logiczny i uzasadniony.
   </p>
 
   <p>
@@ -103,9 +165,10 @@ const relatedLinks = [
     formie pytania lub stwierdzenia wskazującego na lukę w dotychczasowej
     wiedzy. Pytania badawcze szczegółowe stanowią rozwinięcie problemu głównego
     i wskazują na konkretne aspekty, które będziesz badać. Trzecim elementem
-    jest określenie celu pracy - stwierdzenie, co ma zostać osiągnięte przez
-    przeprowadzone badania. Cel powinien być mierzalny i realistyczny, a jego
-    realizacja powinna być możliwa do zweryfikowania na podstawie treści pracy.
+    jest określenie <a href="/poradniki/cel-pracy/">celu pracy</a> - stwierdzenie,
+    co ma zostać osiągnięte przez przeprowadzone badania. Cel powinien być mierzalny
+    i realistyczny, a jego realizacja powinna być możliwa do zweryfikowania na podstawie
+    treści pracy.
   </p>
 
   <p>
@@ -113,10 +176,11 @@ const relatedLinks = [
     odpowiedzi na postawione pytania badawcze. Hipoteza powinna wynikać
     logicznie z analizy dotychczasowego stanu wiedzy i być możliwa do
     zweryfikowania empirycznie. Piąty element stanowi krótka charakterystyka
-    metodologii badań - informacja o tym, jakie metody, techniki i narzędzia
-    badawcze zostały zastosowane w celu realizacji założonego celu. Nie jest to
-    miejsce na szczegółowy opis procedur badawczych, lecz jedynie na
-    zasygnalizowanie głównych wyborów metodologicznych.
+    metodologii badań - informacja o tym, jakie <a
+      href="/poradniki/metodologia/">metody, techniki i narzędzia badawcze</a
+    > zostały zastosowane w celu realizacji założonego celu. Nie jest to miejsce
+    na szczegółowy opis procedur badawczych, lecz jedynie na zasygnalizowanie głównych
+    wyborów metodologicznych.
   </p>
 
   <p>
@@ -170,6 +234,333 @@ const relatedLinks = [
       <tr>
         <td>Cel pracy</td>
         <td>0,2 strony</td>
-        
+        <td>Wskazanie rezultatu badań</td>
+        <td>Mylenie celu z tematem, niemierzalne sformułowania</td>
+      </tr>
+      <tr>
+        <td>Hipotezy / tezy</td>
+        <td>0,3 strony</td>
+        <td>Przypuszczenia do weryfikacji</td>
+        <td>Hipotezy oczywiste lub niefalsyfikowalne</td>
+      </tr>
+      <tr>
+        <td>Metodologia (skrótowo)</td>
+        <td>0,4 strony</td>
+        <td>Zasygnalizowanie sposobu badania</td>
+        <td>Zbyt szczegółowy opis, który powiela rozdział metodologiczny</td>
+      </tr>
+      <tr>
+        <td>Struktura pracy</td>
+        <td>0,5 strony</td>
+        <td>Mapa nawigacyjna po rozdziałach</td>
+        <td>Suche wyliczanie rozdziałów bez uzasadnienia ich kolejności</td>
+      </tr>
+      <tr>
+        <td>Źródła i podziękowania</td>
+        <td>0,3 strony</td>
+        <td>Wskazanie nurtów i kontekstu</td>
+        <td>Pomijanie tej części lub jej nadmierne rozbudowanie</td>
+      </tr>
+    </tbody>
+  </table>
 
+  <h2>Wzór wstępu do pracy magisterskiej - przykład z komentarzem</h2>
+
+  <p>
+    Najlepszym sposobem zrozumienia, jak powinien wyglądać dobry wstęp, jest
+    przyjrzenie się konkretnemu przykładowi. Poniżej prezentujemy fragmenty
+    wzorcowego wstępu do pracy magisterskiej z dziedziny zarządzania, opatrzone
+    komentarzami metodologicznymi. Wzór można zaadaptować do dowolnego kierunku
+    studiów - kluczowe są zasady budowy poszczególnych części, a nie konkretna
+    tematyka. Dla porównania zachęcamy także do zapoznania się z przykładami z
+    innych dziedzin, dostępnymi w naszych <a href="/tematy/"
+      >tematach prac magisterskich</a
+    >.
+  </p>
+
+  <p>
+    Przykład akapitu wprowadzającego: „Dynamiczne zmiany zachodzące na rynku
+    pracy w ostatniej dekadzie spowodowały konieczność weryfikacji
+    tradycyjnych modeli zarządzania zasobami ludzkimi. Pandemia COVID-19, rozwój
+    pracy zdalnej oraz pokoleniowa zmiana wartości doprowadziły do sytuacji, w
+    której klasyczne instrumenty motywacyjne tracą skuteczność. Według raportu
+    Deloitte z 2024 roku, aż 67% pracowników pokolenia Z deklaruje gotowość do
+    zmiany miejsca pracy w ciągu najbliższych dwóch lat, jeśli ich obecny
+    pracodawca nie zaoferuje elastycznych form zatrudnienia oraz jasnych ścieżek
+    rozwoju. Niniejsza praca podejmuje próbę odpowiedzi na pytanie, jak
+    organizacje mogą skutecznie dostosować systemy motywacyjne do oczekiwań
+    najmłodszego pokolenia pracowników." <em
+      >(Komentarz: zwróć uwagę na konkretne dane, odwołanie do aktualnego źródła
+      i stopniowe zawężenie perspektywy do problemu pracy.)</em
+    >
+  </p>
+
+  <p>
+    Przykład sformułowania problemu i celu: „Głównym problemem badawczym
+    niniejszej pracy jest pytanie: w jaki sposób organizacje działające w Polsce
+    powinny modyfikować swoje systemy motywacyjne, aby skutecznie przyciągać i
+    zatrzymywać pracowników pokolenia Z? Z problemu głównego wyprowadzono trzy
+    pytania szczegółowe: (1) Jakie czynniki motywacyjne są najważniejsze dla
+    pracowników pokolenia Z?; (2) W jakim stopniu obecne systemy motywacyjne
+    polskich firm odpowiadają tym oczekiwaniom?; (3) Jakie zmiany w polityce
+    personalnej należy wprowadzić, aby zwiększyć zaangażowanie najmłodszej
+    grupy pracowników? Celem pracy jest opracowanie modelu systemu motywacyjnego
+    dostosowanego do oczekiwań pokolenia Z, możliwego do wdrożenia w polskich
+    przedsiębiorstwach średniej wielkości." <em
+      >(Komentarz: jedno pytanie główne, trzy szczegółowe, jeden mierzalny cel.)</em
+    >
+  </p>
+
+  <p>
+    Przykład formułowania hipotez: „W toku badań zweryfikowane zostaną
+    następujące hipotezy: H1 - dla pracowników pokolenia Z istotniejsze od
+    wynagrodzenia są pozapłacowe elementy motywacji, takie jak elastyczne formy
+    pracy i możliwości rozwoju. H2 - systemy motywacyjne stosowane w polskich
+    przedsiębiorstwach średniej wielkości w niewystarczającym stopniu
+    uwzględniają specyfikę najmłodszego pokolenia pracowników. H3 - wdrożenie
+    spersonalizowanych ścieżek rozwoju wpływa pozytywnie na poziom zaangażowania
+    pracowników pokolenia Z." <em
+      >(Komentarz: hipotezy są konkretne, weryfikowalne i logicznie wynikają z
+      pytań badawczych.)</em
+    >
+  </p>
+
+  <p>
+    Przykład prezentacji struktury pracy: „Praca składa się z czterech
+    rozdziałów. Rozdział pierwszy ma charakter teoretyczny i przedstawia
+    przegląd literatury z zakresu zarządzania zasobami ludzkimi, ze szczególnym
+    uwzględnieniem teorii motywacji oraz charakterystyki pokoleń na rynku pracy.
+    Rozdział drugi prezentuje metodologię przeprowadzonych badań własnych,
+    uzasadnia wybór metod oraz opisuje narzędzia badawcze. Rozdział trzeci
+    zawiera analizę wyników badań ankietowych przeprowadzonych wśród 247
+    pracowników pokolenia Z z 12 polskich przedsiębiorstw. Rozdział czwarty,
+    syntezujący, prezentuje autorski model systemu motywacyjnego oraz
+    rekomendacje praktyczne dla działów HR. Pracę zamyka zakończenie zawierające
+    podsumowanie wyników i wskazanie kierunków dalszych badań." <em
+      >(Komentarz: opis każdego rozdziału w 1-2 zdaniach, jasna logika
+      narastania treści.)</em
+    >
+  </p>
+
+  <h2>Najczęstsze błędy popełniane przy pisaniu wstępu</h2>
+
+  <p>
+    Analiza setek prac magisterskich pozwala zidentyfikować powtarzające się
+    błędy w konstrukcji wstępu. Świadomość tych pułapek pomaga ich uniknąć i
+    znacząco podnosi jakość pierwszego wrażenia, jakie Twoja praca wywrze na
+    promotorze i recenzentach. Pierwszy i najczęstszy błąd to <strong
+      >banalne otwarcie</strong
+    > - zdania w stylu „Od zarania dziejów człowiek..." czy „W dzisiejszym dynamicznym
+    świecie...". Tego rodzaju sformułowania są pozbawione wartości informacyjnej,
+    brzmią pretensjonalnie i sygnalizują czytelnikowi, że autor nie ma nic ciekawego
+    do powiedzenia. Wstęp powinien zaczynać się od konkretu - faktu, danych statystycznych,
+    aktualnego problemu lub trafnego cytatu.
+  </p>
+
+  <p>
+    Drugi częsty błąd to <strong>mylenie wstępu z rozdziałem teoretycznym</strong
+    >. Studenci, zwłaszcza ci, którzy piszą wstęp na początku procesu tworzenia
+    pracy, mają tendencję do umieszczania we wstępie obszernych definicji,
+    przeglądów literatury i rozważań teoretycznych. To miejsce na sygnalizację,
+    nie na wykład. Każda definicja czy szczegółowa analiza, którą rozważasz
+    włączyć do wstępu, prawie na pewno powinna trafić do rozdziału teoretycznego.
+  </p>
+
+  <p>
+    Trzeci błąd to <strong>brak jasno sformułowanego problemu badawczego</strong
+    >. Wstęp pełen ogólników, w którym czytelnik po przeczytaniu nie jest w
+    stanie określić, co konkretnie autor zamierza zbadać, sygnalizuje brak
+    przemyślenia całego projektu. Problem badawczy musi być wyrażony jednym
+    konkretnym zdaniem - najlepiej pytającym lub stwierdzającym lukę w wiedzy.
+    Czwarty błąd to <strong>nieadekwatność celu wobec problemu</strong> - sytuacja,
+    w której postawione pytanie badawcze nie znajduje odzwierciedlenia w sformułowanym
+    celu. Cel musi być logiczną konsekwencją problemu i obiecywać dokładnie to, co
+    praca faktycznie dostarczy.
+  </p>
+
+  <p>
+    Piąty błąd to <strong>hipotezy oczywiste lub niefalsyfikowalne</strong>.
+    Hipoteza w stylu „im więcej szkoleń, tym lepsza wiedza pracowników" jest
+    bezwartościowa - jej weryfikacja niczego nie wnosi. Hipoteza musi być
+    nieoczywista, możliwa do obalenia i powinna wynikać z analizy istniejących
+    badań. Szósty błąd to <strong
+      >zbyt szczegółowy opis metodologii we wstępie</strong
+    > - powtarzanie treści, która znajdzie się w rozdziale metodologicznym. We wstępie
+    wystarczy hasłowe wskazanie głównych metod (np. „przeprowadzono badania ankietowe
+    na próbie 247 osób oraz wywiady pogłębione z 12 menedżerami HR"), bez wchodzenia
+    w szczegóły procedury badawczej.
+  </p>
+
+  <p>
+    Siódmy błąd to <strong>brak nawiązania do struktury pracy</strong> -
+    pominięcie informacji o tym, z ilu rozdziałów składa się praca i czego każdy
+    z nich dotyczy. To podstawowy element nawigacyjny, którego oczekuje każdy
+    czytelnik. Ósmy błąd to <strong>nieprawidłowa proporcja</strong> - wstęp
+    zajmujący jedną stronę (za mało, nie pomieści wszystkich elementów) lub
+    osiem stron (za dużo, zaczyna powielać treść rozdziałów). Standardem są 2-4
+    strony znormalizowanego maszynopisu. Dziewiąty błąd to <strong
+      >używanie pierwszej osoby liczby pojedynczej</strong
+    > w pracach, w których wymagana jest forma bezosobowa lub liczba mnoga. Sprawdź
+    wytyczne swojej uczelni i konsekwentnie stosuj jedną formę w całej pracy.
+  </p>
+
+  <p>
+    Dziesiąty i ostatni typowy błąd to <strong
+      >niedopasowanie wstępu do faktycznej treści pracy</strong
+    >. Wstęp jest obietnicą - jeśli we wstępie zapowiadasz analizę trzech aspektów,
+    a w pracy omawiasz dwa lub cztery, recenzent zauważy tę niespójność. Dlatego
+    najlepiej napisać wstęp na końcu, gdy znasz dokładny kształt swojej pracy, lub
+    przynajmniej dokładnie zweryfikować i poprawić go po ukończeniu wszystkich rozdziałów.
+  </p>
+
+  <h2>Schemat krok po kroku - jak napisać wstęp w 7 etapach</h2>
+
+  <p>
+    Praktyczny schemat działania pozwala uporządkować proces pisania wstępu i
+    uniknąć blokady twórczej. Poniższe siedem kroków sprawdziło się w pracy
+    setek studentów - postępując zgodnie z nimi, otrzymasz kompletny, dobrze
+    skonstruowany wstęp w 4-6 godzin pracy.
+  </p>
+
+  <p>
+    <strong>Krok 1: Przygotowanie - zbierz materiały.</strong> Zanim napiszesz pierwsze
+    zdanie, miej pod ręką: gotowy konspekt pracy (lub jeszcze lepiej - gotową pracę),
+    spis treści, 2-3 raporty branżowe lub artykuły naukowe pokazujące aktualność
+    tematu, sformułowane pytania badawcze i hipotezy. Przygotuj również <a
+      href="/poradniki/bibliografia/">bibliografię</a
+    > - przyda się do wskazania kluczowych źródeł.
+  </p>
+
+  <p>
+    <strong>Krok 2: Napisz akapit kontekstowy.</strong> Zacznij od konkretu - statystyki,
+    przykładu, aktualnego problemu. Stopniowo zawężaj perspektywę od ogólnego kontekstu
+    do swojej tematyki. Akapit powinien mieć 150-250 słów i kończyć się zdaniem,
+    które naturalnie wprowadza problem badawczy Twojej pracy.
+  </p>
+
+  <p>
+    <strong>Krok 3: Sformułuj problem i cel.</strong> W jednym, krótkim akapicie
+    napisz: jeden problem badawczy główny (jako pytanie lub stwierdzenie), 2-4 pytania
+    szczegółowe, jeden cel pracy. Używaj formy bezosobowej lub mnogiej. Sprawdź,
+    czy cel logicznie odpowiada na problem.
+  </p>
+
+  <p>
+    <strong>Krok 4: Przedstaw hipotezy.</strong> Sformułuj 2-5 hipotez (H1, H2, H3...),
+    z których każda jest konkretna, falsyfikowalna i wynika z dotychczasowego stanu
+    wiedzy. W pracach teoretycznych zamiast hipotez postaw tezy.
+  </p>
+
+  <p>
+    <strong>Krok 5: Opisz metodologię w jednym akapicie.</strong> Hasłowo wskaż:
+    jaki paradygmat (ilościowy / jakościowy / mieszany), główne metody (np. ankieta,
+    wywiad pogłębiony, analiza dokumentów), wielkość próby, miejsce i czas badań.
+    Bez szczegółów - na to jest rozdział metodologiczny.
+  </p>
+
+  <p>
+    <strong>Krok 6: Opisz strukturę pracy.</strong> Po jednym zdaniu na każdy rozdział
+    - co zawiera i czemu służy. Pokaż logikę: dlaczego rozdziały są w takiej, a nie
+    innej kolejności.
+  </p>
+
+  <p>
+    <strong>Krok 7: Wykończenie - źródła, podziękowania, korekta.</strong> Wskaż
+    2-3 kluczowe pozycje bibliograficzne lub główne nurty teoretyczne. Opcjonalnie
+    dodaj akapit podziękowań dla promotora i instytucji. Na koniec - przeczytaj wstęp
+    głośno, sprawdź czy proporcje są zachowane (2-4 strony), czy nie powtarzasz się
+    i czy każdy element jest obecny.
+  </p>
+
+  <h2>Wstęp do pracy magisterskiej a wstęp do pracy licencjackiej</h2>
+
+  <p>
+    Choć obie prace dyplomowe mają podobną strukturę wstępu, istnieją między
+    nimi istotne różnice wynikające z innego poziomu wymagań akademickich. Wstęp
+    do pracy magisterskiej jest bardziej rozbudowany (3-4 strony vs 1-2 strony w
+    pracy licencjackiej) i wymaga głębszego osadzenia problemu w kontekście
+    teoretycznym. W pracy magisterskiej oczekuje się wyraźnego wskazania luki
+    badawczej, którą wypełnia praca - w pracy licencjackiej wystarczy
+    uzasadnienie aktualności tematu.
+  </p>
+
+  <p>
+    Wstęp magisterski powinien również zawierać bardziej szczegółowe hipotezy i
+    wskazywać na własny wkład autora w dotychczasowy stan wiedzy (oryginalność
+    pracy). Praca licencjacka jest pracą bardziej odtwórczą - może koncentrować
+    się na uporządkowaniu istniejącej wiedzy. W pracy magisterskiej element
+    badawczy i własna kontrybucja są obowiązkowe i muszą być sygnalizowane już
+    we wstępie. Drugą różnicą jest sposób przedstawiania metodologii - w pracy
+    magisterskiej oczekuje się jasnego określenia paradygmatu badawczego i
+    świadomego wyboru metod, w pracy licencjackiej często wystarcza wskazanie
+    podstawowych technik.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o wstęp</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie - klucz do dobrego wstępu</h2>
+
+  <p>
+    Wstęp do pracy magisterskiej to nie formalność, którą można odbębnić w pół
+    godziny przed obroną. To pierwsze i często jedyne wrażenie, jakie Twoja
+    praca wywrze na recenzencie - od jego jakości w dużej mierze zależy
+    nastawienie czytelnika do dalszych rozdziałów. Pamiętaj o trzech zasadach:
+    pisz wstęp na końcu (znasz wtedy pełen kształt pracy), zachowaj proporcje
+    (2-4 strony, 7-8 elementów strukturalnych), unikaj banałów (zaczynaj od
+    konkretu, kończ na strukturze pracy).
+  </p>
+
+  <p>
+    Jeśli przygotowujesz się dopiero do pierwszych badań własnych, sprawdź nasz
+    obszerny dział <a href="/poradniki/metodologia/">metodologia pracy magisterskiej</a
+    >, gdzie znajdziesz szczegółowe poradniki o ankietach, wywiadach, doborze próby
+    i analizie wyników. Jeżeli dopiero szukasz tematu, zajrzyj do <a
+      href="/tematy/">bazy 2000+ tematów</a
+    > z 20 kierunków studiów. A jeśli skończyłeś pisać i potrzebujesz wskazówek
+    do ostatnich rozdziałów - zapoznaj się z poradnikiem <a
+      href="/poradniki/zakonczenie/">jak napisać zakończenie pracy magisterskiej</a
+    >, które jest naturalnym dopełnieniem dobrego wstępu.
+  </p>
 </ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

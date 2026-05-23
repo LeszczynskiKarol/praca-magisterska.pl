@@ -3,23 +3,86 @@
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 
 const breadcrumbs = [
-  { label: "Metodologia", href: "/poradniki/metodologia" },
-  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  {
+    label: "Rozdział metodologiczny",
+    href: "/poradniki/metodologia/rozdzial-metodologiczny/",
+  },
 ];
 
 const relatedLinks = [
-  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
-  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Badania jakościowe", href: "/poradniki/metodologia/badania-jakosciowe/" },
+  { label: "Dobór próby badawczej", href: "/poradniki/metodologia/dobor-proby/" },
+  { label: "Hipotezy badawcze", href: "/poradniki/metodologia/hipotezy-badawcze/" },
 ];
+
+const faqItems = [
+  {
+    question: "Ile stron powinien mieć rozdział metodologiczny?",
+    answer:
+      "Rozdział metodologiczny w pracy magisterskiej zajmuje zazwyczaj 10-20 stron znormalizowanego maszynopisu (ok. 3000-6000 słów). W pracach z naukami społecznymi i humanistycznymi bywa dłuższy, w pracach technicznych krótszy. Najważniejsza jest kompletność opisu, a nie objętość.",
+  },
+  {
+    question: "Czy rozdział metodologiczny pisze się przed czy po badaniach?",
+    answer:
+      "Plan rozdziału metodologicznego (paradygmat, metody, narzędzia) tworzy się PRZED badaniami i konsultuje z promotorem - inaczej grozi nam, że zebrane dane nie odpowiedzą na pytania badawcze. Ostateczną wersję rozdziału pisze się PO przeprowadzeniu badań, bo dopiero wtedy znamy faktyczną wielkość próby, ewentualne odstępstwa od planu i napotkane ograniczenia.",
+  },
+  {
+    question: "Czy każda praca magisterska wymaga rozdziału metodologicznego?",
+    answer:
+      "Tak, ale jego kształt zależy od typu pracy. Prace empiryczne (badania własne) wymagają pełnego rozdziału z opisem paradygmatu, metod, próby i procedur. Prace teoretyczne i komparatystyczne wymagają rozdziału metodologicznego opisującego metodę analizy źródeł, kryteria doboru materiału i sposób interpretacji. Brak rozdziału metodologicznego jest zazwyczaj podstawą do odrzucenia pracy.",
+  },
+  {
+    question: "Co zrobić, gdy badania nie potwierdziły hipotez?",
+    answer:
+      "Niepotwierdzenie hipotezy NIE jest porażką - to legalny wynik naukowy. W rozdziale metodologicznym opisz procedurę uczciwie, w rozdziale empirycznym przedstaw wyniki takie, jakie są. W dyskusji wyników wyjaśnij, dlaczego hipoteza nie znalazła potwierdzenia (np. specyfika próby, czynniki kontekstowe, ograniczenia metodyki) i co to oznacza dla teorii. Manipulowanie danymi to plagiat naukowy.",
+  },
+  {
+    question: "Jakie metody badawcze są najczęściej stosowane w pracach magisterskich?",
+    answer:
+      "W pracach z nauk społecznych najczęściej: ankieta (badania ilościowe), wywiad pogłębiony i wywiad fokusowy (jakościowe), analiza dokumentów, studium przypadku. W pracach z zarządzania i marketingu: analiza danych wtórnych, badania ankietowe. W pielęgniarstwie i medycynie: badania ankietowe, analiza dokumentacji medycznej, obserwacja. Wybór metody zależy od problemu badawczego, nie odwrotnie.",
+  },
+  {
+    question: "Jak opisać próbę badawczą w rozdziale metodologicznym?",
+    answer:
+      "Próba badawcza wymaga opisu: (1) populacji docelowej - kto teoretycznie podlegałby badaniu, (2) ramy próbkowania - skąd dobierano uczestników, (3) metody doboru próby (losowa, celowa, kuli śnieżnej itd.) wraz z uzasadnieniem, (4) wielkości próby z kalkulacją lub uzasadnieniem, (5) charakterystyki demograficznej (wiek, płeć, wykształcenie itp.), (6) kryteriów włączenia i wykluczenia.",
+  },
+  {
+    question: "Czy trzeba opisywać aspekty etyczne badania?",
+    answer:
+      "Tak, szczególnie w badaniach z udziałem ludzi. Opisz: jak zapewniono dobrowolność uczestnictwa, formę świadomej zgody (pisemna, ustna), anonimizację danych, sposób przechowywania i zniszczenia danych po badaniu. Jeśli wymagała tego specyfika badania - zgodę komisji bioetycznej. W badaniach z osobami nieletnimi lub w sytuacji zależności (np. pacjenci, podwładni) opisz dodatkowe zabezpieczenia.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 ---
 
 <ArticleLayout
-  title="Rozdział metodologiczny w pracy magisterskiej - jak napisać?"
-  description="Kompletny poradnik dotyczący tworzenia rozdziału metodologicznego do pracy magisterskiej"
-  readingTime="18 min"
+  title="Rozdział metodologiczny w pracy magisterskiej - jak napisać, struktura, przykład"
+  description="Jak napisać rozdział metodologiczny pracy magisterskiej. Struktura, paradygmaty badawcze, metody ilościowe i jakościowe, dobór próby, przykłady, błędy do uniknięcia."
+  readingTime="22 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
   <p>
     Rozdział metodologiczny stanowi fundament każdej pracy badawczej i decyduje
     o jej naukowej wartości oraz wiarygodności uzyskanych wyników. To właśnie w
@@ -42,7 +105,7 @@ const relatedLinks = [
   <p>
     Rozdział metodologiczny to część pracy dyplomowej, w której autor
     szczegółowo opisuje sposób prowadzenia badań, uzasadnia wybór metod oraz
-    przedstawia narzędzia i procedury badawcze. Jest to swoistymost łączący
+    przedstawia narzędzia i procedury badawcze. Jest to swoisty most łączący
     część teoretyczną z empiryczną, który pozwala na przejście od analizy
     literatury przedmiotu do własnych badań i wniosków. Metodologia stanowi plan
     działania badawczego, który określa, w jaki sposób autor zamierza
@@ -154,7 +217,354 @@ const relatedLinks = [
     zjawisk, dążąc do uzyskania obiektywnych, mierzalnych i uogólnialnych
     wyników. Charakteryzują się dużymi próbami badawczymi, standaryzowanymi
     narzędziami pomiarowymi oraz wykorzystaniem metod statystycznych do analizy
-    danych. Podejście ilościowe jest szczególnie przydatne, gdy chcemy zbadać <a href="/poradniki/metodologia/badania-ilosciowe/">szczegóły badań ilościowych</a> i
-    z
+    danych. Podejście ilościowe jest szczególnie przydatne, gdy chcemy zbadać <a
+      href="/poradniki/metodologia/badania-ilosciowe/">skalę zjawisk, zależności statystyczne</a>
+    między zmiennymi lub przetestować konkretne hipotezy. Typowe narzędzia
+    ilościowe to ankiety z pytaniami zamkniętymi, testy psychologiczne, analiza
+    dokumentów z wykorzystaniem klucza kategoryzacyjnego oraz analiza danych
+    wtórnych z baz statystycznych.
+  </p>
 
+  <p>
+    Metody jakościowe natomiast koncentrują się na głębokim zrozumieniu badanych
+    zjawisk, ich znaczeń, kontekstów i procesów. Operują na mniejszych, ale
+    bardziej szczegółowo badanych próbach i poszukują odpowiedzi na pytania
+    „jak" i „dlaczego", a nie „ile". Wśród klasycznych technik <a
+      href="/poradniki/metodologia/badania-jakosciowe/">badań jakościowych</a> wymienia
+    się: wywiad pogłębiony (indywidualny lub grupowy), obserwację (jawną lub ukrytą,
+    uczestniczącą lub nieuczestniczącą), studium przypadku, analizę treści, etnografię
+    oraz analizę dyskursu. Wyniki badań jakościowych nie są uogólnialne na populację
+    w sensie statystycznym, ale dostarczają głębokiego, kontekstowego zrozumienia
+    badanego problemu.
+  </p>
+
+  <p>
+    Coraz częściej w pracach magisterskich stosuje się <strong
+      >podejście mieszane (mixed methods)</strong
+    >, które łączy zalety obu paradygmatów. Typowe scenariusze to: (1) eksploracja
+    jakościowa poprzedzona badaniem ilościowym mającym na celu wstępne zidentyfikowanie
+    interesujących kategorii i hipotez; (2) badanie ilościowe pogłębione wywiadami
+    jakościowymi, które tłumaczą zaobserwowane zależności statystyczne; (3) triangulacja
+    - jednoczesne stosowanie obu metod dla wzajemnej walidacji wyników. Podejście
+    mieszane zwiększa wiarygodność badania, ale wymaga większego nakładu pracy i
+    znajomości obu paradygmatów.
+  </p>
+
+  <h3>Kryteria wyboru metody badawczej</h3>
+
+  <p>
+    Wybór metody powinien być podyktowany przede wszystkim charakterem problemu
+    badawczego. Zadaj sobie kluczowe pytanie: czy chcesz zmierzyć skalę zjawiska
+    (ilościowe) czy zrozumieć jego naturę i kontekst (jakościowe)? Drugie
+    kryterium to dostępność próby - jeśli możesz dotrzeć do dużej liczby
+    respondentów, badania ilościowe są realne; jeśli badasz wąską, trudno
+    dostępną grupę (np. eksperci, osoby w specyficznej sytuacji), naturalnym
+    wyborem są metody jakościowe.
+  </p>
+
+  <p>
+    Trzecie kryterium to ograniczenia czasowe i zasobowe. Badania ilościowe na
+    dużych próbach wymagają więcej czasu na przygotowanie narzędzia, dystrybucję
+    ankiety i analizę statystyczną - ale za to faza analizy jest stosunkowo
+    szybka po zakodowaniu danych. Badania jakościowe wymagają mniej czasu na
+    fazę zbierania danych (kilka wywiadów), ale analiza transkrypcji,
+    kategoryzacja i interpretacja zajmują dużo czasu. Czwarte kryterium to stan
+    Twojej wiedzy o problemie - jeśli badana dziedzina jest słabo eksplorowana,
+    zacznij od jakościowej eksploracji; jeśli istnieją sprawdzone narzędzia
+    pomiarowe, możesz od razu sięgnąć po podejście ilościowe.
+  </p>
+
+  <h2>Struktura rozdziału metodologicznego - przykładowy plan</h2>
+
+  <p>
+    Klasyczny rozdział metodologiczny w pracy magisterskiej składa się z 5-7
+    podrozdziałów, których kolejność jest logiczna i odzwierciedla kolejne fazy
+    projektowania badań. Poniżej przedstawiamy uniwersalny szablon, który
+    sprawdzi się w większości prac empirycznych z nauk społecznych. W pracach
+    teoretycznych lub eksperymentalnych poszczególne podrozdziały będą wymagać
+    adaptacji.
+  </p>
+
+  <p>
+    <strong>2.1. Przedmiot i cel badań.</strong> W pierwszym podrozdziale precyzyjnie
+    określ, co jest przedmiotem Twoich badań - jakie zjawisko, populację lub proces
+    będziesz analizować. Następnie sformułuj cel główny (co praca ma osiągnąć) oraz
+    cele szczegółowe (3-5 etapów prowadzących do celu głównego). Cele powinny być
+    sformułowane w formie czasowników w trybie bezokolicznikowym (zbadać, opisać,
+    porównać, zidentyfikować, oszacować).
+  </p>
+
+  <p>
+    <strong>2.2. <a href="/poradniki/metodologia/problemy-badawcze/">Problem badawczy</a>, <a href="/poradniki/metodologia/pytania-badawcze/">pytania badawcze</a> i <a href="/poradniki/metodologia/hipotezy-badawcze/">hipotezy</a>.</strong>
+    Sformułuj jeden problem badawczy główny (zazwyczaj w formie pytania) i 2-5 pytań
+    szczegółowych. W badaniach ilościowych dodaj hipotezy do weryfikacji - każda
+    hipoteza powinna być konkretna, falsyfikowalna i logicznie wynikać ze stanu
+    wiedzy zaprezentowanego w rozdziale teoretycznym.
+  </p>
+
+  <p>
+    <strong>2.3. <a href="/poradniki/metodologia/zmienne-badawcze/">Zmienne i ich operacjonalizacja</a> (dotyczy badań ilościowych).</strong>
+    Wymień zmienne niezależne, zależne i kontrolne. Dla każdej zmiennej podaj definicję
+    teoretyczną oraz operacyjną - czyli sposób, w jaki została zoperacjonalizowana
+    (np. „satysfakcja z pracy" mierzona pięciostopniową skalą Likerta w pytaniach
+    7-15 ankiety). Wskaż jednostki miary i typ skali pomiarowej.
+  </p>
+
+  <p>
+    <strong>2.4. Metody, techniki i narzędzia badawcze.</strong> Opisz wybrane <a
+      href="/poradniki/metodologia/metody-i-techniki-badawcze/">metody i techniki
+    badawcze</a> wraz z uzasadnieniem. Pamiętaj o trzech warstwach: metoda (np. sondaż
+    diagnostyczny), technika (np. ankieta), narzędzie (np. autorski kwestionariusz
+    ankiety zawierający 25 pytań). Jeśli korzystasz z gotowych, walidowanych narzędzi
+    (np. skala stresu PSS-10), podaj źródło i informacje o rzetelności (alfa Cronbacha).
+  </p>
+
+  <p>
+    <strong>2.5. <a href="/poradniki/metodologia/dobor-proby/">Dobór i charakterystyka próby badawczej</a>.</strong>
+    Opisz: populację docelową, metodę doboru próby (losowa, celowa, kuli śnieżnej,
+    dostępna), wielkość próby z uzasadnieniem (kalkulacja dla badań ilościowych,
+    saturacja teoretyczna dla jakościowych), kryteria włączenia i wykluczenia oraz
+    charakterystykę demograficzną uczestników (płeć, wiek, wykształcenie, miejsce
+    zamieszkania - zależnie od specyfiki badania).
+  </p>
+
+  <p>
+    <strong>2.6. Procedura i organizacja badań.</strong> Szczegółowo opisz, jak
+    przebiegało badanie: kiedy (data lub okres), gdzie (instytucja, miejsce), w
+    jaki sposób (osobiście, online, telefonicznie), kto je przeprowadzał, jak
+    pozyskiwano uczestników, jaką uzyskano zgodę (świadoma zgoda, anonimowość),
+    jakie były etapy badania. Ten podrozdział powinien umożliwić innym badaczom
+    odtworzenie Twojego badania.
+  </p>
+
+  <p>
+    <strong>2.7. Metody analizy danych.</strong> Wyjaśnij, w jaki sposób analizowałeś
+    zebrane dane. Dla badań ilościowych: program statystyczny (SPSS, R, Excel),
+    testy statystyczne (np. test t-Studenta, ANOVA, chi-kwadrat, regresja), poziom
+    istotności (zazwyczaj p &lt; 0,05). Dla badań jakościowych: metoda analizy (analiza
+    treści, analiza tematyczna, kodowanie otwarte), oprogramowanie (NVivo, MAXQDA)
+    lub procedura ręczna, sposób zapewnienia rzetelności (intercoder reliability,
+    triangulacja).
+  </p>
+
+  <p>
+    <strong>2.8. Ograniczenia badania i kwestie etyczne.</strong> Uczciwie wskaż
+    ograniczenia: wielkość próby, zasięg geograficzny, dobór respondentów, czas
+    badania. Opisz, jakie kroki podjęto, aby zapewnić etyczność: dobrowolność uczestnictwa,
+    anonimizacja danych, zgoda komisji bioetycznej (jeśli była wymagana), sposób
+    przechowywania danych.
+  </p>
+
+  <h2>Przykład rozdziału metodologicznego - fragment z komentarzem</h2>
+
+  <p>
+    Aby lepiej zrozumieć, jak wygląda dobrze napisany rozdział metodologiczny w
+    praktyce, prześledźmy fragmenty wzorcowego rozdziału z pracy o tematyce
+    „Wpływ pracy zdalnej na poziom satysfakcji zawodowej pracowników sektora IT
+    w Polsce". Wzór można adaptować do dowolnego tematu - kluczowe są zasady,
+    nie konkretna treść.
+  </p>
+
+  <p>
+    <em>Przykład sformułowania celu i problemu (podrozdział 2.1-2.2):</em> „Celem
+    głównym pracy jest zbadanie wpływu modelu pracy zdalnej na poziom satysfakcji
+    zawodowej pracowników sektora IT w Polsce w okresie postpandemicznym. Cele szczegółowe
+    obejmują: (1) określenie poziomu satysfakcji zawodowej pracowników IT w modelach:
+    stacjonarnym, hybrydowym i w pełni zdalnym; (2) identyfikację czynników satysfakcji
+    najsilniej różnicujących grupy; (3) sformułowanie rekomendacji dla pracodawców
+    sektora IT. Problem badawczy główny brzmi: w jakim stopniu model pracy (stacjonarny,
+    hybrydowy, zdalny) różnicuje poziom satysfakcji zawodowej pracowników sektora
+    IT?"
+    <em>(Komentarz: jeden cel główny, trzy cele szczegółowe, jedno pytanie
+    główne - klarowna, hierarchiczna struktura.)</em>
+  </p>
+
+  <p>
+    <em>Przykład opisu próby (podrozdział 2.5):</em> „Badaniem objęto 247 pracowników
+    sektora IT w Polsce. Próbę dobrano metodą celową w połączeniu z metodą kuli
+    śnieżnej. Kryteria włączenia: (1) aktywne zatrudnienie w sektorze IT (kod PKD
+    62.01-62.09) od co najmniej 12 miesięcy; (2) wiek 23-55 lat; (3) stałe miejsce
+    pracy w Polsce. Strukturę próby przedstawiono w tabeli 2.1: kobiety stanowiły
+    34% (n=84), mężczyźni 66% (n=163). Średni wiek uczestników wyniósł 31,4 roku
+    (SD=5,8). Model pracy: stacjonarny 18% (n=44), hybrydowy 52% (n=128), w pełni
+    zdalny 30% (n=75)." <em
+      >(Komentarz: konkretne liczby, jasne kryteria, szczegółowa charakterystyka
+      demograficzna.)</em
+    >
+  </p>
+
+  <p>
+    <em>Przykład opisu narzędzia (podrozdział 2.4):</em> „Do pomiaru satysfakcji
+    zawodowej wykorzystano polską adaptację Skali Satysfakcji z Pracy (JSS - Job
+    Satisfaction Survey) autorstwa Spectora w opracowaniu Zalewskiej (2003). Skala
+    składa się z 36 pytań ocenianych na sześciostopniowej skali Likerta, mierzy 9
+    aspektów satysfakcji (wynagrodzenie, awans, kierownictwo, dodatki, nagrody, procedury,
+    współpracownicy, charakter pracy, komunikacja). Rzetelność narzędzia w badanej
+    próbie: alfa Cronbacha = 0,87 dla skali ogólnej. Kwestionariusz uzupełniono o
+    autorskie pytania o model pracy oraz metryczkę demograficzną - łącznie 47 pytań."
+    <em
+      >(Komentarz: walidowane narzędzie z podanym źródłem, raportowanie rzetelności,
+      jasne uzupełnienia autorskie.)</em
+    >
+  </p>
+
+  <h2>Najczęstsze błędy w rozdziale metodologicznym</h2>
+
+  <p>
+    Doświadczenie pokazuje, że studenci popełniają w rozdziale metodologicznym
+    powtarzające się błędy, które obniżają jakość pracy i mogą prowadzić do
+    obniżenia oceny. Pierwszy błąd to <strong
+      >mylenie metody, techniki i narzędzia</strong
+    >. To trzy różne poziomy: metoda to ogólne podejście (sondaż, eksperyment),
+    technika to sposób realizacji (ankieta, wywiad), narzędzie to konkretny
+    instrument (kwestionariusz z 25 pytaniami). Zdanie „metodą badawczą była
+    ankieta" jest błędne metodologicznie - poprawnie: „metodą był sondaż
+    diagnostyczny, techniką ankieta, narzędziem autorski kwestionariusz".
+  </p>
+
+  <p>
+    Drugi błąd to <strong>brak uzasadnienia wyboru metody</strong>. Nie wystarczy
+    napisać „wybrano badanie ankietowe" - trzeba wyjaśnić DLACZEGO ta metoda jest
+    odpowiednia do problemu badawczego (np. ze względu na potrzebę dotarcia do dużej
+    liczby respondentów, mierzalność zmiennych, możliwość uogólniania wyników).
+    Brak uzasadnienia sygnalizuje, że student wybrał metodę intuicyjnie, a nie świadomie.
+  </p>
+
+  <p>
+    Trzeci błąd to <strong>brak operacjonalizacji zmiennych</strong> w badaniach
+    ilościowych. Zmienne abstrakcyjne (motywacja, satysfakcja, lojalność) muszą zostać
+    przełożone na konkretne wskaźniki możliwe do pomiaru. Pominięcie tego kroku sprawia,
+    że czytelnik nie wie, co właściwie zostało zmierzone. Czwarty błąd to <strong
+      >nieadekwatność próby do problemu</strong
+    > - np. badanie satysfakcji studentów uczelni X przeprowadzone na 20 znajomych
+    z jednego kierunku to zła próba, bo nie reprezentuje całej populacji.
+  </p>
+
+  <p>
+    Piąty błąd to <strong>arbitralna wielkość próby</strong> - „przebadano 100
+    osób" bez uzasadnienia, dlaczego akurat tyle. W badaniach ilościowych liczbę
+    powinna uzasadniać kalkulacja statystyczna (analiza mocy testu); w
+    jakościowych - osiągnięcie saturacji teoretycznej (moment, gdy nowe wywiady
+    nie wnoszą nowych kategorii). Szósty błąd to <strong
+      >brak opisu sposobu analizy danych</strong
+    > - przejście od opisu próby od razu do prezentacji wyników, bez wyjaśnienia,
+    jakimi testami statystycznymi lub jakim sposobem analizy treści posługiwano się.
+  </p>
+
+  <p>
+    Siódmy błąd to <strong
+      >mylenie rozdziału metodologicznego z empirycznym</strong
+    >. W rozdziale metodologicznym NIE prezentuje się wyników - on opisuje WYŁĄCZNIE
+    sposób ich uzyskania. Wyniki trafiają do osobnego <a
+      href="/poradniki/metodologia/rozdzial-badawczy/">rozdziału badawczego (empirycznego)</a>.
+    Ósmy błąd to <strong>pominięcie ograniczeń badania</strong> - student boi się
+    przyznać do słabości swojej metodyki, podczas gdy recenzent oczekuje uczciwej
+    samokrytyki. Wskazanie ograniczeń to nie kompromitacja, lecz dowód dojrzałości
+    naukowej.
+  </p>
+
+  <p>
+    Dziewiąty błąd to <strong>kopiowanie metodologii z innych prac</strong> bez
+    dostosowania do specyfiki własnego badania. Każda metodologia musi być
+    skrojona pod konkretne pytania badawcze - przeniesienie jej z innej pracy
+    powoduje, że nie pasuje do problemu. Dziesiąty błąd to <strong
+      >pisanie metodologii w czasie przyszłym</strong
+    > w wersji końcowej pracy („zostanie przeprowadzona ankieta..."). To poprawne
+    tylko w projekcie badawczym składanym przed badaniami. Finalna wersja rozdziału
+    metodologicznego pisana jest w czasie przeszłym („przeprowadzono ankietę...").
+  </p>
+
+  <h2>Rozdział metodologiczny w pracach licencjackich i magisterskich - różnice</h2>
+
+  <p>
+    Choć struktura rozdziału metodologicznego jest podobna na obu poziomach
+    studiów, oczekiwania są różne. Praca licencjacka wymaga zazwyczaj rozdziału
+    metodologicznego o objętości 6-12 stron, w którym wystarczy opisać metodę,
+    próbę i narzędzie - bez głębokiego osadzania w paradygmatach
+    epistemologicznych. Praca magisterska wymaga rozdziału 10-20-stronicowego, w
+    którym oczekiwane jest uzasadnienie wyboru paradygmatu badawczego,
+    szczegółowa operacjonalizacja zmiennych, kalkulacja wielkości próby,
+    raportowanie rzetelności narzędzi oraz krytyczna refleksja nad
+    ograniczeniami.
+  </p>
+
+  <p>
+    Praca doktorska natomiast wymaga rozdziału metodologicznego liczącego 30-60
+    stron, z głębokim osadzeniem filozoficznym, pełną kalkulacją mocy testu,
+    triangulacją metod i krytyczną dyskusją literatury metodologicznej. Na
+    poziomie magisterskim wystarczające jest staranne zastosowanie sprawdzonych
+    metod - oryginalność metodologii nie jest oczekiwana. Oryginalność dotyczy
+    raczej PROBLEMU i WYNIKÓW, nie metody.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o rozdział metodologiczny</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie - klucz do dobrego rozdziału metodologicznego</h2>
+
+  <p>
+    Dobry rozdział metodologiczny to taki, na podstawie którego inny badacz
+    mógłby odtworzyć Twoje badanie i otrzymać porównywalne wyniki. Trzy zasady,
+    o których warto pamiętać: <strong>przejrzystość</strong> (każda decyzja
+    metodologiczna jest jasna i uzasadniona), <strong>spójność</strong> (metoda
+    odpowiada problemowi, próba odpowiada metodzie, narzędzie odpowiada zmiennym)
+    oraz <strong>uczciwość</strong> (ograniczenia badania są wskazane otwarcie,
+    procedura opisana bez upiększania).
+  </p>
+
+  <p>
+    Jeśli dopiero zaczynasz projektowanie badań, sprawdź szczegółowe poradniki w
+    naszym dziale <a href="/poradniki/metodologia/">metodologia pracy magisterskiej</a
+    >: artykuły o <a href="/poradniki/metodologia/badania-ilosciowe/"
+      >badaniach ilościowych</a
+    >, <a href="/poradniki/metodologia/badania-jakosciowe/">badaniach jakościowych</a
+    >, <a href="/poradniki/metodologia/dobor-proby/">doborze próby</a>, <a
+      href="/poradniki/metodologia/ankieta/">prowadzeniu ankiet</a
+    > i <a href="/poradniki/metodologia/wywiad/">przeprowadzaniu wywiadów</a> pomogą
+    Ci zaplanować badanie zgodnie z wymogami akademickimi. Jeśli skończyłeś już
+    badania i przechodzisz do prezentacji wyników, zajrzyj do poradnika o <a
+      href="/poradniki/metodologia/rozdzial-badawczy/">rozdziale badawczym</a>, który
+    jest naturalnym dopełnieniem rozdziału metodologicznego.
+  </p>
 </ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

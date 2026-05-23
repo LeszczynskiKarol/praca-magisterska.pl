@@ -4,7 +4,14 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://www.praca-magisterska.pl",
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    sitemap({
+      filter: (page) =>
+        !/\/sklep\/(anulowano|sukces)\/?$/.test(page) &&
+        !/\/sklep\/[^/]+\/(anulowano|sukces)\/?$/.test(page),
+    }),
+  ],
   markdown: {
     shikiConfig: {
       theme: "github-light",

@@ -32,3 +32,4 @@ stripe-switch.sh
 deploy.sh
 stripe-switch.sh
 .deploy-tmp/
+.seo-audit/

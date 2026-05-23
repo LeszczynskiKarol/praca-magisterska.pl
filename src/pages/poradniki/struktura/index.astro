@@ -1,0 +1,427 @@
+---
+// src/pages/poradniki/struktura/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+
+const relatedLinks = [
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Konspekt pracy magisterskiej", href: "/poradniki/konspekt/" },
+  { label: "Spis treści pracy magisterskiej", href: "/poradniki/spis-tresci/" },
+  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
+];
+
+const structureElements = [
+  {
+    name: "Strona tytułowa",
+    pages: "1 strona",
+    desc: "Nazwa uczelni, wydział, kierunek, imię i nazwisko autora, tytuł pracy, imię i nazwisko promotora, miejsce i rok obrony. Wzór zwykle dostępny w dziekanacie.",
+  },
+  {
+    name: "Spis treści",
+    pages: "1-2 strony",
+    desc: "Hierarchiczna lista rozdziałów i podrozdziałów z numerami stron. Generowana automatycznie w edytorze tekstu.",
+    href: "/poradniki/spis-tresci/",
+  },
+  {
+    name: "Wstęp",
+    pages: "2-4 strony",
+    desc: "Wprowadzenie w tematykę, problem badawczy, cel pracy, hipotezy, metodologia, struktura.",
+    href: "/poradniki/wstep/",
+  },
+  {
+    name: "Rozdział teoretyczny (Rozdział 1)",
+    pages: "15-25 stron",
+    desc: "Przegląd literatury, definicje pojęć, omówienie stanu badań, ramy teoretyczne.",
+    href: "/poradniki/rozdzial-teoretyczny/",
+  },
+  {
+    name: "Rozdział metodologiczny (Rozdział 2)",
+    pages: "10-20 stron",
+    desc: "Paradygmat, problem badawczy, pytania, hipotezy, próba, narzędzia, procedura, analiza.",
+    href: "/poradniki/metodologia/rozdzial-metodologiczny/",
+  },
+  {
+    name: "Rozdział badawczy (Rozdział 3)",
+    pages: "15-30 stron",
+    desc: "Prezentacja wyników badań własnych, analiza danych, dyskusja wyników.",
+    href: "/poradniki/metodologia/rozdzial-badawczy/",
+  },
+  {
+    name: "Zakończenie",
+    pages: "3-5 stron",
+    desc: "Podsumowanie wyników, wnioski, weryfikacja hipotez, rekomendacje, kierunki dalszych badań.",
+    href: "/poradniki/zakonczenie/",
+  },
+  {
+    name: "Bibliografia",
+    pages: "3-7 stron",
+    desc: "Wykaz wszystkich cytowanych źródeł w jednolitym stylu (APA, Chicago, Harvard, Vancouver).",
+    href: "/poradniki/bibliografia/",
+  },
+  {
+    name: "Spisy pomocnicze",
+    pages: "1-3 strony",
+    desc: "Spis tabel, rysunków, wykresów, skrótów, załączników. Generowane automatycznie.",
+  },
+  {
+    name: "Streszczenie",
+    pages: "1 strona",
+    desc: "Krótkie podsumowanie pracy w języku polskim i angielskim (abstract). Zazwyczaj 150-300 słów.",
+    href: "/poradniki/streszczenie/",
+  },
+  {
+    name: "Załączniki",
+    pages: "wg potrzeb",
+    desc: "Kwestionariusze ankiet, scenariusze wywiadów, tabele zbiorcze, dodatkowe materiały.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "Ile rozdziałów powinna mieć praca magisterska?",
+    answer:
+      "Klasyczna praca empiryczna składa się z 3 rozdziałów: teoretycznego, metodologicznego i badawczego. Prace teoretyczne mogą mieć 2-3 rozdziały teoretyczne. Maksymalna liczba rozdziałów to zazwyczaj 4-5; więcej oznacza zwykle, że rozdziały są za krótkie i powinny zostać połączone.",
+  },
+  {
+    question: "Ile stron powinna mieć praca magisterska?",
+    answer:
+      "Standardowa praca magisterska liczy 60-100 stron znormalizowanego maszynopisu (czcionka 12 pt, interlinia 1,5, marginesy 2,5 cm). Prace humanistyczne bywają dłuższe (80-120 stron), prace techniczne i ścisłe krótsze (50-80 stron). Sprawdź wymogi swojej uczelni.",
+  },
+  {
+    question: "Czy spis treści wlicza się do limitu stron?",
+    answer:
+      "Nie. Do limitu stron pracy magisterskiej (60-100) wlicza się tylko treść merytoryczna: wstęp, rozdziały, zakończenie. Strona tytułowa, spis treści, bibliografia, spisy pomocnicze i załączniki nie są wliczane.",
+  },
+  {
+    question: "Jaka jest kolejność elementów pracy magisterskiej?",
+    answer:
+      "Standardowa kolejność: 1) Strona tytułowa, 2) Spis treści, 3) Wstęp, 4) Rozdział teoretyczny, 5) Rozdział metodologiczny, 6) Rozdział badawczy, 7) Zakończenie, 8) Bibliografia, 9) Spis tabel/rysunków, 10) Streszczenie (po polsku i angielsku), 11) Załączniki. W niektórych uczelniach streszczenie umieszcza się po stronie tytułowej.",
+  },
+  {
+    question: "Czy w pracy magisterskiej musi być rozdział badawczy?",
+    answer:
+      "W większości kierunków tak — praca magisterska wymaga badań własnych, których wyniki prezentowane są w osobnym rozdziale. Wyjątkiem są niektóre prace teoretyczne (np. analizy filozoficzne, krytyczne analizy literatury, prace komparatystyczne), gdzie zamiast rozdziału badawczego pojawia się rozbudowana analiza materiału źródłowego.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Struktura pracy magisterskiej - kompletny układ rozdziałów i elementów"
+  description="Pełna struktura pracy magisterskiej: kolejność rozdziałów, objętość każdego elementu (strona tytułowa, wstęp, rozdziały, bibliografia), wymogi formalne i przykład układu."
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Struktura pracy magisterskiej to nie tylko formalność, którą trzeba spełnić,
+    aby uczelnia przyjęła dokument do oceny - to logiczna architektura, która
+    decyduje o czytelności argumentacji, jakości wywodu naukowego i końcowej
+    ocenie pracy. Każdy element pracy magisterskiej ma swoją funkcję i miejsce w
+    całości, a ich kolejność wynika z naturalnego porządku procesu badawczego:
+    od kontekstualizacji problemu, przez teorię i metodologię, aż po prezentację
+    wyników i wnioski. W tym przewodniku przedstawiamy pełną strukturę pracy
+    magisterskiej, omawiamy każdy element, podajemy zalecane objętości oraz
+    wskazujemy, gdzie szukać szczegółowych poradników dotyczących
+    poszczególnych części.
+  </p>
+
+  <h2>Pełna struktura pracy magisterskiej - 11 elementów</h2>
+
+  <p>
+    Klasyczna praca magisterska z nauk społecznych, humanistycznych lub
+    ekonomicznych składa się z jedenastu zasadniczych elementów. Nie wszystkie
+    są obligatoryjne - na przykład załączniki czy spisy pomocnicze pojawiają
+    się tylko w niektórych pracach - ale kolejność i funkcja każdego z nich są
+    ustalone akademicką tradycją i wymogami formalnymi uczelni. Poniższa tabela
+    przedstawia układ wraz z zalecanymi objętościami dla typowej pracy
+    magisterskiej liczącej 80 stron.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Objętość</th>
+        <th>Opis</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        structureElements.map((el) => (
+          <tr>
+            <td>
+              {el.href ? (
+                <a href={el.href}>
+                  <strong>{el.name}</strong>
+                </a>
+              ) : (
+                <strong>{el.name}</strong>
+              )}
+            </td>
+            <td>{el.pages}</td>
+            <td>{el.desc}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+
+  <h2>Elementy wstępne pracy magisterskiej</h2>
+
+  <p>
+    Elementy wstępne to wszystko, co poprzedza pierwszy merytoryczny rozdział
+    pracy. Mają charakter organizacyjny i nawigacyjny - pozwalają czytelnikowi
+    zorientować się, z kim ma do czynienia, czego dotyczy praca i jak jest
+    zbudowana. Strona tytułowa zawiera nazwę uczelni, wydział, kierunek studiów,
+    pełne imię i nazwisko autora, numer albumu, tytuł pracy, imię i nazwisko
+    promotora (z tytułem naukowym), miejsce i rok obrony. Wzór strony tytułowej
+    jest zazwyczaj sztywno określony przez uczelnię i dostępny do pobrania w
+    dziekanacie lub na stronie wydziału.
+  </p>
+
+  <p>
+    Po stronie tytułowej następuje <a href="/poradniki/spis-tresci/">spis
+    treści</a>, który jest hierarchiczną mapą całego dokumentu. Powinien być
+    generowany automatycznie w edytorze tekstu - tylko wtedy gwarantuje
+    zgodność numerów stron z faktyczną zawartością po każdej edycji. Spis treści
+    obejmuje wszystkie rozdziały i podrozdziały (zazwyczaj do 3 poziomów),
+    bibliografię oraz spisy pomocnicze i załączniki. Niektóre uczelnie wymagają,
+    aby spis treści znajdował się przed stroną tytułową lub by streszczenie
+    pojawiało się przed spisem treści - zawsze sprawdź lokalne regulaminy.
+  </p>
+
+  <h2>Wstęp - klucz do całej pracy</h2>
+
+  <p>
+    <a href="/poradniki/wstep/">Wstęp do pracy magisterskiej</a> to 2-4 strony, w
+    których przedstawiasz: kontekst i aktualność problemu, sformułowany problem
+    badawczy i pytania szczegółowe, cel pracy, hipotezy lub tezy, zarys
+    metodologii, strukturę pracy i wskazanie kluczowych źródeł. Wstęp pełni rolę
+    streszczenia dla czytelnika - po jego lekturze recenzent powinien dokładnie
+    wiedzieć, czego praca dotyczy, dlaczego problem jest ważny i co praca
+    obiecuje dostarczyć. Dlatego wstęp pisze się jako ostatni element, gdy
+    wszystkie rozdziały są już gotowe.
+  </p>
+
+  <h2>Rozdziały merytoryczne - serce pracy magisterskiej</h2>
+
+  <p>
+    Klasyczna praca empiryczna ma trzy rozdziały merytoryczne. Pierwszy z nich
+    to <a href="/poradniki/rozdzial-teoretyczny/">rozdział teoretyczny</a>,
+    który zajmuje 15-25 stron i pełni funkcję bazy pojęciowej dla całej pracy.
+    Zawiera przegląd literatury przedmiotu, definicje kluczowych pojęć, omówienie
+    głównych teorii związanych z tematem oraz krytyczną analizę dotychczasowego
+    stanu badań. Dobry rozdział teoretyczny nie jest mechanicznym streszczeniem
+    przeczytanych książek - to argumentacyjna budowa ram teoretycznych, w
+    których osadzone będą Twoje badania.
+  </p>
+
+  <p>
+    Drugi rozdział - <a
+      href="/poradniki/metodologia/rozdzial-metodologiczny/">metodologiczny</a> -
+    zajmuje 10-20 stron i opisuje, jak prowadziłeś badania. Powinien zawierać:
+    paradygmat badawczy (ilościowy / jakościowy / mieszany), problem i pytania
+    badawcze, hipotezy (w badaniach ilościowych), zmienne i ich
+    operacjonalizację, metody i techniki badawcze, narzędzia badawcze, dobór i
+    charakterystykę próby, procedurę zbierania danych, metody analizy oraz
+    omówienie kwestii etycznych i ograniczeń badania. To rozdział, który
+    pozwala innym badaczom odtworzyć Twoje badanie.
+  </p>
+
+  <p>
+    Trzeci rozdział - <a href="/poradniki/metodologia/rozdzial-badawczy/"
+      >badawczy (empiryczny)</a> - zajmuje 15-30 stron i prezentuje wyniki Twoich
+    badań własnych. Składa się z opisu zebranych danych (najczęściej z
+    wykorzystaniem tabel i wykresów), analizy statystycznej lub jakościowej oraz
+    dyskusji wyników - czyli interpretacji w świetle teorii z rozdziału
+    teoretycznego i wcześniejszych badań innych autorów. To w tym rozdziale
+    weryfikujesz hipotezy postawione we wstępie.
+  </p>
+
+  <p>
+    W niektórych pracach struktura jest rozszerzona. Prace bardziej obszerne
+    mogą mieć dwa rozdziały teoretyczne (np. „1. Teoria X", „2. Stan badań nad
+    X w Polsce") oraz rozdział wdrożeniowy lub rekomendacyjny (np. „5.
+    Rekomendacje praktyczne dla branży"). Prace teoretyczne (filozoficzne,
+    literaturoznawcze, prawnicze) zamiast rozdziału metodologicznego i
+    badawczego mają zazwyczaj 3-4 rozdziały analityczne. Konkretny układ zależy
+    od dyscypliny, tematyki i wymogów uczelni.
+  </p>
+
+  <h2>Zakończenie - synteza i wnioski</h2>
+
+  <p>
+    <a href="/poradniki/zakonczenie/">Zakończenie pracy magisterskiej</a>
+    zajmuje 3-5 stron i pełni funkcję klamry domykającej całą argumentację.
+    Powinno zawierać: podsumowanie najważniejszych ustaleń, jasną weryfikację
+    postawionych hipotez (potwierdzone / odrzucone / częściowo potwierdzone),
+    odpowiedzi na pytania badawcze postawione we wstępie, wskazanie wkładu
+    pracy w dotychczasowy stan wiedzy, ograniczenia badania, rekomendacje
+    praktyczne (jeśli to praca aplikacyjna) oraz kierunki dalszych badań.
+    Zakończenie NIE wprowadza nowych treści - tylko syntetyzuje to, co
+    pojawiło się wcześniej.
+  </p>
+
+  <h2>Bibliografia i elementy końcowe</h2>
+
+  <p>
+    <a href="/poradniki/bibliografia/">Bibliografia</a> to wykaz wszystkich
+    źródeł cytowanych w pracy. Standardowa praca magisterska zawiera 30-50
+    pozycji bibliograficznych, w pracach humanistycznych nawet 80-150. Wpisy
+    powinny być formatowane zgodnie z jednym stylem cytowania (najczęściej APA,
+    Chicago, Harvard lub Vancouver - styl Vancouver dominuje w pracach
+    medycznych). Bibliografia może być uporządkowana alfabetycznie lub
+    podzielona na kategorie (książki, artykuły, źródła internetowe, akty
+    prawne). Po bibliografii umieszcza się spisy pomocnicze: spis tabel, spis
+    rysunków, spis skrótów i spis załączników - również generowane
+    automatycznie.
+  </p>
+
+  <p>
+    <a href="/poradniki/streszczenie/">Streszczenie</a> (abstract) to
+    150-300-słowa skondensowane podsumowanie pracy, obowiązkowe w większości
+    uczelni - zarówno w języku polskim, jak i angielskim. Powinno zawierać:
+    cel pracy, krótki opis metody, najważniejsze wyniki i wnioski. Streszczenie
+    czyta się PO przeczytaniu pracy - to perspektywa kompletna, nie zapowiedź.
+    Na końcu znajdują się załączniki - kwestionariusze ankiet, scenariusze
+    wywiadów, tabele zbiorcze, transkrypcje, dodatkowe wykresy i wszelkie
+    materiały zbyt obszerne, by umieszczać je w treści głównej.
+  </p>
+
+  <h2>Różnice w strukturze między dyscyplinami</h2>
+
+  <p>
+    Choć powyższa struktura jest najpopularniejsza, w różnych dziedzinach
+    spotyka się odmienne układy. W pracach z <a href="/tematy/informatyka/"
+      >informatyki</a> rozdział badawczy zastępuje często rozdział
+    projektowo-implementacyjny opisujący stworzony system. Prace z <a
+      href="/tematy/prawo/">prawa</a> i administracji mają zazwyczaj 3-4
+    rozdziały analizy aktów prawnych i orzecznictwa zamiast rozdziału
+    metodologicznego. W <a href="/tematy/pielegniarstwo/">pielęgniarstwie</a> i
+    medycynie struktura jest najbardziej standaryzowana (paradygmat IMRaD:
+    Introduction, Methods, Results, and Discussion).
+  </p>
+
+  <p>
+    W pracach z <a href="/tematy/filologia-polska/">filologii</a> i literaturoznawstwa
+    dominują rozdziały analityczne dotyczące konkretnych utworów lub motywów - bez
+    osobnego rozdziału metodologicznego (metoda jest wprowadzana we wstępie i konsekwentnie
+    stosowana w analizach). Prace z <a href="/tematy/zarzadzanie/">zarządzania</a>
+    i marketingu coraz częściej kończą się rozdziałem rekomendacyjnym lub propozycją
+    rozwiązania problemu praktycznego. Zawsze sprawdź wymogi swojej uczelni i wzorcowe
+    prace z Twojego instytutu.
+  </p>
+
+  <h2>Najczęstsze błędy w strukturze pracy magisterskiej</h2>
+
+  <p>
+    Pierwszy częsty błąd to <strong>nieproporcjonalne rozdziały</strong> -
+    rozdział teoretyczny 40-stronicowy przy 8-stronicowym badawczym, albo
+    odwrotnie. Proporcje powinny odzwierciedlać rzeczywistą wagę poszczególnych
+    części: rozdział teoretyczny stanowi bazę, ale to badania własne są
+    głównym wkładem pracy magisterskiej. Drugi błąd to <strong
+      >zbyt głębokie zagnieżdżenie podrozdziałów</strong
+    > - hierarchia 1.2.3.4.5.6 jest nieczytelna. Trzymaj się maksymalnie 3 poziomów
+    (np. 2.3.1), w wyjątkowych przypadkach 4. Trzeci błąd to <strong
+      >umieszczanie wyników w rozdziale teoretycznym</strong
+    > lub teorii w rozdziale badawczym - mieszanie funkcji rozdziałów obniża czytelność
+    argumentacji.
+  </p>
+
+  <p>
+    Czwarty błąd to <strong
+      >powtarzanie tej samej treści w różnych częściach pracy</strong
+    > - definicje, które pojawiły się w rozdziale teoretycznym, nie powinny być
+    powtórzone w metodologicznym. Piąty błąd to <strong
+      >brak spójności między wstępem a zakończeniem</strong
+    > - hipotezy zapowiedziane we wstępie muszą zostać jednoznacznie zweryfikowane
+    w zakończeniu, cele postawione na początku muszą zostać omówione na końcu. Szósty
+    błąd to <strong>chaotyczna bibliografia</strong> - źródła w różnych stylach
+    cytowania, brak jednolitej kolejności, brak wszystkich pozycji cytowanych w
+    tekście. Konsekwencja stylu i kompletność są fundamentem rzetelności naukowej.
+  </p>
+
+  <h2>FAQ - struktura pracy magisterskiej</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie - od struktury do gotowej pracy</h2>
+
+  <p>
+    Znajomość struktury pracy magisterskiej to dopiero pierwszy krok.
+    Następnym jest wypełnienie każdego z elementów konkretną treścią zgodnie ze
+    standardami akademickimi Twojej dyscypliny. W każdym dziale naszego
+    portalu znajdziesz szczegółowe poradniki: <a href="/poradniki/wstep/"
+      >jak napisać wstęp</a
+    >, <a href="/poradniki/rozdzial-teoretyczny/">jak skonstruować rozdział
+    teoretyczny</a>, <a href="/poradniki/metodologia/">dział metodologii</a> z
+    przewodnikami po badaniach ilościowych i jakościowych, <a
+      href="/poradniki/zakonczenie/">jak napisać zakończenie</a>, <a
+      href="/poradniki/bibliografia/">jak zrobić bibliografię</a> oraz <a
+      href="/poradniki/formatowanie/">jak sformatować pracę zgodnie z wymogami</a>.
+    Powodzenia!
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>
