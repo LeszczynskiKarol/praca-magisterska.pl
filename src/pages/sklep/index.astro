@@ -6,16 +6,41 @@ import Layout from "../../layouts/Layout.astro";
 
 const products = [
   {
+    id: "magisterska",
+    title: "Jak napisać pracę magisterską",
+    subtitle: "Zaawansowany poradnik dla magistrantów",
+    price: 39,
+    pages: 250,
+    chapters: 22,
+    icon: "📗",
+    color: "accent",
+    href: "/sklep/praca-magisterska-ebook",
+    badge: "Bestseller",
+    cta: "Zobacz szczegóły →",
+    external: false,
+    features: [
+      "Kompletny proces pisania pracy magisterskiej",
+      "Zaawansowana metodologia",
+      "Badania ilościowe i jakościowe",
+      "Analiza statystyczna",
+      "Praca z promotorem na poziomie mgr",
+      "Recenzja i poprawki",
+      "Obrona magisterska",
+    ],
+  },
+  {
     id: "licencjacka",
-    title: "Jak napisać pracę licencjacką",
-    subtitle: "Kompletny przewodnik od A do Z",
-    price: 29,    
+    title: "Piszesz pracę licencjacką?",
+    subtitle: "Osobny poradnik czeka na licencjackie.pl",
+    price: 29,
     pages: 250,
     chapters: 18,
     icon: "📘",
     color: "primary",
-    href: "/sklep/praca-licencjacka-ebook",
-    badge: "Bestseller",
+    href: "https://www.licencjackie.pl/ebook/",
+    badge: "Na licencjackie.pl",
+    cta: "Zobacz na licencjackie.pl →",
+    external: true,
     features: [
       "Wybór i zawężanie tematu",
       "Przegląd literatury krok po kroku",
@@ -26,33 +51,12 @@ const products = [
       "Przygotowanie do obrony",
     ],
   },
-  {
-    id: "magisterska",
-    title: "Jak napisać pracę magisterską",
-    subtitle: "Zaawansowany poradnik dla magistrantów",
-    price: 39,    
-    pages: 250,
-    chapters: 22,
-    icon: "📗",
-    color: "accent",
-    href: "/sklep/praca-magisterska-ebook",
-    badge: "Nowy",
-    features: [
-      "Wszystko z wersji licencjackiej +",
-      "Zaawansowana metodologia",
-      "Badania ilościowe i jakościowe",
-      "Analiza statystyczna",
-      "Praca z promotorem na poziomie mgr",
-      "Recenzja i poprawki",
-      "Obrona magisterska",
-    ],
-  },
 ];
 ---
 
 <Layout
-  title="Ebooki: Jak napisać pracę dyplomową - Poradniki PDF | Licencjacka, Magisterska"
-  description="Kompletne poradniki pisania prac dyplomowych w PDF. Praca licencjacka (250 stron) i magisterska (250 stron). Wybór tematu, literatura, metodologia, formatowanie, obrona. Szablony i checklisty w zestawie."
+  title="Ebook: Jak napisać pracę magisterską - Poradnik PDF 250 stron | Praca-Magisterska.pl"
+  description="Kompletny poradnik pisania pracy magisterskiej w PDF (250 stron): wybór tematu, zaawansowana metodologia, analiza statystyczna, formatowanie, obrona. Szablony i checklisty. Piszesz licencjat? Ebook na licencjackie.pl."
 >
   <Navbar />
 
@@ -155,11 +159,13 @@ const products = [
                     <span class="text-4xl font-bold text-slate-900 ml-2">{product.price} zł</span>
                   </div>
                   
-                  <a 
+                  <a
                     href={product.href}
+                    target={product.external ? '_blank' : undefined}
+                    rel={product.external ? 'noopener' : undefined}
                     class={`block w-full py-4 px-6 rounded-xl font-bold text-white text-lg transition-all hover:scale-105 ${product.color === 'accent' ? 'bg-accent hover:bg-green-600' : 'bg-primary-600 hover:bg-primary-700'}`}
                   >
-                    Zobacz szczegóły →
+                    {product.cta}
                   </a>
                 </div>
               </div>
@@ -506,7 +512,7 @@ const products = [
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <a href="/sklep/praca-licencjacka-ebook" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-xl transition-all hover:scale-105 text-center">
+          <a href="https://www.licencjackie.pl/ebook/" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-8 rounded-xl transition-all hover:scale-105 text-center">
             📘 Kupuję licencjacką — 29 zł
           </a>
           <a href="/sklep/praca-magisterska-ebook" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl transition-all hover:scale-105 text-center">
@@ -628,7 +634,7 @@ const products = [
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/sklep/praca-licencjacka-ebook" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 text-lg">
+          <a href="https://www.licencjackie.pl/ebook/" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 text-lg">
             📘 Praca licencjacka — 29 zł
           </a>
           <a href="/sklep/praca-magisterska-ebook" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 text-lg">

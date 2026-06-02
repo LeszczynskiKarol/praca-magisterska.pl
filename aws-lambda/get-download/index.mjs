@@ -20,6 +20,8 @@ const PRODUCT_FILES = {
 
 const ALLOWED_ORIGINS = [
   "https://www.praca-magisterska.pl",
+  "https://www.licencjackie.pl",
+  "https://licencjackie.pl",
   "https://dev.torweb.pl",
   "http://localhost:4321",
 ];

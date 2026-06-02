@@ -7,6 +7,22 @@ function handler(event) {
   var req = event.request;
   var uri = req.uri;
 
+  // 301 — ebook licencjacki przeniesiony na licencjackie.pl (sprzedaż per domena).
+  // Obejmuje stronę produktu oraz jej podstrony sukces/anulowano.
+  if (
+    uri === '/sklep/praca-licencjacka-ebook' ||
+    uri.indexOf('/sklep/praca-licencjacka-ebook/') === 0
+  ) {
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: {
+        'location': { value: 'https://www.licencjackie.pl/ebook/' },
+        'cache-control': { value: 'max-age=3600' }
+      }
+    };
+  }
+
   if (uri === '/' || uri.charAt(uri.length - 1) === '/') {
     return req;
   }

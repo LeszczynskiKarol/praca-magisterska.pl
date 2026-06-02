@@ -3,6 +3,7 @@
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
 import SmartEduCTA from '../components/SmartEduCTA.astro';
+import EbookCTA from '../components/EbookCTA.astro';
 import Layout from './Layout.astro';
 
 interface Props {
@@ -171,6 +172,11 @@ const breadcrumbSchema = {
             <!-- Inline CTA -->
             <SmartEduCTA variant="inline" />
 
+            <!-- Ebook / sklep CTA -->
+            <div class="mt-4">
+              <EbookCTA variant="inline" />
+            </div>
+
             <!-- Related Links -->
             {relatedLinks.length > 0 && (
               <div class="mt-8 p-6 bg-primary-50 border border-primary-100 rounded-2xl">
@@ -222,8 +228,10 @@ const breadcrumbSchema = {
             <div class="sticky top-28 space-y-6">
               <!-- Smart-Edu CTA -->
               <SmartEduCTA variant="sidebar" />
-       
-              
+
+              <!-- Ebook / sklep CTA -->
+              <EbookCTA variant="sidebar" />
+
               <!-- Quick Links -->
               <div class="card bg-gray-50">
                 <h3 class="font-bold text-gray-900 mb-4">Przydatne linki</h3>

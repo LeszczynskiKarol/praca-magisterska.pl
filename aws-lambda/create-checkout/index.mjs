@@ -17,14 +17,40 @@ const PRODUCTS = {
 
 const ALLOWED_ORIGINS = [
   "https://www.praca-magisterska.pl",
+  "https://www.licencjackie.pl",
+  "https://licencjackie.pl",
   "https://dev.torweb.pl",
 ];
 
-function getCorsHeaders(event) {
+// Strony sukcesu/anulowania per domena. praca-magisterska zostaje na env (jak było),
+// licencjackie.pl ma własne /ebook/sukces i /ebook/anulowano.
+const SITE_REDIRECTS = {
+  "https://www.licencjackie.pl": {
+    success: "https://www.licencjackie.pl/ebook/sukces",
+    cancel: "https://www.licencjackie.pl/ebook/anulowano",
+  },
+  "https://licencjackie.pl": {
+    success: "https://www.licencjackie.pl/ebook/sukces",
+    cancel: "https://www.licencjackie.pl/ebook/anulowano",
+  },
+};
+
+function getOrigin(event) {
   const origin = event.headers?.origin || event.headers?.Origin || "";
-  const allowedOrigin = ALLOWED_ORIGINS.includes(origin)
-    ? origin
-    : ALLOWED_ORIGINS[0];
+  return ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+}
+
+function getRedirects(origin) {
+  return (
+    SITE_REDIRECTS[origin] || {
+      success: process.env.SUCCESS_URL,
+      cancel: process.env.CANCEL_URL,
+    }
+  );
+}
+
+function getCorsHeaders(event) {
+  const allowedOrigin = getOrigin(event);
   return {
     "Access-Control-Allow-Origin": allowedOrigin,
     "Access-Control-Allow-Headers": "Content-Type",
@@ -52,6 +78,7 @@ export const handler = async (event) => {
     }
 
     const product = PRODUCTS[productId];
+    const redirects = getRedirects(getOrigin(event));
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card", "blik", "revolut_pay"],
@@ -69,8 +96,8 @@ export const handler = async (event) => {
         },
       ],
       mode: "payment",
-      success_url: `${process.env.SUCCESS_URL}?session_id={CHECKOUT_SESSION_ID}&productId=${productId}`,
-      cancel_url: process.env.CANCEL_URL,
+      success_url: `${redirects.success}?session_id={CHECKOUT_SESSION_ID}&productId=${productId}`,
+      cancel_url: redirects.cancel,
       customer_email: customerEmail || undefined,
       metadata: { productId },
       billing_address_collection: "auto",

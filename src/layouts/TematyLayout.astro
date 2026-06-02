@@ -4,6 +4,7 @@ import Layout from './Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import SmartEduCTA from '../components/SmartEduCTA.astro';
+import EbookCTA from '../components/EbookCTA.astro';
 
 interface Temat {
   title: string;
@@ -170,8 +171,9 @@ const difficultyColors = {
           )}
 
           <!-- CTA -->
-          <div class="mt-12">
+          <div class="mt-12 space-y-4">
             <SmartEduCTA variant="inline" />
+            <EbookCTA variant="inline" />
           </div>
         </div>
 
@@ -180,7 +182,10 @@ const difficultyColors = {
           <div class="sticky top-28 space-y-6">
             <!-- Smart-Edu CTA -->
             <SmartEduCTA variant="sidebar" />
-            
+
+            <!-- Ebook / sklep CTA -->
+            <EbookCTA variant="sidebar" />
+
             <!-- Quick Links -->
             <div class="card">
               <h3 class="font-bold text-gray-900 mb-4">Inne kierunki</h3>

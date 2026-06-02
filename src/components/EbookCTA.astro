@@ -1,0 +1,64 @@
+---
+// src/components/EbookCTA.astro
+// Wewnętrzny CTA do sklepu z ebookami (/sklep). Komplementarny do SmartEduCTA:
+//   SmartEduCTA  -> smart-edu.ai  (wygeneruj całość AI, done-for-you)
+//   EbookCTA     -> /sklep        (napisz samodzielnie, poradnik PDF 29-39 zł, DIY)
+// Celowo inny intent, żeby nie kanibalizować, tylko domykać drugi segment odbiorców.
+interface Props {
+  variant?: 'sidebar' | 'inline';
+}
+
+const { variant = 'sidebar' } = Astro.props;
+---
+
+{variant === 'inline' && (
+  <div class="bg-gradient-to-r from-slate-50 to-primary-50/40 border border-slate-200 rounded-xl p-6">
+    <div class="flex flex-col sm:flex-row items-center gap-4">
+      <div class="text-4xl flex-shrink-0">📘</div>
+      <div class="flex-1 text-center sm:text-left">
+        <h4 class="font-bold text-gray-900 mb-1">Wolisz napisać pracę samodzielnie?</h4>
+        <p class="text-gray-600 text-sm">
+          Sięgnij po nasz <a href="/sklep/" class="text-primary-700 underline decoration-primary-300 hover:decoration-primary-600 font-medium">poradnik PDF „Jak napisać pracę dyplomową"</a> —
+          250 stron konkretów, szablony i checklisty. Wersja licencjacka 29 zł, magisterska 39 zł.
+        </p>
+      </div>
+      <a
+        href="/sklep/"
+        class="btn-primary text-sm whitespace-nowrap"
+      >
+        Zobacz poradniki →
+      </a>
+    </div>
+  </div>
+)}
+
+{variant === 'sidebar' && (
+  <div class="card">
+    <div class="flex items-start gap-3 mb-4">
+      <div class="text-3xl flex-shrink-0">📘</div>
+      <div>
+        <h3 class="font-bold text-gray-900 mb-1">Napisz pracę samodzielnie</h3>
+        <p class="text-sm text-gray-600">Kompletny poradnik PDF, 250 stron:</p>
+      </div>
+    </div>
+
+    <ul class="space-y-2 mb-4">
+      <li>
+        <a href="/sklep/praca-magisterska-ebook/" class="flex items-center justify-between gap-2 p-3 rounded-xl bg-accent/5 border border-accent/20 hover:border-accent/50 transition-colors group">
+          <span class="text-sm font-medium text-gray-800 group-hover:text-primary-700">📗 Jak napisać pracę magisterską</span>
+          <span class="text-sm font-bold text-primary-700 whitespace-nowrap">39 zł</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.licencjackie.pl/ebook/" class="flex items-center justify-between gap-2 p-3 rounded-xl bg-primary-50 border border-primary-100 hover:border-primary-300 transition-colors group">
+          <span class="text-sm font-medium text-gray-800 group-hover:text-primary-700">📘 Piszesz licencjat? Ebook na licencjackie.pl</span>
+          <span class="text-sm font-bold text-primary-700 whitespace-nowrap">29 zł</span>
+        </a>
+      </li>
+    </ul>
+
+    <a href="/sklep/" class="block text-center text-sm text-primary-600 font-medium hover:underline">
+      Zobacz wszystkie poradniki PDF →
+    </a>
+  </div>
+)}
