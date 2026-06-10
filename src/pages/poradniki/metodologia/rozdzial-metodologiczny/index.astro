@@ -71,8 +71,9 @@ const faqSchema = {
 ---
 
 <ArticleLayout
-  title="Rozdział metodologiczny w pracy magisterskiej - jak napisać, struktura, przykład"
-  description="Jak napisać rozdział metodologiczny pracy magisterskiej. Struktura, paradygmaty badawcze, metody ilościowe i jakościowe, dobór próby, przykłady, błędy do uniknięcia."
+  title="Rozdział metodologiczny pracy magisterskiej - wzór, przykład [PDF]"
+  description="Kompletny wzór rozdziału metodologicznego do pobrania w PDF + struktura podrozdziałów 2.1-2.8 z przykładami. Sprawdź, ile stron powinien mieć rozdział metodologiczny i jak go napisać."
+  updateDate="2026-06-10"
   readingTime="22 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
@@ -99,6 +100,23 @@ const faqSchema = {
     badawczych, aż po praktyczne wskazówki dotyczące struktury i unikania
     najczęstszych błędów.
   </p>
+
+  <div class="download-box">
+    <p class="download-title">📄 Wzór rozdziału metodologicznego do pobrania (PDF)</p>
+    <p>
+      Przygotowaliśmy kompletny, czterostronicowy wzór rozdziału
+      metodologicznego z podrozdziałami 2.1-2.8: cel i przedmiot badań,
+      problem, pytania i hipotezy, operacjonalizacja zmiennych, metody i
+      narzędzia, dobór próby z tabelą, procedura, analiza danych i
+      ograniczenia. Pobierasz bez podawania adresu e-mail i adaptujesz do
+      własnego tematu.
+    </p>
+    <a
+      class="download-btn"
+      href="/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf"
+      download>Pobierz wzór w PDF (bezpłatnie)</a
+    >
+  </div>
 
   <h2>Czym jest rozdział metodologiczny i dlaczego jest tak ważny?</h2>
 
@@ -361,8 +379,11 @@ const faqSchema = {
     Aby lepiej zrozumieć, jak wygląda dobrze napisany rozdział metodologiczny w
     praktyce, prześledźmy fragmenty wzorcowego rozdziału z pracy o tematyce
     „Wpływ pracy zdalnej na poziom satysfakcji zawodowej pracowników sektora IT
-    w Polsce". Wzór można adaptować do dowolnego tematu - kluczowe są zasady,
-    nie konkretna treść.
+    w Polsce". Poniższe fragmenty pochodzą z kompletnego wzoru, który możesz <a
+      href="/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf"
+      download>pobrać w całości jako PDF</a
+    > i zaadaptować do dowolnego tematu - przenoszą się zasady, nie konkretna
+    treść.
   </p>
 
   <p>
@@ -566,5 +587,31 @@ const faqSchema = {
   .faq-item p {
     margin: 0;
     color: #4b5563;
+  }
+  .download-box {
+    border: 1px solid #c7d2fe;
+    border-left: 4px solid #4f46e5;
+    border-radius: 0.5rem;
+    background: #f5f7ff;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .download-box .download-title {
+    font-weight: 700;
+    color: #3730a3;
+    margin-top: 0;
+  }
+  .download-btn {
+    display: inline-block;
+    background: #4f46e5;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
+  }
+  .download-btn:hover {
+    background: #4338ca;
   }
 </style>
