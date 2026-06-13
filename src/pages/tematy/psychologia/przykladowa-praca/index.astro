@@ -1,0 +1,318 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Psychologia", href: "/tematy/psychologia/" },
+  {
+    label: "Przykładowa praca",
+    href: "/tematy/psychologia/przykladowa-praca/",
+  },
+];
+
+const relatedLinks = [
+  { label: "110 tematów prac z psychologii", href: "/tematy/psychologia/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Bibliografia i przypisy", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z psychologii – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z psychologii krok po kroku: wzór strony tytułowej, streszczenia, wstępu, rozdziału teoretycznego, metodologii, wyników i wniosków – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z
+    psychologii, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie.
+    Poniżej rozkładamy na części przykładową pracę – pokazujemy, co znajduje się w
+    każdym rozdziale, wklejamy konkretne wycinki tekstu i tłumaczymy, dlaczego
+    zostały napisane właśnie tak. To nie jest praca do skopiowania (o tym, dlaczego
+    nie warto, piszemy na końcu), tylko punkt odniesienia, na którym łatwiej napisać
+    własną.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę empiryczną o schemacie korelacyjnym –
+    <strong>„Poczucie własnej skuteczności a wypalenie zawodowe nauczycieli
+    edukacji wczesnoszkolnej"</strong>. To najczęstszy typ magisterki z psychologii:
+    badanie związku między zmiennymi mierzonymi standaryzowanymi kwestionariuszami.
+    Pod koniec pokazujemy też, czym taka praca różni się od schematu
+    eksperymentalnego i od studium przypadku.
+  </p>
+
+  <div class="download-box">
+    <p class="download-title">📄 Pobierz cały wzór pracy – PDF i Word</p>
+    <p>
+      Kompletny szkielet empirycznej pracy magisterskiej z psychologii: strona
+      tytułowa, streszczenie, spis treści, wstęp, rozdziały teoretyczne, metodologia,
+      wyniki z tabelą, wnioski, bibliografia i aneks. Z niebieskimi komentarzami
+      opisującymi funkcję każdej części. Formatowanie zgodne ze standardem (Times New
+      Roman 12 pkt, interlinia 1,5, justowanie). Bez podawania adresu e-mail.
+    </p>
+    <a
+      class="download-btn"
+      href="/downloads/przykladowa-praca-magisterska-psychologia.pdf"
+      download>Pobierz wzór (PDF)</a
+    >
+    <a
+      class="download-btn download-btn-alt"
+      href="/downloads/przykladowa-praca-magisterska-psychologia.docx"
+      download>Pobierz wzór (Word .docx)</a
+    >
+  </div>
+
+  <h2>Jakie są typy prac magisterskich z psychologii</h2>
+
+  <p>
+    Zanim zajrzysz do wzoru, ustal, jaki typ pracy obowiązuje na Twoim wydziale – od
+    tego zależy cała konstrukcja. W praktyce spotyka się trzy warianty:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Praca empiryczna korelacyjna</strong> – bada związki między zmiennymi
+      mierzonymi kwestionariuszami (np. skuteczność a wypalenie). Najczęstszy wybór,
+      bo wykonalny przy próbie zbieranej online.
+    </li>
+    <li>
+      <strong>Praca eksperymentalna</strong> – wprowadza manipulację zmienną
+      niezależną i pozwala wnioskować o przyczynowości. Mocniejsza metodologicznie,
+      ale wymaga większych zasobów i starannego planu.
+    </li>
+    <li>
+      <strong>Studium przypadku</strong> – pogłębiona analiza jednej osoby lub
+      przypadku klinicznego. Stosowane rzadziej, częściej w psychologii klinicznej.
+    </li>
+  </ul>
+
+  <p>
+    Jeśli nie masz pewności, sprawdź wytyczne dziekanatu albo zapytaj promotora na
+    pierwszym seminarium. Listę gotowych tematów z podziałem na subdyscypliny
+    znajdziesz w naszym zestawieniu <a href="/tematy/psychologia/">110 tematów prac
+    magisterskich z psychologii</a>, a ogólne zasady budowy pracy – w poradniku o
+    <a href="/poradniki/struktura/">strukturze pracy magisterskiej</a>.
+  </p>
+
+  <h2>Z jakich części składa się praca magisterska z psychologii</h2>
+
+  <p>
+    Układ pracy empirycznej jest dość sztywny i powtarza się na większości uczelni:
+  </p>
+
+  <ol>
+    <li>Strona tytułowa</li>
+    <li>Oświadczenia (o samodzielności i zgodzie na udostępnienie)</li>
+    <li>Streszczenie i słowa kluczowe (często też Abstract po angielsku)</li>
+    <li>Spis treści</li>
+    <li>Wstęp</li>
+    <li>Rozdział(y) teoretyczny(e) – przegląd literatury</li>
+    <li>Rozdział metodologiczny – cel, problemy, hipotezy, zmienne, narzędzia, próba</li>
+    <li>Rozdział z wynikami – analiza statystyczna i dyskusja</li>
+    <li>Zakończenie i wnioski</li>
+    <li>Bibliografia (najczęściej styl APA)</li>
+    <li>Spis tabel i rysunków</li>
+    <li>Aneks (narzędzia, metryczka, zgoda komisji etycznej)</li>
+  </ol>
+
+  <p>
+    Magisterka z psychologii liczy zwykle <strong>50–80 stron</strong>, z dwoma
+    rozdziałami teoretycznymi i wyraźnie rozbudowaną częścią badawczą. Najczęstszy
+    błąd to rozdęta teoria i potraktowana po macoszemu analiza wyników – powinno być
+    odwrotnie.
+  </p>
+
+  <h2>Strona tytułowa – wzór</h2>
+
+  <p>
+    Strona tytułowa nie jest miejscem na inwencję. Ma zawierać dokładnie te elementy,
+    których wymaga uczelnia, w ustalonej kolejności: nazwę uczelni i wydziału,
+    kierunek, imię i nazwisko oraz numer albumu, tytuł pracy, informację „Praca
+    magisterska napisana pod kierunkiem…", miejsce i rok. Tytuł na stronie tytułowej
+    musi być identyczny jak w spisie treści i w systemie APD – drobna rozbieżność
+    potrafi wstrzymać dopuszczenie do obrony. Pełny układ zobaczysz w pobranym wzorze.
+  </p>
+
+  <h2>Wstęp – fragment i omówienie</h2>
+
+  <p>
+    Wstęp prowadzi od ogółu (skala problemu) do szczegółu (cel tej konkretnej pracy)
+    i kończy się zapowiedzią rozdziałów. Oto fragment akapitu otwierającego:
+  </p>
+
+  <blockquote>
+    <p>
+      Zawód nauczyciela należy do profesji o najwyższym poziomie obciążenia
+      psychicznego. Według danych Systemu Informacji Oświatowej w polskich szkołach
+      pracuje ponad pół miliona nauczycieli, a badania ostatniej dekady wskazują, że
+      co trzeci z nich doświadcza nasilonych symptomów wyczerpania emocjonalnego.
+      Problem dotyczy w szczególności nauczycieli edukacji wczesnoszkolnej, którzy
+      łączą funkcje dydaktyczne z opiekuńczymi…
+    </p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> nie zaczynaj od „w dzisiejszych czasach". Otwórz
+    konkretem – danymi, skalą zjawiska. Nie wstawiaj tu wyników ani wniosków; te
+    trafiają na koniec. Pełny, siedmioakapitowy wzór wstępu z komentarzem do każdego
+    akapitu omawiamy w poradniku <a href="/poradniki/wstep/">jak napisać wstęp pracy
+    magisterskiej</a>.
+  </p>
+
+  <h2>Rozdział metodologiczny – fragment i omówienie</h2>
+
+  <p>
+    To rozdział, który recenzenci czytają najuważniej. Musi jasno odpowiadać: po co
+    jest ta praca, na jakie pytania odpowiada i jakimi narzędziami zebrano dane.
+    Kluczowe są problemy badawcze i hipotezy:
+  </p>
+
+  <blockquote>
+    <p><strong>Problem główny:</strong> jaki związek zachodzi między poczuciem
+      własnej skuteczności a poziomem wypalenia zawodowego nauczycieli edukacji
+      wczesnoszkolnej?</p>
+    <p><strong>H1:</strong> Poczucie własnej skuteczności koreluje ujemnie z
+      wyczerpaniem emocjonalnym i depersonalizacją, a dodatnio z poczuciem osiągnięć
+      osobistych.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> w pracy empirycznej hipotezy są na miejscu (inaczej
+    niż w studium przypadku, gdzie stawia się problemy badawcze). Każda hipoteza musi
+    być weryfikowalna konkretnym testem statystycznym i „domknąć się" w rozdziale z
+    wynikami. Szerzej o tym w poradniku o <a
+    href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a> i o <a href="/poradniki/metodologia/badania-ilosciowe/">badaniach
+    ilościowych</a>.
+  </p>
+
+  <h2>Wyniki – jak prezentować dane</h2>
+
+  <p>
+    Wyniki prezentuje się w tabelach i na rysunkach opatrzonych numerem i tytułem
+    (tytuł nad tabelą, podpis pod rysunkiem). W tekście opisujesz tabelę, nie
+    powtarzasz wszystkich liczb. Przykładowa tabela korelacji:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Wymiar wypalenia</th>
+        <th>r</th>
+        <th>p</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Wyczerpanie emocjonalne</td><td>−0,42</td><td>&lt; 0,001</td></tr>
+      <tr><td>Depersonalizacja</td><td>−0,31</td><td>&lt; 0,001</td></tr>
+      <tr><td>Poczucie osiągnięć osobistych</td><td>0,48</td><td>&lt; 0,001</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> interpretację zostaw do podrozdziału z dyskusją, gdzie
+    zestawisz własne wyniki z literaturą z rozdziałów teoretycznych. To w dyskusji
+    pokazujesz, co się potwierdziło, a co odbiega od wcześniejszych badań i dlaczego.
+  </p>
+
+  <h2>Wnioski – fragment</h2>
+
+  <p>
+    Wnioski są krótkie, ponumerowane i wprost odpowiadają na problemy badawcze.
+    Liczba wniosków powinna odpowiadać liczbie postawionych pytań. Nie wprowadzaj w
+    nich nowych wątków, których nie ma w pracy. Jak domknąć tę część, pokazujemy w
+    poradniku o <a href="/poradniki/zakonczenie/">zakończeniu pracy magisterskiej</a>.
+  </p>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z psychologii</h2>
+
+  <ul>
+    <li><strong>Odwrócone proporcje</strong> – rozbudowana teoria i skrótowa analiza
+      wyników. Powinno być odwrotnie.</li>
+    <li><strong>Narzędzia „na zapas"</strong> – kwestionariusze wymienione w
+      metodologii, których wyniki nie pojawiają się w analizie.</li>
+    <li><strong>Hipotezy nieweryfikowalne</strong> – sformułowane tak, że nie da się
+      ich potwierdzić ani odrzucić żadnym testem.</li>
+    <li><strong>Brak rzetelności skal</strong> – pominięcie α Cronbacha i wielkości
+      próby oszacowanej a priori.</li>
+    <li><strong>Niespójna bibliografia</strong> – źródła w wykazie, których nie ma w
+      tekście, albo mieszanie stylów cytowania.</li>
+    <li><strong>Wnioski oderwane od celu</strong> – nieodpowiadające postawionym
+      problemom badawczym.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy można skopiować przykładową pracę magisterską z psychologii?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez Jednolity System Antyplagiatowy (JSA), a
+    skopiowane fragmenty zostaną wykryte i mogą skutkować niedopuszczeniem do obrony,
+    a nawet konsekwencjami dyscyplinarnymi. Ten wzór ma posłużyć jako szkielet i punkt
+    odniesienia, na którym napiszesz własną pracę – z własnym tematem, danymi i
+    wnioskami.
+  </p>
+
+  <h3>Ile stron powinna mieć praca magisterska z psychologii?</h3>
+  <p>
+    Najczęściej 50–80 stron, ale ostateczny zakres określają wytyczne wydziału. Liczy
+    się nie objętość, lecz kompletność i spójność części badawczej.
+  </p>
+
+  <h3>Jaki styl cytowania obowiązuje w psychologii?</h3>
+  <p>
+    Najczęściej APA (autor–rok), zarówno w tekście, jak i w bibliografii. Część
+    uczelni stosuje styl własny – sprawdź wytyczne. Zasady zapisu i przykłady zebrane
+    są w przewodniku o <a href="/poradniki/bibliografia/">bibliografii i przypisach</a>.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całą pracę i tak trzeba
+    napisać samodzielnie, w oparciu o własne badanie i aktualne źródła. Zacznij od
+    <a href="/tematy/psychologia/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+
+  <style>
+    .download-box {
+      border: 1px solid #c7d2fe;
+      border-left: 4px solid #4f46e5;
+      border-radius: 0.5rem;
+      background: #f5f7ff;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .download-box .download-title {
+      font-weight: 700;
+      color: #3730a3;
+      margin-top: 0;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #4f46e5;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.6rem 1.4rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      margin-right: 0.6rem;
+    }
+    .download-btn:hover {
+      background: #4338ca;
+    }
+    .download-btn-alt {
+      background: #fff;
+      color: #4f46e5;
+      border: 2px solid #4f46e5;
+      padding: calc(0.6rem - 2px) calc(1.4rem - 2px);
+    }
+    .download-btn-alt:hover {
+      background: #eef2ff;
+    }
+  </style>
+</ArticleLayout>

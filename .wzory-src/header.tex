@@ -1,0 +1,34 @@
+% Nagłówek LaTeX dla wzorów praca-magisterska.pl (XeLaTeX)
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{polyglossia}
+\setdefaultlanguage{polish}
+\usepackage{geometry}
+\geometry{a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+\usepackage[table]{xcolor}
+\definecolor{brand}{HTML}{4F46E5}
+\definecolor{annoGray}{HTML}{555555}
+\definecolor{noteBg}{HTML}{F5F7FF}
+
+% Brandowy nagłówek/stopka
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\footnotesize\textcolor{brand}{\textbf{praca-magisterska.pl}}}
+\fancyhead[R]{\footnotesize\textcolor{annoGray}{Wzór do adaptacji — 2026}}
+\fancyfoot[L]{\footnotesize\textcolor{annoGray}{Pełne poradniki: praca-magisterska.pl/poradniki/}}
+\fancyfoot[R]{\footnotesize\textcolor{annoGray}{Strona \thepage}}
+
+% Tytuły rozdziałów
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+
+% Adnotacje (komentarze do akapitów) — szary, mniejszy, bez wcięcia
+\newcommand{\anno}[1]{\par\noindent{\small\itshape\textcolor{brand}{#1}}\par}
