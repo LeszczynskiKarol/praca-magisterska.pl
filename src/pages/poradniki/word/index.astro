@@ -1,0 +1,229 @@
+---
+// src/pages/poradniki/word/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Word - formatowanie pracy", href: "/poradniki/word/" },
+];
+
+const relatedLinks = [
+  { label: "Formatowanie pracy magisterskiej", href: "/poradniki/formatowanie/" },
+  { label: "Spis treści", href: "/poradniki/spis-tresci/" },
+  { label: "Przypisy w pracy magisterskiej", href: "/poradniki/przypisy/" },
+  { label: "LaTeX dla początkujących", href: "/poradniki/latex/" },
+];
+
+const faqItems = [
+  {
+    question: "Jak zrobić automatyczny spis treści w Wordzie?",
+    answer:
+      "Najpierw oznacz wszystkie tytuły rozdziałów i podrozdziałów stylami nagłówków (Nagłówek 1, Nagłówek 2, Nagłówek 3). Następnie ustaw kursor na stronie spisu treści i wybierz Odwołania, a potem Spis treści. Word zbierze wszystkie nagłówki wraz z numerami stron. Po dopisaniu treści wystarczy kliknąć spis i wybrać Aktualizuj, żeby numery się odświeżyły.",
+  },
+  {
+    question: "Jak zrobić inną numerację stron dla wstępu i reszty pracy?",
+    answer:
+      "Posłużą do tego podziały sekcji. W miejscu, gdzie ma się zmienić numeracja, wstawiasz podział sekcji (Układ, Znaki podziału, Następna strona). W stopce nowej sekcji wyłączasz opcję „Połącz z poprzednim”, dzięki czemu numerację można ustawić niezależnie. To samo rozwiązanie pozwala pominąć numer na stronie tytułowej.",
+  },
+  {
+    question: "Jak wstawić przypis dolny w Wordzie?",
+    answer:
+      "Ustaw kursor w miejscu, w którym ma pojawić się odsyłacz, przejdź do zakładki Odwołania i kliknij Wstaw przypis dolny. Word doda numer w tekście i przeniesie kursor na dół strony, gdzie wpisujesz treść przypisu. Numeracja aktualizuje się sama przy dodawaniu i usuwaniu kolejnych przypisów. Zasady ich stosowania opisujemy w osobnym poradniku o przypisach.",
+  },
+  {
+    question: "Dlaczego warto używać stylów zamiast ręcznego formatowania?",
+    answer:
+      "Style łączą wygląd tekstu z jego funkcją, więc tytuł oznaczony jako Nagłówek 1 wszędzie wygląda tak samo, trafia do spisu treści i pozwala nawigować po dokumencie. Ręczne pogrubianie i zmiana czcionki przy każdym tytule prowadzą do niespójności i uniemożliwiają automatyczny spis treści. Zmieniając wygląd raz w definicji stylu, przeformatowujesz od razu cały dokument.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Formatowanie pracy magisterskiej w Wordzie - style, spis treści, numeracja"
+  description="Word w pracy magisterskiej: style nagłówków, automatyczny spis treści, numeracja stron z podziałami sekcji, przypisy dolne, podpisy tabel i rysunków. Praktyczny poradnik krok po kroku."
+  updateDate="2026-06-14"
+  readingTime="12 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Word potrafi znacznie więcej, niż wykorzystuje większość studentów. Praca
+    formatowana ręcznie, z tytułami pogrubianymi na piechotę i spisem treści
+    przepisywanym z palca, rozjeżdża się przy pierwszej większej poprawce.
+    Tymczasem kilka wbudowanych mechanizmów, czyli style, podziały sekcji i
+    automatyczne spisy, zdejmuje z autora całą żmudną robotę i pilnuje
+    spójności za niego. Ten poradnik pokazuje, jak ustawić te narzędzia raz, a
+    potem skupić się już tylko na treści.
+  </p>
+
+  <h2>Style - fundament porządku</h2>
+
+  <p>
+    Cała sprawność pracy w Wordzie zaczyna się od stylów. Styl wiąże wygląd
+    fragmentu z jego rolą w dokumencie. Tytuł rozdziału oznaczasz stylem Nagłówek
+    1, podrozdział stylem Nagłówek 2, a jego część stylem Nagłówek 3. Zwykły
+    akapit zostaje w stylu Normalny. Dzięki temu Word wie, co jest tytułem, a co
+    treścią, i może zbudować spis treści, mapę dokumentu czy numerację rozdziałów.
+    Wygląd każdego stylu zmieniasz w jednym miejscu, klikając go prawym
+    przyciskiem i wybierając Modyfikuj. Ustawiona raz czcionka, interlinia czy
+    odstęp przenoszą się natychmiast na wszystkie akapity danego stylu.
+  </p>
+
+  <p>
+    To podejście opłaca się przy każdej zmianie wymagań. Gdy promotor poprosi o
+    inną interlinię albo wcięcie, poprawiasz definicję stylu zamiast przeklejać
+    formatowanie po całej pracy. Ogólne normy edytorskie, czyli marginesy,
+    czcionki i interlinię, zebraliśmy w poradniku o
+    <a href="/poradniki/formatowanie/">formatowaniu pracy</a>.
+  </p>
+
+  <h2>Automatyczny spis treści</h2>
+
+  <p>
+    Spis treści wygenerowany ręcznie to strata czasu, bo każda zmiana objętości
+    rozdziału przesuwa numery stron. Gdy tytuły mają przypisane style nagłówków,
+    Word zbuduje spis sam. Ustawiasz kursor na przeznaczonej dla niego stronie,
+    wybierasz Odwołania, a potem Spis treści, i program wstawia gotowy wykaz z
+    numerami stron. Po dopisaniu kolejnych fragmentów klikasz spis i wybierasz
+    Aktualizuj cały spis, żeby numeracja zgadzała się z rzeczywistością. Tym samym
+    mechanizmem tworzysz spis tabel i rysunków, jeśli wcześniej opatrzysz je
+    podpisami. Więcej o samym spisie znajdziesz w poradniku o
+    <a href="/poradniki/spis-tresci/">spisie treści</a>.
+  </p>
+
+  <h2>Numeracja stron i podziały sekcji</h2>
+
+  <p>
+    Praca magisterska rzadko ma jednolitą numerację od pierwszej do ostatniej
+    strony. Strona tytułowa zwykle nie ma numeru, a numeracja właściwa zaczyna
+    się od wstępu. Klucz do takiej kontroli to podziały sekcji. Wstawiasz je
+    przez Układ, Znaki podziału, Następna strona, w miejscu, gdzie numeracja albo
+    nagłówki mają się zmienić. W nowej sekcji w ustawieniach stopki wyłączasz
+    opcję łączenia z poprzednią, co pozwala ustawić numerację niezależnie. Bez
+    tego kroku każda zmiana obejmuje cały dokument, co jest najczęstszą
+    przyczyną frustracji przy numerowaniu stron.
+  </p>
+
+  <h2>Przypisy, podpisy i odsyłacze</h2>
+
+  <p>
+    Word obsługuje aparat naukowy automatycznie. Przypis dolny wstawiasz przez
+    Odwołania, Wstaw przypis dolny, a numeracja sama porządkuje się przy
+    dodawaniu i usuwaniu kolejnych. Tabele i rysunki opatrujesz podpisem przez
+    Odwołania, Wstaw podpis, dzięki czemu program ponumeruje je w kolejności i
+    zbierze do osobnego spisu. Funkcja odsyłacza pozwala napisać „zob. tabela 3"
+    tak, by numer aktualizował się samodzielnie przy przestawianiu elementów.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Niełamliwa spacja</strong> (Ctrl + Shift + spacja) zapobiega
+      zostawianiu samotnych liter na końcu wiersza, na przykład w „s. 45".
+    </li>
+    <li>
+      <strong>Znajdź i zamień</strong> (Ctrl + H) usprawnia ujednolicanie zapisu,
+      gdy w całej pracy poprawiasz powtarzający się błąd.
+    </li>
+    <li>
+      <strong>Podgląd znaków niedrukowalnych</strong> pokazuje ukryte spacje i
+      podziały, które psują układ strony.
+    </li>
+  </ul>
+
+  <h2>Częste błędy w Wordzie</h2>
+
+  <ul>
+    <li>
+      <strong>Pogrubianie tytułów zamiast stylów.</strong> Bez stylów nie zrobisz
+      automatycznego spisu treści ani nawigacji po dokumencie.
+    </li>
+    <li>
+      <strong>Puste akapity zamiast odstępów.</strong> Odstępy ustawia się w
+      definicji stylu, a sznur pustych enterów rozsypuje się przy każdej zmianie.
+    </li>
+    <li>
+      <strong>Spacje zamiast tabulatorów i wcięć.</strong> Wyrównanie spacjami
+      rozjeżdża się przy zmianie czcionki.
+    </li>
+    <li>
+      <strong>Ręczne numery stron.</strong> Po dopisaniu akapitu wszystko trzeba
+      poprawiać od nowa.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o Word</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Sprawne formatowanie pracy w Wordzie sprowadza się do jednej zasady: ustaw
+    mechanizmy raz i pozwól im działać. Style nagłówków dają automatyczny spis
+    treści i spójny wygląd, podziały sekcji rozwiązują problem numeracji, a
+    wbudowane przypisy i podpisy porządkują aparat naukowy. Poświęcenie pół
+    godziny na konfigurację tych narzędzi na początku zwraca się przy każdej
+    poprawce, bo dokument przelicza się sam. Jeśli zależy Ci na pełnej kontroli
+    nad składem tekstu i wzorami, alternatywą bywa
+    <a href="/poradniki/latex/">LaTeX</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

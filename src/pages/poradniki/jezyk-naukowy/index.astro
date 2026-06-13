@@ -1,0 +1,271 @@
+---
+// src/pages/poradniki/jezyk-naukowy/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Język naukowy", href: "/poradniki/jezyk-naukowy/" },
+];
+
+const relatedLinks = [
+  { label: "Cytowanie i cytaty", href: "/poradniki/cytaty/" },
+  { label: "Rozdział teoretyczny", href: "/poradniki/rozdzial-teoretyczny/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Formatowanie pracy", href: "/poradniki/formatowanie/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy w pracy magisterskiej można pisać w pierwszej osobie?",
+    answer:
+      "W polskiej tradycji akademickiej przeważa forma bezosobowa („przeprowadzono badanie”, „przyjęto założenie”). Pierwsza osoba liczby mnogiej, czyli tak zwane my autorskie („w pracy analizujemy”), jest dopuszczalna w niektórych dyscyplinach. Pierwszej osoby liczby pojedynczej („uważam”, „zrobiłem”) zwykle się unika poza fragmentami, w których autor świadomie zaznacza własne stanowisko. Najlepiej ustalić konwencję z promotorem i trzymać się jej w całej pracy.",
+  },
+  {
+    question: "Jakich słów unikać w pracy naukowej?",
+    answer:
+      "Odpada słownictwo potoczne, emocjonalne i wartościujące bez podstaw („świetny”, „straszny”, „mega”), a także skróty myślowe i kolokwializmy. Ostrożnie traktuj wyrażenia kategoryczne w rodzaju „zawsze”, „nigdy”, „oczywiste jest, że”, bo nauka operuje twierdzeniami uzasadnionymi, nie pewnikami. Zamiast tego stosuj formy ostrożne: „wyniki sugerują”, „można przypuszczać”, „dane wskazują na”.",
+  },
+  {
+    question: "Czym różni się styl naukowy od potocznego?",
+    answer:
+      "Styl naukowy stawia na precyzję, bezosobowość i uzasadnianie twierdzeń, podczas gdy język potoczny dopuszcza emocje, skróty i swobodną składnię. W pracy każde mocniejsze stwierdzenie wymaga odwołania do źródła lub do własnych wyników. Zdania są zwykle dłuższe i bardziej złożone, terminologia spójna, a ocena zastąpiona opisem i analizą.",
+  },
+  {
+    question: "Jak poprawić spójność tekstu naukowego?",
+    answer:
+      "Spójność budują wyrażenia łączące, które pokazują relacje między myślami: następstwo, przyczynę, kontrast czy podsumowanie. Każdy akapit powinien wynikać z poprzedniego, a nie zaczynać nowy wątek bez zapowiedzi. Pomaga zasada jednej myśli na akapit i zdania zapowiadające, co będzie dalej. Warto czytać tekst na głos, bo ucho wychwytuje urwane przejścia szybciej niż oko.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Język naukowy w pracy magisterskiej - styl, zwroty i częste błędy"
+  description="Język naukowy w pracy magisterskiej: cechy stylu, formy bezosobowe, gotowe zwroty i konektory, ostrożność w formułowaniu twierdzeń i najczęstsze błędy językowe do uniknięcia."
+  updateDate="2026-06-14"
+  readingTime="12 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Wielu studentów potrafi przeprowadzić solidne badanie, a mimo to ich praca
+    czyta się jak rozbudowany wpis na forum. Powód leży w języku. Styl naukowy
+    rządzi się własnymi prawami: ceni precyzję, dystans do opisywanych zjawisk i
+    ostrożność w formułowaniu wniosków. Nie chodzi o wymyślne słownictwo ani
+    zawiłą składnię, lecz o sposób myślenia widoczny w zdaniu. Ten poradnik
+    pokazuje, czym charakteryzuje się język naukowy, jakie zwroty warto mieć pod
+    ręką i jakich błędów unikać, żeby tekst brzmiał kompetentnie, a nie sztucznie.
+  </p>
+
+  <h2>Cechy stylu naukowego</h2>
+
+  <p>
+    Tekst naukowy rozpoznaje się po kilku wspólnych cechach, które razem tworzą
+    wrażenie rzetelności. Precyzja oznacza, że terminy mają jedno, jasne znaczenie
+    i nie zmieniają go w trakcie pracy. Obiektywizm przejawia się w opisywaniu
+    zjawisk zamiast ich oceniania. Bezosobowość odsuwa autora na drugi plan i
+    skupia uwagę na przedmiocie badania. Spójność wiąże kolejne myśli w logiczny
+    ciąg, w którym każde zdanie wynika z poprzedniego. Ostrożność każe formułować
+    wnioski na miarę zebranych dowodów, bez przesady w żadną stronę.
+  </p>
+
+  <h2>Formy bezosobowe zamiast „ja"</h2>
+
+  <p>
+    Najszybciej nada się tekstowi naukowy charakter, zastępując osobiste „zrobiłem"
+    konstrukcjami bezosobowymi. Uwaga czytelnika przenosi się wtedy z autora na
+    badanie. Polszczyzna daje tu kilka wygodnych narzędzi, które warto stosować
+    wymiennie, żeby tekst nie popadł w monotonię.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Forma osobista (potoczna)</th>
+        <th>Forma naukowa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Zrobiłem ankietę wśród studentów.</td>
+        <td>Przeprowadzono badanie ankietowe wśród studentów.</td>
+      </tr>
+      <tr>
+        <td>Myślę, że wyniki pokazują…</td>
+        <td>Uzyskane wyniki wskazują, że…</td>
+      </tr>
+      <tr>
+        <td>W tym rozdziale opiszę…</td>
+        <td>Niniejszy rozdział poświęcono…</td>
+      </tr>
+      <tr>
+        <td>Zauważyłem ciekawą zależność.</td>
+        <td>Zaobserwowano istotną zależność.</td>
+      </tr>
+      <tr>
+        <td>Według mnie to dobra metoda.</td>
+        <td>Metoda ta wydaje się trafna ze względu na…</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Gotowe zwroty i konektory</h2>
+
+  <p>
+    Sprawny tekst naukowy korzysta z powtarzalnego repertuaru wyrażeń łączących.
+    Pokazują one czytelnikowi, w jakiej relacji pozostają kolejne myśli, czy to
+    następstwo, przeciwstawienie, czy podsumowanie. Poniższy zestaw pokrywa
+    większość sytuacji w pracy magisterskiej.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Funkcja w tekście</th>
+        <th>Przydatne zwroty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Wprowadzenie tematu</td>
+        <td>celem niniejszego rozdziału jest; punktem wyjścia rozważań jest</td>
+      </tr>
+      <tr>
+        <td>Referowanie literatury</td>
+        <td>zdaniem autora; jak wykazano w badaniach; w literaturze przedmiotu przyjmuje się</td>
+      </tr>
+      <tr>
+        <td>Dodawanie argumentu</td>
+        <td>ponadto; co więcej; warto również zauważyć, że</td>
+      </tr>
+      <tr>
+        <td>Kontrast i polemika</td>
+        <td>z kolei; tymczasem; odmienne stanowisko zajmuje; pogląd ten budzi wątpliwości</td>
+      </tr>
+      <tr>
+        <td>Przyczyna i skutek</td>
+        <td>w konsekwencji; wynika z tego, że; prowadzi to do</td>
+      </tr>
+      <tr>
+        <td>Ostrożny wniosek</td>
+        <td>wyniki sugerują; można przypuszczać, że; dane wskazują na</td>
+      </tr>
+      <tr>
+        <td>Podsumowanie</td>
+        <td>podsumowując; reasumując dotychczasowe rozważania; z przeprowadzonej analizy wynika</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Ostrożność w formułowaniu twierdzeń</h2>
+
+  <p>
+    Nauka rzadko mówi „na pewno". Twierdzenia stopniuje się zależnie od siły
+    dowodów, dlatego dobry tekst unika kategoryczności tam, gdzie dane jej nie
+    uzasadniają. Zamiast „badania udowodniły, że hałas zawsze obniża koncentrację"
+    bezpieczniej napisać „wyniki badań wskazują, że hałas może obniżać
+    koncentrację". Ta różnica nie jest asekuranctwem, lecz uczciwością wobec
+    materiału. Słowa w rodzaju „oczywiście", „bezsprzecznie" czy „wszyscy wiedzą"
+    osłabiają tekst, bo sugerują, że autor zwalnia się z obowiązku uzasadnienia.
+  </p>
+
+  <h2>Najczęstsze błędy językowe</h2>
+
+  <ul>
+    <li>
+      <strong>Potoczność i emocje.</strong> Słowa „świetny", „beznadziejny",
+      „mega" nie należą do tekstu naukowego. Ocenę zastąp opisem i danymi.
+    </li>
+    <li>
+      <strong>Zmienna terminologia.</strong> Raz „klient", raz „konsument", raz
+      „nabywca" w jednym znaczeniu wprowadza zamęt. Wybierz jeden termin i trzymaj
+      się go.
+    </li>
+    <li>
+      <strong>Zdania-molochy.</strong> Akapit z jednego zdania na dziesięć linijek
+      gubi czytelnika. Dziel myśli na osobne zdania.
+    </li>
+    <li>
+      <strong>Wodolejstwo.</strong> Wypełniacze w rodzaju „należy podkreślić, że
+      jest to bardzo ważna kwestia" nic nie wnoszą. Przejdź do rzeczy.
+    </li>
+    <li>
+      <strong>Brak odwołań przy mocnych tezach.</strong> Każde stwierdzenie o
+      faktach wymaga źródła albo własnych wyników, inaczej zostaje gołosłowne.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o język naukowy</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Język naukowy to przede wszystkim dyscyplina myślenia widoczna w zdaniu:
+    precyzyjny termin, bezosobowa forma, ostrożny wniosek i jawne odwołanie do
+    źródła. Nie wymaga wyszukanego słownictwa, a wręcz odwrotnie, traci na
+    sztucznym napuszeniu. Gdy skończysz pisać rozdział, przeczytaj go na głos i
+    sprawdź, czy każde mocne stwierdzenie ma oparcie w danych, a kolejne akapity
+    łączą się płynnie. Spójny, opanowany styl robi na recenzencie nie mniejsze
+    wrażenie niż sama treść, bo świadczy o dojrzałości warsztatu.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

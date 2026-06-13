@@ -1,0 +1,262 @@
+---
+// src/pages/poradniki/tabele-wykresy/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Tabele i wykresy", href: "/poradniki/tabele-wykresy/" },
+];
+
+const relatedLinks = [
+  { label: "Formatowanie pracy magisterskiej", href: "/poradniki/formatowanie/" },
+  { label: "Word - formatowanie pracy", href: "/poradniki/word/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Rozdział badawczy", href: "/poradniki/metodologia/rozdzial-badawczy/" },
+];
+
+const faqItems = [
+  {
+    question: "Gdzie umieścić tytuł tabeli, a gdzie podpis rysunku?",
+    answer:
+      "Zgodnie z przyjętą konwencją tytuł tabeli umieszcza się nad tabelą, a podpis rysunku (wykresu, schematu, fotografii) pod nim. Oba zawierają numer i zwięzłą nazwę, na przykład „Tabela 3. Struktura wieku respondentów”. Źródło podaje się pod elementem. Word ułatwia to funkcją podpisu, która od razu numeruje i pozwala zebrać spis tabel oraz rysunków.",
+  },
+  {
+    question: "Jak podać źródło pod tabelą lub wykresem?",
+    answer:
+      "Pod elementem wpisujesz „Źródło:” i opis. Gdy tabela powstała na podstawie własnych badań, stosujesz formułę „Źródło: opracowanie własne”. Gdy przejmujesz dane z cudzej pracy, podajesz pełne odwołanie do niej. Jeśli przetwarzasz cudze dane po swojemu, używasz formy „Źródło: opracowanie własne na podstawie…” z odwołaniem do danych wyjściowych.",
+  },
+  {
+    question: "Kiedy lepiej użyć tabeli, a kiedy wykresu?",
+    answer:
+      "Tabela sprawdza się, gdy liczą się dokładne wartości i czytelnik ma je odczytać albo porównać punktowo. Wykres lepiej pokazuje tendencję, proporcję lub zależność, którą trudno wychwycić z samych liczb. Tych samych danych nie prezentuj jednocześnie w tabeli i na wykresie, bo to zbędne powielenie. Wybierz formę, która lepiej służy myśli, którą chcesz przekazać.",
+  },
+  {
+    question: "Czy trzeba odwołać się do tabeli w tekście?",
+    answer:
+      "Tak. Każda tabela i każdy rysunek muszą być przywołane w tekście przed swoim pojawieniem się, na przykład „Strukturę wieku badanych przedstawia tabela 3”. Element, do którego nikt się nie odwołuje, sprawia wrażenie wrzuconego bez powodu. W tekście nie powtarzasz wszystkich liczb z tabeli, lecz komentujesz to, co z nich wynika.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Tabele i wykresy w pracy magisterskiej - tworzenie, opis i numeracja"
+  description="Jak tworzyć tabele i wykresy w pracy magisterskiej: tytuł i podpis, numeracja, źródło, opracowanie własne, wybór typu wykresu, odwołania w tekście i częste błędy w prezentacji danych."
+  updateDate="2026-06-14"
+  readingTime="11 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Tabele i wykresy porządkują dane lepiej niż najdłuższy akapit, ale tylko
+    wtedy, gdy są zrobione poprawnie. W pracach magisterskich powtarzają się te
+    same potknięcia: brak numeracji, pominięte źródło, wykres kołowy z
+    kilkunastoma wycinkami albo te same liczby raz w tabeli i raz na wykresie.
+    Ten poradnik zbiera zasady prezentacji danych, od tytułu i numeracji, przez
+    opis źródła, po wybór odpowiedniego typu wykresu, żeby część empiryczna pracy
+    czytała się jasno i wyglądała profesjonalnie.
+  </p>
+
+  <h2>Tytuł, numeracja i źródło</h2>
+
+  <p>
+    Każdy element graficzny ma trzy stałe składniki: numer, tytuł i źródło.
+    Numeracja biegnie osobno dla tabel i osobno dla rysunków, ciągiem przez całą
+    pracę albo w obrębie rozdziału. Tytuł tabeli stoi nad nią, a podpis rysunku
+    pod nim, co odpowiada utrwalonej konwencji edytorskiej. Pod całością podaje
+    się źródło. Te drobiazgi decydują o wrażeniu staranności, a zarazem pozwalają
+    zebrać automatyczny spis tabel i rysunków, który opisujemy w poradniku o
+    <a href="/poradniki/word/">pracy w Wordzie</a>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Sytuacja</th>
+        <th>Zapis źródła</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dane z własnego badania</td>
+        <td>Źródło: opracowanie własne.</td>
+      </tr>
+      <tr>
+        <td>Dane przejęte z cudzej pracy</td>
+        <td>Źródło: Kowalski 2021, s. 45.</td>
+      </tr>
+      <tr>
+        <td>Własne przetworzenie cudzych danych</td>
+        <td>Źródło: opracowanie własne na podstawie danych GUS 2023.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Jak budować czytelną tabelę</h2>
+
+  <p>
+    Dobra tabela mieści tyle danych, ile czytelnik jest w stanie ogarnąć
+    wzrokiem. Nagłówki kolumn opisują zawartość jednoznacznie, razem z jednostką
+    miary, jeśli dotyczy. Wartości w jednej kolumnie wyrównuje się tak samo, a
+    liczby podaje się z tą samą liczbą miejsc po przecinku. Jeśli tabela rozrasta
+    się do kilku stron, warto rozważyć przeniesienie surowych danych do aneksu, a
+    w tekście zostawienie wersji skróconej. Skróty użyte w tabeli rozwijasz w
+    przypisie pod nią, żeby była zrozumiała bez wracania do treści.
+  </p>
+
+  <h2>Wybór typu wykresu</h2>
+
+  <p>
+    Typ wykresu dobiera się do rodzaju danych i myśli, którą chcesz pokazać.
+    Niewłaściwy wybór potrafi zatrzeć zależność albo wręcz wprowadzić w błąd.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Co chcesz pokazać</th>
+        <th>Zalecany typ wykresu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Porównanie wielkości między kategoriami</td>
+        <td>słupkowy lub kolumnowy</td>
+      </tr>
+      <tr>
+        <td>Zmianę w czasie</td>
+        <td>liniowy</td>
+      </tr>
+      <tr>
+        <td>Udział części w całości</td>
+        <td>kołowy (przy kilku kategoriach) lub skumulowany słupkowy</td>
+      </tr>
+      <tr>
+        <td>Zależność między dwiema zmiennymi</td>
+        <td>punktowy (rozrzutu)</td>
+      </tr>
+      <tr>
+        <td>Rozkład wartości</td>
+        <td>histogram</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Wykres kołowy działa tylko przy kilku kategoriach. Gdy wycinków jest
+    kilkanaście, oko nie porówna ich wielkości i lepiej sięgnąć po wykres
+    słupkowy. Pilnuj też uczciwości skali: oś wartości zaczynaj od zera, bo
+    ucięta oś sztucznie wyolbrzymia różnice.
+  </p>
+
+  <h2>Odwołania i komentarz w tekście</h2>
+
+  <p>
+    Tabela i wykres nie zastępują wywodu, lecz go wspierają. Przed każdym
+    elementem zapowiadasz go w tekście („Strukturę próby przedstawia tabela 2"),
+    a po nim komentujesz to, co z danych wynika. Nie przepisujesz przy tym
+    wszystkich liczb z tabeli, bo czytelnik je widzi. Wskazujesz tendencję,
+    rzecz najważniejszą albo wynik zaskakujący, i wiążesz go z pytaniem
+    badawczym. Surową prezentację danych od ich interpretacji rozdzielamy
+    szerzej w poradniku o <a href="/poradniki/metodologia/rozdzial-badawczy/"
+      >rozdziale badawczym</a>.
+  </p>
+
+  <h2>Częste błędy</h2>
+
+  <ul>
+    <li>
+      <strong>Brak numeru lub źródła.</strong> Element bez numeru wypada z systemu
+      odwołań, a bez źródła budzi pytanie o pochodzenie danych.
+    </li>
+    <li>
+      <strong>Te same dane w tabeli i na wykresie.</strong> Wybierz jedną formę,
+      podwójna prezentacja niczego nie dodaje.
+    </li>
+    <li>
+      <strong>Wykres kołowy z kilkunastoma wycinkami.</strong> Staje się
+      nieczytelny, użyj wykresu słupkowego.
+    </li>
+    <li>
+      <strong>Ucięta oś wartości.</strong> Zaczynanie osi od wartości innej niż
+      zero zniekształca proporcje.
+    </li>
+    <li>
+      <strong>Element bez komentarza.</strong> Dane wrzucone bez omówienia
+      sprawiają wrażenie wypełniacza.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o tabele i wykresy</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Tabele i wykresy oceniane są równie uważnie jak tekst, bo to w nich
+    najszybciej widać warsztat. Każdy element opatrz numerem, tytułem i źródłem,
+    dobierz typ wykresu do rodzaju danych i zadbaj o uczciwą skalę. W tekście
+    zapowiadaj element przed jego pojawieniem się i komentuj wnioski, zamiast
+    powtarzać liczby. Dobrze przygotowana część graficzna sprawia, że wyniki
+    bronią się same, a czytelnik odczytuje je bez wysiłku.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

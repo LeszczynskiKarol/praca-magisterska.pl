@@ -1,0 +1,221 @@
+---
+// src/pages/poradniki/pytania-obrona/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Typowe pytania na obronie", href: "/poradniki/pytania-obrona/" },
+];
+
+const relatedLinks = [
+  { label: "Obrona pracy magisterskiej", href: "/poradniki/obrona/" },
+  { label: "Prezentacja na obronę", href: "/poradniki/prezentacja/" },
+  { label: "Jak radzić sobie ze stresem", href: "/poradniki/stres/" },
+  { label: "Cel pracy magisterskiej", href: "/poradniki/cel-pracy/" },
+];
+
+const faqItems = [
+  {
+    question: "Ile pytań pada na obronie pracy magisterskiej?",
+    answer:
+      "Zwykle trzy pytania, choć liczba zależy od uczelni i regulaminu. Najczęściej jedno zadaje promotor, jedno recenzent, a jedno pozostały członek komisji. Część pytań wynika wprost z recenzji, dlatego warto ją wcześniej przeczytać. Na niektórych kierunkach pytania dotyczą też ogólnej wiedzy z zakresu studiów, a ich listę bywa, że studenci dostają z wyprzedzeniem.",
+  },
+  {
+    question: "Co zrobić, gdy nie znam odpowiedzi na pytanie?",
+    answer:
+      "Nie udawaj, że wiesz, bo komisja to wychwyci. Spróbuj odpowiedzieć częściowo, odwołując się do tego, co wiesz z pokrewnego obszaru, albo poprosić o doprecyzowanie pytania, co daje chwilę na zebranie myśli. Szczere „nie zająłem się tym wątkiem w pracy, ale sądzę, że…” wypada lepiej niż zmyślanie. Jedno trudne pytanie rzadko przesądza o ocenie całej obrony.",
+  },
+  {
+    question: "Czy pytania zawsze dotyczą tylko mojej pracy?",
+    answer:
+      "Nie zawsze. Część pytań dotyczy bezpośrednio pracy: celu, metody, wyników i wniosków. Inne sprawdzają, czy umiesz osadzić ją w szerszym kontekście dziedziny i czy opanowałeś materiał ze studiów. Dlatego oprócz znajomości własnej pracy warto odświeżyć podstawowe pojęcia kierunkowe, zwłaszcza te powiązane z tematem.",
+  },
+  {
+    question: "Jak przygotować się do pytań na obronie?",
+    answer:
+      "Przeczytaj własną pracę na świeżo i wypisz jej najważniejsze tezy, a do tego recenzje, bo z nich często wynikają pytania. Przećwicz odpowiedzi na pytania o cel, metodę i wnioski, najlepiej na głos. Przygotuj jedno zdanie streszczające istotę pracy oraz uzasadnienie wyboru tematu, metody i literatury, bo te wracają niemal zawsze.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Typowe pytania na obronie pracy magisterskiej - lista i jak odpowiadać"
+  description="Najczęstsze pytania na obronie pracy magisterskiej: o cel, metodę, wyniki i literaturę, pytania kierunkowe i o wkład własny. Lista przykładów oraz strategia spokojnego odpowiadania."
+  updateDate="2026-06-14"
+  readingTime="11 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Pytania komisji budzą przed obroną największy niepokój, choć w praktyce
+    rzadko bywają podchwytliwe. Komisja nie szuka sposobu, żeby Cię pogrążyć,
+    lecz sprawdza, czy rozumiesz własną pracę i potrafisz o niej rozmawiać.
+    Większość pytań da się przewidzieć, bo wracają te same kategorie: o cel,
+    metodę, wyniki i wybór literatury. Ten poradnik zbiera najczęstsze pytania
+    wraz z przykładami i pokazuje, jak odpowiadać spokojnie i konkretnie, nawet
+    gdy trafi się zagadnienie, którego nie przewidziałeś.
+  </p>
+
+  <h2>Kto i o co pyta</h2>
+
+  <p>
+    Po wystąpieniu pytania zadaje zwykle troje osób: promotor, recenzent i
+    kolejny członek komisji. Pytania promotora i recenzenta często wynikają
+    wprost z treści pracy i z recenzji, dlatego oba dokumenty warto przeczytać na
+    świeżo przed obroną. Trzecie pytanie bywa ogólniejsze, sprawdzające wiedzę z
+    kierunku. Pytania można pogrupować w kilka powtarzalnych kategorii.
+  </p>
+
+  <h2>Pytania o samą pracę</h2>
+
+  <p>
+    To trzon obrony. Komisja chce usłyszeć, że rozumiesz, co i po co zrobiłeś.
+    Przygotuj zwięzłe, rzeczowe odpowiedzi na poniższe pytania, bo w tej czy innej
+    formie pada większość z nich.
+  </p>
+
+  <ul>
+    <li>Jaki był cel pracy i jaki problem badawczy postawiłeś?</li>
+    <li>Czy potrafisz w kilku zdaniach streścić istotę swojej pracy?</li>
+    <li>Dlaczego wybrałeś właśnie ten temat?</li>
+    <li>Jaką metodę badawczą zastosowałeś i dlaczego właśnie tę?</li>
+    <li>Jakie są najważniejsze wyniki i wnioski z badania?</li>
+    <li>Czy postawione hipotezy się potwierdziły?</li>
+    <li>Na jakiej literaturze oparłeś pracę i czym kierowałeś się w jej doborze?</li>
+    <li>Jakie są ograniczenia Twojego badania?</li>
+    <li>Co zrobiłbyś inaczej, gdybyś zaczynał pracę od nowa?</li>
+  </ul>
+
+  <h2>Pytania o kontekst i wkład własny</h2>
+
+  <p>
+    Drugi typ pytań sprawdza, czy umiesz osadzić pracę w szerszym tle i wskazać,
+    co w niej Twojego. Komisja ocenia tu samodzielność myślenia.
+  </p>
+
+  <ul>
+    <li>Jak Twoje wyniki mają się do dotychczasowych badań w tym obszarze?</li>
+    <li>Co nowego wnosi Twoja praca?</li>
+    <li>Komu i do czego mogą przydać się jej wyniki?</li>
+    <li>Jakie dalsze badania warto by przeprowadzić w tym temacie?</li>
+  </ul>
+
+  <h2>Pytania kierunkowe</h2>
+
+  <p>
+    Część komisji sprawdza również ogólną wiedzę ze studiów, zwłaszcza w
+    obszarach powiązanych z tematem pracy. Bywa, że studenci dostają listę takich
+    zagadnień przed obroną, więc warto dopytać w dziekanacie albo u promotora.
+    Jeśli takiej listy nie ma, odśwież podstawowe pojęcia i teorie z głównych
+    przedmiotów kierunkowych, ze szczególnym naciskiem na te, których dotyka
+    Twoja praca.
+  </p>
+
+  <h2>Jak odpowiadać</h2>
+
+  <p>
+    Sposób odpowiedzi waży niemal tyle co jej treść. Kilka zasad pomaga zachować
+    spokój i wypaść kompetentnie.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Słuchaj do końca.</strong> Poczekaj, aż pytanie wybrzmi w całości, i
+      dopiero potem odpowiadaj. W razie wątpliwości poproś o doprecyzowanie.
+    </li>
+    <li>
+      <strong>Odpowiadaj na temat.</strong> Krótko i konkretnie, bez owijania.
+      Lepsza zwięzła trafna odpowiedź niż długi wywód obok sedna.
+    </li>
+    <li>
+      <strong>Opieraj się na pracy.</strong> Odwołuj się do własnych wyników i
+      rozdziałów, bo to Twój najmocniejszy grunt.
+    </li>
+    <li>
+      <strong>Przyznaj granice wiedzy.</strong> Gdy czegoś nie wiesz, powiedz to
+      wprost i spróbuj odnieść się do tego, co znasz. Szczerość wypada lepiej niż
+      zmyślanie.
+    </li>
+    <li>
+      <strong>Zachowaj spokojny ton.</strong> Tempo i opanowanie budują wrażenie
+      pewności. O oswajaniu tremy piszemy w poradniku o
+      <a href="/poradniki/stres/">radzeniu sobie ze stresem</a>.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o obronę</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Pytania na obronie są bardziej przewidywalne, niż się wydaje. Trzon stanowią
+    pytania o cel, metodę, wyniki i literaturę, dochodzą do nich pytania o
+    kontekst, wkład własny i wiedzę kierunkową. Przygotuj zwięzłe streszczenie
+    pracy oraz uzasadnienie wyboru tematu i metody, przeczytaj recenzje, z
+    których często wynikają pytania, i ćwicz odpowiedzi na głos. Skoro znasz
+    swoją pracę najlepiej w całej sali, rozmowa o niej jest grą na własnym
+    boisku. Pozostałe elementy tego dnia opisujemy w poradniku o
+    <a href="/poradniki/obrona/">obronie pracy magisterskiej</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

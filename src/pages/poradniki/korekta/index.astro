@@ -1,0 +1,237 @@
+---
+// src/pages/poradniki/korekta/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Korekta i redakcja pracy", href: "/poradniki/korekta/" },
+];
+
+const relatedLinks = [
+  { label: "Język naukowy", href: "/poradniki/jezyk-naukowy/" },
+  { label: "Formatowanie pracy magisterskiej", href: "/poradniki/formatowanie/" },
+  { label: "Sprawdzanie antyplagiatowe", href: "/poradniki/antyplagiat/" },
+  { label: "Word - formatowanie pracy", href: "/poradniki/word/" },
+];
+
+const faqItems = [
+  {
+    question: "Czym różni się korekta od redakcji?",
+    answer:
+      "Korekta to ostatni etap, który usuwa błędy językowe: literówki, pomyłki ortograficzne, interpunkcyjne i typograficzne. Redakcja sięga głębiej i poprawia sam tekst: styl, jasność zdań, powtórzenia, logikę wywodu i spójność terminologii. W praktyce najpierw redaguje się treść, a dopiero na końcu robi korektę, bo szlifowanie interpunkcji w akapicie, który i tak zostanie przepisany, nie ma sensu.",
+  },
+  {
+    question: "Jak samodzielnie zrobić korektę pracy?",
+    answer:
+      "Najpierw odłóż tekst na kilka dni, bo na świeżo łatwiej dostrzec błędy. Czytaj na głos, najlepiej z wydruku, bo ucho i papier wychwytują to, co umyka na ekranie. Sprawdzaj jeden rodzaj błędu naraz, na przykład najpierw interpunkcję, potem powtórzenia. Pomaga też czytanie od końca, akapit po akapicie, bo wtedy mózg nie domyśla się treści i skupia się na formie.",
+  },
+  {
+    question: "Czy warto zlecić korektę profesjonaliście?",
+    answer:
+      "To zależy od pewności co do własnego języka i od czasu. Profesjonalna korekta wyłapie błędy, na które autor jest ślepy po wielu tygodniach z tekstem, i ujednolici zapis w całej pracy. Korektor poprawia język, nie ingeruje w treść merytoryczną ani nie pisze pracy za studenta. Jeśli decydujesz się na zlecenie, zostaw na nie czas przed terminem oddania.",
+  },
+  {
+    question: "Na jakie błędy zwracać uwagę w pracy magisterskiej?",
+    answer:
+      "Najczęstsze to literówki i zjedzone słowa, błędna interpunkcja (zwłaszcza przecinki), powtórzenia tego samego wyrazu w bliskim sąsiedztwie, niespójna terminologia, mieszanie czasów oraz niejednolite formatowanie przypisów i bibliografii. Warto też sprawdzić zgodność spisu treści z numeracją stron i to, czy każde źródło z tekstu jest w bibliografii.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Korekta i redakcja pracy magisterskiej - jak sprawdzić tekst przed oddaniem"
+  description="Korekta i redakcja pracy magisterskiej: różnica między nimi, techniki samodzielnego sprawdzania tekstu, lista typowych błędów, kiedy zlecić korektę i checklista przed oddaniem pracy."
+  updateDate="2026-06-14"
+  readingTime="10 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Praca może opierać się na świetnym badaniu, a i tak stracić punkty przez
+    literówki, rozjechane przypisy i zdania, których nie da się zrozumieć za
+    pierwszym razem. Po wielu tygodniach pisania autor przestaje widzieć własne
+    błędy, bo czyta to, co chciał napisać, a nie to, co napisał. Dlatego korekta
+    i redakcja to osobny etap, nie dodatek do pisania. Ten poradnik wyjaśnia
+    różnicę między jednym a drugim, podsuwa techniki samodzielnego sprawdzania
+    tekstu i zbiera listę błędów, które warto wyłapać przed oddaniem pracy.
+  </p>
+
+  <h2>Redakcja a korekta - dwa różne etapy</h2>
+
+  <p>
+    Te dwa pojęcia bywają mylone, choć dotyczą różnych warstw tekstu. Redakcja
+    zajmuje się treścią i jej formą: poprawia styl, rozbija zawiłe zdania, usuwa
+    powtórzenia, pilnuje logiki wywodu i jednolitej terminologii. Korekta to
+    ostatni przegląd, który czyści tekst z błędów językowych i typograficznych.
+    Kolejność ma znaczenie: najpierw redaguje się treść, a dopiero potem robi
+    korektę, bo poprawianie interpunkcji w akapicie przeznaczonym do przepisania
+    jest stratą czasu.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Etap</th>
+        <th>Czego dotyczy</th>
+        <th>Przykłady poprawek</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Redakcja</td>
+        <td>treść, styl, struktura</td>
+        <td>rozbicie zdania-molocha, usunięcie powtórzeń, ujednolicenie terminu</td>
+      </tr>
+      <tr>
+        <td>Korekta</td>
+        <td>warstwa językowa i typograficzna</td>
+        <td>literówki, przecinki, spacje, jednolity zapis przypisów</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Jak samodzielnie zredagować i skorygować tekst</h2>
+
+  <p>
+    Skuteczne sprawdzanie własnej pracy to przede wszystkim oszukanie własnego
+    przyzwyczajenia do tekstu. Pomaga w tym kilka technik.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Odłóż tekst na kilka dni.</strong> Dystans czasowy przywraca świeże
+      spojrzenie i obnaża błędy, które wcześniej umykały.
+    </li>
+    <li>
+      <strong>Czytaj na głos.</strong> Ucho wychwytuje urwane zdania i powtórzenia
+      szybciej niż oko prześlizgujące się po znanym tekście.
+    </li>
+    <li>
+      <strong>Drukuj.</strong> Na papierze widać więcej niż na ekranie, zwłaszcza
+      błędy układu i formatowania.
+    </li>
+    <li>
+      <strong>Sprawdzaj jeden błąd naraz.</strong> Osobne przejście na
+      interpunkcję, osobne na powtórzenia, osobne na przypisy. Próba łapania
+      wszystkiego jednocześnie kończy się przeoczeniami.
+    </li>
+    <li>
+      <strong>Czytaj od końca.</strong> Akapit po akapicie wstecz, dzięki czemu
+      mózg nie domyśla się dalszego ciągu i skupia się na formie.
+    </li>
+  </ul>
+
+  <p>
+    Wbudowane narzędzia edytora wyłapią część literówek i powtórzeń, ale nie
+    zastąpią uważnej lektury. Autokorekta nie odróżni „bądź” od „badź” w błędnym
+    kontekście ani nie zauważy, że termin zmienia znaczenie między rozdziałami.
+    O ustawieniach edytora piszemy w poradniku o
+    <a href="/poradniki/word/">pracy w Wordzie</a>.
+  </p>
+
+  <h2>Lista kontrolna przed oddaniem</h2>
+
+  <p>
+    Zanim wyślesz pracę promotorowi, przejdź po krótkiej liście. Wychwytuje ona
+    błędy, które najczęściej obniżają ocenę formalną.
+  </p>
+
+  <ul>
+    <li>literówki, zjedzone słowa i błędy ortograficzne</li>
+    <li>interpunkcja, zwłaszcza przecinki w zdaniach złożonych</li>
+    <li>powtórzenia tego samego wyrazu w sąsiednich zdaniach</li>
+    <li>spójna terminologia w całej pracy</li>
+    <li>jednolity zapis przypisów i bibliografii</li>
+    <li>zgodność spisu treści z numeracją stron</li>
+    <li>każde źródło z tekstu obecne w bibliografii i odwrotnie</li>
+    <li>jednolite formatowanie: marginesy, czcionka, interlinia, podpisy tabel</li>
+  </ul>
+
+  <h2>Kiedy zlecić korektę</h2>
+
+  <p>
+    Profesjonalna korekta ma sens, gdy nie masz pewności co do własnego języka
+    albo brakuje czasu na kilkukrotne przejście tekstu. Korektor wyłapie błędy,
+    na które jesteś już ślepy, i ujednolici zapis w całej pracy. Pamiętaj, że
+    korekta dotyczy języka, a nie treści merytorycznej, więc nie zastąpi
+    samodzielnego napisania pracy. Jeśli decydujesz się na zlecenie, zarezerwuj na
+    nie czas przed terminem oddania, bo dobra korekta dłuższej pracy zajmuje kilka
+    dni. Po poprawkach językowych pozostaje jeszcze
+    <a href="/poradniki/antyplagiat/">sprawdzenie antyplagiatowe</a>.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o korektę</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Korekta i redakcja to ostatnia prosta, na której łatwo stracić punkty za coś
+    innego niż jakość badania. Najpierw zredaguj treść i styl, potem oczyść tekst
+    z błędów językowych, a na każdym etapie oszukuj własne przyzwyczajenie:
+    odłóż pracę na kilka dni, czytaj na głos i z wydruku, sprawdzaj jeden rodzaj
+    błędu naraz. Przejdź po liście kontrolnej przed oddaniem, a w razie
+    niepewności rozważ profesjonalną korektę. Dopracowany językowo tekst czyta
+    się gładko, co recenzent odbiera jako oznakę staranności całej pracy.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

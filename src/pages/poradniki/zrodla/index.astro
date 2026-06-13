@@ -1,0 +1,295 @@
+---
+// src/pages/poradniki/zrodla/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Jak szukać źródeł", href: "/poradniki/zrodla/" },
+];
+
+const relatedLinks = [
+  { label: "Jak czytać artykuły naukowe", href: "/poradniki/czytanie-artykulow/" },
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Unikanie plagiatu", href: "/poradniki/plagiat/" },
+  { label: "Rozdział teoretyczny", href: "/poradniki/rozdzial-teoretyczny/" },
+];
+
+const faqItems = [
+  {
+    question: "Ile źródeł powinna mieć praca magisterska?",
+    answer:
+      "Nie istnieje sztywna norma, a liczba zależy od dyscypliny i wytycznych promotora. Orientacyjnie praca magisterska opiera się zwykle na 40-60 pozycjach, choć w naukach humanistycznych bywa ich znacznie więcej. Ważniejsza od liczby jest jakość: udział recenzowanych artykułów i monografii naukowych, aktualność oraz dotarcie do źródeł oryginalnych zamiast cytowania za kimś.",
+  },
+  {
+    question: "Czy Wikipedia może być źródłem w pracy magisterskiej?",
+    answer:
+      "Wikipedii nie cytuje się jako źródła naukowego, bo nie ma stałego autorstwa ani recenzji. Można ją wykorzystać na etapie rozpoznania tematu i, co istotne, jako drogowskaz do źródeł. Na dole każdego hasła znajduje się bibliografia, w której bywają wartościowe artykuły i książki. Do pracy trafiają dopiero te pierwotne pozycje, a nie samo hasło.",
+  },
+  {
+    question: "Jak dotrzeć do pełnych tekstów płatnych artykułów za darmo?",
+    answer:
+      "Najpierw zaloguj się do zasobów swojej biblioteki uczelnianej, bo większość uczelni wykupuje dostęp do baz EBSCO, Scopus czy Web of Science. Sprawdź też wersje otwarte: w Google Scholar po prawej stronie wyniku często widnieje link do pliku PDF, a w bazie DOAJ znajdziesz czasopisma w pełni otwarte. Gdy nic nie działa, napisz do autora, bo badacze zwykle chętnie udostępniają własne teksty.",
+  },
+  {
+    question: "Po czym poznać wiarygodne źródło naukowe?",
+    answer:
+      "Wiarygodne źródło ma podanego autora z afiliacją, jest opublikowane w recenzowanym czasopiśmie lub wydawnictwie naukowym, zawiera bibliografię i odwołania do innych badań. Zwróć uwagę na datę, bo w wielu dziedzinach liczy się aktualność. Unikaj czasopism drapieżnych, które publikują wszystko za opłatą bez rzetelnej recenzji.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Jak szukać źródeł naukowych do pracy magisterskiej - bazy i wyszukiwarki"
+  description="Jak szukać źródeł do pracy magisterskiej: Google Scholar, polskie bazy (Biblioteka Nauki, BazEkon, BazHum), Scopus, Web of Science, EBSCO. Strategia wyszukiwania i ocena wiarygodności."
+  updateDate="2026-06-14"
+  readingTime="12 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Dobra praca magisterska stoi na dobrych źródłach, a te rzadko leżą na
+    pierwszej stronie wyników wyszukiwarki. Studenci najczęściej popełniają dwa
+    błędy: poprzestają na ogólnym Google albo szukają chaotycznie, bez
+    pomysłu na słowa kluczowe i kolejność baz. Tymczasem skuteczna kwerenda ma
+    swoją logikę, od rozpoznania tematu, przez bazy polskie, po literaturę
+    światową. Ten poradnik pokazuje, gdzie szukać literatury naukowej, jak
+    korzystać z najważniejszych wyszukiwarek i baz danych oraz jak odróżnić
+    źródło wartościowe od bezużytecznego.
+  </p>
+
+  <h2>Strategia wyszukiwania krok po kroku</h2>
+
+  <p>
+    Zanim wpiszesz pierwsze hasło, ułóż listę słów kluczowych po polsku i po
+    angielsku, łącznie z synonimami. Temat „wypalenie zawodowe nauczycieli"
+    przeszukasz inaczej niż „teacher burnout", a obie wersje dadzą inne wyniki.
+    Potem postępuj warstwami.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Rozpoznanie tematu.</strong> Zacznij od ogólnego obrazu: hasła
+      encyklopedyczne, podręczniki akademickie, przeglądy literatury. Na tym
+      etapie ważne są drogowskazy do dalszych źródeł, nie same teksty.
+    </li>
+    <li>
+      <strong>Źródła polskie.</strong> Poznaj krajowy kontekst tematu w polskich
+      bazach czasopism naukowych.
+    </li>
+    <li>
+      <strong>Literatura światowa.</strong> Rozszerz kwerendę na bazy
+      międzynarodowe, żeby dotrzeć do najnowszych i najczęściej cytowanych badań.
+    </li>
+    <li>
+      <strong>Pogłębianie.</strong> Z każdego wartościowego artykułu wyłuskaj jego
+      bibliografię i sprawdź, kto go cytował później. Tak rozwijasz sieć źródeł
+      w obie strony w czasie.
+    </li>
+  </ul>
+
+  <h2>Google Scholar - punkt wyjścia</h2>
+
+  <p>
+    Google Scholar przeszukuje artykuły, książki, rozprawy i raporty z niemal
+    wszystkich dziedzin. Działa jak zwykła wyszukiwarka, ale kilka funkcji czyni
+    z niego prawdziwe narzędzie badawcze. Pod każdym wynikiem znajdziesz odnośnik
+    „Cytowane przez", który prowadzi do nowszych prac powołujących się na dany
+    tekst, co pozwala śledzić rozwój tematu. Link „Powiązane artykuły" podsuwa
+    publikacje o zbliżonej treści. Po prawej stronie wyniku często pojawia się
+    bezpośredni link do pliku PDF w wersji otwartej.
+  </p>
+
+  <p>
+    Wyszukiwanie zawęzisz operatorami. Cudzysłów wymusza dokładną frazę („praca
+    emocjonalna nauczycieli"), znak minus wyklucza słowo, a filtr lat po lewej
+    stronie ogranicza wyniki do ostatniego okresu. Warto też włączyć w
+    ustawieniach powiązanie z biblioteką uczelnianą, dzięki czemu przy wynikach
+    pojawią się linki do prenumerowanych pełnych tekstów.
+  </p>
+
+  <h2>Polskie bazy czasopism naukowych</h2>
+
+  <p>
+    Polski dorobek najlepiej przeszukać w wyspecjalizowanych bazach, bo wiele
+    rodzimych czasopism nie indeksuje się dobrze w wyszukiwarkach ogólnych.
+    Punktem zbiorczym jest Biblioteka Nauki, która udostępnia pełne teksty z
+    setek polskich periodyków. Dalej wybór zależy od kierunku.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Baza</th>
+        <th>Zakres</th>
+        <th>Dla kogo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Biblioteka Nauki</td>
+        <td>pełne teksty polskich czasopism, wiele dziedzin</td>
+        <td>punkt startowy dla każdego kierunku</td>
+      </tr>
+      <tr>
+        <td>BazEkon</td>
+        <td>ekonomia, zarządzanie, finanse</td>
+        <td>nauki ekonomiczne</td>
+      </tr>
+      <tr>
+        <td>BazHum</td>
+        <td>nauki humanistyczne i społeczne</td>
+        <td>historia, filologia, socjologia</td>
+      </tr>
+      <tr>
+        <td>BazTech</td>
+        <td>nauki techniczne i inżynieryjne</td>
+        <td>kierunki techniczne</td>
+      </tr>
+      <tr>
+        <td>CEEOL</td>
+        <td>czasopisma z Europy Środkowej i Wschodniej</td>
+        <td>humanistyka i nauki społeczne</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Bibliografie dziedzinowe bywają osobnym skarbcem. Polska Bibliografia
+    Historyczna, Polska Bibliografia Literacka czy bibliografie kierunkowe
+    zbierają piśmiennictwo w jednym miejscu i często prowadzą do pozycji
+    pominiętych przez bazy ogólne.
+  </p>
+
+  <h2>Bazy międzynarodowe i dostęp przez uczelnię</h2>
+
+  <p>
+    Najnowsze badania światowe znajdziesz w trzech dużych bazach. Scopus i Web
+    of Science indeksują recenzowane czasopisma z całego świata wraz z danymi o
+    cytowaniach, a platforma EBSCO daje dostęp do pełnych tekstów z wielu
+    dziedzin. Te zasoby są płatne, ale większość uczelni wykupuje do nich
+    subskrypcję, więc po zalogowaniu przez bibliotekę korzystasz z nich bez
+    opłat. Sprawdź na stronie swojej biblioteki listę dostępnych baz, bo to
+    często niewykorzystany zasób opłacony już z czesnego.
+  </p>
+
+  <p>
+    Czasopisma w pełni otwarte zbiera katalog DOAJ. Repozytoria w rodzaju CEON
+    udostępniają polskie publikacje na wolnych licencjach. Z serwisów
+    społecznościowych dla badaczy, takich jak ResearchGate, korzystaj
+    ostrożnie: bywają tam pełne teksty udostępnione przez autorów, ale to nie
+    jest recenzowana baza i nie każdy plik ma status oficjalnej publikacji.
+  </p>
+
+  <h2>Jak ocenić wiarygodność źródła</h2>
+
+  <p>
+    Nie każdy plik PDF z internetu nadaje się do pracy naukowej. Zanim
+    włączysz źródło do bibliografii, sprawdź kilka rzeczy.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Autor i afiliacja.</strong> Tekst ma podanego autora związanego z
+      uczelnią lub instytutem badawczym, a nie anonimową redakcję portalu.
+    </li>
+    <li>
+      <strong>Recenzja.</strong> Artykuł ukazał się w czasopiśmie recenzowanym
+      albo w wydawnictwie naukowym, co daje pewną gwarancję jakości.
+    </li>
+    <li>
+      <strong>Aparat naukowy.</strong> Praca zawiera przypisy i bibliografię, więc
+      można prześledzić, na czym się opiera.
+    </li>
+    <li>
+      <strong>Aktualność.</strong> W większości dziedzin liczy się świeżość
+      ustaleń, choć klasyczne pracy źródłowe pozostają ważne niezależnie od daty.
+    </li>
+    <li>
+      <strong>Brak znamion czasopisma drapieżnego.</strong> Periodyki publikujące
+      wszystko za opłatą, bez rzetelnej recenzji, obniżają wartość pracy.
+    </li>
+  </ul>
+
+  <p>
+    Gdy zgromadzisz materiał, kolejnym krokiem jest jego sprawne przejrzenie i
+    selekcja. O tym, jak efektywnie czytać teksty naukowe i robić użyteczne
+    notatki, piszemy w poradniku o
+    <a href="/poradniki/czytanie-artykulow/">czytaniu artykułów naukowych</a>.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o szukanie źródeł</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Skuteczne szukanie źródeł to nawyk, nie pojedyncza sesja przy komputerze.
+    Zacznij od dobrze ułożonych słów kluczowych w dwóch językach, przeszukaj
+    najpierw bazy polskie, potem światowe, i z każdego trafnego artykułu wyłuskaj
+    kolejne pozycje przez jego bibliografię i cytowania. Loguj się do baz przez
+    bibliotekę uczelnianą, bo masz do nich opłacony dostęp. Każde zebrane źródło
+    od razu zapisuj w menedżerze bibliografii razem z pełnym opisem, dzięki czemu
+    oszczędzisz sobie godzin pracy przed oddaniem
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

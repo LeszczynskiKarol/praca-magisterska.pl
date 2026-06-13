@@ -1,0 +1,234 @@
+---
+// src/pages/poradniki/antyplagiat/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Sprawdzanie antyplagiatowe", href: "/poradniki/antyplagiat/" },
+];
+
+const relatedLinks = [
+  { label: "Unikanie plagiatu", href: "/poradniki/plagiat/" },
+  { label: "Cytowanie i cytaty", href: "/poradniki/cytaty/" },
+  { label: "Korekta i redakcja pracy", href: "/poradniki/korekta/" },
+  { label: "Obrona pracy magisterskiej", href: "/poradniki/obrona/" },
+];
+
+const faqItems = [
+  {
+    question: "Ile trwa sprawdzenie pracy w systemie antyplagiatowym?",
+    answer:
+      "Samo badanie w Jednolitym Systemie Antyplagiatowym trwa zwykle od kilkunastu minut do kilku godzin, zależnie od długości pracy i obciążenia systemu. Dłużej trwa cała procedura wokół niego: promotor musi założyć badanie, poczekać na raport, a następnie go przeanalizować. Dlatego pracę oddaje się z zapasem czasowym przed terminem obrony, a nie w ostatniej chwili.",
+  },
+  {
+    question: "Czy mogę sam sprawdzić pracę w JSA przed oddaniem?",
+    answer:
+      "Dostęp do Jednolitego Systemu Antyplagiatowego mają uczelnie, nie studenci, więc samodzielnie zwykle nie sprawdzisz w nim pracy. Badanie zakłada promotor lub dziekanat. Istnieją komercyjne systemy, które oferują wstępne sprawdzenie, ale ich wynik nie jest tożsamy z raportem JSA, bo korzystają z innych baz porównawczych. Najpewniejszą profilaktyką jest rzetelne cytowanie, nie wcześniejsze testy.",
+  },
+  {
+    question: "Jakie systemy antyplagiatowe stosują polskie uczelnie?",
+    answer:
+      "Obowiązkowy jest Jednolity System Antyplagiatowy prowadzony przez Ośrodek Przetwarzania Informacji i przez niego przechodzi każda praca dyplomowa. Część uczelni korzysta dodatkowo z systemów komercyjnych, na przykład StrikePlagiarism, albo z międzynarodowego Turnitin. Różnią się one bazami porównawczymi i sposobem prezentacji raportu, ale logika jest podobna: porównanie tekstu pracy z dostępnymi źródłami.",
+  },
+  {
+    question: "Czy systemy antyplagiatowe wykrywają tekst napisany przez sztuczną inteligencję?",
+    answer:
+      "Coraz częściej tak. Jednolity System Antyplagiatowy stosuje badanie stylometryczne, które analizuje styl i pomaga ocenić, czy całość mogła powstać samodzielnie. Pojawiają się też osobne narzędzia do wykrywania treści generowanych przez sztuczną inteligencję. Ich skuteczność bywa różna, ale ryzyko wykrycia rośnie, a konsekwencje przypisania sobie cudzego lub wygenerowanego tekstu są poważne.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Sprawdzanie antyplagiatowe pracy - JSA, raport i przebieg procedury"
+  description="Sprawdzanie antyplagiatowe pracy magisterskiej: systemy JSA, StrikePlagiarism i Turnitin, przebieg procedury, jak czytać raport podobieństwa, ile trwa badanie i wykrywanie treści AI."
+  updateDate="2026-06-14"
+  readingTime="11 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Sprawdzenie antyplagiatowe to ostatnia formalna bramka przed dopuszczeniem
+    pracy do obrony. Wokół niej narosło sporo mitów, od magicznego „dozwolonego
+    procentu” po przekonanie, że system sam decyduje o losie pracy. W
+    rzeczywistości badanie to narzędzie w rękach promotora, który czyta raport i
+    podejmuje decyzję. Ten poradnik wyjaśnia, jak przebiega procedura, jakie
+    systemy stosują polskie uczelnie i jak czytać raport podobieństwa. Samym
+    unikaniem plagiatu na etapie pisania zajmujemy się w
+    <a href="/poradniki/plagiat/">osobnym poradniku</a>; tutaj patrzymy na proces
+    sprawdzania.
+  </p>
+
+  <h2>Kto i kiedy sprawdza pracę</h2>
+
+  <p>
+    Badanie antyplagiatowe odbywa się po zaakceptowaniu pracy przez promotora, a
+    przed jej dopuszczeniem do obrony. Procedurę uruchamia promotor albo
+    pracownik dziekanatu, nie student. Zakłada on badanie w systemie, przesyła
+    plik pracy, a po jego zakończeniu otrzymuje raport. Następnie analizuje wynik
+    i albo zwraca pracę do poprawy, albo akceptuje ją i dopuszcza do obrony. Cała
+    sekwencja zajmuje trochę czasu, dlatego pracę składa się z wyprzedzeniem,
+    a nie tuż przed terminem.
+  </p>
+
+  <h2>Systemy stosowane w Polsce</h2>
+
+  <p>
+    Polskie uczelnie obowiązkowo korzystają z Jednolitego Systemu
+    Antyplagiatowego, część dokłada do niego rozwiązania komercyjne. Różnią się
+    one przede wszystkim bazami, z którymi porównują tekst.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>System</th>
+        <th>Charakter</th>
+        <th>Baza porównawcza</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JSA (Jednolity System Antyplagiatowy)</td>
+        <td>obowiązkowy, prowadzony przez OPI</td>
+        <td>repozytorium prac dyplomowych, internet, akty prawne</td>
+      </tr>
+      <tr>
+        <td>StrikePlagiarism</td>
+        <td>komercyjny, używany przez część uczelni</td>
+        <td>internet i własne bazy systemu</td>
+      </tr>
+      <tr>
+        <td>Turnitin</td>
+        <td>międzynarodowy, popularny w pracach anglojęzycznych</td>
+        <td>globalne zasoby publikacji i prac</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Mechanikę samego JSA, w tym poszczególne współczynniki podobieństwa, opisujemy
+    szczegółowo w poradniku o <a href="/poradniki/plagiat/">unikaniu plagiatu</a>.
+  </p>
+
+  <h2>Jak czytać raport podobieństwa</h2>
+
+  <p>
+    Raport to nie wyrok w postaci jednej liczby, lecz zestaw informacji do
+    interpretacji. Składa się zwykle z części ogólnej i szczegółowej. Część
+    ogólna pokazuje współczynniki podobieństwa, czyli udział tekstu pokrywającego
+    się ze źródłami. Część szczegółowa zaznacza konkretne fragmenty i wskazuje, z
+    jakim źródłem się pokrywają, często z kolorowym oznaczeniem na tle pracy.
+    Czytając raport, zwraca się uwagę na kilka rzeczy.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Czy podobne fragmenty mają źródło.</strong> Poprawnie oznaczony
+      cytat z przypisem podbija współczynnik, ale nie jest plagiatem. Promotor
+      widzi tę różnicę.
+    </li>
+    <li>
+      <strong>Długość pokrywających się fragmentów.</strong> Pojedyncze wspólne
+      frazy są naturalne, długie ciągłe fragmenty z jednego źródła budzą
+      podejrzenie przepisywania.
+    </li>
+    <li>
+      <strong>Z jakiego źródła pochodzi podobieństwo.</strong> Zbieżność z aktem
+      prawnym czy definicją słownikową znaczy co innego niż z cudzą pracą
+      dyplomową.
+    </li>
+    <li>
+      <strong>Wynik badania stylometrycznego.</strong> Sygnalizuje, czy styl
+      całości jest spójny i czy praca mogła powstać samodzielnie.
+    </li>
+  </ul>
+
+  <h2>Co oznacza wysoki wynik</h2>
+
+  <p>
+    Wysoki współczynnik nie zawsze przesądza o problemie. Jeśli rośnie przez
+    liczne, rzetelnie oznaczone cytaty, zwykle wystarczy wyjaśnienie złożone
+    promotorowi. Gdy wynika z nieoznaczonych zapożyczeń, konieczna jest przeróbka
+    tekstu: właściwe oznaczenie cytatów, rzetelna parafraza z podaniem źródła albo
+    przeredagowanie fragmentu. Progi graniczne ustala uczelnia, więc warto je znać
+    przed oddaniem pracy. Najskuteczniejszą profilaktyką pozostaje staranne
+    <a href="/poradniki/cytaty/">cytowanie</a> i porządek w źródłach od początku
+    pisania, nie poprawki w panice po badaniu.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o sprawdzanie antyplagiatowe</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Sprawdzanie antyplagiatowe to procedura, nad którą czuwa promotor, a nie
+    automatyczny wyrok systemu. Pracę bada się po akceptacji, a przed obroną,
+    obowiązkowo w JSA, czasem dodatkowo w systemie komercyjnym. Raport czyta się
+    całościowo: liczy się nie sam współczynnik, lecz to, czy podobne fragmenty
+    mają źródło i jak są długie. Wysoki wynik z poprawnych cytatów obronisz
+    wyjaśnieniem, a wynik z nieoznaczonych zapożyczeń wymaga przeróbki. Cała
+    procedura przebiega gładko, gdy od początku rzetelnie
+    <a href="/poradniki/plagiat/">unikasz plagiatu</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

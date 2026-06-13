@@ -1,0 +1,219 @@
+---
+// src/pages/poradniki/drukowanie/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Drukowanie i oprawa pracy", href: "/poradniki/drukowanie/" },
+];
+
+const relatedLinks = [
+  { label: "Formatowanie pracy magisterskiej", href: "/poradniki/formatowanie/" },
+  { label: "Co dalej po obronie", href: "/poradniki/po-obronie/" },
+  { label: "Obrona pracy magisterskiej", href: "/poradniki/obrona/" },
+  { label: "Spis treści", href: "/poradniki/spis-tresci/" },
+];
+
+const faqItems = [
+  {
+    question: "Ile egzemplarzy pracy magisterskiej trzeba wydrukować?",
+    answer:
+      "Najczęściej jeden lub dwa egzemplarze w wersji papierowej, do tego wersja elektroniczna wgrywana do systemu uczelni. Dokładna liczba zależy od regulaminu, więc sprawdź wymagania w dziekanacie. Część uczelni odeszła od papieru niemal całkowicie na rzecz wersji cyfrowej, inne wymagają egzemplarza do akt i dla promotora. Ustal to, zanim cokolwiek oddasz do druku.",
+  },
+  {
+    question: "Jaka oprawa pracy magisterskiej jest wymagana?",
+    answer:
+      "Najczęściej wystarcza oprawa miękka, klejona lub zbindowana, w przezroczystej okładce. Twarda oprawa introligatorska bywa wymagana tylko dla egzemplarza archiwalnego albo nie jest wymagana wcale. Egzemplarz przeznaczony do systemu antyplagiatowego i akt często drukuje się dwustronnie, by ograniczyć objętość. Wzór wymaganej oprawy potwierdź w dziekanacie.",
+  },
+  {
+    question: "Czy do pracy trzeba dołączyć płytę CD?",
+    answer:
+      "Coraz rzadziej. Dawniej do egzemplarza dołączało się płytę z wersją elektroniczną, ale większość uczelni zastąpiła to wgrywaniem pliku do systemu obsługi studiów. Zanim nagrasz płytę, sprawdź aktualne wymagania, bo nośnik fizyczny bywa już zbędny. Plik elektroniczny zwykle musi być zgodny z wersją papierową co do treści.",
+  },
+  {
+    question: "Jak przygotować plik do druku, żeby nic się nie rozjechało?",
+    answer:
+      "Zapisz pracę do formatu PDF, bo wtedy układ, czcionki i odstępy nie zmienią się na innym komputerze ani drukarce. Sprawdź marginesy pod oprawę, zwłaszcza wewnętrzny, który przy bindowaniu musi być nieco szerszy. Przejrzyj numerację stron i to, czy elementy graficzne mieszczą się w polu druku. Wydrukuj najpierw jedną stronę próbną, zanim zlecisz cały nakład.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Drukowanie i oprawa pracy magisterskiej - egzemplarze, oprawa, plik"
+  description="Drukowanie i oprawa pracy magisterskiej: ile egzemplarzy, rodzaj oprawy, druk dwustronny, przygotowanie pliku PDF, marginesy pod oprawę i wersja elektroniczna. Praktyczny poradnik."
+  updateDate="2026-06-14"
+  readingTime="8 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Druk i oprawa to ostatni, czysto techniczny etap przed obroną, na którym
+    łatwo o niepotrzebny stres w ostatniej chwili. Wymagania bywają różne na
+    różnych uczelniach, a część z nich w ostatnich latach przeszła niemal w
+    całości na wersję elektroniczną. Dlatego pierwszą rzeczą nie jest wybór
+    introligatora, lecz sprawdzenie aktualnego regulaminu. Ten poradnik
+    podpowiada, ile egzemplarzy przygotować, jaką wybrać oprawę i jak złożyć plik
+    do druku, żeby nic się nie rozjechało na obcej drukarce.
+  </p>
+
+  <h2>Najpierw sprawdź wymagania uczelni</h2>
+
+  <p>
+    Reguły dotyczące druku różnią się między uczelniami, a nawet wydziałami,
+    dlatego żadna ogólna porada nie zastąpi wytycznych z dziekanatu. Ustal liczbę
+    egzemplarzy, wymagany rodzaj oprawy, druk jedno- czy dwustronny oraz to, czy i
+    w jaki sposób oddaje się wersję elektroniczną. Sprawdź też obowiązujący wzór
+    strony tytułowej i ewentualnych oświadczeń, bo te elementy często mają
+    narzucony układ. Reszta przygotowania opiera się już na tych ustaleniach.
+  </p>
+
+  <h2>Liczba egzemplarzy i wersja elektroniczna</h2>
+
+  <p>
+    Typowo drukuje się jeden lub dwa egzemplarze papierowe, do tego dochodzi
+    wersja elektroniczna wgrywana do uczelnianego systemu. Jeden egzemplarz trafia
+    zwykle do akt, drugi bywa dla promotora. Wersja cyfrowa służy badaniu
+    antyplagiatowemu i archiwizacji, więc jej treść musi zgadzać się z papierem co
+    do słowa. Dawny zwyczaj dołączania płyty CD w wielu miejscach zastąpiło
+    wgrywanie pliku, ale to kolejny punkt do potwierdzenia w dziekanacie.
+  </p>
+
+  <h2>Rodzaj oprawy i druk</h2>
+
+  <p>
+    Wybór oprawy zależy od przeznaczenia egzemplarza. Poniższe zestawienie
+    porządkuje najczęstsze warianty.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rodzaj oprawy</th>
+        <th>Kiedy stosowana</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Miękka, zbindowana lub klejona</td>
+        <td>najczęstszy wybór dla egzemplarza do akt i dla promotora</td>
+      </tr>
+      <tr>
+        <td>Twarda, introligatorska</td>
+        <td>czasem dla egzemplarza archiwalnego, bywa zupełnie zbędna</td>
+      </tr>
+      <tr>
+        <td>Termobindowanie</td>
+        <td>szybka i tania opcja dla wersji roboczej lub jednego egzemplarza</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Egzemplarz do akt często drukuje się dwustronnie, żeby zmniejszyć objętość.
+    Druk dwustronny wymaga ustawienia odpowiednich marginesów, o czym piszemy w
+    poradniku o <a href="/poradniki/formatowanie/">formatowaniu pracy</a>.
+    Drukarnie przy uczelniach zwykle znają lokalne wymagania, więc bywają
+    najwygodniejszym wyborem, choć warto porównać ceny i czas realizacji.
+  </p>
+
+  <h2>Przygotowanie pliku do druku</h2>
+
+  <p>
+    Plik składa się tuż przed drukiem, gdy treść jest już ostateczna. Kilka
+    kroków chroni przed rozjechaniem układu.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Zapisz pracę do PDF.</strong> Format ten utrwala czcionki i układ,
+      więc na obcej drukarce nic się nie przesunie.
+    </li>
+    <li>
+      <strong>Sprawdź margines wewnętrzny.</strong> Przy oprawie część strony
+      znika w grzbiecie, dlatego margines od strony zszycia musi być szerszy.
+    </li>
+    <li>
+      <strong>Przejrzyj numerację i podpisy.</strong> Upewnij się, że spis treści
+      zgadza się z numerami stron, a tabele i rysunki mieszczą się w polu druku.
+    </li>
+    <li>
+      <strong>Zrób wydruk próbny.</strong> Jedna strona na próbę pokaże, czy
+      marginesy i czcionka wyglądają tak, jak na ekranie.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o druk i oprawę</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Druk i oprawa to formalność, która potrafi zaskoczyć tylko wtedy, gdy
+    zostawi się ją na ostatnią chwilę. Zacznij od potwierdzenia wymagań w
+    dziekanacie: liczby egzemplarzy, rodzaju oprawy, druku dwustronnego i sposobu
+    oddania wersji elektronicznej. Złóż pracę do PDF, zadbaj o szerszy margines
+    wewnętrzny pod oprawę i zrób wydruk próbny. Załatwione z wyprzedzeniem
+    drukowanie zdejmuje jedno z napięć tuż przed
+    <a href="/poradniki/obrona/">obroną</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

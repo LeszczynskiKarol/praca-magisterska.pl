@@ -1,0 +1,244 @@
+---
+// src/pages/poradniki/mendeley/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Mendeley - poradnik", href: "/poradniki/mendeley/" },
+];
+
+const relatedLinks = [
+  { label: "Zotero - poradnik", href: "/poradniki/zotero/" },
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Styl APA - szczegółowy poradnik", href: "/poradniki/bibliografia/apa/" },
+  { label: "Jak szukać źródeł naukowych", href: "/poradniki/zrodla/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy Mendeley jest darmowy?",
+    answer:
+      "Podstawowa wersja jest bezpłatna i obejmuje aplikację, dodatek do Worda oraz 2 GB miejsca w chmurze na pliki i synchronizację. To więcej niż w darmowym Zotero. Większą przestrzeń wykupuje się w planach płatnych. Program należy do wydawnictwa Elsevier, co dla części użytkowników bywa argumentem za wyborem rozwiązania niezależnego.",
+  },
+  {
+    question: "Czym jest Mendeley Reference Manager i Mendeley Cite?",
+    answer:
+      "Mendeley Reference Manager to obecna aplikacja desktopowa i internetowa do gromadzenia oraz porządkowania źródeł. Zastąpiła starszy program Mendeley Desktop. Mendeley Cite to dodatek do Worda, który wstawia cytaty i tworzy bibliografię w wybranym stylu. Obie części współpracują ze sobą i synchronizują bibliotekę przez konto użytkownika.",
+  },
+  {
+    question: "Jak dodawać źródła do Mendeleya?",
+    answer:
+      "Źródła dodasz na kilka sposobów: przeciągając pliki PDF do biblioteki, importując dane po numerze DOI, a także zapisując pozycje z przeglądarki dodatkiem Mendeley Web Importer. Przy plikach PDF program próbuje odczytać metadane automatycznie. Tak jak w innych menedżerach, opisy warto sprawdzić, zwłaszcza dla polskich publikacji.",
+  },
+  {
+    question: "Mendeley czy Zotero - co wybrać do pracy magisterskiej?",
+    answer:
+      "Oba programy poradzą sobie z pracą magisterską, więc wybór zależy od preferencji. Mendeley kusi większą darmową przestrzenią w chmurze i wygodnym czytnikiem PDF, a Zotero jest niezależne, otwarte i ma nieco bogatszy zbiór stylów. Jeśli korzystasz już z baz Elseviera, Mendeley wpasuje się w ten obieg. Najważniejsze to wybrać jedno narzędzie i nauczyć się go dobrze.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Mendeley - poradnik dla piszących pracę magisterską"
+  description="Mendeley w pracy magisterskiej: Reference Manager i Mendeley Cite, dodawanie źródeł, organizacja biblioteki, wtyczka do Worda, generowanie bibliografii i porównanie z Zotero."
+  updateDate="2026-06-14"
+  readingTime="10 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Mendeley to jeden z najpopularniejszych menedżerów bibliografii, używany
+    przez studentów i badaczy na całym świecie. Zbiera źródła, porządkuje pliki
+    PDF i samodzielnie tworzy przypisy oraz bibliografię w wybranym stylu. Od
+    Zotero odróżnia go większa darmowa przestrzeń w chmurze i przynależność do
+    wydawnictwa Elsevier. Ten poradnik pokazuje, jak zacząć pracę z Mendeleyem,
+    dodawać i porządkować źródła oraz wstawiać cytaty w Wordzie za pomocą dodatku
+    Mendeley Cite.
+  </p>
+
+  <h2>Dwa elementy Mendeleya</h2>
+
+  <p>
+    Współczesny Mendeley składa się z dwóch części, które warto rozróżnić, bo w
+    sieci wciąż krążą instrukcje do wycofanego już programu Mendeley Desktop.
+    Mendeley Reference Manager to nowa aplikacja, dostępna na komputer i w
+    przeglądarce, w której gromadzisz i porządkujesz źródła. Mendeley Cite to
+    dodatek do Worda, który odpowiada za wstawianie cytatów i tworzenie
+    bibliografii. Obie części łączy konto użytkownika, dzięki czemu biblioteka
+    synchronizuje się między urządzeniami.
+  </p>
+
+  <h2>Zakładanie konta i dodawanie źródeł</h2>
+
+  <p>
+    Pracę zaczynasz od założenia bezpłatnego konta i pobrania aplikacji
+    Reference Manager. Darmowy plan daje 2 GB przestrzeni na pliki, co przy
+    typowej pracy magisterskiej z zapasem mieści zgromadzone artykuły. Źródła
+    dodasz na kilka sposobów.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Przeciągając pliki PDF</strong> do okna biblioteki. Program odczyta
+      metadane z dokumentu, jeśli są dostępne.
+    </li>
+    <li>
+      <strong>Po numerze DOI</strong>, który Mendeley uzupełni do pełnego opisu.
+    </li>
+    <li>
+      <strong>Dodatkiem Mendeley Web Importer</strong> w przeglądarce, który
+      zapisuje pozycje z baz naukowych i katalogów jednym kliknięciem.
+    </li>
+  </ul>
+
+  <h2>Porządkowanie i czytanie</h2>
+
+  <p>
+    Bibliotekę dzielisz na foldery tematyczne, na przykład według rozdziałów
+    pracy, a pozycje oznaczasz słowami kluczowymi do szybkiego filtrowania.
+    Wbudowany czytnik pozwala otwierać pliki PDF, zaznaczać fragmenty i dodawać
+    notatki przypięte do źródła. Notatki zostają w bibliotece, więc wracając do
+    artykułu po tygodniach, od razu widzisz, co było w nim ważne. Funkcja
+    wykrywania duplikatów pomaga uprzątnąć bibliotekę, gdy to samo źródło trafiło
+    do niej dwa razy.
+  </p>
+
+  <h2>Mendeley Cite - cytaty w Wordzie</h2>
+
+  <p>
+    Dodatek Mendeley Cite instalujesz w Wordzie z poziomu sklepu z dodatkami
+    pakietu Office. Po zalogowaniu pojawia się panel z Twoją biblioteką. Pisząc,
+    ustawiasz kursor w miejscu odwołania, wyszukujesz źródło i wstawiasz cytat w
+    wybranym stylu. Pełną bibliografię generujesz jednym poleceniem, a zmiana
+    stylu przeformatuje wszystkie odwołania w dokumencie. Dodatek działa też w
+    Wordzie w wersji internetowej i na iPadzie.
+  </p>
+
+  <h2>Wybór stylu i kontrola opisów</h2>
+
+  <p>
+    Mendeley udostępnia ponad osiem tysięcy stylów, w tym APA, Harvard i Chicago,
+    a także style zgodne z polską normą. Styl wybierasz w panelu dodatku i
+    zmieniasz w razie potrzeby dla całego dokumentu. Jak w każdym menedżerze,
+    jakość gotowej bibliografii zależy od danych pobranych ze źródeł, dlatego
+    przed oddaniem pracy porównaj kilka wpisów ze wzorami obowiązującego stylu.
+    Zasady poszczególnych stylów znajdziesz w poradniku o
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h2>Mendeley a Zotero</h2>
+
+  <p>
+    Wybór między dwoma najpopularniejszymi menedżerami zależy od priorytetów.
+    Poniższe zestawienie pokazuje główne różnice, a samo Zotero opisujemy w
+    <a href="/poradniki/zotero/">osobnym poradniku</a>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Mendeley</th>
+        <th>Zotero</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Model</td>
+        <td>własność wydawnictwa Elsevier</td>
+        <td>otwarte, niezależne</td>
+      </tr>
+      <tr>
+        <td>Darmowa przestrzeń w chmurze</td>
+        <td>2 GB</td>
+        <td>300 MB</td>
+      </tr>
+      <tr>
+        <td>Dodatek do Worda</td>
+        <td>Mendeley Cite</td>
+        <td>wtyczka Zotero</td>
+      </tr>
+      <tr>
+        <td>Liczba stylów</td>
+        <td>ponad 8000</td>
+        <td>ponad 9000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>FAQ - najczęściej zadawane pytania o Mendeley</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Mendeley sprawdzi się jako menedżer bibliografii do pracy magisterskiej,
+    zwłaszcza gdy zależy Ci na większej darmowej przestrzeni w chmurze i wygodnym
+    czytniku plików PDF. Zainstaluj Reference Manager i dodatek Mendeley Cite,
+    zbieraj źródła na bieżąco i wstawiaj cytaty bez przepisywania opisów. Tak jak
+    przy innych narzędziach, gotową bibliografię warto na koniec sprawdzić ręcznie
+    przy polskich pozycjach. Wybór między Mendeleyem a
+    <a href="/poradniki/zotero/">Zotero</a> ma mniejsze znaczenie niż sam nawyk
+    porządkowania źródeł od pierwszego dnia pisania.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

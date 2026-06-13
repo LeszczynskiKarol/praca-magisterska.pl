@@ -1,0 +1,416 @@
+---
+// src/pages/poradniki/bibliografia/chicago/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Bibliografia", href: "/poradniki/bibliografia/" },
+  { label: "Styl Chicago", href: "/poradniki/bibliografia/chicago/" },
+];
+
+const relatedLinks = [
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Przypisy dolne i końcowe", href: "/poradniki/przypisy/" },
+  { label: "Styl APA - szczegółowy poradnik", href: "/poradniki/bibliografia/apa/" },
+  { label: "Tematy prac z historii", href: "/tematy/historia/" },
+];
+
+const faqItems = [
+  {
+    question: "Notes-bibliography czy autor-data - który wariant Chicago wybrać?",
+    answer:
+      "Wariant przypisowo-bibliograficzny (notes-bibliography) z przypisami dolnymi przyjął się w historii, filozofii, historii sztuki i pozostałych naukach humanistycznych. Wariant autor-data, zbliżony do APA, bywa stosowany w naukach społecznych i przyrodniczych. O wyborze przesądza wytyczna wydziału, a w razie jej braku zwyczaj panujący w danej dyscyplinie. Ten poradnik opisuje wariant przypisowy, bo to on dominuje w polskich pracach humanistycznych.",
+  },
+  {
+    question: "Czy w stylu Chicago nadal używa się skrótu „ibidem”?",
+    answer:
+      "Od 17. edycji Chicago Manual of Style „ibid.” (ibidem, „tamże”) przestało być zalecane na rzecz przypisu skróconego przy każdym kolejnym odwołaniu. Osiemnasta edycja z 2024 roku znów dopuszcza „ibidem” przy następujących po sobie odwołaniach do tego samego źródła. W polskiej praktyce „tamże” wciąż jest powszechne, ale przypis skrócony (nazwisko, skrócony tytuł, strona) działa zawsze i nie myli czytelnika przy przestawianiu akapitów.",
+  },
+  {
+    question: "Czym różni się przypis od pozycji w bibliografii?",
+    answer:
+      "To dwa różne zapisy tego samego źródła. W przypisie imię poprzedza nazwisko, elementy rozdzielają przecinki, dane wydawnicze stoją w nawiasie, a na końcu podaje się konkretną stronę: Jan Kowalski, Metodologia historii (Warszawa: PWN, 2020), 45. W bibliografii nazwisko idzie przed imieniem (do sortowania), elementy rozdzielają kropki, a strony książki się pomija: Kowalski, Jan. Metodologia historii. Warszawa: PWN, 2020.",
+  },
+  {
+    question: "Czy w 18. edycji Chicago podaje się miejsce wydania?",
+    answer:
+      "Osiemnasta edycja zrezygnowała z obowiązku podawania miejsca wydania książki, więc opis może kończyć się na wydawcy i roku. Starsze prace i część polskich wydziałów wciąż podają „Miejsce: Wydawca, rok”. Obie formy są poprawne, jeśli stosujesz je konsekwentnie w całej pracy. Sprawdź, której edycji wymaga promotor.",
+  },
+  {
+    question: "Jak w polskiej pracy zapisać przypis Chicago - po polsku czy po angielsku?",
+    answer:
+      "Stosuje się odpowiedniki polskie: „red.” zamiast ed., „w:” zamiast in, „nr” zamiast no., „dostęp” zamiast accessed, „tłum.” zamiast trans. Tytuły artykułów ujmuje się w polski cudzysłów „…”, a tytuły książek i czasopism zapisuje kursywą. Najważniejsza jest jednolitość, więc nie mieszaj polskich i angielskich skrótów w obrębie jednej pracy.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Styl Chicago w pracy magisterskiej - przypisy i bibliografia"
+  description="Styl Chicago po polsku: system przypisowo-bibliograficzny, wzory przypisu pełnego, skróconego i bibliografii dla książki, rozdziału, artykułu i strony www. Przykłady do skopiowania."
+  updateDate="2026-06-13"
+  readingTime="13 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Styl Chicago daje do wyboru dwa różne systemy dokumentowania źródeł.
+    Pierwszy, przypisowo-bibliograficzny (ang. notes-bibliography), opiera się
+    na przypisach dolnych i pełnej bibliografii, dlatego przyjął się w historii,
+    filozofii, historii sztuki i innych naukach humanistycznych. Drugi,
+    autor-data, działa jak APA czy Harvard i bywa stosowany w naukach
+    społecznych oraz przyrodniczych. Zasady wydaje Uniwersytet Chicagowski w
+    podręczniku <em>The Chicago Manual of Style</em>; jesienią 2024 roku ukazała
+    się jego 18. edycja. Ten poradnik skupia się na wariancie przypisowym, bo to
+    on najczęściej obowiązuje w polskich pracach humanistycznych, a różnice
+    wobec wersji autor-data sygnalizujemy osobno.
+  </p>
+
+  <h2>Dwa systemy stylu Chicago</h2>
+
+  <p>
+    Zanim zaczniesz formatować źródła, ustal, którego wariantu wymaga promotor.
+    Różnią się one nie tylko zapisem, lecz całą logiką dokumentacji.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Notes-bibliography (przypisowy)</th>
+        <th>Autor-data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Odwołanie w tekście</td>
+        <td>przypis dolny z numerem</td>
+        <td>nawias (Nazwisko rok)</td>
+      </tr>
+      <tr>
+        <td>Typowe dyscypliny</td>
+        <td>historia, filozofia, humanistyka</td>
+        <td>nauki społeczne i przyrodnicze</td>
+      </tr>
+      <tr>
+        <td>Wykaz na końcu</td>
+        <td>bibliografia</td>
+        <td>lista źródeł (references)</td>
+      </tr>
+      <tr>
+        <td>Rok wydania</td>
+        <td>na końcu opisu</td>
+        <td>tuż po nazwisku autora</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>System przypisowy - przypis i bibliografia</h2>
+
+  <p>
+    W wariancie przypisowym każde odwołanie zapisujesz jako przypis dolny.
+    Pierwszy przypis do danego źródła ma formę pełną. Każde kolejne odwołanie do
+    tego samego źródła skracasz do nazwiska, skróconego tytułu i strony. Na
+    końcu pracy ten sam materiał porządkujesz alfabetycznie w bibliografii. Trzy
+    formy tego samego źródła pokazujemy poniżej obok siebie.
+  </p>
+
+  <h3>Książka</h3>
+  <p class="wzor">
+    <strong>Przypis pełny:</strong> Imię Nazwisko, <em>Tytuł książki</em>
+    (Miejsce: Wydawca, rok), strona.
+  </p>
+  <p class="wzor-przyklad">
+    1. Jan Kowalski, <em>Metodologia historii</em> (Warszawa: PWN, 2020), 45.
+  </p>
+  <p class="wzor">
+    <strong>Przypis skrócony:</strong> Nazwisko, <em>Skrócony tytuł</em>,
+    strona.
+  </p>
+  <p class="wzor-przyklad">
+    8. Kowalski, <em>Metodologia historii</em>, 52.
+  </p>
+  <p class="wzor">
+    <strong>Bibliografia:</strong> Nazwisko, Imię. <em>Tytuł książki</em>.
+    Miejsce: Wydawca, rok.
+  </p>
+  <p class="wzor-przyklad">
+    Kowalski, Jan. <em>Metodologia historii</em>. Warszawa: PWN, 2020.
+  </p>
+  <p>
+    Zwróć uwagę na trzy różnice między przypisem a bibliografią: kolejność imienia
+    i nazwiska, znak rozdzielający (przecinki kontra kropki) i obecność strony.
+    Osiemnasta edycja pozwala pominąć miejsce wydania, więc dopuszczalny jest też
+    zapis „(PWN, 2020)".
+  </p>
+
+  <h3>Rozdział w pracy zbiorowej</h3>
+  <p class="wzor">
+    <strong>Przypis:</strong> Imię Nazwisko, „Tytuł rozdziału", w <em>Tytuł
+    książki</em>, red. Imię Nazwisko (Miejsce: Wydawca, rok), strona.
+  </p>
+  <p class="wzor-przyklad">
+    2. Anna Nowak, „Źródła epistolarne", w <em>Warsztat historyka</em>, red.
+    Piotr Wiśniewski (Kraków: Universitas, 2019), 64.
+  </p>
+  <p class="wzor">
+    <strong>Bibliografia:</strong> Nazwisko, Imię. „Tytuł rozdziału". W
+    <em>Tytuł książki</em>, redakcja Imię Nazwisko. Miejsce: Wydawca, rok.
+  </p>
+  <p class="wzor-przyklad">
+    Nowak, Anna. „Źródła epistolarne". W <em>Warsztat historyka</em>, redakcja
+    Piotr Wiśniewski. Kraków: Universitas, 2019.
+  </p>
+
+  <h3>Artykuł w czasopiśmie</h3>
+  <p class="wzor">
+    <strong>Przypis:</strong> Imię Nazwisko, „Tytuł artykułu", <em>Tytuł
+    Czasopisma</em> tom, nr numer (rok): strona.
+  </p>
+  <p class="wzor-przyklad">
+    3. Maria Lewandowska, „Prasa konspiracyjna 1944 roku", <em>Dzieje
+    Najnowsze</em> 52, nr 3 (2020): 122.
+  </p>
+  <p class="wzor">
+    <strong>Bibliografia:</strong> Nazwisko, Imię. „Tytuł artykułu". <em>Tytuł
+    Czasopisma</em> tom, nr numer (rok): zakres stron.
+  </p>
+  <p class="wzor-przyklad">
+    Lewandowska, Maria. „Prasa konspiracyjna 1944 roku". <em>Dzieje
+    Najnowsze</em> 52, nr 3 (2020): 110-135.
+  </p>
+  <p>
+    Jeśli artykuł ma numer DOI (cyfrowy identyfikator dokumentu), dopisujesz go
+    na końcu, po stronach. W przypisie podajesz konkretną stronę, w bibliografii
+    pełny zakres stron artykułu.
+  </p>
+
+  <h3>Strona internetowa</h3>
+  <p class="wzor">
+    <strong>Przypis:</strong> „Tytuł podstrony", Nazwa serwisu, dostęp dzień
+    miesiąc rok, https://adres.
+  </p>
+  <p class="wzor-przyklad">
+    4. „O projekcie", Polona, dostęp 5 czerwca 2026, https://polona.pl.
+  </p>
+  <p class="wzor">
+    <strong>Bibliografia:</strong> Nazwa serwisu. „Tytuł podstrony". Dostęp
+    dzień miesiąc rok. https://adres.
+  </p>
+
+  <h2>„Ibidem" i przypisy skrócone</h2>
+
+  <p>
+    Przy odwołaniach do tego samego źródła historycznie używano skrótu „ibidem"
+    („tamże"), gdy dwa przypisy następowały bezpośrednio po sobie. Od 17. edycji
+    podręcznik zaleca jednak przypis skrócony zamiast „ibidem", a powód jest
+    praktyczny: przy redakcji tekstu akapity się przesuwają, więc „tamże" zaczyna
+    wskazywać na niewłaściwe źródło. Osiemnasta edycja przywróciła możliwość
+    stosowania „ibidem", lecz przypis skrócony pozostaje bezpieczniejszy.
+    Polskie odpowiedniki łacińskich skrótów zestawia poniższa tabela.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Skrót łaciński</th>
+        <th>Polski odpowiednik</th>
+        <th>Zastosowanie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ibidem (ibid.)</td>
+        <td>tamże</td>
+        <td>to samo źródło, co w przypisie bezpośrednio poprzedzającym</td>
+      </tr>
+      <tr>
+        <td>idem / eadem</td>
+        <td>tenże / taże</td>
+        <td>ten sam autor, inne dzieło</td>
+      </tr>
+      <tr>
+        <td>op. cit.</td>
+        <td>dz. cyt.</td>
+        <td>wcześniej cytowane dzieło danego autora</td>
+      </tr>
+      <tr>
+        <td>passim</td>
+        <td>passim</td>
+        <td>informacja rozproszona w wielu miejscach źródła</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Sam mechanizm przypisów, ich rodzaje i sposób wstawiania w edytorze tekstu
+    rozwijamy w osobnym poradniku o <a href="/poradniki/przypisy/">przypisach
+    dolnych i końcowych</a>.
+  </p>
+
+  <h2>Chicago a APA i Harvard - kiedy co wybrać</h2>
+
+  <p>
+    Wariant przypisowy Chicago różni się od stylów autor-data nie szczegółem
+    interpunkcji, lecz całą filozofią dokumentacji. Zamiast krótkiego nawiasu w
+    tekście pełną informację umieszczasz w przypisie dolnym, co daje miejsce na
+    komentarz, dygresję czy odesłanie do źródła archiwalnego. Dlatego ten styl
+    pasuje do prac, które gęsto operują źródłami pierwotnymi.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Chicago (przypisowy)</th>
+        <th>APA / Harvard</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Odwołanie w tekście</td>
+        <td>przypis dolny z pełnym opisem</td>
+        <td>nawias (Nazwisko, rok)</td>
+      </tr>
+      <tr>
+        <td>Miejsce na komentarz autora</td>
+        <td>tak, w przypisie</td>
+        <td>nie</td>
+      </tr>
+      <tr>
+        <td>Kolejność w przypisie</td>
+        <td>Imię Nazwisko</td>
+        <td>nie dotyczy</td>
+      </tr>
+      <tr>
+        <td>Typowe dyscypliny</td>
+        <td>historia, humanistyka</td>
+        <td>psychologia, nauki społeczne</td>
+      </tr>
+      <tr>
+        <td>Praca ze źródłami archiwalnymi</td>
+        <td>wygodna</td>
+        <td>utrudniona</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Najczęstsze błędy w stylu Chicago</h2>
+
+  <ul>
+    <li>
+      <strong>Ten sam zapis w przypisie i bibliografii.</strong> To dwie różne
+      formy. W przypisie imię poprzedza nazwisko i pojawia się strona, w
+      bibliografii nazwisko idzie pierwsze, a stronę książki się pomija.
+    </li>
+    <li>
+      <strong>Pełny przypis przy każdym odwołaniu.</strong> Pełną formę stosujesz
+      tylko za pierwszym razem. Kolejne odwołania skracasz do nazwiska,
+      skróconego tytułu i strony.
+    </li>
+    <li>
+      <strong>„Tamże" po przestawieniu akapitów.</strong> Jeśli korzystasz z
+      „tamże", sprawdź je na końcu, bo redakcja tekstu łatwo zmienia kolejność
+      przypisów.
+    </li>
+    <li>
+      <strong>Mieszanie skrótów polskich i łacińskich.</strong> Zdecyduj się na
+      „red." albo „ed.", „w:" albo „in", i trzymaj się jednego zestawu.
+    </li>
+    <li>
+      <strong>Kursywa w tytule artykułu.</strong> Kursywą zapisujesz tytuł
+      książki i czasopisma. Tytuł artykułu albo rozdziału zostaje w cudzysłowie.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o styl Chicago</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Chicago w wariancie przypisowym wymaga zapamiętania jednej zasady
+    nadrzędnej: pierwszy przypis pełny, kolejne skrócone, a na końcu alfabetyczna
+    bibliografia w formie z nazwiskiem na pierwszym miejscu. Styl ten najlepiej
+    sprawdza się tam, gdzie praca gęsto operuje źródłami, czyli przede wszystkim
+    na <a href="/tematy/historia/">kierunkach historycznych i humanistycznych</a>.
+    Menedżer bibliografii w rodzaju Zotero wygeneruje przypisy automatycznie,
+    ale przy polskich odpowiednikach skrótów warto je zweryfikować ręcznie.
+    Porównanie wszystkich stylów cytowania znajdziesz w <a
+    href="/poradniki/bibliografia/">kompletnym poradniku o bibliografii</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+  .wzor {
+    background: #f5f7ff;
+    border-left: 4px solid #4f46e5;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.9rem;
+  }
+  .wzor-przyklad {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+</style>

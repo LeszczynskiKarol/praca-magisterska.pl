@@ -1,0 +1,345 @@
+---
+// src/pages/poradniki/bibliografia/harvard/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Bibliografia", href: "/poradniki/bibliografia/" },
+  { label: "Styl Harvard", href: "/poradniki/bibliografia/harvard/" },
+];
+
+const relatedLinks = [
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Styl APA - szczegółowy poradnik", href: "/poradniki/bibliografia/apa/" },
+  { label: "Cytowanie i cytaty", href: "/poradniki/cytaty/" },
+  { label: "Formatowanie pracy", href: "/poradniki/formatowanie/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy styl Harvard ma jeden oficjalny podręcznik?",
+    answer:
+      "Nie. Harvard nie ma jednego wydawcy ani numerowanych edycji, jak APA czy Chicago. To nazwa zbiorcza dla rodziny zbliżonych stylów autor-data. Najczęściej cytowanym punktem odniesienia jest brytyjski przewodnik Cite Them Right, ale wiele uczelni publikuje własne, lekko różniące się wytyczne. Dlatego przed pisaniem sprawdź wersję obowiązującą na swoim wydziale i trzymaj się jej konsekwentnie.",
+  },
+  {
+    question: "Czym różni się Harvard od APA?",
+    answer:
+      "Oba style działają w systemie autor-data, więc w tekście wyglądają podobnie. Różnice są w bibliografii: w Harvardzie tytuł artykułu ujmuje się w pojedynczy cudzysłów, a między ostatnimi autorami pisze się słowo (po polsku „i”), podczas gdy APA stawia znak &. APA pomija miejsce wydania książki, część odmian Harvardu wciąż je podaje w formie „Miejsce: Wydawca”. W praktyce o wyborze decyduje wytyczna uczelni.",
+  },
+  {
+    question: "Czy w Harvardzie podaje się miejsce wydania książki?",
+    answer:
+      "To zależy od wersji. Trzynasta edycja przewodnika Cite Them Right zrezygnowała z miejsca wydania dla książek, więc nowsze prace często go nie zawierają. Starsze i polskie odmiany Harvardu zwykle zachowują zapis „Miejsce: Wydawca”. Sprawdź wzór obowiązujący na uczelni i stosuj go w całej bibliografii bez wyjątków.",
+  },
+  {
+    question: "Jak cytować w Harvardzie pracę trzech i więcej autorów?",
+    answer:
+      "Przy trzech i większej liczbie autorów w tekście podaje się tylko pierwsze nazwisko z dopiskiem „i in.” (łacińskie et al.), na przykład (Kowalski i in., 2021). W spisie źródeł zasady bywają różne: część odmian wymienia wszystkich autorów, inne ucinają listę po pierwszym nazwisku z „i in.”. Konwencję ustal na początku i nie zmieniaj jej w trakcie.",
+  },
+  {
+    question: "Jak zapisać numer strony w cytowaniu w tekście?",
+    answer:
+      "Przy cytacie dosłownym i przy odwołaniu do konkretnego fragmentu dodaje się numer strony. Spotyka się dwa zapisy: z przecinkiem i skrótem „s.” – (Kowalski, 2021, s. 45) – albo z dwukropkiem, typowy dla wielu polskich wydziałów ekonomicznych – (Kowalski 2021: 45). Wybierz jeden i pozostań przy nim.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Styl Harvard w pracy magisterskiej - cytowanie i wzory bibliografii"
+  description="Styl Harvard po polsku: cytowanie autor-data w tekście, wzory bibliografii dla książki, rozdziału, artykułu i strony www, zapis wielu autorów. Gotowe przykłady do skopiowania."
+  updateDate="2026-06-13"
+  readingTime="12 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Harvard nie ma jednego oficjalnego wydawcy ani numeru edycji. Pod tą nazwą
+    funkcjonuje rodzina zbliżonych stylów autor-data, a poszczególne uczelnie
+    publikują własne, lekko różniące się wytyczne. Najczęściej przywoływanym
+    punktem odniesienia jest brytyjski przewodnik <em>Cite Them Right</em>.
+    Mechanizm wszędzie działa tak samo: w tekście podajesz nazwisko autora i rok
+    w nawiasie, a pełny opis trafia do alfabetycznej listy źródeł na końcu pracy,
+    bez przypisów dolnych. Ten poradnik zbiera reguły najpopularniejszej odmiany
+    Harvardu z gotowymi wzorami dla każdego typu źródła i wskazuje miejsca, w
+    których polskie uczelnie wprowadzają własne warianty.
+  </p>
+
+  <h2>Cytowanie w tekście - system autor-data</h2>
+
+  <p>
+    Każde odwołanie sygnalizujesz nazwiskiem autora i rokiem wydania. Działają
+    dwa warianty. W cytowaniu nawiasowym całość zamykasz w nawiasie na końcu
+    zdania, na przykład: „Motywacja wewnętrzna silniej wiąże się z trwałością
+    nawyku (Kowalski, 2021)". W cytowaniu narracyjnym nazwisko wplatasz w
+    zdanie, a w nawiasie zostaje sam rok: „Jak wykazał Kowalski (2021),
+    motywacja wewnętrzna…". Przy dosłownym cytacie dopisujesz stronę: (Kowalski,
+    2021, s. 45).
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Liczba autorów</th>
+        <th>Cytowanie nawiasowe</th>
+        <th>Cytowanie narracyjne</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1 autor</td>
+        <td>(Kowalski, 2021)</td>
+        <td>Kowalski (2021)</td>
+      </tr>
+      <tr>
+        <td>2 autorów</td>
+        <td>(Kowalski i Nowak, 2021)</td>
+        <td>Kowalski i Nowak (2021)</td>
+      </tr>
+      <tr>
+        <td>3 i więcej</td>
+        <td>(Kowalski i in., 2021)</td>
+        <td>Kowalski i in. (2021)</td>
+      </tr>
+      <tr>
+        <td>Instytucja</td>
+        <td>(Główny Urząd Statystyczny, 2023)</td>
+        <td>Główny Urząd Statystyczny (2023)</td>
+      </tr>
+      <tr>
+        <td>Brak daty</td>
+        <td>(Kowalski, b.d.)</td>
+        <td>Kowalski (b.d.)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Dwie reguły porządkowe ułatwiają życie. Kilka źródeł w jednym nawiasie
+    rozdzielasz średnikami i układasz alfabetycznie: (Kowalski, 2021; Nowak,
+    2019). Gdy ten sam autor ma dwie prace z tego samego roku, rozróżniasz je
+    literami: (Kowalski, 2021a, 2021b). Te same litery muszą wrócić w
+    bibliografii.
+  </p>
+
+  <h2>Wzory opisów bibliograficznych w stylu Harvard</h2>
+
+  <p>
+    Lista źródeł jest alfabetyczna według nazwiska pierwszego autora, z
+    wysunięciem pierwszego wiersza każdej pozycji (hanging indent). Schemat
+    ogólny brzmi: nazwisko i inicjał, rok w nawiasie, tytuł, dane wydawnicze.
+    Poniżej wzory pokrywające większość pozycji w typowej pracy magisterskiej.
+  </p>
+
+  <h3>Książka</h3>
+  <p class="wzor">
+    Nazwisko, I. (rok) <em>Tytuł książki kursywą</em>. Miejsce: Wydawca.
+  </p>
+  <p class="wzor-przyklad">
+    Kowalski, J. (2020) <em>Metodologia badań społecznych</em>. Warszawa: PWN.
+  </p>
+  <p>
+    Trzynasta edycja <em>Cite Them Right</em> pomija miejsce wydania, więc w
+    nowszej odmianie zapis kończy się na nazwie wydawcy. Polskie wydziały
+    częściej zachowują pełną formę „Miejsce: Wydawca".
+  </p>
+
+  <h3>Rozdział w pracy zbiorowej</h3>
+  <p class="wzor">
+    Nazwisko, I. (rok) 'Tytuł rozdziału', w: Nazwisko, I. (red.) <em>Tytuł
+    książki kursywą</em>. Miejsce: Wydawca, s. 11-35.
+  </p>
+  <p class="wzor-przyklad">
+    Nowak, A. (2019) 'Teorie motywacji', w: Wiśniewski, P. (red.)
+    <em>Psychologia pracy</em>. Kraków: Impuls, s. 45-67.
+  </p>
+
+  <h3>Artykuł w czasopiśmie</h3>
+  <p class="wzor">
+    Nazwisko, I. (rok) 'Tytuł artykułu', <em>Tytuł Czasopisma</em>, tom(numer),
+    s. strony.
+  </p>
+  <p class="wzor-przyklad">
+    Lewandowska, M. (2021) 'Wypalenie zawodowe nauczycieli', <em>Psychologia
+    Społeczna</em>, 16(2), s. 123-145.
+  </p>
+  <p>
+    Tytuł artykułu zapisuje się prostym pismem w pojedynczym cudzysłowie, a
+    kursywą tylko nazwę czasopisma. Jeśli artykuł ma numer DOI (cyfrowy
+    identyfikator dokumentu), dopisujesz go na końcu.
+  </p>
+
+  <h3>Strona internetowa</h3>
+  <p class="wzor">
+    Nazwisko, I. lub Instytucja (rok) <em>Tytuł strony</em>. Dostępne na:
+    https://adres (dostęp: dzień miesiąc rok).
+  </p>
+  <p class="wzor-przyklad">
+    Główny Urząd Statystyczny (2023) <em>Rocznik statystyczny Polski</em>.
+    Dostępne na: https://stat.gov.pl (dostęp: 5 czerwca 2026).
+  </p>
+
+  <h2>Harvard a APA - różnice w praktyce</h2>
+
+  <p>
+    Oba style należą do rodziny autor-data i w tekście wyglądają niemal
+    identycznie. Rozjeżdżają się w zapisie bibliografii. Najczęstsze pomyłki
+    biorą się z mieszania reguł obu systemów, dlatego warto je zestawić.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Styl Harvard</th>
+        <th>Styl APA 7</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Łącznik ostatnich autorów</td>
+        <td>słowo „i" (Kowalski i Nowak)</td>
+        <td>znak &amp; (Kowalski &amp; Nowak)</td>
+      </tr>
+      <tr>
+        <td>Tytuł artykułu</td>
+        <td>w pojedynczym cudzysłowie</td>
+        <td>bez cudzysłowu, prostym pismem</td>
+      </tr>
+      <tr>
+        <td>Miejsce wydania książki</td>
+        <td>zwykle podawane (Miejsce: Wydawca)</td>
+        <td>pomijane</td>
+      </tr>
+      <tr>
+        <td>Strona w cytowaniu</td>
+        <td>(Kowalski, 2021, s. 45) lub (Kowalski 2021: 45)</td>
+        <td>(Kowalski, 2021, s. 45)</td>
+      </tr>
+      <tr>
+        <td>Oficjalny podręcznik</td>
+        <td>brak, wiele odmian (m.in. Cite Them Right)</td>
+        <td>jeden, wydawany przez APA</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Najczęstsze błędy w stylu Harvard</h2>
+
+  <ul>
+    <li>
+      <strong>Mieszanie odmian Harvardu.</strong> Raz miejsce wydania jest, raz
+      go nie ma; raz przecinek przed rokiem, raz nie. Wybierz jedną wersję na
+      początku i pilnuj jej w każdej pozycji.
+    </li>
+    <li>
+      <strong>Znak &amp; zamiast „i".</strong> To zapożyczenie z APA. W
+      polskiej pracy w stylu Harvard między nazwiskami stawiasz spójnik „i".
+    </li>
+    <li>
+      <strong>Kursywa w złym miejscu.</strong> Kursywą zapisujesz tytuł książki
+      i nazwę czasopisma. Tytuł artykułu zostaje prostym pismem w cudzysłowie.
+    </li>
+    <li>
+      <strong>Pozycje w bibliografii bez odpowiednika w tekście.</strong> Lista
+      źródeł zawiera wyłącznie prace przywołane w pracy. Recenzent sprawdza to
+      wyrywkowo w pierwszej kolejności.
+    </li>
+    <li>
+      <strong>Brak konsekwencji w numerze strony.</strong> Raz „s. 45", raz
+      „: 45". Ustal zapis na starcie.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o styl Harvard</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Harvard opanujesz szybko, jeśli zapamiętasz schemat: w tekście (Nazwisko,
+    rok), w bibliografii nazwisko, rok w nawiasie, tytuł i dane wydawnicze, a
+    całość alfabetycznie. Największą pułapką nie są same wzory, lecz różnice
+    między odmianami Harvardu, dlatego punktem wyjścia zawsze jest wytyczna
+    uczelni. Menedżer bibliografii w rodzaju Zotero wygeneruje opisy
+    automatycznie, ale przy polskich źródłach warto je sprawdzić ręcznie według
+    powyższych wzorów. Reguły samego cytowania, parafrazy i cytatu dosłownego
+    rozwijamy w poradniku o <a href="/poradniki/cytaty/">cytowaniu w pracy
+    magisterskiej</a>, a porównanie wszystkich stylów znajdziesz w <a
+    href="/poradniki/bibliografia/">kompletnym poradniku o bibliografii</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+  .wzor {
+    background: #f5f7ff;
+    border-left: 4px solid #4f46e5;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.9rem;
+  }
+  .wzor-przyklad {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+</style>

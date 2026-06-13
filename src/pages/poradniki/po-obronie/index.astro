@@ -1,0 +1,212 @@
+---
+// src/pages/poradniki/po-obronie/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Co dalej po obronie", href: "/poradniki/po-obronie/" },
+];
+
+const relatedLinks = [
+  { label: "Obrona pracy magisterskiej", href: "/poradniki/obrona/" },
+  { label: "Typowe pytania na obronie", href: "/poradniki/pytania-obrona/" },
+  { label: "Prezentacja na obronę", href: "/poradniki/prezentacja/" },
+  { label: "Wszystkie poradniki", href: "/poradniki/" },
+];
+
+const faqItems = [
+  {
+    question: "Kiedy dostanę dyplom po obronie?",
+    answer:
+      "Na sam dyplom czeka się zwykle do około 30 dni od obrony, bo uczelnia musi go wystawić wraz z suplementem i odpisami. Tuż po obronie otrzymujesz informację o wyniku i ocenie, a często zaświadczenie o ukończeniu studiów, które tymczasowo potwierdza tytuł, na przykład wobec pracodawcy. Dokładny termin i sposób odbioru dyplomu podaje dziekanat.",
+  },
+  {
+    question: "Czym jest suplement do dyplomu?",
+    answer:
+      "Suplement to dokument dołączany do dyplomu, który opisuje przebieg studiów: zrealizowane przedmioty, oceny, liczbę punktów oraz informacje o uczelni i kierunku. Ma wersję polską i angielską, dzięki czemu ułatwia uznanie wykształcenia za granicą i u pracodawcy. Wydaje się go razem z dyplomem, bez osobnego wniosku.",
+  },
+  {
+    question: "Co trzeba załatwić w dziekanacie po obronie?",
+    answer:
+      "Najczęściej rozliczasz się z uczelnią przez kartę obiegową, która potwierdza brak zaległości, na przykład w bibliotece. Warto też wiedzieć, że po skończeniu studiów wygasa ubezpieczenie zdrowotne z tytułu bycia studentem, więc trzeba zadbać o nie z innego źródła. Szczegóły formalności różnią się między uczelniami, dlatego dopytaj w dziekanacie o aktualną listę kroków.",
+  },
+  {
+    question: "Co można robić po studiach magisterskich?",
+    answer:
+      "Tytuł magistra otwiera kilka ścieżek. Możesz wejść na rynek pracy z pełnym wykształceniem wyższym, kontynuować naukę w szkole doktorskiej, jeśli ciągnie Cię badania, albo poszerzyć kompetencje na studiach podyplomowych. Wybór zależy od planów zawodowych. Doświadczenie zdobyte przy pisaniu pracy, czyli samodzielne badanie i analiza, bywa atutem niezależnie od dalszej drogi.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Co dalej po obronie pracy magisterskiej - dyplom, formalności, kariera"
+  description="Co dzieje się po obronie pracy magisterskiej: kiedy dostaniesz dyplom i suplement, formalności w dziekanacie, karta obiegowa, ubezpieczenie oraz dalsze ścieżki nauki i kariery."
+  updateDate="2026-06-14"
+  readingTime="8 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Obrona za Tobą, ale kilka spraw zostaje do domknięcia, zanim formalnie
+    zostaniesz magistrem z dyplomem w ręku. Większość studentów po obronie czuje
+    głównie ulgę i niewiele wie o tym, co dalej: kiedy dostanie dyplom, co
+    załatwić w dziekanacie i jakie drzwi otwiera nowy tytuł. Ten poradnik
+    porządkuje formalności po obronie i pokazuje ścieżki, które masz teraz przed
+    sobą, żeby ostatni etap studiów przebiegł bez niespodzianek.
+  </p>
+
+  <h2>Tuż po obronie</h2>
+
+  <p>
+    Bezpośrednio po obronie komisja narada się krótko i ogłasza wynik wraz z
+    oceną pracy oraz oceną z egzaminu dyplomowego. Od tej chwili masz prawo
+    posługiwać się tytułem magistra, nawet jeśli na sam dyplom poczekasz jeszcze
+    kilka tygodni. Wiele uczelni wydaje od razu zaświadczenie o ukończeniu
+    studiów, które tymczasowo potwierdza tytuł wobec pracodawcy albo przy
+    rekrutacji na dalsze studia. Pełny przebieg samego egzaminu opisujemy w
+    poradniku o <a href="/poradniki/obrona/">obronie pracy magisterskiej</a>.
+  </p>
+
+  <h2>Dyplom i suplement</h2>
+
+  <p>
+    Na dyplom czeka się zwykle do około 30 dni. Uczelnia wystawia go razem z
+    suplementem i odpisami, w tym odpisem w języku angielskim, jeśli o niego
+    poprosisz. Warto wiedzieć, co kryje się pod tymi dokumentami.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Dokument</th>
+        <th>Co zawiera</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dyplom</td>
+        <td>potwierdzenie uzyskania tytułu magistra na danym kierunku</td>
+      </tr>
+      <tr>
+        <td>Suplement</td>
+        <td>przebieg studiów: przedmioty, oceny, punkty, opis kierunku</td>
+      </tr>
+      <tr>
+        <td>Odpisy</td>
+        <td>dodatkowe egzemplarze, w tym w języku obcym do celów zagranicznych</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Formalności do domknięcia</h2>
+
+  <p>
+    Po obronie zostaje rozliczenie z uczelnią. Zwykle przechodzi się przez kartę
+    obiegową, która potwierdza brak zaległości, na przykład zwrot książek do
+    biblioteki. Pamiętaj też o sprawach, o których uczelnia nie zawsze
+    przypomina.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Ubezpieczenie zdrowotne.</strong> Status studenta wygasa, więc
+      ubezpieczenie trzeba zapewnić sobie z innego tytułu, na przykład z pracy lub
+      przez rodzinę.
+    </li>
+    <li>
+      <strong>Odbiór dyplomu.</strong> Ustal w dziekanacie termin i sposób
+      odbioru, czasem osobiście, czasem za pełnomocnictwem.
+    </li>
+    <li>
+      <strong>Legitymacja studencka.</strong> Traci ważność po ukończeniu
+      studiów, a zasady jej zwrotu zależą od uczelni.
+    </li>
+  </ul>
+
+  <h2>Co dalej - nauka i kariera</h2>
+
+  <p>
+    Dyplom magistra to pełne wykształcenie wyższe, które otwiera kilka ścieżek.
+    Możesz wejść na rynek pracy, kontynuować naukę w szkole doktorskiej, jeśli
+    interesuje Cię działalność badawcza, albo uzupełnić kwalifikacje na studiach
+    podyplomowych. Niezależnie od wyboru warto docenić to, czego nauczyło Cię samo
+    pisanie pracy: prowadzenie badania, krytyczna analiza źródeł i samodzielne
+    formułowanie wniosków to umiejętności cenione w wielu zawodach, a nie tylko
+    akademicki obowiązek.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o etap po obronie</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Po obronie zostaje już tylko domknięcie formalności. Wynik poznajesz od razu i
+    od tej chwili jesteś magistrem, a na dyplom z suplementem czekasz zwykle do
+    miesiąca. Rozlicz się z uczelnią przez kartę obiegową, zadbaj o ubezpieczenie
+    zdrowotne po utracie statusu studenta i ustal termin odbioru dyplomu. Potem
+    przed Tobą wybór dalszej drogi: praca, szkoła doktorska albo studia
+    podyplomowe. To naturalny moment, by odetchnąć po miesiącach pracy i docenić,
+    że całą tę drogę udało się przejść do końca.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

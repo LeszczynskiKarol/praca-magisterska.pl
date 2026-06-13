@@ -1,0 +1,255 @@
+---
+// src/pages/poradniki/prezentacja/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Prezentacja na obronę", href: "/poradniki/prezentacja/" },
+];
+
+const relatedLinks = [
+  { label: "Obrona pracy magisterskiej", href: "/poradniki/obrona/" },
+  { label: "Typowe pytania na obronie", href: "/poradniki/pytania-obrona/" },
+  { label: "Jak radzić sobie ze stresem", href: "/poradniki/stres/" },
+  { label: "Zakończenie pracy", href: "/poradniki/zakonczenie/" },
+];
+
+const faqItems = [
+  {
+    question: "Ile slajdów powinna mieć prezentacja na obronę?",
+    answer:
+      "Orientacyjnie 10-12 slajdów, czyli mniej więcej tyle, ile zdążysz spokojnie omówić w przewidzianym czasie. Zasada jest prosta: około jednego slajdu na minutę wystąpienia. Lepiej mieć kilka slajdów rozwiniętych w głowie niż dwadzieścia, których nie zdążysz pokazać. Liczy się treść i tempo, nie liczba plansz.",
+  },
+  {
+    question: "Jak długo trwa wystąpienie na obronie?",
+    answer:
+      "Najczęściej od 10 do 15 minut, ale dokładny czas wyznacza regulamin uczelni lub promotor, więc warto go ustalić wcześniej. Wystąpienie powinno zmieścić się w limicie z zapasem, bo przekroczenie czasu robi złe wrażenie i bywa przerywane przez komisję. Przećwicz prezentację z zegarkiem, żeby znać jej realną długość.",
+  },
+  {
+    question: "Co powinno znaleźć się na slajdach?",
+    answer:
+      "Stała struktura obejmuje slajd tytułowy, cel i problem badawczy, krótko metodę, najważniejsze wyniki, wnioski i slajd końcowy. Nacisk kładzie się na część badawczą i wnioski, bo to one interesują komisję. Teorię streszcza się do minimum. Na slajdach umieszczaj hasła, wykresy i tabele, a nie pełne zdania do odczytania.",
+  },
+  {
+    question: "Czy można czytać z kartki podczas obrony?",
+    answer:
+      "Zerkanie do notatek jest dopuszczalne, ale czytanie całego wystąpienia z kartki obniża ocenę wrażenia i sugeruje brak swobody w temacie. Lepiej mieć przy sobie skrótowy plan z hasłami i mówić własnymi słowami. Skoro znasz swoją pracę najlepiej ze wszystkich w sali, opowiedzenie jej powinno być łatwiejsze niż odczytanie.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Prezentacja na obronę pracy magisterskiej - struktura, slajdy, czas"
+  description="Jak przygotować prezentację na obronę pracy magisterskiej: struktura slajdów, optymalna liczba plansz, czas wystąpienia, zasady wizualne i częste błędy. Praktyczny poradnik z wzorem układu."
+  updateDate="2026-06-14"
+  readingTime="10 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Prezentacja to pierwsze, co komisja zobaczy i usłyszy podczas obrony, więc
+    decyduje o pierwszym wrażeniu. Dobrze przygotowana porządkuje wystąpienie i
+    odciąża pamięć, źle zrobiona rozprasza i odbiera pewność siebie. Najczęstszy
+    błąd to przeniesienie całych akapitów pracy na slajdy i odczytywanie ich z
+    ekranu. Tymczasem prezentacja ma wspierać opowieść o pracy, a nie ją
+    zastępować. Ten poradnik pokazuje, jak zbudować slajdy, ile ich
+    przygotować i jak zmieścić się w czasie, żeby wystąpienie zabrzmiało pewnie.
+  </p>
+
+  <h2>Struktura prezentacji</h2>
+
+  <p>
+    Prezentacja na obronę ma utrwalony układ, który prowadzi komisję od pytania
+    badawczego do wniosków. Nacisk pada na część własną i wyniki, bo to one
+    odróżniają Twoją pracę od podręcznika. Teorię ograniczasz do niezbędnego tła.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Slajd</th>
+        <th>Zawartość</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tytułowy</td>
+        <td>temat pracy, imię i nazwisko, promotor, uczelnia</td>
+      </tr>
+      <tr>
+        <td>Cel i problem</td>
+        <td>po co powstała praca, główne pytanie lub hipoteza</td>
+      </tr>
+      <tr>
+        <td>Tło teoretyczne</td>
+        <td>jeden slajd z najważniejszymi pojęciami, bez wykładu</td>
+      </tr>
+      <tr>
+        <td>Metoda</td>
+        <td>jak przeprowadzono badanie, próba, narzędzia</td>
+      </tr>
+      <tr>
+        <td>Wyniki</td>
+        <td>najważniejsze ustalenia na wykresach i w tabelach</td>
+      </tr>
+      <tr>
+        <td>Wnioski</td>
+        <td>odpowiedź na pytanie badawcze, znaczenie wyników</td>
+      </tr>
+      <tr>
+        <td>Końcowy</td>
+        <td>podziękowanie i zaproszenie do pytań</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Ile slajdów i ile czasu</h2>
+
+  <p>
+    Czas wystąpienia wyznacza regulamin, najczęściej od 10 do 15 minut, dlatego
+    ustal go z promotorem zanim zaczniesz przygotowania. Pod ten limit dobierasz
+    liczbę slajdów, mniej więcej jeden na minutę, co daje około 10-12 plansz.
+    Lepiej zaplanować z lekkim zapasem niż walczyć z czasem na sali. Przekroczenie
+    limitu komisja odbiera jako brak panowania nad materiałem, a niedociągnięcie
+    sugeruje, że niewiele masz do powiedzenia o własnym badaniu.
+  </p>
+
+  <h2>Zasady czytelnego slajdu</h2>
+
+  <p>
+    Slajd ma być tłem dla Twoich słów, nie ich zapisem. Kilka reguł utrzymuje go
+    w ryzach.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Jeden komunikat na slajd.</strong> Każda plansza niesie jedną myśl,
+      a nie streszczenie całego rozdziału.
+    </li>
+    <li>
+      <strong>Hasła zamiast zdań.</strong> Punkty po kilka słów, które rozwijasz
+      głosem, czytają się z daleka i nie kuszą do odczytywania.
+    </li>
+    <li>
+      <strong>Dane na wykresach.</strong> Wyniki pokazuj wizualnie, bo wykres
+      przemawia szybciej niż tabela liczb. Zasady opisujemy w poradniku o
+      <a href="/poradniki/tabele-wykresy/">tabelach i wykresach</a>.
+    </li>
+    <li>
+      <strong>Duża, czytelna czcionka</strong> i spokojna kolorystyka. Tekst
+      mniejszy niż około 24 punktów z ostatniego rzędu będzie nieczytelny.
+    </li>
+    <li>
+      <strong>Spójny szablon.</strong> Jeden styl na wszystkich slajdach wygląda
+      poważniej niż zlepek różnych układów.
+    </li>
+  </ul>
+
+  <h2>Próba przed obroną</h2>
+
+  <p>
+    Prezentacji nie poznaje się dopiero na sali. Przećwicz całe wystąpienie na
+    głos, z zegarkiem, najlepiej przed inną osobą albo nagrywając się telefonem.
+    Próba ujawnia slajdy, których nie umiesz omówić, miejsca, gdzie się gubisz, i
+    realny czas wystąpienia. Przy okazji oswajasz tremę, bo wypowiedziana kilka
+    razy treść układa się w pamięci. Przygotowanie do samej rozmowy z komisją i
+    spodziewane pytania omawiamy w poradniku o
+    <a href="/poradniki/pytania-obrona/">pytaniach na obronie</a>.
+  </p>
+
+  <h2>Częste błędy</h2>
+
+  <ul>
+    <li>
+      <strong>Ściana tekstu na slajdzie.</strong> Komisja czyta zamiast słuchać,
+      a Ty tracisz uwagę sali.
+    </li>
+    <li>
+      <strong>Odczytywanie slajdów słowo w słowo.</strong> Brzmi sztywno i
+      sugeruje brak swobody w temacie.
+    </li>
+    <li>
+      <strong>Za dużo teorii, za mało wyników.</strong> Komisja zna podręczniki,
+      interesuje ją Twoje badanie.
+    </li>
+    <li>
+      <strong>Przekroczenie czasu.</strong> Zwykle kończy się przerwaniem
+      wystąpienia w najmniej wygodnym momencie.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o prezentację</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Dobra prezentacja na obronę jest krótka, uporządkowana i wizualna. Trzymaj
+    się sprawdzonego układu od celu do wniosków, postaw na część badawczą,
+    umieszczaj na slajdach hasła i wykresy zamiast pełnych zdań i zmieść się w
+    czasie z zapasem. Przede wszystkim przećwicz wystąpienie na głos, bo to ono,
+    a nie same slajdy, decyduje o wrażeniu. Resztę przygotowań do tego dnia
+    zbieramy w poradniku o <a href="/poradniki/obrona/">obronie pracy
+    magisterskiej</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

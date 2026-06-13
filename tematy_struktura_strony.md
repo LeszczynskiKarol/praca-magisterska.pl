@@ -1,5 +1,57 @@
 # 📚 Lista tematów poradnikowych - praca-magisterska.pl
 
+---
+
+## ✅ STAN AKTUALNY (2026-06-13) — sekcja wiążąca
+
+> **Uwaga:** tabele z oznaczeniami ✅/🔴/🟡/🟢 w dalszej części tego pliku są
+> historyczne i **częściowo nieaktualne** (powstały na początku projektu).
+> Wiążący jest poniższy stan, ustalony na podstawie zawartości `src/pages/`.
+
+### Kierunki (`/tematy/`) — 26 gotowych
+
+Gotowe (26): administracja, bezpieczeństwo narodowe, budownictwo, dziennikarstwo,
+ekonomia, filologia angielska, filologia polska, finanse i rachunkowość,
+fizjoterapia, **historia** (dodana 2026-06-13), informatyka, logistyka, marketing,
+ochrona środowiska, pedagogika (+ przedszkolna-i-wczesnoszkolna), pielęgniarstwo
+(+ psychiatryczne), politologia, praca socjalna, prawo, psychologia, rolnictwo,
+socjologia, stosunki międzynarodowe, turystyka i rekreacja, zarządzanie,
+zdrowie publiczne.
+
+**Kierunki DO ZROBIENIA (opcjonalne, brak strony):**
+- 🔴 (warto, są wyszukiwane): kryminologia, dietetyka, kosmetologia, ratownictwo medyczne
+- 🟡 (niżej): resocjalizacja, geografia, architektura
+
+### Poradniki (`/poradniki/`) — stan
+
+**Gotowe:** wybor-tematu, konspekt, cel-pracy, znalezienie-promotora, harmonogram,
+od-czego-zaczac-mgr, narzedzia, wstep, zakonczenie, spis-tresci, streszczenie,
+struktura, rozdzial-teoretyczny, jak-napisac-prace-magisterska, cytaty, przypisy,
+formatowanie, bibliografia (+ apa), obrona oraz cały hub **metodologia** z 14
+podstronami (badania ilościowe/jakościowe, ankieta, wywiad, hipotezy, dobor-proby,
+pytania/problemy/zmienne badawcze, metody-i-techniki, analiza ilościowa/jakościowa,
+rozdzial-metodologiczny, rozdzial-badawczy).
+
+**Poradniki DO ZROBIENIA (priorytet ↓):**
+1. ✅ ~~Bibliografia – style: harvard, chicago~~ — GOTOWE (2026-06-13), podpięte w hubie
+2. ✅ ~~Klaster „pisanie"~~ — GOTOWE (2026-06-14): zrodla, plagiat, jezyk-naukowy, zotero,
+   mendeley, word, latex, tabele-wykresy, czytanie-artykulow, pisanie-angielski — wszystkie
+   podpięte w hubie poradników (kategoria „Pisanie")
+3. ✅ ~~Klaster „finalizacja"~~ — GOTOWE (2026-06-14): prezentacja, pytania-obrona, korekta,
+   antyplagiat, drukowanie, stres, po-obronie — podpięte w hubie (kategoria „Finalizacja")
+4. **NASTĘPNE → Metodologia – uzupełnienia 🟢:** case-study, obserwacja, sondaz,
+   analiza-dokumentow, eksperyment, triangulacja, etyka, badania-online
+5. **Struktura – uzupełnienia 🟢:** aneksy, wykaz-tabel, wykaz-skrotow
+6. **Kierunek 🔴:** historia gotowa; do rozważenia kryminologia, dietetyka, kosmetologia, ratownictwo
+
+### SEO – quick wins (z analizy GSC 2026-06-13)
+- `/tematy/psychologia/` — fraza „praca magisterska psychologia": 274 wyśw, poz. 8,7,
+  **CTR tylko 1,1%** → poprawić title/meta/H1 (najszybszy zysk).
+- Dociągnąć z 2.–3. strony Google: `/poradniki/metodologia/badania-ilosciowe/` (poz. 22,9),
+  `/poradniki/wstep/` (21,7), `/poradniki/konspekt/` (36,9), `/tematy/prawo/` (39,5).
+
+---
+
 ## Struktura kategorii
 
 Na stronie praca-magisterska.pl używamy 5 kategorii:

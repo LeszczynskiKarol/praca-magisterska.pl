@@ -1,0 +1,250 @@
+---
+// src/pages/poradniki/zotero/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Zotero - poradnik", href: "/poradniki/zotero/" },
+];
+
+const relatedLinks = [
+  { label: "Mendeley - poradnik", href: "/poradniki/mendeley/" },
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Styl APA - szczegółowy poradnik", href: "/poradniki/bibliografia/apa/" },
+  { label: "Jak szukać źródeł naukowych", href: "/poradniki/zrodla/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy Zotero jest darmowe?",
+    answer:
+      "Tak, program jest w pełni darmowy i rozwijany jako oprogramowanie otwarte. Bezpłatnie pobierzesz aplikację i wtyczkę do edytora tekstu, a konto daje 300 MB miejsca na synchronizację plików w chmurze. Większy limit przestrzeni jest płatny, ale do typowej pracy magisterskiej darmowy zakres zwykle wystarcza, zwłaszcza gdy nie przechowujesz w chmurze setek plików PDF.",
+  },
+  {
+    question: "Czy Zotero poprawnie obsługuje polskie źródła i style?",
+    answer:
+      "Tak, ale wymaga kontroli. Zotero udostępnia ponad dziewięć tysięcy stylów, w tym polskie adaptacje APA i style zgodne z normą PN-ISO 690. Przy imporcie polskich publikacji warto sprawdzić poprawność pól: czasem brakuje znaków diakrytycznych albo źle rozpoznane jest nazwisko z imieniem. Dane edytuje się ręcznie w panelu po prawej stronie.",
+  },
+  {
+    question: "Jak dodać wtyczkę Zotero do Worda?",
+    answer:
+      "Wtyczka do edytora tekstu instaluje się automatycznie razem z programem Zotero. Po uruchomieniu Worda pojawia się zakładka Zotero z przyciskami do wstawiania cytatów i generowania bibliografii. Jeśli zakładka się nie pokazała, w ustawieniach Zotero w sekcji Cite można ją zainstalować ponownie. Wtyczka działa też w LibreOffice i Dokumentach Google.",
+  },
+  {
+    question: "Czy korzystając z Zotero wciąż trzeba sprawdzać bibliografię ręcznie?",
+    answer:
+      "Tak. Program generuje opisy automatycznie, ale ich jakość zależy od danych pobranych ze źródła. Przy polskich pozycjach i mniej znanych czasopismach zdarzają się braki lub błędy w polach. Przed oddaniem pracy przejrzyj wygenerowaną bibliografię i porównaj kilka wpisów ze wzorami obowiązującego stylu, żeby wychwycić pomyłki automatu.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Zotero - poradnik dla piszących pracę magisterską"
+  description="Zotero w pracy magisterskiej: instalacja, dodawanie źródeł jednym kliknięciem, kolekcje i tagi, wtyczka do Worda, generowanie bibliografii w stylu APA i innych, synchronizacja."
+  updateDate="2026-06-14"
+  readingTime="11 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Ręczne przepisywanie opisów bibliograficznych to jedna z najbardziej
+    żmudnych części pisania pracy, a przy kilkudziesięciu źródłach łatwo o
+    pomyłkę i niespójność. Zotero rozwiązuje ten problem: zbiera źródła,
+    porządkuje je i samo generuje przypisy oraz bibliografię w wybranym stylu.
+    Program jest darmowy, otwarty i działa na każdym systemie. Ten poradnik
+    przeprowadzi Cię od instalacji, przez dodawanie i porządkowanie źródeł, po
+    wstawianie cytatów w Wordzie i tworzenie gotowej bibliografii.
+  </p>
+
+  <h2>Instalacja i pierwsze uruchomienie</h2>
+
+  <p>
+    Zotero składa się z dwóch części, które instaluje się razem. Aplikacja na
+    komputer przechowuje bibliotekę źródeł, a dodatek do przeglądarki, zwany
+    konektorem, pozwala zapisywać pozycje jednym kliknięciem podczas przeglądania
+    katalogów i baz. Po pobraniu obu elementów ze strony projektu warto założyć
+    bezpłatne konto. Synchronizacja z chmurą zabezpiecza bibliotekę przed utratą
+    i daje dostęp do tych samych źródeł z innego komputera.
+  </p>
+
+  <h2>Dodawanie źródeł</h2>
+
+  <p>
+    Najwygodniej zbiera się źródła konektorem przeglądarki. Gdy otworzysz stronę
+    artykułu w bazie naukowej, katalogu biblioteki albo w Google Scholar, ikona
+    konektora rozpozna typ pozycji i zapisze ją wraz z metadanymi do biblioteki.
+    Przy artykułach często dołączy też plik PDF. Pozycje dodasz również na inne
+    sposoby.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Po numerze DOI lub ISBN.</strong> Wystarczy kliknąć ikonę różdżki i
+      wpisać identyfikator, a Zotero pobierze pełny opis.
+    </li>
+    <li>
+      <strong>Przeciągając plik PDF.</strong> Program spróbuje odczytać metadane
+      bezpośrednio z dokumentu.
+    </li>
+    <li>
+      <strong>Ręcznie.</strong> Dla źródeł bez metadanych (archiwalia, materiały
+      wewnętrzne) wypełniasz pola samodzielnie.
+    </li>
+  </ul>
+
+  <h2>Porządkowanie biblioteki</h2>
+
+  <p>
+    Przy kilkudziesięciu pozycjach sama lista przestaje wystarczać. Zotero
+    porządkuje źródła na dwa uzupełniające się sposoby. Kolekcje działają jak
+    foldery tematyczne, na przykład osobno dla rozdziału teoretycznego, a osobno
+    dla części badawczej. Jedno źródło może należeć do wielu kolekcji bez
+    duplikowania pliku. Tagi, czyli słowa kluczowe, pozwalają filtrować
+    bibliotekę w poprzek kolekcji, gdy szukasz wszystkich pozycji o danym
+    zagadnieniu. Wbudowany czytnik PDF umożliwia zaznaczanie fragmentów i
+    dodawanie notatek, które zostają powiązane ze źródłem.
+  </p>
+
+  <h2>Wtyczka do Worda i wstawianie cytatów</h2>
+
+  <p>
+    Najmocniejsza strona programu ujawnia się w edytorze tekstu. Wtyczka
+    instaluje się razem z Zotero i dodaje w Wordzie osobną zakładkę. Pisząc,
+    ustawiasz kursor w miejscu odwołania i klikasz przycisk wstawiania cytatu,
+    a następnie wyszukujesz źródło po nazwisku lub tytule. Program wstawi
+    odwołanie w wybranym stylu. Na końcu pracy jeden przycisk generuje pełną
+    bibliografię ze wszystkich cytowanych pozycji. Gdy dodasz nowe źródło albo
+    zmienisz styl, bibliografia zaktualizuje się automatycznie. Wtyczka
+    współpracuje też z LibreOffice i Dokumentami Google.
+  </p>
+
+  <h2>Wybór stylu cytowania</h2>
+
+  <p>
+    Zotero udostępnia ponad dziewięć tysięcy stylów, więc znajdziesz w nim APA,
+    Harvard, Chicago, a także style zgodne z polską normą PN-ISO 690. Styl
+    wybierasz przy pierwszym wstawianiu cytatu, a w razie potrzeby zmieniasz go
+    dla całego dokumentu z jednego miejsca. Cały tekst przeformatuje się
+    natychmiast. Jeśli Twoja uczelnia wymaga konkretnej odmiany stylu, sprawdź,
+    czy jest dostępna w repozytorium stylów Zotero, i dobierz najbliższą.
+    Zasady poszczególnych stylów opisujemy w poradnikach o
+    <a href="/poradniki/bibliografia/apa/">APA</a> i o
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h2>Zotero a Mendeley - krótkie porównanie</h2>
+
+  <p>
+    Drugim popularnym menedżerem jest Mendeley. Oba programy realizują te same
+    zadania, różnią się szczegółami, które zestawia tabela. Szerzej Mendeleya
+    opisujemy w <a href="/poradniki/mendeley/">osobnym poradniku</a>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cecha</th>
+        <th>Zotero</th>
+        <th>Mendeley</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Model</td>
+        <td>otwarte, niezależne</td>
+        <td>własność wydawnictwa Elsevier</td>
+      </tr>
+      <tr>
+        <td>Darmowa przestrzeń w chmurze</td>
+        <td>300 MB</td>
+        <td>2 GB</td>
+      </tr>
+      <tr>
+        <td>Zbieranie źródeł z przeglądarki</td>
+        <td>konektor, bardzo sprawny</td>
+        <td>dodatek do przeglądarki</td>
+      </tr>
+      <tr>
+        <td>Liczba stylów</td>
+        <td>ponad 9000</td>
+        <td>ponad 8000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>FAQ - najczęściej zadawane pytania o Zotero</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Zotero oszczędza czas tam, gdzie najłatwiej o błąd, czyli przy opisach źródeł
+    i bibliografii. Zainstaluj program z konektorem, zbieraj pozycje na bieżąco
+    od pierwszego dnia kwerendy, porządkuj je w kolekcje i tagi, a cytaty wstawiaj
+    wtyczką w Wordzie. Jedyne, o czym trzeba pamiętać, to kontrola wygenerowanych
+    opisów przy polskich źródłach, bo automat nie zawsze rozpozna je bezbłędnie.
+    Nawyk dodawania każdego źródła zaraz po jego znalezieniu zwraca się z nawiązką
+    przy składaniu
+    <a href="/poradniki/bibliografia/">bibliografii</a> na końcu pracy.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

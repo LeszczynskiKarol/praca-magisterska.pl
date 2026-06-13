@@ -1,0 +1,196 @@
+---
+// src/pages/poradniki/stres/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Stres przed obroną", href: "/poradniki/stres/" },
+];
+
+const relatedLinks = [
+  { label: "Obrona pracy magisterskiej", href: "/poradniki/obrona/" },
+  { label: "Prezentacja na obronę", href: "/poradniki/prezentacja/" },
+  { label: "Typowe pytania na obronie", href: "/poradniki/pytania-obrona/" },
+  { label: "Harmonogram pisania", href: "/poradniki/harmonogram/" },
+];
+
+const faqItems = [
+  {
+    question: "Jak opanować tremę przed obroną?",
+    answer:
+      "Najlepiej działa przygotowanie, bo trema rośnie tam, gdzie czujesz, że czegoś nie ogarniasz. Przećwicz wystąpienie na głos i odpowiedzi na typowe pytania, dzięki czemu wejdziesz na salę z poczuciem panowania nad materiałem. Tuż przed obroną pomagają proste techniki: spokojny, głęboki oddech, rozluźnienie ramion i kilka minut w ciszy. Pamiętaj, że umiarkowana trema mobilizuje i jest naturalna.",
+  },
+  {
+    question: "Czy stres przed obroną jest normalny?",
+    answer:
+      "Tak, to typowa reakcja przed ważnym wystąpieniem i odczuwa ją większość studentów. Umiarkowany stres wręcz pomaga, bo podnosi koncentrację i poziom energii. Problem zaczyna się dopiero wtedy, gdy napięcie paraliżuje. Wtedy warto sięgnąć po techniki oddechowe, dobre przygotowanie i realistyczne spojrzenie na sytuację, a w razie potrzeby porozmawiać z kimś o swoich obawach.",
+  },
+  {
+    question: "Co robić w nocy przed obroną?",
+    answer:
+      "Przede wszystkim się wyspać, bo zarwana noc osłabia koncentrację bardziej niż brak ostatniej powtórki. Wieczorem zrób spokojnie ostatni przegląd prezentacji i najważniejszych tez, ale nie ucz się do późna. Przygotuj wcześniej ubranie, dokumenty i dojazd, żeby rano nie dokładać sobie napięcia. Lekka aktywność, spacer albo rozmowa z bliskimi pomagają rozładować nerwy.",
+  },
+  {
+    question: "Co zrobić, gdy podczas obrony zatnę się ze stresu?",
+    answer:
+      "Zrób krótką pauzę i weź oddech, bo cisza trwa krócej, niż się wydaje z perspektywy mówiącego. Możesz napić się wody, co daje naturalny moment na zebranie myśli. Jeśli zapomnisz wątku, wróć do planu prezentacji albo poproś o powtórzenie pytania. Komisja widziała wiele obron i traktuje chwilowe zacięcie ze zrozumieniem, więc jedno potknięcie nie przekreśla całości.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Stres przed obroną pracy magisterskiej - jak opanować tremę"
+  description="Jak poradzić sobie ze stresem przed obroną pracy magisterskiej: rola przygotowania, techniki oddechowe, dzień przed obroną, sposób na zacięcie i realistyczne spojrzenie na komisję."
+  updateDate="2026-06-14"
+  readingTime="9 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Stres przed obroną odczuwa niemal każdy, niezależnie od tego, jak dobra jest
+    praca. To naturalna reakcja na ważne wystąpienie przed komisją, a w
+    umiarkowanej dawce nawet pomaga, bo podnosi koncentrację. Kłopot zaczyna się,
+    gdy napięcie zaczyna paraliżować i odbiera dostęp do wiedzy, którą przecież
+    masz. Dobra wiadomość jest taka, że tremę da się oswoić, a najlepszą metodą
+    nie jest żaden trik, lecz solidne przygotowanie. Ten poradnik zbiera sposoby
+    na opanowanie nerwów, od tygodni przed obroną po samą salę egzaminacyjną.
+  </p>
+
+  <h2>Przygotowanie jako najlepszy lek na stres</h2>
+
+  <p>
+    Trema rośnie tam, gdzie pojawia się poczucie niepewności. Im lepiej znasz
+    swoją pracę i przebieg obrony, tym mniej zostaje miejsca na panikę. Dlatego
+    najskuteczniejsza praca nad stresem zaczyna się na długo przed dniem obrony.
+    Przećwicz wystąpienie na głos kilka razy, najlepiej z zegarkiem i przed inną
+    osobą. Przygotuj odpowiedzi na typowe pytania, które zbieramy w poradniku o
+    <a href="/poradniki/pytania-obrona/">pytaniach na obronie</a>, i dopracuj
+    <a href="/poradniki/prezentacja/">prezentację</a>. Wchodzi o to, by wejść na
+    salę z poczuciem, że materiał masz pod kontrolą.
+  </p>
+
+  <h2>Techniki na opanowanie nerwów</h2>
+
+  <p>
+    Gdy napięcie narasta, ciało reaguje szybszym oddechem i spiętymi mięśniami.
+    Kilka prostych technik pozwala je rozładować.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Spokojny oddech.</strong> Wolny wdech nosem i dłuższy wydech
+      obniżają tętno. Kilka takich oddechów tuż przed wejściem wyraźnie uspokaja.
+    </li>
+    <li>
+      <strong>Rozluźnienie ciała.</strong> Świadome opuszczenie ramion i
+      rozluźnienie szczęki przerywa napięcie, które nakręca stres.
+    </li>
+    <li>
+      <strong>Wizualizacja.</strong> Wyobrażenie sobie spokojnego przebiegu
+      obrony oswaja sytuację, zanim ona nastąpi.
+    </li>
+    <li>
+      <strong>Realne spojrzenie.</strong> Komisja nie jest wrogiem. Promotor jest
+      po Twojej stronie, a obrona to formalność wieńcząca lata pracy, nie pułapka.
+    </li>
+  </ul>
+
+  <h2>Dzień przed i dzień obrony</h2>
+
+  <p>
+    Wieczór przed obroną warto poświęcić na spokojny, ostatni przegląd
+    prezentacji i głównych tez, bez nocnego wkuwania. Sen waży więcej niż
+    dodatkowa powtórka, bo niewyspanie osłabia koncentrację i pamięć. Przygotuj z
+    wyprzedzeniem ubranie, dokumenty i plan dojazdu, żeby rano nie dokładać sobie
+    napięcia drobiazgami. W dniu obrony zjedz coś lekkiego, przyjdź wcześniej i
+    daj sobie kilka minut w ciszy przed wejściem. Lekki ruch albo spacer pomaga
+    rozładować nadmiar adrenaliny.
+  </p>
+
+  <h2>Gdy zatniesz się podczas wystąpienia</h2>
+
+  <p>
+    Zacięcie zdarza się nawet dobrze przygotowanym i nie jest katastrofą. Jeśli
+    stracisz wątek, zrób krótką pauzę i weź oddech, bo cisza brzmi dłużej w Twojej
+    głowie niż w odbiorze sali. Łyk wody daje naturalny moment na zebranie myśli.
+    Możesz wrócić do planu prezentacji albo, przy pytaniu, poprosić o jego
+    powtórzenie. Komisja widziała dziesiątki obron i chwilowe potknięcie traktuje
+    ze zrozumieniem, więc jeden zawahany moment nie przekreśla całego wystąpienia.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o stres przed obroną</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Stres przed obroną jest normalny i w umiarkowanej dawce wręcz pomaga, więc
+    celem nie jest jego całkowite zniknięcie, lecz utrzymanie go w ryzach.
+    Najwięcej daje przygotowanie: przećwiczone wystąpienie i odpowiedzi sprawiają,
+    że wchodzisz na salę z poczuciem kontroli. Do tego dochodzą proste techniki
+    oddechowe, wyspana noc i realistyczne spojrzenie na komisję, która Ci sprzyja.
+    Skoro znasz swoją pracę lepiej niż ktokolwiek w sali, obrona jest okazją, żeby
+    to pokazać. Pełen przebieg tego dnia opisujemy w poradniku o
+    <a href="/poradniki/obrona/">obronie pracy magisterskiej</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

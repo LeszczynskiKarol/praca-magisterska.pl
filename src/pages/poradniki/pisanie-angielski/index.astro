@@ -1,0 +1,232 @@
+---
+// src/pages/poradniki/pisanie-angielski/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Pisanie w języku angielskim", href: "/poradniki/pisanie-angielski/" },
+];
+
+const relatedLinks = [
+  { label: "Streszczenie pracy magisterskiej", href: "/poradniki/streszczenie/" },
+  { label: "Język naukowy", href: "/poradniki/jezyk-naukowy/" },
+  { label: "Jak szukać źródeł naukowych", href: "/poradniki/zrodla/" },
+  { label: "Cytowanie i cytaty", href: "/poradniki/cytaty/" },
+];
+
+const faqItems = [
+  {
+    question: "Jak napisać abstract (streszczenie po angielsku) do pracy magisterskiej?",
+    answer:
+      "Abstract ma zwykle 150-250 słów i streszcza całą pracę w stałym układzie: cel badania, metoda, najważniejsze wyniki i wniosek. Pisze się go w czasie przeszłym dla tego, co zrobiono, i w czasie teraźniejszym dla ustaleń ogólnych. Unikaj cytatów i skrótów, których wcześniej nie rozwiniesz. Abstract powstaje na końcu, gdy znasz już pełną treść pracy.",
+  },
+  {
+    question: "Czy można napisać pracę w DeepL lub innym tłumaczu?",
+    answer:
+      "Tłumacz maszynowy pomaga zrozumieć tekst i podsuwa pierwszą wersję zdania, ale nie zastąpi redakcji. Automaty gubią terminologię specjalistyczną, mylą rejestr i tworzą kalki, które native speaker od razu wychwytuje. Tłumaczenia używaj jako punktu wyjścia, a potem sprawdź terminologię w źródłach anglojęzycznych i, jeśli to praca w całości po angielsku, rozważ korektę u osoby biegłej w języku.",
+  },
+  {
+    question: "Jakie błędy najczęściej popełniają Polacy piszący po angielsku?",
+    answer:
+      "Najczęstsze to pomijanie lub mylenie przedimków a i the, kalki składniowe z polskiego, błędny szyk zdania, fałszywi przyjaciele (na przykład „eventually” to nie „ewentualnie”) i nadużywanie strony biernej. Dochodzą do tego różnice interpunkcyjne i nawyk budowania bardzo długich zdań. Świadomość tych pułapek to pierwszy krok do ich unikania.",
+  },
+  {
+    question: "Czy lepiej pisać krótkie czy długie zdania po angielsku?",
+    answer:
+      "Academic English ceni jasność, a ta rośnie przy krótszych zdaniach. Polski styl naukowy toleruje długie, wielokrotnie złożone konstrukcje, które przeniesione wprost do angielszczyzny stają się nieczytelne. Lepiej rozbić myśl na dwa lub trzy zdania o jasnej strukturze podmiot-orzeczenie-dopełnienie niż budować jedno piętrowe. Prostota nie obniża poziomu naukowego tekstu.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Pisanie pracy po angielsku - academic English i streszczenie (abstract)"
+  description="Academic English w pracy magisterskiej: jak napisać abstract, cechy stylu naukowego po angielsku, częste błędy Polaków, przydatne zwroty i narzędzia wspierające pisanie po angielsku."
+  updateDate="2026-06-14"
+  readingTime="11 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Z angielszczyzną akademicką styka się niemal każdy magistrant, choćby przy
+    streszczeniu, które wiele uczelni każe dołączyć po angielsku. Studenci
+    filologii i kierunków międzynarodowych piszą po angielsku całą pracę. W obu
+    przypadkach obowiązują te same zasady academic English, a większość kłopotów
+    bierze się z przenoszenia polskich nawyków wprost na grunt angielski. Ten
+    poradnik pokazuje, jak napisać poprawny abstract, czym cechuje się naukowy
+    styl angielski i jakich typowych błędów unikać.
+  </p>
+
+  <h2>Abstract - najczęstszy punkt styku</h2>
+
+  <p>
+    Streszczenie po angielsku, czyli abstract, to dla większości studentów
+    jedyny obowiązkowy fragment w tym języku, a zarazem wizytówka pracy w bazach
+    naukowych. Ma zwykle od 150 do 250 słów i streszcza całość w stałym
+    porządku.
+  </p>
+
+  <ul>
+    <li><strong>Cel</strong> – po co powstała praca i jakie pytanie stawia.</li>
+    <li><strong>Metoda</strong> – jak przeprowadzono badanie.</li>
+    <li><strong>Wyniki</strong> – co udało się ustalić.</li>
+    <li><strong>Wniosek</strong> – co z tego wynika i jakie ma znaczenie.</li>
+  </ul>
+
+  <p>
+    To, co zrobiono, opisuje się zwykle w czasie przeszłym, a ustalenia ogólne w
+    teraźniejszym. W abstrakcie nie ma miejsca na cytaty ani nierozwinięte
+    skróty. Pisze się go na końcu, gdy znasz już całą treść pracy. Polską wersję
+    streszczenia omawiamy w osobnym poradniku o
+    <a href="/poradniki/streszczenie/">streszczeniu pracy</a>.
+  </p>
+
+  <h2>Cechy academic English</h2>
+
+  <p>
+    Naukowy angielski rządzi się tymi samymi wartościami co polski styl naukowy,
+    czyli precyzją, obiektywizmem i ostrożnością, ale realizuje je inaczej.
+    Najważniejsza różnica dotyczy długości zdania. Angielszczyzna akademicka ceni
+    klarowność opartą na krótszych zdaniach o wyraźnej strukturze. Reguły
+    wspólne z polszczyzną opisaliśmy w poradniku o
+    <a href="/poradniki/jezyk-naukowy/">języku naukowym</a>; poniżej skupiamy się
+    na tym, co specyficzne dla angielskiego.
+  </p>
+
+  <p>
+    Charakterystyczne dla academic English są wyrażenia ostrożne, tak zwany
+    hedging: zamiast twierdzić wprost, autor pisze „the results suggest",
+    „this may indicate", „it appears that". Częste są też utrwalone wyrażenia
+    łączące, na przykład „however", „moreover", „in contrast", „therefore",
+    które porządkują wywód. Strona bierna jest dopuszczalna, lecz nie powinna
+    dominować, bo zaciera, kto czego dokonał.
+  </p>
+
+  <h2>Częste błędy Polaków</h2>
+
+  <p>
+    Większość pomyłek powtarza się niezależnie od kierunku, bo wynika z różnic
+    między językami. Świadomość tych pułapek pozwala ich pilnować przy redakcji.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Problem</th>
+        <th>Na czym polega</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Przedimki a / the</td>
+        <td>pomijanie lub mylenie, bo polszczyzna ich nie ma</td>
+      </tr>
+      <tr>
+        <td>Kalki składniowe</td>
+        <td>tłumaczenie zdania słowo w słowo z polskiego</td>
+      </tr>
+      <tr>
+        <td>Fałszywi przyjaciele</td>
+        <td>„eventually" znaczy „ostatecznie", nie „ewentualnie"; „actual" to „rzeczywisty", nie „aktualny"</td>
+      </tr>
+      <tr>
+        <td>Szyk zdania</td>
+        <td>swobodny szyk polski przeniesiony na sztywniejszy angielski</td>
+      </tr>
+      <tr>
+        <td>Zbyt długie zdania</td>
+        <td>wielokrotnie złożone konstrukcje tracące czytelność</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Narzędzia, które pomagają</h2>
+
+  <p>
+    Pisanie po angielsku warto wesprzeć narzędziami, pod warunkiem że
+    traktujesz je jako pomoc, a nie wyrocznię. Słownik kolokacji podpowie, które
+    słowa naturalnie łączą się ze sobą, na przykład „conduct research", a nie
+    „make research". Korpus języka albo wyszukiwarka fraz pokażą, czy dane
+    wyrażenie rzeczywiście jest używane. Tłumacz maszynowy przyspiesza pierwszą
+    wersję zdania, ale jego efekt trzeba zweryfikować, bo automaty gubią
+    terminologię i tworzą kalki. Terminologię specjalistyczną najpewniej
+    sprawdzisz wprost w anglojęzycznych źródłach z Twojej dziedziny, dlatego
+    czytanie literatury po angielsku jest najlepszą szkołą pisania. O tym, gdzie
+    jej szukać, piszemy w poradniku o
+    <a href="/poradniki/zrodla/">szukaniu źródeł naukowych</a>.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o pisanie po angielsku</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Pisanie po angielsku w pracy magisterskiej nie wymaga literackiej swady, lecz
+    poprawności i jasności. Abstract złóż w stałym porządku: cel, metoda, wyniki,
+    wniosek, w granicach mniej więcej 200 słów. Stawiaj na krótsze zdania, używaj
+    ostrożnych wyrażeń i utrwalonych konektorów, a uważaj na przedimki, kalki i
+    fałszywych przyjaciół. Narzędzia językowe traktuj jako wsparcie weryfikowane
+    w źródłach, bo najwięcej o naturalnym academic English nauczysz się,
+    czytając prace w swojej dziedzinie.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

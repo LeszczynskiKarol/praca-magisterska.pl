@@ -1,0 +1,213 @@
+---
+// src/pages/poradniki/latex/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "LaTeX dla początkujących", href: "/poradniki/latex/" },
+];
+
+const relatedLinks = [
+  { label: "Word - formatowanie pracy", href: "/poradniki/word/" },
+  { label: "Formatowanie pracy magisterskiej", href: "/poradniki/formatowanie/" },
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Tabele i wykresy", href: "/poradniki/tabele-wykresy/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy warto pisać pracę magisterską w LaTeX-u?",
+    answer:
+      "Zależy od kierunku. LaTeX opłaca się tam, gdzie liczą się wzory matematyczne, kod, przypisy i automatyczne odsyłacze, czyli na kierunkach ścisłych i technicznych. Daje wtedy skład lepszej jakości niż edytory tekstu i sam pilnuje numeracji oraz spisów. W pracach humanistycznych bez wzorów przewaga jest mniejsza, a próg wejścia wyższy, więc Word bywa rozsądniejszym wyborem, zwłaszcza przy presji czasu.",
+  },
+  {
+    question: "Czy do LaTeX-a trzeba instalować program?",
+    answer:
+      "Nie musisz. Najprościej zacząć w Overleaf, czyli edytorze działającym w przeglądarce, który nie wymaga instalacji i od razu pokazuje gotowy plik PDF obok kodu. Jeśli wolisz pracować lokalnie, instalujesz dystrybucję (MiKTeX lub TeX Live) razem z edytorem. Overleaf ułatwia też współpracę z promotorem, bo dokument można udostępnić linkiem.",
+  },
+  {
+    question: "Jak ustawić polskie znaki i przenoszenie wyrazów w LaTeX-u?",
+    answer:
+      "Przy nowoczesnych silnikach XeLaTeX lub LuaLaTeX dołączasz pakiet fontspec, wskazujesz czcionkę z polskimi znakami i pakiet babel z opcją polskiego, co włącza poprawne dzielenie wyrazów. Przy klasycznym pdfLaTeX-u używasz pakietów inputenc z kodowaniem UTF-8, fontenc z opcją T1 i babel z językiem polskim. Bez ustawienia języka przenoszenie wyrazów będzie błędne.",
+  },
+  {
+    question: "Jak zrobić bibliografię w LaTeX-u?",
+    answer:
+      "Opisy źródeł trzymasz w osobnym pliku z rozszerzeniem .bib, a w tekście wstawiasz odwołania poleceniem cite. Składanie bibliografii obsługuje BibLaTeX z programem Biber, który daje pełną kontrolę nad stylem, w tym polskie odmiany. Starszy mechanizm to BibTeX. Zaletą jest to, że dane wpisujesz raz, a formatowanie listy i cytowań program robi za Ciebie.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="LaTeX dla początkujących - pisanie pracy magisterskiej w LaTeX-u"
+  description="LaTeX w pracy magisterskiej: kiedy się opłaca, Overleaf i dystrybucje lokalne, struktura dokumentu, polskie znaki, bibliografia BibLaTeX. Przewodnik dla początkujących krok po kroku."
+  updateDate="2026-06-14"
+  readingTime="11 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    LaTeX różni się od Worda samym podejściem do pisania. Zamiast formatować
+    tekst myszką, opisujesz jego strukturę poleceniami, a program składa
+    dokument za Ciebie. Brzmi to onieśmielająco, ale efekt bywa wart wysiłku:
+    nienaganny skład wzorów, automatyczna numeracja, spisy i odsyłacze, które nie
+    rozsypują się przy poprawkach. Ten poradnik wyjaśnia, dla kogo LaTeX ma sens,
+    jak zacząć bez instalacji i z jakich elementów składa się dokument pracy
+    magisterskiej.
+  </p>
+
+  <h2>Kiedy LaTeX się opłaca</h2>
+
+  <p>
+    LaTeX nie jest narzędziem dla każdego i każdej pracy. Najwięcej zyskują na
+    nim kierunki, w których tekst gęsto przeplata się ze wzorami, kodem albo
+    rozbudowanymi tabelami. Matematyka, fizyka, informatyka czy ekonometria to
+    jego naturalne środowisko. Przewagę daje też przy długich dokumentach,
+    ponieważ numeracja rozdziałów, tabel, wzorów i przypisów oraz wszystkie spisy
+    przeliczają się automatycznie. W pracy humanistycznej bez wzorów te zalety
+    schodzą na dalszy plan, a nauka składni kosztuje czas. Przy napiętym terminie
+    sprawdzony <a href="/poradniki/word/">Word</a> bywa bezpieczniejszy.
+  </p>
+
+  <h2>Jak zacząć - Overleaf albo instalacja lokalna</h2>
+
+  <p>
+    Najłatwiejsze wejście prowadzi przez Overleaf, edytor działający w
+    przeglądarce. Nie wymaga instalacji, a po lewej stronie piszesz kod, po
+    prawej od razu widzisz złożony plik PDF. Overleaf ma gotowe szablony prac
+    dyplomowych, w tym układy zgodne z wymaganiami wielu uczelni, więc możesz
+    zacząć od dopasowanego wzoru zamiast od pustej strony. Praca w chmurze
+    ułatwia też konsultacje, bo dokument udostępniasz promotorowi linkiem.
+  </p>
+
+  <p>
+    Jeśli wolisz pracować bez internetu, instalujesz lokalnie dystrybucję LaTeX-a
+    (MiKTeX na Windowsie albo TeX Live na innych systemach) razem z edytorem w
+    rodzaju TeXstudio. Daje to pełną niezależność od sieci kosztem dłuższej
+    konfiguracji na starcie.
+  </p>
+
+  <h2>Budowa dokumentu</h2>
+
+  <p>
+    Plik LaTeX-a dzieli się na dwie części. Preambuła, przed poleceniem
+    rozpoczynającym dokument, ustala klasę dokumentu i dołącza pakiety, czyli
+    rozszerzenia odpowiedzialne za język, czcionki, grafikę czy bibliografię. Po
+    niej następuje właściwa treść. Klasę dobiera się do rodzaju pracy: krótsze
+    teksty składa się w klasie article, a obszerną pracę magisterską z podziałem
+    na rozdziały w klasie report lub book. Wiele uczelni udostępnia własne klasy
+    i szablony, które od razu ustawiają marginesy, stronę tytułową i nagłówki
+    zgodnie z wymaganiami wydziału.
+  </p>
+
+  <p>
+    Strukturę tekstu budujesz poleceniami: rozdział, podrozdział i jego część
+    mają osobne komendy, a LaTeX sam je numeruje i wciąga do spisu treści.
+    Tabele, rysunki i wzory opatrujesz etykietą, do której potem odwołujesz się
+    w tekście. Numer aktualizuje się samodzielnie, więc po przestawieniu
+    elementów nic nie trzeba poprawiać ręcznie.
+  </p>
+
+  <h2>Polskie znaki i przenoszenie wyrazów</h2>
+
+  <p>
+    Poprawna obsługa polszczyzny wymaga kilku ustawień w preambule, inaczej
+    znikną znaki diakrytyczne albo zepsuje się dzielenie wyrazów. Przy
+    nowoczesnych silnikach XeLaTeX i LuaLaTeX dołączasz pakiet fontspec, wskazujesz
+    czcionkę z polskimi znakami i pakiet babel z opcją polskiego, co włącza
+    właściwe reguły przenoszenia. Przy klasycznym pdfLaTeX-u potrzebne są pakiety
+    inputenc z kodowaniem UTF-8, fontenc z opcją T1 oraz babel z językiem polskim.
+    Bez deklaracji języka tekst złoży się z błędnym dzieleniem wyrazów.
+  </p>
+
+  <h2>Bibliografia w BibLaTeX</h2>
+
+  <p>
+    Zarządzanie źródłami to jedna z mocniejszych stron LaTeX-a. Opisy
+    bibliograficzne trzymasz w osobnym pliku z rozszerzeniem .bib, a w tekście
+    wstawiasz tylko odwołanie poleceniem cite z etykietą źródła. Składanie listy
+    i formatowanie cytowań przejmuje pakiet BibLaTeX współpracujący z programem
+    Biber. Styl, w tym polskie odmiany i normę PN-ISO 690, ustawiasz w jednym
+    miejscu, a zmiana stylu przeformatowuje całą bibliografię. Plik .bib
+    wyeksportujesz wprost z menedżera w rodzaju
+    <a href="/poradniki/zotero/">Zotero</a>, więc źródła zebrane podczas kwerendy
+    od razu trafią do pracy. Reguły samych stylów opisujemy w poradniku o
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o LaTeX</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    LaTeX nagradza cierpliwość. Próg wejścia jest wyższy niż w edytorze tekstu,
+    ale w zamian dostajesz skład profesjonalnej jakości i dokument, który sam
+    dba o numerację, spisy i bibliografię. Jeśli piszesz pracę pełną wzorów albo
+    obszerną rozprawę, zacznij od gotowego szablonu w Overleaf, ustaw obsługę
+    polszczyzny i prowadź źródła w pliku .bib. Na kierunku humanistycznym bez
+    wzorów spokojnie wystarczy dobrze opanowany
+    <a href="/poradniki/word/">Word</a>, więc wybór narzędzia dopasuj do
+    charakteru własnej pracy, a nie do mody.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

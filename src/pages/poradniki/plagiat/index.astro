@@ -1,0 +1,303 @@
+---
+// src/pages/poradniki/plagiat/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Unikanie plagiatu", href: "/poradniki/plagiat/" },
+];
+
+const relatedLinks = [
+  { label: "Cytowanie i cytaty", href: "/poradniki/cytaty/" },
+  { label: "Przypisy w pracy magisterskiej", href: "/poradniki/przypisy/" },
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Jak szukać źródeł naukowych", href: "/poradniki/zrodla/" },
+];
+
+const faqItems = [
+  {
+    question: "Ile procent podobieństwa jest dopuszczalne w pracy magisterskiej?",
+    answer:
+      "Nie ma jednego progu ustalonego w skali kraju. Każda uczelnia (a często konkretny wydział lub promotor) wyznacza własne wartości graniczne dla poszczególnych współczynników podobieństwa. W praktyce wynik do około 20-25 procent zwykle nie budzi zastrzeżeń, przedział 25-40 procent wymaga wyjaśnienia, a powyżej 40-50 procent praca najczęściej wraca do poprawy. O dopuszczeniu pracy decyduje jednak promotor po analizie raportu, a nie sama liczba.",
+  },
+  {
+    question: "Czy cytaty z przypisami podbijają współczynnik podobieństwa?",
+    answer:
+      "Tak, prawidłowo oznaczony cytat dosłowny zwiększa współczynnik, bo system odnajduje go w bazie referencyjnej. To nie jest plagiat. Promotor widzi w raporcie, że dany fragment jest cytatem opatrzonym przypisem, więc wysokie podobieństwo wynikające z licznych, poprawnie oznaczonych cytatów nie przekreśla pracy. Problemem są zapożyczenia bez wskazania źródła.",
+  },
+  {
+    question: "Czym jest JSA i kto sprawdza pracę?",
+    answer:
+      "JSA to Jednolity System Antyplagiatowy, ogólnopolskie narzędzie prowadzone przez Ośrodek Przetwarzania Informacji. Od stycznia 2019 roku każda praca dyplomowa musi przejść przez ten system przed dopuszczeniem do obrony. Badanie zakłada promotor lub pracownik dziekanatu, a wygenerowany raport analizuje promotor. To on, a nie system, podejmuje decyzję o dopuszczeniu pracy.",
+  },
+  {
+    question: "Czym różni się plagiat od autoplagiatu?",
+    answer:
+      "Plagiat to przypisanie sobie cudzego tekstu lub cudzych myśli bez wskazania autora. Autoplagiat polega na ponownym wykorzystaniu własnych, wcześniej opublikowanych fragmentów (na przykład z pracy licencjackiej) bez zaznaczenia tego. Oba są traktowane jako nierzetelność. Fragmenty własnej pracy licencjackiej również trafiają do bazy, więc system je rozpozna.",
+  },
+  {
+    question: "Czy parafraza chroni przed zarzutem plagiatu?",
+    answer:
+      "Tylko wtedy, gdy jest poprawna. Parafraza to oddanie cudzej myśli własnymi słowami z podaniem źródła. Zamiana kilku wyrazów na synonimy przy zachowaniu oryginalnej składni nadal jest zapożyczeniem, a badanie semantyczne JSA wychwytuje takie podobieństwa niezależnie od szyku słów. Parafrazując, przebuduj zdanie od podstaw i zawsze dodaj odwołanie do autora.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Plagiat w pracy magisterskiej - JSA, współczynniki i jak go uniknąć"
+  description="Jak uniknąć plagiatu w pracy magisterskiej: jak działa system antyplagiatowy JSA, co oznaczają współczynniki podobieństwa, ile procent jest dopuszczalne, plagiat a autoplagiat i parafraza."
+  updateDate="2026-06-14"
+  readingTime="13 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Każda praca magisterska w Polsce przechodzi badanie antyplagiatowe, zanim
+    promotor dopuści ją do obrony. Dla większości studentów to źródło niepokoju,
+    choć w praktyce wystarczy zrozumieć, co system sprawdza i jak rzetelnie
+    korzystać z cudzego dorobku. Plagiat rzadko bywa świadomą kradzieżą.
+    Najczęściej wynika z niedbałego cytowania, złej parafrazy albo gubienia
+    źródeł podczas pisania. Ten poradnik wyjaśnia, jak działa Jednolity System
+    Antyplagiatowy, co znaczą współczynniki podobieństwa i jakimi nawykami
+    pisarskimi zabezpieczysz pracę przed zarzutem nierzetelności.
+  </p>
+
+  <h2>Czym jest plagiat w pracy naukowej</h2>
+
+  <p>
+    Plagiat polega na przedstawieniu cudzego tekstu, koncepcji lub wyników badań
+    jako własnych, bez wskazania autora. Nie chodzi tylko o przepisanie akapitu.
+    Plagiatem jest również zaczerpnięcie cudzej myśli, klasyfikacji czy
+    argumentu bez odwołania, nawet jeśli ujmiesz je innymi słowami. Polskie
+    prawo o szkolnictwie wyższym traktuje przypisanie sobie autorstwa cudzego
+    utworu jako podstawę do wznowienia postępowania i odebrania tytułu, także
+    wiele lat po obronie.
+  </p>
+
+  <p>
+    Warto rozróżnić kilka pokrewnych zjawisk, bo każde niesie inne konsekwencje.
+    Poniższa tabela zestawia najczęstsze sytuacje.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Zjawisko</th>
+        <th>Na czym polega</th>
+        <th>Jak tego uniknąć</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Plagiat dosłowny</td>
+        <td>przepisanie fragmentu bez cudzysłowu i źródła</td>
+        <td>cytat w cudzysłowie z przypisem</td>
+      </tr>
+      <tr>
+        <td>Plagiat ukryty (parafraza)</td>
+        <td>oddanie cudzej myśli „swoimi słowami" bez odwołania</td>
+        <td>parafraza z podaniem autora</td>
+      </tr>
+      <tr>
+        <td>Autoplagiat</td>
+        <td>ponowne użycie własnych opublikowanych fragmentów bez zaznaczenia</td>
+        <td>odwołanie do własnej wcześniejszej pracy</td>
+      </tr>
+      <tr>
+        <td>Plagiat źródeł</td>
+        <td>cytowanie za kimś bez dotarcia do oryginału</td>
+        <td>zapis „cyt. za:" lub dotarcie do źródła</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Jak działa Jednolity System Antyplagiatowy (JSA)</h2>
+
+  <p>
+    Jednolity System Antyplagiatowy prowadzi Ośrodek Przetwarzania Informacji, a
+    korzystanie z niego jest obowiązkowe od stycznia 2019 roku. Procedura wygląda
+    podobnie na każdej uczelni. Promotor lub pracownik dziekanatu zakłada
+    badanie i wysyła plik pracy. System porównuje tekst z bazami referencyjnymi
+    i generuje raport, który trafia do promotora. Na jego podstawie promotor
+    zwraca pracę do poprawy albo akceptuje wynik i dopuszcza do obrony.
+  </p>
+
+  <p>
+    System sięga do trzech głównych zbiorów: Ogólnopolskiego Repozytorium
+    Pisemnych Prac Dyplomowych (czyli wszystkich obronionych już prac), zasobów
+    internetu i aktów prawnych. Wykrywa przy tym nie tylko dosłowne fragmenty.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Klony prac</strong> – fragmenty identyczne z innymi pracami
+      dyplomowymi w repozytorium.
+    </li>
+    <li>
+      <strong>Zapożyczenia z baz referencyjnych</strong> – pokrywające się
+      fragmenty z dokumentów dostępnych systemowi.
+    </li>
+    <li>
+      <strong>Podobieństwa semantyczne</strong> – fragmenty bliskie znaczeniowo
+      tekstom źródłowym niezależnie od szyku słów, co wychwytuje słabe parafrazy.
+    </li>
+    <li>
+      <strong>Badanie stylometryczne</strong> – analiza stylu, która sygnalizuje,
+      czy całość mogła powstać samodzielnie.
+    </li>
+  </ul>
+
+  <h2>Współczynniki podobieństwa - jak czytać raport</h2>
+
+  <p>
+    Raport nie podaje jednej liczby „ile procent plagiatu". Pokazuje kilka
+    współczynników podobieństwa, z których każdy mierzy co innego. Najważniejsza
+    zasada brzmi: sam wysoki wynik nie przesądza o plagiacie, bo podbijają go
+    również poprawnie oznaczone cytaty. Liczy się to, czy podobne fragmenty mają
+    wskazane źródło.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Współczynnik</th>
+        <th>Co mierzy</th>
+        <th>Na co zwraca uwagę promotor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Współczynnik 1</td>
+        <td>udział krótkich, kilkuwyrazowych fraz wspólnych ze źródłami</td>
+        <td>naturalnie bywa wyższy, mniej niepokojący</td>
+      </tr>
+      <tr>
+        <td>Współczynnik 2</td>
+        <td>udział dłuższych, kilkudziesięciowyrazowych fragmentów</td>
+        <td>wysoka wartość sugeruje przepisywanie</td>
+      </tr>
+      <tr>
+        <td>Współczynnik 3 / z ORPPD</td>
+        <td>podobieństwo do innych prac dyplomowych</td>
+        <td>sygnał możliwego klonu pracy</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Progi graniczne ustala uczelnia, dlatego przed oddaniem pracy sprawdź
+    wartości obowiązujące na swoim wydziale. Gdy współczynnik przekracza próg z
+    powodu rozległych, ale rzetelnie oznaczonych cytatów, zwykle wystarczy
+    wyjaśnienie. Gdy rośnie przez nieoznaczone zapożyczenia, konieczna jest
+    przeróbka tekstu.
+  </p>
+
+  <h2>Jak pisać, żeby uniknąć plagiatu</h2>
+
+  <p>
+    Ochrona przed plagiatem zaczyna się długo przed badaniem w systemie, na
+    etapie zbierania materiału i pisania. Kilka nawyków rozwiązuje większość
+    problemów.
+  </p>
+
+  <ul>
+    <li>
+      Notując treści ze źródeł, od razu zapisuj autora, tytuł i stronę. Większość
+      przypadkowych plagiatów bierze się z notatek, w których po miesiącach nie
+      wiadomo, co jest cytatem, a co własną myślą.
+    </li>
+    <li>
+      Cytat dosłowny zawsze ujmuj w cudzysłów i opatrz przypisem. Zasady
+      omawiamy w poradniku o <a href="/poradniki/cytaty/">cytowaniu</a> i o
+      <a href="/poradniki/przypisy/">przypisach</a>.
+    </li>
+    <li>
+      Parafrazując, przebuduj zdanie od podstaw, a nie podmieniaj pojedyncze
+      słowa. Po parafrazie również podaj źródło, bo myśl pozostaje cudza.
+    </li>
+    <li>
+      Odróżniaj w tekście cudze ustalenia od własnych wniosków. Czytelnik ma
+      wiedzieć, gdzie kończy się referowanie literatury, a zaczyna Twoja analiza.
+    </li>
+    <li>
+      Prowadź bibliografię od pierwszego dnia, najlepiej w menedżerze typu
+      <a href="/poradniki/bibliografia/">Zotero</a>. Łatwiej dopisać źródło na
+      bieżąco niż odtwarzać je przed obroną.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o plagiat</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Badanie antyplagiatowe sprawdza nie tyle Twoją uczciwość, ile staranność
+    warsztatu. Jeśli konsekwentnie oznaczasz cytaty, rzetelnie parafrazujesz i
+    od początku notujesz źródła, raport JSA nie przyniesie niespodzianek, a
+    wysoki współczynnik podobieństwa z poprawnie opisanych cytatów obronisz
+    jednym zdaniem wyjaśnienia. Najwięcej kłopotów sprawiają nie świadome
+    nadużycia, lecz bałagan w notatkach, dlatego porządek w źródłach od pierwszego
+    rozdziału chroni skuteczniej niż jakiekolwiek sztuczki przed samym badaniem.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

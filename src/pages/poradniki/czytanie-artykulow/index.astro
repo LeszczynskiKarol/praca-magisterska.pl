@@ -1,0 +1,244 @@
+---
+// src/pages/poradniki/czytanie-artykulow/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Jak czytać artykuły naukowe", href: "/poradniki/czytanie-artykulow/" },
+];
+
+const relatedLinks = [
+  { label: "Jak szukać źródeł naukowych", href: "/poradniki/zrodla/" },
+  { label: "Język naukowy", href: "/poradniki/jezyk-naukowy/" },
+  { label: "Rozdział teoretyczny", href: "/poradniki/rozdzial-teoretyczny/" },
+  { label: "Unikanie plagiatu", href: "/poradniki/plagiat/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy artykuł naukowy trzeba czytać od początku do końca?",
+    answer:
+      "Nie. Doświadczeni badacze czytają teksty naukowe nieliniowo. Najpierw abstrakt i wnioski, by ocenić przydatność artykułu, potem ryciny i tabele, a dopiero później wybrane fragmenty w całości. Liniowe czytanie każdego tekstu od deski do deski marnuje czas, bo większość artykułów odrzucisz jako nieprzydatne już po abstrakcie.",
+  },
+  {
+    question: "Co to jest struktura IMRAD?",
+    answer:
+      "IMRAD to typowy układ artykułu empirycznego: Introduction (wprowadzenie), Methods (metody), Results (wyniki) i Discussion (dyskusja), często poprzedzony abstraktem. Znajomość tego schematu przyspiesza czytanie, bo wiesz, gdzie szukać konkretnej informacji: cel w wprowadzeniu, sposób badania w metodach, dane w wynikach, a ich znaczenie w dyskusji.",
+  },
+  {
+    question: "Jak robić notatki z czytanych artykułów?",
+    answer:
+      "Notuj od razu z pełnym opisem źródła i numerem strony, oddzielając cytaty dosłowne od własnych myśli, na przykład innym kolorem. Zapisuj nie tylko treść, ale i to, do czego artykuł może się przydać w Twojej pracy. Notatki najlepiej trzymać przy źródle w menedżerze bibliografii, dzięki czemu po miesiącach wracasz do nich bez szukania.",
+  },
+  {
+    question: "Ile artykułów trzeba przeczytać do pracy magisterskiej?",
+    answer:
+      "Liczy się nie liczba przeczytanych tekstów, lecz trafność doboru. Część artykułów przejrzysz pobieżnie, by ocenić przydatność, a tylko kilkanaście do kilkudziesięciu przeczytasz dokładnie i wykorzystasz. Lepiej dogłębnie znać kluczowe prace w temacie niż pobieżnie przekartkować setkę przypadkowych. Selekcja jest częścią pracy badawczej.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Jak czytać artykuły naukowe - efektywne czytanie i notatki"
+  description="Jak czytać artykuły naukowe do pracy magisterskiej: czytanie nieliniowe, struktura IMRAD, szybka ocena przydatności, krytyczna lektura i system notatek powiązanych ze źródłem."
+  updateDate="2026-06-14"
+  readingTime="10 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Zgromadzenie kilkudziesięciu artykułów to dopiero połowa pracy. Druga połowa
+    to umiejętność szybkiego ocenienia, które z nich są przydatne, i wydobycia z
+    nich tego, co naprawdę potrzebne. Student, który próbuje przeczytać każdy
+    tekst od pierwszego do ostatniego zdania, grzęźnie po kilku pozycjach.
+    Badacze czytają inaczej: wybiórczo, z określonym pytaniem w głowie i z
+    notatnikiem pod ręką. Ten poradnik pokazuje, jak czytać teksty naukowe
+    sprawnie, jak rozpoznać ich budowę i jak robić notatki, które przydadzą się
+    przy pisaniu.
+  </p>
+
+  <h2>Czytanie nieliniowe</h2>
+
+  <p>
+    Pierwsza zasada brzmi: nie czytaj od początku. Zanim zdecydujesz, czy
+    artykuł zasługuje na dokładną lekturę, przejrzyj go w określonej kolejności i
+    oszczędź czas na pozycjach nieprzydatnych.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Abstrakt.</strong> Streszcza cel, metodę i główny wynik. Po nim
+      zwykle wiesz, czy tekst dotyczy Twojego tematu.
+    </li>
+    <li>
+      <strong>Wnioski i podsumowanie.</strong> Mówią, do czego doszli autorzy,
+      zanim wgłębisz się w szczegóły.
+    </li>
+    <li>
+      <strong>Ryciny i tabele.</strong> Pokazują dane i najważniejsze zależności
+      w skrócie.
+    </li>
+    <li>
+      <strong>Wybrane fragmenty.</strong> Dopiero gdy artykuł okaże się przydatny,
+      czytasz w całości te części, które wnoszą coś do Twojej pracy.
+    </li>
+  </ul>
+
+  <h2>Struktura artykułu - schemat IMRAD</h2>
+
+  <p>
+    Większość artykułów empirycznych ma ten sam układ, znany jako IMRAD. Skrót
+    pochodzi od angielskich nazw czterech części: Introduction, Methods, Results
+    i Discussion, czyli wprowadzenie, metody, wyniki i dyskusja. Znajomość tego
+    schematu działa jak mapa, bo z góry wiesz, gdzie szukać danej informacji.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Część artykułu</th>
+        <th>Czego tu szukać</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Wprowadzenie</td>
+        <td>cel badania, pytanie i tło teoretyczne</td>
+      </tr>
+      <tr>
+        <td>Metody</td>
+        <td>jak przeprowadzono badanie, próba, narzędzia</td>
+      </tr>
+      <tr>
+        <td>Wyniki</td>
+        <td>surowe dane i ustalenia, bez interpretacji</td>
+      </tr>
+      <tr>
+        <td>Dyskusja</td>
+        <td>znaczenie wyników, ograniczenia, odniesienie do innych badań</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    W pracach humanistycznych układ bywa swobodniejszy, bliższy klasycznemu
+    wywodowi, ale logika pozostaje podobna: teza, argumentacja oparta na źródłach
+    i wnioski. Rozpoznanie struktury danego tekstu przyspiesza dotarcie do tego,
+    co Cię interesuje.
+  </p>
+
+  <h2>Czytanie krytyczne</h2>
+
+  <p>
+    Tekst naukowy czyta się z pytaniami, nie biernie. Sprawdzasz, czy wnioski
+    wynikają z przedstawionych danych, jak dobrano próbę i czy autor nie pomija
+    ograniczeń własnego badania. Zwracasz uwagę na to, kto sfinansował badanie i
+    czy nie rzutuje to na interpretację. Taka postawa procentuje później we
+    własnej pracy, bo to samo krytyczne spojrzenie zastosujesz, budując
+    <a href="/poradniki/rozdzial-teoretyczny/">rozdział teoretyczny</a> i
+    konfrontując różne stanowiska z literatury.
+  </p>
+
+  <h2>System notatek</h2>
+
+  <p>
+    Notatki robione na bieżąco oszczędzają godziny późniejszego szukania i
+    chronią przed przypadkowym plagiatem. Kilka nawyków wystarcza.
+  </p>
+
+  <ul>
+    <li>
+      Każdą notatkę wiąż z pełnym opisem źródła i numerem strony, najlepiej w
+      menedżerze bibliografii przy danym artykule.
+    </li>
+    <li>
+      Oddzielaj cytaty dosłowne od streszczeń i od własnych komentarzy, na
+      przykład kolorem albo znacznikiem. To kluczowe dla późniejszego
+      <a href="/poradniki/plagiat/">unikania plagiatu</a>.
+    </li>
+    <li>
+      Zapisuj nie tylko treść, ale i myśl, do czego artykuł przyda się w Twojej
+      pracy i z którym jej fragmentem się łączy.
+    </li>
+    <li>
+      Notuj słowa kluczowe i nazwiska często cytowanych autorów, bo prowadzą do
+      kolejnych źródeł.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o czytanie artykułów</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Efektywne czytanie tekstów naukowych opiera się na selekcji i kolejności.
+    Zaczynaj od abstraktu i wniosków, korzystaj ze znajomości schematu IMRAD,
+    czytaj krytycznie i od razu rób notatki powiązane ze źródłem. Dzięki temu z
+    dziesiątek zebranych artykułów wyłuskasz te naprawdę wartościowe i wejdziesz
+    w pisanie z uporządkowanym materiałem, a nie ze stertą plików PDF, których
+    treści już nie pamiętasz. Następnym krokiem jest dobre
+    <a href="/poradniki/zrodla/">wyszukiwanie kolejnych źródeł</a> w miejscach,
+    do których prowadzą bibliografie czytanych prac.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

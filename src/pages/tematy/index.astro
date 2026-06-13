@@ -15,6 +15,7 @@ const kierunki = [
   { name: 'Filologia polska', slug: 'filologia-polska', icon: '🇵🇱', description: 'Literatura polska, językoznawstwo' },
   { name: 'Finanse i rachunkowość', slug: 'finanse-i-rachunkowosc', icon: '💵', description: 'Rachunkowość, bankowość, inwestycje' },
   { name: 'Fizjoterapia', slug: 'fizjoterapia', icon: '💪', description: 'Rehabilitacja, kinezyterapia, masaż' },
+  { name: 'Historia', slug: 'historia', icon: '📜', description: 'Historia Polski i powszechna, badania nad źródłami' },
   { name: 'Informatyka', slug: 'informatyka', icon: '💻', description: 'Programowanie, systemy, bazy danych' },
   { name: 'Logistyka', slug: 'logistyka', icon: '🚚', description: 'Łańcuch dostaw, transport, magazynowanie' },
   { name: 'Marketing', slug: 'marketing', icon: '📈', description: 'Marketing cyfrowy, reklama, branding' },
@@ -53,7 +54,7 @@ const categories = [
   },
   {
     name: 'Humanistyczne',
-    items: ['filologia-angielska', 'filologia-polska'],
+    items: ['filologia-angielska', 'filologia-polska', 'historia'],
   },
   {
     name: 'Techniczne i inżynieryjne',
@@ -73,8 +74,8 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
 ---
 
 <Layout 
-  title="2500+ tematów prac magisterskich z 25 kierunków - inspiracje 2026"
-  description="Gotowe tematy prac magisterskich z 25 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, informatyka i inne. 2500+ pomysłów na pracę dyplomową."
+  title="2500+ tematów prac magisterskich z 26 kierunków - inspiracje 2026"
+  description="Gotowe tematy prac magisterskich z 26 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, historia, informatyka i inne. 2500+ pomysłów na pracę dyplomową."
 >
   <Navbar />
   
@@ -95,7 +96,7 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>25 kierunków studiów</span>
+              <span>26 kierunków studiów</span>
             </div>
             <div class="flex items-center gap-2 text-gray-600">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
