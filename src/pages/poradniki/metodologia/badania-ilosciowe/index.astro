@@ -8,18 +8,72 @@ const breadcrumbs = [
 ];
 
 const relatedLinks = [
-  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
-  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Dobór próby badawczej", href: "/poradniki/metodologia/dobor-proby/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Badania jakościowe", href: "/poradniki/metodologia/badania-jakosciowe/" },
 ];
+
+const faqItems = [
+  {
+    question: "Ankieta to badanie ilościowe czy jakościowe?",
+    answer:
+      "Ankieta to technika badań ilościowych - zbiera ustandaryzowane odpowiedzi od dużej grupy osób i pozwala je policzyć. Mylące bywa to, że kwestionariusz może zawierać pytania otwarte, które analizuje się jakościowo, jednak sama metoda pozostaje ilościowa. Jakościowym odpowiednikiem ankiety jest wywiad pogłębiony.",
+  },
+  {
+    question: "Ile osób trzeba przebadać w badaniu ilościowym do pracy magisterskiej?",
+    answer:
+      "W praktyce akademickiej minimum to około 100 respondentów; bezpieczny standard w pracach magisterskich to 100-250 osób. Mniejsza próba ogranicza możliwość stosowania testów statystycznych i porównywania podgrup (np. kobiety vs mężczyźni wymagają sensownej liczebności w każdej grupie). Formalnie wielkość próby wyznacza kalkulacja przy założonym poziomie ufności i błędzie - warto ją przytoczyć w rozdziale metodologicznym.",
+  },
+  {
+    question: "Jakie są metody i techniki badań ilościowych?",
+    answer:
+      "Podstawowa metoda w pracach dyplomowych to sondaż diagnostyczny realizowany techniką ankiety (papierowej lub online - CAWI). Pozostałe podejścia ilościowe to eksperyment, testy i skale standaryzowane (np. skale postaw, testy wiedzy), analiza danych zastanych (statystyki GUS, rejestry, dokumentacja) oraz ustrukturyzowana obserwacja z kategoryzacją zachowań.",
+  },
+  {
+    question: "Jakim programem analizować dane ilościowe?",
+    answer:
+      "Do prostych analiz (częstości, średnie, wykresy) wystarczy Excel lub arkusze Google. Do testów statystycznych studenci najczęściej używają darmowego JASP lub jamovi, a na uczelniach z licencją - SPSS. Wybór programu opisz w podrozdziale o metodach analizy danych.",
+  },
+  {
+    question: "Czy badania ilościowe są łatwiejsze od jakościowych?",
+    answer:
+      "Są łatwiejsze organizacyjnie (ankietę online wypełni 150 osób w dwa tygodnie), ale wymagają staranności na etapie projektowania: błędów w kwestionariuszu nie da się naprawić po zebraniu danych. Badania jakościowe odwrotnie - zbieranie danych jest szybkie, za to analiza transkrypcji bywa żmudna. Wybór powinien wynikać z problemu badawczego, nie z wygody.",
+  },
+  {
+    question: "Czy można połączyć badania ilościowe i jakościowe?",
+    answer:
+      "Tak - to podejście mieszane (mixed methods), coraz częstsze w pracach magisterskich. Typowy schemat: ankieta na 100-200 osobach pokazuje skalę zjawiska i zależności, a kilka wywiadów pogłębionych tłumaczy, skąd te zależności się biorą. Podejście mieszane podnosi wartość pracy, ale wymaga opisania obu procedur w rozdziale metodologicznym.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 ---
 
 <ArticleLayout
-  title="Badania ilościowe w pracy magisterskiej - jak przeprowadzić, przykłady"
-  description="Badania ilościowe w pracy magisterskiej krok po kroku: hipotezy, zmienne, dobór próby, ankieta, analiza statystyczna i prezentacja wyników. Przykłady i wzory."
-  readingTime="18 min"
+  title="Badania ilościowe w pracy magisterskiej - przykłady i przewodnik"
+  description="Czym są badania ilościowe + 6 konkretnych przykładów z różnych kierunków. Ankieta - ilościowa czy jakościowa, ile osób przebadać, jak analizować wyniki. Tabela porównawcza z badaniami jakościowymi."
+  updateDate="2026-06-11"
+  readingTime="20 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
   <p>
     Badania ilościowe stanowią fundament współczesnej metodologii naukowej w
     pracach magisterskich i licencjackich, umożliwiając studentom weryfikację
@@ -193,6 +247,91 @@ const relatedLinks = [
     których nie da się łatwo skwantyfikować. W praktyce akademickiej coraz
     częściej stosuje się podejście mieszane, łączące elementy obu metodologii,
     co pozwala na uzyskanie bardziej kompleksowego obrazu badanego zjawiska.
+  </p>
+
+  <h2>Ankieta to badanie ilościowe czy jakościowe?</h2>
+
+  <p>
+    To jedno z najczęściej zadawanych pytań przed seminarium, więc odpowiedzmy
+    wprost: <strong>ankieta jest techniką badań ilościowych</strong>. Zbiera
+    ustandaryzowane odpowiedzi od wielu osób i pozwala je policzyć, porównać
+    między grupami i poddać testom statystycznym. Wątpliwość bierze się stąd,
+    że kwestionariusz może zawierać pytania otwarte („dlaczego?", „co
+    sądzisz o..."), których odpowiedzi analizuje się jakościowo. Kilka pytań
+    otwartych nie zmienia jednak charakteru metody - o ilościowości decyduje
+    standaryzacja i liczbowa analiza wyników. Jakościowym odpowiednikiem
+    ankiety jest <a href="/poradniki/metodologia/wywiad/"
+      >wywiad pogłębiony</a
+    >: mniej osób, brak sztywnej listy odpowiedzi, analiza treści zamiast
+    statystyki. Analogicznie obserwacja może być ilościowa (liczenie zachowań
+    według klucza) albo jakościowa (opis i interpretacja), a o kwalifikacji
+    decyduje sposób zapisu i analizy danych, nie sama nazwa techniki.
+  </p>
+
+  <h2>Przykłady badań ilościowych z różnych kierunków</h2>
+
+  <p>
+    Najłatwiej zrozumieć badania ilościowe na konkretach. Poniżej sześć
+    przykładowych projektów badawczych w układzie, w jakim opisuje się je w
+    pracy: temat, zmienne, narzędzie i planowana analiza. Każdy z nich da się
+    zrealizować siłami jednej osoby w 2-3 miesiące.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Przykład badania</th>
+        <th>Zmienne</th>
+        <th>Narzędzie i próba</th>
+        <th>Analiza</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Wypalenie zawodowe a staż pracy pielęgniarek (pielęgniarstwo)</td>
+        <td>wypalenie (zal.), staż pracy (niezal.)</td>
+        <td>kwestionariusz MBI, 120 pielęgniarek z 2 szpitali</td>
+        <td>ANOVA między grupami stażu</td>
+      </tr>
+      <tr>
+        <td>Motywacja pracowników a model pracy zdalnej (zarządzanie)</td>
+        <td>motywacja (zal.), model pracy (niezal.)</td>
+        <td>ankieta CAWI z gotową skalą, 150 pracowników biurowych</td>
+        <td>test t / ANOVA, korelacje</td>
+      </tr>
+      <tr>
+        <td>Czas ekranowy a gotowość szkolna sześciolatków (pedagogika)</td>
+        <td>czas ekranowy (niezal.), wyniki diagnozy gotowości (zal.)</td>
+        <td>ankieta dla rodziców + arkusz diagnozy, 80 dzieci</td>
+        <td>korelacja r-Pearsona</td>
+      </tr>
+      <tr>
+        <td>Lęk przed wystąpieniami a samoocena studentów (psychologia)</td>
+        <td>lęk (zal.), samoocena (niezal.)</td>
+        <td>dwie skale standaryzowane, 140 studentów</td>
+        <td>korelacja, regresja prosta</td>
+      </tr>
+      <tr>
+        <td>Czynniki wyboru sklepu internetowego przez pokolenie Z (marketing)</td>
+        <td>ważność czynników zakupowych, zmienne metryczkowe</td>
+        <td>ankieta CAWI, 200 konsumentów 18-26 lat</td>
+        <td>statystyki opisowe, ranking, chi-kwadrat</td>
+      </tr>
+      <tr>
+        <td>Terminowość dostaw przed wdrożeniem systemu WMS i po nim (logistyka)</td>
+        <td>odsetek dostaw na czas (zal.), wdrożenie (niezal.)</td>
+        <td>analiza danych zastanych firmy, 12 miesięcy obserwacji</td>
+        <td>porównanie okresów, test t</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Zwróć uwagę na wspólny schemat: każde badanie ma policzalne zmienne,
+    konkretną grupę i zaplanowany test statystyczny jeszcze przed zebraniem
+    danych. Jeśli szukasz tematu pod badanie ilościowe na swoim kierunku,
+    przejrzyj naszą <a href="/tematy/">bazę 2000+ tematów prac magisterskich</a
+    > - przy każdym kierunku wskazujemy typowe metody badawcze.
   </p>
 
   <h2>Projektowanie badania ilościowego krok po kroku</h2>
@@ -374,8 +513,11 @@ const relatedLinks = [
     Statistics, który oferuje przyjazny interfejs graficzny i szeroki zakres
     testów statystycznych, oraz darmowy program JASP, stanowiący dobrą
     alternatywę dla studentów. Dla prostszych analiz wystarczający może być
-    Microsoft Excel z wbudowanymi funkcjami statystycznymi lub darmowe narzędzia
-    online.
+    Microsoft Excel z wbudowanymi funkcjami statystycznymi. Jak dobrać test do
+    danych i hipotezy oraz jak raportować wyniki, opisujemy szczegółowo w
+    osobnym poradniku o <a href="/poradniki/metodologia/analiza-ilosciowa/"
+      >analizie danych ilościowych</a
+    >.
   </p>
 
   <p>
@@ -415,26 +557,65 @@ const relatedLinks = [
     końcowych pracy magisterskiej.
   </p>
 
+  <h2>FAQ - najczęściej zadawane pytania o badania ilościowe</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
   <p>
-    Badania ilościowe w pracy magisterskiej stanowią sprawdzoną i efektywną
-    metodę weryfikacji hipotez naukowych oraz uzyskiwania obiektywnych,
-    wymiernych wyników badawczych. Ich systematyczne przeprowadzenie wymaga
-    starannego planowania, precyzyjnego projektowania narzędzi badawczych oraz
-    rzetelnej analizy i interpretacji zebranych danych. Kluczem do sukcesu jest
-    właściwy dobór metod i technik badawczych dostosowanych do specyfiki
-    problemu badawczego oraz możliwości studenta. Współczesne narzędzia
-    technologiczne znacząco ułatwiają zarówno zbieranie danych poprzez ankiety
-    online, jak i ich analizę z wykorzystaniem dostępnego oprogramowania
-    statystycznego. Student podejmujący się badań ilościowych powinien pamiętać
-    o konieczności zachowania rygoru metodologicznego na każdym etapie procesu
-    badawczego, od formułowania hipotez, przez dobór próby i konstrukcję
-    narzędzi, aż po analizę statystyczną i interpretację wyników. Właściwie
-    przeprowadzone badania ilościowe nie tylko stanowią solidną podstawę pracy
-    magisterskiej, ale również rozwijają kompetencje badawcze studenta,
-    przygotowując go do ewentualnej kariery naukowej lub pracy analitycznej w
-    różnych sektorach gospodarki. Wybór metodologii ilościowej to decyzja, która
-    przy odpowiednim zaangażowaniu i wsparciu promotora prowadzi do stworzenia
-    wartościowej merytorycznie pracy dyplomowej opartej na rzetelnych danych
-    empirycznych.
+    Badanie ilościowe wybierz wtedy, gdy Twoje pytania badawcze zaczynają się
+    od „ile", „jak często" albo „czy istnieje zależność". Zaplanuj zmienne,
+    próbę i testy statystyczne przed zebraniem pierwszej odpowiedzi, bo błędów
+    kwestionariusza nie naprawi żadna analiza. Cały warsztat masz w
+    powiązanych poradnikach: <a href="/poradniki/metodologia/ankieta/"
+      >jak przeprowadzić ankietę</a
+    >, <a href="/poradniki/metodologia/dobor-proby/">jak dobrać próbę</a>,
+    <a href="/poradniki/metodologia/analiza-ilosciowa/"
+      >jak przeanalizować dane</a
+    > i jak opisać całość w <a
+      href="/poradniki/metodologia/rozdzial-metodologiczny/"
+      >rozdziale metodologicznym</a
+    > (z gotowym wzorem PDF do pobrania).
   </p>
 </ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

@@ -9,7 +9,9 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !/\/sklep\/(anulowano|sukces)\/?$/.test(page) &&
-        !/\/sklep\/[^/]+\/(anulowano|sukces)\/?$/.test(page),
+        !/\/sklep\/[^/]+\/(anulowano|sukces)\/?$/.test(page) &&
+        !/\/sklep\/praca-licencjacka-ebook\/?$/.test(page) &&
+        !/\/poradniki\/od-czego-zaczac-mgr\/?$/.test(page),
     }),
   ],
   markdown: {

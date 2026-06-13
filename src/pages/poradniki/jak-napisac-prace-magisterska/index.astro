@@ -1,0 +1,431 @@
+---
+// src/pages/poradniki/jak-napisac-prace-magisterska/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  {
+    label: "Jak napisać pracę magisterską",
+    href: "/poradniki/jak-napisac-prace-magisterska/",
+  },
+];
+
+const relatedLinks = [
+  { label: "Baza 2000+ tematów prac", href: "/tematy/" },
+  { label: "Metodologia badań", href: "/poradniki/metodologia/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Obrona pracy magisterskiej", href: "/poradniki/obrona/" },
+];
+
+const faqItems = [
+  {
+    question: "Ile stron powinna mieć praca magisterska?",
+    answer:
+      "Standardowa praca magisterska liczy 60-100 stron znormalizowanego maszynopisu (Times New Roman 12 pt, interlinia 1,5). Regulaminy uczelni określają zwykle tylko dolną granicę, np. Wydział Nauk o Zdrowiu UMB wymaga minimum 50 stron. Do limitu nie wlicza się zazwyczaj strony tytułowej, spisu treści i załączników. Więcej nie znaczy lepiej - recenzenci wyżej cenią zwięzłą pracę ze spójnym wywodem niż rozwlekłą kompilację.",
+  },
+  {
+    question: "Ile czasu zajmuje napisanie pracy magisterskiej?",
+    answer:
+      "Realistycznie 6-12 miesięcy systematycznej pracy. Najwięcej czasu pochłaniają badania własne (8-12 tygodni razem ze zbieraniem danych) i pisanie rozdziałów (10-16 tygodni). Da się szybciej, jeśli temat i konspekt są gotowe, a dostęp do grupy badanej zapewniony, ale plan krótszy niż 3 miesiące zwykle kończy się poprawkami i przełożonym terminem obrony.",
+  },
+  {
+    question: "Ile pozycji powinna mieć bibliografia pracy magisterskiej?",
+    answer:
+      "Przyjmuje się 40-80 pozycji, w tym artykuły naukowe, monografie i źródła internetowe. Część uczelni określa to wprost - np. wytyczne UMB wymagają co najmniej 50 pozycji piśmiennictwa z ostatnich 10 lat. Liczy się nie sama liczba, lecz to, czy każda pozycja jest faktycznie przywołana w tekście.",
+  },
+  {
+    question: "Czy praca magisterska musi zawierać badania własne?",
+    answer:
+      "Na większości kierunków tak - praca magisterska różni się od licencjackiej właśnie obowiązkowym wkładem własnym, najczęściej w postaci badań empirycznych (ankieta, wywiady, eksperyment, analiza danych). Na niektórych kierunkach (np. prawo, filologie, historia) dopuszcza się prace teoretyczne lub analityczne, w których wkładem własnym jest samodzielna analiza źródeł, orzecznictwa czy tekstów.",
+  },
+  {
+    question: "Czym różni się praca magisterska od licencjackiej?",
+    answer:
+      "Praca licencjacka (40-60 stron) może mieć charakter odtwórczy i porządkować istniejącą wiedzę. Praca magisterska (60-100 stron) wymaga wkładu własnego: badań empirycznych lub samodzielnej analizy, wyraźnie wskazanej luki badawczej, świadomego doboru metodologii i głębszego osadzenia teoretycznego. Różnica dotyczy też hipotez - w magisterce są standardem, w licencjacie często wystarczają pytania badawcze.",
+  },
+  {
+    question: "W jakiej kolejności pisać rozdziały pracy magisterskiej?",
+    answer:
+      "Inaczej, niż się je czyta. Sprawdzona kolejność: konspekt i plan badań, rozdział teoretyczny (równolegle z kwerendą), rozdział metodologiczny, przeprowadzenie badań, rozdział z wynikami, a dopiero na końcu zakończenie, wstęp i streszczenie. Wstęp pisany na początku niemal zawsze rozjeżdża się z finalną treścią pracy.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Jak napisać pracę magisterską? Przewodnik krok po kroku [2026]"
+  description="Jak napisać pracę magisterską w 9 krokach: temat, promotor, konspekt, badania, rozdziały, formatowanie i obrona. Z harmonogramem, wymaganiami uczelni i wzorami PDF do pobrania."
+  updateDate="2026-06-11"
+  readingTime="20 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Praca magisterska to projekt na 6-12 miesięcy: od wyboru tematu, przez
+    badania własne, po obronę. Ten przewodnik prowadzi przez cały proces w
+    dziewięciu krokach i działa jak mapa - przy każdym etapie znajdziesz
+    odnośnik do szczegółowego poradnika, gotowe wzory PDF i konkretne liczby
+    z oficjalnych wytycznych polskich uczelni. Jeśli dopiero zaczynasz,
+    czytaj po kolei; jeśli utknąłeś w konkretnym miejscu, przeskocz do
+    właściwego kroku.
+  </p>
+
+  <h2>Wymagania: co musi spełniać praca magisterska</h2>
+
+  <p>
+    Zanim zaplanujesz pracę, poznaj reguły gry. Standardowa praca magisterska
+    liczy 60-100 stron znormalizowanego maszynopisu (Times New Roman 12 pt,
+    interlinia 1,5, marginesy ok. 2,5 cm z poszerzeniem na oprawę). Regulaminy
+    uczelni wyznaczają zwykle dolną granicę objętości, na przykład wytyczne
+    Wydziału Nauk o Zdrowiu Uniwersytetu Medycznego w Białymstoku wymagają
+    minimum 50 stron i co najmniej 50 pozycji piśmiennictwa z ostatnich 10
+    lat. Od pracy licencjackiej magisterkę odróżnia obowiązkowy wkład własny:
+    badania empiryczne albo samodzielna analiza, która wnosi coś nowego do
+    stanu wiedzy, choćby była to replikacja badania na nowej grupie.
+  </p>
+
+  <p>
+    Każda praca przechodzi też kontrolę w Jednolitym Systemie Antyplagiatowym
+    (JSA) - pozytywny wynik jest warunkiem dopuszczenia do obrony. Nie ma
+    jednego "dozwolonego procentu" podobieństwa; raport interpretuje promotor.
+    W praktyce oznacza to jedno: parafrazuj ze zrozumieniem i konsekwentnie
+    oznaczaj źródła, a kontrola będzie formalnością.
+  </p>
+
+  <h2>Harmonogram: 9 kroków i realne ramy czasowe</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Krok</th>
+        <th>Główne działania</th>
+        <th>Szacowany czas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Temat</td>
+        <td>Wybór obszaru, zawężenie, wstępna kwerenda</td>
+        <td>2-4 tygodnie</td>
+      </tr>
+      <tr>
+        <td>2. Promotor</td>
+        <td>Wybór seminarium, pierwsze konsultacje</td>
+        <td>1-2 tygodnie</td>
+      </tr>
+      <tr>
+        <td>3. Konspekt i plan badań</td>
+        <td>Struktura pracy, problem, pytania, harmonogram</td>
+        <td>2-3 tygodnie</td>
+      </tr>
+      <tr>
+        <td>4. Literatura</td>
+        <td>Kwerenda, notatki, baza bibliograficzna</td>
+        <td>6-10 tygodni</td>
+      </tr>
+      <tr>
+        <td>5. Rozdział teoretyczny</td>
+        <td>Pisanie równolegle z czytaniem</td>
+        <td>4-8 tygodni</td>
+      </tr>
+      <tr>
+        <td>6. Metodologia i badania</td>
+        <td>Narzędzia, zgody, zbieranie danych</td>
+        <td>8-12 tygodni</td>
+      </tr>
+      <tr>
+        <td>7. Wyniki i analiza</td>
+        <td>Opracowanie danych, rozdział badawczy</td>
+        <td>4-6 tygodni</td>
+      </tr>
+      <tr>
+        <td>8. Wstęp, zakończenie, streszczenie</td>
+        <td>Domknięcie pracy, gdy treść jest gotowa</td>
+        <td>1-2 tygodnie</td>
+      </tr>
+      <tr>
+        <td>9. Redakcja, antyplagiat, obrona</td>
+        <td>Formatowanie, korekta, JSA, prezentacja</td>
+        <td>3-5 tygodni</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Część etapów biegnie równolegle (literaturę czytasz przez całą pierwszą
+    połowę pracy), więc suma kolumny czasu nie jest kalendarzem. Realny
+    horyzont to 6-12 miesięcy. Zwróć uwagę na kolejność z kroku 8: wstęp
+    pisze się na końcu. Taką sekwencję zalecają wytyczne akademickie, m.in.
+    uwagi do prac dyplomowych Wydziału Nauk Ekonomicznych UW, które
+    umieszczają napisanie wstępu i zakończenia jako ostatni etap całego
+    procesu.
+  </p>
+
+  <h2>Krok 1. Wybierz temat, który da się zbadać</h2>
+
+  <p>
+    Dobry temat spełnia trzy warunki naraz: interesuje Cię na tyle, żeby nie
+    zbrzydł po pół roku, jest wystarczająco wąski, by dało się go pogłębić,
+    i jest wykonalny - masz dostęp do literatury i grupy badanej. Zamiast
+    „Marketing w mediach społecznościowych" wybierz „Strategie marketingowe
+    małych przedsiębiorstw na Instagramie w latach 2020-2024". Konkretny
+    temat sam podpowiada cel, pytania badawcze i metodę.
+  </p>
+
+  <p>
+    Praktyczny test wykonalności: znajdź 10-15 publikacji naukowych o swoim
+    zagadnieniu i odpowiedz sobie, skąd weźmiesz dane (respondenci, dokumenty,
+    bazy statystyczne). Jeśli któregoś brakuje, zawęź lub zmień kąt. Pełną
+    procedurę opisujemy w poradniku o <a href="/poradniki/wybor-tematu/"
+      >wyborze tematu pracy magisterskiej</a
+    >, a gotowe pomysły znajdziesz w bazie <a href="/tematy/"
+      >2000+ tematów z ponad 20 kierunków</a
+    >.
+  </p>
+
+  <h2>Krok 2. Znajdź promotora, z którym da się pracować</h2>
+
+  <p>
+    Promotor wpływa na komfort pisania bardziej niż jakikolwiek inny czynnik.
+    Oceń kandydatów po trzech kryteriach: zgodność specjalizacji z Twoim
+    tematem, dostępność (jak szybko odpisuje, jak często prowadzi
+    konsultacje) i styl pracy ze studentami, o który najlepiej zapytać
+    starsze roczniki. Na pierwsze spotkanie przyjdź z 2-3 propozycjami tematu
+    i wstępną listą literatury - to ustawia współpracę na właściwym poziomie
+    od początku. Szczegóły, łącznie z czerwonymi flagami sygnalizującymi, że
+    warto zmienić opiekuna, znajdziesz w poradniku <a
+      href="/poradniki/znalezienie-promotora/"
+      >jak znaleźć promotora</a
+    >.
+  </p>
+
+  <h2>Krok 3. Zrób konspekt i plan badań</h2>
+
+  <p>
+    Konspekt to robocza struktura pracy: tytuły rozdziałów i podrozdziałów,
+    problem badawczy, pytania, planowane metody i wstępna bibliografia.
+    Przygotowanie go przed pisaniem oszczędza tygodnie, bo zmiany koncepcji
+    najtaniej wprowadza się na etapie planu - przebudowa gotowego rozdziału
+    to już praca na wiele dni. Konspekt podlega akceptacji
+    promotora i może ewoluować w trakcie pracy. Jak go zbudować, pokazujemy
+    w poradnikach o <a href="/poradniki/konspekt/">konspekcie</a>, <a
+      href="/poradniki/cel-pracy/">celu pracy</a
+    > i <a href="/poradniki/harmonogram/">harmonogramie pisania</a>.
+  </p>
+
+  <h2>Krok 4. Zbierz literaturę i od razu ją dokumentuj</h2>
+
+  <p>
+    Kwerendę zacznij od Google Scholar i katalogów bibliotecznych, a
+    bibliografię przeczytanych już tekstów traktuj jako mapę do kolejnych
+    źródeł. Nie ograniczaj się do polszczyzny - literatura anglojęzyczna
+    zwykle zawiera nowsze badania. Od pierwszego dnia notuj pełne dane
+    bibliograficzne każdego źródła (program typu Zotero zrobi to za Ciebie i
+    wygeneruje przypisy), bo szukanie numeru strony po trzech miesiącach to
+    jedna z najbardziej frustrujących części pisania. W notatkach wyraźnie
+    oddzielaj cytat od parafrazy i własnej myśli - to ochrona przed
+    nieświadomym plagiatem. Zasady opisujemy w poradnikach o <a
+      href="/poradniki/bibliografia/">bibliografii</a
+    > i <a href="/poradniki/cytaty/">cytowaniu</a>.
+  </p>
+
+  <h2>Krok 5. Napisz rozdział teoretyczny</h2>
+
+  <p>
+    Rozdział teoretyczny porządkuje stan wiedzy o Twoim zagadnieniu:
+    definicje, koncepcje, wyniki dotychczasowych badań. Pisz go równolegle z
+    czytaniem, póki źródła masz świeżo w głowie. Pilnuj jednej zasady: to ma
+    być wywód prowadzący do Twojego problemu badawczego, a nie streszczenie
+    wszystkiego, co przeczytałeś. Każdy podrozdział powinien odpowiadać na
+    pytanie „po co czytelnikowi ta wiedza przed lekturą moich badań".
+    Warsztat znajdziesz w poradniku o <a
+      href="/poradniki/rozdzial-teoretyczny/">rozdziale teoretycznym</a
+    >, a proporcje całości w artykule o <a href="/poradniki/struktura/"
+      >strukturze pracy magisterskiej</a
+    >.
+  </p>
+
+  <h2>Krok 6. Zaprojektuj metodologię i przeprowadź badania</h2>
+
+  <p>
+    To serce pracy magisterskiej i etap, na którym powstaje najwięcej błędów
+    nie do naprawienia później. Zanim zbierzesz pierwsze dane, ustal:
+    paradygmat (ilościowy, jakościowy lub mieszany), metody i narzędzia,
+    sposób doboru próby i plan analizy. Ten plan skonsultuj z promotorem
+    przed badaniami - źle zaprojektowanej ankiety nie uratuje żadna
+    statystyka. W badaniach z udziałem ludzi zadbaj o świadomą zgodę
+    uczestników i anonimizację, a w badaniach z pacjentami lub nieletnimi o
+    wymagane zgody formalne.
+  </p>
+
+  <p>
+    Kompletny warsztat znajdziesz w dziale <a href="/poradniki/metodologia/"
+      >metodologia badań</a
+    >: od <a href="/poradniki/metodologia/problemy-badawcze/"
+      >problemów badawczych</a
+    > i <a href="/poradniki/metodologia/hipotezy-badawcze/">hipotez</a>, przez
+    <a href="/poradniki/metodologia/ankieta/">ankietę</a> i <a
+      href="/poradniki/metodologia/wywiad/">wywiad</a
+    >, po <a href="/poradniki/metodologia/dobor-proby/">dobór próby</a>.
+    Rozdział opisujący badania ma ustalony szkielet - pobierz nasz <a
+      href="/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf"
+      download>wzór rozdziału metodologicznego (PDF)</a
+    > i zaadaptuj go do swojego tematu.
+  </p>
+
+  <h2>Krok 7. Opracuj wyniki i napisz rozdział badawczy</h2>
+
+  <p>
+    Rozdział badawczy prezentuje wyniki i ich interpretację: statystyki
+    opisowe, weryfikację hipotez, tabele i wykresy z numeracją i źródłem.
+    Dwie zasady oszczędzą Ci uwag recenzenta. Po pierwsze, tekst komentuje
+    dane, zamiast powtarzać liczby z tabeli zdaniami. Po drugie, wyniki
+    zestawia się z literaturą z rozdziału teoretycznego - pokazujesz, co
+    potwierdzasz, a co wychodzi inaczej niż u wcześniejszych badaczy i
+    dlaczego. Schemat znajdziesz w poradniku o <a
+      href="/poradniki/metodologia/rozdzial-badawczy/">rozdziale badawczym</a
+    >.
+  </p>
+
+  <h2>Krok 8. Dopiero teraz: wstęp, zakończenie, streszczenie</h2>
+
+  <p>
+    Gdy rozdziały są gotowe, wiesz już dokładnie, co praca zawiera - i
+    dopiero teraz możesz to uczciwie zapowiedzieć i podsumować. Wstęp (2-4
+    strony) prowadzi od kontekstu, przez problem i cel, po strukturę pracy;
+    zakończenie zestawia wnioski z hipotezami i wskazuje ograniczenia
+    badania. Do obu mamy szczegółowe poradniki z pełnymi przykładami: <a
+      href="/poradniki/wstep/">jak napisać wstęp</a
+    > (z <a href="/downloads/wzor-wstepu-praca-magisterska.pdf" download
+      >wzorem do pobrania w PDF</a
+    >) i <a href="/poradniki/zakonczenie/">jak napisać zakończenie</a>.
+    Na koniec dochodzą <a href="/poradniki/streszczenie/">streszczenie</a>
+    (po polsku i angielsku) i <a href="/poradniki/spis-tresci/"
+      >spis treści</a
+    >.
+  </p>
+
+  <h2>Krok 9. Formatowanie, antyplagiat i obrona</h2>
+
+  <p>
+    Tydzień przed oddaniem zrób przegląd techniczny: jednolite style
+    nagłówków, numeracja stron, podpisy tabel i rycin, kompletna bibliografia
+    zgodna z wymogami wydziału (szczegóły w poradniku o <a
+      href="/poradniki/formatowanie/">formatowaniu</a
+    >). Po akceptacji promotora praca trafia do JSA. Następnie zostaje
+    obrona: prezentacja (zwykle 10-15 minut) i pytania komisji, najczęściej o
+    metodologię, wnioski i powiązanie tematu z kierunkiem studiów. Jak się
+    przygotować i jakie pytania padają najczęściej, opisujemy w poradniku o <a
+      href="/poradniki/obrona/">obronie pracy magisterskiej</a
+    >.
+  </p>
+
+  <h2>Najczęstsze błędy, które kosztują semestr</h2>
+
+  <ul>
+    <li>
+      <strong>Badania przed konsultacją metodologii.</strong> Źle zaprojektowana
+      ankieta to dane, z których nie da się odpowiedzieć na pytania badawcze.
+      Plan badań zatwierdź u promotora przed zebraniem pierwszej odpowiedzi.
+    </li>
+    <li>
+      <strong>Pisanie wstępu na początku.</strong> Wstęp z konspektu obiecuje
+      rzeczy, których w gotowej pracy nie będzie, a tę rozbieżność recenzent
+      wychwytuje od razu.
+    </li>
+    <li>
+      <strong>Bibliografia tworzona na końcu.</strong> Odtwarzanie źródeł po
+      miesiącach to dni dodatkowej pracy i ryzyko przeoczenia, które JSA
+      oznaczy jako podobieństwo bez przypisu.
+    </li>
+    <li>
+      <strong>Rozdział teoretyczny jako streszczenie lektur.</strong> Teoria ma
+      prowadzić do Twojego problemu badawczego; wszystko, co do niego nie
+      prowadzi, jest do wycięcia.
+    </li>
+    <li>
+      <strong>Brak buforów w harmonogramie.</strong> Zbieranie danych prawie
+      zawsze trwa dłużej, niż zakładasz. Planuj zapas 2-3 tygodni na etap
+      badań i drugi na poprawki promotora.
+    </li>
+    <li>
+      <strong>Czekanie na natchnienie.</strong> Działa odwrotny mechanizm:
+      regularność (np. 25-minutowe bloki pracy o stałej porze) wytwarza nawyk,
+      a nawyk znosi blokadę pustej kartki.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Od czego zacząć dziś</h2>
+
+  <p>
+    Nie musisz mieć całej drogi przemyślanej, żeby ruszyć. Wystarczą trzy
+    pierwsze działania: wybierz 2-3 kandydujące tematy (pomoże <a
+      href="/tematy/">baza tematów</a
+    >), sprawdź dla każdego dostępność literatury w Google Scholar i umów
+    się na rozmowę z potencjalnym promotorem. Reszta procesu to kroki z tego
+    przewodnika - wracaj do niego na każdym etapie, a szczegóły znajdziesz
+    w podlinkowanych poradnikach.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

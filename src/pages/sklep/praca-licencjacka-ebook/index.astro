@@ -1,0 +1,25 @@
+---
+// Strona historyczna: produkt "ebook praca licencjacka" przeniesiony na licencjackie.pl.
+// Stały stub z przekierowaniem — musi istnieć w src, żeby deploy (s3 sync --delete)
+// nie zostawiał tej ścieżki w gestii starego cache CloudFront.
+const target = "https://www.licencjackie.pl/ebook/";
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <meta name="robots" content="noindex" />
+    <title>Ebook: Jak napisać pracę licencjacką — przeniesiono</title>
+  </head>
+  <body>
+    <p>
+      Ten produkt znajduje się teraz na licencjackie.pl. Jeśli przekierowanie
+      nie nastąpi automatycznie, przejdź do:
+      <a href={target}>{target}</a>
+    </p>
+  </body>
+</html>

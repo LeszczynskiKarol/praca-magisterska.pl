@@ -1,0 +1,343 @@
+---
+// src/pages/poradniki/bibliografia/apa/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Bibliografia", href: "/poradniki/bibliografia/" },
+  { label: "Styl APA", href: "/poradniki/bibliografia/apa/" },
+];
+
+const relatedLinks = [
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Przypisy w pracy magisterskiej", href: "/poradniki/przypisy/" },
+  { label: "Cytowanie i cytaty", href: "/poradniki/cytaty/" },
+  { label: "Formatowanie pracy", href: "/poradniki/formatowanie/" },
+];
+
+const faqItems = [
+  {
+    question: "Czym różni się APA 7 od APA 6?",
+    answer:
+      "Najważniejsze zmiany w 7. edycji: w bibliografii podaje się do 20 autorów (wcześniej 7), zrezygnowano z miejsca wydania książek, w cytowaniach prac trzech i więcej autorów od razu pisze się pierwsze nazwisko z dopiskiem i in., a w adresach internetowych nie poprzedza się linku frazą Pobrano z, chyba że źródło może się zmieniać. Jeśli uczelnia nie wskazuje edycji, stosuj APA 7.",
+  },
+  {
+    question: "Jak cytować w APA źródło bez autora lub bez daty?",
+    answer:
+      "Gdy brak autora, w roli autora występuje tytuł (w cytowaniu w tekście jego pierwsze słowa kursywą) lub instytucja sprawcza. Gdy brak daty, stosuje się skrót b.d. (bez daty), po angielsku n.d. Przykład: (Słownik języka polskiego, b.d.).",
+  },
+  {
+    question: "Czy w polskiej pracy pisać między autorami spójnik i, czy znak &?",
+    answer:
+      "W polskiej adaptacji standardów APA między nazwiskami ostatnich autorów stosuje się spójnik i (Kowalski i Nowak, 2021), a nie angielskie &. Analogicznie zamiast et al. można stosować i in. Wybierz jedną konwencję (polską albo angielską) i trzymaj się jej w całej pracy.",
+  },
+  {
+    question: "Jak w APA zapisać ustawę lub akt prawny?",
+    answer:
+      "Oryginalny podręcznik APA opisuje prawo amerykańskie, więc polskie prace stosują konwencję krajową: pełna nazwa aktu z datą uchwalenia i adresem publikacyjnym, np. Ustawa z dnia 20 lipca 2018 r. - Prawo o szkolnictwie wyższym i nauce (Dz.U. 2018 poz. 1668 z późn. zm.). W tekście cytuje się skrótem: (Prawo o szkolnictwie wyższym i nauce, 2018).",
+  },
+  {
+    question: "Czy bibliografię w APA dzieli się na książki, artykuły i strony www?",
+    answer:
+      "Nie - w stylu APA bibliografia jest jedną listą alfabetyczną według nazwisk autorów, bez podziału na typy źródeł i bez numeracji. Podział na sekcje (literatura, akty prawne, netografia) to konwencja polskich uczelni; jeśli wydział jej wymaga, ma ona pierwszeństwo przed podręcznikiem APA.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Styl APA w pracy magisterskiej - zasady cytowania i wzory [APA 7]"
+  description="Styl APA 7 po polsku: cytowanie w tekście (autor, rok), wzory bibliografii dla książki, artykułu, rozdziału i strony www, zapis 2, 3 i 20+ autorów. Gotowe przykłady do skopiowania."
+  updateDate="2026-06-11"
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    APA to najpopularniejszy styl cytowania w polskich pracach z psychologii,
+    pedagogiki, socjologii i nauk o zarządzaniu. Działa w systemie autor-data:
+    w tekście wstawiasz krótki odnośnik w nawiasie (Kowalski, 2021), a pełny
+    opis źródła trafia do alfabetycznej bibliografii na końcu pracy, bez
+    przypisów dolnych. Ten poradnik zbiera zasady aktualnej, siódmej edycji
+    standardów APA z gotowymi wzorami dla każdego typu źródła - wystarczy
+    podstawić własne dane. Uwzględniamy też polską adaptację standardów,
+    bo część reguł (spójnik „i", skrót „i in.") różni się od wersji
+    angielskiej.
+  </p>
+
+  <h2>Cytowanie w tekście - system autor-data</h2>
+
+  <p>
+    Każde odwołanie do źródła sygnalizujesz w tekście nazwiskiem autora i
+    rokiem wydania. W praktyce stosuje się dwa warianty. W cytowaniu
+    nawiasowym całość trafia do nawiasu na końcu zdania: „Motywacja
+    wewnętrzna silniej wiąże się z trwałością nawyku (Kowalski, 2021)".
+    W cytowaniu narracyjnym nazwisko jest częścią zdania, a w nawiasie
+    zostaje rok: „Jak wykazał Kowalski (2021), motywacja wewnętrzna...".
+    Przy dosłownym cytacie dodajesz numer strony: (Kowalski, 2021, s. 43).
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Liczba autorów</th>
+        <th>Cytowanie nawiasowe</th>
+        <th>Cytowanie narracyjne</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1 autor</td>
+        <td>(Kowalski, 2021)</td>
+        <td>Kowalski (2021)</td>
+      </tr>
+      <tr>
+        <td>2 autorów</td>
+        <td>(Kowalski i Nowak, 2021)</td>
+        <td>Kowalski i Nowak (2021)</td>
+      </tr>
+      <tr>
+        <td>3 i więcej</td>
+        <td>(Kowalski i in., 2021)</td>
+        <td>Kowalski i in. (2021)</td>
+      </tr>
+      <tr>
+        <td>Instytucja</td>
+        <td>(Główny Urząd Statystyczny [GUS], 2023), dalej: (GUS, 2023)</td>
+        <td>Główny Urząd Statystyczny (2023)</td>
+      </tr>
+      <tr>
+        <td>Brak autora</td>
+        <td>(<em>Słownik języka polskiego</em>, b.d.)</td>
+        <td><em>Słownik języka polskiego</em> (b.d.)</td>
+      </tr>
+      <tr>
+        <td>Kilka źródeł naraz</td>
+        <td>(Kowalski, 2021; Nowak, 2019)</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Dwie zasady porządkowe. Źródła w jednym nawiasie układasz alfabetycznie i
+    rozdzielasz średnikami. Gdy ten sam autor ma dwie publikacje z jednego
+    roku, rozróżniasz je literami: (Kowalski, 2021a, 2021b) - te same litery
+    muszą pojawić się w bibliografii.
+  </p>
+
+  <h2>Wzory opisów bibliograficznych APA 7</h2>
+
+  <p>
+    Bibliografia w APA to jedna lista alfabetyczna z wysunięciem
+    pierwszego wiersza (hanging indent), bez numeracji. Poniżej wzory dla
+    typów źródeł, które pokrywają niemal całą bibliografię typowej pracy
+    magisterskiej. Schemat ogólny jest stały: <em>Kto. (Kiedy). Co.
+    Gdzie.</em>
+  </p>
+
+  <h3>Książka</h3>
+  <p class="wzor-apa">
+    Nazwisko, I. (rok). <em>Tytuł książki kursywą</em> (wyd. 2). Wydawnictwo.
+  </p>
+  <p class="wzor-apa-przyklad">
+    Sęk, H. (2012). <em>Wypalenie zawodowe. Przyczyny i zapobieganie</em>.
+    Wydawnictwo Naukowe PWN.
+  </p>
+  <p>
+    W APA 7 nie podaje się już miejsca wydania. Numer wydania dodajesz w
+    nawiasie tylko od drugiego wydania wzwyż.
+  </p>
+
+  <h3>Rozdział w pracy zbiorowej</h3>
+  <p class="wzor-apa">
+    Nazwisko, I. (rok). Tytuł rozdziału. W: I. Nazwisko (red.), <em>Tytuł
+    książki kursywą</em> (s. 11-35). Wydawnictwo.
+  </p>
+
+  <h3>Artykuł w czasopiśmie naukowym</h3>
+  <p class="wzor-apa">
+    Nazwisko, I., Nazwisko, I. (rok). Tytuł artykułu. <em>Tytuł Czasopisma
+    Kursywą</em>, <em>tom</em>(numer), strony. https://doi.org/xxxx
+  </p>
+  <p>
+    Kursywą zapisuje się tytuł czasopisma i numer tomu; numer zeszytu stoi
+    w nawiasie prostym pismem. Jeśli artykuł ma DOI, zawsze go podajesz;
+    link DOI zastępuje adres strony.
+  </p>
+
+  <h3>Strona internetowa</h3>
+  <p class="wzor-apa">
+    Nazwisko, I. lub Instytucja. (rok, dzień miesiąca). <em>Tytuł
+    strony</em>. Nazwa Serwisu. https://adres
+  </p>
+  <p>
+    Gdy treść strony może się zmieniać (np. hasło encyklopedii online),
+    dodaje się datę dostępu: „Pobrano 11 czerwca 2026 z https://...". W
+    pozostałych przypadkach data dostępu nie jest wymagana.
+  </p>
+
+  <h3>Raport instytucji</h3>
+  <p class="wzor-apa">
+    Instytucja. (rok). <em>Tytuł raportu kursywą</em>. https://adres
+  </p>
+
+  <h3>Praca dyplomowa i doktorska</h3>
+  <p class="wzor-apa">
+    Nazwisko, I. (rok). <em>Tytuł pracy</em> [niepublikowana praca
+    magisterska]. Nazwa Uczelni.
+  </p>
+
+  <h2>Kolejność w bibliografii - reguły szczegółowe</h2>
+
+  <ul>
+    <li>
+      Lista jest alfabetyczna według nazwiska pierwszego autora; prace tego
+      samego autora układasz chronologicznie od najstarszej.
+    </li>
+    <li>
+      Praca samodzielna autora poprzedza jego prace współautorskie
+      (Kowalski, 2021 przed Kowalski i Nowak, 2019).
+    </li>
+    <li>
+      Pozycje bez autora wchodzą do listy według pierwszego znaczącego
+      słowa tytułu.
+    </li>
+    <li>
+      Polskie znaki traktuje się zgodnie z polskim alfabetem (Ł po L, Ś po
+      S) - ustaw w Wordzie język sortowania na polski.
+    </li>
+  </ul>
+
+  <p>
+    Uwaga praktyczna: wiele polskich wydziałów wymaga podziału bibliografii
+    na sekcje (literatura przedmiotu, akty prawne, źródła internetowe) albo
+    numerowania pozycji. To odstępstwa od czystego APA, ale wytyczne
+    uczelni zawsze mają pierwszeństwo - sprawdź je, zanim sformatujesz
+    listę. Ogólne zasady budowy bibliografii, wraz z innymi stylami,
+    znajdziesz w naszym <a href="/poradniki/bibliografia/"
+      >kompletnym poradniku o bibliografii</a
+    >.
+  </p>
+
+  <h2>Najczęstsze błędy w stosowaniu APA</h2>
+
+  <ul>
+    <li>
+      <strong>Mieszanie systemów.</strong> APA nie używa przypisów dolnych do
+      dokumentowania źródeł; jeśli promotor wymaga przypisów, stosujesz inny
+      system (zobacz poradnik o <a href="/poradniki/przypisy/">przypisach</a
+      >), a nie hybrydę.
+    </li>
+    <li>
+      <strong>Pozycje w bibliografii bez cytowania w tekście</strong> (i
+      odwrotnie). Lista źródeł zawiera wyłącznie prace przywołane w pracy -
+      to pierwsza rzecz, którą recenzent sprawdza wyrywkowo.
+    </li>
+    <li>
+      <strong>Stary zapis „Pobrano z" przy każdym linku.</strong> W APA 7
+      data dostępu dotyczy tylko treści zmiennych w czasie.
+    </li>
+    <li>
+      <strong>Kursywa w złych miejscach.</strong> Kursywą: tytuł książki,
+      tytuł czasopisma i tom. Prostym pismem: tytuł artykułu i tytuł
+      rozdziału.
+    </li>
+    <li>
+      <strong>Niekonsekwencja polsko-angielska.</strong> Raz „i in.", raz
+      „et al.", raz „i", raz „&" - wybierz konwencję na początku i pilnuj
+      jej w całej pracy.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania o styl APA</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Styl APA opanowuje się szybciej, niż wygląda: w tekście (Nazwisko,
+    rok), w bibliografii schemat Kto-Kiedy-Co-Gdzie i alfabetyczna lista z
+    wysunięciem. Menedżer bibliografii (Zotero, Mendeley) wygeneruje opisy
+    automatycznie, ale wzory z tej strony pozwolą Ci je zweryfikować, bo
+    automaty mylą się przy polskich źródłach. Zasady samego cytowania w
+    tekście, w tym parafrazy i cytaty dosłowne, omawiamy szerzej w
+    poradniku o <a href="/poradniki/cytaty/">cytowaniu w pracy
+    magisterskiej</a
+    >.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+  .wzor-apa {
+    background: #f5f7ff;
+    border-left: 4px solid #4f46e5;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.9rem;
+  }
+  .wzor-apa-przyklad {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+</style>

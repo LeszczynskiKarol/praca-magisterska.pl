@@ -1,0 +1,342 @@
+---
+// src/pages/poradniki/metodologia/analiza-jakosciowa/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  {
+    label: "Analiza danych jakościowych",
+    href: "/poradniki/metodologia/analiza-jakosciowa/",
+  },
+];
+
+const relatedLinks = [
+  {
+    label: "Badania jakościowe",
+    href: "/poradniki/metodologia/badania-jakosciowe/",
+  },
+  { label: "Jak przeprowadzić wywiad", href: "/poradniki/metodologia/wywiad/" },
+  {
+    label: "Analiza danych ilościowych",
+    href: "/poradniki/metodologia/analiza-ilosciowa/",
+  },
+  {
+    label: "Rozdział badawczy",
+    href: "/poradniki/metodologia/rozdzial-badawczy/",
+  },
+];
+
+const faqItems = [
+  {
+    question: "Ile wywiadów wystarczy do pracy magisterskiej?",
+    answer:
+      "W pracach magisterskich przyjmuje się zwykle 8-15 wywiadów pogłębionych. Formalnym kryterium nie jest jednak liczba, lecz saturacja teoretyczna: moment, w którym kolejne wywiady nie wnoszą już nowych kodów ani kategorii. W rozdziale metodologicznym napisz, po którym wywiadzie zaobserwowano nasycenie, zamiast uzasadniać liczbę okrągłością.",
+  },
+  {
+    question: "Czy analizę jakościową można zrobić ręcznie, bez programu?",
+    answer:
+      "Tak - przy 8-15 wywiadach analiza w edytorze tekstu lub arkuszu kalkulacyjnym (kolumny: fragment, kod, kategoria) jest całkowicie wystarczająca i promotorzy ją akceptują. Programy CAQDAS (MAXQDA, NVivo, Atlas.ti) przyspieszają pracę przy większych korpusach danych, ale nie wykonują analizy za badacza - kodowanie i interpretacja zawsze należą do Ciebie.",
+  },
+  {
+    question: "Czym różni się analiza treści od analizy tematycznej?",
+    answer:
+      "Analiza treści (zwłaszcza w wariancie ilościowym) zlicza występowanie ustalonych kategorii w materiale i bywa bliska podejściu ilościowemu. Analiza tematyczna identyfikuje i interpretuje wzorce znaczeń (tematy) w danych, bez zliczania częstości. W pracach magisterskich opartych na wywiadach częściej stosuje się analizę tematyczną; jeśli kodujesz duży zbiór dokumentów według klucza, mówisz o analizie treści.",
+  },
+  {
+    question: "Jak cytować wypowiedzi badanych w pracy?",
+    answer:
+      "Dosłowne cytaty z wywiadów przytacza się kursywą lub w cudzysłowie z oznaczeniem rozmówcy zapewniającym anonimowość, np. (W3, kobieta, 34 lata, staż 8 lat). Cytat ma ilustrować temat, o którym piszesz, a nie go zastępować: po cytacie zawsze następuje Twój komentarz analityczny. Dane pozwalające zidentyfikować osobę (nazwy firm, miejscowości) anonimizuje się w transkrypcji.",
+  },
+  {
+    question: "Jak zapewnić rzetelność analizy jakościowej?",
+    answer:
+      "Standardowe zabiegi to: systematyczna procedura kodowania opisana krok po kroku, księga kodów z definicjami, kodowanie części materiału przez drugą osobę i porównanie wyników (zgodność międzykoderska), triangulacja źródeł lub metod oraz tzw. gęsty opis - cytaty dokumentujące każdy temat. Opisz te zabiegi w rozdziale metodologicznym; to one odpowiadają na zarzut subiektywności.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Analiza danych jakościowych w pracy magisterskiej - kodowanie krok po kroku"
+  description="Jak przeanalizować wywiady do pracy magisterskiej: transkrypcja, kodowanie, analiza tematyczna w 6 fazach, programy MAXQDA/NVivo i darmowe alternatywy, cytowanie wypowiedzi badanych."
+  updateDate="2026-06-11"
+  readingTime="16 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Masz nagrania dziesięciu wywiadów i pytanie, jak zamienić kilkanaście
+    godzin rozmów w rozdział badawczy. Analiza jakościowa rządzi się innymi
+    prawami niż statystyka: zamiast testów i wartości p pracujesz na
+    znaczeniach, kodach i tematach, a o jakości analizy decyduje
+    systematyczność procedury. Ten poradnik przeprowadza przez cały proces,
+    od transkrypcji po cytowanie wypowiedzi w pracy, na przykładzie
+    najczęściej wybieranej przez magistrantów metody: analizy tematycznej.
+  </p>
+
+  <h2>Krok 1. Transkrypcja - z nagrania do tekstu</h2>
+
+  <p>
+    Materiałem do analizy jest tekst, więc nagrania trzeba najpierw
+    przepisać. W pracach magisterskich wystarcza transkrypcja
+    standardowa: dosłowny zapis wypowiedzi z pominięciem wypełniaczy
+    („yyy", „no wiesz"), chyba że badasz sam sposób mówienia - wtedy
+    potrzebna jest transkrypcja pełna z zapisem pauz i emocji. Godzina
+    nagrania to 4-6 godzin ręcznego przepisywania, dlatego warto sięgnąć
+    po automatyczną transkrypcję (funkcja dyktowania w Wordzie, narzędzia
+    AI), a potem poprawić tekst przy odsłuchu. Na tym etapie wykonaj też
+    anonimizację: imiona, nazwy firm i miejscowości zastąp oznaczeniami w
+    nawiasach kwadratowych, a każdemu rozmówcy nadaj kod (W1, W2...), który
+    będzie potem podpisem cytatów.
+  </p>
+
+  <h2>Krok 2. Wybierz metodę analizy</h2>
+
+  <p>
+    Zanim zaczniesz kodować, nazwij swoją metodę - recenzent będzie jej
+    szukał w rozdziale metodologicznym. W pracach magisterskich realny
+    wybór sprowadza się do trzech podejść:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Analiza tematyczna</strong> - identyfikacja powtarzających się
+      wzorców znaczeń (tematów) w materiale. Najbardziej elastyczna i
+      najlepiej opisana proceduralnie (sześć faz wg Braun i Clarke), dlatego
+      to domyślny wybór przy wywiadach.
+    </li>
+    <li>
+      <strong>Analiza treści</strong> - kodowanie materiału według
+      ustalonego klucza kategoryzacyjnego, często ze zliczaniem częstości.
+      Dobra do dokumentów, artykułów prasowych, postów w mediach
+      społecznościowych.
+    </li>
+    <li>
+      <strong>Studium przypadku</strong> - całościowy opis i interpretacja
+      pojedynczego przypadku (organizacji, pacjenta, placówki) z danych
+      pochodzących z wielu źródeł; wewnątrz przypadku i tak stosuje się
+      zwykle analizę tematyczną lub analizę treści.
+    </li>
+  </ul>
+
+  <p>
+    Podejścia teoretycznie ambitniejsze (teoria ugruntowana, analiza
+    narracyjna, fenomenografia) wymagają osadzenia w konkretnej tradycji
+    badawczej - sięgaj po nie tylko w porozumieniu z promotorem.
+  </p>
+
+  <h2>Krok 3. Kodowanie - serce analizy</h2>
+
+  <p>
+    Kod to krótka etykieta nadana fragmentowi tekstu, która oddaje jego
+    sens z perspektywy pytań badawczych. Przykład z wywiadu o wypaleniu
+    zawodowym: fragment „po dyżurze nie mam już siły rozmawiać z własnymi
+    dziećmi" można zakodować jako <em>przenoszenie zmęczenia na życie
+    rodzinne</em>. Kodujesz cały materiał, fragment po fragmencie; jeden
+    fragment może dostać kilka kodów. W praktyce wygodnie pracuje się w
+    tabeli o trzech kolumnach: fragment, kod, uwagi.
+  </p>
+
+  <p>
+    Kodować można na dwa sposoby. Kodowanie indukcyjne (otwarte) tworzy
+    kody z samego materiału, bez wcześniejszej listy - stosujesz je, gdy
+    eksplorujesz słabo opisane zjawisko. Kodowanie dedukcyjne zaczyna od
+    listy kodów wyprowadzonej z teorii lub wcześniejszych badań -
+    sprawdza się, gdy praca testuje istniejący model w nowym kontekście.
+    Większość prac magisterskich łączy oba podejścia: startujesz z kilkoma
+    kodami z literatury i dopisujesz nowe, gdy materiał ich wymaga.
+    Wszystkie kody wraz z definicjami zbieraj na bieżąco w księdze kodów -
+    to ona pozwala kodować spójnie dziesiąty wywiad tak samo jak pierwszy.
+  </p>
+
+  <h2>Krok 4. Od kodów do tematów - sześć faz analizy tematycznej</h2>
+
+  <p>
+    Klasyczna procedura Braun i Clarke porządkuje całość w sześć faz,
+    które warto przywołać w rozdziale metodologicznym:
+  </p>
+
+  <ol>
+    <li>
+      <strong>Zapoznanie się z danymi</strong> - wielokrotna lektura
+      transkrypcji z notowaniem pierwszych spostrzeżeń.
+    </li>
+    <li>
+      <strong>Generowanie kodów</strong> - systematyczne kodowanie całego
+      materiału (krok 3 powyżej).
+    </li>
+    <li>
+      <strong>Poszukiwanie tematów</strong> - grupowanie pokrewnych kodów w
+      szersze tematy; pomaga mapa myśli lub rozłożenie kodów na karteczkach.
+    </li>
+    <li>
+      <strong>Przegląd tematów</strong> - sprawdzenie każdego tematu wobec
+      zakodowanych fragmentów i całego zbioru: czy temat ma pokrycie w
+      danych, czy nie dubluje innego, czy nie należy go rozbić.
+    </li>
+    <li>
+      <strong>Definiowanie i nazywanie tematów</strong> - dla każdego tematu
+      piszesz zwięzłą definicję i wybierasz cytaty ilustracyjne.
+    </li>
+    <li>
+      <strong>Raport</strong> - opis tematów w rozdziale badawczym z
+      cytatami i interpretacją w dialogu z literaturą.
+    </li>
+  </ol>
+
+  <p>
+    Na pracę magisterską wystarcza zwykle 3-6 tematów głównych, ewentualnie
+    z podtematami. Większa liczba sygnalizuje, że tematy są w istocie
+    kodami i wymagają dalszego grupowania.
+  </p>
+
+  <h2>Krok 5. Programy do analizy jakościowej</h2>
+
+  <ul>
+    <li>
+      <strong>Edytor tekstu lub arkusz kalkulacyjny</strong> - przy 8-15
+      wywiadach w zupełności wystarczy; tabela fragment-kod-kategoria plus
+      kolorowe zaznaczenia robią to samo, co drogi program.
+    </li>
+    <li>
+      <strong>QualCoder, Taguette (darmowe)</strong> - proste narzędzia
+      CAQDAS do kodowania i przeszukiwania kodów; dobry kompromis, gdy
+      materiału jest więcej.
+    </li>
+    <li>
+      <strong>MAXQDA, NVivo, Atlas.ti</strong> - standard akademicki z
+      wizualizacjami, macierzami kodów i pracą zespołową. Sensowne, jeśli
+      uczelnia ma licencję (sprawdź w bibliotece lub na wydziale) - sam
+      zakup na potrzeby jednej pracy zwykle się nie opłaca.
+    </li>
+  </ul>
+
+  <h2>Krok 6. Raportowanie wyników w rozdziale badawczym</h2>
+
+  <p>
+    Wyniki analizy jakościowej prezentuje się tematami: każdy temat
+    dostaje podrozdział z definicją, omówieniem i 2-4 cytatami
+    ilustracyjnymi z podpisem kodowym rozmówcy, np. <em>(W7, mężczyzna, 29
+    lat)</em>. Pisz analitycznie, a nie sprawozdawczo - zamiast referować
+    kolejnych rozmówców, pokazuj wzorce, napięcia i wyjątki w materiale.
+    Cytat pełni rolę dowodu na istnienie tematu; po każdym powinien
+    następować Twój komentarz. W dyskusji zestawiasz tematy z literaturą z
+    rozdziału teoretycznego, a w ograniczeniach badania uczciwie wskazujesz
+    niereprezentatywność próby - wyniki jakościowe opisują badaną grupę i
+    kontekst, nie populację. Strukturę całości znajdziesz w poradniku o <a
+      href="/poradniki/metodologia/rozdzial-badawczy/"
+      >rozdziale badawczym</a
+    >.
+  </p>
+
+  <h2>Najczęstsze błędy w analizie jakościowej</h2>
+
+  <ul>
+    <li>
+      <strong>Streszczanie zamiast analizy.</strong> Rozdział złożony z
+      relacji „rozmówca pierwszy powiedział, że..., rozmówca drugi
+      stwierdził, że..." to opis materiału, nie jego analiza. Jednostką
+      wywodu jest temat, nie osoba.
+    </li>
+    <li>
+      <strong>Kody tworzone bez księgi kodów.</strong> Bez definicji ten sam
+      fragment koduje się inaczej w poniedziałek i inaczej w piątek, a
+      analiza traci spójność.
+    </li>
+    <li>
+      <strong>Cytaty bez komentarza.</strong> Sznur cytatów nie zastąpi
+      interpretacji; recenzenci czytają to jako unik.
+    </li>
+    <li>
+      <strong>Uogólnianie na populację.</strong> Po 12 wywiadach nie piszesz
+      „pielęgniarki w Polsce uważają", tylko „w badanej grupie dominowało
+      przekonanie".
+    </li>
+    <li>
+      <strong>Liczenie tam, gdzie nie ma liczb.</strong> „58% rozmówców
+      wskazało..." przy 12 osobach to pseudoilościowość; pisz „większość",
+      „pojedyncze osoby" i ewentualnie podaj n.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Dobra analiza jakościowa to systematyczna procedura: transkrypcja z
+    anonimizacją, kodowanie z księgą kodów, grupowanie kodów w 3-6 tematów
+    i raport, w którym cytaty dokumentują, a Ty interpretujesz. Jeśli
+    dopiero planujesz badanie, zacznij od poradników o <a
+      href="/poradniki/metodologia/badania-jakosciowe/"
+      >badaniach jakościowych</a
+    > i <a href="/poradniki/metodologia/wywiad/">prowadzeniu wywiadów</a>,
+    a sposób opisania procedury w pracy pokazuje nasz <a
+      href="/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf"
+      download>wzór rozdziału metodologicznego (PDF)</a
+    >. Pracujesz na danych liczbowych? Siostrzany poradnik o <a
+      href="/poradniki/metodologia/analiza-ilosciowa/"
+      >analizie danych ilościowych</a
+    > prowadzi przez statystykę w tym samym układzie.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

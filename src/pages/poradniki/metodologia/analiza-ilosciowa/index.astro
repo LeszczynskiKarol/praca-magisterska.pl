@@ -1,0 +1,349 @@
+---
+// src/pages/poradniki/metodologia/analiza-ilosciowa/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  {
+    label: "Analiza danych ilościowych",
+    href: "/poradniki/metodologia/analiza-ilosciowa/",
+  },
+];
+
+const relatedLinks = [
+  {
+    label: "Badania ilościowe",
+    href: "/poradniki/metodologia/badania-ilosciowe/",
+  },
+  {
+    label: "Rozdział badawczy",
+    href: "/poradniki/metodologia/rozdzial-badawczy/",
+  },
+  {
+    label: "Zmienne badawcze",
+    href: "/poradniki/metodologia/zmienne-badawcze/",
+  },
+  {
+    label: "Hipotezy badawcze",
+    href: "/poradniki/metodologia/hipotezy-badawcze/",
+  },
+];
+
+const faqItems = [
+  {
+    question: "Jaki test statystyczny wybrać do pracy magisterskiej?",
+    answer:
+      "Test wynika z hipotezy i typu danych. Porównujesz dwie grupy (np. kobiety vs mężczyźni) na zmiennej liczbowej - test t-Studenta; trzy lub więcej grup - ANOVA. Badasz związek dwóch zmiennych liczbowych - korelacja r-Pearsona. Sprawdzasz zależność dwóch zmiennych kategorialnych (np. płeć a wybór odpowiedzi tak/nie) - test chi-kwadrat. Gdy rozkład danych odbiega od normalnego, sięgnij po odpowiedniki nieparametryczne: U Manna-Whitneya zamiast testu t, Kruskala-Wallisa zamiast ANOVA, rho Spearmana zamiast Pearsona.",
+  },
+  {
+    question: "Co oznacza p < 0,05?",
+    answer:
+      "To umowny próg istotności statystycznej. Wartość p mówi, jak prawdopodobne byłoby uzyskanie zaobserwowanego (lub silniejszego) wyniku, gdyby w populacji nie było żadnego efektu. Jeśli p jest mniejsze od 0,05, wynik uznaje się za istotny statystycznie i odrzuca hipotezę zerową. Uwaga: istotność statystyczna nie oznacza, że efekt jest duży ani ważny praktycznie - dlatego coraz częściej raportuje się też wielkość efektu (np. d Cohena).",
+  },
+  {
+    question: "Czy do analizy danych w pracy magisterskiej wystarczy Excel?",
+    answer:
+      "Do statystyk opisowych (średnie, odchylenia, częstości) i wykresów - tak. Excel policzy też test t i korelację, ale przy ANOVA, testach nieparametrycznych czy regresji wygodniej pracuje się w darmowych programach JASP lub jamovi, które podają wyniki w formacie gotowym do wklejenia do pracy. SPSS pozostaje standardem tam, gdzie uczelnia ma licencję.",
+  },
+  {
+    question: "Co zrobić, gdy rozkład danych nie jest normalny?",
+    answer:
+      "Nic strasznego - stosujesz testy nieparametryczne, które nie zakładają normalności rozkładu: U Manna-Whitneya (dwie grupy), Kruskala-Wallisa (więcej grup), rho Spearmana (korelacja). Normalność sprawdza się testem Shapiro-Wilka; wynik tej weryfikacji i decyzję o wyborze testów opisz w rozdziale metodologicznym. Przy dużych próbach (powyżej ~100 osób) testy parametryczne są zresztą dość odporne na umiarkowane odstępstwa od normalności.",
+  },
+  {
+    question: "Czym różni się korelacja od związku przyczynowego?",
+    answer:
+      "Korelacja stwierdza tylko, że dwie zmienne współwystępują (gdy rośnie jedna, rośnie lub maleje druga). Nie mówi, co jest przyczyną - związek może działać w obie strony albo wynikać z trzeciej zmiennej. W pracy magisterskiej z badaniem przekrojowym pisz ostrożnie: zaobserwowano związek, zmienne współwystępują - a nie: X powoduje Y. Wnioskowanie przyczynowe wymaga eksperymentu lub badań podłużnych.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Analiza danych ilościowych w pracy magisterskiej - jaki test wybrać?"
+  description="Jak przeanalizować dane z ankiety: statystyki opisowe, tabela doboru testu statystycznego (t-Student, ANOVA, chi-kwadrat, korelacja), programy SPSS/JASP/Excel i raportowanie wyników."
+  updateDate="2026-06-11"
+  readingTime="16 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Masz 150 wypełnionych ankiet i pytanie, co dalej. Ten poradnik prowadzi
+    przez analizę danych ilościowych dokładnie w tej kolejności, w jakiej
+    wykonuje się ją w pracy magisterskiej: od porządkowania danych, przez
+    statystyki opisowe, po wybór testu statystycznego i zapis wyników w
+    rozdziale badawczym. Najwięcej miejsca poświęcamy tabeli doboru testu,
+    bo to o nią rozbija się większość studentów, a w gruncie rzeczy
+    sprowadza się do dwóch pytań: co chcesz sprawdzić i jakiego typu są
+    Twoje zmienne.
+  </p>
+
+  <h2>Krok 1. Uporządkuj i wyczyść dane</h2>
+
+  <p>
+    Analizę zaczyna się od macierzy danych: wiersz = jeden respondent,
+    kolumna = jedna zmienna. Ankiety online (Google Forms, LimeSurvey)
+    wygenerują taki arkusz automatycznie; odpowiedzi z ankiet papierowych
+    trzeba zakodować ręcznie, nadając odpowiedziom wartości liczbowe (np.
+    „zdecydowanie się nie zgadzam" = 1, ... „zdecydowanie się zgadzam" = 5).
+    Przy skalach standaryzowanych pamiętaj o pozycjach odwróconych, które
+    przed sumowaniem wymagają przekodowania.
+  </p>
+
+  <p>
+    Czyszczenie danych polega na usunięciu rekordów, które zaniżyłyby
+    rzetelność wyników: kwestionariuszy wypełnionych w nierealnie krótkim
+    czasie, z brakami w pozycjach skali, z jednostajnym wzorcem odpowiedzi
+    (sama opcja „3" od początku do końca). Liczbę usuniętych rekordów i
+    kryteria wykluczenia odnotuj - ta informacja należy do <a
+      href="/poradniki/metodologia/rozdzial-metodologiczny/"
+      >rozdziału metodologicznego</a
+    >. Po czyszczeniu policz wynik łączny każdej skali zgodnie z jej kluczem
+    i sprawdź rzetelność współczynnikiem alfa Cronbacha (wartości od 0,7 w
+    górę uznaje się za akceptowalne).
+  </p>
+
+  <h2>Krok 2. Statystyki opisowe - obraz próby i zmiennych</h2>
+
+  <p>
+    Zanim cokolwiek przetestujesz, opisz dane. Dla zmiennych kategorialnych
+    (płeć, miejsce zamieszkania, model pracy) podaje się liczebności i
+    procenty. Dla zmiennych liczbowych (wiek, wynik skali) średnią (M),
+    odchylenie standardowe (SD), medianę oraz minimum i maksimum. Te
+    statystyki budują pierwszą część rozdziału badawczego: charakterystykę
+    próby. Na tym etapie sprawdź też rozkłady - histogram pokaże wartości
+    odstające i skośność, a test Shapiro-Wilka zweryfikuje normalność
+    rozkładu, od której zależy wybór testów w kolejnym kroku.
+  </p>
+
+  <h2>Krok 3. Dobierz test statystyczny</h2>
+
+  <p>
+    Wybór testu wyznaczają dwa pytania. Pierwsze: co chcesz zrobić -
+    porównać grupy, zbadać związek zmiennych czy sprawdzić zależność między
+    kategoriami? Drugie: jakiego typu są zmienne i czy ich rozkład jest
+    normalny? Odpowiedzi prowadzą wprost do właściwego wiersza tabeli.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Co chcesz sprawdzić</th>
+        <th>Przykład hipotezy</th>
+        <th>Test parametryczny</th>
+        <th>Odpowiednik nieparametryczny</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Różnicę między 2 grupami</td>
+        <td>Kobiety i mężczyźni różnią się poziomem stresu</td>
+        <td>test t-Studenta</td>
+        <td>U Manna-Whitneya</td>
+      </tr>
+      <tr>
+        <td>Różnicę między 3+ grupami</td>
+        <td>Poziom satysfakcji różni się między modelami pracy</td>
+        <td>ANOVA (+ testy post hoc)</td>
+        <td>Kruskal-Wallis</td>
+      </tr>
+      <tr>
+        <td>Różnicę w 2 pomiarach tej samej grupy</td>
+        <td>Wiedza wzrosła po szkoleniu (pre-test/post-test)</td>
+        <td>test t dla prób zależnych</td>
+        <td>test Wilcoxona</td>
+      </tr>
+      <tr>
+        <td>Związek 2 zmiennych liczbowych</td>
+        <td>Im wyższa samoocena, tym niższy lęk</td>
+        <td>korelacja r-Pearsona</td>
+        <td>rho Spearmana</td>
+      </tr>
+      <tr>
+        <td>Zależność 2 zmiennych kategorialnych</td>
+        <td>Płeć wiąże się z wyborem formy zakupów</td>
+        <td colspan="2">test chi-kwadrat</td>
+      </tr>
+      <tr>
+        <td>Przewidywanie zmiennej na podstawie kilku innych</td>
+        <td>Samoocena i wsparcie społeczne przewidują poziom wypalenia</td>
+        <td colspan="2">regresja wielokrotna</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Kolumny „parametryczny" i „nieparametryczny" różnią się założeniami:
+    testy parametryczne wymagają zmiennych liczbowych o rozkładzie zbliżonym
+    do normalnego, nieparametryczne działają na rangach i nadają się też do
+    zmiennych porządkowych (np. pojedynczych pozycji skali Likerta). Jeśli
+    Shapiro-Wilk wykazał odstępstwo od normalności, po prostu przejdź do
+    prawej kolumny - wniosek z analizy raportuje się tak samo. Sumaryczne
+    wyniki wielopozycyjnych skal traktuje się zwyczajowo jako zmienne
+    liczbowe, więc przy dużej próbie test t i ANOVA są zwykle właściwym
+    wyborem.
+  </p>
+
+  <h2>Krok 4. Wybierz program do analizy</h2>
+
+  <p>
+    Do pracy magisterskiej nie potrzebujesz płatnego oprogramowania.
+    Realny przegląd możliwości wygląda tak:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Excel / Arkusze Google</strong> - statystyki opisowe, tabele
+      częstości, wykresy, prosty test t i korelacja. Wystarczy, jeśli praca
+      ogranicza się do opisu wyników ankiety.
+    </li>
+    <li>
+      <strong>JASP i jamovi (darmowe)</strong> - pełen zestaw testów z tabeli
+      powyżej w interfejsie okienkowym; wyniki od razu w formacie zbliżonym
+      do standardu APA. Najlepszy wybór dla większości magistrantów.
+    </li>
+    <li>
+      <strong>SPSS</strong> - akademicki standard; sensowny, gdy uczelnia
+      udostępnia licencję albo promotor wymaga raportów w tym formacie.
+    </li>
+    <li>
+      <strong>R / Python</strong> - pełna kontrola i powtarzalność analiz;
+      opłaca się przy dużych zbiorach danych lub na kierunkach ścisłych,
+      wymaga jednak nauki podstaw programowania.
+    </li>
+  </ul>
+
+  <h2>Krok 5. Zapisz wyniki w rozdziale badawczym</h2>
+
+  <p>
+    Wynik testu raportuje się według stałego wzorca: statystyka testu,
+    stopnie swobody, wartość p, a coraz częściej też wielkość efektu. W
+    praktyce wygląda to tak: „Kobiety (M = 3,84; SD = 0,61) uzyskały istotnie
+    wyższy wynik niż mężczyźni (M = 3,42; SD = 0,70); t(145) = 3,71;
+    p &lt; 0,001; d = 0,62". Takie zdanie zawiera wszystko, czego recenzent
+    szuka, i da się je zbudować dla każdego testu z tabeli.
+  </p>
+
+  <p>
+    Przy prezentacji wyników trzymaj się trzech zasad. Tabela albo wykres
+    pokazuje dane, a tekst je interpretuje, zamiast powtarzać liczby
+    zdaniami. Każda tabela i rycina ma numer, tytuł i źródło („badania
+    własne") oraz przynajmniej jedno odwołanie w tekście. Wyniki zestawia
+    się z hipotezami wprost: „wynik potwierdza hipotezę H1" albo „nie
+    znaleziono podstaw do przyjęcia H2", a niepotwierdzona hipoteza to
+    pełnoprawny wynik naukowy, który omawia się w dyskusji. Strukturę
+    całego rozdziału znajdziesz w poradniku o <a
+      href="/poradniki/metodologia/rozdzial-badawczy/"
+      >rozdziale badawczym</a
+    >.
+  </p>
+
+  <h2>Najczęstsze błędy w analizie ilościowej</h2>
+
+  <ul>
+    <li>
+      <strong>Mylenie korelacji z przyczynowością.</strong> Badanie
+      przekrojowe wykazuje współwystępowanie zmiennych; pisanie „X powoduje
+      Y" to najczęstsza uwaga recenzentów.
+    </li>
+    <li>
+      <strong>Test dobrany do programu, nie do hipotezy.</strong> Kolejność
+      jest odwrotna: najpierw hipoteza i typ zmiennych, potem test, na końcu
+      program, który go policzy.
+    </li>
+    <li>
+      <strong>Pomijanie weryfikacji założeń.</strong> Brak informacji o
+      normalności rozkładu przy teście t sygnalizuje, że analiza powstała
+      mechanicznie.
+    </li>
+    <li>
+      <strong>Raportowanie samego p.</strong> Bez średnich i odchyleń
+      czytelnik nie wie, jak duża jest różnica; przy dużych próbach istotne
+      statystycznie bywają różnice praktycznie pomijalne.
+    </li>
+    <li>
+      <strong>Procenty z mikropodgrup.</strong> „75% badanych w grupie"
+      brzmi poważnie, dopóki nie okaże się, że grupa liczyła 4 osoby. Przy
+      małych liczebnościach podawaj n zamiast samych procentów.
+    </li>
+  </ul>
+
+  <h2>FAQ - najczęściej zadawane pytania</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Analiza ilościowa to sekwencja pięciu kroków: porządkowanie danych,
+    statystyki opisowe, dobór testu z tabeli, obliczenia w wybranym
+    programie i raportowanie według wzorca M/SD/test/p. Jeśli planujesz
+    dopiero badanie, zacznij od poradnika o <a
+      href="/poradniki/metodologia/badania-ilosciowe/"
+      >badaniach ilościowych</a
+    > i <a href="/poradniki/metodologia/ankieta/">konstrukcji ankiety</a> -
+    dobrze zaprojektowane narzędzie to połowa udanej analizy. Sposób opisania
+    całej procedury pokazuje nasz <a
+      href="/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf"
+      download>wzór rozdziału metodologicznego (PDF)</a
+    >.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

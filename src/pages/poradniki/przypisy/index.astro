@@ -1,0 +1,293 @@
+---
+// src/pages/poradniki/przypisy/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Przypisy", href: "/poradniki/przypisy/" },
+];
+
+const relatedLinks = [
+  { label: "Bibliografia - kompletny poradnik", href: "/poradniki/bibliografia/" },
+  { label: "Styl APA", href: "/poradniki/bibliografia/apa/" },
+  { label: "Cytowanie i cytaty", href: "/poradniki/cytaty/" },
+  { label: "Formatowanie pracy", href: "/poradniki/formatowanie/" },
+];
+
+const faqItems = [
+  {
+    question: "Czym różni się tamże od ibidem?",
+    answer:
+      "Niczym poza językiem - oba skróty oznaczają to samo źródło i tę samą lub inną stronę co w przypisie bezpośrednio poprzedzającym. Tamże jest polskie, ibidem (skracane też do ibid.) łacińskie. Wybierz jedną wersję i stosuj ją konsekwentnie w całej pracy; mieszanie obu to częsta uwaga promotorów.",
+  },
+  {
+    question: "Kiedy stosuje się op. cit., a kiedy dz. cyt.?",
+    answer:
+      "Oba skróty (łaciński opere citato i polski dzieło cytowane) odsyłają do pracy tego autora cytowanej wcześniej, ale nie w poprzednim przypisie, np. J. Kowalski, op. cit., s. 45. Działają tylko wtedy, gdy w pracy cytujesz jedną publikację danego autora; przy dwóch lub więcej trzeba powtórzyć skrócony tytuł, żeby było wiadomo, o którą chodzi.",
+  },
+  {
+    question: "Jak wstawić przypis dolny w Wordzie?",
+    answer:
+      "Umieść kursor po słowie lub zdaniu, do którego odnosi się przypis, i wybierz Odwołania → Wstaw przypis dolny (skrót Ctrl+Alt+J, w starszych wersjach Alt+Ctrl+F). Word sam numeruje przypisy i przenosi je między stronami. Numer przypisu w tekście stawia się przed kropką kończącą zdanie, a sam przypis pisze czcionką 10 pt z interlinią pojedynczą.",
+  },
+  {
+    question: "Czy praca może mieć jednocześnie przypisy i bibliografię?",
+    answer:
+      "Tak - w systemie przypisowym to standard: przypisy dokumentują źródła w miejscu użycia, a bibliografia na końcu pracy zbiera wszystkie pozycje w liście alfabetycznej. Różnica formalna: w przypisie inicjał imienia stoi przed nazwiskiem (J. Kowalski), w bibliografii nazwisko przed inicjałem (Kowalski J.).",
+  },
+  {
+    question: "Ile przypisów powinno być w pracy magisterskiej?",
+    answer:
+      "Nie ma normy liczbowej - przypis musi stać wszędzie tam, gdzie korzystasz z cudzej myśli, danych lub cytatu. W praktyce rozdziały teoretyczne prac pisanych w systemie przypisowym mają zwykle po kilka przypisów na stronę. Podejrzanie wyglądają zarówno strony zupełnie bez przypisów (skąd autor to wie?), jak i przypis po każdym zdaniu z tego samego źródła - wtedy wystarczy jeden na koniec akapitu.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Przypisy w pracy magisterskiej - jak robić? Wzory, tamże, op. cit."
+  description="Przypisy dolne krok po kroku: wzory dla książki, artykułu i strony www, skróty tamże/ibidem/op. cit., rodzaje przypisów i wstawianie w Wordzie. Z przykładami do skopiowania."
+  updateDate="2026-06-11"
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Przypis dolny to klasyczny, wciąż dominujący na polskich uczelniach
+    sposób dokumentowania źródeł: numer w tekście odsyła do opisu na dole
+    strony. W tym poradniku znajdziesz wzory przypisów dla każdego typu
+    źródła, zasady używania skrótów tamże, ibidem i op. cit. oraz
+    instrukcję formatowania w Wordzie. Zanim zaczniesz, ustal jedno:
+    przypisy dolne i system autor-data (np. <a
+      href="/poradniki/bibliografia/apa/">APA</a
+    >) to dwa rozłączne światy - praca stosuje jeden z nich, nigdy oba
+    naraz, a o wyborze decydują wytyczne wydziału i promotor.
+  </p>
+
+  <h2>Rodzaje przypisów</h2>
+
+  <p>
+    <strong>Przypis bibliograficzny (źródłowy)</strong> wskazuje, skąd
+    pochodzi przywołana informacja lub cytat - to zdecydowana większość
+    przypisów w pracy. <strong>Przypis rzeczowy (polemiczny)</strong>
+    zawiera komentarz, uzupełnienie lub dygresję, która rozbiłaby tok
+    wywodu w tekście głównym; korzystaj z niego oszczędnie.
+    <strong>Przypis słownikowy</strong> wyjaśnia termin obcojęzyczny lub
+    specjalistyczny. Wszystkie trzy rodzaje dzielą jedną numerację ciągłą w
+    całej pracy (lub w obrębie rozdziału - zależnie od wymogów wydziału).
+  </p>
+
+  <h2>Wzory przypisów bibliograficznych</h2>
+
+  <p>
+    Najczęstsza polska konwencja wygląda następująco (zwróć uwagę: inicjał
+    imienia przed nazwiskiem, elementy rozdzielone przecinkami, kropka na
+    końcu):
+  </p>
+
+  <h3>Książka</h3>
+  <p class="wzor-przypis">
+    ¹ J. Kowalski, <em>Tytuł książki kursywą</em>, Wydawnictwo Naukowe PWN,
+    Warszawa 2021, s. 43.
+  </p>
+
+  <h3>Rozdział w pracy zbiorowej</h3>
+  <p class="wzor-przypis">
+    ² A. Nowak, <em>Tytuł rozdziału</em>, [w:] <em>Tytuł całej książki</em>,
+    red. J. Kowalski, Wydawnictwo, Kraków 2019, s. 112-118.
+  </p>
+
+  <h3>Artykuł w czasopiśmie</h3>
+  <p class="wzor-przypis">
+    ³ M. Wiśniewska, <em>Tytuł artykułu</em>, „Tytuł Czasopisma" 2022, nr 3,
+    s. 27.
+  </p>
+
+  <h3>Strona internetowa</h3>
+  <p class="wzor-przypis">
+    ⁴ T. Zieliński, <em>Tytuł artykułu lub strony</em>,
+    https://adres-strony.pl [dostęp: 11.06.2026].
+  </p>
+
+  <h3>Akt prawny</h3>
+  <p class="wzor-przypis">
+    ⁵ Ustawa z dnia 20 lipca 2018 r. - Prawo o szkolnictwie wyższym i nauce
+    (Dz.U. 2018 poz. 1668 z późn. zm.), art. 76.
+  </p>
+
+  <p>
+    To konwencja przecinkowa, najczęstsza w polskich pracach humanistycznych
+    i prawniczych. Część uczelni stosuje warianty (np. kropki zamiast
+    przecinków, tytuł czasopisma kursywą zamiast w cudzysłowie), dlatego
+    pierwszym krokiem jest zawsze lektura wytycznych wydziału lub wzorcowej
+    pracy z Twojego seminarium - a potem żelazna konsekwencja.
+  </p>
+
+  <h2>Tamże, ibidem, op. cit. - skróty w przypisach</h2>
+
+  <p>
+    Skróty oszczędzają miejsce, gdy cytujesz to samo źródło wielokrotnie.
+    Działają według dwóch prostych reguł.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Skrót</th>
+        <th>Kiedy</th>
+        <th>Przykład</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>tamże / ibidem</td>
+        <td>to samo źródło co w przypisie bezpośrednio poprzedzającym</td>
+        <td>⁶ Tamże, s. 51.</td>
+      </tr>
+      <tr>
+        <td>op. cit. / dz. cyt.</td>
+        <td>
+          źródło cytowane wcześniej, ale nie w poprzednim przypisie (i tylko
+          gdy autor ma w pracy jedną publikację)
+        </td>
+        <td>⁷ J. Kowalski, op. cit., s. 88.</td>
+      </tr>
+      <tr>
+        <td>skrócony tytuł</td>
+        <td>
+          autor ma w pracy więcej niż jedną publikację
+        </td>
+        <td>⁸ J. Kowalski, <em>Tytuł skrócony...</em>, s. 88.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Para zasad, o które najczęściej potykają się magistranci. Po pierwsze,
+    wybierasz albo łacinę (ibidem, op. cit.), albo polski (tamże, dz.
+    cyt.) - mieszanki recenzenci wytykają od razu. Po drugie, „tamże" działa
+    wyłącznie wtedy, gdy między przypisami nie wcisnęło się żadne inne
+    źródło; po każdej redakcji tekstu sprawdź, czy kolejność przypisów się
+    nie przesunęła, bo wtedy „tamże" zaczyna wskazywać niewłaściwą pracę.
+  </p>
+
+  <h2>Formatowanie przypisów w Wordzie</h2>
+
+  <ul>
+    <li>
+      Wstawianie: Odwołania → Wstaw przypis dolny (Ctrl+Alt+J). Word
+      numeruje automatycznie i pilnuje, by przypis był na tej samej stronie
+      co odnośnik.
+    </li>
+    <li>
+      Czcionka przypisu: 10 pt (przy tekście głównym 12 pt), interlinia
+      pojedyncza, justowanie obustronne - ustaw raz, modyfikując styl
+      „Tekst przypisu dolnego".
+    </li>
+    <li>
+      Numer odnośnika stoi w tekście przed kropką kończącą zdanie, bez
+      spacji po słowie.
+    </li>
+    <li>
+      Numeracja ciągła w całej pracy lub od nowa w każdym rozdziale -
+      zgodnie z wytycznymi wydziału (ustawienie w oknie Przypisy).
+    </li>
+  </ul>
+
+  <h2>Przypisy a bibliografia</h2>
+
+  <p>
+    System przypisowy nie zwalnia z bibliografii: na końcu pracy i tak
+    zamieszczasz alfabetyczną listę wszystkich cytowanych źródeł. Różni się
+    ona od przypisów szykiem (nazwisko przed inicjałem: Kowalski J.) i
+    brakiem numerów stron konkretnych odwołań. Zasady budowy listy, podział
+    na sekcje i porównanie stylów znajdziesz w <a
+      href="/poradniki/bibliografia/">poradniku o bibliografii</a
+    >, a reguły przytaczania cudzych słów (cytat dosłowny, parafraza,
+    granice dozwolonego użytku) w poradniku o <a href="/poradniki/cytaty/"
+      >cytowaniu</a
+    >.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o przypisy</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Dobre przypisy sprowadzają się do trzech nawyków: jeden ustalony wzór
+    opisu (z wytycznych wydziału), skróty z jednej rodziny językowej i
+    przypis wstawiany od razu przy pisaniu, nie „uzupełniany później".
+    Jeśli Twój wydział preferuje system autor-data zamiast przypisów,
+    przejdź do poradnika o <a href="/poradniki/bibliografia/apa/"
+      >stylu APA</a
+    > - logika dokumentowania źródeł jest ta sama, zmienia się tylko
+    technika.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+  .wzor-przypis {
+    background: #f5f7ff;
+    border-left: 4px solid #4f46e5;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+</style>

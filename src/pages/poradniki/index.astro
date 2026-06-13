@@ -11,9 +11,12 @@ const categories = [
     name: '🚀 Jak zacząć',
     description: 'Pierwsze kroki w pisaniu pracy',
     articles: [
+      { title: 'Jak napisać pracę magisterską', description: 'Kompletny przewodnik krok po kroku: od tematu do obrony, z harmonogramem i wzorami PDF.', href: '/poradniki/jak-napisac-prace-magisterska/', icon: '🗺️', featured: true },
       { title: 'Wybór tematu pracy magisterskiej', description: 'Jak wybrać temat, który będzie interesujący i realny do zrealizowania.', href: '/poradniki/wybor-tematu/', icon: '💡' },
+      { title: 'Jak znaleźć promotora', description: 'Kryteria wyboru, pierwsze spotkanie i czerwone flagi.', href: '/poradniki/znalezienie-promotora/', icon: '🤝' },
       { title: 'Konspekt pracy magisterskiej', description: 'Jak stworzyć plan pracy, który ułatwi pisanie.', href: '/poradniki/konspekt/', icon: '📋' },
       { title: 'Cel pracy magisterskiej', description: 'Jak prawidłowo sformułować cel główny i cele szczegółowe.', href: '/poradniki/cel-pracy/', icon: '🎯' },
+      { title: 'Harmonogram pisania', description: 'Jak rozplanować pracę na miesiące i nie zostawić wszystkiego na koniec.', href: '/poradniki/harmonogram/', icon: '📅' },
     ],
   },
   {
@@ -21,7 +24,9 @@ const categories = [
     name: '📋 Struktura pracy',
     description: 'Elementy składowe pracy magisterskiej',
     articles: [
-      { title: 'Jak napisać wstęp', description: 'Struktura wstępu, co powinien zawierać i jak go napisać.', href: '/poradniki/wstep/', icon: '📝' },
+      { title: 'Struktura pracy magisterskiej', description: 'Rozdziały, podrozdziały i proporcje typowej pracy.', href: '/poradniki/struktura/', icon: '🏗️' },
+      { title: 'Jak napisać wstęp', description: 'Struktura wstępu, kompletny przykład i wzór PDF do pobrania.', href: '/poradniki/wstep/', icon: '📝' },
+      { title: 'Rozdział teoretyczny', description: 'Przegląd literatury, który prowadzi do problemu badawczego.', href: '/poradniki/rozdzial-teoretyczny/', icon: '📖' },
       { title: 'Spis treści', description: 'Jak stworzyć profesjonalny spis treści.', href: '/poradniki/spis-tresci/', icon: '📑' },
       { title: 'Streszczenie pracy', description: 'Jak napisać streszczenie w języku polskim i angielskim.', href: '/poradniki/streszczenie/', icon: '📃' },
       { title: 'Zakończenie pracy', description: 'Struktura zakończenia, wnioski i podsumowanie.', href: '/poradniki/zakonczenie/', icon: '✅' },
@@ -41,6 +46,8 @@ const categories = [
     description: 'Cytowanie, bibliografia i formatowanie',
     articles: [
       { title: 'Bibliografia', description: 'Style cytowania, tworzenie bibliografii i unikanie plagiatu.', href: '/poradniki/bibliografia/', icon: '📚' },
+      { title: 'Styl APA', description: 'Cytowanie autor-data i wzory opisów według APA 7.', href: '/poradniki/bibliografia/apa/', icon: '🔤' },
+      { title: 'Przypisy', description: 'Przypisy dolne, tamże, ibidem, op. cit. - wzory i zasady.', href: '/poradniki/przypisy/', icon: '🔖' },
       { title: 'Cytowanie i cytaty', description: 'Jak prawidłowo cytować źródła.', href: '/poradniki/cytaty/', icon: '💬' },
       { title: 'Formatowanie pracy', description: 'Normy edytorskie, marginesy, czcionki, numeracja stron.', href: '/poradniki/formatowanie/', icon: '📄' },
     ],
@@ -64,7 +71,7 @@ const metodologiaHighlights = [
 ---
 
 <Layout 
-  title="Jak napisać pracę magisterską - 30+ poradników krok po kroku"
+  title="Poradniki pisania pracy magisterskiej — 30+ przewodników krok po kroku"
   description="Poradniki pisania pracy magisterskiej: wstęp, struktura, metodologia, badania, bibliografia, zakończenie i obrona. 30+ przewodników z przykładami i wzorami. Bezpłatnie."
 >
   <Navbar />
@@ -76,7 +83,7 @@ const metodologiaHighlights = [
         <div class="max-w-4xl mx-auto text-center">
           <span class="badge badge-primary mb-4">📖 Poradniki</span>
           <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Jak napisać pracę magisterską?
+            Poradniki pisania pracy magisterskiej
           </h1>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Kompletny zbiór poradników dla studentów. Od wyboru tematu, przez badania i pisanie, aż po obronę.
