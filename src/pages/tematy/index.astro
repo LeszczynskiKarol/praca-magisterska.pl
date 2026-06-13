@@ -9,6 +9,7 @@ const kierunki = [
   { name: 'Administracja', slug: 'administracja', icon: '🏢', description: 'Administracja publiczna, samorząd' },
   { name: 'Bezpieczeństwo narodowe', slug: 'bezpieczenstwo-narodowe', icon: '🛡️', description: 'Bezpieczeństwo wewnętrzne i międzynarodowe' },
   { name: 'Budownictwo', slug: 'budownictwo', icon: '🏗️', description: 'Konstrukcje, materiały budowlane, BIM' },
+  { name: 'Dietetyka', slug: 'dietetyka', icon: '🥗', description: 'Żywienie kliniczne, dietoterapia, sport' },
   { name: 'Dziennikarstwo', slug: 'dziennikarstwo', icon: '📰', description: 'Media, komunikacja społeczna, PR' },
   { name: 'Ekonomia', slug: 'ekonomia', icon: '💰', description: 'Makro i mikroekonomia, rynki' },
   { name: 'Filologia angielska', slug: 'filologia-angielska', icon: '🇬🇧', description: 'Językoznawstwo, literatura angielska' },
@@ -17,6 +18,8 @@ const kierunki = [
   { name: 'Fizjoterapia', slug: 'fizjoterapia', icon: '💪', description: 'Rehabilitacja, kinezyterapia, masaż' },
   { name: 'Historia', slug: 'historia', icon: '📜', description: 'Historia Polski i powszechna, badania nad źródłami' },
   { name: 'Informatyka', slug: 'informatyka', icon: '💻', description: 'Programowanie, systemy, bazy danych' },
+  { name: 'Kosmetologia', slug: 'kosmetologia', icon: '💄', description: 'Pielęgnacja skóry, zabiegi, składniki aktywne' },
+  { name: 'Kryminologia', slug: 'kryminologia', icon: '🔍', description: 'Przestępczość, wiktymologia, profilaktyka' },
   { name: 'Logistyka', slug: 'logistyka', icon: '🚚', description: 'Łańcuch dostaw, transport, magazynowanie' },
   { name: 'Marketing', slug: 'marketing', icon: '📈', description: 'Marketing cyfrowy, reklama, branding' },
   { name: 'Ochrona środowiska', slug: 'ochrona-srodowiska', icon: '🌱', description: 'Ekologia, ochrona przyrody, klimat' },
@@ -46,11 +49,11 @@ const categories = [
   },
   {
     name: 'Prawo i administracja',
-    items: ['administracja', 'bezpieczenstwo-narodowe', 'prawo'],
+    items: ['administracja', 'bezpieczenstwo-narodowe', 'kryminologia', 'prawo'],
   },
   {
     name: 'Nauki medyczne i o zdrowiu',
-    items: ['fizjoterapia', 'pielegniarstwo', 'zdrowie-publiczne'],
+    items: ['dietetyka', 'fizjoterapia', 'kosmetologia', 'pielegniarstwo', 'zdrowie-publiczne'],
   },
   {
     name: 'Humanistyczne',
@@ -74,8 +77,8 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
 ---
 
 <Layout 
-  title="2500+ tematów prac magisterskich z 26 kierunków - inspiracje 2026"
-  description="Gotowe tematy prac magisterskich z 26 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, historia, informatyka i inne. 2500+ pomysłów na pracę dyplomową."
+  title="2500+ tematów prac magisterskich z 29 kierunków - inspiracje 2026"
+  description="Gotowe tematy prac magisterskich z 29 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, kryminologia, dietetyka, informatyka i inne. 2500+ pomysłów na pracę dyplomową."
 >
   <Navbar />
   
@@ -96,7 +99,7 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>26 kierunków studiów</span>
+              <span>29 kierunków studiów</span>
             </div>
             <div class="flex items-center gap-2 text-gray-600">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

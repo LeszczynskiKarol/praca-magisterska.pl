@@ -8,7 +8,7 @@
 > historyczne i **częściowo nieaktualne** (powstały na początku projektu).
 > Wiążący jest poniższy stan, ustalony na podstawie zawartości `src/pages/`.
 
-### Kierunki (`/tematy/`) — 26 gotowych
+### Kierunki (`/tematy/`) — 29 gotowych
 
 Gotowe (26): administracja, bezpieczeństwo narodowe, budownictwo, dziennikarstwo,
 ekonomia, filologia angielska, filologia polska, finanse i rachunkowość,
@@ -18,9 +18,11 @@ ochrona środowiska, pedagogika (+ przedszkolna-i-wczesnoszkolna), pielęgniarst
 socjologia, stosunki międzynarodowe, turystyka i rekreacja, zarządzanie,
 zdrowie publiczne.
 
+**Kierunki dodane 2026-06-14:** kryminologia, dietetyka, kosmetologia (po 100 tematów, wzorzec historia/psychologia).
+
 **Kierunki DO ZROBIENIA (opcjonalne, brak strony):**
-- 🔴 (warto, są wyszukiwane): kryminologia, dietetyka, kosmetologia, ratownictwo medyczne
-- 🟡 (niżej): resocjalizacja, geografia, architektura
+- 🔴 (warto, są wyszukiwane): ratownictwo medyczne, pedagogika specjalna, resocjalizacja
+- 🟡 (niżej): geografia, architektura, kulturoznawstwo, gospodarka przestrzenna
 
 ### Poradniki (`/poradniki/`) — stan
 
@@ -42,7 +44,7 @@ rozdzial-metodologiczny, rozdzial-badawczy).
 4. **NASTĘPNE → Metodologia – uzupełnienia 🟢:** case-study, obserwacja, sondaz,
    analiza-dokumentow, eksperyment, triangulacja, etyka, badania-online
 5. **Struktura – uzupełnienia 🟢:** aneksy, wykaz-tabel, wykaz-skrotow
-6. **Kierunek 🔴:** historia gotowa; do rozważenia kryminologia, dietetyka, kosmetologia, ratownictwo
+6. **Kierunki:** historia, kryminologia, dietetyka, kosmetologia gotowe; do rozważenia ratownictwo medyczne, pedagogika specjalna, resocjalizacja, geografia
 
 ### SEO – quick wins (z analizy GSC 2026-06-13)
 - `/tematy/psychologia/` — fraza „praca magisterska psychologia": 274 wyśw, poz. 8,7,
