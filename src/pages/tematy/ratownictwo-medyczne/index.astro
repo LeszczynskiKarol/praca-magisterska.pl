@@ -1,0 +1,342 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Ratownictwo medyczne", href: "/tematy/ratownictwo-medyczne/" },
+];
+
+const relatedLinks = [
+  { label: "Metodologia badań", href: "/poradniki/metodologia/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="100 tematów prac magisterskich z ratownictwa medycznego 2026 - przykłady"
+  description="100 tematów prac magisterskich z ratownictwa medycznego: resuscytacja i stany nagłe, urazy, system PRM, triage, ratownictwo specjalistyczne, pierwsza pomoc, wypalenie zawodowe ratowników. Z metodą badania."
+  readingTime="24 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Ratownictwo medyczne łączy wiedzę kliniczną o stanach nagłych z organizacją
+    systemu pomocy przedszpitalnej. Praca magisterska z tego kierunku ma zwykle
+    charakter empiryczny: analizuje przebieg interwencji, ocenia wiedzę i
+    umiejętności albo bada funkcjonowanie systemu i samych ratowników. Dobry
+    temat wymaga sprecyzowania, co i na jakim materiale badasz. Poniżej zebraliśmy
+    100 tematów uporządkowanych według obszarów ratownictwa. Każdy ma określony
+    zakres i wskazaną metodę (analiza dokumentacji medycznej i kart medycznych
+    czynności ratunkowych, badanie ankietowe, badanie symulacyjne, studium
+    przypadku), co ułatwia ocenę wykonalności badania i dostęp do danych.
+  </p>
+
+  <h2>Medyczne czynności ratunkowe i resuscytacja</h2>
+
+  <p>
+    Resuscytacja krążeniowo-oddechowa i podstawowe czynności ratunkowe to trzon
+    pracy ratownika. Prace z tego obszaru analizują przebieg i skuteczność
+    działań w nagłym zatrzymaniu krążenia. Opierają się na analizie dokumentacji
+    interwencji oraz na badaniach symulacyjnych oceniających umiejętności.
+  </p>
+
+  <ol>
+    <li>
+      Skuteczność resuscytacji krążeniowo-oddechowej w warunkach
+      przedszpitalnych
+    </li>
+    <li>Jakość uciśnięć klatki piersiowej w badaniu symulacyjnym</li>
+    <li>
+      Przeżywalność pacjentów po pozaszpitalnym zatrzymaniu krążenia w świetle
+      dokumentacji
+    </li>
+    <li>Rola defibrylacji wczesnej w łańcuchu przeżycia</li>
+    <li>
+      Postępowanie ratownika w nagłym zatrzymaniu krążenia u dzieci
+    </li>
+    <li>
+      Wpływ zmęczenia ratownika na jakość uciśnięć w badaniu symulacyjnym
+    </li>
+    <li>
+      Zastosowanie urządzeń do mechanicznej kompresji klatki piersiowej
+    </li>
+    <li>
+      Czynniki wpływające na powrót spontanicznego krążenia w warunkach
+      przedszpitalnych
+    </li>
+    <li>Algorytmy ALS w praktyce zespołów ratownictwa medycznego</li>
+  </ol>
+
+  <h2>Stany nagłe kardiologiczne</h2>
+
+  <p>
+    Schorzenia sercowo-naczyniowe są częstą przyczyną wezwań pogotowia. Prace z
+    tego obszaru dotyczą rozpoznawania i postępowania w ostrych stanach
+    kardiologicznych. Opierają się na retrospektywnej analizie dokumentacji
+    wyjazdów i danych szpitalnych.
+  </p>
+
+  <ol start="10">
+    <li>
+      Postępowanie ratownika w ostrym zespole wieńcowym w warunkach
+      przedszpitalnych
+    </li>
+    <li>
+      Czas od wezwania do pierwszego badania EKG a rokowanie w zawale serca
+    </li>
+    <li>Rozpoznawanie zawału serca na podstawie zapisu EKG przez ratownika</li>
+    <li>Postępowanie w obrzęku płuc pochodzenia sercowego</li>
+    <li>Nagłe stany w zaburzeniach rytmu serca w praktyce ratownika</li>
+    <li>Pierwsza pomoc w nagłym zatrzymaniu krążenia w miejscach publicznych</li>
+    <li>Teletransmisja EKG a skrócenie czasu do leczenia inwazyjnego</li>
+    <li>Wstrząs kardiogenny w postępowaniu przedszpitalnym</li>
+  </ol>
+
+  <h2>Urazy i traumatologia</h2>
+
+  <p>
+    Postępowanie z pacjentem urazowym wymaga szybkiej oceny i działania. Prace
+    dotyczą obrażeń wielonarządowych, urazów kręgosłupa i oparzeń. Opierają się
+    na analizie dokumentacji oraz na ocenie procedur w badaniu symulacyjnym.
+  </p>
+
+  <ol start="18">
+    <li>Postępowanie z pacjentem urazowym według schematu oceny ABCDE</li>
+    <li>Unieruchamianie pacjenta z podejrzeniem urazu kręgosłupa</li>
+    <li>Tamowanie masywnych krwotoków w warunkach przedszpitalnych</li>
+    <li>Postępowanie ratownika w urazach czaszkowo-mózgowych</li>
+    <li>Ocena ciężkości obrażeń u ofiar wypadków komunikacyjnych</li>
+    <li>Pierwsza pomoc w oparzeniach termicznych</li>
+    <li>Postępowanie w urazach klatki piersiowej w fazie przedszpitalnej</li>
+    <li>Złota godzina w postępowaniu z pacjentem urazowym</li>
+    <li>Urazy u pieszych uczestników wypadków drogowych - analiza interwencji</li>
+  </ol>
+
+  <h2>Stany nagłe w wybranych grupach pacjentów</h2>
+
+  <p>
+    Dzieci, kobiety w ciąży i osoby starsze wymagają odrębnego podejścia w
+    stanach nagłych. Prace z tego obszaru analizują specyfikę interwencji w tych
+    grupach. Opierają się na dokumentacji wyjazdów i literaturze klinicznej.
+  </p>
+
+  <ol start="27">
+    <li>Postępowanie ratownika w stanach nagłych u noworodków</li>
+    <li>Drgawki gorączkowe u dzieci w praktyce ratownika medycznego</li>
+    <li>Postępowanie w porodzie nagłym w warunkach przedszpitalnych</li>
+    <li>Specyfika interwencji ratunkowych u pacjentów geriatrycznych</li>
+    <li>Stany nagłe w przebiegu ciąży powikłanej</li>
+    <li>Rozpoznawanie i postępowanie w sepsie u dzieci</li>
+    <li>Upadki osób starszych jako przyczyna wezwań zespołów ratownictwa</li>
+    <li>Postępowanie w zadławieniu u dzieci i dorosłych</li>
+    <li>Hipotermia u osób starszych w postępowaniu przedszpitalnym</li>
+  </ol>
+
+  <h2>System Państwowego Ratownictwa Medycznego i triage</h2>
+
+  <p>
+    Organizacja systemu ratownictwa decyduje o skuteczności pomocy. Prace z tego
+    obszaru dotyczą funkcjonowania systemu PRM, pracy dyspozytorni i segregacji
+    poszkodowanych. Opierają się na analizie danych o wezwaniach, czasach
+    dotarcia i procedurach.
+  </p>
+
+  <ol start="36">
+    <li>Czas dotarcia zespołu ratownictwa medycznego a parametry wezwania</li>
+    <li>Funkcjonowanie dyspozytorni medycznej w systemie PRM</li>
+    <li>Segregacja medyczna (triage) w zdarzeniach z wieloma poszkodowanymi</li>
+    <li>Współpraca zespołów ratownictwa medycznego ze szpitalnym oddziałem
+      ratunkowym</li>
+    <li>Wezwania nieuzasadnione jako obciążenie systemu ratownictwa</li>
+    <li>Rola dyspozytora w prowadzeniu resuscytacji przez telefon</li>
+    <li>Organizacja ratownictwa medycznego na obszarach wiejskich</li>
+    <li>Lotnicze Pogotowie Ratunkowe w systemie ratownictwa medycznego</li>
+    <li>Dostępność zespołów ratownictwa a gęstość zaludnienia regionu</li>
+  </ol>
+
+  <h2>Ratownictwo specjalistyczne i zdarzenia masowe</h2>
+
+  <p>
+    Zdarzenia masowe i działania w trudnych warunkach wymagają specjalistycznych
+    procedur. Prace dotyczą zarządzania zdarzeniem masowym, ratownictwa wodnego,
+    górskiego oraz współpracy służb. Opierają się na analizie procedur, ćwiczeń i
+    literaturze.
+  </p>
+
+  <ol start="45">
+    <li>Zarządzanie zdarzeniem mnogim i masowym w systemie ratownictwa</li>
+    <li>Współpraca PRM z Krajowym Systemem Ratowniczo-Gaśniczym</li>
+    <li>Specyfika ratownictwa wodnego w działaniach medycznych</li>
+    <li>Ratownictwo górskie a postępowanie w hipotermii i urazach</li>
+    <li>Postępowanie ratownicze w zdarzeniach z substancjami niebezpiecznymi</li>
+    <li>Zabezpieczenie medyczne imprez masowych</li>
+    <li>Działania ratownicze w warunkach zagrożenia terrorystycznego</li>
+    <li>Łączność i koordynacja służb podczas akcji ratunkowych</li>
+  </ol>
+
+  <h2>Stany nagłe internistyczne i neurologiczne</h2>
+
+  <p>
+    Duża część wezwań dotyczy ostrych stanów internistycznych i neurologicznych.
+    Prace z tego obszaru dotyczą rozpoznawania i postępowania w takich
+    sytuacjach. Opierają się na analizie dokumentacji wyjazdów oraz danych
+    klinicznych.
+  </p>
+
+  <ol start="53">
+    <li>Postępowanie ratownika w udarze mózgu a czas do leczenia</li>
+    <li>Rozpoznawanie objawów udaru w warunkach przedszpitalnych</li>
+    <li>Postępowanie w napadzie astmy oskrzelowej</li>
+    <li>Stany nagłe w przebiegu cukrzycy w praktyce ratownika</li>
+    <li>Postępowanie w napadzie drgawkowym u dorosłych</li>
+    <li>Niewydolność oddechowa w postępowaniu przedszpitalnym</li>
+    <li>Reakcja anafilaktyczna i jej leczenie w warunkach przedszpitalnych</li>
+    <li>Ostra niewydolność oddechowa w przebiegu POChP</li>
+    <li>Rozpoznawanie sepsy w warunkach przedszpitalnych</li>
+  </ol>
+
+  <h2>Zatrucia i intoksykacje</h2>
+
+  <p>
+    Zatrucia stanowią istotną grupę interwencji ratunkowych. Prace dotyczą
+    postępowania w zatruciach różnymi substancjami oraz ich epidemiologii.
+    Opierają się na analizie dokumentacji wyjazdów i danych ośrodków
+    toksykologicznych.
+  </p>
+
+  <ol start="62">
+    <li>Postępowanie ratownika w ostrym zatruciu alkoholem</li>
+    <li>Zatrucia tlenkiem węgla - rozpoznawanie i postępowanie</li>
+    <li>Zatrucia lekami w praktyce zespołów ratownictwa medycznego</li>
+    <li>Postępowanie w zatruciach substancjami psychoaktywnymi</li>
+    <li>Próby samobójcze jako przyczyna interwencji ratownictwa medycznego</li>
+    <li>Zatrucia u dzieci - epidemiologia wezwań</li>
+    <li>Postępowanie w zatruciach grzybami</li>
+  </ol>
+
+  <h2>Edukacja i pierwsza pomoc w społeczeństwie</h2>
+
+  <p>
+    Skuteczność ratownictwa zależy także od umiejętności świadków zdarzenia.
+    Prace z tego obszaru badają wiedzę i gotowość społeczeństwa do udzielania
+    pierwszej pomocy. Opierają się na badaniach ankietowych i ocenie programów
+    edukacyjnych.
+  </p>
+
+  <ol start="69">
+    <li>Znajomość zasad pierwszej pomocy wśród uczniów szkół średnich</li>
+    <li>Gotowość kierowców do udzielania pierwszej pomocy ofiarom wypadków</li>
+    <li>Skuteczność szkoleń z pierwszej pomocy dla nauczycieli</li>
+    <li>Wiedza rodziców na temat pierwszej pomocy u dzieci</li>
+    <li>Postawy społeczne wobec udzielania pierwszej pomocy</li>
+    <li>Znajomość obsługi automatycznego defibrylatora (AED) w społeczeństwie</li>
+    <li>Edukacja w zakresie pierwszej pomocy w szkole podstawowej</li>
+    <li>Bariery psychologiczne w podejmowaniu resuscytacji przez świadków</li>
+    <li>Dostępność defibrylatorów AED w przestrzeni publicznej</li>
+  </ol>
+
+  <h2>Zawód ratownika - obciążenia i kompetencje</h2>
+
+  <p>
+    Praca ratownika wiąże się z dużym obciążeniem psychicznym i fizycznym. Prace
+    z tego obszaru badają stres zawodowy, wypalenie i kompetencje ratowników.
+    Opierają się na badaniach ankietowych z wykorzystaniem standaryzowanych
+    kwestionariuszy.
+  </p>
+
+  <ol start="78">
+    <li>Wypalenie zawodowe ratowników medycznych</li>
+    <li>Stres zawodowy a strategie radzenia sobie u ratowników medycznych</li>
+    <li>Zespół stresu pourazowego u ratowników medycznych</li>
+    <li>Satysfakcja zawodowa ratowników medycznych</li>
+    <li>Obciążenie fizyczne w pracy ratownika medycznego</li>
+    <li>Agresja pacjentów wobec zespołów ratownictwa medycznego</li>
+    <li>Samoocena kompetencji zawodowych ratowników medycznych</li>
+    <li>Kształcenie ustawiczne a kompetencje ratowników medycznych</li>
+    <li>Bezpieczeństwo pracy zespołów ratownictwa medycznego</li>
+  </ol>
+
+  <h2>Jakość, dokumentacja i etyka w ratownictwie</h2>
+
+  <p>
+    Jakość świadczeń i prawidłowa dokumentacja decydują o bezpieczeństwie
+    pacjenta. Prace z tego obszaru dotyczą oceny jakości, dokumentacji i dylematów
+    etycznych. Opierają się na analizie kart medycznych czynności ratunkowych i
+    badaniach ankietowych.
+  </p>
+
+  <ol start="87">
+    <li>Kompletność dokumentacji medycznych czynności ratunkowych</li>
+    <li>Dylematy etyczne w pracy ratownika medycznego</li>
+    <li>Odstąpienie od resuscytacji w warunkach przedszpitalnych</li>
+    <li>Zgoda pacjenta na czynności ratunkowe w stanach nagłych</li>
+    <li>Komunikacja z pacjentem i rodziną w sytuacji nagłej</li>
+    <li>Błędy w postępowaniu ratunkowym - przyczyny i zapobieganie</li>
+    <li>Ocena jakości świadczeń zespołów ratownictwa medycznego</li>
+  </ol>
+
+  <h2>Transport medyczny, sprzęt i nowe technologie</h2>
+
+  <p>
+    Wyposażenie i technologie wspierają pracę ratownika. Prace z tego obszaru
+    dotyczą transportu pacjenta, sprzętu ratunkowego i nowych rozwiązań, takich
+    jak telemedycyna. Opierają się na analizie procedur, danych i literaturze.
+  </p>
+
+  <ol start="94">
+    <li>Bezpieczny transport pacjenta w stanie krytycznym</li>
+    <li>Telemedycyna w ratownictwie przedszpitalnym</li>
+    <li>Zastosowanie ultrasonografii w warunkach przedszpitalnych</li>
+    <li>Wyposażenie ambulansu a standardy systemu PRM</li>
+    <li>Transport międzyszpitalny pacjenta w stanie ciężkim</li>
+    <li>Dostęp donaczyniowy i doszpikowy w praktyce ratownika</li>
+    <li>Nowe technologie wspierające pracę zespołów ratownictwa medycznego</li>
+  </ol>
+
+  <h2>Jak wybrać temat pracy z ratownictwa medycznego?</h2>
+
+  <p>
+    Wybór tematu determinuje przede wszystkim <strong>dostęp do danych</strong>.
+    Tematy oparte na analizie dokumentacji (karty medycznych czynności
+    ratunkowych, dane o wezwaniach i czasach dotarcia) wymagają zgody jednostki
+    systemu ratownictwa, a uzyskanie jej bywa czasochłonne i obwarowane ochroną
+    danych pacjentów. Łatwiejsze do samodzielnej realizacji są tematy oparte na
+    badaniu ankietowym, na przykład dotyczące wiedzy społeczeństwa o pierwszej
+    pomocy albo obciążeń zawodowych ratowników. Tematy oceniające umiejętności
+    można zrealizować w warunkach symulacyjnych, jeśli masz dostęp do
+    odpowiedniego zaplecza dydaktycznego.
+  </p>
+
+  <p>
+    Pamiętaj o <strong>etyce i ochronie danych</strong>. Praca z dokumentacją
+    medyczną i pacjentami w stanach nagłych dotyczy danych wrażliwych i wymaga
+    zgody odpowiednich instytucji oraz, w badaniach z udziałem ludzi, akceptacji
+    komisji bioetycznej. Skonsultuj temat z promotorem, który pomoże ocenić
+    wykonalność projektu i przejść procedury dostępu do danych.
+  </p>
+
+  <h2>Metodologia badań w ratownictwie medycznym</h2>
+
+  <p>
+    Prace z ratownictwa medycznego najczęściej opierają się na metodzie
+    ilościowej. Częstym podejściem jest retrospektywna analiza dokumentacji:
+    kart medycznych czynności ratunkowych, danych o wezwaniach, czasach dotarcia
+    i interwencjach, co pozwala opisać epidemiologię stanów nagłych i ocenić
+    funkcjonowanie systemu. Drugim popularnym narzędziem jest kwestionariusz
+    ankiety, stosowany w badaniach wiedzy społeczeństwa, postaw wobec pierwszej
+    pomocy oraz obciążeń zawodowych ratowników (z wykorzystaniem standaryzowanych
+    skal, na przykład wypalenia zawodowego).
+  </p>
+
+  <p>
+    Umiejętności praktyczne ocenia się w badaniach symulacyjnych, w których
+    mierzy się jakość wykonania procedur w warunkach zbliżonych do rzeczywistych.
+    Uzupełnieniem bywa studium przypadku opisujące przebieg konkretnej
+    interwencji. Niezależnie od metody badania wymagają jasnej operacjonalizacji,
+    a praca z dokumentacją medyczną i pacjentami podlega rygorom ochrony danych i
+    etyki, w tym zgodzie komisji bioetycznej. We wstępie pracy należy przedstawić
+    cel, materiał badawczy, zastosowaną metodę i jej ograniczenia.
+  </p>
+</ArticleLayout>

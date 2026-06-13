@@ -24,11 +24,13 @@ const kierunki = [
   { name: 'Marketing', slug: 'marketing', icon: '📈', description: 'Marketing cyfrowy, reklama, branding' },
   { name: 'Ochrona środowiska', slug: 'ochrona-srodowiska', icon: '🌱', description: 'Ekologia, ochrona przyrody, klimat' },
   { name: 'Pedagogika', slug: 'pedagogika', icon: '📚', description: 'Tematy prac z pedagogiki, dydaktyki i edukacji' },
+  { name: 'Pedagogika specjalna', slug: 'pedagogika-specjalna', icon: '🧩', description: 'Niepełnosprawność, autyzm, edukacja włączająca' },
   { name: 'Pielęgniarstwo', slug: 'pielegniarstwo', icon: '🏥', description: 'Opieka medyczna i pielęgniarska' },
   { name: 'Politologia', slug: 'politologia', icon: '🏛️', description: 'Systemy polityczne, partie, wybory' },
   { name: 'Praca socjalna', slug: 'praca-socjalna', icon: '🤝', description: 'Pomoc społeczna, wykluczenie, polityka socjalna' },
   { name: 'Prawo', slug: 'prawo', icon: '⚖️', description: 'Prawo cywilne, karne, administracyjne' },
   { name: 'Psychologia', slug: 'psychologia', icon: '🧠', description: 'Psychologia społeczna, kliniczna, rozwojowa' },
+  { name: 'Ratownictwo medyczne', slug: 'ratownictwo-medyczne', icon: '🚑', description: 'Stany nagłe, resuscytacja, system PRM' },
   { name: 'Rolnictwo', slug: 'rolnictwo', icon: '🌾', description: 'Produkcja roślinna, zwierzęca, agrotechnika' },
   { name: 'Socjologia', slug: 'socjologia', icon: '👥', description: 'Badania społeczne, struktury społeczne' },
   { name: 'Stosunki międzynarodowe', slug: 'stosunki-miedzynarodowe', icon: '🌍', description: 'Dyplomacja, polityka zagraniczna, UE' },
@@ -41,7 +43,7 @@ const kierunki = [
 const categories = [
   {
     name: 'Nauki społeczne',
-    items: ['dziennikarstwo', 'pedagogika', 'politologia', 'psychologia', 'socjologia', 'stosunki-miedzynarodowe'],
+    items: ['dziennikarstwo', 'pedagogika', 'pedagogika-specjalna', 'politologia', 'psychologia', 'socjologia', 'stosunki-miedzynarodowe'],
   },
   {
     name: 'Biznes i ekonomia',
@@ -53,7 +55,7 @@ const categories = [
   },
   {
     name: 'Nauki medyczne i o zdrowiu',
-    items: ['dietetyka', 'fizjoterapia', 'kosmetologia', 'pielegniarstwo', 'zdrowie-publiczne'],
+    items: ['dietetyka', 'fizjoterapia', 'kosmetologia', 'pielegniarstwo', 'ratownictwo-medyczne', 'zdrowie-publiczne'],
   },
   {
     name: 'Humanistyczne',
@@ -77,8 +79,8 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
 ---
 
 <Layout 
-  title="2500+ tematów prac magisterskich z 29 kierunków - inspiracje 2026"
-  description="Gotowe tematy prac magisterskich z 29 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, kryminologia, dietetyka, informatyka i inne. 2500+ pomysłów na pracę dyplomową."
+  title="2500+ tematów prac magisterskich z 31 kierunków - inspiracje 2026"
+  description="Gotowe tematy prac magisterskich z 31 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, kryminologia, dietetyka, ratownictwo medyczne i inne. 2500+ pomysłów na pracę dyplomową."
 >
   <Navbar />
   
@@ -99,7 +101,7 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>29 kierunków studiów</span>
+              <span>31 kierunków studiów</span>
             </div>
             <div class="flex items-center gap-2 text-gray-600">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

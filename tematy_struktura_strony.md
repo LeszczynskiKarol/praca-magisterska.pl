@@ -8,7 +8,7 @@
 > historyczne i **częściowo nieaktualne** (powstały na początku projektu).
 > Wiążący jest poniższy stan, ustalony na podstawie zawartości `src/pages/`.
 
-### Kierunki (`/tematy/`) — 29 gotowych
+### Kierunki (`/tematy/`) — 31 gotowych
 
 Gotowe (26): administracja, bezpieczeństwo narodowe, budownictwo, dziennikarstwo,
 ekonomia, filologia angielska, filologia polska, finanse i rachunkowość,
@@ -18,11 +18,11 @@ ochrona środowiska, pedagogika (+ przedszkolna-i-wczesnoszkolna), pielęgniarst
 socjologia, stosunki międzynarodowe, turystyka i rekreacja, zarządzanie,
 zdrowie publiczne.
 
-**Kierunki dodane 2026-06-14:** kryminologia, dietetyka, kosmetologia (po 100 tematów, wzorzec historia/psychologia).
+**Kierunki dodane 2026-06-14:** kryminologia, dietetyka, kosmetologia, ratownictwo-medyczne, pedagogika-specjalna (po 100 tematów, wzorzec historia/psychologia).
 
 **Kierunki DO ZROBIENIA (opcjonalne, brak strony):**
-- 🔴 (warto, są wyszukiwane): ratownictwo medyczne, pedagogika specjalna, resocjalizacja
-- 🟡 (niżej): geografia, architektura, kulturoznawstwo, gospodarka przestrzenna
+- 🔴 (warto): resocjalizacja (uwaga: nakłada się na kryminologię i pedagogikę specjalną — wyróżnić ujęcie wychowawcze/penitencjarne)
+- 🟡 (niżej): geografia, architektura, kulturoznawstwo, gospodarka przestrzenna, filologia germańska/romańska/hiszpańska, biotechnologia
 
 ### Poradniki (`/poradniki/`) — stan
 
@@ -44,7 +44,8 @@ rozdzial-metodologiczny, rozdzial-badawczy).
 4. **NASTĘPNE → Metodologia – uzupełnienia 🟢:** case-study, obserwacja, sondaz,
    analiza-dokumentow, eksperyment, triangulacja, etyka, badania-online
 5. **Struktura – uzupełnienia 🟢:** aneksy, wykaz-tabel, wykaz-skrotow
-6. **Kierunki:** historia, kryminologia, dietetyka, kosmetologia gotowe; do rozważenia ratownictwo medyczne, pedagogika specjalna, resocjalizacja, geografia
+6. **Kierunki (31 gotowych):** ostatnio dodane historia, kryminologia, dietetyka, kosmetologia, ratownictwo-medyczne, pedagogika-specjalna; do rozważenia resocjalizacja, geografia, architektura, filologie obce
+7. **Sklep — ebook per kierunek** (zadanie na przyszłość): osobny ebook „Jak napisać pracę mgr [kierunek]" dla każdego z 31 kierunków + CTA per strona. Szczegóły w pamięci: ebook-shop-per-kierunek.
 
 ### SEO – quick wins (z analizy GSC 2026-06-13)
 - `/tematy/psychologia/` — fraza „praca magisterska psychologia": 274 wyśw, poz. 8,7,
