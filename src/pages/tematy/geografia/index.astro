@@ -1,0 +1,318 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Geografia", href: "/tematy/geografia/" },
+];
+
+const relatedLinks = [
+  { label: "Metodologia badań", href: "/poradniki/metodologia/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="100 tematów prac magisterskich z geografii 2026/2027 - przykłady"
+  description="100 tematów prac magisterskich z geografii: geografia społeczno-ekonomiczna, ludności, miast, turystyki, fizyczna, klimatologia, GIS i teledetekcja. Z określonym obszarem badań i metodą."
+  readingTime="24 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Geografia bada przestrzenne zróżnicowanie zjawisk przyrodniczych i
+    społeczno-gospodarczych oraz relacje między człowiekiem a środowiskiem. Praca
+    magisterska z tego kierunku zwykle odnosi się do konkretnego obszaru i
+    łączy analizę danych z pracą kameralną lub terenową. Dobry temat wymaga więc
+    jasnego określenia, jaki teren i jaką metodą badasz. Poniżej zebraliśmy 100
+    tematów uporządkowanych według działów geografii. Każdy ma wskazany
+    <strong>obszar badań</strong> i sugerowaną metodę (analiza danych
+    statystycznych, narzędzia GIS, kartowanie terenowe, badanie ankietowe,
+    teledetekcja), co ułatwia ocenę wykonalności i dostęp do danych.
+  </p>
+
+  <h2>Geografia społeczno-ekonomiczna</h2>
+
+  <p>
+    Geografia społeczno-ekonomiczna analizuje przestrzenne aspekty działalności
+    człowieka. Prace z tego obszaru dotyczą rozwoju regionów, osadnictwa i
+    przemian gospodarczych. Opierają się na analizie danych statystycznych oraz
+    wskaźników rozwoju w ujęciu przestrzennym.
+  </p>
+
+  <ol>
+    <li>Zróżnicowanie poziomu rozwoju społeczno-gospodarczego wybranego województwa</li>
+    <li>Przemiany funkcji wsi w strefie podmiejskiej dużego miasta</li>
+    <li>Rozwój sieci osadniczej wybranego powiatu</li>
+    <li>Bezrobocie a poziom rozwoju gospodarczego gmin wybranego regionu</li>
+    <li>Wpływ funduszy unijnych na rozwój lokalny wybranej gminy</li>
+    <li>Suburbanizacja w strefie podmiejskiej wybranego miasta</li>
+    <li>Przedsiębiorczość lokalna a rozwój gospodarczy wybranego obszaru</li>
+    <li>Dysproporcje rozwojowe między miastem a obszarami wiejskimi w regionie</li>
+    <li>Atrakcyjność inwestycyjna wybranego regionu</li>
+  </ol>
+
+  <h2>Geografia ludności i demografia</h2>
+
+  <p>
+    Geografia ludności bada rozmieszczenie, strukturę i ruch ludności. Prace z
+    tego obszaru dotyczą procesów demograficznych i migracji w wybranym
+    regionie. Opierają się na analizie danych statystycznych i wskaźników
+    demograficznych.
+  </p>
+
+  <ol start="10">
+    <li>Przemiany demograficzne wybranego miasta w ostatnich dekadach</li>
+    <li>Starzenie się ludności wybranego regionu</li>
+    <li>Migracje wewnętrzne ludności wybranego województwa</li>
+    <li>Depopulacja obszarów wiejskich wybranego powiatu</li>
+    <li>Struktura wieku i płci ludności wybranej gminy</li>
+    <li>Migracje zagraniczne mieszkańców wybranego regionu</li>
+    <li>Przyrost naturalny a polityka prorodzinna w wybranym regionie</li>
+    <li>Gęstość zaludnienia a warunki środowiskowe wybranego obszaru</li>
+  </ol>
+
+  <h2>Geografia miast i urbanizacja</h2>
+
+  <p>
+    Geografia osadnictwa miejskiego bada strukturę i rozwój miast. Prace z tego
+    obszaru dotyczą przestrzeni miejskiej, jej funkcji i przemian. Opierają się
+    na analizie zagospodarowania przestrzennego, danych i badaniach terenowych.
+  </p>
+
+  <ol start="18">
+    <li>Przemiany funkcjonalno-przestrzenne centrum wybranego miasta</li>
+    <li>Rozwój przestrzenny wybranego miasta na przestrzeni dekad</li>
+    <li>Tereny zieleni miejskiej a jakość życia mieszkańców</li>
+    <li>Rewitalizacja zdegradowanej dzielnicy wybranego miasta</li>
+    <li>Funkcje handlowe w strukturze przestrzennej miasta</li>
+    <li>Dostępność usług publicznych w przestrzeni miejskiej</li>
+    <li>Gentryfikacja wybranej dzielnicy miasta</li>
+    <li>Przestrzenie publiczne wybranego miasta w percepcji mieszkańców</li>
+  </ol>
+
+  <h2>Geografia turystyki</h2>
+
+  <p>
+    Geografia turystyki bada przestrzenne aspekty ruchu turystycznego i jego
+    uwarunkowania. Prace z tego obszaru dotyczą walorów, zagospodarowania i
+    rozwoju turystyki wybranego obszaru. Opierają się na ocenie potencjału
+    turystycznego, danych i badaniach ankietowych.
+  </p>
+
+  <ol start="26">
+    <li>Ocena potencjału turystycznego wybranego obszaru</li>
+    <li>Rozwój agroturystyki w wybranym regionie</li>
+    <li>Funkcja turystyczna wybranej miejscowości uzdrowiskowej</li>
+    <li>Turystyka kulturowa wybranego miasta</li>
+    <li>Walory i zagospodarowanie turystyczne wybranego parku narodowego</li>
+    <li>Ruch turystyczny w wybranym regionie górskim</li>
+    <li>Turystyka kwalifikowana na przykładzie wybranego obszaru</li>
+    <li>Wpływ turystyki na rozwój gospodarczy wybranej gminy</li>
+    <li>Postrzeganie atrakcyjności turystycznej regionu przez odwiedzających</li>
+  </ol>
+
+  <h2>Geografia ekonomiczna - przemysł, usługi, rolnictwo</h2>
+
+  <p>
+    Geografia ekonomiczna analizuje przestrzenne rozmieszczenie działalności
+    gospodarczej. Prace z tego obszaru dotyczą przemysłu, rolnictwa i usług w
+    wybranym regionie. Opierają się na analizie danych statystycznych i
+    wskaźników gospodarczych.
+  </p>
+
+  <ol start="35">
+    <li>Przemiany struktury przemysłu wybranego regionu</li>
+    <li>Rolnictwo wybranego regionu a warunki przyrodnicze</li>
+    <li>Rozwój sektora usług w wybranym mieście</li>
+    <li>Specjalne strefy ekonomiczne a rozwój gospodarczy regionu</li>
+    <li>Tereny poprzemysłowe i ich zagospodarowanie w wybranym mieście</li>
+    <li>Rozwój energetyki odnawialnej w wybranym województwie</li>
+    <li>Struktura użytkowania ziemi wybranego obszaru</li>
+    <li>Handel detaliczny w strukturze gospodarczej wybranego miasta</li>
+  </ol>
+
+  <h2>Geografia fizyczna</h2>
+
+  <p>
+    Geografia fizyczna bada elementy środowiska przyrodniczego i ich wzajemne
+    relacje. Prace z tego obszaru dotyczą rzeźby terenu, wód i gleb wybranego
+    obszaru. Opierają się na badaniach terenowych, analizie map i danych
+    pomiarowych.
+  </p>
+
+  <ol start="43">
+    <li>Rzeźba terenu wybranego obszaru i jej geneza</li>
+    <li>Charakterystyka hydrologiczna wybranej zlewni rzecznej</li>
+    <li>Procesy geomorfologiczne na wybranym obszarze</li>
+    <li>Jeziora wybranego regionu i ich cechy fizycznogeograficzne</li>
+    <li>Wpływ ukształtowania terenu na zagospodarowanie obszaru</li>
+    <li>Charakterystyka gleb wybranego obszaru</li>
+    <li>Zagrożenie powodziowe wybranej doliny rzecznej</li>
+    <li>Osuwiska na wybranym obszarze i ich uwarunkowania</li>
+    <li>Zmiany koryta rzeki na wybranym odcinku</li>
+  </ol>
+
+  <h2>Klimatologia i zmiany klimatu</h2>
+
+  <p>
+    Klimatologia bada warunki klimatyczne i ich zmienność. Prace z tego obszaru
+    dotyczą charakterystyki klimatu i obserwowanych zmian na wybranym obszarze.
+    Opierają się na analizie danych meteorologicznych z wielolecia.
+  </p>
+
+  <ol start="52">
+    <li>Charakterystyka warunków termicznych wybranego obszaru w wieloleciu</li>
+    <li>Zmiany temperatury powietrza wybranej stacji w ostatnich dekadach</li>
+    <li>Zjawisko miejskiej wyspy ciepła w wybranym mieście</li>
+    <li>Opady atmosferyczne wybranego obszaru i ich zmienność</li>
+    <li>Ekstremalne zjawiska pogodowe na wybranym obszarze</li>
+    <li>Susze a warunki klimatyczne wybranego regionu</li>
+    <li>Topoklimat wybranego obszaru o zróżnicowanej rzeźbie</li>
+    <li>Wpływ zmian klimatu na rolnictwo wybranego regionu</li>
+  </ol>
+
+  <h2>Geografia środowiska i ochrona przyrody</h2>
+
+  <p>
+    Ten obszar dotyczy stanu środowiska i form jego ochrony. Prace badają
+    antropopresję, jakość środowiska i funkcjonowanie obszarów chronionych.
+    Opierają się na analizie danych środowiskowych, kartowaniu i badaniach
+    terenowych.
+  </p>
+
+  <ol start="60">
+    <li>Formy ochrony przyrody na wybranym obszarze</li>
+    <li>Antropopresja na środowisko przyrodnicze wybranego obszaru</li>
+    <li>Jakość powietrza w wybranym mieście a źródła zanieczyszczeń</li>
+    <li>Funkcjonowanie wybranego parku krajobrazowego</li>
+    <li>Zagospodarowanie a walory przyrodnicze obszaru Natura 2000</li>
+    <li>Gospodarka odpadami w wybranej gminie</li>
+    <li>Stan czystości wód wybranego zbiornika</li>
+    <li>Bioróżnorodność wybranego obszaru chronionego</li>
+  </ol>
+
+  <h2>GIS, kartografia i teledetekcja</h2>
+
+  <p>
+    Systemy informacji geograficznej i teledetekcja to nowoczesne narzędzia
+    analizy przestrzennej. Prace z tego obszaru wykorzystują dane przestrzenne i
+    zdjęcia satelitarne do analizy zjawisk. Opierają się na oprogramowaniu GIS i
+    analizie danych teledetekcyjnych.
+  </p>
+
+  <ol start="68">
+    <li>Zastosowanie GIS w analizie dostępności komunikacyjnej obszaru</li>
+    <li>Analiza zmian użytkowania ziemi na podstawie zdjęć satelitarnych</li>
+    <li>Modelowanie zagrożenia powodziowego z wykorzystaniem GIS</li>
+    <li>Analiza przestrzenna rozmieszczenia usług w mieście z użyciem GIS</li>
+    <li>Wykorzystanie teledetekcji w monitorowaniu pokrywy roślinnej</li>
+    <li>Cyfrowy model terenu w analizie rzeźby wybranego obszaru</li>
+    <li>Zmiany powierzchni terenów zabudowanych w analizie wieloczasowej</li>
+    <li>Geowizualizacja danych społeczno-ekonomicznych wybranego regionu</li>
+    <li>Analiza sieci w GIS na przykładzie dostępności placówek publicznych</li>
+  </ol>
+
+  <h2>Geografia regionalna i polityczna</h2>
+
+  <p>
+    Geografia regionalna i polityczna bada zróżnicowanie regionalne i jego
+    uwarunkowania. Prace z tego obszaru dotyczą tożsamości regionalnej, granic i
+    podziałów administracyjnych. Opierają się na analizie danych i badaniach
+    ankietowych.
+  </p>
+
+  <ol start="77">
+    <li>Tożsamość regionalna mieszkańców wybranego regionu</li>
+    <li>Wpływ granicy państwowej na rozwój obszaru przygranicznego</li>
+    <li>Współpraca transgraniczna wybranego euroregionu</li>
+    <li>Podział administracyjny a funkcjonowanie wybranego regionu</li>
+    <li>Zróżnicowanie regionalne wybranego zjawiska społecznego w Polsce</li>
+    <li>Peryferyjność a rozwój wybranego obszaru</li>
+    <li>Marka i wizerunek wybranego regionu</li>
+    <li>Aktywność wyborcza mieszkańców w ujęciu przestrzennym</li>
+  </ol>
+
+  <h2>Geografia transportu i komunikacji</h2>
+
+  <p>
+    Geografia transportu bada przestrzenne aspekty przemieszczania osób i
+    towarów. Prace z tego obszaru dotyczą sieci transportowej, dostępności i
+    mobilności. Opierają się na analizie danych, GIS i badaniach ankietowych.
+  </p>
+
+  <ol start="85">
+    <li>Dostępność transportowa wybranego obszaru</li>
+    <li>Rozwój sieci drogowej wybranego regionu</li>
+    <li>Transport publiczny w wybranym mieście a potrzeby mieszkańców</li>
+    <li>Mobilność codzienna mieszkańców strefy podmiejskiej</li>
+    <li>Dostępność kolejowa wybranego regionu</li>
+    <li>Infrastruktura rowerowa wybranego miasta</li>
+    <li>Wpływ inwestycji drogowych na rozwój lokalny</li>
+    <li>Dojazdy do pracy w wybranym obszarze funkcjonalnym</li>
+  </ol>
+
+  <h2>Edukacja i dydaktyka geografii</h2>
+
+  <p>
+    Ostatni obszar dotyczy nauczania geografii i edukacji przestrzennej. Prace
+    badają metody nauczania, wiedzę uczniów i zainteresowania geograficzne.
+    Opierają się na badaniach ankietowych i analizie programów nauczania.
+  </p>
+
+  <ol start="93">
+    <li>Metody aktywizujące w nauczaniu geografii w szkole średniej</li>
+    <li>Wykorzystanie GIS w edukacji geograficznej</li>
+    <li>Zajęcia terenowe w nauczaniu geografii</li>
+    <li>Wiedza uczniów na temat zmian klimatu</li>
+    <li>Edukacja regionalna w nauczaniu geografii</li>
+    <li>Mapy i geowizualizacja w procesie nauczania geografii</li>
+    <li>Zainteresowania geograficzne uczniów szkół średnich</li>
+    <li>Świadomość ekologiczna uczniów a edukacja geograficzna</li>
+  </ol>
+
+  <h2>Jak wybrać temat pracy z geografii?</h2>
+
+  <p>
+    Wybór tematu w geografii zaczyna się od decyzji, czy praca będzie oparta na
+    <strong>danych zastanych</strong>, czy na <strong>badaniach
+    własnych</strong>. Tematy z geografii społeczno-ekonomicznej zrealizujesz na
+    podstawie ogólnodostępnych danych statystycznych (Bank Danych Lokalnych GUS),
+    często łącząc je z analizą w GIS. Tematy z geografii fizycznej zwykle wymagają
+    pracy terenowej i pomiarów, a tematy z geografii turystyki, mobilności czy
+    percepcji przestrzeni opierają się na badaniach ankietowych. Określ też
+    precyzyjnie <strong>obszar badań</strong>, bo dobrze dobrana skala (gmina,
+    powiat, miasto) decyduje o wykonalności pracy.
+  </p>
+
+  <p>
+    Warto rozważyć włączenie narzędzi GIS, które podnoszą wartość pracy i
+    pozwalają na analizę oraz wizualizację danych przestrzennych. Skonsultuj
+    temat z promotorem, który oceni dostępność danych i pomoże dobrać metodę.
+    Dobra praca z geografii łączy rzetelną analizę z odniesieniem do konkretnej
+    przestrzeni i jej uwarunkowań.
+  </p>
+
+  <h2>Metodologia badań geograficznych</h2>
+
+  <p>
+    Geografia korzysta z metod ilościowych i jakościowych, a jej cechą
+    wyróżniającą jest podejście przestrzenne. Podstawą wielu prac jest analiza
+    danych statystycznych w ujęciu przestrzennym, oparta na wskaźnikach i ich
+    kartograficznej prezentacji. Coraz większą rolę odgrywają systemy informacji
+    geograficznej (GIS), które umożliwiają analizę przestrzenną, modelowanie i
+    geowizualizację, a także teledetekcja wykorzystująca zdjęcia satelitarne i
+    lotnicze do badania zmian w środowisku.
+  </p>
+
+  <p>
+    W geografii fizycznej stosuje się badania i pomiary terenowe oraz kartowanie,
+    a w geografii społecznej, turystyki i percepcji przestrzeni także badania
+    ankietowe i wywiady. Niezależnie od metody kluczowe jest jasne określenie
+    obszaru badań i skali opracowania oraz krytyczne podejście do źródeł danych.
+    We wstępie pracy należy przedstawić cel, teren badań, wykorzystane dane i
+    metody analizy, w tym narzędzia kartograficzne i przestrzenne.
+  </p>
+</ArticleLayout>

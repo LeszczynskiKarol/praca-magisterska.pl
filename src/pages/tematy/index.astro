@@ -7,15 +7,22 @@ import SmartEduCTA from '../../components/SmartEduCTA.astro';
 
 const kierunki = [
   { name: 'Administracja', slug: 'administracja', icon: '🏢', description: 'Administracja publiczna, samorząd' },
+  { name: 'Architektura', slug: 'architektura', icon: '📐', description: 'Projektowanie, urbanistyka, rewitalizacja' },
   { name: 'Bezpieczeństwo narodowe', slug: 'bezpieczenstwo-narodowe', icon: '🛡️', description: 'Bezpieczeństwo wewnętrzne i międzynarodowe' },
   { name: 'Budownictwo', slug: 'budownictwo', icon: '🏗️', description: 'Konstrukcje, materiały budowlane, BIM' },
   { name: 'Dietetyka', slug: 'dietetyka', icon: '🥗', description: 'Żywienie kliniczne, dietoterapia, sport' },
   { name: 'Dziennikarstwo', slug: 'dziennikarstwo', icon: '📰', description: 'Media, komunikacja społeczna, PR' },
   { name: 'Ekonomia', slug: 'ekonomia', icon: '💰', description: 'Makro i mikroekonomia, rynki' },
   { name: 'Filologia angielska', slug: 'filologia-angielska', icon: '🇬🇧', description: 'Językoznawstwo, literatura angielska' },
+  { name: 'Filologia francuska', slug: 'filologia-francuska', icon: '🇫🇷', description: 'Językoznawstwo, literatura francuska i frankofońska' },
+  { name: 'Filologia germańska', slug: 'filologia-germanska', icon: '🇩🇪', description: 'Językoznawstwo, literatura niemieckojęzyczna' },
+  { name: 'Filologia hiszpańska', slug: 'filologia-hiszpanska', icon: '🇪🇸', description: 'Językoznawstwo, literatura hiszpańska i latynoamerykańska' },
   { name: 'Filologia polska', slug: 'filologia-polska', icon: '🇵🇱', description: 'Literatura polska, językoznawstwo' },
+  { name: 'Filologia rosyjska', slug: 'filologia-rosyjska', icon: '🇷🇺', description: 'Językoznawstwo, literatura rosyjska' },
+  { name: 'Filologia włoska', slug: 'filologia-wloska', icon: '🇮🇹', description: 'Językoznawstwo, literatura włoska' },
   { name: 'Finanse i rachunkowość', slug: 'finanse-i-rachunkowosc', icon: '💵', description: 'Rachunkowość, bankowość, inwestycje' },
   { name: 'Fizjoterapia', slug: 'fizjoterapia', icon: '💪', description: 'Rehabilitacja, kinezyterapia, masaż' },
+  { name: 'Geografia', slug: 'geografia', icon: '🗺️', description: 'Geografia społeczno-ekonomiczna, fizyczna, GIS' },
   { name: 'Historia', slug: 'historia', icon: '📜', description: 'Historia Polski i powszechna, badania nad źródłami' },
   { name: 'Informatyka', slug: 'informatyka', icon: '💻', description: 'Programowanie, systemy, bazy danych' },
   { name: 'Kosmetologia', slug: 'kosmetologia', icon: '💄', description: 'Pielęgnacja skóry, zabiegi, składniki aktywne' },
@@ -31,6 +38,7 @@ const kierunki = [
   { name: 'Prawo', slug: 'prawo', icon: '⚖️', description: 'Prawo cywilne, karne, administracyjne' },
   { name: 'Psychologia', slug: 'psychologia', icon: '🧠', description: 'Psychologia społeczna, kliniczna, rozwojowa' },
   { name: 'Ratownictwo medyczne', slug: 'ratownictwo-medyczne', icon: '🚑', description: 'Stany nagłe, resuscytacja, system PRM' },
+  { name: 'Resocjalizacja', slug: 'resocjalizacja', icon: '🔄', description: 'Niedostosowanie społeczne, readaptacja, kuratela' },
   { name: 'Rolnictwo', slug: 'rolnictwo', icon: '🌾', description: 'Produkcja roślinna, zwierzęca, agrotechnika' },
   { name: 'Socjologia', slug: 'socjologia', icon: '👥', description: 'Badania społeczne, struktury społeczne' },
   { name: 'Stosunki międzynarodowe', slug: 'stosunki-miedzynarodowe', icon: '🌍', description: 'Dyplomacja, polityka zagraniczna, UE' },
@@ -43,7 +51,7 @@ const kierunki = [
 const categories = [
   {
     name: 'Nauki społeczne',
-    items: ['dziennikarstwo', 'pedagogika', 'pedagogika-specjalna', 'politologia', 'psychologia', 'socjologia', 'stosunki-miedzynarodowe'],
+    items: ['dziennikarstwo', 'pedagogika', 'pedagogika-specjalna', 'politologia', 'psychologia', 'resocjalizacja', 'socjologia', 'stosunki-miedzynarodowe'],
   },
   {
     name: 'Biznes i ekonomia',
@@ -59,15 +67,15 @@ const categories = [
   },
   {
     name: 'Humanistyczne',
-    items: ['filologia-angielska', 'filologia-polska', 'historia'],
+    items: ['filologia-angielska', 'filologia-francuska', 'filologia-germanska', 'filologia-hiszpanska', 'filologia-polska', 'filologia-rosyjska', 'filologia-wloska', 'historia'],
   },
   {
     name: 'Techniczne i inżynieryjne',
-    items: ['budownictwo', 'informatyka'],
+    items: ['architektura', 'budownictwo', 'informatyka'],
   },
   {
     name: 'Przyrodnicze i środowiskowe',
-    items: ['ochrona-srodowiska', 'rolnictwo'],
+    items: ['geografia', 'ochrona-srodowiska', 'rolnictwo'],
   },
   {
     name: 'Inne',
@@ -79,8 +87,8 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
 ---
 
 <Layout 
-  title="2500+ tematów prac magisterskich z 31 kierunków - inspiracje 2026"
-  description="Gotowe tematy prac magisterskich z 31 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, kryminologia, dietetyka, ratownictwo medyczne i inne. 2500+ pomysłów na pracę dyplomową."
+  title="2500+ tematów prac magisterskich z 39 kierunków - inspiracje 2026/2027"
+  description="Gotowe tematy prac magisterskich z 39 kierunków: pielęgniarstwo, psychologia, pedagogika, zarządzanie, prawo, kryminologia, dietetyka, filologie, geografia i inne. 2500+ pomysłów na pracę dyplomową."
 >
   <Navbar />
   
@@ -101,7 +109,7 @@ const getKierunek = (slug: string) => kierunki.find(k => k.slug === slug);
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>31 kierunków studiów</span>
+              <span>39 kierunków studiów</span>
             </div>
             <div class="flex items-center gap-2 text-gray-600">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
