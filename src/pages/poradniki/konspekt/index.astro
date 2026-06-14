@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/konspekt/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -306,6 +307,15 @@ const relatedLinks = [
     przypadku prac o charakterze teoretycznym, empirycznym, jak i mieszanym,
     łączącym analizę literatury z własnymi badaniami.
   </p>
+
+  <DownloadBox
+    title="📄 Pobierz gotowy wzór konspektu – PDF i Word"
+    description="Wypełnialny szablon konspektu pracy magisterskiej: dane formalne, uzasadnienie tematu, cel główny i cele szczegółowe, problemy badawcze i hipotezy, metoda, wstępny plan pracy, bibliografia i harmonogram. Z komentarzami opisującymi każdą część. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-konspektu-pracy-magisterskiej.pdf", label: "Pobierz konspekt (PDF)" },
+      { href: "/downloads/wzor-konspektu-pracy-magisterskiej.docx", label: "Pobierz konspekt (Word .docx)", primary: false },
+    ]}
+  />
 
   <p>
     Wzorcowy konspekt rozpoczyna się od strony tytułowej zawierającej pełne dane

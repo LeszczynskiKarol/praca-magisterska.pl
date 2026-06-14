@@ -1,0 +1,208 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Pedagogika", href: "/tematy/pedagogika/" },
+  { label: "Przykładowa praca", href: "/tematy/pedagogika/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z pedagogiki", href: "/tematy/pedagogika/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Metody i techniki badawcze", href: "/poradniki/metodologia/metody-i-techniki-badawcze/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z pedagogiki – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z pedagogiki krok po kroku: pedagogiczne ujęcie metodologii (metoda, technika, narzędzie), badanie ilościowo-jakościowe, problemy badawcze i implikacje pedagogiczne – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z pedagogiki,
+    to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
+    na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
+    konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się
+    na tym, co odróżnia magisterkę z pedagogiki od prac z innych kierunków: na
+    klasycznym ujęciu metodologii (metoda – technika – narzędzie), mieszanym charakterze
+    badań i implikacjach dla praktyki edukacyjnej.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę empiryczną –
+    <strong>„Metody aktywizujące w edukacji wczesnoszkolnej w opinii nauczycieli"</strong>.
+    To typowy dla pedagogiki schemat: sondaż diagnostyczny wśród nauczycieli z elementem
+    jakościowym (wywiad), zakończony wnioskami dla praktyki szkolnej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet empirycznej pracy magisterskiej z pedagogiki: strona tytułowa, streszczenie, spis treści, wstęp, część teoretyczna, metodologia w ujęciu pedagogicznym (metoda – technika – narzędzie), analiza wyników z tabelą, implikacje pedagogiczne, zakończenie, bibliografia i aneks. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-pedagogika.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-pedagogika.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z pedagogiki</h2>
+
+  <p>
+    Pedagogika ma własną, mocno ugruntowaną tradycję metodologiczną (m.in. prace
+    T. Pilcha i M. Łobockiego), z której wynikają cechy nietypowe na tle innych
+    kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Układ: metoda – technika – narzędzie.</strong> Metodologię porządkuje się
+      w tej trójstopniowej hierarchii. Mylenie tych pojęć to najczęstszy błąd w pracach
+      pedagogicznych.
+    </li>
+    <li>
+      <strong>Badania mieszane (ilościowo-jakościowe).</strong> Często łączy się ankietę
+      z wywiadem lub obserwacją, by uzupełnić dane liczbowe o pogłębione opinie.
+    </li>
+    <li>
+      <strong>Problemy badawcze częściej niż hipotezy.</strong> W badaniach
+      diagnostycznych dominują pytania badawcze; hipotezy stawia się przy badaniach
+      weryfikacyjnych.
+    </li>
+    <li>
+      <strong>Implikacje pedagogiczne.</strong> Praca kończy się wnioskami dla praktyki
+      szkolnej, kształcenia i doskonalenia nauczycieli – nie tylko wnioskami poznawczymi.
+    </li>
+  </ul>
+
+  <h2>Metoda, technika, narzędzie – kluczowe rozróżnienie</h2>
+
+  <p>
+    To pojęcia, na które recenzenci zwracają szczególną uwagę. W naszym przykładzie:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Poziom</th><th>Co to jest</th><th>Przykład w pracy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Metoda</strong></td><td>ogólny sposób postępowania badawczego</td><td>sondaż diagnostyczny</td></tr>
+      <tr><td><strong>Technika</strong></td><td>konkretna czynność zbierania danych</td><td>ankieta, wywiad</td></tr>
+      <tr><td><strong>Narzędzie</strong></td><td>instrument do realizacji techniki</td><td>kwestionariusz ankiety, dyspozycje do wywiadu</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> inne częste techniki to obserwacja, analiza dokumentów i
+    analiza wytworów (np. prac dzieci). Dobór techniki wynika z problemu badawczego.
+    Szerzej w poradniku o <a href="/poradniki/metodologia/metody-i-techniki-badawcze/">metodach
+    i technikach badawczych</a>.
+  </p>
+
+  <h2>Struktura empirycznej pracy z pedagogiki</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp</li>
+    <li>Rozdział teoretyczny – przegląd literatury</li>
+    <li>Rozdział metodologiczny – przedmiot, cel, problemy (lub hipotezy), metoda–technika–narzędzie, próba</li>
+    <li>Rozdział empiryczny – analiza wyników</li>
+    <li>Implikacje pedagogiczne</li>
+    <li>Zakończenie</li>
+    <li>Bibliografia (APA) · Aneks (narzędzia)</li>
+  </ol>
+
+  <h2>Metodologia – problemy badawcze</h2>
+
+  <blockquote>
+    <p><strong>Przedmiot badań:</strong> wykorzystanie metod aktywizujących w edukacji
+      wczesnoszkolnej.</p>
+    <p><strong>Problemy badawcze:</strong> (1) Które metody aktywizujące nauczyciele
+      stosują najczęściej? (2) Jakie bariery ograniczają ich wykorzystanie? (3) Jak
+      nauczyciele oceniają ich skuteczność?</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> w badaniu diagnostycznym jak to, problemy badawcze są
+    naturalniejsze niż hipotezy. Jeśli badanie ma charakter weryfikacyjny (sprawdza
+    zależność), wtedy formułuje się hipotezy. Więcej w poradniku o
+    <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a>.
+  </p>
+
+  <h2>Wyniki i implikacje pedagogiczne</h2>
+
+  <p>
+    Wyniki prezentuje się w tabelach i na wykresach, a część jakościową – w formie
+    wypowiedzi respondentów. Najważniejszy jest jednak krok ku praktyce: implikacje
+    pedagogiczne.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Metoda aktywizująca</th><th>Często (%)</th><th>Rzadko (%)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Gry dydaktyczne</td><td>78</td><td>22</td></tr>
+      <tr><td>Praca w grupach</td><td>71</td><td>29</td></tr>
+      <tr><td>Burza mózgów</td><td>54</td><td>46</td></tr>
+      <tr><td>Metoda projektu</td><td>29</td><td>71</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> implikacje pedagogiczne muszą wynikać z wyników i
+    dotyczyć praktyki – np. potrzeby doskonalenia nauczycieli w zakresie metody projektu.
+    To pedagogiczny odpowiednik „rekomendacji".
+  </p>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z pedagogiki</h2>
+
+  <ul>
+    <li><strong>Mylenie metody, techniki i narzędzia</strong> – najczęstszy błąd
+      metodologiczny.</li>
+    <li><strong>Hipotezy w badaniu diagnostycznym</strong> – stawianie hipotez tam,
+      gdzie pasują problemy badawcze.</li>
+    <li><strong>Brak implikacji pedagogicznych</strong> – praca kończy się na wynikach,
+      bez wniosków dla praktyki.</li>
+    <li><strong>Część teoretyczna oderwana od badań</strong> – teoria niepowiązana z
+      problemem badawczym.</li>
+    <li><strong>Pominięcie kwestii etycznych</strong> – zwłaszcza przy badaniach z
+      udziałem dzieci (zgoda rodziców i szkoły).</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Problemy badawcze czy hipotezy?</h3>
+  <p>
+    W pedagogice zależy to od typu badania. Badania diagnostyczne (rozpoznające stan
+    rzeczy) opierają się na problemach badawczych; badania weryfikacyjne (sprawdzające
+    zależności) – na hipotezach. Dobierz je do celu pracy.
+  </p>
+
+  <h3>Czy mogę połączyć badania ilościowe i jakościowe?</h3>
+  <p>
+    Tak, w pedagogice badania mieszane są częste i cenione. Ankieta dostarcza danych
+    liczbowych, a wywiad lub obserwacja – pogłębionego kontekstu.
+  </p>
+
+  <h3>Czy potrzebuję zgody na badania z dziećmi?</h3>
+  <p>
+    Tak – badania z udziałem uczniów wymagają zgody rodziców/opiekunów oraz dyrekcji
+    szkoły. Jeśli badasz wyłącznie nauczycieli, wystarczy ich dobrowolna, anonimowa
+    zgoda.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całe badanie trzeba
+    zaprojektować i opisać samodzielnie. Zacznij od
+    <a href="/tematy/pedagogika/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

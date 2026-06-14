@@ -1,0 +1,251 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Pielęgniarstwo", href: "/tematy/pielegniarstwo/" },
+  { label: "Przykładowa praca", href: "/tematy/pielegniarstwo/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "108 tematów prac z pielęgniarstwa", href: "/tematy/pielegniarstwo/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Bibliografia i przypisy", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z pielęgniarstwa – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z pielęgniarstwa krok po kroku: typy prac, standaryzowane skale (AIS, WHOQOL, Barthel, Norton), zgoda komisji bioetycznej, proces pielęgnowania i styl Vancouver – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="15 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z
+    pielęgniarstwa, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie.
+    Poniżej rozkładamy na części przykładową pracę – pokazujemy zawartość każdego
+    rozdziału, wklejamy konkretne wycinki i tłumaczymy, dlaczego zostały napisane
+    właśnie tak. Skupiamy się na tym, co odróżnia magisterkę z pielęgniarstwa od
+    prac z innych kierunków: na praktyce opartej na dowodach, standaryzowanych
+    skalach klinicznych i wymogach etycznych badań z udziałem pacjentów.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę empiryczną –
+    <strong>„Akceptacja choroby a jakość życia pacjentów z cukrzycą typu 2"</strong>.
+    To typowy dla pielęgniarstwa schemat: badanie związku między zmiennymi mierzonymi
+    uznanymi skalami (AIS i WHOQOL-BREF) w populacji klinicznej. Pokazujemy też, czym
+    taka praca różni się od studium przypadku opartego na procesie pielęgnowania.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet empirycznej pracy magisterskiej z pielęgniarstwa: strona tytułowa, streszczenie strukturalne, spis treści, wstęp, część teoretyczna, metodologia (skale, zgoda komisji bioetycznej), wyniki z tabelą korelacji, dyskusja, wnioski, piśmiennictwo (Vancouver) i aneks. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-pielegniarstwo.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-pielegniarstwo.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z pielęgniarstwa</h2>
+
+  <p>
+    Pielęgniarstwo to kierunek medyczny, w którym praca dyplomowa wpisuje się w nurt
+    <strong>praktyki opartej na dowodach</strong> (Evidence-Based Practice). Z tego
+    wynika kilka cech, których nie spotkasz na większości innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Standaryzowane skale kliniczne.</strong> Zmienne mierzy się uznanymi,
+      zwalidowanymi narzędziami: AIS (akceptacja choroby), WHOQOL-BREF (jakość
+      życia), skala Barthel (samodzielność), skala Norton (ryzyko odleżyn), NRS/VAS
+      (ból), MNA (stan odżywienia). Dobór skali zależy od problemu.
+    </li>
+    <li>
+      <strong>Badania na populacji klinicznej.</strong> Respondentami są zwykle
+      pacjenci, co wymaga dostępu do placówki i zgody jej kierownictwa.
+    </li>
+    <li>
+      <strong>Zgoda komisji bioetycznej.</strong> Badania z udziałem pacjentów
+      niemal zawsze wymagają opinii komisji bioetycznej oraz świadomej zgody
+      uczestników – to nieodłączny element metodologii.
+    </li>
+    <li>
+      <strong>Styl Vancouver.</strong> W piśmiennictwie medycznym dominuje styl
+      numeryczny (Vancouver), a nie autor–rok.
+    </li>
+  </ul>
+
+  <h2>Typy prac magisterskich z pielęgniarstwa</h2>
+
+  <ul>
+    <li>
+      <strong>Praca empiryczna (badawcza)</strong> – sondaż diagnostyczny z
+      wykorzystaniem standaryzowanych skal, prowadzony wśród pacjentów lub personelu.
+      Najczęstszy format na poziomie magisterskim.
+    </li>
+    <li>
+      <strong>Praca kazuistyczna (studium przypadku)</strong> – pogłębiona analiza
+      jednego pacjenta z przeprowadzeniem pełnego procesu pielęgnowania. Częstsza na
+      licencjacie, na magisterce stosowana rzadziej i zwykle pogłębiona.
+    </li>
+    <li>
+      <strong>Praca poglądowa (przeglądowa)</strong> – systematyczny przegląd
+      piśmiennictwa bez badania własnego; akceptowana w wybranych przypadkach.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy empirycznej z pielęgniarstwa</h2>
+
+  <ol>
+    <li>Strona tytułowa</li>
+    <li>Oświadczenia</li>
+    <li>Streszczenie (często strukturalne: Wstęp – Cel – Materiał i metody – Wyniki – Wnioski) + Abstract</li>
+    <li>Spis treści</li>
+    <li>Wstęp</li>
+    <li>Rozdział teoretyczny – przegląd piśmiennictwa</li>
+    <li>Rozdział metodologiczny – cel, problemy, hipotezy, narzędzia, próba, etyka</li>
+    <li>Rozdział z wynikami – analiza statystyczna</li>
+    <li>Dyskusja</li>
+    <li>Wnioski</li>
+    <li>Piśmiennictwo (Vancouver)</li>
+    <li>Spis tabel i rycin · Aneks (narzędzia, zgoda komisji bioetycznej)</li>
+  </ol>
+
+  <h2>Streszczenie strukturalne – cecha prac medycznych</h2>
+
+  <p>
+    W odróżnieniu od wielu kierunków, w pracach medycznych streszczenie bywa wymagane
+    w układzie strukturalnym, z wyodrębnionymi częściami:
+  </p>
+
+  <blockquote>
+    <p><strong>Wstęp:</strong> Cukrzyca typu 2 jest chorobą przewlekłą, której
+      przebieg zależy od zachowań pacjenta. <strong>Cel:</strong> Ocena związku
+      między akceptacją choroby a jakością życia. <strong>Materiał i metody:</strong>
+      120 pacjentów poradni diabetologicznej; skale AIS i WHOQOL-BREF.
+      <strong>Wyniki:</strong> Dodatni związek we wszystkich domenach (p &lt; 0,001).
+      <strong>Wnioski:</strong> Wsparcie akceptacji choroby może poprawiać jakość
+      życia.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> sprawdź, czy Twoja uczelnia wymaga układu
+    strukturalnego, i pamiętaj o wersji angielskiej (Abstract). Zasady budowy
+    streszczenia omawiamy w poradniku o <a href="/poradniki/streszczenie/">streszczeniu
+    pracy magisterskiej</a>.
+  </p>
+
+  <h2>Rozdział metodologiczny – skale i etyka</h2>
+
+  <p>
+    To rozdział czytany przez recenzentów najuważniej. W pielęgniarstwie kluczowe są
+    dwa elementy: trafny dobór narzędzi i strona etyczna badania.
+  </p>
+
+  <blockquote>
+    <p><strong>Narzędzia:</strong> Skala Akceptacji Choroby (AIS) oraz kwestionariusz
+      jakości życia WHOQOL-BREF; rzetelność skal oceniono współczynnikiem alfa
+      Cronbacha.</p>
+    <p><strong>Etyka:</strong> badanie przeprowadzono po uzyskaniu zgody komisji
+      bioetycznej oraz zgody kierownictwa placówki; udział był dobrowolny i anonimowy,
+      a każdy pacjent wyraził świadomą zgodę.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> każde wymienione narzędzie musi później pojawić się w
+    wynikach. Pominięcie informacji o zgodzie komisji bioetycznej to jeden z
+    najczęstszych powodów uwag w pracach pielęgniarskich. Szerzej w poradniku o
+    <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a> i <a href="/poradniki/metodologia/badania-ilosciowe/">badaniach
+    ilościowych</a>.
+  </p>
+
+  <h2>Wariant: studium przypadku i proces pielęgnowania</h2>
+
+  <p>
+    Jeśli uczelnia wymaga pracy kazuistycznej, trzon stanowi <strong>proces
+    pielęgnowania</strong> prowadzony według czterech etapów: rozpoznawanie,
+    planowanie, realizowanie, ocenianie. Diagnozy pielęgniarskie formułuje się w
+    schemacie problem–etiologia–objaw (PES) lub zgodnie z międzynarodową klasyfikacją
+    <strong>ICNP</strong>, a całość najczytelniej przedstawić w tabeli: diagnoza – cel
+    opieki – interwencje – ocena. Cel opieki formułuj mierzalnie („pacjent samodzielnie
+    wykona pomiar glukozy"), a nie ogólnie („poprawa stanu pacjenta").
+  </p>
+
+  <h2>Wyniki – jak prezentować dane</h2>
+
+  <p>
+    Wyniki prezentuje się w tabelach i na rycinach z numerem i tytułem. Związek dwóch
+    zmiennych ilościowych podaje się korelacją (r-Pearsona lub rho-Spearmana),
+    różnice między grupami – testem t-Studenta, ANOVA lub testami nieparametrycznymi:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Domena jakości życia</th><th>r</th><th>p</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Fizyczna</td><td>0,51</td><td>&lt; 0,001</td></tr>
+      <tr><td>Psychologiczna</td><td>0,47</td><td>&lt; 0,001</td></tr>
+      <tr><td>Relacje społeczne</td><td>0,38</td><td>&lt; 0,001</td></tr>
+      <tr><td>Środowiskowa</td><td>0,34</td><td>&lt; 0,001</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> w tekście opisujesz tendencję, nie powtarzasz
+    wszystkich liczb. Interpretację zostaw do dyskusji, w której zestawisz wyniki z
+    piśmiennictwem.
+  </p>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z pielęgniarstwa</h2>
+
+  <ul>
+    <li><strong>Brak zgody komisji bioetycznej</strong> – pominięcie strony etycznej
+      badania z udziałem pacjentów.</li>
+    <li><strong>Skala bez rzetelności</strong> – użycie narzędzia bez podania α
+      Cronbacha i źródła adaptacji.</li>
+    <li><strong>Diagnoza lekarska zamiast pielęgniarskiej</strong> (w studium
+      przypadku) – opis jednostki chorobowej w miejscu problemu pielęgnacyjnego.</li>
+    <li><strong>Cele nieostre</strong> – „poprawa stanu pacjenta" zamiast celu
+      mierzalnego.</li>
+    <li><strong>Niespójne piśmiennictwo</strong> – mieszanie stylów albo źródła w
+      wykazie nieobecne w tekście.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca magisterska z pielęgniarstwa musi być badawcza?</h3>
+  <p>
+    Na poziomie magisterskim najczęściej tak – dominują prace empiryczne z
+    wykorzystaniem standaryzowanych skal. Studium przypadku i praca przeglądowa są
+    dopuszczane w wybranych przypadkach; o formacie decydują wytyczne wydziału.
+  </p>
+
+  <h3>Czy potrzebuję zgody komisji bioetycznej?</h3>
+  <p>
+    W badaniach z udziałem pacjentów – zwykle tak. Dolicz czas na jej uzyskanie do
+    harmonogramu, a oprócz tego zadbaj o zgodę placówki i świadomą zgodę uczestników.
+  </p>
+
+  <h3>Jaki styl cytowania obowiązuje w pielęgniarstwie?</h3>
+  <p>
+    Najczęściej Vancouver (numeryczny). Część uczelni dopuszcza APA – sprawdź
+    wytyczne. Zasady i przykłady zebraliśmy w przewodniku o
+    <a href="/poradniki/bibliografia/">bibliografii i przypisach</a>.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całe badanie trzeba
+    zaprojektować i opisać samodzielnie. Zacznij od
+    <a href="/tematy/pielegniarstwo/">wyboru tematu</a> i pobierz wzór powyżej, żeby
+    mieć gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

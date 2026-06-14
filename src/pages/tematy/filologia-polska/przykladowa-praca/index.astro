@@ -1,0 +1,206 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Filologia polska", href: "/tematy/filologia-polska/" },
+  { label: "Przykładowa praca", href: "/tematy/filologia-polska/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z filologii polskiej", href: "/tematy/filologia-polska/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Cel i teza pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Przypisy w pracy", href: "/poradniki/przypisy/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z filologii polskiej – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z filologii polskiej krok po kroku: teza interpretacyjna, stan badań, analiza i interpretacja tekstu, podział na literaturę podmiotu i przedmiotu – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z filologii
+    polskiej, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej
+    rozkładamy na części przykładową pracę – pokazujemy zawartość każdego rozdziału,
+    wklejamy konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak.
+    Skupiamy się na tym, co odróżnia magisterkę z filologii od prac z innych kierunków:
+    na tezie interpretacyjnej, stanie badań, analizie tekstu i specyficznym podziale
+    bibliografii.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę literaturoznawczą –
+    <strong>„Motyw przemijania w poezji Wisławy Szymborskiej"</strong>. To typowy dla
+    filologii schemat: analiza i interpretacja tekstów literackich prowadzona wokół
+    jednego motywu. Pokazujemy też, czym praca literaturoznawcza różni się od
+    językoznawczej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet literaturoznawczej pracy magisterskiej z filologii polskiej: strona tytułowa, streszczenie, spis treści, wstęp (z tezą interpretacyjną i metodą), stan badań, rozdziały analityczne z interpretacją utworów, zakończenie oraz bibliografia podzielona na literaturę podmiotu i przedmiotu. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-polska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-polska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z filologii polskiej</h2>
+
+  <p>
+    Praca filologiczna nie zawiera badań empirycznych ani statystyki. Jej materiałem są
+    <strong>teksty</strong> – utwory literackie albo materiał językowy – a narzędziem
+    analiza i interpretacja. Z tego wynikają cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Teza interpretacyjna zamiast hipotez.</strong> Stawiasz twierdzenie o
+      sensie/funkcji tekstu, które uzasadniasz analizą, a nie weryfikujesz statystycznie.
+    </li>
+    <li>
+      <strong>Stan badań.</strong> Obowiązkowy krytyczny przegląd dotychczasowych
+      opracowań tematu – pokazuje lukę, którą wypełnia praca.
+    </li>
+    <li>
+      <strong>Analiza i interpretacja tekstu.</strong> Trzon pracy: przytaczasz
+      fragment utworu i interpretujesz środki (obrazowanie, ironię, kompozycję), wiążąc
+      je z tezą.
+    </li>
+    <li>
+      <strong>Podział bibliografii.</strong> Osobno <strong>literatura podmiotu</strong>
+      (teksty analizowane) i <strong>literatura przedmiotu</strong> (opracowania
+      krytyczne) – to wyróżnik dziedziny.
+    </li>
+  </ul>
+
+  <h2>Typy prac magisterskich z filologii polskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Literaturoznawcza</strong> – analiza i interpretacja dzieł (motyw,
+      twórczość autora, gatunek, epoka). Najczęstszy wybór.
+    </li>
+    <li>
+      <strong>Językoznawcza</strong> – analiza materiału językowego (np. język mediów,
+      onomastyka, składnia), często z własnym korpusem przykładów.
+    </li>
+    <li>
+      <strong>Z dydaktyki języka i literatury</strong> – metodyczna, o nauczaniu
+      przedmiotu.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy literaturoznawczej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – przedmiot, cel, <strong>teza interpretacyjna</strong>, metoda</li>
+    <li>Rozdział wprowadzający – kontekst i <strong>stan badań</strong></li>
+    <li>Rozdziały analityczne – analiza i interpretacja utworów (wokół aspektów tematu)</li>
+    <li>Zakończenie – powrót do tezy</li>
+    <li>Bibliografia: <strong>literatura podmiotu</strong> i <strong>literatura przedmiotu</strong></li>
+  </ol>
+
+  <h2>Teza interpretacyjna i stan badań</h2>
+
+  <blockquote>
+    <p>W pracy postawiono tezę, zgodnie z którą ironia i przywiązanie do konkretu
+      codzienności pełnią u Szymborskiej funkcję obronną wobec lęku przed przemijaniem,
+      prowadząc ku afirmacji jednostkowego istnienia.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> teza interpretacyjna to twierdzenie, które praca ma
+    udowodnić analizą tekstu. Poprzedza ją stan badań – krytyczny przegląd opracowań,
+    który wskazuje lukę. O różnicy między celem, pytaniem a tezą piszemy w poradniku o
+    <a href="/poradniki/cel-pracy/">celu pracy</a>.
+  </p>
+
+  <h2>Analiza i interpretacja – trzon pracy</h2>
+
+  <p>
+    W rozdziałach analitycznych przytaczasz fragment utworu (z przypisem) i go
+    interpretujesz – nie streszczasz. Analizujesz środki artystyczne i wiążesz je z
+    tezą:
+  </p>
+
+  <blockquote>
+    <p>W wierszu <em>Kot w pustym mieszkaniu</em> nieobecność zmarłego ukazana zostaje
+      wyłącznie przez perspektywę zwierzęcia i naruszony porządek rzeczy. Zabieg ten
+      przenosi ciężar znaczeniowy z abstrakcyjnej śmierci na konkret pustki, czyniąc
+      przemijanie odczuwalnym, a nie tylko nazwanym.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> dobra interpretacja nie referuje treści, lecz pokazuje,
+    <em>jak</em> tekst osiąga znaczenie. Odwołania do koncepcji teoretycznych popieraj
+    przypisami. Zasady przypisów omawiamy w poradniku o
+    <a href="/poradniki/przypisy/">przypisach</a>.
+  </p>
+
+  <h2>Bibliografia – literatura podmiotu i przedmiotu</h2>
+
+  <p>
+    To cecha charakterystyczna prac filologicznych. Bibliografię dzieli się na dwie
+    części:
+  </p>
+
+  <ul>
+    <li><strong>Literatura podmiotu</strong> – teksty będące przedmiotem analizy (utwory
+      Szymborskiej).</li>
+    <li><strong>Literatura przedmiotu</strong> – opracowania, studia i artykuły krytyczne
+      o tych tekstach.</li>
+  </ul>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z filologii</h2>
+
+  <ul>
+    <li><strong>Streszczanie zamiast interpretacji</strong> – relacjonowanie treści
+      utworu bez analizy środków i znaczeń.</li>
+    <li><strong>Brak tezy</strong> – praca opisowa, która niczego nie dowodzi.</li>
+    <li><strong>Pominięty stan badań</strong> – brak osadzenia w dotychczasowych
+      opracowaniach.</li>
+    <li><strong>Wspólna, niepodzielona bibliografia</strong> – brak rozdzielenia
+      literatury podmiotu i przedmiotu.</li>
+    <li><strong>Nadużycie cytatów</strong> – długie przytoczenia bez własnej analizy.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z filologii może być językoznawcza?</h3>
+  <p>
+    Tak. Obok prac literaturoznawczych pisze się prace językoznawcze (analiza materiału
+    językowego, często z własnym korpusem przykładów) oraz metodyczne. Struktura jest
+    podobna, zmienia się przedmiot i metoda.
+  </p>
+
+  <h3>Czym różni się teza od hipotezy?</h3>
+  <p>
+    Hipoteza to przypuszczenie weryfikowane danymi (nauki empiryczne). Teza
+    interpretacyjna to twierdzenie o sensie tekstu, które uzasadniasz analizą. W
+    filologii stawia się tezę.
+  </p>
+
+  <h3>Jak podzielić bibliografię?</h3>
+  <p>
+    Na literaturę podmiotu (teksty analizowane) i literaturę przedmiotu (opracowania).
+    Zasady zapisu pozycji znajdziesz w przewodniku o
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całą interpretację trzeba
+    przeprowadzić samodzielnie. Zacznij od
+    <a href="/tematy/filologia-polska/">wyboru tematu</a> i pobierz wzór powyżej, żeby
+    mieć gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

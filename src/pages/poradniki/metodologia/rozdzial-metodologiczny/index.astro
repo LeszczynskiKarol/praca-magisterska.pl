@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/metodologia/rozdzial-metodologiczny/index.astro
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -101,22 +102,14 @@ const faqSchema = {
     najczęstszych błędów.
   </p>
 
-  <div class="download-box">
-    <p class="download-title">📄 Wzór rozdziału metodologicznego do pobrania (PDF)</p>
-    <p>
-      Przygotowaliśmy kompletny, czterostronicowy wzór rozdziału
-      metodologicznego z podrozdziałami 2.1-2.8: cel i przedmiot badań,
-      problem, pytania i hipotezy, operacjonalizacja zmiennych, metody i
-      narzędzia, dobór próby z tabelą, procedura, analiza danych i
-      ograniczenia. Pobierasz bez podawania adresu e-mail i adaptujesz do
-      własnego tematu.
-    </p>
-    <a
-      class="download-btn"
-      href="/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf"
-      download>Pobierz wzór w PDF (bezpłatnie)</a
-    >
-  </div>
+  <DownloadBox
+    title="📄 Pobierz wzór rozdziału metodologicznego – PDF i Word"
+    description="Kompletny wzór rozdziału metodologicznego z podrozdziałami 2.1-2.8: cel i przedmiot badań, problem, pytania i hipotezy, operacjonalizacja zmiennych, metody i narzędzia, dobór próby z tabelą, procedura, analiza danych i ograniczenia. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
 
   <h2>Czym jest rozdział metodologiczny i dlaczego jest tak ważny?</h2>
 

@@ -1,0 +1,225 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Prawo", href: "/tematy/prawo/" },
+  { label: "Przykładowa praca", href: "/tematy/prawo/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z prawa", href: "/tematy/prawo/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Cel, pytania i teza pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Przypisy w pracy", href: "/poradniki/przypisy/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z prawa – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z prawa krok po kroku: metoda dogmatyczno-prawna, teza zamiast hipotez, cytowanie ustaw i orzecznictwa w przypisach, osobne wykazy źródeł i wnioski de lege ferenda – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="15 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z prawa, to
+    zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
+    na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
+    konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy
+    się na tym, co odróżnia magisterkę z prawa od prac z innych kierunków: na metodzie
+    dogmatyczno-prawnej, pracy ze źródłami prawa i orzecznictwem oraz na sposobie
+    cytowania w przypisach.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę dogmatyczną –
+    <strong>„Zadośćuczynienie za doznaną krzywdę w polskim prawie cywilnym"</strong>.
+    To typowy dla prawa schemat: analiza obowiązujących przepisów, poglądów doktryny i
+    orzecznictwa wokół jednej instytucji prawnej. Pokazujemy też, czym praca
+    dogmatyczna różni się od prawnoporównawczej i historycznoprawnej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet dogmatyczno-prawnej pracy magisterskiej z prawa: strona tytułowa, streszczenie, spis treści, wstęp (z tezą i metodą), rozdziały analityczne z przypisami do ustaw i orzeczeń, zakończenie z wnioskami de lege lata i de lege ferenda oraz osobne wykazy: literatury, aktów prawnych i orzecznictwa. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-prawo.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-prawo.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z prawa</h2>
+
+  <p>
+    Praca z prawa zwykle nie zawiera badań empirycznych ani statystyki. Jej materiałem
+    badawczym są <strong>teksty prawne, doktryna i orzecznictwo</strong>, a narzędziem
+    – analiza prawnicza. Z tego wynika kilka cech nietypowych na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Metoda dogmatyczno-prawna.</strong> Podstawowa metoda: ustalenie treści
+      norm na podstawie przepisów, poglądów doktryny i orzecznictwa. Bywa uzupełniana
+      metodą prawnoporównawczą lub historycznoprawną.
+    </li>
+    <li>
+      <strong>Teza zamiast hipotez.</strong> W pracy prawniczej stawia się tezę
+      (twierdzenie, które praca uzasadnia), a nie hipotezy weryfikowane statystycznie.
+    </li>
+    <li>
+      <strong>Trzy rodzaje źródeł.</strong> Akty normatywne (Konstytucja, ustawy,
+      rozporządzenia), orzecznictwo (SN, TK, NSA, TSUE, ETPC) i doktryna (komentarze,
+      monografie, glosy, artykuły). Każde cytuje się inaczej.
+    </li>
+    <li>
+      <strong>Rozbudowane przypisy dolne.</strong> Odwołania do przepisów i wyroków
+      umieszcza się w przypisach, a na końcu pracy tworzy <strong>osobne wykazy</strong>:
+      literatury, aktów prawnych i orzecznictwa.
+    </li>
+  </ul>
+
+  <h2>Typy prac magisterskich z prawa</h2>
+
+  <ul>
+    <li>
+      <strong>Dogmatyczno-prawna</strong> – analiza obowiązującego stanu prawnego
+      wokół instytucji lub problemu. Najczęstszy wybór.
+    </li>
+    <li>
+      <strong>Prawnoporównawcza (komparatystyczna)</strong> – zestawienie regulacji
+      w co najmniej dwóch porządkach prawnych.
+    </li>
+    <li>
+      <strong>Historycznoprawna</strong> – ewolucja instytucji w czasie.
+    </li>
+    <li>
+      <strong>Teoretyczno- lub empiryczno-prawna</strong> – rzadziej; np. analiza
+      praktyki stosowania prawa na podstawie akt lub danych.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy dogmatycznej</h2>
+
+  <p>
+    Inaczej niż w pracach empirycznych, tu nie ma podziału „teoria + badania". Rozdziały
+    są merytoryczne i prowadzą wywód wokół zagadnienia prawnego:
+  </p>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Wykaz skrótów (k.c., k.k., Dz.U. itp.)</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – przedmiot, cel, <strong>teza</strong>, metoda, układ pracy</li>
+    <li>Rozdział 1 – pojęcia i tło instytucji</li>
+    <li>Rozdział 2 – przesłanki / elementy konstrukcji prawnej</li>
+    <li>Rozdział 3 – zagadnienia szczegółowe i analiza orzecznictwa</li>
+    <li>Zakończenie – wnioski <strong>de lege lata</strong> i <strong>de lege ferenda</strong></li>
+    <li>Wykaz literatury · Wykaz aktów prawnych · Wykaz orzecznictwa</li>
+  </ol>
+
+  <h2>Wstęp – teza i metoda</h2>
+
+  <p>
+    Najważniejsza różnica wobec innych kierunków: zamiast hipotez i pytań badawczych
+    stawiasz <strong>tezę</strong> i wskazujesz metodę prawniczą.
+  </p>
+
+  <blockquote>
+    <p>W pracy postawiono tezę, zgodnie z którą kodeksowa formuła „odpowiedniej sumy"
+      pozostawia sądom szeroki margines uznania, którego rzeczywiste granice wyznacza
+      dopiero praktyka orzecznicza. Zastosowano metodę dogmatyczno-prawną, polegającą
+      na analizie obowiązujących przepisów, poglądów doktryny i orzecznictwa.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> teza musi być twierdzeniem, które da się obronić
+    argumentami prawniczymi, a zakończenie ma do niej wrócić. O różnicy między celem,
+    pytaniami a tezą piszemy w poradniku o <a href="/poradniki/cel-pracy/">celu pracy</a>.
+  </p>
+
+  <h2>Cytowanie ustaw i orzeczeń w przypisach</h2>
+
+  <p>
+    To element, który w pracy prawniczej waży najwięcej formalnie. Akt prawny i wyrok
+    cytuje się w przypisie dolnym, a nie w nawiasie w tekście:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Akt prawny:</strong> pełna nazwa, data, publikator – np. „Ustawa z dnia
+      23 kwietnia 1964 r. – Kodeks cywilny (tekst jedn. Dz.U. z 2024 r. poz. 1061 z
+      późn. zm.)". W tekście po pierwszym przywołaniu używasz skrótu (k.c.).
+    </li>
+    <li>
+      <strong>Orzeczenie:</strong> rodzaj, sąd, data i sygnatura – np. „wyrok Sądu
+      Najwyższego z dnia 7 marca 2014 r., sygn. IV CSK 374/13".
+    </li>
+    <li>
+      <strong>Przepis:</strong> precyzyjnie – artykuł, paragraf, ustęp, punkt (art.
+      445 § 1 k.c.).
+    </li>
+  </ul>
+
+  <p>
+    <strong>Komentarz:</strong> orzecznictwo nie jest ozdobnikiem – w pracy
+    dogmatycznej to materiał badawczy, który analizujesz, a nie tylko wyliczasz. Zasady
+    przypisów i ich rodzaje omawiamy w poradniku o <a href="/poradniki/przypisy/">przypisach</a>.
+  </p>
+
+  <h2>Zakończenie – de lege lata i de lege ferenda</h2>
+
+  <p>
+    Charakterystyczne dla prawa zakończenie dzieli wnioski na dwie warstwy:
+    <strong>de lege lata</strong> (ocena obowiązującego stanu prawnego) oraz
+    <strong>de lege ferenda</strong> (postulaty zmian w prawie). Wnioski muszą wprost
+    odnosić się do tezy postawionej we wstępie.
+  </p>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z prawa</h2>
+
+  <ul>
+    <li><strong>Referat zamiast analizy</strong> – streszczanie przepisów i poglądów
+      bez własnego wywodu i oceny.</li>
+    <li><strong>Brak tezy</strong> – praca opisowa, która niczego nie dowodzi.</li>
+    <li><strong>Wyliczanie orzeczeń</strong> – cytowanie wyroków bez ich analizy.</li>
+    <li><strong>Błędne cytowanie aktów</strong> – brak publikatora, nieaktualny tekst
+      jednolity, niedbałe sygnatury.</li>
+    <li><strong>Jeden wspólny wykaz źródeł</strong> – zamiast osobnych: literatury,
+      aktów prawnych i orzecznictwa.</li>
+    <li><strong>Nieaktualny stan prawny</strong> – powołanie uchylonych przepisów.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z prawa musi mieć badania własne?</h3>
+  <p>
+    Zwykle nie. Dominują prace dogmatyczne oparte na analizie przepisów, doktryny i
+    orzecznictwa. Badania empiryczne (np. analiza akt) bywają elementem prac
+    teoretyczno- lub empiryczno-prawnych, ale nie są regułą.
+  </p>
+
+  <h3>Czym różni się teza od hipotezy?</h3>
+  <p>
+    Hipoteza to przypuszczenie weryfikowane danymi (typowe dla nauk empirycznych). Teza
+    to twierdzenie, które uzasadniasz argumentacją prawniczą. W pracy z prawa stawia się
+    tezę.
+  </p>
+
+  <h3>Jak cytować źródła w pracy prawniczej?</h3>
+  <p>
+    Akty prawne i orzeczenia – w przypisach dolnych, według utrwalonych formuł (Dz.U.,
+    sygnatura). Na końcu tworzy się trzy osobne wykazy. Szczegóły w poradnikach o
+    <a href="/poradniki/przypisy/">przypisach</a> i <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całą pracę trzeba napisać
+    samodzielnie, w oparciu o aktualny stan prawny i orzecznictwo. Zacznij od
+    <a href="/tematy/prawo/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć gotowy
+    szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

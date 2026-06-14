@@ -1,0 +1,181 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Ekonomia", href: "/tematy/ekonomia/" },
+  { label: "Przykładowa praca", href: "/tematy/ekonomia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z ekonomii", href: "/tematy/ekonomia/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Cel i hipotezy pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z ekonomii – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z ekonomii krok po kroku: dane wtórne (GUS, Eurostat, NBP), specyfikacja i estymacja modelu ekonometrycznego, weryfikacja statystyczna i interpretacja – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z ekonomii, to
+    zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy na
+    części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy konkretne
+    wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się na tym, co
+    odróżnia magisterkę z ekonomii od prac z innych kierunków: na pracy z danymi wtórnymi
+    i na modelu ekonometrycznym.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę ilościową –
+    <strong>„Determinanty stopy bezrobocia w Polsce w latach 2010–2024 – analiza
+    ekonometryczna"</strong>. To typowy dla ekonomii schemat: analiza zjawiska
+    makroekonomicznego na danych statystyki publicznej z wykorzystaniem modelu regresji.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet ekonometrycznej pracy magisterskiej z ekonomii: strona tytułowa, streszczenie, spis treści, wstęp, część teoretyczna, metodyka (dane, zmienne, specyfikacja modelu), estymacja i weryfikacja modelu, interpretacja, zakończenie i bibliografia. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-ekonomia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-ekonomia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z ekonomii</h2>
+
+  <p>
+    Praca z ekonomii opiera się zwykle na <strong>analizie danych wtórnych</strong> i
+    metodach ilościowych – najczęściej <strong>ekonometrii</strong>. Z tego wynikają
+    cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Dane wtórne ze statystyki publicznej.</strong> Materiałem są dane GUS,
+      Eurostatu, NBP czy OECD – nie zbierasz ich ankietą, lecz pozyskujesz z baz, z
+      podaniem źródła, zakresu i częstotliwości.
+    </li>
+    <li>
+      <strong>Model ekonometryczny.</strong> Sercem pracy jest specyfikacja modelu
+      (postać funkcyjna, zmienne) i jego estymacja (np. MNK).
+    </li>
+    <li>
+      <strong>Weryfikacja modelu.</strong> Istotność parametrów (test t), dopasowanie
+      (R²), istotność łączna (test F) oraz badanie założeń (autokorelacja, normalność
+      reszt) – to odpowiednik weryfikacji hipotez.
+    </li>
+    <li>
+      <strong>Powiązanie z teorią ekonomii.</strong> Dobór zmiennych i interpretacja
+      znaków parametrów muszą wynikać z teorii (np. prawo Okuna).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy ekonometrycznej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – cel, podejście ilościowe</li>
+    <li>Część teoretyczna – pojęcia, teorie, przegląd badań</li>
+    <li>Metodyka – cel, hipotezy, zmienne, <strong>dane</strong>, <strong>specyfikacja modelu</strong></li>
+    <li>Wyniki – estymacja, weryfikacja, interpretacja</li>
+    <li>Zakończenie</li>
+    <li>Bibliografia (Harvard/APA) · Spis tabel i wykresów</li>
+  </ol>
+
+  <h2>Specyfikacja modelu – serce pracy</h2>
+
+  <p>
+    Model zapisuje się formalnie, z określeniem zmiennych i metody estymacji:
+  </p>
+
+  <blockquote>
+    <p>U<sub>t</sub> = β₀ + β₁·PKB<sub>t</sub> + β₂·CPI<sub>t</sub> + β₃·W<sub>t</sub> +
+      ε<sub>t</sub></p>
+    <p>gdzie U – stopa bezrobocia, PKB – dynamika PKB, CPI – inflacja, W –
+      wynagrodzenie, ε – składnik losowy.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> dobór zmiennych objaśniających uzasadnij teorią ekonomii
+    i przeglądem badań. Podaj postać funkcyjną i metodę estymacji (np. klasyczna MNK).
+    Więcej o budowie części metodycznej w poradniku o
+    <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale metodologicznym</a>.
+  </p>
+
+  <h2>Estymacja i weryfikacja modelu</h2>
+
+  <p>
+    Po estymacji prezentuje się oszacowania parametrów z błędami i istotnością, a model
+    poddaje weryfikacji:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Zmienna</th><th>Oszacowanie</th><th>p</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Dynamika PKB</td><td>−0,82</td><td>&lt; 0,01</td></tr>
+      <tr><td>Inflacja (CPI)</td><td>−0,31</td><td>&lt; 0,05</td></tr>
+      <tr><td>Wynagrodzenie</td><td>−0,05</td><td>0,41</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> oceniasz istotność parametrów (test t), dopasowanie (R²),
+    istotność łączną (test F) i założenia MNK (m.in. autokorelację testem
+    Durbina–Watsona). Znaki parametrów konfrontujesz z teorią – tu ujemny wpływ PKB na
+    bezrobocie jest zgodny z prawem Okuna. Zmienna nieistotna (wynagrodzenie) może zostać
+    usunięta.
+  </p>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z ekonomii</h2>
+
+  <ul>
+    <li><strong>Model bez weryfikacji</strong> – podanie oszacowań bez testów istotności i
+      badania założeń.</li>
+    <li><strong>Zmienne bez uzasadnienia teoretycznego</strong> – dobór „na wyczucie".</li>
+    <li><strong>Brak źródła i zakresu danych</strong> – nieokreślone pochodzenie i okres
+      danych.</li>
+    <li><strong>Interpretacja oderwana od teorii</strong> – wnioski sprzeczne ze znakami
+      parametrów lub z teorią ekonomii.</li>
+    <li><strong>Wnioski przyczynowe z korelacji</strong> – nadinterpretacja zależności.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z ekonomii musi być ekonometryczna?</h3>
+  <p>
+    Nie zawsze, ale ujęcie ilościowe (model ekonometryczny, analiza danych) jest bardzo
+    częste i cenione. Alternatywą bywa analiza opisowa danych lub praca o charakterze
+    teoretyczno-przeglądowym.
+  </p>
+
+  <h3>Skąd brać dane?</h3>
+  <p>
+    Ze statystyki publicznej: Bank Danych Lokalnych GUS, Eurostat, NBP, OECD. Zawsze
+    podaj źródło, zakres czasowy i częstotliwość oraz ewentualne przekształcenia danych.
+  </p>
+
+  <h3>Jaki styl cytowania w ekonomii?</h3>
+  <p>
+    Najczęściej Harvard lub APA. Stosuj jeden styl konsekwentnie. Zasady i przykłady w
+    przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całą analizę trzeba
+    przeprowadzić samodzielnie na własnych danych. Zacznij od
+    <a href="/tematy/ekonomia/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć gotowy
+    szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

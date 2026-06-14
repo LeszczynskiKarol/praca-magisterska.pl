@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/wstep/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -326,19 +327,14 @@ const faqSchema = {
     domyka całość.
   </p>
 
-  <div class="download-box">
-    <p class="download-title">📄 Ten wzór wstępu możesz pobrać jako PDF</p>
-    <p>
-      Wersja do pobrania zawiera pełny tekst powyższego wstępu z
-      niebieskimi etykietami opisującymi funkcję każdego akapitu. Bez
-      podawania adresu e-mail.
-    </p>
-    <a
-      class="download-btn"
-      href="/downloads/wzor-wstepu-praca-magisterska.pdf"
-      download>Pobierz wzór wstępu (PDF)</a
-    >
-  </div>
+  <DownloadBox
+    title="📄 Pobierz wzór wstępu – PDF i Word"
+    description="Pełny tekst powyższego wstępu z niebieskimi etykietami opisującymi funkcję każdego akapitu. Formatowanie zgodne ze standardem (Times New Roman 12 pkt, interlinia 1,5). Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-wstepu-praca-magisterska.pdf", label: "Pobierz wzór wstępu (PDF)" },
+      { href: "/downloads/wzor-wstepu-praca-magisterska.docx", label: "Pobierz wzór wstępu (Word .docx)", primary: false },
+    ]}
+  />
 
   <h2>Wzór wstępu po kawałku - każdy element z komentarzem</h2>
 

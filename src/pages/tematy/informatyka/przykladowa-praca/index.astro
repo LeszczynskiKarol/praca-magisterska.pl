@@ -1,0 +1,219 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Informatyka", href: "/tematy/informatyka/" },
+  { label: "Przykładowa praca", href: "/tematy/informatyka/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z informatyki", href: "/tematy/informatyka/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Cel i zakres pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z informatyki – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z informatyki krok po kroku: analiza wymagań zamiast hipotez, projekt (architektura, model danych, UML), implementacja i testy – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z informatyki,
+    to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
+    na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
+    konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się
+    na tym, co odróżnia magisterkę z informatyki od prac z innych kierunków: na analizie
+    wymagań, projekcie systemu, implementacji i testach.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę projektowo-implementacyjną –
+    <strong>„Projekt i implementacja aplikacji webowej do zarządzania biblioteką"</strong>.
+    To typowy dla informatyki schemat: pełny cykl wytwarzania oprogramowania od wymagań
+    po testy. Pokazujemy też, czym praca projektowa różni się od badawczej (np.
+    porównania algorytmów).
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet projektowo-implementacyjnej pracy magisterskiej z informatyki: strona tytułowa, streszczenie, spis treści, wstęp, analiza wymagań, projekt (architektura i model danych), implementacja, testy z wynikami, zakończenie z kierunkami rozwoju i bibliografia. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-informatyka.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-informatyka.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z informatyki</h2>
+
+  <p>
+    Większość prac z informatyki ma charakter <strong>projektowo-implementacyjny</strong>:
+    celem jest zbudowanie działającego systemu, a nie zbadanie zjawiska. Z tego wynikają
+    cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Wymagania zamiast hipotez.</strong> Zakres pracy wyznaczają wymagania
+      funkcjonalne (co system robi) i niefunkcjonalne (wydajność, bezpieczeństwo,
+      użyteczność) – i to one są kryterium oceny.
+    </li>
+    <li>
+      <strong>Część projektowa.</strong> Architektura, model danych (ERD), diagramy UML
+      – praca dokumentuje decyzje projektowe, nie tylko końcowy efekt.
+    </li>
+    <li>
+      <strong>Implementacja i stack.</strong> Opis zastosowanych technologii z
+      uzasadnieniem oraz listingi kluczowych fragmentów kodu.
+    </li>
+    <li>
+      <strong>Testy jako weryfikacja.</strong> Testy jednostkowe, integracyjne i
+      wydajnościowe pełnią rolę, którą w pracach empirycznych odgrywa weryfikacja
+      hipotez.
+    </li>
+  </ul>
+
+  <h2>Typy prac magisterskich z informatyki</h2>
+
+  <ul>
+    <li>
+      <strong>Projektowo-implementacyjna</strong> – zaprojektowanie i wykonanie systemu
+      lub aplikacji. Najczęstszy wybór.
+    </li>
+    <li>
+      <strong>Badawcza</strong> – eksperyment obliczeniowy, np. porównanie algorytmów,
+      modeli uczenia maszynowego czy wydajności rozwiązań (z hipotezami i analizą
+      wyników).
+    </li>
+    <li>
+      <strong>Analityczno-przeglądowa</strong> – studium technologii lub metod; rzadziej
+      jako samodzielna magisterka.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy projektowo-implementacyjnej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – cel inżynierski, zakres</li>
+    <li>Analiza problemu, przegląd rozwiązań i <strong>wymagania</strong></li>
+    <li>Projekt – architektura, model danych, UML, interfejs</li>
+    <li>Implementacja – technologie, realizacja funkcjonalności (listingi)</li>
+    <li>Testy i ocena rozwiązania (zestawienie z wymaganiami)</li>
+    <li>Zakończenie i kierunki rozwoju</li>
+    <li>Bibliografia (IEEE/APA) · Spis rysunków i listingów</li>
+  </ol>
+
+  <h2>Wymagania – odpowiednik hipotez</h2>
+
+  <blockquote>
+    <p><strong>Funkcjonalne:</strong> rejestracja i logowanie, katalogowanie pozycji,
+      wyszukiwanie, rejestracja wypożyczeń i zwrotów, raporty.</p>
+    <p><strong>Niefunkcjonalne:</strong> czas odpowiedzi &lt; 1 s, obsługa 100
+      równoczesnych użytkowników, szyfrowanie haseł, responsywność.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> dobrze sformułowane, mierzalne wymagania to podstawa –
+    do nich wracasz przy ocenie systemu. Wymaganie „system ma być szybki" jest złe;
+    „czas odpowiedzi poniżej 1 s przy 100 użytkownikach" – dobre. O formułowaniu celu i
+    zakresu piszemy w poradniku o <a href="/poradniki/cel-pracy/">celu pracy</a>.
+  </p>
+
+  <h2>Projekt – architektura i model danych</h2>
+
+  <p>
+    Część projektowa dokumentuje decyzje: architekturę (np. klient–serwer, REST),
+    model danych (ERD) i diagramy UML. Przykładowe encje modelu:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Encja</th><th>Kluczowe atrybuty</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Użytkownik</td><td>id, login, hash_hasła, rola</td></tr>
+      <tr><td>Książka</td><td>id, tytuł, autor, ISBN</td></tr>
+      <tr><td>Wypożyczenie</td><td>id, id_egzemplarza, id_użytkownika, data_zwrotu</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> w tekście opisuj i uzasadniaj decyzje projektowe, a
+    diagramy (UML, ERD) numeruj i podpisuj. To projekt, nie zrzut narzędzia.
+  </p>
+
+  <h2>Testy – weryfikacja rozwiązania</h2>
+
+  <p>
+    Testy zestawia się z wymaganiami z początku pracy. Przykładowe wyniki:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Rodzaj testu</th><th>Miara</th><th>Wynik</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Jednostkowe</td><td>pokrycie kodu</td><td>84%</td></tr>
+      <tr><td>Wydajnościowe</td><td>śr. czas odpowiedzi (100 użytk.)</td><td>320 ms</td></tr>
+      <tr><td>Wydajnościowe</td><td>przepustowość</td><td>280 żądań/s</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> ocena rozwiązania to pokazanie, które wymagania
+    spełniono i w jakim stopniu – tu „domyka się" praca, podobnie jak weryfikacja
+    hipotez w badaniach empirycznych.
+  </p>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z informatyki</h2>
+
+  <ul>
+    <li><strong>Brak analizy wymagań</strong> – przejście od razu do kodu, bez
+      mierzalnych kryteriów oceny.</li>
+    <li><strong>Sama implementacja bez projektu</strong> – pominięcie architektury,
+      modelu danych i decyzji projektowych.</li>
+    <li><strong>Brak testów</strong> – „działa u mnie" zamiast udokumentowanej
+      weryfikacji.</li>
+    <li><strong>Wklejanie całych plików kodu</strong> – zamiast listingów kluczowych
+      fragmentów z opisem.</li>
+    <li><strong>Ocena oderwana od wymagań</strong> – brak zestawienia wyników z
+      założeniami.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z informatyki musi być projektowa?</h3>
+  <p>
+    Nie – obok prac projektowo-implementacyjnych pisze się prace badawcze (np.
+    eksperymenty z algorytmami czy uczeniem maszynowym, z hipotezami) oraz
+    analityczno-przeglądowe. Projektowa jest jednak najczęstsza.
+  </p>
+
+  <h3>Co zamiast hipotez?</h3>
+  <p>
+    Wymagania funkcjonalne i niefunkcjonalne. To one wyznaczają zakres i są kryterium
+    oceny gotowego systemu w rozdziale o testach.
+  </p>
+
+  <h3>Jaki styl cytowania w informatyce?</h3>
+  <p>
+    Często IEEE (numeryczny) lub APA. Powołuj się też na dokumentację technologii i
+    normy. Szczegóły w przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale cały system trzeba
+    zaprojektować, zaimplementować i przetestować samodzielnie. Zacznij od
+    <a href="/tematy/informatyka/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

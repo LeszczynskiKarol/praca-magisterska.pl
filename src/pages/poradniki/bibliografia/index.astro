@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/bibliografia/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -38,6 +39,15 @@ const relatedLinks = [
     aspekty związane z różnorodnymi typami źródeł, stylami cytowania oraz
     narzędziami wspomagającymi proces zarządzania literaturą przedmiotu.
   </p>
+
+  <DownloadBox
+    title="📄 Pobierz wzór bibliografii – PDF i Word"
+    description="Gotowe przykłady zapisu źródeł (książka, rozdział, artykuł, źródło internetowe, akt prawny) w czterech stylach: APA, Harvard, Chicago i Vancouver. Z komentarzami i listą najczęstszych błędów. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-bibliografii-praca-magisterska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/wzor-bibliografii-praca-magisterska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
 
   <h2>
     Czym jest bibliografia i dlaczego jest niezbędna w pracy magisterskiej

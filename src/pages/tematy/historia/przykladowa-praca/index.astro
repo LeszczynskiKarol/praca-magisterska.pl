@@ -1,0 +1,202 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Historia", href: "/tematy/historia/" },
+  { label: "Przykładowa praca", href: "/tematy/historia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z historii", href: "/tematy/historia/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Cel i teza pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Przypisy w pracy", href: "/poradniki/przypisy/" },
+  { label: "Jak szukać źródeł", href: "/poradniki/zrodla/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z historii – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z historii krok po kroku: baza źródłowa, krytyka źródeł, metoda historyczna, cytowanie archiwaliów i prasy oraz podział bibliografii na źródła i opracowania – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z historii, to
+    zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy na
+    części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy konkretne
+    wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się na tym, co
+    odróżnia magisterkę z historii od prac z innych kierunków: na bazie źródłowej,
+    krytyce źródeł i warsztacie historyka.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę opartą na źródłach –
+    <strong>„Życie codzienne mieszkańców miasta w dwudziestoleciu międzywojennym w
+    świetle prasy lokalnej"</strong>. To typowy dla historii schemat: rekonstrukcja
+    zjawiska na podstawie krytycznie ocenionych źródeł.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z historii opartej na źródłach: strona tytułowa, streszczenie, spis treści, wstęp (z bazą źródłową, tezą i metodą), charakterystyka i krytyka źródła, rozdziały analityczne z przypisami do źródeł, zakończenie oraz bibliografia podzielona na źródła i opracowania. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-historia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-historia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z historii</h2>
+
+  <p>
+    Praca historyczna nie opiera się na ankietach ani statystyce, lecz na
+    <strong>źródłach</strong> – materiałach z epoki, które historyk poddaje krytycznej
+    ocenie. Z tego wynikają cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Baza źródłowa.</strong> Wstęp musi precyzyjnie wskazać, na jakich źródłach
+      opiera się praca (archiwalia, źródła drukowane, prasa, materiały ikonograficzne).
+    </li>
+    <li>
+      <strong>Krytyka źródeł.</strong> Krytyka zewnętrzna (autentyczność, autorstwo,
+      datacja) i wewnętrzna (wiarygodność, tendencyjność) to fundament warsztatu
+      historyka.
+    </li>
+    <li>
+      <strong>Teza zamiast hipotez.</strong> Stawiasz twierdzenie, które uzasadniasz
+      analizą źródeł.
+    </li>
+    <li>
+      <strong>Podział bibliografii.</strong> Osobno <strong>źródła</strong> i
+      <strong>opracowania</strong> – podstawowy wymóg dziedziny.
+    </li>
+  </ul>
+
+  <h2>Typy prac magisterskich z historii</h2>
+
+  <ul>
+    <li>
+      <strong>Oparta na analizie źródeł</strong> – rekonstrukcja zjawiska na podstawie
+      źródeł (archiwalnych, drukowanych, prasy). Najczęstszy wybór.
+    </li>
+    <li>
+      <strong>Oparta na literaturze (przeglądowa/syntetyzująca)</strong> – analiza
+      stanu badań nad zagadnieniem; rzadziej jako samodzielna magisterka.
+    </li>
+    <li>
+      <strong>Biograficzna lub regionalna</strong> – wokół postaci, instytucji lub
+      lokalnej społeczności.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy opartej na źródłach</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – przedmiot, ramy czasowe i przestrzenne, <strong>baza źródłowa</strong>, teza, metoda, stan badań</li>
+    <li>Rozdział wprowadzający – tło historyczne i <strong>krytyka źródła</strong></li>
+    <li>Rozdziały analityczne – rekonstrukcja na podstawie źródeł (tematyczne lub chronologiczne)</li>
+    <li>Zakończenie – powrót do tezy</li>
+    <li>Bibliografia: <strong>źródła</strong> i <strong>opracowania</strong></li>
+  </ol>
+
+  <h2>Krytyka źródeł – fundament warsztatu</h2>
+
+  <p>
+    To element, który najsilniej odróżnia historię od innych kierunków. Każde źródło
+    trzeba ocenić, zanim się na nim oprze wnioski:
+  </p>
+
+  <blockquote>
+    <p>Pod względem krytyki zewnętrznej zachowane roczniki prasy są kompletne i dobrze
+      datowane. Krytyka wewnętrzna nakazuje jednak ostrożność: tytuły bywały związane z
+      określonymi środowiskami politycznymi, a doniesienia przeplatały się z perswazją.
+      Informacje należy konfrontować między tytułami oraz z danymi statystycznymi.</p>
+  </blockquote>
+
+  <p>
+    <strong>Komentarz:</strong> krytyka zewnętrzna ustala autentyczność, autorstwo i
+    czas powstania źródła; krytyka wewnętrzna ocenia jego wiarygodność i tendencyjność.
+    Pominięcie krytyki źródeł to najpoważniejszy błąd metodyczny w pracy historycznej.
+  </p>
+
+  <h2>Cytowanie źródeł w przypisach</h2>
+
+  <p>
+    Odwołania do źródeł umieszcza się w przypisach dolnych, według utrwalonych formuł:
+  </p>
+
+  <ul>
+    <li><strong>Prasa:</strong> tytuł, numer, data, strona – np. „«Głos Miasta», nr 45 z
+      12 marca 1928 r., s. 3".</li>
+    <li><strong>Archiwalia:</strong> nazwa archiwum, zespół, sygnatura jednostki, karta.</li>
+    <li><strong>Źródło drukowane:</strong> autor/wydawca, tytuł edycji, miejsce i rok.</li>
+  </ul>
+
+  <p>
+    <strong>Komentarz:</strong> w pracy historycznej źródło to materiał badawczy, który
+    analizujesz i konfrontujesz, a nie tylko cytujesz. Zasady przypisów omawiamy w
+    poradniku o <a href="/poradniki/przypisy/">przypisach</a>, a poszukiwanie materiałów
+    – w poradniku o <a href="/poradniki/zrodla/">źródłach</a>.
+  </p>
+
+  <h2>Bibliografia – źródła i opracowania</h2>
+
+  <p>
+    Bibliografię pracy historycznej dzieli się obowiązkowo na dwie części:
+  </p>
+
+  <ul>
+    <li><strong>Źródła</strong> – archiwalne, drukowane, prasa, materiały ikonograficzne.</li>
+    <li><strong>Opracowania</strong> – literatura naukowa (monografie, artykuły, syntezy).</li>
+  </ul>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z historii</h2>
+
+  <ul>
+    <li><strong>Brak krytyki źródeł</strong> – traktowanie przekazu źródłowego jako
+      pewnika.</li>
+    <li><strong>Referat zamiast analizy</strong> – streszczanie literatury bez własnego
+      wywodu na źródłach.</li>
+    <li><strong>Wspólna bibliografia</strong> – brak podziału na źródła i opracowania.</li>
+    <li><strong>Nieprecyzyjne przypisy</strong> – brak sygnatur archiwalnych, numerów i
+      stron.</li>
+    <li><strong>Nieostre ramy</strong> – brak jasno określonego zakresu czasowego i
+      przestrzennego.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z historii musi opierać się na archiwaliach?</h3>
+  <p>
+    Nie zawsze – źródłem może być również prasa, źródła drukowane, pamiętniki czy
+    materiały ikonograficzne. Kluczowe jest jasne wskazanie bazy źródłowej i jej
+    krytyczna ocena.
+  </p>
+
+  <h3>Czym różni się teza od hipotezy?</h3>
+  <p>
+    Hipoteza to przypuszczenie weryfikowane danymi (nauki empiryczne). Teza to
+    twierdzenie, które uzasadniasz analizą źródeł. W historii stawia się tezę.
+  </p>
+
+  <h3>Jak podzielić bibliografię?</h3>
+  <p>
+    Na źródła (materiały z epoki) i opracowania (literatura naukowa). Zasady zapisu
+    znajdziesz w przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i warsztat, ale całą pracę trzeba oprzeć na własnej
+    kwerendzie źródłowej. Zacznij od
+    <a href="/tematy/historia/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

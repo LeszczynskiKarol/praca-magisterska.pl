@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/plagiat/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -80,6 +81,15 @@ const faqSchema = {
     Antyplagiatowy, co znaczą współczynniki podobieństwa i jakimi nawykami
     pisarskimi zabezpieczysz pracę przed zarzutem nierzetelności.
   </p>
+
+  <DownloadBox
+    title="📄 Pobierz wzór oświadczenia o samodzielności pracy – PDF i Word"
+    description="Gotowe oświadczenie o samodzielnym napisaniu pracy dyplomowej (dwa warianty, w tym klauzula o zgodzie na kontrolę w systemie JSA) do wstawienia za stroną tytułową. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-oswiadczenia-o-samodzielnosci.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/wzor-oswiadczenia-o-samodzielnosci.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
 
   <h2>Czym jest plagiat w pracy naukowej</h2>
 

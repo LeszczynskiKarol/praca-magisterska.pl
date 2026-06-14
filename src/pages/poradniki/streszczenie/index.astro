@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/streszczenie/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -8,404 +9,197 @@ const breadcrumbs = [
 ];
 
 const relatedLinks = [
+  { label: "Wstęp do pracy magisterskiej", href: "/poradniki/wstep/" },
   { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
   { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+  { label: "Słowa kluczowe i bibliografia", href: "/poradniki/bibliografia/" },
 ];
 ---
 
 <ArticleLayout
-  title="Streszczenie pracy magisterskiej - jak napisać + wzór"
-  description="Kompletny poradnik dotyczący tworzenia streszczenia do pracy magisterskiej"
-  readingTime="18 min"
+  title="Streszczenie pracy magisterskiej - jak napisać + wzór (PL i EN)"
+  description="Jak napisać streszczenie pracy magisterskiej: co powinno zawierać, jaka struktura (cel, metoda, wyniki, wnioski), ile ma mieć słów, streszczenie po angielsku (Abstract) i słowa kluczowe. Gotowy wzór do pobrania w PDF i Word."
+  readingTime="12 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
   <p>
-    Prawidłowe cytowanie źródeł stanowi fundament rzetelności naukowej każdej
-    pracy magisterskiej i licencjackiej. Umiejętne stosowanie cytatów nie tylko
-    chroni przed plagiatem, ale także wzmacnia argumentację i pokazuje znajomość
-    literatury przedmiotu. Cytowanie to proces przytaczania i odwoływania się do
-    innych źródeł, który wymaga przestrzegania określonych zasad i konwencji
-    akademickich. W tym poradniku przedstawimy kompleksowe zasady cytowania,
-    różnice między stylami bibliograficznymi oraz praktyczne wskazówki dotyczące
-    wprowadzania cudzych słów do własnego tekstu. Właściwe cytowanie buduje
-    wiarygodność pracy, wyraża szacunek dla własności intelektualnej innych
-    autorów oraz umożliwia czytelnikom weryfikację wykorzystanych źródeł.
-    Opanowanie sztuki cytowania jest niezbędne dla każdego studenta
-    przygotowującego pracę dyplomową.
+    Streszczenie to jedna z najkrótszych, a zarazem najczęściej czytanych części
+    pracy magisterskiej. To na jego podstawie recenzent, członek komisji czy
+    czytelnik bazy prac dyplomowych wyrabia sobie pierwsze zdanie o całej
+    rozprawie. Dobre streszczenie w kilku zdaniach oddaje cel pracy, zastosowaną
+    metodę, najważniejsze wyniki i płynący z nich wniosek – tak, by ktoś, kto nie
+    przeczyta całości, i tak wiedział, czego praca dotyczy i co udało się
+    ustalić. W tym poradniku wyjaśniamy, co powinno znaleźć się w streszczeniu,
+    jak je zbudować zdanie po zdaniu, ile powinno mieć objętości, jak napisać
+    wersję angielską (Abstract) oraz jak dobrać słowa kluczowe. Na końcu
+    znajdziesz gotowy wzór do pobrania.
   </p>
 
-  <h2>Rodzaje cytatów i zasady ich stosowania</h2>
+  <DownloadBox
+    title="📄 Pobierz wzór streszczenia (PL + EN) – PDF i Word"
+    description="Przykładowe streszczenie pracy magisterskiej po polsku i po angielsku (Abstract) wraz ze słowami kluczowymi i komentarzem o strukturze: cel → metoda → wynik → wniosek. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-streszczenia-pracy-magisterskiej.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/wzor-streszczenia-pracy-magisterskiej.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Czym jest streszczenie pracy magisterskiej i jaką pełni funkcję</h2>
 
   <p>
-    W pracach naukowych wyróżniamy dwa podstawowe rodzaje cytatów: cytaty
-    bezpośrednie oraz cytaty pośrednie, zwane również parafrazą. Cytowanie
-    bezpośrednie polega na dosłownym przytoczeniu fragmentu tekstu z
-    oryginalnego źródła, zachowując wierne brzmienie słów autora. Taki cytat
-    umieszcza się w cudzysłowie i podaje dokładną wersję, jak została
-    przedstawiona w publikacji źródłowej. Cytowanie bezpośrednie stosuje się
-    wtedy, gdy chcemy zachować oryginalne brzmienie myśli autora, podkreślić
-    konkretne sformułowanie lub gdy parafraza mogłaby zniekształcić sens
-    wypowiedzi. Należy jednak pamiętać, że cytaty bezpośrednie powinno się
-    stosować umiarkowanie i z umiejętnością wyboru najbardziej trafnych
-    fragmentów.
-  </p>
-
-  <p>
-    Cytowanie pośrednie polega na przekazaniu myśli lub informacji z
-    oryginalnego źródła za pomocą własnych słów. W takim przypadku parafrazujemy
-    ideę autora, nie powtarzając dosłownie jego słów, ale zachowując istotne
-    informacje i sens oryginalnego przekazu. Parafraza jest stosowana znacznie
-    częściej w pracach naukowych, ponieważ pozwala na płynne włączenie cudzych
-    myśli w tok własnej argumentacji. Przy cytowaniu pośrednim ważne jest, aby
-    oddać sens oryginalnego tekstu, unikając plagiatu i sprawiedliwie odnosząc
-    się do autorstwa. Każda parafraza musi być opatrzona przypisem wskazującym
-    źródło, z którego pochodzi dana myśl.
+    Streszczenie (abstrakt) to zwięzłe, samodzielne przedstawienie najważniejszych
+    informacji o pracy: jej celu, sposobu realizacji oraz uzyskanych rezultatów.
+    Umieszcza się je zwykle na początku pracy, po stronie tytułowej i
+    oświadczeniach, a przed spisem treści; część uczelni wymaga go również w
+    systemie APD przy składaniu pracy. Mimo niewielkiej objętości streszczenie
+    pełni kilka istotnych funkcji. Po pierwsze, jest wizytówką pracy – pozwala
+    szybko ocenić jej zakres i wartość bez czytania całości. Po drugie, ułatwia
+    indeksowanie i wyszukiwanie pracy w repozytoriach i bazach bibliograficznych.
+    Po trzecie, jest sprawdzianem dla samego autora: jeśli trudno streścić pracę w
+    kilku zdaniach, zwykle oznacza to, że jej cel lub wnioski nie są dość jasne.
   </p>
 
   <p>
-    Długość cytatu bezpośredniego ma istotne znaczenie dla jego formatowania w
-    tekście pracy. Krótkie cytaty, liczące do trzech wierszy tekstu, umieszcza
-    się w cudzysłowie w ramach zwykłego akapitu. Dłuższe cytaty, przekraczające
-    trzy wiersze, należy wyodrębnić jako osobny akapit, stosując wcięcie z lewej
-    strony i zmniejszoną czcionkę, bez używania cudzysłowu. Taki sposób
-    formatowania wyraźnie odróżnia obszerniejsze cytaty od tekstu głównego i
-    ułatwia ich identyfikację. Należy jednak unikać nadmiernego stosowania
-    długich cytatów, ponieważ praca dyplomowa powinna być przede wszystkim
-    autorskim opracowaniem tematu.
+    Streszczenie jest dokumentem samodzielnym, co oznacza, że musi być zrozumiałe
+    bez sięgania do reszty pracy. Nie zawiera odwołań do rozdziałów ani numerów
+    stron, nie powołuje się na literaturę, nie używa tabel, wykresów ani skrótów
+    wymagających rozwinięcia. Pisze się je w czasie przeszłym (relacjonujesz
+    badanie, które już przeprowadziłeś) i w formie bezosobowej lub w pierwszej
+    osobie liczby pojedynczej, zgodnie z konwencją przyjętą w całej pracy.
   </p>
 
+  <h2>Co powinno zawierać streszczenie – struktura krok po kroku</h2>
+
   <p>
-    Wprowadzając cytaty do tekstu pracy, należy przestrzegać zasad ich
-    integracji z własną narracją. Cytat powinien być logicznie powiązany z
-    poprzedzającym i następującym po nim tekstem, tworząc spójną całość
-    argumentacyjną. Można wprowadzać cytaty za pomocą zwrotów takich jak: "Jak
-    zauważył Smith", "Według badań Kowalskiego", "W opinii ekspertów" czy "Jak
-    podkreśla literatura przedmiotu". Takie wprowadzenia pomagają czytelnikom
-    zrozumieć kontekst i znaczenie przytaczanego fragmentu. Po cytacie warto
-    dodać własny komentarz lub interpretację, pokazując jak przytoczona myśl
-    wspiera argumentację pracy.
+    Najprostszy i najskuteczniejszy schemat streszczenia opiera się na czterech
+    elementach, które układają się w logiczną całość: <strong>cel → metoda i próba
+    → najważniejsze wyniki → wniosek</strong>. Taki układ odpowiada strukturze
+    całej pracy w miniaturze i sprawdza się zarówno w pracach empirycznych, jak i
+    teoretycznych.
   </p>
 
   <ul>
     <li>
-      stosowanie cytatów bezpośrednich wyłącznie w uzasadnionych przypadkach
+      <strong>Cel pracy (1 zdanie).</strong> Od czego praca się zaczyna i po co
+      powstała. Zacznij od tego, co badałeś, a nie od ogólnego wprowadzenia w
+      temat.
     </li>
     <li>
-      preferowanie parafraz nad dosłownym cytowaniem w większości sytuacji
+      <strong>Metoda i próba (1–2 zdania).</strong> Jak zrealizowano badanie –
+      jaką metodą, jakimi narzędziami i na jakiej grupie. Konkretnie, ale bez
+      szczegółów technicznych, które należą do rozdziału metodologicznego.
     </li>
     <li>
-      zachowanie wierności oryginalnemu tekstowi przy cytowaniu bezpośrednim
+      <strong>Najważniejsze wyniki (1–2 zdania).</strong> Co udało się ustalić.
+      Podaj kierunek zależności lub główne ustalenie, nie wszystkie liczby.
     </li>
     <li>
-      odpowiednie formatowanie długich cytatów jako wyodrębnionych bloków tekstu
+      <strong>Wniosek (1 zdanie).</strong> Co z tego wynika – znaczenie wyników
+      lub rekomendacja praktyczna.
     </li>
-    <li>
-      logiczne wprowadzanie cytatów i ich integracja z własną argumentacją
-    </li>
-    <li>unikanie nadmiernego stosowania cytatów kosztem własnej analizy</li>
-    <li>opatrywanie każdego cytatu odpowiednim przypisem bibliograficznym</li>
   </ul>
 
   <p>
-    Szczególną uwagę należy zwrócić na sytuacje wymagające ingerencji w cytowany
-    tekst. Gdy konieczne jest dodanie wyjaśnienia lub komentarza w obrębie
-    cytatu, należy umieścić go w nawiasie kwadratowym z oznaczeniem autorstwa,
-    na przykład: "Naukowiec, posługujący się swoim doświadczeniem, powinien te
-    prawa [fizyki – przyp. autora] odkryć". Dopuszczalne jest także opuszczanie
-    niektórych zdań w cytowanym fragmencie, pod warunkiem że nie zmienia to
-    myśli przewodniej autora. Miejsce opuszczenia oznacza się wielokropkiem w
-    nawiasie kwadratowym [...], umieszczonym przed lub po znaku interpunkcyjnym.
-    Wszelkie modyfikacje cytatu muszą być wyraźnie zaznaczone, aby czytelnik
-    mógł odróżnić oryginalne słowa autora od ingerencji cytującego.
+    W pracy o charakterze teoretycznym, w której nie ma badań własnych, schemat
+    pozostaje podobny: zamiast metody i wyników opisuje się przedmiot analizy,
+    zastosowane podejście (np. analiza i krytyka piśmiennictwa) oraz główne
+    ustalenia przeglądu. Niezależnie od typu pracy streszczenie powinno być jednym
+    spójnym akapitem, a nie listą punktów.
   </p>
+
+  <h2>Ile słów powinno mieć streszczenie</h2>
 
   <p>
-    Cytowanie cytatów, czyli przytaczanie fragmentu, który sam jest cytatem w
-    źródłowym tekście, wymaga szczególnej ostrożności. W takich sytuacjach
-    należy dążyć do odnalezienia oryginalnego źródła i cytowania bezpośrednio z
-    niego. Jeśli jest to niemożliwe, należy zastosować odpowiednią formułę
-    wskazującą, że cytujemy za pośrednictwem innego autora. W przypisie podaje
-    się wtedy zarówno źródło oryginalne, jak i źródło, w którym znaleziono
-    cytowany fragment. Taka praktyka zapewnia rzetelność naukową i pozwala
-    uniknąć przekłamań wynikających z cytowania z drugiej ręki.
+    Streszczenie pracy magisterskiej liczy najczęściej od 150 do 250 słów, czyli
+    mniej więcej połowę strony. Część uczelni precyzuje ten limit (np. „do 1500
+    znaków" albo „nie więcej niż jedna strona"), dlatego zawsze warto sprawdzić
+    wytyczne wydziału lub formularz w systemie APD. Zbyt krótkie streszczenie
+    pomija istotne elementy, zbyt długie przestaje być streszczeniem i powiela
+    wstęp. Jeżeli masz trudność z zmieszczeniem się w limicie, sprawdź, czy nie
+    wprowadzasz tła teoretycznego lub szczegółów metody, które do streszczenia nie
+    należą.
   </p>
 
-  <h2>Style bibliograficzne i przypisy</h2>
+  <h2>Streszczenie po angielsku (Abstract) i słowa kluczowe</h2>
 
   <p>
-    Style bibliograficzne to ustandaryzowane systemy zapisu informacji o
-    źródłach cytowanych w pracach naukowych. Każdy styl określa szczegółowe
-    zasady formatowania przypisów, bibliografii oraz cytowań w tekście.
-    Najpopularniejsze style to APA (American Psychological Association),
-    Harvard, Chicago, MLA (Modern Language Association) oraz Vancouver. Wybór
-    odpowiedniego stylu zależy od dyscypliny naukowej, wymagań uczelni oraz
-    specyfiki pracy. Nauki społeczne i psychologia najczęściej stosują styl APA,
-    nauki humanistyczne i językoznawstwo preferują MLA, a nauki medyczne
-    wykorzystują styl Vancouver. Konsekwentne stosowanie jednego wybranego stylu
-    w całej pracy jest absolutnie kluczowe dla jej profesjonalnego charakteru.
+    Większość uczelni wymaga streszczenia w dwóch wersjach językowych: polskiej i
+    angielskiej. Wersja angielska, oznaczana jako <em>Abstract</em>, jest wiernym
+    tłumaczeniem streszczenia polskiego – nie pisze się jej jako osobnego,
+    odmiennego tekstu. Największą pułapką jest tu terminologia: nazwy konstruktów,
+    metod czy narzędzi sprawdź w anglojęzycznych publikacjach z danej dziedziny,
+    zamiast tłumaczyć je dosłownie. Po obu streszczeniach umieszcza się
+    <strong>słowa kluczowe</strong> (zwykle 3–5), czyli pojęcia najlepiej
+    opisujące pracę i ułatwiające jej odnalezienie w bazach. Słowa kluczowe w
+    wersji polskiej i angielskiej powinny się pokrywać.
   </p>
+
+  <h2>Streszczenie a wstęp – czym się różnią</h2>
 
   <p>
-    Styl APA charakteryzuje się systemem autor-data, w którym cytowania w
-    tekście zawierają nazwisko autora i rok publikacji w nawiasach, na przykład:
-    (Kowalski, 2020). Pełne informacje bibliograficzne umieszcza się w sekcji
-    referencji na końcu pracy, gdzie pozycje są ułożone alfabetycznie według
-    nazwisk autorów. W stylu APA szczególną uwagę zwraca się na datę publikacji,
-    co jest istotne w dziedzinach, gdzie aktualność badań ma kluczowe znaczenie.
-    Przy cytowaniu konkretnej strony dodaje się jej numer: (Kowalski, 2020, s.
-    45). Styl ten wymaga również specyficznego formatowania tytułów, gdzie tylko
-    pierwsza litera tytułu i podtytułu oraz nazwy własne są pisane wielką
-    literą.
+    Streszczenie bywa mylone ze wstępem, choć pełnią różne role. Wstęp wprowadza
+    czytelnika w problematykę: przedstawia tło, uzasadnia wybór tematu, formułuje
+    cel i zapowiada strukturę pracy – i robi to na 1–2 stronach, zanim poznamy
+    wyniki. Streszczenie jest krótsze (kilka zdań), powstaje na samym końcu i
+    zawiera to, czego we wstępie być nie może: <strong>wyniki i wnioski</strong>.
+    Innymi słowy, streszczenie pisze się jako ostatnie, gdy znasz już rezultaty
+    całej pracy. Więcej o budowie wprowadzenia znajdziesz w poradniku o tym, jak
+    napisać <a href="/poradniki/wstep/">wstęp do pracy magisterskiej</a>.
   </p>
 
-  <p>
-    Styl harwardzki, podobnie jak APA, należy do systemów autor-data i jest
-    szeroko stosowany w różnych dziedzinach nauki. Cytowania w tekście podają
-    nazwisko autora i rok publikacji w nawiasach okrągłych lub kwadratowych, w
-    zależności od wytycznych uczelni: (Nowak, 2019) lub [Nowak, 2019]. Przy
-    cytowaniu konkretnej strony dodaje się jej numer po roku: (Nowak, 2019, s.
-    78). Styl harwardzki nie jest regulowany przez żadną konkretną instytucję,
-    co oznacza, że szczegóły mogą się różnić między uczelniami. Podstawowe
-    zasady pozostają jednak spójne: nazwisko autora i data publikacji w tekście,
-    pełne informacje w bibliografii na końcu dokumentu. Ten styl jest ceniony za
-    swoją intuicyjność i łatwość stosowania.
-  </p>
-
-  <p>
-    Styl Chicago oferuje dwa systemy cytowania: system przypisów dolnych
-    (notes-bibliography) oraz system autor-data. System przypisów dolnych jest
-    preferowany w naukach humanistycznych i polega na umieszczaniu pełnych
-    informacji bibliograficznych w przypisach na dole strony, oznaczonych
-    numerami w tekście głównym. Pierwszy przypis do danego źródła zawiera
-    kompletne dane, a kolejne przypisy mogą być skrócone. Na końcu pracy
-    umieszcza się bibliografię zawierającą wszystkie cytowane źródła. System
-    autor-data w stylu Chicago działa podobnie do APA i jest stosowany głównie w
-    naukach społecznych. Styl Chicago jest szczególnie elastyczny i pozwala na
-    dostosowanie do specyficznych wymagań różnych publikacji naukowych.
-  </p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Styl cytowania</th>
-        <th>Główne zastosowanie</th>
-        <th>Typ systemu</th>
-        <th>Przykład cytowania</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>APA</td>
-        <td>Psychologia, nauki społeczne, edukacja</td>
-        <td>Autor-data</td>
-        <td>(Kowalski, 2020, s. 45)</td>
-      </tr>
-      <tr>
-        <td>Harvard</td>
-        <td>Różne dziedziny nauki</td>
-        <td>Autor-data</td>
-        <td>(Nowak, 2019, s. 78)</td>
-      </tr>
-      <tr>
-        <td>Chicago</td>
-        <td>Historia, nauki humanistyczne</td>
-        <td>Przypisy dolne lub autor-data</td>
-        <td>¹ Jan Kowalski, Tytuł książki...</td>
-      </tr>
-      <tr>
-        <td>MLA</td>
-        <td>Literatura, językoznawstwo, sztuka</td>
-        <td>Autor-strona</td>
-        <td>(Smith 156)</td>
-      </tr>
-      <tr>
-        <td>Vancouver</td>
-        <td>Medycyna, nauki biomedyczne</td>
-        <td>Numeryczny</td>
-        <td>[1]</td>
-      </tr>
-      <tr>
-        <td>IEEE</td>
-        <td>Inżynieria, informatyka</td>
-        <td>Numeryczny</td>
-        <td>[2]</td>
-      </tr>
-      <tr>
-        <td>Oksfordzki</td>
-        <td>Prawo, nauki humanistyczne</td>
-        <td>Przypisy dolne</td>
-        <td>¹ Kowalski (2020) 45</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>
-    Styl MLA (Modern Language Association) jest powszechnie stosowany w
-    dziedzinie języka, literatury i sztuki. Charakteryzuje się systemem
-    autor-strona, gdzie cytowania w tekście zawierają nazwisko autora i numer
-    strony bez przecinka i bez skrótu "s.": (Smith 156). Rok publikacji nie jest
-    podawany w cytowaniu tekstowym, ale znajduje się w bibliografii na końcu
-    pracy, nazywanej "Works Cited". Styl MLA kładzie duży nacisk na formatowanie
-    tytułów dzieł, gdzie tytuły dłuższe są wyróżniane kursywą, a krótsze
-    umieszczane w cudzysłowie. Bibliografia w stylu MLA jest uporządkowana
-    alfabetycznie i zawiera szczegółowe informacje o każdym źródle, włącznie z
-    medium publikacji.
-  </p>
-
-  <p>
-    Styl Vancouver jest numerycznym systemem cytowania stosowanym głównie w
-    naukach medycznych i biomedycznych. Źródła są numerowane w kolejności ich
-    pojawienia się w tekście, a numery umieszcza się w nawiasach kwadratowych
-    lub jako indeksy górne: [1] lub¹. Pełne informacje bibliograficzne są
-    podawane w spisie piśmiennictwa na końcu pracy, uporządkowanym według
-    numerów, a nie alfabetycznie. Ten system jest szczególnie wygodny w tekstach
-    zawierających wiele odniesień do różnych źródeł, ponieważ pozwala uniknąć
-    powtarzania nazwisk autorów w tekście głównym. Styl Vancouver wymaga
-    precyzyjnego formatowania szczególnie w przypadku artykułów z czasopism
-    medycznych.
-  </p>
-
-  <h3>Cytowanie źródeł elektronicznych</h3>
-
-  <p>
-    Cytowanie źródeł internetowych i elektronicznych wymaga szczególnej uwagi ze
-    względu na ich specyfikę i zmienność. Podstawowe elementy cytowania strony
-    internetowej obejmują: autora lub organizację odpowiedzialną za treść, rok
-    publikacji lub ostatniej aktualizacji, tytuł strony lub artykułu, adres URL
-    oraz datę dostępu. W stylu harwardzkim cytowanie może wyglądać następująco:
-    (Wróblewska, 2018) w tekście, a w bibliografii: Wróblewska, A. (2018). Tytuł
-    artykułu [online]. Dostępne pod: https://www.przyklad.pl [Dostęp: 12 marca
-    2024]. Data dostępu jest szczególnie ważna, ponieważ treści internetowe mogą
-    być modyfikowane lub usuwane.
-  </p>
-
-  <p>
-    Cytowanie e-booków, artykułów z baz danych naukowych oraz materiałów
-    multimedialnych podlega podobnym zasadom jak źródła tradycyjne, z
-    dodatkowymi elementami identyfikującymi format elektroniczny. Dla e-booków
-    podaje się informację o formacie (np. Kindle, PDF, EPUB), a dla artykułów z
-    baz danych – nazwę bazy i numer DOI (Digital Object Identifier), jeśli jest
-    dostępny. Materiały multimedialne, takie jak podcasty, webinary czy filmy
-    edukacyjne, wymagają podania informacji o twórcach, tytule, dacie
-    publikacji, platformie oraz adresie URL. Należy pamiętać, że różne style
-    bibliograficzne mają odmienne konwencje zapisu źródeł elektronicznych.
-  </p>
-
-  <h2>Bibliografia i zarządzanie źródłami</h2>
-
-  <p>
-    Bibliografia stanowi integralną część każdej pracy naukowej i zawiera
-    kompletny wykaz wszystkich źródeł cytowanych lub wykorzystanych podczas
-    pisania. Prawidłowo sporządzona bibliografia umożliwia czytelnikom
-    odnalezienie i weryfikację źródeł, na których opiera się praca. Pozycje
-    bibliograficzne należy układać alfabetycznie według nazwisk autorów lub
-    tytułów w przypadku publikacji bez autora. Każda pozycja musi zawierać
-    wszystkie niezbędne elementy identyfikacyjne: autora, tytuł, rok wydania,
-    wydawnictwo, miejsce publikacji oraz dodatkowe informacje specyficzne dla
-    danego typu źródła. Konsekwencja w formatowaniu wszystkich pozycji
-    bibliograficznych jest absolutnie kluczowa.
-  </p>
-
-  <p>
-    Tworzenie spisu bibliografii wymaga dokładności i systematyczności. Dla
-    książek należy podać: nazwisko i inicjały imienia autora, rok wydania w
-    nawiasie, tytuł książki (wyróżniony kursywą lub podkreśleniem), miejsce
-    wydania oraz nazwę wydawnictwa. Przykład: Kowalski, J. (2020). Podstawy
-    metodologii badań. Warszawa: Wydawnictwo Naukowe PWN. Dla artykułów z
-    czasopism podaje się: autora, rok, tytuł artykułu, nazwę czasopisma
-    (kursywą), numer tomu, numer zeszytu w nawiasie oraz zakres stron. Każdy typ
-    źródła ma swoją specyficzną strukturę zapisu, którą należy konsekwentnie
-    stosować.
-  </p>
-
-  <p>
-    Narzędzia do zarządzania bibliografią znacząco ułatwiają proces gromadzenia,
-    organizowania i cytowania źródeł. Najpopularniejsze programy to Zotero,
-    Mendeley i EndNote, które pozwalają na automatyczne generowanie cytatów i
-    bibliografii w różnych stylach. Zotero jest darmowym narzędziem open-source,
-    które integruje się z przeglądarkami internetowymi i umożliwia łatwe
-    zapisywanie źródeł podczas przeglądania stron. Mendeley łączy funkcje
-    menedżera bibliografii z siecią społecznościową dla naukowców. EndNote jest
-    profesjonalnym narzędziem płatnym, często udostępnianym przez uczelnie,
-    oferującym zaawansowane funkcje zarządzania dużymi bazami źródeł.
-  </p>
+  <h2>Najczęstsze błędy w streszczeniu</h2>
 
   <ul>
-    <li>systematyczne gromadzenie źródeł od początku pracy nad tematem</li>
-    <li>wykorzystanie menedżerów bibliografii do organizacji materiałów</li>
     <li>
-      dokładne zapisywanie wszystkich danych bibliograficznych podczas kwerendy
+      <strong>Brak wyników.</strong> Streszczenie kończące się na opisie celu i
+      metody, bez tego, co udało się ustalić – to najczęstszy błąd.
     </li>
-    <li>regularne tworzenie kopii zapasowych bazy źródeł</li>
     <li>
-      weryfikacja kompletności informacji przed finalnym sporządzeniem
-      bibliografii
+      <strong>Powielanie wstępu.</strong> Rozbudowane tło teoretyczne i
+      uzasadnienie tematu zamiast syntezy całej pracy.
     </li>
-    <li>sprawdzanie zgodności formatowania z wybranym stylem cytowania</li>
-    <li>eliminacja duplikatów i błędów w zapisach bibliograficznych</li>
+    <li>
+      <strong>Cytowania, tabele i skróty.</strong> Streszczenie ma być
+      samodzielne – nie odwołuje się do literatury ani do elementów pracy.
+    </li>
+    <li>
+      <strong>Zbyt ogólne sformułowania.</strong> „Praca dotyczy ważnego
+      problemu" nie niesie informacji; napisz, jakiego problemu i co z badania
+      wynika.
+    </li>
+    <li>
+      <strong>Niespójna wersja angielska.</strong> Abstract odbiegający treścią od
+      streszczenia polskiego lub z błędną terminologią.
+    </li>
+    <li>
+      <strong>Przekroczenie limitu objętości.</strong> Streszczenie dłuższe niż
+      dopuszcza wydział lub formularz APD.
+    </li>
   </ul>
 
-  <p>
-    Automatyzacja przypisów w edytorach tekstu, takich jak Microsoft Word czy
-    LibreOffice Writer, znacznie przyspiesza proces cytowania i minimalizuje
-    ryzyko błędów. Większość menedżerów bibliografii oferuje wtyczki do
-    popularnych edytorów tekstu, umożliwiające wstawianie cytatów bezpośrednio
-    podczas pisania. Wystarczy wybrać odpowiednie źródło z bazy, a program
-    automatycznie wstawi poprawnie sformatowany przypis i doda pozycję do
-    bibliografii. Przy zmianie stylu cytowania wszystkie przypisy i bibliografia
-    są automatycznie aktualizowane, co oszczędza wiele godzin ręcznej pracy.
-    Należy jednak zawsze sprawdzić poprawność automatycznie wygenerowanych
-    zapisów przed ostatecznym złożeniem pracy.
-  </p>
-
-  <h3>Najczęstsze błędy w cytowaniu</h3>
+  <h2>Jak napisać streszczenie – praktyczne wskazówki</h2>
 
   <p>
-    Najpoważniejszym błędem w cytowaniu jest plagiat, czyli przywłaszczenie
-    sobie cudzej pracy poprzez brak odpowiedniego oznaczenia źródła. Plagiat
-    może być zarówno zamierzony, jak i niezamierzony, wynikający z niewiedzy lub
-    zaniedbania. Aby uniknąć plagiatu, należy opatrywać przypisem każdą myśl,
-    informację lub dane zaczerpnięte z cudzej pracy, niezależnie od tego, czy
-    jest to cytat bezpośredni czy parafraza. Nawet przeredagowanie cudzego
-    tekstu własnymi słowami wymaga podania źródła. Systemy antyplagiatowe
-    stosowane przez uczelnie skutecznie wykrywają nieuczciwe praktyki, dlatego
-    rzetelne cytowanie jest nie tylko kwestią etyki naukowej, ale także
-    praktycznej konieczności.
-  </p>
-
-  <p>
-    Nadużywanie cytatów bezpośrednich to kolejny częsty błąd, który sprawia, że
-    praca traci swój autorski charakter. Praca dyplomowa powinna być przede
-    wszystkim samodzielnym opracowaniem tematu, w którym cytaty pełnią funkcję
-    wspierającą argumentację, a nie zastępują własną analizę. Jako ogólną zasadę
-    przyjmuje się, że cytaty bezpośrednie nie powinny stanowić więcej niż 10-15%
-    całości pracy. Lepiej jest parafrazować treści źródłowe, dodając własny
-    komentarz i interpretację, a cytaty bezpośrednie rezerwować dla szczególnie
-    trafnych sformułowań, definicji czy fragmentów wymagających dosłownego
-    przytoczenia.
-  </p>
-
-  <p>
-    Błędy formalne w zapisie bibliograficznym, takie jak brak wymaganych
-    elementów, niekonsekwentne formatowanie czy pomyłki w danych, podważają
-    wiarygodność całej pracy. Częste problemy to brak numerów stron w cytatach,
-    niepełne dane wydawnicze, niespójne stosowanie wielkich liter czy błędne
-    formatowanie tytułów. Warto poświęcić czas na dokładną weryfikację każdego
-    wpisu w bibliografii przed złożeniem pracy.
+    Streszczenie pisz na końcu, gdy gotowe są już wnioski. Dobrym punktem wyjścia
+    jest wypisanie czterech zdań odpowiadających na pytania: po co była ta praca,
+    jak ją zrealizowano, co ustalono i co z tego wynika. Następnie połącz je w
+    jeden płynny akapit i sprawdź, czy mieścisz się w limicie słów. Na koniec
+    przeczytaj streszczenie tak, jakbyś nie znał reszty pracy – jeśli wszystko
+    jest zrozumiałe i wiadomo, jaki jest najważniejszy rezultat, streszczenie
+    spełnia swoją funkcję. Dopiero wtedy przygotuj wersję angielską i dobierz
+    słowa kluczowe.
   </p>
 
   <h2>Podsumowanie</h2>
 
   <p>
-    Prawidłowe cytowanie w pracy magisterskiej to fundament rzetelności naukowej
-    i warunek pozytywnej oceny. Konsekwentne stosowanie wybranego systemu
-    przypisów, dokładne dokumentowanie wszystkich źródeł oraz unikanie plagiatu
-    to podstawowe wymogi, które każdy student musi spełnić. Wykorzystanie
-    nowoczesnych narzędzi do zarządzania bibliografią znacząco ułatwia ten
-    proces, pozwalając skupić się na merytorycznej wartości pracy. Pamiętaj, że
-    dobrze wykonane cytowania nie tylko chronią przed zarzutem nierzetelności,
-    ale także pokazują głębię przeprowadzonej kwerendy i umiejętność krytycznego
-    korzystania z literatury naukowej.
+    Streszczenie to praca magisterska w pigułce: cel, metoda, wyniki i wniosek
+    zamknięte w jednym akapicie liczącym zwykle 150–250 słów. Choć krótkie, bywa
+    czytane jako pierwsze i często decyduje o pierwszym wrażeniu. Napisz je na
+    końcu, zadbaj o obecność wyników, trzymaj się limitu objętości i przygotuj
+    spójną wersję angielską ze słowami kluczowymi. Gotowy wzór streszczenia w
+    języku polskim i angielskim – z komentarzem do każdego elementu – pobierzesz
+    powyżej.
   </p>
 </ArticleLayout>

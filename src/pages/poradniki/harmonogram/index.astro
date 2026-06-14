@@ -1,10 +1,11 @@
 ---
-// src/pages/poradniki/znalezienie-promotora/index.astro
+// src/pages/poradniki/harmonogram/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
-  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Harmonogram", href: "/poradniki/harmonogram/" },
 ];
 
 const relatedLinks = [
@@ -34,6 +35,15 @@ const relatedLinks = [
     zarówno w przypadku prac teoretycznych, jak i badawczych, niezależnie od
     kierunku studiów.
   </p>
+
+  <DownloadBox
+    title="📄 Pobierz wzór harmonogramu – PDF i Word"
+    description="Gotowy harmonogram pisania pracy magisterskiej w formie tabeli (etapy, zadania, terminy) z listą kamieni milowych i komentarzem o realnym planowaniu. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-harmonogramu-pracy-magisterskiej.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/wzor-harmonogramu-pracy-magisterskiej.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
 
   <h2>Przygotowanie do pisania - etap planowania</h2>
 

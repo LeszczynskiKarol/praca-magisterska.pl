@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/spis-tresci/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -35,6 +36,15 @@ const relatedLinks = [
     automatyczne narzędzia edytorów tekstu do sprawnego przygotowania tego
     obowiązkowego elementu pracy magisterskiej.
   </p>
+
+  <DownloadBox
+    title="📄 Pobierz wzór spisu treści – PDF i Word"
+    description="Gotowy układ spisu treści pracy empirycznej (rozdziały teoretyczne + metodologia + wyniki) z kropkami i numeracją oraz komentarzem o zasadach formatowania. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-spisu-tresci-pracy-magisterskiej.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/wzor-spisu-tresci-pracy-magisterskiej.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
 
   <h2>Czym jest spis treści i dlaczego jest niezbędny w pracy magisterskiej</h2>
 

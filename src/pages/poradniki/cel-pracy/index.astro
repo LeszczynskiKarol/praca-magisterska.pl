@@ -1,6 +1,7 @@
 ---
 // src/pages/poradniki/cel/index.astro
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../components/DownloadBox.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
@@ -38,6 +39,15 @@ const relatedLinks = [
     on kluczowy element całego projektu badawczego, jak go poprawnie sformułować
     oraz jakich najczęstszych błędów należy unikać podczas jego określania.
   </p>
+
+  <DownloadBox
+    title="📄 Pobierz wzór celu, pytań i hipotez – PDF i Word"
+    description="Gotowy wzór celu głównego i celów szczegółowych, problemów (pytań) badawczych oraz hipotez, z przykładami i komentarzem, jak je ze sobą powiązać. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/wzor-celu-pytan-i-hipotez.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/wzor-celu-pytan-i-hipotez.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
 
   <h2>Czym jest cel pracy magisterskiej i dlaczego jest tak ważny?</h2>
 
