@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z filologii polskiej – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z filologii polskiej krok po kroku: teza interpretacyjna, stan badań, analiza i interpretacja tekstu, podział na literaturę podmiotu i przedmiotu – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="14 min"
+  description="Przykładowa praca magisterska z filologii polskiej krok po kroku: teza interpretacyjna, stan badań, analiza i interpretacja tekstu, podział na literaturę podmiotu i przedmiotu oraz kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="18 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,10 +30,10 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z filologii
     polskiej, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej
     rozkładamy na części przykładową pracę – pokazujemy zawartość każdego rozdziału,
-    wklejamy konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak.
-    Skupiamy się na tym, co odróżnia magisterkę z filologii od prac z innych kierunków:
-    na tezie interpretacyjnej, stanie badań, analizie tekstu i specyficznym podziale
-    bibliografii.
+    wklejamy konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy,
+    na co patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z filologii od
+    prac z innych kierunków: na tezie interpretacyjnej, stanie badań, analizie tekstu i
+    specyficznym podziale bibliografii.
   </p>
 
   <p>
@@ -81,6 +82,36 @@ const relatedLinks = [
     </li>
   </ul>
 
+  <InfoBox variant="definicja" title="Literatura podmiotu i przedmiotu">
+    <p>
+      <strong>Literatura podmiotu</strong> to teksty będące przedmiotem analizy (np.
+      tomy wierszy Szymborskiej). <strong>Literatura przedmiotu</strong> to opracowania
+      naukowe i krytyczne o tych tekstach (monografie, studia, artykuły, glosy). W
+      pracy filologicznej dzieli się bibliografię na te dwie części.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z filologii</h2>
+
+  <ol>
+    <li>
+      <strong>Interpretacja, nie streszczenie.</strong> Czy praca analizuje, jak tekst
+      tworzy znaczenie, czy tylko referuje jego treść?
+    </li>
+    <li>
+      <strong>Wyraźna teza interpretacyjna.</strong> Czy postawiono twierdzenie, które
+      analiza udowadnia?
+    </li>
+    <li>
+      <strong>Rzetelny stan badań.</strong> Czy praca zna i krytycznie przywołuje
+      dotychczasowe opracowania?
+    </li>
+    <li>
+      <strong>Warsztat cytowania.</strong> Czy bibliografia jest podzielona na
+      podmiot/przedmiot, a cytaty z utworów mają poprawne przypisy?
+    </li>
+  </ol>
+
   <h2>Typy prac magisterskich z filologii polskiej</h2>
 
   <ul>
@@ -118,12 +149,13 @@ const relatedLinks = [
       prowadząc ku afirmacji jednostkowego istnienia.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> teza interpretacyjna to twierdzenie, które praca ma
-    udowodnić analizą tekstu. Poprzedza ją stan badań – krytyczny przegląd opracowań,
-    który wskazuje lukę. O różnicy między celem, pytaniem a tezą piszemy w poradniku o
-    <a href="/poradniki/cel-pracy/">celu pracy</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Stan badań wyznacza lukę">
+    <p>
+      Zanim zaczniesz analizę, pokaż, co już napisano o Twoim temacie i autorze.
+      Krytyczny przegląd opracowań (stan badań) nie jest formalnością – to on uzasadnia,
+      że Twoja interpretacja wnosi coś nowego, a nie powtarza znane ustalenia.
+    </p>
+  </InfoBox>
 
   <h2>Analiza i interpretacja – trzon pracy</h2>
 
@@ -140,12 +172,26 @@ const relatedLinks = [
       przemijanie odczuwalnym, a nie tylko nazwanym.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> dobra interpretacja nie referuje treści, lecz pokazuje,
-    <em>jak</em> tekst osiąga znaczenie. Odwołania do koncepcji teoretycznych popieraj
-    przypisami. Zasady przypisów omawiamy w poradniku o
-    <a href="/poradniki/przypisy/">przypisach</a>.
-  </p>
+  <InfoBox variant="przyklad" title="Streszczenie vs interpretacja">
+    <p>
+      <strong>Wersja słabsza.</strong> „W wierszu kot chodzi po pustym mieszkaniu i
+      czeka na właściciela, który nie wraca." To streszczenie treści – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Wybór perspektywy kota i skupienie na
+      naruszonym porządku przedmiotów przenosi temat śmierci w rejestr konkretu, dzięki
+      czemu przemijanie staje się odczuwalne, a nie nazwane wprost." To interpretacja
+      środków – ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Streszczanie zamiast analizy">
+    <p>
+      Najczęstszy błąd pracy literaturoznawczej to opowiadanie treści utworu zamiast
+      analizy. Recenzent oczekuje odpowiedzi na pytanie <em>jak</em> tekst osiąga
+      znaczenie (jakimi środkami), a nie <em>o czym</em> jest.
+    </p>
+  </InfoBox>
 
   <h2>Bibliografia – literatura podmiotu i przedmiotu</h2>
 
@@ -195,6 +241,19 @@ const relatedLinks = [
     Na literaturę podmiotu (teksty analizowane) i literaturę przedmiotu (opracowania).
     Zasady zapisu pozycji znajdziesz w przewodniku o
     <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Ile utworów analizować?</h3>
+  <p>
+    Tyle, ile potrzeba do udowodnienia tezy – liczy się głębia interpretacji, nie liczba
+    tekstów. Lepiej wnikliwie przeanalizować kilka utworów reprezentatywnych dla motywu
+    niż pobieżnie wymienić kilkanaście.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet i punkt
+    odniesienia – własną interpretację musisz przeprowadzić samodzielnie.
   </p>
 
   <p>

@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z historii – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z historii krok po kroku: baza źródłowa, krytyka źródeł, metoda historyczna, cytowanie archiwaliów i prasy oraz podział bibliografii na źródła i opracowania – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="14 min"
+  description="Przykładowa praca magisterska z historii krok po kroku: baza źródłowa, krytyka źródeł, metoda historyczna, cytowanie archiwaliów i prasy, podział bibliografii na źródła i opracowania oraz kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="18 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,9 +30,9 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z historii, to
     zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy na
     części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy konkretne
-    wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się na tym, co
-    odróżnia magisterkę z historii od prac z innych kierunków: na bazie źródłowej,
-    krytyce źródeł i warsztacie historyka.
+    wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co patrzy
+    recenzent. Skupiamy się na tym, co odróżnia magisterkę z historii od prac z innych
+    kierunków: na bazie źródłowej, krytyce źródeł i warsztacie historyka.
   </p>
 
   <p>
@@ -78,6 +79,37 @@ const relatedLinks = [
     </li>
   </ul>
 
+  <InfoBox variant="definicja" title="Źródło a opracowanie">
+    <p>
+      <strong>Źródło</strong> to ślad przeszłości powstały w badanej epoce (akt
+      archiwalny, gazeta, pamiętnik, fotografia). <strong>Opracowanie</strong> to
+      późniejsza literatura naukowa o tej przeszłości (monografia, artykuł, synteza).
+      Historyk wnioskuje ze źródeł, a opracowaniami się posiłkuje – i oba zbiory
+      wykazuje osobno.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z historii</h2>
+
+  <ol>
+    <li>
+      <strong>Krytyka źródeł.</strong> Czy źródła zostały krytycznie ocenione, a nie
+      potraktowane jako pewnik?
+    </li>
+    <li>
+      <strong>Analiza, nie referat.</strong> Czy praca prowadzi własny wywód na
+      źródłach, czy streszcza literaturę?
+    </li>
+    <li>
+      <strong>Precyzja przypisów.</strong> Czy archiwalia mają sygnatury, a prasa numer,
+      datę i stronę?
+    </li>
+    <li>
+      <strong>Jasne ramy i teza.</strong> Czy zakres czasowo-przestrzenny jest
+      określony, a wnioski wracają do tezy?
+    </li>
+  </ol>
+
   <h2>Typy prac magisterskich z historii</h2>
 
   <ul>
@@ -121,11 +153,14 @@ const relatedLinks = [
       Informacje należy konfrontować między tytułami oraz z danymi statystycznymi.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> krytyka zewnętrzna ustala autentyczność, autorstwo i
-    czas powstania źródła; krytyka wewnętrzna ocenia jego wiarygodność i tendencyjność.
-    Pominięcie krytyki źródeł to najpoważniejszy błąd metodyczny w pracy historycznej.
-  </p>
+  <InfoBox variant="definicja" title="Krytyka zewnętrzna i wewnętrzna">
+    <p>
+      <strong>Krytyka zewnętrzna</strong> ustala autentyczność, autorstwo i czas
+      powstania źródła. <strong>Krytyka wewnętrzna</strong> ocenia jego wiarygodność i
+      tendencyjność – czy autor mógł i chciał podać prawdę. Dopiero po obu wolno oprzeć
+      na źródle wnioski.
+    </p>
+  </InfoBox>
 
   <h2>Cytowanie źródeł w przypisach</h2>
 
@@ -140,12 +175,19 @@ const relatedLinks = [
     <li><strong>Źródło drukowane:</strong> autor/wydawca, tytuł edycji, miejsce i rok.</li>
   </ul>
 
-  <p>
-    <strong>Komentarz:</strong> w pracy historycznej źródło to materiał badawczy, który
-    analizujesz i konfrontujesz, a nie tylko cytujesz. Zasady przypisów omawiamy w
-    poradniku o <a href="/poradniki/przypisy/">przypisach</a>, a poszukiwanie materiałów
-    – w poradniku o <a href="/poradniki/zrodla/">źródłach</a>.
-  </p>
+  <InfoBox variant="przyklad" title="Wyliczanie vs analiza źródeł">
+    <p>
+      <strong>Wersja słabsza.</strong> „Prasa pisała o drożyźnie (przypis), o kinie
+      (przypis) i o sporcie (przypis)." Trzy cytaty bez wniosku – to wyliczanka, ocena
+      niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Powracające skargi na drożyznę – obecne we
+      wszystkich tytułach niezależnie od ich profilu politycznego – świadczą o
+      trwałości problemu i o roli prasy jako rzecznika lokalnej opinii." Źródło zostaje
+      zinterpretowane i osadzone – ocena wyższa.
+    </p>
+  </InfoBox>
 
   <h2>Bibliografia – źródła i opracowania</h2>
 
@@ -157,6 +199,15 @@ const relatedLinks = [
     <li><strong>Źródła</strong> – archiwalne, drukowane, prasa, materiały ikonograficzne.</li>
     <li><strong>Opracowania</strong> – literatura naukowa (monografie, artykuły, syntezy).</li>
   </ul>
+
+  <InfoBox variant="pulapka" title="Źródło potraktowane jako pewnik">
+    <p>
+      Najpoważniejszy błąd metodyczny to przyjęcie treści źródła bez krytyki – np.
+      uznanie, że skoro gazeta tak napisała, tak było. Źródło zawsze konfrontuj z innymi
+      i oceniaj jego tendencyjność. Brak krytyki źródeł obniża ocenę nawet przy bogatej
+      bazie materiałowej.
+    </p>
+  </InfoBox>
 
   <h2>Najczęstsze błędy w pracy magisterskiej z historii</h2>
 
@@ -191,6 +242,19 @@ const relatedLinks = [
   <p>
     Na źródła (materiały z epoki) i opracowania (literatura naukowa). Zasady zapisu
     znajdziesz w przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Jak prowadzić krytykę źródła?</h3>
+  <p>
+    Zacznij od krytyki zewnętrznej (czy źródło jest autentyczne, kto i kiedy je
+    stworzył), potem wewnętrznej (czy autor był wiarygodny i nietendencyjny).
+    Konfrontuj informacje między źródłami – to podstawa warsztatu historyka.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet i punkt
+    odniesienia – pracę trzeba oprzeć na własnej kwerendzie źródłowej.
   </p>
 
   <p>

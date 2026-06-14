@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z zarządzania – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z zarządzania krok po kroku: charakterystyka przedsiębiorstwa, analiza SWOT, badanie ankietowe, część aplikacyjna i rekomendacje dla firmy – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="14 min"
+  description="Przykładowa praca magisterska z zarządzania krok po kroku: charakterystyka przedsiębiorstwa, analiza SWOT, badanie ankietowe, część aplikacyjna, rekomendacje i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="19 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,10 +30,10 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z
     zarządzania, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie.
     Poniżej rozkładamy na części przykładową pracę – pokazujemy zawartość każdego
-    rozdziału, wklejamy konkretne wycinki i tłumaczymy, dlaczego zostały napisane
-    właśnie tak. Skupiamy się na tym, co odróżnia magisterkę z zarządzania od prac z
-    innych kierunków: na osadzeniu badania w konkretnym przedsiębiorstwie i na
-    praktycznych rekomendacjach dla organizacji.
+    rozdziału, wklejamy konkretne wycinki, porównujemy lepsze i gorsze rozwiązania
+    oraz tłumaczymy, na co patrzy recenzent. Skupiamy się na tym, co odróżnia
+    magisterkę z zarządzania od prac z innych kierunków: na osadzeniu badania w
+    konkretnym przedsiębiorstwie i na praktycznych rekomendacjach dla organizacji.
   </p>
 
   <p>
@@ -79,6 +80,36 @@ const relatedLinks = [
       propozycjami dla organizacji, a nie tylko wnioskami poznawczymi.
     </li>
   </ul>
+
+  <InfoBox variant="definicja" title="Praca diagnostyczno-aplikacyjna">
+    <p>
+      To praca, która najpierw <strong>diagnozuje</strong> problem w konkretnej
+      organizacji (na podstawie badania i analizy), a następnie formułuje
+      <strong>rekomendacje</strong> jego rozwiązania. Łączy warstwę poznawczą (co jest)
+      z wdrożeniową (co z tym zrobić) – to jej znak rozpoznawczy.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z zarządzania</h2>
+
+  <ol>
+    <li>
+      <strong>Charakterystyka firmy prowadzi do problemu.</strong> Czy opis organizacji
+      to analiza uzasadniająca temat, a nie marketingowa „laurka"?
+    </li>
+    <li>
+      <strong>Spójność teoria–badanie–rekomendacje.</strong> Czy te trzy części tworzą
+      jeden ciąg, czy są osobnymi światami?
+    </li>
+    <li>
+      <strong>Rekomendacje wynikają z wyników.</strong> Czy propozycje są konkretne,
+      wykonalne dla firmy i oparte na danych z badania?
+    </li>
+    <li>
+      <strong>Poprawność metody.</strong> Czy narzędzie, próba i analiza odpowiadają
+      postawionym hipotezom?
+    </li>
+  </ol>
 
   <h2>Typy prac magisterskich z zarządzania</h2>
 
@@ -130,11 +161,14 @@ const relatedLinks = [
     </tbody>
   </table>
 
-  <p>
-    <strong>Komentarz:</strong> charakterystyka firmy nie może być laurką ani
-    przepisaną stroną „o nas". To analiza, która prowadzi do problemu badawczego i
-    uzasadnia, dlaczego warto badać akurat ten obszar.
-  </p>
+  <InfoBox variant="pulapka" title="Charakterystyka firmy jak ulotka">
+    <p>
+      Najczęstszy błąd w pracach z zarządzania to opis przedsiębiorstwa przepisany ze
+      strony „o nas" – z misją, wizją i historią sukcesów. Recenzent oczekuje analizy,
+      która prowadzi do problemu badawczego i uzasadnia, dlaczego warto badać właśnie
+      ten obszar. Charakterystyka ma „podać piłkę" badaniu, nie reklamować firmę.
+    </p>
+  </InfoBox>
 
   <h2>Metodyka – hipotezy i narzędzie</h2>
 
@@ -145,13 +179,30 @@ const relatedLinks = [
       składniki finansowe.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> w zarządzaniu narzędzie bywa autorskie (dopasowane do
-    firmy), często łączone ze skalą standaryzowaną. Zawsze zaznacz zgodę organizacji na
-    badanie. Szerzej w poradniku o <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
-    metodologicznym</a> i <a href="/poradniki/metodologia/badania-ilosciowe/">badaniach
-    ilościowych</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Zgoda organizacji to podstawa">
+    <p>
+      Zanim zaczniesz badanie, uzyskaj zgodę zarządu na ankietowanie pracowników i
+      wykorzystanie danych. W pracy zaznacz to wprost, a nazwę firmy w razie potrzeby
+      zanonimizuj („przedsiębiorstwo X"). Bez zgody badanie jest metodologicznie i
+      etycznie wadliwe.
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – te same wyniki, dwa zakończenia</h2>
+
+  <InfoBox variant="przyklad" title="Ogólne porady vs konkretne rekomendacje">
+    <p>
+      <strong>Wersja słabsza.</strong> „Firma powinna lepiej motywować pracowników i
+      dbać o atmosferę." To porada z podręcznika, niezwiązana z danymi – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Ponieważ atmosfera (4,5) i możliwość rozwoju
+      (4,3) oceniono najwyżej, a awans najniżej, rekomenduje się: (1) program rozwoju
+      kompetencji, (2) ścieżki awansu dla pracowników z dłuższym stażem, (3) cykliczny
+      pomiar zaangażowania." Rekomendacje wynikają z wyników i są wykonalne – ocena
+      wyższa.
+    </p>
+  </InfoBox>
 
   <h2>Wyniki i rekomendacje</h2>
 
@@ -174,8 +225,8 @@ const relatedLinks = [
 
   <p>
     <strong>Komentarz:</strong> rekomendacje muszą wynikać wprost z wyników i być
-    wykonalne dla badanej firmy – to konkretne propozycje (np. program rozwoju
-    kompetencji, ścieżki awansu), a nie ogólne porady z podręcznika.
+    wykonalne dla badanej firmy – to konkretne propozycje, a nie ogólne porady z
+    podręcznika.
   </p>
 
   <h2>Najczęstsze błędy w pracy magisterskiej z zarządzania</h2>
@@ -207,11 +258,25 @@ const relatedLinks = [
     zarządu i – w razie potrzeby – zanonimizuj nazwę firmy (np. „przedsiębiorstwo X").
   </p>
 
+  <h3>Jak napisać dobre rekomendacje?</h3>
+  <p>
+    Każda rekomendacja powinna wynikać z konkretnego wyniku badania, być wykonalna dla
+    badanej organizacji i – w miarę możliwości – wskazywać sposób wdrożenia. Unikaj
+    ogólników z podręcznika.
+  </p>
+
   <h3>Jaki styl cytowania obowiązuje w zarządzaniu?</h3>
   <p>
     Najczęściej APA lub Harvard. Sprawdź wytyczne uczelni i stosuj jeden styl
     konsekwentnie. Zasady i przykłady w przewodniku o
     <a href="/poradniki/bibliografia/">bibliografii i przypisach</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet i punkt
+    odniesienia, na którym napiszesz własną pracę – z własną firmą, danymi i
+    rekomendacjami.
   </p>
 
   <p>

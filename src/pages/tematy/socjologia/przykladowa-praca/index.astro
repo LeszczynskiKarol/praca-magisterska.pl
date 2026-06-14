@@ -1,0 +1,257 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Socjologia", href: "/tematy/socjologia/" },
+  { label: "Przykładowa praca", href: "/tematy/socjologia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z socjologii", href: "/tematy/socjologia/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z socjologii – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z socjologii krok po kroku: operacjonalizacja zmiennych społecznych, dobór próby i reprezentatywność, sondaż diagnostyczny, analiza danych i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z socjologii,
+    to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
+    na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
+    konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co
+    patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z socjologii od prac z
+    innych kierunków: na operacjonalizacji zmiennych społecznych i na doborze próby.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę empiryczną –
+    <strong>„Zaufanie społeczne a aktywność obywatelska młodych dorosłych"</strong>. To
+    typowy dla socjologii schemat: sondaż diagnostyczny badający związek zjawisk
+    społecznych. Pokazujemy też, czym badanie ilościowe różni się od jakościowego
+    (wywiady, analiza treści).
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet empirycznej pracy magisterskiej z socjologii: strona tytułowa, streszczenie, spis treści, wstęp, część teoretyczna, metodologia (operacjonalizacja zmiennych, dobór próby), wyniki z tabelą korelacji, dyskusja, zakończenie, bibliografia i aneks. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-socjologia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-socjologia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z socjologii</h2>
+
+  <p>
+    Socjologia bada zjawiska społeczne, których nie da się zmierzyć wprost – zaufanie,
+    kapitał społeczny, postawy. Z tego wynikają cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Operacjonalizacja zmiennych społecznych.</strong> Pojęcia (zaufanie,
+      aktywność) przekłada się na mierzalne wskaźniki, często zaczerpnięte z uznanych
+      sondaży (ESS, Diagnoza Społeczna, CBOS).
+    </li>
+    <li>
+      <strong>Dobór próby i reprezentatywność.</strong> W socjologii to, kogo i jak
+      dobrano do badania, waży szczególnie – decyduje o zakresie uogólnień.
+    </li>
+    <li>
+      <strong>Ilościowo lub jakościowo.</strong> Obok sondażu (ankieta) stosuje się
+      metody jakościowe: wywiad pogłębiony (IDI), zogniskowany wywiad grupowy (FGI),
+      analizę treści.
+    </li>
+    <li>
+      <strong>Osadzenie w teorii społecznej.</strong> Wyniki interpretuje się przez
+      pryzmat teorii (np. kapitał społeczny Putnama, zaufanie Sztompki).
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Operacjonalizacja i wskaźnik">
+    <p>
+      <strong>Operacjonalizacja</strong> to przełożenie pojęcia społecznego na
+      mierzalne <strong>wskaźniki</strong>. Np. „aktywność obywatelska" mierzona
+      indeksem zachowań: udział w wyborach, wolontariat, podpisywanie petycji,
+      działalność w organizacjach. Dobry wskaźnik trafnie reprezentuje pojęcie i daje
+      się zmierzyć w ankiecie.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z socjologii</h2>
+
+  <ol>
+    <li>
+      <strong>Trafna operacjonalizacja.</strong> Czy pojęcia społeczne przełożono na
+      sensowne, mierzalne wskaźniki?
+    </li>
+    <li>
+      <strong>Opisany dobór próby.</strong> Czy podano metodę doboru, liczebność i
+      strukturę próby oraz uczciwie omówiono zakres uogólnień?
+    </li>
+    <li>
+      <strong>Dobór analizy do danych.</strong> Czy zastosowano właściwe narzędzia
+      (korelacja, tabele krzyżowe z chi-kwadrat, regresja) do poziomu pomiaru zmiennych?
+    </li>
+    <li>
+      <strong>Interpretacja teoretyczna.</strong> Czy wyniki osadzono w teorii
+      socjologicznej, a nie tylko opisano liczby?
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z socjologii</h2>
+
+  <ul>
+    <li>
+      <strong>Ilościowa (sondaż diagnostyczny)</strong> – ankieta na większej próbie,
+      analiza statystyczna. Najczęstszy wybór.
+    </li>
+    <li>
+      <strong>Jakościowa</strong> – wywiady pogłębione (IDI), wywiady grupowe (FGI),
+      analiza treści; gdy chodzi o zrozumienie znaczeń, nie pomiar skali.
+    </li>
+    <li>
+      <strong>Oparta na danych zastanych</strong> – wtórna analiza danych z dużych
+      sondaży (ESS, Diagnoza Społeczna).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy ilościowej z socjologii</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp</li>
+    <li>Rozdział teoretyczny – pojęcia, teorie, przegląd badań</li>
+    <li>Rozdział metodologiczny – cel, hipotezy, <strong>operacjonalizacja</strong>, metoda, <strong>dobór próby</strong></li>
+    <li>Rozdział empiryczny – analiza wyników</li>
+    <li>Dyskusja</li>
+    <li>Zakończenie</li>
+    <li>Bibliografia (APA/Harvard) · Aneks (kwestionariusz)</li>
+  </ol>
+
+  <h2>Dobór próby – na co patrzy recenzent</h2>
+
+  <blockquote>
+    <p>Badaniem objęto 320 osób w wieku 18–29 lat. Zastosowano dobór kwotowy ze względu
+      na płeć i wykształcenie. Próba nie jest w pełni reprezentatywna dla populacji
+      ogólnopolskiej, co ogranicza zakres uogólnień.</p>
+  </blockquote>
+
+  <InfoBox variant="wskazowka" title="Uczciwie o reprezentatywności">
+    <p>
+      Większość studenckich badań nie jest w pełni reprezentatywna – i to jest w
+      porządku, o ile to przyznasz. Opisz metodę doboru (losowy, warstwowy, kwotowy,
+      celowy), liczebność i strukturę próby, a w ograniczeniach wskaż, na ile wolno
+      uogólniać wyniki. Recenzent karze ukrywanie ograniczeń, nie samo ich istnienie.
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Opis liczb vs analiza osadzona w teorii">
+    <p>
+      <strong>Wersja słabsza.</strong> „34% badanych ufa ludziom, 50% jest aktywnych."
+      Praca wylicza procenty bez testu i bez teorii – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Zaufanie uogólnione korelowało dodatnio z
+      aktywnością (rho = 0,34; p &lt; 0,001), co wpisuje się w teorię kapitału
+      społecznego Putnama – zaufanie i zaangażowanie wzajemnie się wzmacniają." Wynik z
+      testem i interpretacją teoretyczną – ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <h2>Wyniki – jaki test do jakich danych</h2>
+
+  <p>
+    Dobór analizy zależy od poziomu pomiaru zmiennych: związek dwóch zmiennych
+    porządkowych – korelacja rho-Spearmana; zależność zmiennych nominalnych – tabela
+    krzyżowa z testem chi-kwadrat; predykcja – regresja. Przykład:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Zmienna</th><th>rho</th><th>p</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Zaufanie uogólnione</td><td>0,34</td><td>&lt; 0,001</td></tr>
+      <tr><td>Zaufanie instytucjonalne</td><td>0,21</td><td>&lt; 0,01</td></tr>
+    </tbody>
+  </table>
+
+  <InfoBox variant="pulapka" title="Procenty zamiast analizy">
+    <p>
+      Najczęstszy błąd prac socjologicznych to poprzestanie na opisie rozkładów
+      („tyle procent uważa, że…"). To dopiero materiał – praca magisterska wymaga
+      analizy <em>związków</em> między zmiennymi (testy, tabele krzyżowe) i ich
+      interpretacji w świetle teorii.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z socjologii</h2>
+
+  <ul>
+    <li><strong>Brak operacjonalizacji</strong> – pojęcia społeczne bez przełożenia na
+      wskaźniki.</li>
+    <li><strong>Niejasny dobór próby</strong> – brak opisu metody doboru i zakresu
+      uogólnień.</li>
+    <li><strong>Sam opis rozkładów</strong> – procenty bez analizy związków i testów.</li>
+    <li><strong>Brak teorii</strong> – wyniki nieosadzone w teorii socjologicznej.</li>
+    <li><strong>Niespójna bibliografia</strong> – mieszanie stylów cytowania.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Praca ilościowa czy jakościowa?</h3>
+  <p>
+    Zależy od pytania badawczego. Jeśli chcesz zmierzyć skalę zjawiska i związki –
+    ilościowa (sondaż). Jeśli zrozumieć znaczenia i mechanizmy – jakościowa (wywiady,
+    analiza treści). Obie są w socjologii akceptowane.
+  </p>
+
+  <h3>Czy próba musi być reprezentatywna?</h3>
+  <p>
+    Reprezentatywność zwiększa wartość pracy, ale studenckie badania często jej nie
+    osiągają. Najważniejsze to opisać dobór i uczciwie wskazać zakres uogólnień w
+    ograniczeniach.
+  </p>
+
+  <h3>Skąd brać sprawdzone wskaźniki?</h3>
+  <p>
+    Z uznanych sondaży: Europejski Sondaż Społeczny (ESS), Diagnoza Społeczna, badania
+    CBOS. Korzystanie z gotowych, zwalidowanych pytań ułatwia porównania i podnosi
+    wiarygodność.
+  </p>
+
+  <h3>Jaki styl cytowania w socjologii?</h3>
+  <p>
+    Najczęściej APA lub Harvard. Stosuj jeden styl konsekwentnie. Zasady i przykłady w
+    przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet i punkt
+    odniesienia, na którym przeprowadzisz własne badanie.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całe badanie trzeba
+    zaprojektować i opisać samodzielnie. Zacznij od
+    <a href="/tematy/socjologia/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

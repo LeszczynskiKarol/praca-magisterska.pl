@@ -1,0 +1,220 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Kryminologia", href: "/tematy/kryminologia/" },
+  { label: "Przykładowa praca", href: "/tematy/kryminologia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z kryminologii", href: "/tematy/kryminologia/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Cel i hipotezy pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z kryminologii – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z kryminologii krok po kroku: praca ze statystyką przestępczości i ciemną liczbą, badanie poczucia bezpieczeństwa i wiktymizacji, analiza i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z kryminologii,
+    to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
+    na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
+    konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co
+    patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z kryminologii od prac
+    z innych kierunków: na pracy ze statystyką przestępczości i na badaniu poczucia
+    bezpieczeństwa.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę empiryczną –
+    <strong>„Poczucie bezpieczeństwa mieszkańców a rzeczywisty poziom przestępczości w
+    mieście X"</strong>. To typowy dla kryminologii schemat: zestawienie danych
+    obiektywnych (statystyka) z subiektywnymi (sondaż poczucia bezpieczeństwa).
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet empirycznej pracy magisterskiej z kryminologii: strona tytułowa, streszczenie, spis treści, wstęp, część teoretyczna, metodologia (dane statystyczne + sondaż), analiza z tabelą, dyskusja, zakończenie, bibliografia i aneks. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-kryminologia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-kryminologia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z kryminologii</h2>
+
+  <p>
+    Kryminologia bada przestępczość, jej sprawców, ofiary i reakcję społeczną. Praca
+    często łączy <strong>dane o przestępczości</strong> z <strong>badaniem
+    społecznym</strong>. Z tego wynikają cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li><strong>Statystyka przestępczości.</strong> Materiałem są dane policyjne, KGP,
+      GUS – z pełną świadomością ich ograniczeń.</li>
+    <li><strong>Ciemna liczba przestępstw.</strong> Część przestępstw nie jest zgłaszana
+      – statystyki nie oddają pełnej skali zjawiska.</li>
+    <li><strong>Wiktymizacja i poczucie bezpieczeństwa.</strong> Subiektywną stronę bada
+      się sondażem (badania wiktymizacyjne).</li>
+    <li><strong>Osadzenie w teorii kryminologicznej.</strong> Interpretacja przez teorie
+      (np. lęk przed przestępczością, teorie etiologiczne).</li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Ciemna liczba przestępstw">
+    <p>
+      To różnica między rzeczywistą liczbą popełnionych przestępstw a liczbą przestępstw
+      ujawnionych i zarejestrowanych. Statystyki policyjne pokazują tylko przestępczość
+      <em>stwierdzoną</em> – dlatego w kryminologii uzupełnia się je badaniami
+      wiktymizacyjnymi (pytaniami do ofiar), by zbliżyć się do faktycznej skali.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z kryminologii</h2>
+
+  <ol>
+    <li><strong>Krytyczne użycie statystyki.</strong> Czy autor uwzględnia ciemną liczbę
+      i ograniczenia danych policyjnych?</li>
+    <li><strong>Zestawienie obiektywne–subiektywne.</strong> Czy dane o przestępczości
+      skonfrontowano z poczuciem bezpieczeństwa?</li>
+    <li><strong>Osadzenie w teorii.</strong> Czy wyniki interpretuje się przez teorie
+      kryminologiczne?</li>
+    <li><strong>Etyka i poprawność metody.</strong> Czy sondaż przeprowadzono rzetelnie i
+      etycznie?</li>
+  </ol>
+
+  <h2>Typy prac magisterskich z kryminologii</h2>
+
+  <ul>
+    <li><strong>Empiryczna (sondaż/wiktymizacja)</strong> – badanie poczucia
+      bezpieczeństwa, doświadczeń ofiar, postaw. Częsty wybór.</li>
+    <li><strong>Analiza danych o przestępczości</strong> – wtórna analiza statystyk
+      policyjnych/GUS (dynamika, struktura, geografia przestępczości).</li>
+    <li><strong>Analiza akt / studium przypadku</strong> – pogłębiona analiza spraw lub
+      sprawców (z zachowaniem zasad dostępu i etyki).</li>
+  </ul>
+
+  <h2>Struktura pracy empirycznej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp</li>
+    <li>Rozdział teoretyczny – przestępczość, pomiar, teorie</li>
+    <li>Rozdział metodologiczny – cel, hipotezy, dane statystyczne i sondaż, próba</li>
+    <li>Rozdział empiryczny – analiza i zestawienie wyników</li>
+    <li>Dyskusja</li>
+    <li>Zakończenie</li>
+    <li>Bibliografia · Aneks (kwestionariusz)</li>
+  </ol>
+
+  <h2>Zestawienie danych i poczucia bezpieczeństwa</h2>
+
+  <blockquote>
+    <p>Mimo spadku przestępstw stwierdzonych (z 28 do 21 na 1000 mieszkańców), odsetek
+      osób obawiających się przestępczości pozostał wysoki (39%).</p>
+  </blockquote>
+
+  <InfoBox variant="wskazowka" title="Łącz dane obiektywne z subiektywnymi">
+    <p>
+      Siła pracy kryminologicznej tkwi w zestawieniu dwóch perspektyw: statystyki
+      przestępczości (obiektywna) i sondażu poczucia bezpieczeństwa (subiektywna).
+      Rozbieżność między nimi to najciekawszy materiał do analizy – interpretuj ją przez
+      teorię, np. lęku przed przestępczością.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="przyklad" title="Opis vs analiza rozbieżności">
+    <p>
+      <strong>Wersja słabsza.</strong> „Przestępczość spadła, a ludzie i tak się boją."
+      Stwierdzenie bez analizy – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Utrzymujące się wysokie poczucie zagrożenia
+      mimo spadku przestępczości potwierdza koncepcję lęku przed przestępczością, na
+      który wpływają przekaz medialny i wiek respondentów (silniej wśród osób
+      starszych)." Analiza w świetle teorii – ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <h2>Wyniki – analiza</h2>
+
+  <table>
+    <thead>
+      <tr><th>Rok</th><th>Przestępstwa (na 1000)</th><th>Obawia się (%)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2019</td><td>28</td><td>41</td></tr>
+      <tr><td>2024</td><td>21</td><td>39</td></tr>
+    </tbody>
+  </table>
+
+  <InfoBox variant="pulapka" title="Statystyka jako pełny obraz">
+    <p>
+      Traktowanie statystyki policyjnej jako pełnego obrazu przestępczości to typowy błąd.
+      Zawsze zaznacz ciemną liczbę i to, że dane pokazują przestępczość stwierdzoną, a nie
+      rzeczywistą. Bez tej refleksji praca traci kryminologiczny warsztat.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z kryminologii</h2>
+
+  <ul>
+    <li><strong>Statystyka bez krytyki</strong> – pominięcie ciemnej liczby i ograniczeń
+      danych.</li>
+    <li><strong>Sam opis liczb</strong> – brak analizy i interpretacji teoretycznej.</li>
+    <li><strong>Brak teorii kryminologicznej</strong> – wyniki nieosadzone w teorii.</li>
+    <li><strong>Zaniedbana etyka</strong> – badanie ofiar bez dbałości o ich godność i
+      anonimowość.</li>
+    <li><strong>Niespójna bibliografia</strong> – mieszanie stylów cytowania.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Skąd brać dane o przestępczości?</h3>
+  <p>
+    Ze statystyk policyjnych (KGP, komendy miejskie/wojewódzkie), danych GUS oraz badań
+    wiktymizacyjnych. Pamiętaj o ich ograniczeniach (ciemna liczba).
+  </p>
+
+  <h3>Czym jest badanie wiktymizacyjne?</h3>
+  <p>
+    To badanie sondażowe pytające respondentów o doświadczenie bycia ofiarą przestępstwa
+    – pozwala oszacować skalę przestępczości niezgłoszonej i poczucie bezpieczeństwa.
+  </p>
+
+  <h3>Czy mogę analizować akta spraw?</h3>
+  <p>
+    Tak, ale wymaga to zgody odpowiednich instytucji i szczególnej dbałości o ochronę
+    danych i anonimizację. Sprawdź zasady dostępu i wytyczne uczelni.
+  </p>
+
+  <h3>Jaki styl cytowania w kryminologii?</h3>
+  <p>
+    Najczęściej APA lub przypisy. Stosuj jeden styl konsekwentnie. Zasady w przewodniku o
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet – własne
+    badanie trzeba przeprowadzić samodzielnie.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całe badanie trzeba
+    zaprojektować i opisać samodzielnie. Zacznij od
+    <a href="/tematy/kryminologia/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

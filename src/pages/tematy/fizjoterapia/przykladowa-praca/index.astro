@@ -1,0 +1,267 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Fizjoterapia", href: "/tematy/fizjoterapia/" },
+  { label: "Przykładowa praca", href: "/tematy/fizjoterapia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z fizjoterapii", href: "/tematy/fizjoterapia/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Streszczenie pracy", href: "/poradniki/streszczenie/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z fizjoterapii – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z fizjoterapii krok po kroku: schemat badania przed–po, pomiary skalami klinicznymi (VAS, ODI, zakres ruchu), zgoda komisji bioetycznej, analiza statystyczna i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z fizjoterapii,
+    to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
+    na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
+    konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co
+    patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z fizjoterapii od prac
+    z innych kierunków: na schemacie badania przed–po, pomiarach skalami klinicznymi i
+    wymogach etycznych.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę empiryczną –
+    <strong>„Ocena skuteczności ćwiczeń metodą McKenziego u pacjentów z bólem dolnego
+    odcinka kręgosłupa"</strong>. To typowy dla fizjoterapii schemat: ocena skuteczności
+    interwencji na podstawie pomiarów przed terapią i po niej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet empirycznej pracy magisterskiej z fizjoterapii: strona tytułowa, streszczenie strukturalne, spis treści, wstęp, część teoretyczna, metodologia (narzędzia pomiarowe, zgoda komisji bioetycznej), wyniki przed–po z tabelą, dyskusja, wnioski, piśmiennictwo (Vancouver) i aneks. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-fizjoterapia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-fizjoterapia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z fizjoterapii</h2>
+
+  <p>
+    Fizjoterapia to kierunek medyczny oparty na praktyce opartej na dowodach. Praca
+    najczęściej <strong>ocenia skuteczność interwencji</strong> za pomocą pomiarów. Z
+    tego wynikają cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Schemat przed–po.</strong> Pomiary wykonuje się przed terapią i po niej,
+      by ocenić jej efekt (czasem z grupą kontrolną – wtedy jest to quasi-eksperyment).
+    </li>
+    <li>
+      <strong>Zobiektywizowane narzędzia.</strong> Ból – VAS/NRS; niepełnosprawność –
+      ODI (Oswestry) lub NDI; zakres ruchu – goniometria; sprawność – testy
+      funkcjonalne, skala Barthel.
+    </li>
+    <li>
+      <strong>Zgoda komisji bioetycznej.</strong> Badania z udziałem pacjentów wymagają
+      opinii komisji bioetycznej i świadomej zgody uczestników.
+    </li>
+    <li>
+      <strong>Styl Vancouver.</strong> W piśmiennictwie medycznym dominuje styl
+      numeryczny.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Schemat przed–po (pre-post)">
+    <p>
+      To plan badania, w którym tę samą grupę pacjentów mierzy się <strong>przed</strong>
+      interwencją i <strong>po</strong> niej, a różnicę traktuje jako miarę jej efektu.
+      Dodanie <strong>grupy kontrolnej</strong> (bez interwencji lub z inną) zamienia go
+      w quasi-eksperyment i istotnie wzmacnia wnioskowanie o skuteczności.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z fizjoterapii</h2>
+
+  <ol>
+    <li>
+      <strong>Zobiektywizowany pomiar.</strong> Czy efekt zmierzono uznanymi skalami
+      (VAS, ODI, goniometria), a nie ogólnym „pacjent czuł się lepiej"?
+    </li>
+    <li>
+      <strong>Poprawny schemat.</strong> Czy opisano schemat przed–po (najlepiej z grupą
+      kontrolną) i procedurę terapii?
+    </li>
+    <li>
+      <strong>Strona etyczna.</strong> Czy jest zgoda komisji bioetycznej i świadoma
+      zgoda pacjentów?
+    </li>
+    <li>
+      <strong>Właściwa statystyka.</strong> Czy zastosowano test dla prób zależnych
+      (t-Studenta lub Wilcoxona) i podano wielkość efektu?
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z fizjoterapii</h2>
+
+  <ul>
+    <li>
+      <strong>Ocena skuteczności interwencji (przed–po)</strong> – pomiar efektu terapii
+      na grupie pacjentów. Najczęstszy wybór.
+    </li>
+    <li>
+      <strong>Quasi-eksperyment z grupą kontrolną</strong> – porównanie dwóch metod lub
+      terapii z brakiem terapii; mocniejszy metodologicznie.
+    </li>
+    <li>
+      <strong>Przekrojowa (korelacyjna)</strong> – np. związek aktywności fizycznej z
+      jakością życia, bez interwencji.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy oceniającej skuteczność</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie (często strukturalne) + Abstract + spis treści</li>
+    <li>Wstęp</li>
+    <li>Rozdział teoretyczny – jednostka chorobowa i metoda terapii</li>
+    <li>Rozdział metodologiczny – cel, hipotezy, <strong>narzędzia pomiarowe</strong>, procedura, etyka</li>
+    <li>Rozdział z wynikami – analiza przed–po</li>
+    <li>Dyskusja</li>
+    <li>Wnioski</li>
+    <li>Piśmiennictwo (Vancouver) · Aneks (karta pomiaru)</li>
+  </ol>
+
+  <h2>Narzędzia pomiarowe – zobiektywizowana ocena</h2>
+
+  <p>
+    To cecha charakterystyczna fizjoterapii: efekt mierzy się uznanymi, zobiektywizowanymi
+    narzędziami. Dobór zależy od problemu:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Co oceniamy</th><th>Narzędzie</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Ból</td><td>VAS, NRS</td></tr>
+      <tr><td>Niepełnosprawność (kręgosłup L)</td><td>ODI (Oswestry)</td></tr>
+      <tr><td>Niepełnosprawność (odc. szyjny)</td><td>NDI</td></tr>
+      <tr><td>Zakres ruchu</td><td>goniometria</td></tr>
+      <tr><td>Sprawność / samodzielność</td><td>Barthel, testy funkcjonalne</td></tr>
+    </tbody>
+  </table>
+
+  <InfoBox variant="wskazowka" title="Mierz przed i po – tym samym narzędziem">
+    <p>
+      Efekt terapii oceniasz, porównując pomiar wyjściowy z końcowym wykonanym
+      <em>tym samym</em> narzędziem i w tych samych warunkach. Zaplanuj oba pomiary już
+      na etapie projektu badania i zapisz je w karcie pomiaru (aneks).
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Subiektywne wrażenie vs pomiar z testem">
+    <p>
+      <strong>Wersja słabsza.</strong> „Po terapii pacjenci czuli się lepiej i zgłaszali
+      mniejszy ból." Brak pomiaru i testu – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Po 4 tygodniach terapii natężenie bólu (VAS)
+      spadło z 6,8 do 2,9, a niepełnosprawność (ODI) z 42% do 21% (test t dla prób
+      zależnych, p &lt; 0,001)." Zobiektywizowany pomiar i analiza – ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <h2>Wyniki – analiza przed–po</h2>
+
+  <p>
+    W schemacie przed–po stosuje się test t-Studenta dla prób zależnych (lub test
+    Wilcoxona przy rozkładach odbiegających od normalnego). Wyniki prezentuje się w
+    tabeli z wartościami przed i po:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Pomiar</th><th>Przed</th><th>Po</th><th>p</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>VAS (0–10)</td><td>6,8</td><td>2,9</td><td>&lt; 0,001</td></tr>
+      <tr><td>ODI (%)</td><td>42</td><td>21</td><td>&lt; 0,001</td></tr>
+    </tbody>
+  </table>
+
+  <InfoBox variant="pulapka" title="Brak grupy kontrolnej">
+    <p>
+      Sam schemat przed–po nie wyklucza, że poprawa wynikła z naturalnego ustępowania
+      dolegliwości, a nie z terapii. Jeśli to możliwe, dodaj grupę kontrolną; jeśli nie –
+      koniecznie wskaż ten brak w ograniczeniach pracy. Pominięcie tego to częsta uwaga
+      recenzenta.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z fizjoterapii</h2>
+
+  <ul>
+    <li><strong>Ocena subiektywna zamiast pomiaru</strong> – „pacjent czuł się lepiej"
+      bez skali i testu.</li>
+    <li><strong>Brak zgody komisji bioetycznej</strong> – pominięcie strony etycznej
+      badania z pacjentami.</li>
+    <li><strong>Brak grupy kontrolnej bez komentarza</strong> – nieuwzględnienie tego
+      ograniczenia w dyskusji.</li>
+    <li><strong>Niewłaściwy test</strong> – test dla prób niezależnych zamiast zależnych
+      w schemacie przed–po.</li>
+    <li><strong>Niespójne piśmiennictwo</strong> – mieszanie stylów cytowania.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy potrzebuję grupy kontrolnej?</h3>
+  <p>
+    Nie zawsze, ale grupa kontrolna znacznie wzmacnia wnioski o skuteczności terapii.
+    Jeśli prowadzisz badanie tylko przed–po, wyraźnie zaznacz w ograniczeniach, że nie
+    można wykluczyć naturalnej poprawy.
+  </p>
+
+  <h3>Czy potrzebuję zgody komisji bioetycznej?</h3>
+  <p>
+    W badaniach z udziałem pacjentów – tak. Dolicz czas na jej uzyskanie do
+    harmonogramu i zadbaj o świadomą zgodę uczestników.
+  </p>
+
+  <h3>Jakie narzędzia pomiarowe wybrać?</h3>
+  <p>
+    Dobierz je do problemu: ból – VAS/NRS, niepełnosprawność – ODI/NDI, zakres ruchu –
+    goniometria, sprawność – testy funkcjonalne i skala Barthel. Stosuj uznane,
+    zwalidowane narzędzia.
+  </p>
+
+  <h3>Jaki styl cytowania w fizjoterapii?</h3>
+  <p>
+    Najczęściej Vancouver (numeryczny). Część uczelni dopuszcza APA – sprawdź wytyczne.
+    Zasady i przykłady w przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet – własne
+    badanie trzeba zaprojektować, przeprowadzić i opisać samodzielnie.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całe badanie trzeba
+    zaprojektować i opisać samodzielnie. Zacznij od
+    <a href="/tematy/fizjoterapia/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

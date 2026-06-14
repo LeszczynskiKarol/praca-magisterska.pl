@@ -1,0 +1,226 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Bezpieczeństwo narodowe", href: "/tematy/bezpieczenstwo-narodowe/" },
+  { label: "Przykładowa praca", href: "/tematy/bezpieczenstwo-narodowe/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z bezpieczeństwa", href: "/tematy/bezpieczenstwo-narodowe/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Cel i teza pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Przypisy w pracy", href: "/poradniki/przypisy/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z bezpieczeństwa narodowego – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z bezpieczeństwa narodowego krok po kroku: teza, metoda analizy systemowej i analizy dokumentów strategicznych, praca z aktami i raportami oraz kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z bezpieczeństwa
+    narodowego, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej
+    rozkładamy na części przykładową pracę – pokazujemy zawartość każdego rozdziału,
+    wklejamy konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy,
+    na co patrzy recenzent. Skupiamy się na tym, co odróżnia tę magisterkę od prac z
+    innych kierunków: na analizie systemowej i pracy z dokumentami strategicznymi.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę analityczną –
+    <strong>„System zarządzania kryzysowego w Polsce – organizacja i kierunki
+    doskonalenia"</strong>. To typowy dla bezpieczeństwa schemat: analiza systemu i
+    dokumentów strategicznych zakończona wnioskami i rekomendacjami.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet analitycznej pracy magisterskiej z bezpieczeństwa narodowego: strona tytułowa, streszczenie, spis treści, wstęp (z tezą i metodą), część teoretyczno-prawna, metodologia, rozdział analityczny, zakończenie z wnioskami oraz bibliografia i wykaz aktów i dokumentów. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-bezpieczenstwo-narodowe.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-bezpieczenstwo-narodowe.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z bezpieczeństwa narodowego</h2>
+
+  <p>
+    Bezpieczeństwo narodowe to dziedzina interdyscyplinarna. Praca najczęściej ma
+    charakter <strong>analityczno-dokumentowy</strong> (analiza systemu i dokumentów),
+    choć bywa też empiryczna (sondaż poczucia bezpieczeństwa). Z tego wynikają cechy
+    nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li><strong>Analiza systemowa.</strong> Ujmuje bezpieczeństwo jako system instytucji
+      i procedur.</li>
+    <li><strong>Praca z dokumentami strategicznymi.</strong> Materiałem są akty prawne i
+      dokumenty (np. Strategia Bezpieczeństwa Narodowego RP), raporty NIK.</li>
+    <li><strong>Teza i wnioski/rekomendacje.</strong> Praca stawia tezę i kończy się
+      wnioskami dotyczącymi doskonalenia systemu.</li>
+    <li><strong>Konfrontacja modelu z praktyką.</strong> Zestawienie tego, jak system ma
+      działać, z tym, jak działa (raporty, studia przypadków).</li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Analiza dokumentów strategicznych">
+    <p>
+      To metoda polegająca na systematycznej analizie aktów i dokumentów wyznaczających
+      politykę państwa (strategie, doktryny, ustawy, raporty). W bezpieczeństwie
+      narodowym dokumenty te są zarazem przedmiotem badania i źródłem – ujawniają
+      założony model działania systemu.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z bezpieczeństwa</h2>
+
+  <ol>
+    <li><strong>Analiza, nie streszczenie dokumentów.</strong> Czy praca ocenia system,
+      czy tylko referuje przepisy?</li>
+    <li><strong>Wyraźna teza.</strong> Czy postawiono twierdzenie, które analiza
+      udowadnia?</li>
+    <li><strong>Konfrontacja modelu z praktyką.</strong> Czy zestawiono założenia z
+      realnym działaniem (raporty, przypadki)?</li>
+    <li><strong>Wnioski/rekomendacje.</strong> Czy praca wskazuje konkretne kierunki
+      doskonalenia?</li>
+  </ol>
+
+  <h2>Typy prac magisterskich z bezpieczeństwa narodowego</h2>
+
+  <ul>
+    <li><strong>Analityczno-dokumentowa</strong> – analiza systemu, instytucji lub
+      dokumentów strategicznych. Najczęstszy wybór.</li>
+    <li><strong>Komparatystyczna</strong> – porównanie rozwiązań między państwami.</li>
+    <li><strong>Empiryczna</strong> – sondaż poczucia bezpieczeństwa lub badanie wśród
+      praktyków (służby, instytucje).</li>
+  </ul>
+
+  <h2>Struktura pracy analitycznej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – przedmiot, cel, <strong>teza</strong>, metoda</li>
+    <li>Rozdział teoretyczno-prawny – pojęcia i podstawy prawne</li>
+    <li>Rozdział metodologiczny – cel, problemy, metoda, baza źródłowa</li>
+    <li>Rozdział analityczny – analiza systemu i dokumentów</li>
+    <li>Zakończenie – wnioski i kierunki doskonalenia</li>
+    <li>Bibliografia · Wykaz aktów i dokumentów</li>
+  </ol>
+
+  <h2>Teza i konfrontacja modelu z praktyką</h2>
+
+  <blockquote>
+    <p>Postawiono tezę o potrzebie wzmocnienia koordynacji między szczeblami systemu
+      zarządzania kryzysowego (krajowym, wojewódzkim, powiatowym i gminnym). Analiza
+      raportów NIK ujawnia luki w koordynacji i ograniczenia zasobowe na poziomie
+      lokalnym.</p>
+  </blockquote>
+
+  <InfoBox variant="wskazowka" title="Zestaw model normatywny z praktyką">
+    <p>
+      Najmocniejsze prace z bezpieczeństwa nie poprzestają na opisie, jak system ma
+      działać według dokumentów. Konfrontują ten model z praktyką – raportami kontrolnymi
+      (NIK), studiami przypadków, danymi – i z tej różnicy wyprowadzają wnioski oraz
+      rekomendacje.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="przyklad" title="Streszczenie ustawy vs analiza systemu">
+    <p>
+      <strong>Wersja słabsza.</strong> Rozdział streszcza ustawę o zarządzaniu
+      kryzysowym, wymieniając kolejne organy. Brak oceny – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Praca pokazuje wieloszczeblową strukturę,
+      konfrontuje ją z raportami NIK ujawniającymi luki w koordynacji i formułuje
+      rekomendacje wzmocnienia współdziałania między szczeblami. Analiza i wnioski –
+      ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <h2>Wyniki – analiza struktury</h2>
+
+  <table>
+    <thead>
+      <tr><th>Szczebel</th><th>Organ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Krajowy</td><td>Rada Ministrów, RCB</td></tr>
+      <tr><td>Wojewódzki</td><td>Wojewoda</td></tr>
+      <tr><td>Powiatowy</td><td>Starosta</td></tr>
+      <tr><td>Gminny</td><td>Wójt / burmistrz / prezydent</td></tr>
+    </tbody>
+  </table>
+
+  <InfoBox variant="pulapka" title="Referowanie dokumentów zamiast analizy">
+    <p>
+      Najczęstszy błąd to przepisanie treści ustaw i strategii bez własnej analizy.
+      Recenzent oczekuje oceny: czy rozwiązania są spójne, gdzie są luki, jak je usunąć.
+      Dokument jest punktem wyjścia analizy, nie jej celem.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z bezpieczeństwa</h2>
+
+  <ul>
+    <li><strong>Streszczanie dokumentów</strong> – referat przepisów zamiast analizy
+      systemu.</li>
+    <li><strong>Brak konfrontacji z praktyką</strong> – tylko model normatywny, bez
+      raportów i przypadków.</li>
+    <li><strong>Brak tezy</strong> – praca opisowa bez własnego twierdzenia.</li>
+    <li><strong>Brak wniosków/rekomendacji</strong> – analiza bez kierunków
+      doskonalenia.</li>
+    <li><strong>Niespójne cytowanie</strong> – mieszanie stylów, brak wykazu aktów i
+      dokumentów.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca musi być analityczna?</h3>
+  <p>
+    Nie zawsze – obok prac analityczno-dokumentowych pisze się komparatystyczne i
+    empiryczne (sondaż poczucia bezpieczeństwa, badania wśród praktyków). Analiza systemu
+    i dokumentów jest jednak najczęstsza.
+  </p>
+
+  <h3>Skąd brać dokumenty i dane?</h3>
+  <p>
+    Z aktów prawnych (Dz.U.), dokumentów strategicznych (Strategia Bezpieczeństwa
+    Narodowego RP), raportów NIK i instytucji. Wykazuj je osobno jako źródła.
+  </p>
+
+  <h3>Czym różni się teza od hipotezy?</h3>
+  <p>
+    Hipoteza to przypuszczenie weryfikowane danymi (nauki empiryczne). Teza to
+    twierdzenie uzasadniane analizą. W pracy analitycznej stawia się tezę.
+  </p>
+
+  <h3>Jaki styl cytowania?</h3>
+  <p>
+    Najczęściej APA lub przypisy. Stosuj jeden styl konsekwentnie. Szczegóły w
+    przewodnikach o <a href="/poradniki/przypisy/">przypisach</a> i
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet – własną
+    analizę trzeba przeprowadzić samodzielnie.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całą analizę trzeba
+    przeprowadzić samodzielnie. Zacznij od
+    <a href="/tematy/bezpieczenstwo-narodowe/">wyboru tematu</a> i pobierz wzór powyżej,
+    żeby mieć gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

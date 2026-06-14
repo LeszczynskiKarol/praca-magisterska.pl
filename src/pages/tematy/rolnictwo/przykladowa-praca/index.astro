@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z rolnictwa – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z rolnictwa krok po kroku: schemat doświadczenia (czynniki, powtórzenia, układ bloków losowanych), warunki, analiza statystyczna ANOVA i NIR – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="14 min"
+  description="Przykładowa praca magisterska z rolnictwa krok po kroku: schemat doświadczenia (czynniki, powtórzenia, układ bloków losowanych), warunki, analiza statystyczna ANOVA i NIR oraz kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="18 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,10 +30,10 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z rolnictwa, to
     zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy na
     części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy konkretne
-    wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się na tym, co
-    odróżnia magisterkę z rolnictwa (i pokrewnych nauk przyrodniczych) od prac z innych
-    kierunków: na schemacie doświadczenia, warunkach jego prowadzenia i analizie
-    statystycznej wyników.
+    wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co patrzy
+    recenzent. Skupiamy się na tym, co odróżnia magisterkę z rolnictwa (i pokrewnych
+    nauk przyrodniczych) od prac z innych kierunków: na schemacie doświadczenia,
+    warunkach jego prowadzenia i analizie statystycznej wyników.
   </p>
 
   <p>
@@ -79,6 +80,37 @@ const relatedLinks = [
     </li>
   </ul>
 
+  <InfoBox variant="definicja" title="Schemat doświadczenia i NIR">
+    <p>
+      <strong>Schemat doświadczenia</strong> to plan eksperymentu: czynnik(i) i ich
+      poziomy, liczba powtórzeń i układ poletek (np. bloki losowane kompletne).
+      <strong>NIR (najmniejsza istotna różnica)</strong> to próg, powyżej którego
+      różnica między średnimi jest istotna statystycznie – podaje się ją w tabelach,
+      najczęściej przy p = 0,05.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę eksperymentalną</h2>
+
+  <ol>
+    <li>
+      <strong>Powtarzalny schemat.</strong> Czy opis doświadczenia pozwala je powtórzyć
+      (czynniki, powtórzenia, układ, wielkość poletka)?
+    </li>
+    <li>
+      <strong>Opisane warunki.</strong> Czy podano glebę, pogodę i agrotechnikę, bez
+      których wyników nie da się zinterpretować?
+    </li>
+    <li>
+      <strong>Poprawna statystyka.</strong> Czy zastosowano ANOVA i NIR, a tabele
+      zawierają jednostki i wartość NIR?
+    </li>
+    <li>
+      <strong>Wnioski w granicach danych.</strong> Czy wnioski wynikają z wyników i nie
+      uogólniają ponad zakres doświadczenia?
+    </li>
+  </ol>
+
   <h2>Struktura pracy eksperymentalnej</h2>
 
   <ol>
@@ -100,12 +132,14 @@ const relatedLinks = [
       120, 160 i 200 kg N·ha⁻¹. Powierzchnia poletka do zbioru wynosiła 15 m².</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> opis schematu musi pozwolić na powtórzenie doświadczenia.
-    Podaj czynniki i ich poziomy, liczbę powtórzeń, układ i wielkość poletka. To
-    odpowiednik opisu próby i narzędzi w pracach społecznych. Więcej w poradniku o
-    <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale metodologicznym</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Opis musi pozwolić powtórzyć doświadczenie">
+    <p>
+      Złota zasada nauk eksperymentalnych: czytelnik powinien móc odtworzyć Twoje
+      doświadczenie na podstawie opisu. Podaj czynniki i ich poziomy, liczbę powtórzeń,
+      układ i wielkość poletka. To odpowiednik opisu próby i narzędzi w pracach
+      społecznych.
+    </p>
+  </InfoBox>
 
   <h2>Analiza statystyczna – ANOVA i NIR</h2>
 
@@ -127,10 +161,23 @@ const relatedLinks = [
     </tbody>
   </table>
 
+  <InfoBox variant="przyklad" title="Same średnie vs średnie z NIR">
+    <p>
+      <strong>Wersja słabsza.</strong> „Przy 200 kg N plon (7,7) był wyższy niż przy 160
+      kg N (7,6), więc najwyższa dawka jest najlepsza." Wniosek bez NIR – błędny, ocena
+      niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Różnica między 160 a 200 kg N (0,1 t·ha⁻¹)
+      jest mniejsza niż NIR (0,4), więc nieistotna statystycznie; dalsze zwiększanie
+      dawki jest nieuzasadnione." Interpretacja z NIR – ocena wyższa.
+    </p>
+  </InfoBox>
+
   <p>
     <strong>Komentarz:</strong> wartość NIR (0,05) pozwala ocenić, które różnice są
-    istotne – tu różnica między 160 a 200 kg N·ha⁻¹ (0,1 t·ha⁻¹) jest mniejsza niż NIR,
-    więc nieistotna. To kluczowy element interpretacji wyników eksperymentu.
+    istotne. To kluczowy element interpretacji wyników eksperymentu – bez niego tabela
+    średnich niewiele mówi.
   </p>
 
   <h2>Najczęstsze błędy w pracy eksperymentalnej</h2>
@@ -166,6 +213,19 @@ const relatedLinks = [
   <p>
     Najczęściej ANOVA z testem post hoc (np. Tukeya) i wyznaczeniem NIR przy p = 0,05.
     Dobór testu zależy od układu doświadczenia i rodzaju danych.
+  </p>
+
+  <h3>Po co podawać warunki glebowe i pogodę?</h3>
+  <p>
+    Bo wyniki doświadczenia polowego zależą od warunków, w jakich je prowadzono. Bez ich
+    opisu nie da się zinterpretować plonu ani porównać badania z innymi – to część
+    warsztatu, którą recenzent sprawdza.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet – własne
+    doświadczenie trzeba zaprojektować, przeprowadzić i opracować samodzielnie.
   </p>
 
   <p>

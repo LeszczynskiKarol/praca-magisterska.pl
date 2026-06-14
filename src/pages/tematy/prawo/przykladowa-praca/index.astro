@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z prawa – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z prawa krok po kroku: metoda dogmatyczno-prawna, teza zamiast hipotez, cytowanie ustaw i orzecznictwa w przypisach, osobne wykazy źródeł i wnioski de lege ferenda – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="15 min"
+  description="Przykładowa praca magisterska z prawa krok po kroku: metoda dogmatyczno-prawna, teza zamiast hipotez, cytowanie ustaw i orzecznictwa w przypisach, osobne wykazy źródeł, kryteria oceny i wnioski de lege ferenda – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="20 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,10 +30,10 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z prawa, to
     zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
     na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
-    konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy
-    się na tym, co odróżnia magisterkę z prawa od prac z innych kierunków: na metodzie
-    dogmatyczno-prawnej, pracy ze źródłami prawa i orzecznictwem oraz na sposobie
-    cytowania w przypisach.
+    konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co
+    patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z prawa od prac z
+    innych kierunków: na metodzie dogmatyczno-prawnej, pracy ze źródłami prawa i
+    orzecznictwem oraz na sposobie cytowania w przypisach.
   </p>
 
   <p>
@@ -73,7 +74,7 @@ const relatedLinks = [
     <li>
       <strong>Trzy rodzaje źródeł.</strong> Akty normatywne (Konstytucja, ustawy,
       rozporządzenia), orzecznictwo (SN, TK, NSA, TSUE, ETPC) i doktryna (komentarze,
-      monografie, glosy, artykuły). Każde cytuje się inaczej.
+      monografie, glosy). Każde cytuje się inaczej.
     </li>
     <li>
       <strong>Rozbudowane przypisy dolne.</strong> Odwołania do przepisów i wyroków
@@ -81,6 +82,41 @@ const relatedLinks = [
       literatury, aktów prawnych i orzecznictwa.
     </li>
   </ul>
+
+  <InfoBox variant="definicja" title="Metoda dogmatyczno-prawna">
+    <p>
+      To podstawowa metoda nauk prawnych: badanie prawa „takim, jakie jest"
+      (obowiązujące normy) poprzez analizę tekstu aktu, poglądów doktryny i linii
+      orzeczniczej. Celem jest ustalenie znaczenia i zakresu zastosowania normy – nie
+      pomiar zjawiska społecznego.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z prawa</h2>
+
+  <p>
+    Recenzent prawniczy ocenia pracę przez pryzmat warsztatu jurydycznego. Cztery
+    rzeczy najczęściej decydują o ocenie:
+  </p>
+
+  <ol>
+    <li>
+      <strong>Analiza, nie referat.</strong> Czy praca prowadzi własny wywód i ocenę,
+      czy tylko streszcza przepisy i poglądy?
+    </li>
+    <li>
+      <strong>Wyraźna teza.</strong> Czy postawiono twierdzenie, które praca
+      udowadnia, a zakończenie do niego wraca?
+    </li>
+    <li>
+      <strong>Praca z orzecznictwem.</strong> Czy wyroki są analizowane (linia
+      orzecznicza, jej ewolucja), a nie tylko wyliczane?
+    </li>
+    <li>
+      <strong>Poprawność cytowania i aktualność.</strong> Czy akty i orzeczenia
+      cytowano prawidłowo (publikator, sygnatura) i czy stan prawny jest aktualny?
+    </li>
+  </ol>
 
   <h2>Typy prac magisterskich z prawa</h2>
 
@@ -135,11 +171,14 @@ const relatedLinks = [
       na analizie obowiązujących przepisów, poglądów doktryny i orzecznictwa.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> teza musi być twierdzeniem, które da się obronić
-    argumentami prawniczymi, a zakończenie ma do niej wrócić. O różnicy między celem,
-    pytaniami a tezą piszemy w poradniku o <a href="/poradniki/cel-pracy/">celu pracy</a>.
-  </p>
+  <InfoBox variant="definicja" title="De lege lata i de lege ferenda">
+    <p>
+      <strong>De lege lata</strong> – wnioski o stanie prawa obowiązującego (jak jest i
+      jak należy je interpretować). <strong>De lege ferenda</strong> – postulaty zmian
+      (jak prawo powinno wyglądać). Dobre zakończenie pracy prawniczej zawiera obie
+      warstwy i wraca do tezy ze wstępu.
+    </p>
+  </InfoBox>
 
   <h2>Cytowanie ustaw i orzeczeń w przypisach</h2>
 
@@ -164,19 +203,37 @@ const relatedLinks = [
     </li>
   </ul>
 
-  <p>
-    <strong>Komentarz:</strong> orzecznictwo nie jest ozdobnikiem – w pracy
-    dogmatycznej to materiał badawczy, który analizujesz, a nie tylko wyliczasz. Zasady
-    przypisów i ich rodzaje omawiamy w poradniku o <a href="/poradniki/przypisy/">przypisach</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Sprawdź aktualny tekst jednolity">
+    <p>
+      Przed złożeniem pracy zweryfikuj, czy powołane przepisy nie zostały zmienione lub
+      uchylone, i czy podajesz aktualny publikator (tekst jednolity). Powołanie
+      nieobowiązującego przepisu to poważny błąd merytoryczny. Korzystaj z systemów
+      informacji prawnej (np. LEX, Legalis).
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Referat vs analiza">
+    <p>
+      <strong>Wersja słabsza.</strong> Rozdział o przesłankach zadośćuczynienia
+      streszcza kolejno art. 445 i 448 k.c. oraz cytuje pięć wyroków „dla przykładu",
+      bez ich omówienia. Brak tezy, brak własnej oceny. To referat – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Ten sam rozdział rekonstruuje linię
+      orzeczniczą SN co do kryteriów „odpowiedniej sumy", pokazuje jej ewolucję,
+      konfrontuje stanowiska doktryny i formułuje własną ocenę powiązaną z tezą pracy.
+      To analiza – ocena wyższa.
+    </p>
+  </InfoBox>
 
   <h2>Zakończenie – de lege lata i de lege ferenda</h2>
 
   <p>
-    Charakterystyczne dla prawa zakończenie dzieli wnioski na dwie warstwy:
-    <strong>de lege lata</strong> (ocena obowiązującego stanu prawnego) oraz
-    <strong>de lege ferenda</strong> (postulaty zmian w prawie). Wnioski muszą wprost
-    odnosić się do tezy postawionej we wstępie.
+    Charakterystyczne dla prawa zakończenie dzieli wnioski na dwie warstwy: ocenę
+    obowiązującego stanu prawnego oraz postulaty zmian. Wnioski muszą wprost odnosić
+    się do tezy postawionej we wstępie.
   </p>
 
   <h2>Najczęstsze błędy w pracy magisterskiej z prawa</h2>
@@ -214,6 +271,20 @@ const relatedLinks = [
     Akty prawne i orzeczenia – w przypisach dolnych, według utrwalonych formuł (Dz.U.,
     sygnatura). Na końcu tworzy się trzy osobne wykazy. Szczegóły w poradnikach o
     <a href="/poradniki/przypisy/">przypisach</a> i <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Jak analizować orzecznictwo, a nie tylko je cytować?</h3>
+  <p>
+    Pokaż linię orzeczniczą: jak sądy rozumieją dany przepis, czy stanowisko jest
+    jednolite, jak ewoluowało i jakie argumenty za nim stoją. Skonfrontuj je z
+    doktryną i z własną tezą – to odróżnia analizę od wyliczanki.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy, a skopiowane fragmenty
+    zostaną wykryte. Wzór to szkielet i punkt odniesienia, na którym napiszesz własną
+    pracę w oparciu o aktualny stan prawny i orzecznictwo.
   </p>
 
   <p>

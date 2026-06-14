@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z informatyki – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z informatyki krok po kroku: analiza wymagań zamiast hipotez, projekt (architektura, model danych, UML), implementacja i testy – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="14 min"
+  description="Przykładowa praca magisterska z informatyki krok po kroku: analiza wymagań zamiast hipotez, projekt (architektura, model danych, UML), implementacja, testy i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="18 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,9 +30,9 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z informatyki,
     to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
     na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
-    konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się
-    na tym, co odróżnia magisterkę z informatyki od prac z innych kierunków: na analizie
-    wymagań, projekcie systemu, implementacji i testach.
+    konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co
+    patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z informatyki od prac
+    z innych kierunków: na analizie wymagań, projekcie systemu, implementacji i testach.
   </p>
 
   <p>
@@ -80,6 +81,37 @@ const relatedLinks = [
     </li>
   </ul>
 
+  <InfoBox variant="definicja" title="Wymagania funkcjonalne i niefunkcjonalne">
+    <p>
+      <strong>Wymagania funkcjonalne</strong> opisują, <em>co</em> system ma robić
+      (rejestracja, wyszukiwanie, raporty). <strong>Wymagania niefunkcjonalne</strong>
+      opisują, <em>jak</em> ma działać (czas odpowiedzi, liczba użytkowników,
+      bezpieczeństwo, użyteczność). W informatyce to one zastępują hipotezy i stają się
+      kryterium oceny gotowego systemu.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z informatyki</h2>
+
+  <ol>
+    <li>
+      <strong>Mierzalne wymagania.</strong> Czy wymagania (zwłaszcza niefunkcjonalne) są
+      konkretne i sprawdzalne?
+    </li>
+    <li>
+      <strong>Udokumentowany projekt.</strong> Czy są architektura, model danych i
+      diagramy UML z uzasadnieniem decyzji?
+    </li>
+    <li>
+      <strong>Testy zestawione z wymaganiami.</strong> Czy praca pokazuje, które
+      wymagania spełniono i w jakim stopniu?
+    </li>
+    <li>
+      <strong>Listingi, nie zrzuty plików.</strong> Czy kod prezentowany jest fragmentami
+      kluczowych funkcji, z opisem?
+    </li>
+  </ol>
+
   <h2>Typy prac magisterskich z informatyki</h2>
 
   <ul>
@@ -117,16 +149,17 @@ const relatedLinks = [
   <blockquote>
     <p><strong>Funkcjonalne:</strong> rejestracja i logowanie, katalogowanie pozycji,
       wyszukiwanie, rejestracja wypożyczeń i zwrotów, raporty.</p>
-    <p><strong>Niefunkcjonalne:</strong> czas odpowiedzi &lt; 1 s, obsługa 100
+    <p><strong>Niefunkcjonalne:</strong> czas odpowiedzi poniżej 1 s, obsługa 100
       równoczesnych użytkowników, szyfrowanie haseł, responsywność.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> dobrze sformułowane, mierzalne wymagania to podstawa –
-    do nich wracasz przy ocenie systemu. Wymaganie „system ma być szybki" jest złe;
-    „czas odpowiedzi poniżej 1 s przy 100 użytkownikach" – dobre. O formułowaniu celu i
-    zakresu piszemy w poradniku o <a href="/poradniki/cel-pracy/">celu pracy</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Wymaganie musi być mierzalne">
+    <p>
+      „System ma być szybki" to złe wymaganie – nie da się go sprawdzić. „Czas
+      odpowiedzi poniżej 1 s przy 100 równoczesnych użytkownikach" – dobre, bo wprost
+      przekłada się na test. Do mierzalnych wymagań wracasz w rozdziale o testach.
+    </p>
+  </InfoBox>
 
   <h2>Projekt – architektura i model danych</h2>
 
@@ -146,10 +179,29 @@ const relatedLinks = [
     </tbody>
   </table>
 
-  <p>
-    <strong>Komentarz:</strong> w tekście opisuj i uzasadniaj decyzje projektowe, a
-    diagramy (UML, ERD) numeruj i podpisuj. To projekt, nie zrzut narzędzia.
-  </p>
+  <InfoBox variant="pulapka" title="Sama implementacja bez projektu">
+    <p>
+      Najczęstszy błąd to przejście od razu do kodu, z pominięciem analizy wymagań i
+      projektu (architektury, modelu danych, UML). Praca inżynierska dokumentuje
+      <em>decyzje projektowe</em> i ich uzasadnienie – sam działający program bez tej
+      dokumentacji to za mało na ocenę bardzo dobrą.
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam system, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="'Działa u mnie' vs udokumentowana weryfikacja">
+    <p>
+      <strong>Wersja słabsza.</strong> Praca opisuje gotową aplikację i kończy się
+      stwierdzeniem „system działa poprawnie", bez testów i bez odniesienia do wymagań.
+      Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Praca zawiera testy jednostkowe (pokrycie 84%),
+      integracyjne i wydajnościowe (śr. czas odpowiedzi 320 ms przy 100 użytkownikach) i
+      wprost zestawia wyniki z wymaganiami z rozdziału 1. Ocena wyższa.
+    </p>
+  </InfoBox>
 
   <h2>Testy – weryfikacja rozwiązania</h2>
 
@@ -204,10 +256,24 @@ const relatedLinks = [
     oceny gotowego systemu w rozdziale o testach.
   </p>
 
+  <h3>Jak prezentować kod w pracy?</h3>
+  <p>
+    Listingami kluczowych fragmentów (z numerem i podpisem), a nie zrzutami całych
+    plików. Kod ilustruje istotne decyzje implementacyjne; całość trafia do
+    repozytorium, do którego można się odwołać.
+  </p>
+
   <h3>Jaki styl cytowania w informatyce?</h3>
   <p>
     Często IEEE (numeryczny) lub APA. Powołuj się też na dokumentację technologii i
     normy. Szczegóły w przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy, a kod jest dodatkowo
+    sprawdzany. Wzór to szkielet – własny system trzeba zaprojektować i zaimplementować
+    samodzielnie.
   </p>
 
   <p>

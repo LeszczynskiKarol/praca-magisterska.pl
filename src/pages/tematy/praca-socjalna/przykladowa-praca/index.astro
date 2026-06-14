@@ -1,0 +1,220 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Praca socjalna", href: "/tematy/praca-socjalna/" },
+  { label: "Przykładowa praca", href: "/tematy/praca-socjalna/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z pracy socjalnej", href: "/tematy/praca-socjalna/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Metody i techniki badawcze", href: "/poradniki/metodologia/metody-i-techniki-badawcze/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z pracy socjalnej – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z pracy socjalnej krok po kroku: diagnoza problemu społecznego, metoda sondażu, wnioski dla praktyki socjalnej, etyka badań z grupami wrażliwymi i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z pracy
+    socjalnej, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej
+    rozkładamy na części przykładową pracę – pokazujemy zawartość każdego rozdziału,
+    wklejamy konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy,
+    na co patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z pracy socjalnej
+    od prac z innych kierunków: na wymiarze aplikacyjnym i na etyce badań z grupami
+    wrażliwymi.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę diagnostyczno-aplikacyjną –
+    <strong>„Wsparcie osób doświadczających bezdomności w opinii pracowników
+    socjalnych"</strong>. To typowy dla pracy socjalnej schemat: diagnoza problemu i
+    barier wsparcia oraz wnioski dla praktyki.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet diagnostyczno-aplikacyjnej pracy magisterskiej z pracy socjalnej: strona tytułowa, streszczenie, spis treści, wstęp, część teoretyczna, metodologia, wyniki z tabelą, wnioski dla praktyki socjalnej, zakończenie, bibliografia i aneks. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-praca-socjalna.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-praca-socjalna.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z pracy socjalnej</h2>
+
+  <p>
+    Praca socjalna to dyscyplina stosowana – jej celem jest realne wsparcie ludzi.
+    Magisterka zwykle łączy <strong>diagnozę problemu społecznego</strong> z
+    <strong>wnioskami dla praktyki</strong>. Z tego wynikają cechy nietypowe na tle
+    innych kierunków:
+  </p>
+
+  <ul>
+    <li><strong>Wymiar aplikacyjny.</strong> Praca kończy się wnioskami dla praktyki
+      socjalnej lub polityki społecznej, nie tylko poznawczymi.</li>
+    <li><strong>Badanie wrażliwych grup.</strong> Respondentami bywają beneficjenci
+      pomocy lub pracownicy socjalni – stąd szczególna dbałość o etykę.</li>
+    <li><strong>Metoda sondażu (często mieszana).</strong> Ankieta uzupełniana wywiadem,
+      by uchwycić zarówno skalę, jak i kontekst.</li>
+    <li><strong>Osadzenie w polityce społecznej.</strong> Odniesienie do systemu pomocy
+      społecznej i regulacji (ustawa o pomocy społecznej).</li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Praca diagnostyczno-aplikacyjna">
+    <p>
+      To praca, która najpierw <strong>diagnozuje</strong> problem lub potrzebę
+      (badaniem), a następnie formułuje <strong>wnioski dla praktyki</strong> –
+      propozycje usprawnienia wsparcia. Łączy poznanie z działaniem, co jest istotą
+      pracy socjalnej.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z pracy socjalnej</h2>
+
+  <ol>
+    <li><strong>Trafna diagnoza.</strong> Czy badanie rzetelnie rozpoznaje problem i jego
+      bariery?</li>
+    <li><strong>Wnioski dla praktyki.</strong> Czy praca daje konkretne, wykonalne
+      propozycje, a nie ogólniki?</li>
+    <li><strong>Etyka badań.</strong> Czy zadbano o dobrowolność, anonimowość i godność
+      uczestników (zwłaszcza grup wrażliwych)?</li>
+    <li><strong>Powiązanie z systemem.</strong> Czy diagnoza jest osadzona w realiach
+      systemu pomocy społecznej?</li>
+  </ol>
+
+  <h2>Struktura pracy diagnostyczno-aplikacyjnej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp</li>
+    <li>Rozdział teoretyczny – problem społeczny i system wsparcia</li>
+    <li>Rozdział metodologiczny – cel, problemy, metoda–technika–narzędzie, próba, etyka</li>
+    <li>Rozdział empiryczny – analiza wyników</li>
+    <li><strong>Wnioski dla praktyki socjalnej</strong></li>
+    <li>Zakończenie</li>
+    <li>Bibliografia (APA) · Aneks (kwestionariusz)</li>
+  </ol>
+
+  <h2>Metodologia i etyka badań</h2>
+
+  <blockquote>
+    <p>Zastosowano metodę sondażu diagnostycznego (technika ankiety i wywiadu).
+      Badaniem objęto 70 pracowników socjalnych. Udział był dobrowolny i anonimowy.</p>
+  </blockquote>
+
+  <InfoBox variant="wskazowka" title="Etyka przy grupach wrażliwych">
+    <p>
+      Jeśli badasz beneficjentów pomocy (osoby w kryzysie, dzieci, osoby z
+      niepełnosprawnościami), szczególnie zadbaj o świadomą zgodę, anonimowość i
+      poszanowanie godności. Rozważ zgodę odpowiedniej komisji i unikaj pytań, które
+      mogłyby wtórnie krzywdzić. To element oceniany przez recenzenta.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="przyklad" title="Diagnoza bez wniosków vs z wnioskami dla praktyki">
+    <p>
+      <strong>Wersja słabsza.</strong> Praca pokazuje, że 84% to wsparcie interwencyjne, i
+      kończy się stwierdzeniem „wsparcie jest potrzebne". Brak wymiaru aplikacyjnego –
+      ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Skoro dominuje pomoc interwencyjna, a
+      reintegracja zawodowa jest rzadka (39%), rekomenduje się wzmocnienie programów
+      reintegracyjnych i wsparcia psychologicznego oraz zmiany kadrowe." Konkretne
+      wnioski dla praktyki – ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <h2>Wyniki i wnioski dla praktyki</h2>
+
+  <table>
+    <thead>
+      <tr><th>Forma wsparcia</th><th>Stosuje często (%)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pomoc interwencyjna</td><td>84</td></tr>
+      <tr><td>Wsparcie finansowe</td><td>61</td></tr>
+      <tr><td>Reintegracja zawodowa</td><td>39</td></tr>
+      <tr><td>Wsparcie psychologiczne</td><td>33</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Komentarz:</strong> wnioski dla praktyki muszą wynikać z wyników i być
+    wykonalne w realiach systemu pomocy społecznej. To pracownosocjalny odpowiednik
+    „rekomendacji".
+  </p>
+
+  <InfoBox variant="pulapka" title="Same liczby bez działania">
+    <p>
+      Praca socjalna z definicji zmierza do działania. Zatrzymanie się na opisie wyników,
+      bez przełożenia ich na wnioski dla praktyki, to najczęstsza słabość tych prac –
+      brakuje tego, co dla dyscypliny najważniejsze.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z pracy socjalnej</h2>
+
+  <ul>
+    <li><strong>Brak wniosków dla praktyki</strong> – praca kończy się na opisie
+      wyników.</li>
+    <li><strong>Zaniedbana etyka</strong> – badanie grup wrażliwych bez dbałości o zgodę
+      i godność.</li>
+    <li><strong>Oderwanie od systemu</strong> – diagnoza bez odniesienia do realiów
+      pomocy społecznej.</li>
+    <li><strong>Mylenie metody, techniki i narzędzia</strong> – błąd metodologiczny.</li>
+    <li><strong>Niespójna bibliografia</strong> – mieszanie stylów cytowania.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Kogo badać – beneficjentów czy pracowników?</h3>
+  <p>
+    Zależy od celu. Pracownicy socjalni dają wgląd w funkcjonowanie systemu, beneficjenci
+    – w doświadczenie wsparcia. Badanie beneficjentów wymaga większej dbałości o etykę.
+  </p>
+
+  <h3>Czy praca musi mieć część aplikacyjną?</h3>
+  <p>
+    W pracy socjalnej tak – wnioski dla praktyki to istota dyscypliny. Powinny wynikać z
+    diagnozy i być wykonalne w realiach pomocy społecznej.
+  </p>
+
+  <h3>Jakie metody badawcze wybrać?</h3>
+  <p>
+    Najczęściej sondaż diagnostyczny (ankieta), często łączony z wywiadem dla pogłębienia
+    kontekstu. Dobór techniki wynika z problemu badawczego.
+  </p>
+
+  <h3>Jaki styl cytowania?</h3>
+  <p>
+    Najczęściej APA. Powołuj się też na akty prawne (ustawa o pomocy społecznej). Zasady
+    w przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet – własne
+    badanie i wnioski trzeba opracować samodzielnie.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całe badanie trzeba
+    zaprojektować i opisać samodzielnie. Zacznij od
+    <a href="/tematy/praca-socjalna/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>

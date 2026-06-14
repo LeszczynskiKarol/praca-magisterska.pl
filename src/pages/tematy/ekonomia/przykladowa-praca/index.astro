@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z ekonomii – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z ekonomii krok po kroku: dane wtórne (GUS, Eurostat, NBP), specyfikacja i estymacja modelu ekonometrycznego, weryfikacja statystyczna i interpretacja – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="14 min"
+  description="Przykładowa praca magisterska z ekonomii krok po kroku: dane wtórne (GUS, Eurostat, NBP), specyfikacja i estymacja modelu ekonometrycznego, weryfikacja statystyczna, interpretacja i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="19 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,9 +30,9 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z ekonomii, to
     zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy na
     części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy konkretne
-    wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się na tym, co
-    odróżnia magisterkę z ekonomii od prac z innych kierunków: na pracy z danymi wtórnymi
-    i na modelu ekonometrycznym.
+    wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co patrzy
+    recenzent. Skupiamy się na tym, co odróżnia magisterkę z ekonomii od prac z innych
+    kierunków: na pracy z danymi wtórnymi i na modelu ekonometrycznym.
   </p>
 
   <p>
@@ -79,6 +80,54 @@ const relatedLinks = [
     </li>
   </ul>
 
+  <InfoBox variant="definicja" title="Dane wtórne i model ekonometryczny">
+    <p>
+      <strong>Dane wtórne</strong> to dane zebrane wcześniej przez instytucje (GUS,
+      Eurostat, NBP) – w ekonomii korzysta się z nich zamiast prowadzić własną ankietę.
+      <strong>Model ekonometryczny</strong> to formalny zapis zależności między
+      zmienną objaśnianą a objaśniającymi, którego parametry szacuje się statystycznie
+      (najczęściej metodą najmniejszych kwadratów, MNK).
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z ekonomii</h2>
+
+  <ol>
+    <li>
+      <strong>Dobór zmiennych oparty na teorii.</strong> Czy zmienne objaśniające
+      wynikają z teorii ekonomii i przeglądu badań, a nie „z wyczucia"?
+    </li>
+    <li>
+      <strong>Poprawna specyfikacja i estymacja.</strong> Czy podano postać modelu,
+      metodę estymacji i źródło danych?
+    </li>
+    <li>
+      <strong>Weryfikacja modelu.</strong> Czy zbadano istotność parametrów, R², test F
+      i założenia MNK (autokorelacja, heteroskedastyczność, normalność reszt)?
+    </li>
+    <li>
+      <strong>Interpretacja zgodna z teorią.</strong> Czy znaki parametrów są
+      skonfrontowane z teorią, bez wniosków przyczynowych z samej korelacji?
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z ekonomii</h2>
+
+  <ul>
+    <li>
+      <strong>Ekonometryczna</strong> – budowa i estymacja modelu na danych wtórnych.
+      Najczęstszy wybór ujęcia ilościowego.
+    </li>
+    <li>
+      <strong>Analityczno-statystyczna</strong> – analiza opisowa zjawiska (trendy,
+      dynamika, struktura) bez pełnego modelu ekonometrycznego.
+    </li>
+    <li>
+      <strong>Teoretyczno-przeglądowa</strong> – analiza koncepcji i stanu badań;
+      rzadziej jako samodzielna magisterka.
+    </li>
+  </ul>
+
   <h2>Struktura pracy ekonometrycznej</h2>
 
   <ol>
@@ -105,12 +154,28 @@ const relatedLinks = [
       wynagrodzenie, ε – składnik losowy.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> dobór zmiennych objaśniających uzasadnij teorią ekonomii
-    i przeglądem badań. Podaj postać funkcyjną i metodę estymacji (np. klasyczna MNK).
-    Więcej o budowie części metodycznej w poradniku o
-    <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale metodologicznym</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Skąd brać dane">
+    <p>
+      Korzystaj ze statystyki publicznej: Bank Danych Lokalnych GUS, Eurostat, NBP,
+      OECD. Zawsze podaj źródło, zakres czasowy i częstotliwość (dane roczne/kwartalne)
+      oraz ewentualne przekształcenia (urealnienie, logarytmowanie, odsezonowanie).
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Opis vs model">
+    <p>
+      <strong>Wersja słabsza.</strong> Praca pokazuje wykres stopy bezrobocia i opisuje
+      „w 2015 spadło, w 2020 wzrosło". To analiza opisowa bez modelu i bez weryfikacji –
+      ocena niższa dla pracy zapowiadanej jako ilościowa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Praca specyfikuje model regresji, estymuje go
+      MNK, weryfikuje (R², test t i F, Durbin–Watson) i interpretuje znaki parametrów w
+      świetle teorii (prawo Okuna). To pełna analiza ekonometryczna – ocena wyższa.
+    </p>
+  </InfoBox>
 
   <h2>Estymacja i weryfikacja modelu</h2>
 
@@ -130,12 +195,20 @@ const relatedLinks = [
     </tbody>
   </table>
 
+  <InfoBox variant="pulapka" title="Korelacja to nie przyczynowość">
+    <p>
+      Istotny parametr w modelu nie dowodzi, że zmienna „powoduje" zmianę bezrobocia.
+      Mów o zależności statystycznej i konfrontuj znak parametru z teorią. Pamiętaj też
+      o badaniu założeń MNK – pominięcie testu autokorelacji (Durbina–Watsona) to częsta
+      uwaga recenzenta przy szeregach czasowych.
+    </p>
+  </InfoBox>
+
   <p>
     <strong>Komentarz:</strong> oceniasz istotność parametrów (test t), dopasowanie (R²),
-    istotność łączną (test F) i założenia MNK (m.in. autokorelację testem
-    Durbina–Watsona). Znaki parametrów konfrontujesz z teorią – tu ujemny wpływ PKB na
-    bezrobocie jest zgodny z prawem Okuna. Zmienna nieistotna (wynagrodzenie) może zostać
-    usunięta.
+    istotność łączną (test F) i założenia MNK. Znaki parametrów konfrontujesz z teorią –
+    tu ujemny wpływ PKB na bezrobocie jest zgodny z prawem Okuna. Zmienna nieistotna
+    (wynagrodzenie) może zostać usunięta.
   </p>
 
   <h2>Najczęstsze błędy w pracy magisterskiej z ekonomii</h2>
@@ -166,10 +239,22 @@ const relatedLinks = [
     podaj źródło, zakres czasowy i częstotliwość oraz ewentualne przekształcenia danych.
   </p>
 
+  <h3>W jakim programie liczyć model?</h3>
+  <p>
+    Najczęściej w darmowym GRETL-u, w SPSS, Statistice lub w R/Pythonie. Ważne, by w
+    pracy opisać metodę estymacji i przeprowadzone testy, niezależnie od narzędzia.
+  </p>
+
   <h3>Jaki styl cytowania w ekonomii?</h3>
   <p>
     Najczęściej Harvard lub APA. Stosuj jeden styl konsekwentnie. Zasady i przykłady w
     przewodniku o <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet i punkt
+    odniesienia, na którym przeprowadzisz własną analizę na własnych danych.
   </p>
 
   <p>

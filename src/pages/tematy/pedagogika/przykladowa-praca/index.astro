@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z pedagogiki – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z pedagogiki krok po kroku: pedagogiczne ujęcie metodologii (metoda, technika, narzędzie), badanie ilościowo-jakościowe, problemy badawcze i implikacje pedagogiczne – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="14 min"
+  description="Przykładowa praca magisterska z pedagogiki krok po kroku: pedagogiczne ujęcie metodologii (metoda, technika, narzędzie), badanie ilościowo-jakościowe, problemy badawcze, implikacje pedagogiczne i kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="19 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,10 +30,10 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z pedagogiki,
     to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
     na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
-    konkretne wycinki i tłumaczymy, dlaczego zostały napisane właśnie tak. Skupiamy się
-    na tym, co odróżnia magisterkę z pedagogiki od prac z innych kierunków: na
-    klasycznym ujęciu metodologii (metoda – technika – narzędzie), mieszanym charakterze
-    badań i implikacjach dla praktyki edukacyjnej.
+    konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co
+    patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z pedagogiki od prac
+    z innych kierunków: na klasycznym ujęciu metodologii (metoda – technika –
+    narzędzie), mieszanym charakterze badań i implikacjach dla praktyki edukacyjnej.
   </p>
 
   <p>
@@ -80,6 +81,37 @@ const relatedLinks = [
     </li>
   </ul>
 
+  <InfoBox variant="definicja" title="Metoda – technika – narzędzie">
+    <p>
+      <strong>Metoda</strong> to ogólny sposób postępowania badawczego (np. sondaż
+      diagnostyczny). <strong>Technika</strong> to konkretna czynność zbierania danych
+      (ankieta, wywiad, obserwacja, analiza wytworów). <strong>Narzędzie</strong> to
+      instrument realizujący technikę (kwestionariusz ankiety, arkusz obserwacji). Te
+      trzy poziomy trzeba w pracy wyraźnie rozróżnić.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z pedagogiki</h2>
+
+  <ol>
+    <li>
+      <strong>Poprawna metodologia.</strong> Czy metoda, technika i narzędzie są
+      prawidłowo rozróżnione i dobrane do problemu?
+    </li>
+    <li>
+      <strong>Adekwatne pytania/hipotezy.</strong> Czy w badaniu diagnostycznym
+      postawiono problemy badawcze (a nie hipotezy „na siłę")?
+    </li>
+    <li>
+      <strong>Powiązanie teorii z badaniem.</strong> Czy część teoretyczna prowadzi do
+      problemu, a wyniki do niej wracają?
+    </li>
+    <li>
+      <strong>Implikacje pedagogiczne.</strong> Czy praca daje konkretne wnioski dla
+      praktyki, a nie kończy się na samych wynikach?
+    </li>
+  </ol>
+
   <h2>Metoda, technika, narzędzie – kluczowe rozróżnienie</h2>
 
   <p>
@@ -97,12 +129,14 @@ const relatedLinks = [
     </tbody>
   </table>
 
-  <p>
-    <strong>Komentarz:</strong> inne częste techniki to obserwacja, analiza dokumentów i
-    analiza wytworów (np. prac dzieci). Dobór techniki wynika z problemu badawczego.
-    Szerzej w poradniku o <a href="/poradniki/metodologia/metody-i-techniki-badawcze/">metodach
-    i technikach badawczych</a>.
-  </p>
+  <InfoBox variant="pulapka" title="Mylenie metody z techniką">
+    <p>
+      Zdanie „metodą badawczą była ankieta" to błąd – ankieta jest techniką, nie
+      metodą. Metodą jest sondaż diagnostyczny, a ankieta to jego technika realizowana
+      kwestionariuszem. To rozróżnienie (za Pilchem i Łobockim) recenzent sprawdza w
+      pierwszej kolejności.
+    </p>
+  </InfoBox>
 
   <h2>Struktura empirycznej pracy z pedagogiki</h2>
 
@@ -128,13 +162,29 @@ const relatedLinks = [
       nauczyciele oceniają ich skuteczność?</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> w badaniu diagnostycznym jak to, problemy badawcze są
-    naturalniejsze niż hipotezy. Jeśli badanie ma charakter weryfikacyjny (sprawdza
-    zależność), wtedy formułuje się hipotezy. Więcej w poradniku o
-    <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
-    metodologicznym</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Problemy badawcze czy hipotezy">
+    <p>
+      Jeśli badanie <em>rozpoznaje</em> stan rzeczy (jak często, jakie bariery) –
+      stawiaj problemy badawcze. Jeśli <em>sprawdza zależność</em> (czy X wiąże się z Y)
+      – formułuj hipotezy. Dobierz to do celu pracy, nie odwrotnie.
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Sama ankieta vs badanie mieszane">
+    <p>
+      <strong>Wersja słabsza.</strong> Tylko ankieta z pytaniami zamkniętymi; wyniki to
+      same procenty bez głębszej interpretacji. Zakończenie: „nauczyciele stosują metody
+      aktywizujące". Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Ankieta uzupełniona wywiadem (badanie
+      mieszane): dane liczbowe pokazują <em>co</em>, a wypowiedzi nauczycieli wyjaśniają
+      <em>dlaczego</em> (np. bariera czasochłonności). Zakończenie zawiera implikacje
+      pedagogiczne dla doskonalenia nauczycieli. Ocena wyższa.
+    </p>
+  </InfoBox>
 
   <h2>Wyniki i implikacje pedagogiczne</h2>
 
@@ -197,6 +247,19 @@ const relatedLinks = [
     Tak – badania z udziałem uczniów wymagają zgody rodziców/opiekunów oraz dyrekcji
     szkoły. Jeśli badasz wyłącznie nauczycieli, wystarczy ich dobrowolna, anonimowa
     zgoda.
+  </p>
+
+  <h3>Jakie techniki badawcze wybrać?</h3>
+  <p>
+    Najczęstsze w pedagogice to ankieta, wywiad, obserwacja, analiza dokumentów i
+    analiza wytworów (np. prac dzieci). Dobór techniki wynika z problemu badawczego –
+    często łączy się dwie, by uzyskać badanie mieszane.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet i punkt
+    odniesienia, na którym napiszesz własną pracę – z własnym badaniem i wnioskami.
   </p>
 
   <p>

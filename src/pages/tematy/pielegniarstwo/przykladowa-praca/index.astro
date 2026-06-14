@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -20,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z pielęgniarstwa – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z pielęgniarstwa krok po kroku: typy prac, standaryzowane skale (AIS, WHOQOL, Barthel, Norton), zgoda komisji bioetycznej, proces pielęgnowania i styl Vancouver – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="15 min"
+  description="Przykładowa praca magisterska z pielęgniarstwa krok po kroku: typy prac, standaryzowane skale (AIS, WHOQOL, Barthel, Norton, NRS), zgoda komisji bioetycznej, proces pielęgnowania, diagnozy ICNP i styl Vancouver – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="20 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -29,10 +30,11 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z
     pielęgniarstwa, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie.
     Poniżej rozkładamy na części przykładową pracę – pokazujemy zawartość każdego
-    rozdziału, wklejamy konkretne wycinki i tłumaczymy, dlaczego zostały napisane
-    właśnie tak. Skupiamy się na tym, co odróżnia magisterkę z pielęgniarstwa od
-    prac z innych kierunków: na praktyce opartej na dowodach, standaryzowanych
-    skalach klinicznych i wymogach etycznych badań z udziałem pacjentów.
+    rozdziału, wklejamy konkretne wycinki, porównujemy lepsze i gorsze rozwiązania
+    oraz tłumaczymy, na co patrzy recenzent. Skupiamy się na tym, co odróżnia
+    magisterkę z pielęgniarstwa od prac z innych kierunków: na praktyce opartej na
+    dowodach, standaryzowanych skalach klinicznych i wymogach etycznych badań z
+    udziałem pacjentów.
   </p>
 
   <p>
@@ -64,8 +66,9 @@ const relatedLinks = [
     <li>
       <strong>Standaryzowane skale kliniczne.</strong> Zmienne mierzy się uznanymi,
       zwalidowanymi narzędziami: AIS (akceptacja choroby), WHOQOL-BREF (jakość
-      życia), skala Barthel (samodzielność), skala Norton (ryzyko odleżyn), NRS/VAS
-      (ból), MNA (stan odżywienia). Dobór skali zależy od problemu.
+      życia), skala Barthel i ADL (samodzielność), skala Norton (ryzyko odleżyn),
+      NRS/VAS (ból), GCS (świadomość), MNA (stan odżywienia). Dobór skali zależy od
+      problemu.
     </li>
     <li>
       <strong>Badania na populacji klinicznej.</strong> Respondentami są zwykle
@@ -82,6 +85,46 @@ const relatedLinks = [
     </li>
   </ul>
 
+  <InfoBox variant="definicja" title="Praca kazuistyczna a empiryczna">
+    <p>
+      <strong>Praca kazuistyczna (studium przypadku)</strong> opiera się na analizie
+      jednego pacjenta i przeprowadzeniu pełnego procesu pielęgnowania.
+      <strong>Praca empiryczna (badawcza)</strong> bada grupę pacjentów za pomocą
+      standaryzowanych skal i analizy statystycznej. Na licencjacie częstsza jest
+      kazuistyka, na magisterce – badanie empiryczne; o formacie decyduje regulamin
+      wydziału.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z pielęgniarstwa</h2>
+
+  <p>
+    Recenzent w naukach o zdrowiu ocenia pracę przez pryzmat warsztatu klinicznego i
+    badawczego. Cztery rzeczy decydują o wysokiej ocenie, a studenci najczęściej na
+    nich tracą:
+  </p>
+
+  <ol>
+    <li>
+      <strong>Trafny dobór skal.</strong> Czy konstrukty zmierzono uznanymi,
+      zwalidowanymi narzędziami właściwymi dla problemu – i czy podano ich rzetelność
+      (α Cronbacha)?
+    </li>
+    <li>
+      <strong>Strona etyczna.</strong> Czy opisano zgodę komisji bioetycznej, zgodę
+      placówki i świadomą zgodę pacjentów? Brak tego to najczęstsza uwaga.
+    </li>
+    <li>
+      <strong>Hierarchia problemów (w studium przypadku).</strong> Czy problemy
+      pielęgnacyjne uszeregowano według zagrożenia życia i zdrowia, a nie
+      przypadkowo?
+    </li>
+    <li>
+      <strong>Wnioski jako zalecenia dla praktyki.</strong> Czy praca daje konkretne
+      wskazówki dla praktyki pielęgniarskiej, a nie ogólne „opieka była właściwa"?
+    </li>
+  </ol>
+
   <h2>Typy prac magisterskich z pielęgniarstwa</h2>
 
   <ul>
@@ -92,8 +135,7 @@ const relatedLinks = [
     </li>
     <li>
       <strong>Praca kazuistyczna (studium przypadku)</strong> – pogłębiona analiza
-      jednego pacjenta z przeprowadzeniem pełnego procesu pielęgnowania. Częstsza na
-      licencjacie, na magisterce stosowana rzadziej i zwykle pogłębiona.
+      jednego pacjenta z przeprowadzeniem pełnego procesu pielęgnowania.
     </li>
     <li>
       <strong>Praca poglądowa (przeglądowa)</strong> – systematyczny przegląd
@@ -117,6 +159,44 @@ const relatedLinks = [
     <li>Piśmiennictwo (Vancouver)</li>
     <li>Spis tabel i rycin · Aneks (narzędzia, zgoda komisji bioetycznej)</li>
   </ol>
+
+  <p>
+    Uczelniane przewodniki podają zwykle objętość rzędu kilkudziesięciu stron i
+    wskazują, że część teoretyczna nie powinna przeważać nad badawczą. Najczęstszy
+    błąd to rozdęta teoria i skrótowo potraktowana analiza wyników.
+  </p>
+
+  <h2>Standaryzowane skale – narzędzia, które legitymizują ocenę</h2>
+
+  <p>
+    To cecha charakterystyczna pielęgniarstwa: zamiast autorskiej ankiety używa się
+    uznanych skal o znanych właściwościach psychometrycznych. Dobór zależy od
+    problemu:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Co oceniamy</th><th>Skala</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Akceptacja choroby</td><td>AIS</td></tr>
+      <tr><td>Jakość życia</td><td>WHOQOL-BREF, SF-36</td></tr>
+      <tr><td>Samodzielność / sprawność</td><td>Barthel, ADL, IADL</td></tr>
+      <tr><td>Ryzyko odleżyn</td><td>Norton, Braden</td></tr>
+      <tr><td>Ból</td><td>NRS, VAS</td></tr>
+      <tr><td>Stan świadomości</td><td>GCS</td></tr>
+      <tr><td>Stan odżywienia</td><td>MNA, NRS 2002</td></tr>
+    </tbody>
+  </table>
+
+  <InfoBox variant="pulapka" title="Tylko wywiad i historia choroby">
+    <p>
+      Studenci, którzy ograniczają zbieranie danych wyłącznie do wywiadu słownego i
+      historii choroby, tracą punkty. Regulaminy uczelni medycznych wskazują na
+      szeroki wachlarz technik: zastosowanie skali Barthel, ADL, NRS do oceny bólu czy
+      GCS – każda użyta i uzasadniona merytorycznie podnosi ocenę.
+    </p>
+  </InfoBox>
 
   <h2>Streszczenie strukturalne – cecha prac medycznych</h2>
 
@@ -158,14 +238,13 @@ const relatedLinks = [
       a każdy pacjent wyraził świadomą zgodę.</p>
   </blockquote>
 
-  <p>
-    <strong>Komentarz:</strong> każde wymienione narzędzie musi później pojawić się w
-    wynikach. Pominięcie informacji o zgodzie komisji bioetycznej to jeden z
-    najczęstszych powodów uwag w pracach pielęgniarskich. Szerzej w poradniku o
-    <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
-    metodologicznym</a> i <a href="/poradniki/metodologia/badania-ilosciowe/">badaniach
-    ilościowych</a>.
-  </p>
+  <InfoBox variant="wskazowka" title="Zaplanuj zgodę komisji w harmonogramie">
+    <p>
+      Uzyskanie opinii komisji bioetycznej trwa – wniosek składa się z wyprzedzeniem,
+      zanim rozpoczniesz zbieranie danych. Wpisz ten etap do harmonogramu pracy, inaczej
+      ryzykujesz opóźnieniem całego badania.
+    </p>
+  </InfoBox>
 
   <h2>Wariant: studium przypadku i proces pielęgnowania</h2>
 
@@ -175,9 +254,36 @@ const relatedLinks = [
     planowanie, realizowanie, ocenianie. Diagnozy pielęgniarskie formułuje się w
     schemacie problem–etiologia–objaw (PES) lub zgodnie z międzynarodową klasyfikacją
     <strong>ICNP</strong>, a całość najczytelniej przedstawić w tabeli: diagnoza – cel
-    opieki – interwencje – ocena. Cel opieki formułuj mierzalnie („pacjent samodzielnie
-    wykona pomiar glukozy"), a nie ogólnie („poprawa stanu pacjenta").
+    opieki – interwencje – ocena.
   </p>
+
+  <InfoBox variant="pulapka" title="Diagnoza lekarska zamiast pielęgniarskiej">
+    <p>
+      Diagnoza pielęgniarska to nie diagnoza lekarska. Nie piszesz „cukrzyca typu 2",
+      tylko nazywasz <em>problem pielęgnacyjny</em> wynikający z choroby (deficyt
+      wiedzy o samokontroli, ryzyko hipoglikemii, ryzyko stopy cukrzycowej). Cel
+      formułuj mierzalnie – „pacjent samodzielnie wykona pomiar glukozy" da się
+      zweryfikować, „poprawa stanu pacjenta" już nie.
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam przypadek, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Wersja słabsza vs mocniejsza">
+    <p>
+      <strong>Wersja słabsza.</strong> Opis pacjenta po zawale skupiony wyłącznie na
+      fazie ostrej: monitorowanie EKG, podawanie tlenu. Trzy diagnozy, wszystkie
+      biologiczne. Wniosek: „opieka wymaga stałego monitorowania". Ocena niższa –
+      wąski zakres diagnozy pielęgniarskiej.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Ten sam pacjent w fazie przygotowania do
+      wypisu: włączono lęk o powrót do pracy, deficyt wiedzy o diecie i aktywności,
+      problemy z samoopieką w domu. Siedem diagnoz w hierarchii. Wnioski zawierają
+      konkretny program edukacyjny i zalecenia. Ocena wyższa – pełny proces
+      pielęgnowania i funkcja edukacyjna.
+    </p>
+  </InfoBox>
 
   <h2>Wyniki – jak prezentować dane</h2>
 
@@ -214,6 +320,8 @@ const relatedLinks = [
       Cronbacha i źródła adaptacji.</li>
     <li><strong>Diagnoza lekarska zamiast pielęgniarskiej</strong> (w studium
       przypadku) – opis jednostki chorobowej w miejscu problemu pielęgnacyjnego.</li>
+    <li><strong>Brak hierarchii problemów</strong> – wyliczenie problemów w
+      przypadkowej kolejności zamiast według zagrożenia życia i zdrowia.</li>
     <li><strong>Cele nieostre</strong> – „poprawa stanu pacjenta" zamiast celu
       mierzalnego.</li>
     <li><strong>Niespójne piśmiennictwo</strong> – mieszanie stylów albo źródła w
@@ -235,11 +343,25 @@ const relatedLinks = [
     harmonogramu, a oprócz tego zadbaj o zgodę placówki i świadomą zgodę uczestników.
   </p>
 
+  <h3>Jakie skale wybrać do mojego tematu?</h3>
+  <p>
+    Dobierz skalę do mierzonego konstruktu: jakość życia – WHOQOL-BREF lub SF-36,
+    samodzielność – Barthel/ADL, ból – NRS/VAS, ryzyko odleżyn – Norton/Braden. Zawsze
+    używaj polskiej adaptacji i podaj jej rzetelność.
+  </p>
+
   <h3>Jaki styl cytowania obowiązuje w pielęgniarstwie?</h3>
   <p>
     Najczęściej Vancouver (numeryczny). Część uczelni dopuszcza APA – sprawdź
     wytyczne. Zasady i przykłady zebraliśmy w przewodniku o
     <a href="/poradniki/bibliografia/">bibliografii i przypisach</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy, a skopiowane fragmenty
+    zostaną wykryte. Wzór ma posłużyć jako szkielet i punkt odniesienia, na którym
+    napiszesz własną pracę – z własnym przypadkiem lub badaniem i własnymi wnioskami.
   </p>
 
   <p>

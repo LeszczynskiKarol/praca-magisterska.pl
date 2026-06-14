@@ -1,0 +1,219 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Politologia", href: "/tematy/politologia/" },
+  { label: "Przykładowa praca", href: "/tematy/politologia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z politologii", href: "/tematy/politologia/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Cel i teza pracy", href: "/poradniki/cel-pracy/" },
+  { label: "Przypisy w pracy", href: "/poradniki/przypisy/" },
+  { label: "Bibliografia i style", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z politologii – wzór z omówieniem (PDF + Word)"
+  description="Przykładowa praca magisterska z politologii krok po kroku: teza, metoda analizy systemowej i instytucjonalnej, praca z dokumentami i danymi wyborczymi oraz kryteria oceny – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z politologii,
+    to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie. Poniżej rozkładamy
+    na części przykładową pracę – pokazujemy zawartość każdego rozdziału, wklejamy
+    konkretne wycinki, porównujemy lepsze i gorsze rozwiązania oraz tłumaczymy, na co
+    patrzy recenzent. Skupiamy się na tym, co odróżnia magisterkę z politologii od prac z
+    innych kierunków: na tezie, metodzie analizy i pracy z dokumentami oraz danymi.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę analityczną –
+    <strong>„Funkcjonowanie systemu partyjnego w Polsce po 2015 roku"</strong>. To
+    typowy dla politologii schemat: analiza zjawiska politycznego w oparciu o akty
+    prawne, dokumenty i dane wyborcze. Pokazujemy też, czym praca analityczna różni się
+    od empirycznej (sondaż postaw politycznych).
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet analitycznej pracy magisterskiej z politologii: strona tytułowa, streszczenie, spis treści, wstęp (z tezą i metodą), część teoretyczna, metodologia, rozdział analityczny z danymi, zakończenie oraz bibliografia i wykaz źródeł. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-politologia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-politologia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z politologii</h2>
+
+  <p>
+    Politologia bada zjawiska polityczne – systemy, instytucje, polityki publiczne.
+    Praca najczęściej ma charakter <strong>analityczny</strong>, choć bywa też
+    empiryczna (sondaż). Z tego wynikają cechy nietypowe na tle innych kierunków:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Metoda analizy.</strong> Najczęściej analiza systemowa, instytucjonalna,
+      decyzyjna lub komparatystyczna – nie ankieta.
+    </li>
+    <li>
+      <strong>Teza zamiast hipotez.</strong> W pracy analitycznej stawia się tezę, którą
+      uzasadnia analiza.
+    </li>
+    <li>
+      <strong>Praca ze źródłami i danymi.</strong> Akty prawne, dokumenty programowe,
+      dane wyborcze (PKW), raporty, sondaże – jako materiał analizy.
+    </li>
+    <li>
+      <strong>Osadzenie w teorii.</strong> Wyniki interpretuje się przez teorię (np.
+      typologie systemów partyjnych Sartoriego).
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Metoda analizy systemowej i instytucjonalnej">
+    <p>
+      <strong>Analiza systemowa</strong> ujmuje politykę jako system wzajemnie
+      powiązanych elementów (wejścia, wyjścia, sprzężenia). <strong>Analiza
+      instytucjonalna</strong> bada formalne reguły i instytucje (konstytucja,
+      ordynacja, organy). W politologii to one zastępują „metodę badawczą" znaną z nauk
+      empirycznych.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z politologii</h2>
+
+  <ol>
+    <li><strong>Analiza, nie opis.</strong> Czy praca wyjaśnia mechanizmy, czy tylko
+      relacjonuje fakty?</li>
+    <li><strong>Wyraźna teza.</strong> Czy postawiono twierdzenie, które analiza
+      udowadnia?</li>
+    <li><strong>Praca ze źródłami.</strong> Czy dane i dokumenty są analizowane i
+      poprawnie cytowane?</li>
+    <li><strong>Osadzenie w teorii.</strong> Czy wnioski odwołują się do teorii
+      politologicznej?</li>
+  </ol>
+
+  <h2>Typy prac magisterskich z politologii</h2>
+
+  <ul>
+    <li><strong>Analityczna (systemowa/instytucjonalna)</strong> – analiza systemu,
+      instytucji lub polityki publicznej. Najczęstszy wybór.</li>
+    <li><strong>Komparatystyczna</strong> – porównanie rozwiązań w różnych państwach.</li>
+    <li><strong>Empiryczna</strong> – sondaż postaw politycznych lub analiza danych
+      wyborczych/sondażowych.</li>
+  </ul>
+
+  <h2>Struktura pracy analitycznej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – przedmiot, cel, <strong>teza</strong>, metoda</li>
+    <li>Rozdział teoretyczny – pojęcia i teorie</li>
+    <li>Rozdział metodologiczny – cel, problemy, metoda, baza źródłowa</li>
+    <li>Rozdział analityczny – analiza zjawiska na danych i dokumentach</li>
+    <li>Zakończenie – powrót do tezy</li>
+    <li>Bibliografia · Wykaz źródeł (akty, dokumenty, dane)</li>
+  </ol>
+
+  <h2>Teza i praca z danymi</h2>
+
+  <blockquote>
+    <p>Postawiono tezę o postępującej polaryzacji i koncentracji rywalizacji wokół dwóch
+      bloków. Udział dwóch największych komitetów w wyborach do Sejmu wzrósł z 61% (2015)
+      do 66% (2023).</p>
+  </blockquote>
+
+  <InfoBox variant="wskazowka" title="Dane jako materiał analizy">
+    <p>
+      Dane wyborcze (PKW) czy sondażowe (CBOS) traktuj jako materiał do analizy
+      zjawiska, a nie jako pełne badanie empiryczne. Zawsze podawaj źródło i interpretuj
+      liczby w kategoriach teorii (tu: typologii systemów partyjnych), nie tylko je
+      przytaczaj.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="przyklad" title="Opis vs analiza">
+    <p>
+      <strong>Wersja słabsza.</strong> „W 2015 PiS wygrał wybory, w 2023 wygrała
+      koalicja." Praca relacjonuje wydarzenia – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> „Wzrost udziału dwóch największych komitetów do
+      66% przy spadku znaczenia ugrupowań centrowych świadczy o przejściu ku
+      dwublokowości w rozumieniu typologii Sartoriego." Analiza mechanizmu w świetle
+      teorii – ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Publicystyka zamiast analizy">
+    <p>
+      W pracach politologicznych łatwo zsunąć się w komentarz publicystyczny i oceny
+      wartościujące. Recenzent oczekuje analizy opartej na danych i teorii, a nie
+      poglądów autora. Trzymaj się materiału źródłowego i pojęć naukowych.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z politologii</h2>
+
+  <ul>
+    <li><strong>Opis zamiast analizy</strong> – relacjonowanie wydarzeń bez wyjaśniania
+      mechanizmów.</li>
+    <li><strong>Publicystyka i oceny</strong> – komentarz zamiast analizy naukowej.</li>
+    <li><strong>Brak tezy</strong> – praca opisowa, która niczego nie dowodzi.</li>
+    <li><strong>Dane bez źródła i interpretacji</strong> – liczby bez odniesienia do
+      teorii.</li>
+    <li><strong>Niespójne cytowanie</strong> – mieszanie stylów, brak wykazu źródeł.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z politologii może być empiryczna?</h3>
+  <p>
+    Tak – obok prac analitycznych pisze się prace empiryczne (sondaż postaw politycznych)
+    oraz komparatystyczne. Najczęstsza jest jednak analiza systemu, instytucji lub
+    polityki publicznej.
+  </p>
+
+  <h3>Czym różni się teza od hipotezy?</h3>
+  <p>
+    Hipoteza to przypuszczenie weryfikowane danymi (nauki empiryczne). Teza to
+    twierdzenie, które uzasadniasz analizą. W pracy analitycznej z politologii stawia się
+    tezę.
+  </p>
+
+  <h3>Skąd brać dane i dokumenty?</h3>
+  <p>
+    Z oficjalnych źródeł: akty prawne (Dz.U.), dane Państwowej Komisji Wyborczej,
+    dokumenty programowe partii, sondaże CBOS, raporty instytucji. Wykazuj je osobno.
+  </p>
+
+  <h3>Jaki styl cytowania w politologii?</h3>
+  <p>
+    Najczęściej APA lub przypisy (Chicago/oksfordzki). Stosuj jeden styl konsekwentnie.
+    Szczegóły w przewodnikach o <a href="/poradniki/przypisy/">przypisach</a> i
+    <a href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór to szkielet i punkt
+    odniesienia, na którym przeprowadzisz własną analizę.
+  </p>
+
+  <p>
+    Ten rozbiór pokazuje strukturę i sposób myślenia, ale całą analizę trzeba
+    przeprowadzić samodzielnie. Zacznij od
+    <a href="/tematy/politologia/">wyboru tematu</a> i pobierz wzór powyżej, żeby mieć
+    gotowy szkielet do wypełnienia.
+  </p>
+</ArticleLayout>
