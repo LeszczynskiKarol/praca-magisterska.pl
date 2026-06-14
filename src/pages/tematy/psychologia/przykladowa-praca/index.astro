@@ -1,14 +1,12 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
   { label: "Psychologia", href: "/tematy/psychologia/" },
-  {
-    label: "Przykładowa praca",
-    href: "/tematy/psychologia/przykladowa-praca/",
-  },
+  { label: "Przykładowa praca", href: "/tematy/psychologia/przykladowa-praca/" },
 ];
 
 const relatedLinks = [
@@ -23,8 +21,8 @@ const relatedLinks = [
 
 <ArticleLayout
   title="Przykładowa praca magisterska z psychologii – wzór z omówieniem (PDF + Word)"
-  description="Przykładowa praca magisterska z psychologii krok po kroku: operacjonalizacja zmiennych, dobór narzędzi psychometrycznych, schemat korelacyjny, analiza statystyczna i styl APA – z fragmentami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
-  readingTime="16 min"
+  description="Przykładowa praca magisterska z psychologii krok po kroku: operacjonalizacja zmiennych, dobór narzędzi psychometrycznych, schemat korelacyjny, analiza statystyczna, kryteria oceny i styl APA – z fragmentami, przykładami i komentarzem. Gotowy szablon do pobrania w PDF i Word."
+  readingTime="22 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -32,12 +30,10 @@ const relatedLinks = [
     Najszybszy sposób, żeby zrozumieć, jak ma wyglądać praca magisterska z
     psychologii, to zobaczyć gotowy wzór i prześledzić go fragment po fragmencie.
     Poniżej rozkładamy na części przykładową pracę – pokazujemy, co znajduje się w
-    każdym rozdziale, wklejamy konkretne wycinki tekstu i tłumaczymy, dlaczego
-    zostały napisane właśnie tak. Skupiamy się na tym, co odróżnia magisterkę z
-    psychologii od prac z innych kierunków: na operacjonalizacji zmiennych, doborze
-    narzędzi psychometrycznych i analizie statystycznej. To nie jest praca do
-    skopiowania (o tym, dlaczego nie warto, piszemy na końcu), tylko punkt
-    odniesienia, na którym łatwiej napisać własną.
+    każdym rozdziale, wklejamy konkretne wycinki tekstu, porównujemy lepsze i gorsze
+    rozwiązania oraz tłumaczymy, na co patrzy recenzent. Skupiamy się na tym, co
+    odróżnia magisterkę z psychologii od prac z innych kierunków: na operacjonalizacji
+    zmiennych, doborze narzędzi psychometrycznych i analizie statystycznej.
   </p>
 
   <p>
@@ -64,37 +60,83 @@ const relatedLinks = [
     Zanim sięgniesz po wzór, zrozum jedną rzecz, która odróżnia psychologię od
     większości kierunków: <strong>psychologia bada zmienne, których nie da się
     zaobserwować wprost</strong>. Lęku, przywiązania, poczucia własnej skuteczności
-    czy wypalenia nie zmierzysz tak jak wzrostu albo glikemii. Te konstrukty są
-    <em>latentne</em> – istnieją teoretycznie, a w badaniu reprezentują je wyniki
-    wystandaryzowanych narzędzi. Z tego wynikają trzy konsekwencje, które przewijają
-    się przez całą pracę:
+    czy wypalenia nie zmierzysz tak jak wzrostu albo glikemii.
   </p>
+
+  <InfoBox variant="definicja" title="Zmienna latentna i operacjonalizacja">
+    <p>
+      <strong>Zmienna latentna (ukryta)</strong> to konstrukt teoretyczny, którego nie
+      obserwujemy bezpośrednio (np. depresja, skuteczność). W badaniu reprezentują go
+      wyniki narzędzia pomiarowego. <strong>Operacjonalizacja</strong> to przełożenie
+      takiego konstruktu na mierzalną zmienną – np. „nasilenie depresji" mierzone
+      „wynikiem w skali BDI-II".
+    </p>
+  </InfoBox>
+
+  <p>Z tego wynikają trzy konsekwencje, które przewijają się przez całą pracę:</p>
 
   <ul>
     <li>
-      <strong>Operacjonalizacja</strong> – każdy konstrukt z tematu musisz przełożyć
-      na konkretną, mierzalną zmienną. „Wypalenie" staje się „wynikiem w skali MBI",
+      <strong>Operacjonalizacja.</strong> Każdy konstrukt z tematu musisz przełożyć na
+      konkretną, mierzalną zmienną. „Wypalenie" staje się „wynikiem w skali MBI",
       „skuteczność" – „wynikiem w skali GSES". Bez tego kroku temat pozostaje hasłem.
     </li>
     <li>
-      <strong>Psychometria</strong> – narzędzie musi mieć udokumentowaną rzetelność
-      (zwykle α Cronbacha) i trafność, najlepiej w polskiej adaptacji. Autorska
-      ankieta „z głowy" do pomiaru konstruktu psychologicznego to częsty powód
-      uwag recenzenta.
+      <strong>Psychometria.</strong> Narzędzie musi mieć udokumentowaną rzetelność
+      (zwykle α Cronbacha ≥ 0,7) i trafność, najlepiej w polskiej adaptacji. Autorska
+      ankieta do pomiaru konstruktu psychologicznego to częsty powód uwag recenzenta.
     </li>
     <li>
-      <strong>Etyka badań</strong> – badania z udziałem osób z grup wrażliwych
-      (pacjenci, dzieci, osoby z zaburzeniami) wymagają zgody komisji etycznej, a
-      każdy uczestnik – świadomej zgody i zapewnienia anonimowości.
+      <strong>Etyka badań.</strong> Badania z udziałem osób z grup wrażliwych
+      (pacjenci, dzieci, osoby z zaburzeniami) wymagają zgody komisji etycznej, a każdy
+      uczestnik – świadomej zgody i zapewnienia anonimowości.
     </li>
   </ul>
 
   <p>
     Do tego dochodzi standard zapisu: w psychologii obowiązuje niemal wyłącznie
-    <strong>styl APA</strong> (autor–rok), zarówno w cytowaniach, jak i w
+    <strong>styl APA</strong> (7. wydanie), zarówno w cytowaniach w tekście, jak i w
     bibliografii. To wszystko sprawia, że rozdział metodologiczny i analiza wyników
     ważą w psychologii więcej niż w pracach czysto teoretycznych.
   </p>
+
+  <h2>Po czym recenzent pozna dobrą pracę empiryczną z psychologii</h2>
+
+  <p>
+    Recenzent psychologii ocenia pracę przez pryzmat warsztatu badawczego. Cztery
+    kryteria decydują o tym, czy praca dostanie ocenę bardzo dobrą, a studenci
+    najczęściej tracą na nich punkty:
+  </p>
+
+  <ol>
+    <li>
+      <strong>Trafna operacjonalizacja.</strong> Czy konstrukty z tematu zostały
+      przełożone na zmienne mierzone właściwymi narzędziami? Brak operacjonalizacji
+      albo pomiar konstruktu autorską ankietą to najczęstszy błąd.
+    </li>
+    <li>
+      <strong>Jakość psychometryczna narzędzi.</strong> Czy podano rzetelność (α
+      Cronbacha) i czy użyto polskiej adaptacji o znanych właściwościach? Czy wielkość
+      próby oszacowano a priori (analiza mocy)?
+    </li>
+    <li>
+      <strong>Dobór analizy do hipotez.</strong> Czy do każdej hipotezy dobrano
+      właściwy test, a wyniki podano z wielkością efektu, nie tylko z istotnością?
+    </li>
+    <li>
+      <strong>Dyskusja, nie streszczenie wyników.</strong> Czy wyniki skonfrontowano z
+      literaturą z części teoretycznej i uczciwie omówiono ograniczenia?
+    </li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Zanim zaczniesz pisać">
+    <p>
+      Zacznij od pytania: „jakim narzędziem zmierzę każdą zmienną z mojego tematu i
+      jaka jest jego rzetelność?". Jeśli nie potrafisz odpowiedzieć, temat nie jest
+      jeszcze gotowy do realizacji – to pytanie operacjonalizacyjne rozstrzyga się na
+      etapie konspektu, nie w trakcie pisania.
+    </p>
+  </InfoBox>
 
   <h2>Typy prac magisterskich z psychologii</h2>
 
@@ -124,13 +166,20 @@ const relatedLinks = [
   </ul>
 
   <p>
-    Coraz częściej prace korelacyjne idą o krok dalej i testują <strong>modele
-    mediacji lub moderacji</strong> – np. „czy empatia pośredniczy w związku kontaktu
-    międzygrupowego z uprzedzeniami?". To podnosi wartość pracy, ale wymaga
-    odpowiedniej analizy (np. makro PROCESS Andrew Hayesa). Gotowe tematy z podziałem
-    na subdyscypliny znajdziesz w zestawieniu
-    <a href="/tematy/psychologia/">110 tematów prac magisterskich z psychologii</a>.
+    Coraz częściej prace korelacyjne idą o krok dalej i testują modele mediacji lub
+    moderacji – np. „czy empatia pośredniczy w związku kontaktu międzygrupowego z
+    uprzedzeniami?".
   </p>
+
+  <InfoBox variant="definicja" title="Mediator a moderator">
+    <p>
+      <strong>Mediator</strong> wyjaśnia, <em>dlaczego</em> X wpływa na Y (X → M → Y;
+      np. stres → bezsenność → wypalenie). <strong>Moderator</strong> wskazuje,
+      <em>kiedy / dla kogo</em> związek jest silniejszy lub słabszy (np. płeć
+      wzmacnia związek X–Y). Mediację testuje się dziś najczęściej makrem PROCESS
+      Andrew Hayesa.
+    </p>
+  </InfoBox>
 
   <h2>Z jakich części składa się praca empiryczna z psychologii</h2>
 
@@ -151,12 +200,13 @@ const relatedLinks = [
   </ol>
 
   <p>
-    Magisterka z psychologii liczy zwykle <strong>50–80 stron</strong>. Najczęstszy
+    Magisterka z psychologii liczy zwykle <strong>50–80 stron</strong>, z dwoma
+    rozdziałami teoretycznymi i wyraźnie rozbudowaną częścią badawczą. Najczęstszy
     błąd proporcji to rozdęta teoria i potraktowana po macoszemu analiza wyników –
     w pracy empirycznej powinno być odwrotnie.
   </p>
 
-  <h2>Operacjonalizacja zmiennych i dobór narzędzi – serce pracy z psychologii</h2>
+  <h2>Operacjonalizacja zmiennych i dobór narzędzi – serce pracy</h2>
 
   <p>
     To etap, którego nie ma w pracach z większości innych kierunków, a w psychologii
@@ -193,13 +243,60 @@ const relatedLinks = [
   </table>
 
   <p>
-    <strong>Komentarz:</strong> dobierając narzędzie, zawsze sprawdź, czy istnieje
-    jego <em>polska adaptacja</em> i jaka jest jej rzetelność (α Cronbacha ≥ 0,7 to
-    przyjmowane minimum). Do najczęściej używanych skal należą m.in. BDI-II i PHQ-9
-    (depresja), STAI (lęk), NEO-FFI (Wielka Piątka), SWLS (satysfakcja z życia) czy
-    ECR (style przywiązania). Autorską ankietę stosuj do faktów (metryczka, pytania o
-    zachowania), nie do pomiaru samego konstruktu psychologicznego.
+    Dobór narzędzia zależy od subdyscypliny i mierzonego konstruktu. Najczęściej
+    stosowane w polskich pracach skale zestawia poniższa tabela:
   </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Obszar / konstrukt</th>
+        <th>Narzędzie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Depresja</td><td>BDI-II, PHQ-9</td></tr>
+      <tr><td>Lęk</td><td>STAI, GAD-7</td></tr>
+      <tr><td>Osobowość (Wielka Piątka)</td><td>NEO-FFI, IPIP-BFM</td></tr>
+      <tr><td>Style przywiązania</td><td>ECR, KSP</td></tr>
+      <tr><td>Satysfakcja z życia / dobrostan</td><td>SWLS, PANAS</td></tr>
+      <tr><td>Stres i radzenie sobie</td><td>PSS-10, Mini-COPE</td></tr>
+      <tr><td>Wypalenie zawodowe</td><td>MBI, OLBI</td></tr>
+    </tbody>
+  </table>
+
+  <InfoBox variant="pulapka" title="Autorska ankieta zamiast skali">
+    <p>
+      Najczęstszy błąd metodologiczny w psychologii to pomiar konstruktu
+      <em>własną</em> ankietą („Proszę ocenić swój poziom stresu od 1 do 10"). Taki
+      pomiar nie ma znanej rzetelności ani trafności i recenzent go zakwestionuje.
+      Autorską ankietę stosuj do <strong>faktów</strong> (metryczka, pytania o
+      zachowania), a konstrukty mierz <strong>zwalidowaną skalą</strong>.
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <p>
+    Najlepiej widać różnicę na przykładzie. Wyobraź sobie dwie prace na temat „Stres a
+    jakość snu u studentów":
+  </p>
+
+  <InfoBox variant="przyklad" title="Wersja słabsza vs mocniejsza">
+    <p>
+      <strong>Wersja słabsza.</strong> Stres i jakość snu mierzone autorską ankietą
+      (po jednym pytaniu). Hipoteza: „stres wpływa na sen". Analiza: porównanie
+      średnich, bez testu. Wniosek: „studenci zestresowani śpią gorzej". Ocena: praca
+      opisowa, podatna na zarzut o brak operacjonalizacji.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Stres mierzony skalą PSS-10 (α = 0,86),
+      jakość snu – kwestionariuszem PSQI. Hipoteza: „wyższy poziom stresu koreluje
+      dodatnio z gorszą jakością snu". Analiza: korelacja r-Pearsona z wielkością
+      efektu, kontrola płci. Dyskusja konfrontuje wynik z literaturą. Ocena: praca
+      spełnia kryteria warsztatu empirycznego.
+    </p>
+  </InfoBox>
 
   <h2>Wstęp – fragment i omówienie</h2>
 
@@ -252,15 +349,39 @@ const relatedLinks = [
     ilościowych</a>.
   </p>
 
+  <InfoBox variant="wskazowka" title="Jaką próbę zaplanować">
+    <p>
+      Minimalną liczebność próby oszacuj a priori analizą mocy testu (program G*Power),
+      dobierając ją do planowanej analizy i oczekiwanej wielkości efektu. Dla prostych
+      badań korelacyjnych przyjmuje się zwykle co najmniej ok. 100 osób; modele
+      regresji czy mediacji wymagają więcej.
+    </p>
+  </InfoBox>
+
   <h2>Wyniki – jaki test do jakiej hipotezy</h2>
 
   <p>
-    W psychologii dobór testu statystycznego wynika wprost z hipotezy. Związek dwóch
-    zmiennych ilościowych sprawdzisz korelacją <em>r</em>-Pearsona; różnice między
-    grupami – testem <em>t</em>-Studenta lub analizą wariancji (ANOVA); predykcję –
-    regresją wielokrotną; mediację – makrem PROCESS. Wyniki podaje się w tabelach z
-    numerem i tytułem (nad tabelą), zawsze z poziomem istotności, a dziś także z
-    <strong>wielkością efektu</strong> (np. <em>d</em> Cohena, <em>r</em>, η²):
+    W psychologii dobór testu statystycznego wynika wprost z hipotezy. To jedna z
+    rzeczy, które recenzent sprawdza najpierw:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Cel / hipoteza</th><th>Test</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Związek dwóch zmiennych ilościowych</td><td>korelacja r-Pearsona (lub rho-Spearmana)</td></tr>
+      <tr><td>Różnica między 2 grupami</td><td>test t-Studenta</td></tr>
+      <tr><td>Różnice między 3+ grupami</td><td>ANOVA (+ testy post hoc)</td></tr>
+      <tr><td>Predykcja zmiennej zależnej</td><td>regresja wieloraka</td></tr>
+      <tr><td>Mechanizm pośredniczący</td><td>analiza mediacji (PROCESS)</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Wyniki podaje się w tabelach z numerem i tytułem (nad tabelą), zawsze z poziomem
+    istotności, a dziś także z <strong>wielkością efektu</strong> (np. <em>d</em>
+    Cohena, <em>r</em>, η²). Przykładowa tabela korelacji:
   </p>
 
   <table>
@@ -278,12 +399,14 @@ const relatedLinks = [
     </tbody>
   </table>
 
-  <p>
-    <strong>Komentarz:</strong> w tekście opisujesz tabelę, nie powtarzasz wszystkich
-    liczb. Pamiętaj o zasadzie „korelacja to nie przyczynowość" – przy schemacie
-    korelacyjnym nie pisz, że jedna zmienna „wpływa" na drugą. Interpretację zostaw
-    do dyskusji.
-  </p>
+  <InfoBox variant="pulapka" title="Korelacja to nie przyczynowość">
+    <p>
+      Przy schemacie korelacyjnym nie pisz, że jedna zmienna „wpływa" na drugą ani jej
+      „powoduje". Możesz mówić wyłącznie o <em>związku</em> / współwystępowaniu.
+      Wnioskowanie przyczynowe uprawnia dopiero eksperyment z manipulacją i grupą
+      kontrolną. To błąd, który recenzent wychwytuje natychmiast.
+    </p>
+  </InfoBox>
 
   <h2>Dyskusja i wnioski</h2>
 
@@ -294,6 +417,20 @@ const relatedLinks = [
     odpowiadać liczbie pytań badawczych. Jak domknąć tę część, pokazujemy w poradniku
     o <a href="/poradniki/zakonczenie/">zakończeniu pracy magisterskiej</a>.
   </p>
+
+  <h2>Etyka badań psychologicznych</h2>
+
+  <p>
+    Strona etyczna nie jest formalnością – w pracach z grupami wrażliwymi recenzent
+    sprawdza ją wprost. Obejmuje:
+  </p>
+
+  <ul>
+    <li><strong>Świadomą zgodę</strong> uczestników po poinformowaniu o celu badania.</li>
+    <li><strong>Anonimowość</strong> i dobrowolność (z prawem do wycofania się).</li>
+    <li><strong>Zgodę komisji etycznej</strong> przy badaniach z udziałem dzieci,
+      pacjentów lub osób z zaburzeniami.</li>
+  </ul>
 
   <h2>Najczęstsze błędy w pracy magisterskiej z psychologii</h2>
 
@@ -306,6 +443,8 @@ const relatedLinks = [
       przyczynowe z danych, które na to nie pozwalają.</li>
     <li><strong>Narzędzia „na zapas"</strong> – skale wymienione w metodologii,
       których wyniki nie pojawiają się w analizie.</li>
+    <li><strong>Wyniki bez wielkości efektu</strong> – sama istotność (p) bez d Cohena
+      czy η².</li>
     <li><strong>Pominięta etyka</strong> – brak informacji o świadomej zgodzie,
       anonimowości i (przy grupach wrażliwych) zgodzie komisji etycznej.</li>
     <li><strong>Niespójne cytowania</strong> – mieszanie APA z przypisami dolnymi;
@@ -324,9 +463,17 @@ const relatedLinks = [
 
   <h3>Jaki styl cytowania obowiązuje w psychologii?</h3>
   <p>
-    Niemal zawsze APA (autor–rok), zarówno w tekście, jak i w bibliografii. Część
-    uczelni stosuje styl własny – sprawdź wytyczne. Zasady zapisu i przykłady zebrane
-    są w przewodniku o <a href="/poradniki/bibliografia/">bibliografii i przypisach</a>.
+    Niemal zawsze APA (7. wydanie), zarówno w tekście (autor–rok), jak i w
+    bibliografii. Część uczelni stosuje styl własny – sprawdź wytyczne. Zasady zapisu
+    i przykłady zebrane są w przewodniku o <a href="/poradniki/bibliografia/">bibliografii
+    i przypisach</a>.
+  </p>
+
+  <h3>Ile osób powinno wziąć udział w badaniu?</h3>
+  <p>
+    Minimalną liczebność próby oszacuj a priori za pomocą analizy mocy testu (np. w
+    G*Power), dobierając ją do planowanej analizy i oczekiwanej wielkości efektu. Dla
+    prostych badań korelacyjnych przyjmuje się zwykle co najmniej ok. 100 osób.
   </p>
 
   <h3>Czy potrzebuję zgody komisji etycznej?</h3>
@@ -336,11 +483,19 @@ const relatedLinks = [
     Zapytaj promotora i sprawdź regulamin komisji na swojej uczelni.
   </p>
 
-  <h3>Ile osób powinno wziąć udział w badaniu?</h3>
+  <h3>Korelacja czy eksperyment – co wybrać?</h3>
   <p>
-    Minimalną liczebność próby oszacuj a priori za pomocą analizy mocy testu (np. w
-    G*Power), dobierając ją do planowanej analizy i oczekiwanej wielkości efektu. Dla
-    prostych badań korelacyjnych przyjmuje się zwykle co najmniej ok. 100 osób.
+    Jeśli zależy Ci na wnioskowaniu przyczynowym i masz możliwość kontrolowanej
+    manipulacji – eksperyment. Jeśli badasz naturalnie występujące związki na próbie
+    zbieranej online – schemat korelacyjny. Większość magisterek z psychologii to
+    prace korelacyjne.
+  </p>
+
+  <h3>Ile stron powinna mieć praca magisterska z psychologii?</h3>
+  <p>
+    Najczęściej 50–80 stron, z przewagą części badawczej nad teoretyczną. Ostateczny
+    zakres określają wytyczne wydziału – liczy się kompletność i spójność warsztatu, a
+    nie sama objętość.
   </p>
 
   <p>

@@ -1,0 +1,84 @@
+---
+// Reużywalna ramka treściowa dla rozbudowanych artykułów (definicja / pułapka / wskazówka / przykład).
+interface Props {
+  variant?: "definicja" | "pulapka" | "wskazowka" | "przyklad";
+  title?: string;
+}
+const { variant = "definicja", title } = Astro.props;
+const icons: Record<string, string> = {
+  definicja: "📘",
+  pulapka: "⚠️",
+  wskazowka: "💡",
+  przyklad: "🔍",
+};
+const defaultTitles: Record<string, string> = {
+  definicja: "Definicja",
+  pulapka: "Pułapka",
+  wskazowka: "Wskazówka",
+  przyklad: "Przykład",
+};
+const heading = title ?? defaultTitles[variant];
+const icon = icons[variant];
+---
+
+<aside class={`infobox infobox--${variant}`}>
+  <p class="infobox__title">{icon} {heading}</p>
+  <div class="infobox__body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .infobox {
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #94a3b8;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .infobox__title {
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+    font-size: 0.95rem;
+  }
+  .infobox__body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  /* Definicja – niebieski */
+  .infobox--definicja {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    border-left-color: #2563eb;
+  }
+  .infobox--definicja .infobox__title {
+    color: #1d4ed8;
+  }
+  /* Pułapka – bursztyn/czerwień */
+  .infobox--pulapka {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    border-left-color: #ea580c;
+  }
+  .infobox--pulapka .infobox__title {
+    color: #c2410c;
+  }
+  /* Wskazówka – zieleń */
+  .infobox--wskazowka {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    border-left-color: #16a34a;
+  }
+  .infobox--wskazowka .infobox__title {
+    color: #15803d;
+  }
+  /* Przykład – fiolet/szary */
+  .infobox--przyklad {
+    background: #faf5ff;
+    border-color: #e9d5ff;
+    border-left-color: #7c3aed;
+  }
+  .infobox--przyklad .infobox__title {
+    color: #6d28d9;
+  }
+</style>
