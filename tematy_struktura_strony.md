@@ -8,7 +8,7 @@
 > historyczne i **częściowo nieaktualne** (powstały na początku projektu).
 > Wiążący jest poniższy stan, ustalony na podstawie zawartości `src/pages/`.
 
-### Kierunki (`/tematy/`) — 39 gotowych
+### Kierunki (`/tematy/`) — 41 gotowych
 
 Gotowe (26): administracja, bezpieczeństwo narodowe, budownictwo, dziennikarstwo,
 ekonomia, filologia angielska, filologia polska, finanse i rachunkowość,
@@ -20,8 +20,10 @@ zdrowie publiczne.
 
 **Kierunki dodane 2026-06-14:** historia, kryminologia, dietetyka, kosmetologia, ratownictwo-medyczne, pedagogika-specjalna, geografia, architektura, filologia germańska/hiszpańska/rosyjska/francuska/włoska, resocjalizacja (po 100 tematów, wzorzec historia/psychologia). Filologie mają wspólną strukturę 10×10 (językoznawstwo opisowe/kontrastywne, literatura dawna/współczesna, przekład, glottodydaktyka, kultura, język specjalistyczny, socjolingwistyka, frazeologia) adaptowaną per język. Architektura = praca PROJEKTOWA (zaznaczone w metodologii).
 
+**Dodane 2026-06-14 (dokładka):** kulturoznawstwo, kognitywistyka (po 100 tematów).
+
 **Kierunki DO ZROBIENIA (opcjonalne, brak strony, raczej niszowe):**
-- 🟡: kulturoznawstwo, gospodarka przestrzenna, biotechnologia, kierunek lekarski/medycyna (nietypowy format pracy), teologia, filozofia
+- 🟡: gospodarka przestrzenna, biotechnologia, kierunek lekarski/medycyna (nietypowy format pracy), teologia, filozofia
 
 ### Poradniki (`/poradniki/`) — stan
 
@@ -43,7 +45,7 @@ rozdzial-metodologiczny, rozdzial-badawczy).
 4. **NASTĘPNE → Metodologia – uzupełnienia 🟢:** case-study, obserwacja, sondaz,
    analiza-dokumentow, eksperyment, triangulacja, etyka, badania-online
 5. **Struktura – uzupełnienia 🟢:** aneksy, wykaz-tabel, wykaz-skrotow
-6. **Kierunki (39 gotowych):** wszystkie ważniejsze pokryte; do rozważenia tylko nisze (kulturoznawstwo, gospodarka przestrzenna, biotechnologia, medycyna)
+6. **Kierunki (41 gotowych):** wszystkie ważniejsze pokryte; do rozważenia tylko nisze (gospodarka przestrzenna, biotechnologia, medycyna, teologia)
 7. **Sklep — ebook per kierunek** (zadanie na przyszłość): osobny ebook „Jak napisać pracę mgr [kierunek]" dla każdego z 31 kierunków + CTA per strona. Szczegóły w pamięci: ebook-shop-per-kierunek.
 
 ### SEO – quick wins (z analizy GSC 2026-06-13)

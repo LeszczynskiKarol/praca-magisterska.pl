@@ -1,0 +1,309 @@
+---
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Kognitywistyka", href: "/tematy/kognitywistyka/" },
+];
+
+const relatedLinks = [
+  { label: "Metodologia badań", href: "/poradniki/metodologia/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="100 tematów prac magisterskich z kognitywistyki 2026/2027 - przykłady"
+  description="100 tematów prac magisterskich z kognitywistyki: uwaga, pamięć, percepcja, język, podejmowanie decyzji, emocje, sztuczna inteligencja, HCI, neuronauka (EEG, fMRI) i nowe technologie. Z metodą badania."
+  readingTime="25 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Kognitywistyka to interdyscyplinarna nauka o umyśle i procesach poznawczych,
+    łącząca psychologię poznawczą, neuronaukę, językoznawstwo, filozofię i
+    sztuczną inteligencję. Praca magisterska na tym kierunku ma najczęściej
+    charakter empiryczny: bada uwagę, pamięć, percepcję czy podejmowanie decyzji
+    metodą eksperymentu, często z użyciem aparatury (eye-tracker, EEG). Dobry
+    temat wymaga jasnego określenia <strong>zmiennych, grupy badanej i
+    metody</strong>. Poniżej zebraliśmy 100 tematów uporządkowanych według
+    obszarów kognitywistyki, co ułatwia projektowanie badania i dobór narzędzi.
+  </p>
+
+  <h2>Procesy uwagi</h2>
+
+  <p>
+    Uwaga decyduje o tym, które informacje są przetwarzane. Prace z tego obszaru
+    badają jej selektywność, podzielność i wpływ czynników zakłócających. Opierają
+    się na eksperymentach behawioralnych z pomiarem czasu reakcji.
+  </p>
+
+  <ol>
+    <li>Wpływ rozproszenia uwagi na wykonanie zadania poznawczego</li>
+    <li>Selektywność uwagi wzrokowej w zadaniu wyszukiwania</li>
+    <li>Efekt Stroopa jako miara kontroli uwagi</li>
+    <li>Podzielność uwagi a wykonywanie dwóch zadań jednocześnie</li>
+    <li>Wpływ powiadomień ze smartfona na koncentrację uwagi</li>
+    <li>Uwaga a wielozadaniowość medialna u młodych dorosłych</li>
+    <li>Ślepota na zmiany w percepcji scen wzrokowych</li>
+    <li>Wpływ muzyki w tle na koncentrację podczas nauki</li>
+    <li>Trening uwagi a poprawa funkcji wykonawczych</li>
+  </ol>
+
+  <h2>Pamięć</h2>
+
+  <p>
+    Pamięć to jeden z najlepiej zbadanych procesów poznawczych. Prace z tego
+    obszaru dotyczą zapamiętywania, przypominania i zniekształceń pamięci.
+    Opierają się na eksperymentach, czasem z wykorzystaniem EEG.
+  </p>
+
+  <ol start="10">
+    <li>Wpływ snu na konsolidację pamięci</li>
+    <li>Pamięć robocza a wykonywanie zadań poznawczych</li>
+    <li>Fałszywe wspomnienia w paradygmacie DRM</li>
+    <li>Efekt poziomu przetwarzania w zapamiętywaniu</li>
+    <li>Wpływ stresu na pamięć epizodyczną</li>
+    <li>Pamięć autobiograficzna a płeć osób badanych</li>
+    <li>Wpływ aktywności fizycznej na pamięć roboczą</li>
+    <li>Rozpoznawanie a przypominanie - analiza potencjałów wywołanych EEG</li>
+    <li>Efekt testowania w utrwalaniu wiedzy</li>
+  </ol>
+
+  <h2>Percepcja</h2>
+
+  <p>
+    Percepcja przekształca bodźce zmysłowe w doświadczenie. Prace z tego obszaru
+    badają widzenie, słyszenie i integrację zmysłów. Opierają się na
+    eksperymentach percepcyjnych i eye-trackingu.
+  </p>
+
+  <ol start="19">
+    <li>Złudzenia wzrokowe a mechanizmy percepcji</li>
+    <li>Percepcja twarzy i jej przetwarzanie</li>
+    <li>Integracja informacji wzrokowej i słuchowej (efekt McGurka)</li>
+    <li>Percepcja głębi w obrazie dwuwymiarowym</li>
+    <li>Wpływ kontekstu na rozpoznawanie obiektów</li>
+    <li>Percepcja barw a nazewnictwo kolorów</li>
+    <li>Percepcja czasu w zależności od stanu emocjonalnego</li>
+    <li>Wzorce ruchu oka podczas oglądania reklamy - badanie eye-tracking</li>
+    <li>Percepcja estetyczna dzieł sztuki - badanie okulograficzne</li>
+  </ol>
+
+  <h2>Język i przetwarzanie języka</h2>
+
+  <p>
+    Przetwarzanie języka to centralny temat kognitywistyki. Prace z tego obszaru
+    badają rozumienie, produkcję i dwujęzyczność. Opierają się na eksperymentach
+    psycholingwistycznych i analizie czasu reakcji.
+  </p>
+
+  <ol start="28">
+    <li>Przetwarzanie zdań niejednoznacznych składniowo</li>
+    <li>Dwujęzyczność a funkcje wykonawcze</li>
+    <li>Rozpoznawanie słów a częstość ich występowania</li>
+    <li>Efekt torowania semantycznego w rozpoznawaniu słów</li>
+    <li>Przetwarzanie metafor w języku naturalnym</li>
+    <li>Wpływ kontekstu na rozumienie wyrażeń wieloznacznych</li>
+    <li>Rozumienie języka u osób uczących się drugiego języka</li>
+    <li>Przetwarzanie emocjonalnego nacechowania słów</li>
+    <li>Język a myślenie - wpływ kategorii językowych na percepcję</li>
+  </ol>
+
+  <h2>Podejmowanie decyzji i myślenie</h2>
+
+  <p>
+    Ten obszar bada rozumowanie, decyzje i błędy poznawcze. Prace dotyczą
+    heurystyk, ryzyka i wpływu sposobu prezentacji informacji. Opierają się na
+    eksperymentach i badaniach kwestionariuszowych.
+  </p>
+
+  <ol start="37">
+    <li>Efekt ramowania w podejmowaniu decyzji</li>
+    <li>Heurystyki i błędy poznawcze w ocenie prawdopodobieństwa</li>
+    <li>Rola emocji w podejmowaniu decyzji ryzykownych</li>
+    <li>Wpływ presji czasu na jakość decyzji</li>
+    <li>Efekt zakotwiczenia w szacowaniu wartości</li>
+    <li>Przeciążenie wyborem a satysfakcja z decyzji</li>
+    <li>Myślenie intuicyjne a analityczne w rozwiązywaniu problemów</li>
+    <li>Wpływ nastroju na skłonność do ryzyka</li>
+    <li>Decyzje konsumenckie a sposób prezentacji ceny</li>
+  </ol>
+
+  <h2>Emocje a procesy poznawcze</h2>
+
+  <p>
+    Emocje wpływają na uwagę, pamięć i decyzje. Prace z tego obszaru badają
+    związki emocji z poznaniem. Opierają się na eksperymentach z bodźcami
+    emocjonalnymi i pomiarami fizjologicznymi.
+  </p>
+
+  <ol start="46">
+    <li>Wpływ emocji na przetwarzanie informacji wzrokowej</li>
+    <li>Rozpoznawanie emocji z wyrazu twarzy</li>
+    <li>Stronniczość uwagi wobec bodźców zagrażających</li>
+    <li>Wpływ nastroju na ocenę bodźców neutralnych</li>
+    <li>Regulacja emocji a wykonanie zadania poznawczego</li>
+    <li>Empatia a przetwarzanie bodźców społecznych</li>
+    <li>Wpływ emocji na pamięć szczegółów zdarzenia</li>
+    <li>Reakcje fizjologiczne na bodźce emocjonalne</li>
+  </ol>
+
+  <h2>Sztuczna inteligencja i uczenie maszynowe</h2>
+
+  <p>
+    Kognitywistyka bada zarówno umysł, jak i jego sztuczne modele. Prace z tego
+    obszaru dotyczą uczenia maszynowego, sieci neuronowych i porównań z poznaniem
+    człowieka. Opierają się na implementacji modeli i analizie danych.
+  </p>
+
+  <ol start="54">
+    <li>Sieci neuronowe w rozpoznawaniu obrazów a percepcja człowieka</li>
+    <li>Przetwarzanie języka naturalnego przez duże modele językowe</li>
+    <li>Porównanie uczenia maszynowego z uczeniem się człowieka</li>
+    <li>Wyjaśnialność modeli sztucznej inteligencji</li>
+    <li>Zastosowanie uczenia maszynowego w analizie danych EEG</li>
+    <li>Klasyfikacja emocji na podstawie sygnałów fizjologicznych</li>
+    <li>Modele obliczeniowe pamięci roboczej</li>
+    <li>Stronniczość algorytmów a procesy decyzyjne</li>
+    <li>Zaufanie człowieka do rekomendacji systemów AI</li>
+  </ol>
+
+  <h2>Interakcja człowiek-komputer (HCI) i UX</h2>
+
+  <p>
+    Ten obszar łączy poznanie z projektowaniem technologii. Prace dotyczą
+    użyteczności, doświadczeń użytkownika i ergonomii poznawczej. Opierają się na
+    badaniach użyteczności, eye-trackingu i ankietach.
+  </p>
+
+  <ol start="63">
+    <li>Użyteczność interfejsu aplikacji mobilnej - badanie z użytkownikami</li>
+    <li>Obciążenie poznawcze a projektowanie interfejsu</li>
+    <li>Wzorce uwagi na stronie internetowej - badanie eye-tracking</li>
+    <li>Wpływ projektu interfejsu na czas wykonania zadania</li>
+    <li>Doświadczenie użytkownika (UX) w aplikacjach edukacyjnych</li>
+    <li>Mechanizmy grywalizacji a zaangażowanie użytkownika</li>
+    <li>Dostępność cyfrowa dla osób ze szczególnymi potrzebami</li>
+    <li>Interfejsy głosowe a wygoda interakcji</li>
+    <li>Projektowanie powiadomień a uwaga użytkownika</li>
+  </ol>
+
+  <h2>Neuronauka poznawcza</h2>
+
+  <p>
+    Neuronauka poznawcza bada mózgowe podstawy poznania. Prace z tego obszaru
+    wykorzystują metody neuroobrazowania i elektrofizjologii. Opierają się na
+    badaniach EEG, a w warunkach dostępu do aparatury także fMRI.
+  </p>
+
+  <ol start="72">
+    <li>Potencjały wywołane (ERP) w badaniu uwagi</li>
+    <li>Aktywność EEG podczas zadania pamięciowego</li>
+    <li>Wrzeciona snu w sygnale EEG - rejestracja i analiza</li>
+    <li>Korelaty neuronalne przetwarzania języka</li>
+    <li>Plastyczność mózgu a uczenie się nowej umiejętności</li>
+    <li>Asymetria półkulowa w przetwarzaniu emocji</li>
+    <li>Rytmy mózgowe a stan koncentracji</li>
+    <li>Neuronalne podstawy podejmowania decyzji</li>
+    <li>Interfejs mózg-komputer - możliwości i ograniczenia</li>
+  </ol>
+
+  <h2>Nowe technologie a procesy poznawcze</h2>
+
+  <p>
+    Technologie cyfrowe zmieniają sposób, w jaki myślimy i działamy. Prace z tego
+    obszaru badają wpływ urządzeń i mediów na poznanie. Opierają się na
+    eksperymentach i badaniach ankietowych.
+  </p>
+
+  <ol start="81">
+    <li>Wpływ gier komputerowych na zdolności poznawcze</li>
+    <li>Korzystanie z mediów społecznościowych a procesy poznawcze studentów</li>
+    <li>Efekt Google - wpływ wyszukiwarek na pamięć</li>
+    <li>Rzeczywistość wirtualna w treningu poznawczym</li>
+    <li>Wpływ czytania z ekranu i z papieru na rozumienie tekstu</li>
+    <li>Smartfon a obciążenie poznawcze w codziennych zadaniach</li>
+    <li>Aplikacje treningu mózgu a funkcje poznawcze</li>
+    <li>Wpływ wielozadaniowości cyfrowej na pamięć roboczą</li>
+    <li>Technostres a funkcjonowanie poznawcze pracowników</li>
+  </ol>
+
+  <h2>Filozofia umysłu i świadomość</h2>
+
+  <p>
+    Ten obszar dotyczy teoretycznych podstaw kognitywistyki. Prace analizują
+    pojęcia umysłu, świadomości i poznania. Opierają się na analizie tekstów i
+    argumentacji filozoficznej.
+  </p>
+
+  <ol start="90">
+    <li>Problem świadomości w filozofii umysłu</li>
+    <li>Koncepcja umysłu rozszerzonego a nowe technologie</li>
+    <li>Spór o naturę reprezentacji umysłowych</li>
+    <li>Poznanie ucieleśnione w ujęciu kognitywistycznym</li>
+    <li>Problem qualiów w badaniach nad świadomością</li>
+    <li>Czy sztuczna inteligencja może mieć umysł - analiza filozoficzna</li>
+  </ol>
+
+  <h2>Zaburzenia poznawcze i kognitywistyka stosowana</h2>
+
+  <p>
+    Ten obszar dotyczy zaburzeń poznania i praktycznych zastosowań. Prace badają
+    deficyty poznawcze i interwencje wspierające. Opierają się na testach
+    poznawczych i studium przypadku, we współpracy z placówkami.
+  </p>
+
+  <ol start="96">
+    <li>Funkcjonowanie poznawcze osób z chorobą neurodegeneracyjną</li>
+    <li>Deficyty uwagi w zaburzeniu ADHD</li>
+    <li>Rehabilitacja poznawcza po uszkodzeniu mózgu</li>
+    <li>Funkcje poznawcze w procesie starzenia się</li>
+    <li>Trening poznawczy a funkcjonowanie osób starszych</li>
+  </ol>
+
+  <h2>Jak wybrać temat pracy z kognitywistyki?</h2>
+
+  <p>
+    Wybór tematu w kognitywistyce zależy przede wszystkim od
+    <strong>dostępu do metody i aparatury</strong>. Tematy eksperymentalne oparte
+    na czasie reakcji zrealizujesz z użyciem darmowego oprogramowania (na przykład
+    PsychoPy) i grupy ochotników. Tematy z eye-trackingiem, EEG lub fMRI wymagają
+    dostępu do laboratorium i odpowiedniego sprzętu, dlatego upewnij się, że
+    masz go zapewniony, zanim ustalisz temat. Pamiętaj o jasnej
+    <strong>operacjonalizacji</strong>: określ zmienną niezależną, zależną i
+    sposób ich pomiaru.
+  </p>
+
+  <p>
+    Część tematów ma charakter teoretyczny (filozofia umysłu) albo obliczeniowy
+    (modelowanie, uczenie maszynowe) i wymaga innych kompetencji. Badania z
+    udziałem ludzi wymagają świadomej zgody i zwykle akceptacji komisji
+    etycznej. Skonsultuj temat z promotorem, który pomoże ocenić wykonalność i
+    dobrać narzędzia.
+  </p>
+
+  <h2>Metodologia badań kognitywistycznych</h2>
+
+  <p>
+    Kognitywistyka opiera się głównie na metodzie eksperymentalnej. Podstawą wielu
+    prac jest eksperyment behawioralny, w którym mierzy się czas reakcji i
+    poprawność wykonania zadania, najczęściej z wykorzystaniem oprogramowania w
+    rodzaju PsychoPy lub E-Prime. Procesy percepcji i uwagi bada się dodatkowo za
+    pomocą eye-trackingu rejestrującego ruchy oczu, a mózgowe podstawy poznania
+    metodami elektrofizjologii (EEG, potencjały wywołane) oraz neuroobrazowania
+    (fMRI).
+  </p>
+
+  <p>
+    Tematy dotyczące postaw i deklaracji bada się kwestionariuszem, a zagadnienia
+    obliczeniowe metodą modelowania i uczenia maszynowego. Niezależnie od metody
+    kluczowa jest staranna operacjonalizacja zmiennych, zaplanowanie wielkości
+    próby oraz właściwa analiza statystyczna. Badania z udziałem ludzi wymagają
+    świadomej zgody, anonimowości i zgody komisji etycznej. We wstępie pracy
+    należy przedstawić cel, hipotezy, grupę badaną, zastosowane narzędzia i
+    metody analizy danych.
+  </p>
+</ArticleLayout>
