@@ -1,0 +1,62 @@
+---
+// src/components/EbookKierunkowyCTA.astro
+// CTA do ebooka kierunkowego, np. /sklep/jak-napisac-prace-magisterska-z-psychologii/
+interface Props {
+  kierunek: string;           // nazwa kierunku do wyświetlenia, np. "psychologii"
+  productName?: string;       // pełna nazwa produktu, np. "Jak napisać pracę magisterską z psychologii"
+  landingHref?: string;       // URL landing page; domyślnie /sklep/jak-napisac-prace-magisterska-z-{kierunek}/
+  variant?: 'inline' | 'sidebar';
+}
+
+const {
+  kierunek,
+  productName = `Jak napisać pracę magisterską z ${kierunek}`,
+  landingHref = `/sklep/jak-napisac-prace-magisterska-z-${kierunek}/`,
+  variant = 'inline',
+} = Astro.props;
+---
+
+{variant === 'inline' && (
+  <div class="bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 border border-indigo-100 rounded-xl p-6 my-6">
+    <div class="flex flex-col sm:flex-row items-center gap-5">
+      <div class="text-5xl flex-shrink-0">🧠</div>
+      <div class="flex-1 text-center sm:text-left">
+        <h4 class="font-bold text-gray-900 mb-2">
+          Piszesz magisterkę z {kierunek}?
+        </h4>
+        <p class="text-gray-600 text-sm mb-1">
+          Pobierz przewodnik <strong>„{productName}”</strong> — metodologia, dobór narzędzi, analiza wyników i pisanie poszczególnych rozdziałów krok po kroku.
+        </p>
+        <p class="text-indigo-700 font-bold text-sm">39 zł · PDF na zawsze · dostęp natychmiast</p>
+      </div>
+      <a
+        href={landingHref}
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-105 shadow-lg shadow-accent/20 whitespace-nowrap"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        Pobierz przewodnik
+      </a>
+    </div>
+  </div>
+)}
+
+{variant === 'sidebar' && (
+  <div class="card border border-indigo-100">
+    <div class="flex items-start gap-3 mb-4">
+      <div class="text-3xl flex-shrink-0">🧠</div>
+      <div>
+        <h3 class="font-bold text-gray-900 mb-1">Magisterka z {kierunek}?</h3>
+        <p class="text-sm text-gray-600">Przewodnik „{productName}” — 39 zł.</p>
+      </div>
+    </div>
+
+    <a
+      href={landingHref}
+      class="block w-full text-center bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-3 px-4 rounded-xl transition-all hover:scale-105"
+    >
+      Pobierz przewodnik →
+    </a>
+  </div>
+)}
