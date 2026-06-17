@@ -1,0 +1,340 @@
+---
+// src/pages/sklep/jak-napisac-prace-magisterska-z-psychologii/index.astro
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+
+const API_URL =
+  "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
+
+const ebook = {
+  id: "ebook-magisterska-psychologia",
+  name: "Jak napisać pracę magisterską z psychologii",
+  subtitle: "Przewodnik po metodologii, badaniach i pisaniu",
+  price: 39,
+  pages: "120+",
+  chapters: 12,
+  format: "PDF",
+};
+---
+
+<Layout
+  title="Ebook: Jak napisać pracę magisterską z psychologii | Przewodnik PDF"
+  description="Praktyczny przewodnik po pisaniu pracy magisterskiej z psychologii. Metodologia badań, dobór narzędzi, analiza wyników, przykłady. PDF do pobrania za 39 zł."
+>
+  <Navbar />
+
+  <main class="min-h-screen">
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-white py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-accent/30 text-accent-light px-3 py-1 rounded-full text-sm font-medium">📚 Ebook PDF</span>
+              <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Psychologia</span>
+              <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">{ebook.pages} stron</span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
+              {ebook.name}
+            </h1>
+            <p class="text-2xl text-accent-light font-medium mb-4">
+              {ebook.subtitle}
+            </p>
+            <p class="text-indigo-200 mb-6 leading-relaxed text-lg">
+              Psychologia wymaga <strong class="text-white">rygorystycznej metodologii, etycznego podejścia do badanych i precyzyjnej analizy danych</strong>. Ten przewodnik pokazuje, jak napisać pracę magisterską z tego kierunku krok po kroku — od tematu, przez badania, aż po obronę.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+              <div class="bg-white/10 rounded-xl px-6 py-3">
+                <span class="text-4xl font-bold text-white ml-2">{ebook.price} zł</span>
+              </div>
+              <button
+                class="buy-button bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-accent/30 text-lg"
+                data-product-id={ebook.id}
+              >
+                <span>Kup przewodnik</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex flex-wrap gap-4 text-sm text-indigo-300">
+              <span class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Dostęp w 30 sekund
+              </span>
+              <span class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Bezpieczna płatność Stripe
+              </span>
+              <span class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                PDF na każde urządzenie
+              </span>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="bg-gradient-to-br from-accent to-purple-600 rounded-2xl p-8 shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform">
+              <div class="bg-white rounded-lg p-6">
+                <div class="text-center">
+                  <div class="text-6xl mb-4">🧠</div>
+                  <h3 class="text-xl font-bold text-slate-800 mb-2">{ebook.name}</h3>
+                  <p class="text-slate-500 text-sm">{ebook.subtitle}</p>
+                  <div class="mt-4 pt-4 border-t border-slate-200 flex justify-center gap-4 text-xs text-slate-400">
+                    <span>PDF</span>
+                    <span>•</span>
+                    <span>{ebook.pages} stron</span>
+                    <span>•</span>
+                    <span>2026</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CO ZNAJDZIESZ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-4">Co znajdziesz w przewodniku?</h2>
+        <p class="text-center text-slate-600 mb-12">
+          Materiał przygotowany specjalnie pod wymagania pracy magisterskiej z psychologii.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {
+            [
+              {
+                icon: "🎯",
+                title: "Dobór tematu i zawężanie problemu badawczego",
+                desc: "Jak wybrać temat, który przejdzie na Twoim kierunku i ma sens naukowy.",
+              },
+              {
+                icon: "📊",
+                title: "Metodologia dla psychologii",
+                desc: "Metody ilościowe i jakościowe: kwestionariusze, wywiady, eksperyment, analiza dokumentów.",
+              },
+              {
+                icon: "🧪",
+                title: "Etyka badań psychologicznych",
+                desc: "Zgoda uczestnika, anonimowość, etyczne dylematy — co musisz wiedzieć przed badaniami.",
+              },
+              {
+                icon: "📈",
+                title: "Analiza i interpretacja wyników",
+                desc: "Jak zaprezentować wyniki, zweryfikować hipotezy i napisać dyskusję.",
+              },
+              {
+                icon: "✍️",
+                title: "Pisanie poszczególnych rozdziałów",
+                desc: "Wstęp, teoria, metodologia, wyniki, dyskusja, zakończenie — z przykładami.",
+              },
+              {
+                icon: "🎤",
+                title: "Przygotowanie do obrony",
+                desc: "Typowe pytania komisji na kierunku psychologia i jak na nie odpowiadać.",
+              },
+            ].map((item) => (
+              <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-accent transition-colors">
+                <div class="text-3xl mb-3">{item.icon}</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p class="text-slate-600 text-sm">{item.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- DLA KOGO -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-8">Ten przewodnik jest dla Ciebie, jeśli:</h2>
+
+        <div class="space-y-4">
+          {
+            [
+              "Nie wiesz, jaki temat z psychologii wybrać na magisterkę",
+              "Masz problem z sformułowaniem problemu badawczego i hipotez",
+              "Nie rozumiesz różnicy między metodą, techniką a narzędziem badawczym",
+              "Nie wiesz, jak dobrać próbę i ile osób musisz zbadać",
+              "Boisz się etyki badań i zgody uczestników",
+              "Nie wiesz, jak interpretować wyniki ankiet lub wywiadów",
+              "Chcesz napisać metodologię poprawnie od pierwszego razu",
+            ].map((item) => (
+              <div class="flex items-start gap-3 bg-white p-4 rounded-lg border border-slate-200">
+                <span class="text-accent text-xl">✓</span>
+                <span class="text-slate-700">{item}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-white">Gotowy napisać magisterkę z psychologii?</h2>
+        <p class="text-xl text-indigo-300 mb-8">
+          Za cenę jednej kawy ☕ dostajesz praktyczny plan, który zaoszczędzi Ci godziny stresu.
+        </p>
+
+        <div class="bg-indigo-900/50 rounded-2xl p-8 max-w-lg mx-auto mb-8">
+          <div class="text-5xl font-bold mb-2 text-white">{ebook.price} zł</div>
+          <p class="text-accent-light font-medium mb-6">Jednorazowa płatność • PDF natychmiast po zakupie</p>
+
+          <button
+            class="buy-button w-full bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-accent/30 text-lg"
+            data-product-id={ebook.id}
+          >
+            <span>Kupuję przewodnik</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+        </div>
+
+        <p class="text-sm text-indigo-400">
+          Potrzebujesz bardziej uniwersalnego poradnika? Sprawdź
+          <a href="/sklep/praca-magisterska-ebook/" class="text-accent-light hover:underline">„Jak napisać pracę magisterską od A do Z”</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Najczęściej zadawane pytania</h2>
+
+        <div class="space-y-4">
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
+              Czy ten przewodnik zastępuje podręcznik z metodologii?
+              <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-slate-600">
+              Nie — to praktyczny przewodnik, który pokazuje, <strong>jak napisać pracę magisterską z psychologii</strong> krok po kroku. Teoria jest wyjaśniona konkretnie i skoncentrowana na tym, co naprawdę potrzebne w pracy dyplomowej.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
+              Czy znajdę tu gotowe przykłady hipotez lub metod?
+              <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-slate-600">
+              Tak — przewodnik zawiera przykłady problemów badawczych, hiptez, doboru próby, narzędzi i sposobów analizy danych adekwatnych dla psychologii.
+            </p>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl p-6 group">
+            <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
+              Jak szybko dostanę plik po zakupie?
+              <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-slate-600">
+              <strong>Natychmiast.</strong> Po udanej płatności otrzymasz email z linkiem do pobrania PDF w ciągu 30–60 sekund. Link jest ważny 7 dni.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- Loading overlay -->
+  <div
+    id="loading-overlay"
+    class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden"
+  >
+    <div class="bg-white rounded-2xl p-8 text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+      <p class="text-slate-700">Przekierowuję do płatności...</p>
+    </div>
+  </div>
+
+  <script define:vars={{ API_URL }}>
+    // cSpell:ignore gtag
+    document.addEventListener("DOMContentLoaded", function () {
+      var PRODUCTS = {
+        "ebook-magisterska-psychologia": {
+          name: "Jak napisać pracę magisterską z psychologii",
+          price: 39.0,
+        },
+      };
+
+      var buttons = document.querySelectorAll(".buy-button");
+      var loadingOverlay = document.getElementById("loading-overlay");
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", async function () {
+          var productId = button.dataset.productId;
+          var product = PRODUCTS[productId] || { name: "Ebook", price: 0 };
+
+          // GA4: add_to_cart + begin_checkout
+          if (typeof window.gtag === "function") {
+            var gaItem = {
+              item_id: productId,
+              item_name: product.name,
+              price: product.price,
+              quantity: 1,
+              item_category: "Ebook kierunkowy",
+            };
+            window.gtag("event", "add_to_cart", {
+              value: product.price,
+              currency: "PLN",
+              items: [gaItem],
+            });
+            window.gtag("event", "begin_checkout", {
+              value: product.price,
+              currency: "PLN",
+              items: [gaItem],
+            });
+          }
+
+          loadingOverlay.classList.remove("hidden");
+          button.disabled = true;
+
+          try {
+            var response = await fetch(API_URL + "/create-checkout", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ productId: productId }),
+            });
+            var data = await response.json();
+            if (data.url) {
+              window.location.href = data.url;
+            } else {
+              throw new Error(data.error || "Błąd");
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            loadingOverlay.classList.add("hidden");
+            button.disabled = false;
+            alert("Wystąpił błąd. Spróbuj ponownie.");
+          }
+        });
+      });
+    });
+  </script>
+</Layout>

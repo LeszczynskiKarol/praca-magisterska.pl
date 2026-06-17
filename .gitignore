@@ -33,3 +33,8 @@ deploy.sh
 stripe-switch.sh
 .deploy-tmp/
 .seo-audit/
+
+# Auto-copied lambda config (source of truth is aws-lambda/products.json)
+aws-lambda/create-checkout/products.json
+aws-lambda/webhook-handler/products.json
+aws-lambda/get-download/products.json

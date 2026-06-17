@@ -1,25 +1,33 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import Stripe from "stripe";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const productsConfig = JSON.parse(
+  readFileSync(join(__dirname, "products.json"), "utf8")
+);
+
+const PRODUCT_FILES = Object.fromEntries(
+  productsConfig.products.map((p) => [p.id, p.s3Key])
+);
+
+const PRODUCT_NAMES = Object.fromEntries(
+  productsConfig.products.map((p) => [p.id, p.name])
+);
+
+const PRODUCT_EMAIL_SUBJECTS = Object.fromEntries(
+  productsConfig.products.map((p) => [p.id, p.emailSubject])
+);
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const s3 = new S3Client({ region: process.env.AWS_REGION });
 const ses = new SESClient({
   region: process.env.SES_REGION || process.env.AWS_REGION,
 });
-
-const PRODUCT_FILES = {
-  "ebook-pisanie-pracy-licencjackiej": "ebooks/poradnik-praca-licencjacka.pdf",
-  "ebook-pisanie-pracy-magisterskiej": "ebooks/poradnik-praca-magisterska.pdf",
-};
-
-const PRODUCT_NAMES = {
-  "ebook-pisanie-pracy-licencjackiej":
-    "Jak napisać pracę licencjacką - Kompletny Poradnik",
-  "ebook-pisanie-pracy-magisterskiej":
-    "Jak napisać pracę magisterską od A do Z",
-};
 
 export const handler = async (event) => {
   const sig =
@@ -96,6 +104,7 @@ async function handleSuccessfulPayment(session) {
 
 async function sendDownloadEmail(email, productId, downloadUrl, session) {
   const productName = PRODUCT_NAMES[productId];
+  const subjectPrefix = PRODUCT_EMAIL_SUBJECTS[productId] || "📚 Twój ebook jest gotowy do pobrania";
   const amountPaid = (session.amount_total / 100).toFixed(2);
 
   const htmlBody = `
@@ -124,22 +133,22 @@ async function sendDownloadEmail(email, productId, downloadUrl, session) {
       <p>Cześć!</p>
       <p>Dziękujemy za zakup ebooka <strong>${productName}</strong>!</p>
       <p><strong>Kwota:</strong> ${amountPaid} PLN</p>
-      
+
       <p>Kliknij poniższy przycisk, aby pobrać swój ebook:</p>
-      
+
       <p style="text-align: center;">
         <a href="${downloadUrl}" class="button">📥 Pobierz Ebook</a>
       </p>
-      
+
       <div class="warning">
-        <strong>⚠️ Ważne:</strong> Link do pobrania jest ważny przez 7 dni. 
+        <strong>⚠️ Ważne:</strong> Link do pobrania jest ważny przez 7 dni.
         Zapisz plik na swoim urządzeniu po pobraniu.
       </div>
-      
+
       <p>Jeśli masz jakiekolwiek pytania, odpowiedz na tego maila - chętnie pomożemy!</p>
-      
+
       <p>Powodzenia w pisaniu pracy! 📚</p>
-      
+
       <p style="margin-top: 30px;">
         Pozdrawiamy,<br>
         <strong>Zespół Praca-Magisterska.pl</strong>
@@ -181,7 +190,7 @@ https://www.praca-magisterska.pl
     },
     Message: {
       Subject: {
-        Data: `📚 Twój ebook jest gotowy do pobrania - ${productName}`,
+        Data: `${subjectPrefix} - ${productName}`,
         Charset: "UTF-8",
       },
       Body: {

@@ -1,19 +1,18 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const productsConfig = JSON.parse(
+  readFileSync(join(__dirname, "products.json"), "utf8")
+);
 
-const PRODUCTS = {
-  "ebook-pisanie-pracy-licencjackiej": {
-    name: "Jak napisać pracę licencjacką - Kompletny Poradnik",
-    price: 2900,
-    currency: "pln",
-  },
-  "ebook-pisanie-pracy-magisterskiej": {
-    name: "Jak napisać pracę magisterską od A do Z",
-    price: 3900,
-    currency: "pln",
-  },
-};
+const PRODUCTS = Object.fromEntries(
+  productsConfig.products.map((p) => [p.id, p])
+);
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const ALLOWED_ORIGINS = [
   "https://www.praca-magisterska.pl",

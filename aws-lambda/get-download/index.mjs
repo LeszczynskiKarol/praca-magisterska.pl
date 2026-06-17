@@ -1,22 +1,28 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 import Stripe from "stripe";
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const productsConfig = JSON.parse(
+  readFileSync(join(__dirname, "products.json"), "utf8")
+);
+
+const PRODUCT_FILES = Object.fromEntries(
+  productsConfig.products.map((p) => [
+    p.id,
+    {
+      s3Key: p.s3Key,
+      fileName: p.fileName,
+      name: p.name,
+    },
+  ])
+);
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const s3 = new S3Client({ region: process.env.AWS_REGION || "eu-central-1" });
-
-const PRODUCT_FILES = {
-  "ebook-pisanie-pracy-licencjackiej": {
-    s3Key: "ebooks/poradnik-praca-licencjacka.pdf",
-    fileName: "Jak-napisac-prace-licencjacka.pdf",
-    name: "Jak napisać pracę licencjacką",
-  },
-  "ebook-pisanie-pracy-magisterskiej": {
-    s3Key: "ebooks/poradnik-praca-magisterska.pdf",
-    fileName: "Jak-napisac-prace-magisterska.pdf",
-    name: "Jak napisać pracę magisterską od A do Z",
-  },
-};
 
 const ALLOWED_ORIGINS = [
   "https://www.praca-magisterska.pl",

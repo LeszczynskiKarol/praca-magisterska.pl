@@ -2,49 +2,33 @@
   "products": [
     {
       "id": "ebook-pisanie-pracy-licencjackiej",
-      "name": "Kompletny Poradnik Pisania Pracy Licencjackiej",
-      "description": "150 stron praktycznych wskazówek jak napisać pracę licencjacką krok po kroku. Zawiera szablony, przykłady i checklisty.",
-      "price": 4900,
+      "name": "Jak napisać pracę licencjacką - Kompletny Poradnik",
+      "price": 2900,
       "currency": "pln",
-      "image": "/ebooks/praca-licencjacka-cover.jpg",
-      "file": "ebooks/poradnik-praca-licencjacka.pdf",
-      "features": [
-        "150 stron praktycznej wiedzy",
-        "Szablony rozdziałów",
-        "Przykłady bibliografii",
-        "Checklisty przed oddaniem"
-      ]
+      "s3Key": "ebooks/poradnik-praca-licencjacka.pdf",
+      "fileName": "Jak-napisac-prace-licencjacka.pdf",
+      "emailSubject": "📚 Twój ebook jest gotowy do pobrania",
+      "category": "Ebook"
     },
     {
-      "id": "ebook-metodologia-badan",
-      "name": "Metodologia Badań w Pracy Dyplomowej",
-      "description": "Kompletny przewodnik po metodach badawczych. Ankiety, wywiady, analiza danych - wszystko co potrzebujesz.",
+      "id": "ebook-pisanie-pracy-magisterskiej",
+      "name": "Jak napisać pracę magisterską od A do Z",
       "price": 3900,
       "currency": "pln",
-      "image": "/ebooks/metodologia-cover.jpg",
-      "file": "ebooks/metodologia-badan.pdf",
-      "features": [
-        "Metody ilościowe i jakościowe",
-        "Gotowe szablony ankiet",
-        "Analiza statystyczna krok po kroku",
-        "Przykłady z różnych kierunków"
-      ]
+      "s3Key": "ebooks/poradnik-praca-magisterska.pdf",
+      "fileName": "Jak-napisac-prace-magisterska.pdf",
+      "emailSubject": "🎓 Twój ebook jest gotowy do pobrania",
+      "category": "Ebook"
     },
     {
-      "id": "ebook-pakiet-kompletny",
-      "name": "Pakiet Kompletny - Wszystkie Ebooki",
-      "description": "Wszystkie nasze ebooki w jednym pakiecie ze zniżką 30%. Idealne przygotowanie do napisania pracy dyplomowej.",
-      "price": 6900,
+      "id": "ebook-magisterska-psychologia",
+      "name": "Jak napisać pracę magisterską z psychologii",
+      "price": 3900,
       "currency": "pln",
-      "image": "/ebooks/pakiet-cover.jpg",
-      "file": "ebooks/pakiet-kompletny.zip",
-      "features": [
-        "Wszystkie ebooki w pakiecie",
-        "30% zniżki",
-        "Dożywotnie aktualizacje",
-        "Bonus: szablony Word"
-      ],
-      "badge": "BESTSELLER"
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.pdf",
+      "fileName": "Jak-napisac-prace-magisterska-z-psychologii.pdf",
+      "emailSubject": "🧠 Twój przewodnik po psychologii jest gotowy",
+      "category": "Ebook kierunkowy"
     }
   ],
   "settings": {
