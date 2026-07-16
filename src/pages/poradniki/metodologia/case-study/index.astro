@@ -1,0 +1,386 @@
+---
+// src/pages/poradniki/metodologia/case-study/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  { label: "Studium przypadku", href: "/poradniki/metodologia/case-study/" },
+];
+
+const relatedLinks = [
+  { label: "Badania jakościowe", href: "/poradniki/metodologia/badania-jakosciowe/" },
+  { label: "Jak przeprowadzić wywiad", href: "/poradniki/metodologia/wywiad/" },
+  { label: "Obserwacja w badaniach", href: "/poradniki/metodologia/obserwacja/" },
+  { label: "Analiza dokumentów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+];
+
+const faqItems = [
+  {
+    question: "Co to jest studium przypadku?",
+    answer:
+      "Studium przypadku (case study) to metoda badawcza polegająca na wszechstronnej, pogłębionej analizie pojedynczego przypadku - osoby, organizacji, zdarzenia lub procesu - w jego rzeczywistym kontekście. Badacz łączy kilka źródeł danych (wywiady, obserwację, dokumenty), aby zrozumieć przypadek możliwie pełnie, a nie tylko zmierzyć wybrane zmienne.",
+  },
+  {
+    question: "Czy studium przypadku to metoda ilościowa czy jakościowa?",
+    answer:
+      "Zasadniczo jakościowa - celem jest pogłębione zrozumienie, a nie pomiar i generalizacja statystyczna. Studium przypadku może jednak zawierać elementy ilościowe, np. analizę wskaźników finansowych firmy albo wyników testów pacjenta. O charakterze metody decyduje sposób analizy: interpretacja w kontekście, a nie testy statystyczne.",
+  },
+  {
+    question: "Czy praca magisterska może opierać się na jednym przypadku?",
+    answer:
+      "Tak, pojedynczy przypadek jest pełnoprawnym projektem badawczym, pod warunkiem uzasadnienia jego wyboru (przypadek typowy, skrajny, unikatowy lub szczególnie dostępny poznawczo) i pogłębionej analizy z kilku źródeł danych. Prace kazuistyczne z pielęgniarstwa czy studium indywidualnego przypadku w pedagogice niemal zawsze opierają się na jednym przypadku.",
+  },
+  {
+    question: "Ile przypadków powinno mieć wielokrotne studium przypadku?",
+    answer:
+      "W pracach magisterskich najczęściej 2-4 przypadki, dobrane celowo tak, aby można je było porównać (np. dwie firmy z tej samej branży o różnych strategiach). Więcej niż 5-6 przypadków rzadko da się rzetelnie pogłębić w ramach jednej pracy dyplomowej - lepsza jest wtedy mniejsza liczba przypadków opisanych dokładniej.",
+  },
+  {
+    question: "Jakie techniki zbierania danych stosuje się w studium przypadku?",
+    answer:
+      "Standardem jest łączenie co najmniej dwóch źródeł (triangulacja): wywiad pogłębiony lub rozmowa kierowana, obserwacja, analiza dokumentów (dokumentacja medyczna, sprawozdania firmy, orzeczenia, dzienniki), a pomocniczo także wytwory badanego (prace ucznia, produkty firmy) czy dane liczbowe. Jedno źródło danych to najczęstszy zarzut recenzentów wobec słabych studiów przypadku.",
+  },
+  {
+    question: "Czym różni się studium przypadku od opisu przypadku?",
+    answer:
+      "Opis przypadku relacjonuje fakty (przebieg choroby, historię firmy), natomiast studium przypadku dodaje do opisu warstwę analityczną: pytania badawcze, ramy teoretyczne, interpretację i wnioski wykraczające poza sam przypadek. W pracy magisterskiej sam opis to za mało - recenzent oczekuje analizy prowadzącej do odpowiedzi na pytania badawcze.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Studium przypadku w pracy magisterskiej - jak napisać, przykłady"
+  description="Co to jest studium przypadku (case study), rodzaje wg Stake'a i Yina, procedura krok po kroku i przykładowy zapis do rozdziału metodologicznego. Pielęgniarstwo, pedagogika, zarządzanie."
+  updateDate="2026-07-17"
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Studium przypadku to metoda o dwóch twarzach. Na kierunkach medycznych i
+    pedagogicznych bywa podstawą całej pracy magisterskiej (analiza przypadku
+    pacjenta lub ucznia), a w zarządzaniu, marketingu i logistyce służy do
+    pogłębionej analizy jednej firmy czy wdrożenia. W obu wariantach zasada
+    jest ta sama - zamiast pytać stu osób o mało, badamy jeden przypadek
+    dogłębnie, z kilku źródeł naraz. Ten poradnik wyjaśnia, kiedy studium
+    przypadku jest dobrym wyborem, jakie są jego rodzaje, jak je przeprowadzić
+    krok po kroku i jak opisać w rozdziale metodologicznym, żeby recenzent nie
+    zarzucił pracy „braku naukowości”.
+  </p>
+
+  <h2>Co to jest studium przypadku? Definicja</h2>
+
+  <p>
+    <strong>Studium przypadku (ang. case study) to metoda badawcza polegająca
+    na wszechstronnej analizie pojedynczego przypadku - osoby, grupy,
+    organizacji, zdarzenia lub procesu - w jego rzeczywistym kontekście, z
+    wykorzystaniem wielu źródeł danych.</strong> Klasyczną definicję
+    sformułował Robert K. Yin, według którego studium przypadku to badanie
+    empiryczne, które analizuje współczesne zjawisko w jego naturalnym
+    kontekście, zwłaszcza wtedy, gdy granice między zjawiskiem a kontekstem nie
+    są wyraźne (R.K. Yin, <em>Case Study Research: Design and Methods</em>).
+    Ta uwaga o kontekście odróżnia studium przypadku od eksperymentu, w którym
+    kontekst celowo się kontroluje i izoluje, i od sondażu, który kontekst
+    pojedynczej osoby z konieczności pomija.
+  </p>
+
+  <p>
+    Przypadkiem może być niemal wszystko, pod warunkiem że da się wyznaczyć
+    jego granice. W pracach dyplomowych najczęściej jest to pacjent (prace
+    kazuistyczne w pielęgniarstwie i fizjoterapii), uczeń lub wychowanek
+    (studium indywidualnego przypadku w pedagogice), pojedyncza organizacja
+    (firma, szkoła, szpital, urząd), konkretne wdrożenie lub projekt, a czasem
+    zdarzenie - kryzys wizerunkowy marki, katastrofa, strajk. Wybór metody
+    wynika z charakteru pytań badawczych. Studium przypadku odpowiada na
+    pytania „jak” i „dlaczego” coś przebiega, nie na pytania o skalę zjawiska
+    w populacji.
+  </p>
+
+  <h2>Rodzaje studium przypadku</h2>
+
+  <p>
+    W literaturze metodologicznej funkcjonują dwie klasyczne typologie, które
+    warto znać, bo przywołanie jednej z nich w rozdziale metodologicznym
+    porządkuje opis badania. Robert E. Stake dzieli studia przypadku według
+    celu badacza, a Robert K. Yin według liczby przypadków i struktury
+    analizy.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Typ (wg Stake'a)</th>
+        <th>Cel badania</th>
+        <th>Przykład z pracy magisterskiej</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Autoteliczne (samoistne)</td>
+        <td>zrozumienie konkretnego przypadku dla niego samego, bo jest ważny lub nietypowy</td>
+        <td>analiza procesu pielęgnowania pacjenta z rzadkim zespołem chorobowym</td>
+      </tr>
+      <tr>
+        <td>Instrumentalne</td>
+        <td>przypadek służy jako okno na szersze zjawisko lub teorię</td>
+        <td>wdrożenie pracy hybrydowej w jednej firmie jako ilustracja zmian w organizacji pracy</td>
+      </tr>
+      <tr>
+        <td>Zbiorowe (wielokrotne)</td>
+        <td>porównanie kilku celowo dobranych przypadków dla pełniejszego obrazu zjawiska</td>
+        <td>strategie promocji trzech gmin turystycznych o podobnym potencjale</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Yin dodaje do tego rozróżnienie na studium pojedyncze i wielokrotne, a w
+    każdym z nich na analizę holistyczną (przypadek traktowany jako całość)
+    lub zagnieżdżoną (w ramach przypadku wyodrębnia się jednostki analizy, np.
+    działy firmy). W praktyce prac magisterskich wystarczy zadeklarować jedno:
+    czy badasz jeden przypadek, czy porównujesz kilka - a jeśli kilka, to
+    według jakiego klucza je dobrano.
+  </p>
+
+  <h2>Studium przypadku na różnych kierunkach</h2>
+
+  <p>
+    Ta sama metoda przyjmuje różne konwencje zależnie od dyscypliny i warto
+    pisać ją w konwencji swojego kierunku. W <strong>pielęgniarstwie</strong>
+    studium przypadku (praca kazuistyczna) opisuje pacjenta według ustalonego
+    schematu: dane o pacjencie i historia choroby, ocena stanu
+    biopsychospołecznego, diagnozy pielęgniarskie, plan opieki z celami i
+    interwencjami, ocena wyników. Dane pochodzą z obserwacji pacjenta, wywiadu
+    z nim i z rodziną, analizy dokumentacji medycznej i pomiarów parametrów. W
+    <strong>pedagogice</strong> studium indywidualnego przypadku dotyczy
+    zwykle dziecka z trudnościami (dydaktycznymi, wychowawczymi, rozwojowymi) i
+    prowadzi od diagnozy przez analizę przyczyn do propozycji oddziaływań;
+    klasyczne źródła danych to wywiad środowiskowy, obserwacja, analiza
+    wytworów dziecka i dokumentacji szkolnej.
+  </p>
+
+  <p>
+    W <strong>zarządzaniu, marketingu i logistyce</strong> przypadkiem jest
+    organizacja lub proces. Praca analizuje np. strategię marketingową
+    konkretnej marki, proces magazynowy jednego przedsiębiorstwa albo wdrożenie
+    systemu informatycznego. Dane pochodzą z dokumentów wewnętrznych,
+    sprawozdań finansowych, wywiadów z pracownikami lub menedżerami i z
+    obserwacji procesów. Ten wariant często łączy dane jakościowe z liczbowymi
+    (wskaźniki, koszty, czasy realizacji), co jest zaletą, bo pozwala pokazać
+    skutki opisywanych działań, a nie tylko ich przebieg.
+  </p>
+
+  <h2>Jak przeprowadzić studium przypadku krok po kroku</h2>
+
+  <ol>
+    <li>
+      <strong>Sformułuj pytania badawcze typu „jak” i „dlaczego”.</strong>
+      Przykład: jak przebiegał proces adaptacji zawodowej pielęgniarki po
+      powrocie z emigracji i dlaczego część interwencji wspierających nie
+      zadziałała?
+    </li>
+    <li>
+      <strong>Wybierz przypadek i uzasadnij wybór.</strong> Dopuszczalne
+      uzasadnienia to m.in. przypadek typowy (reprezentuje codzienność
+      zjawiska), skrajny lub unikatowy (pokazuje zjawisko w natężeniu),
+      odsłaniający (dotąd niedostępny badaczom) albo dogodny poznawczo (masz
+      do niego wyjątkowy dostęp). „Wybrałem tę firmę, bo w niej pracuję” można
+      przekuć w poprawne uzasadnienie dostępności - pod warunkiem omówienia
+      ryzyka stronniczości.
+    </li>
+    <li>
+      <strong>Wyznacz granice przypadku.</strong> Ustal, co wchodzi w zakres
+      analizy (jaki okres, które procesy, którzy uczestnicy), a co świadomie
+      zostawiasz poza nią. Bez tego studium rozlewa się w opis „wszystkiego po
+      trochu”.
+    </li>
+    <li>
+      <strong>Zaplanuj kilka źródeł danych (triangulacja).</strong> Minimum to
+      dwa niezależne źródła, np. <a
+        href="/poradniki/metodologia/wywiad/">wywiady</a> plus <a
+        href="/poradniki/metodologia/analiza-dokumentow/">analiza
+      dokumentów</a>, albo <a
+        href="/poradniki/metodologia/obserwacja/">obserwacja</a> plus
+      dokumentacja medyczna. Zbieżność ustaleń z różnych źródeł jest głównym
+      argumentem za wiarygodnością studium przypadku.
+    </li>
+    <li>
+      <strong>Zbierz dane i prowadź dziennik badania.</strong> Notuj daty,
+      okoliczności i źródła każdej informacji. W pracach kazuistycznych
+      pamiętaj o zgodzie pacjenta i anonimizacji danych.
+    </li>
+    <li>
+      <strong>Przeanalizuj materiał w odniesieniu do pytań badawczych.</strong>
+      Typowe strategie to analiza chronologiczna (jak zjawisko narastało),
+      dopasowywanie wzorca (czy przebieg zgadza się z przewidywaniami teorii)
+      i budowanie wyjaśnienia. Techniki kodowania opisujemy w poradniku o <a
+        href="/poradniki/metodologia/analiza-jakosciowa/">analizie danych
+      jakościowych</a>.
+    </li>
+    <li>
+      <strong>Sformułuj wnioski z poszanowaniem granic metody.</strong>
+      Wnioski z jednego przypadku uogólnia się analitycznie (na teorię, na
+      podobne konteksty), nie statystycznie (na populację). To rozróżnienie
+      warto zapisać wprost w pracy.
+    </li>
+  </ol>
+
+  <h2>Jak opisać studium przypadku w rozdziale metodologicznym - przykład</h2>
+
+  <p>
+    <em>„W pracy zastosowano metodę indywidualnego studium przypadku w ujęciu
+    instrumentalnym: analizowany przypadek przedsiębiorstwa X służy zbadaniu
+    szerszego zjawiska cyfryzacji procesów magazynowych w sektorze MŚP. Wybór
+    przypadku uzasadnia jego typowość (firma o strukturze i skali
+    charakterystycznej dla branży) i dostępność poznawcza. Dane zebrano z
+    trzech źródeł: analizy dokumentacji wewnętrznej za lata 2023-2025 (raporty
+    operacyjne, procedury), wywiadów półustrukturyzowanych z czterema
+    pracownikami różnych szczebli i obserwacji procesu kompletacji zamówień
+    prowadzonej przez pięć dni roboczych. Zbieżność ustaleń z trzech źródeł
+    (triangulacja) stanowiła podstawowe kryterium wiarygodności wniosków.
+    Granice przypadku wyznaczono następująco: analiza objęła wyłącznie procesy
+    magazynowe zakładu w Y, z pominięciem logistyki transportu”</em>.
+  </p>
+
+  <p>
+    W tym zapisie recenzent dostaje wszystko, czego szuka. Typ studium jest
+    nazwany i osadzony w typologii, wybór przypadku uzasadniony, źródła danych
+    policzone i skonkretyzowane, triangulacja zadeklarowana, a granice analizy
+    wyznaczone. Do kompletu brakuje tylko akapitu o ograniczeniach metody,
+    który omawiamy niżej.
+  </p>
+
+  <h2>Zalety i ograniczenia studium przypadku</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Zalety</th>
+        <th>Ograniczenia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>głębia analizy niedostępna metodom sondażowym - widać kontekst i mechanizmy</td>
+        <td>brak podstaw do generalizacji statystycznej na populację</td>
+      </tr>
+      <tr>
+        <td>elastyczność - można łączyć wywiady, obserwację, dokumenty i dane liczbowe</td>
+        <td>ryzyko stronniczości badacza, zwłaszcza przy badaniu własnej organizacji</td>
+      </tr>
+      <tr>
+        <td>realizowalne w pojedynkę, bez dużej próby respondentów</td>
+        <td>czasochłonna analiza wielu źródeł i duża objętość materiału</td>
+      </tr>
+      <tr>
+        <td>naturalny wybór, gdy zjawisko jest rzadkie lub trudno dostępne</td>
+        <td>u części promotorów wymaga obrony przed zarzutem „to tylko jeden przypadek”</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Na zarzut pojedynczego przypadku istnieje uczciwa odpowiedź. Celem studium
+    nie jest oszacowanie częstości zjawiska, tylko zrozumienie jego przebiegu -
+    a do tego jeden dobrze dobrany i wszechstronnie zbadany przypadek jest
+    właściwym materiałem. Warto tę argumentację umieścić w pracy, zanim
+    sformułuje ją recenzent.
+  </p>
+
+  <h2>Najczęstsze błędy w studium przypadku</h2>
+
+  <p>
+    Pierwszy błąd to opis zamiast analizy - praca relacjonuje historię firmy
+    lub przebieg choroby, ale nie odpowiada na żadne pytanie badawcze. Drugi
+    to jedno źródło danych; studium oparte wyłącznie na wywiadzie z jednym
+    kierownikiem nie różni się od artykułu prasowego. Trzeci błąd polega na
+    braku uzasadnienia wyboru przypadku, przez co wybór wygląda na
+    przypadkowy. Czwarty to nadmierne uogólnianie („polskie MŚP wdrażają
+    cyfryzację chaotycznie” na podstawie jednej firmy). Piąty błąd dotyczy
+    etyki - w pracach kazuistycznych zdarza się podanie danych pozwalających
+    zidentyfikować pacjenta; dane trzeba zanonimizować, a zgodę badanego
+    odnotować w procedurze. Szósty wreszcie to pominięcie granic przypadku,
+    przez co analiza traci ostrość i rozmywa się w wątkach pobocznych.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o studium przypadku</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Studium przypadku wybierz wtedy, gdy pytasz „jak” i „dlaczego”, a zjawisko
+    warto zbadać w jego naturalnym kontekście - u konkretnego pacjenta, w
+    konkretnej firmie, w konkretnej klasie. Siłą metody jest głębia i
+    triangulacja źródeł, słabością granice uogólniania, które trzeba uczciwie
+    zadeklarować. Warsztat uzupełnisz w powiązanych poradnikach o <a
+      href="/poradniki/metodologia/badania-jakosciowe/">badaniach
+    jakościowych</a>, <a href="/poradniki/metodologia/wywiad/">wywiadzie</a>,
+    <a href="/poradniki/metodologia/obserwacja/">obserwacji</a> i <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie dokumentów</a
+    >, a opis całego badania ułożysz według wzoru z poradnika o <a
+      href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

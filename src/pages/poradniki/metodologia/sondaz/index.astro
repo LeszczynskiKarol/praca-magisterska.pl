@@ -1,0 +1,407 @@
+---
+// src/pages/poradniki/metodologia/sondaz/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  { label: "Sondaż diagnostyczny", href: "/poradniki/metodologia/sondaz/" },
+];
+
+const relatedLinks = [
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Dobór próby badawczej", href: "/poradniki/metodologia/dobor-proby/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+];
+
+const faqItems = [
+  {
+    question: "Czym różni się sondaż diagnostyczny od ankiety?",
+    answer:
+      "To dwa różne poziomy opisu badania. Sondaż diagnostyczny jest METODĄ badawczą, czyli ogólną strategią zbierania danych o opiniach i zjawiskach społecznych. Ankieta jest TECHNIKĄ, czyli jednym ze sposobów realizacji sondażu (obok wywiadu kwestionariuszowego). Zdanie „metodą badawczą była ankieta” jest błędem metodologicznym - poprawnie: metodą był sondaż diagnostyczny, techniką ankieta, a narzędziem kwestionariusz ankiety.",
+  },
+  {
+    question: "Czy sondaż diagnostyczny to badanie ilościowe czy jakościowe?",
+    answer:
+      "Sondaż diagnostyczny zalicza się do badań ilościowych - zbiera ustandaryzowane dane od większej grupy respondentów i analizuje je liczbowo. Kwestionariusz może zawierać pojedyncze pytania otwarte analizowane jakościowo, ale nie zmienia to ilościowego charakteru metody.",
+  },
+  {
+    question: "Ile osób trzeba przebadać w sondażu diagnostycznym?",
+    answer:
+      "W pracach magisterskich przyjęty standard to 100-250 respondentów. Formalnie minimalną wielkość próby wyznacza kalkulacja statystyczna - dla populacji 1000 osób przy poziomie ufności 95% i błędzie 5% potrzeba 278 osób, a dla populacji powyżej miliona wystarczą 384 osoby. Jeśli próba jest mniejsza lub dobrana nielosowo, należy to uczciwie wskazać w ograniczeniach badania.",
+  },
+  {
+    question: "Jaką definicję sondażu diagnostycznego zacytować w pracy?",
+    answer:
+      "Najczęściej cytuje się definicję Tadeusza Pilcha z podręcznika „Zasady badań pedagogicznych” (T. Pilch, T. Bauman), według której sondaż to sposób gromadzenia wiedzy o atrybutach strukturalnych i funkcjonalnych oraz dynamice zjawisk społecznych, opiniach i poglądach wybranych zbiorowości. W pracach socjologicznych przywołuje się też ujęcia S. Nowaka lub E. Babbiego. Wybierz jedną definicję, podaj pełny przypis i krótko odnieś ją do własnego badania.",
+  },
+  {
+    question: "Czy sondaż diagnostyczny można przeprowadzić online?",
+    answer:
+      "Tak - ankieta internetowa (CAWI) jest dziś najczęstszą formą realizacji sondażu w pracach dyplomowych. Promotorzy ją akceptują, wymaga jednak opisania sposobu dystrybucji linku (grupy tematyczne, media społecznościowe, e-mail) i wskazania w ograniczeniach, że dobór próby był nielosowy.",
+  },
+  {
+    question: "Jakie techniki wchodzą w skład metody sondażu diagnostycznego?",
+    answer:
+      "Dwie podstawowe techniki to ankieta (papierowa, audytoryjna lub internetowa) i wywiad kwestionariuszowy, w którym badacz zadaje pytania osobiście lub telefonicznie i sam notuje odpowiedzi. Pomocniczo sondaż bywa uzupełniany analizą dokumentów, gdy dane z ankiet zestawia się z danymi zastanymi.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Sondaż diagnostyczny w pracy magisterskiej - definicja, przykłady"
+  description="Co to jest sondaż diagnostyczny wg Pilcha, czym różni się od ankiety i jak go opisać w rozdziale metodologicznym. Techniki, wielkość próby, przykładowy zapis + najczęstsze błędy."
+  updateDate="2026-07-17"
+  readingTime="16 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Sondaż diagnostyczny to najczęściej wybierana metoda badawcza w polskich
+    pracach magisterskich i licencjackich, zwłaszcza na kierunkach społecznych,
+    pedagogicznych i medycznych. Popularność ma swoją cenę. Promotorzy i
+    recenzenci znają tę metodę na wylot, więc bezbłędnie wyłapują typowe
+    potknięcia, z myleniem sondażu z ankietą na czele. W tym poradniku
+    znajdziesz definicję sondażu z klasycznym cytowaniem, rozróżnienie trzech
+    poziomów opisu badania (metoda, technika, narzędzie), procedurę krok po
+    kroku i przykładowy zapis do rozdziału metodologicznego, który możesz
+    zaadaptować do własnego tematu.
+  </p>
+
+  <h2>Co to jest sondaż diagnostyczny? Definicja</h2>
+
+  <p>
+    <strong>Sondaż diagnostyczny to metoda badawcza polegająca na zbieraniu
+    informacji o opiniach, postawach i zjawiskach społecznych od specjalnie
+    dobranej grupy osób, która reprezentuje szerszą populację.</strong> Badacz
+    nie obserwuje zjawiska bezpośrednio, tylko pyta o nie ludzi - stąd sondaż
+    bywa nazywany metodą opartą na deklaracjach. Wyniki z próby uogólnia się
+    następnie (z odpowiednią ostrożnością) na całą populację, w której badane
+    zjawisko występuje.
+  </p>
+
+  <p>
+    W pracach dyplomowych najczęściej cytuje się klasyczną definicję Tadeusza
+    Pilcha, według której metoda sondażu diagnostycznego jest „sposobem
+    gromadzenia wiedzy o atrybutach strukturalnych i funkcjonalnych oraz
+    dynamice zjawisk społecznych, opiniach i poglądach wybranych zbiorowości,
+    nasilaniu się i kierunkach rozwoju określonych zjawisk (...) w oparciu o
+    specjalnie dobraną grupę reprezentującą populację generalną, w której
+    badane zjawisko występuje” (T. Pilch, T. Bauman, <em>Zasady badań
+    pedagogicznych. Strategie ilościowe i jakościowe</em>, Warszawa 2001).
+    Jeśli piszesz pracę socjologiczną, naturalniejszym wyborem będzie ujęcie
+    Stefana Nowaka lub Earla Babbiego; w pedagogice i pielęgniarstwie Pilch
+    pozostaje standardem. Niezależnie od wyboru autora obowiązuje ta sama
+    zasada. Definicję przytocz raz, z pełnym przypisem, i od razu pokaż, jak
+    przekłada się na Twoje badanie.
+  </p>
+
+  <h2>Sondaż, ankieta, kwestionariusz - trzy poziomy, których nie wolno mylić</h2>
+
+  <p>
+    Najczęstszy błąd w rozdziałach metodologicznych dotyczy pomieszania trzech
+    poziomów opisu badania. Metoda to ogólna strategia postępowania badawczego.
+    Technika to konkretny sposób zbierania danych w ramach metody. Narzędzie
+    to fizyczny (lub cyfrowy) instrument, którym dane są zbierane. Sondaż
+    diagnostyczny stoi na najwyższym poziomie tej hierarchii i nigdy nie jest
+    „ankietą” ani „kwestionariuszem”.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Poziom</th>
+        <th>Co to jest</th>
+        <th>Przykład w badaniu sondażowym</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Metoda</td>
+        <td>ogólna strategia zbierania danych</td>
+        <td>sondaż diagnostyczny</td>
+      </tr>
+      <tr>
+        <td>Technika</td>
+        <td>sposób realizacji metody</td>
+        <td>ankieta internetowa (CAWI) lub wywiad kwestionariuszowy</td>
+      </tr>
+      <tr>
+        <td>Narzędzie</td>
+        <td>konkretny instrument pomiaru</td>
+        <td>autorski kwestionariusz ankiety złożony z 24 pytań</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Porównaj dwa zapisy. Błędny: „Metodą badawczą zastosowaną w pracy była
+    ankieta”. Poprawny: „W badaniu zastosowano metodę sondażu diagnostycznego,
+    realizowaną techniką ankiety internetowej. Narzędziem badawczym był
+    autorski kwestionariusz ankiety składający się z 24 pytań”. Ta jedna
+    poprawka potrafi zmienić ton całej recenzji, bo mylenie poziomów jest dla
+    recenzenta sygnałem, że student nie rozumie podstaw metodologii. Pełną
+    hierarchię metod i technik omawiamy w osobnym poradniku o <a
+      href="/poradniki/metodologia/metody-i-techniki-badawcze/">metodach i
+    technikach badawczych</a>.
+  </p>
+
+  <h2>Techniki stosowane w ramach sondażu</h2>
+
+  <p>
+    Sondaż diagnostyczny realizuje się dwiema podstawowymi technikami, które
+    różnią się rolą badacza w zbieraniu danych. W ankiecie respondent
+    samodzielnie wypełnia kwestionariusz. W wywiadzie kwestionariuszowym
+    pytania zadaje badacz i on też notuje odpowiedzi, co pozwala dopytać i
+    zmniejsza liczbę braków danych, ale kosztuje znacznie więcej czasu.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Technika</th>
+        <th>Jak przebiega</th>
+        <th>Kiedy się sprawdza</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ankieta internetowa (CAWI)</td>
+        <td>respondent wypełnia formularz online (Google Forms, Webankieta, LimeSurvey)</td>
+        <td>domyślny wybór w pracach dyplomowych; szybko, tanio, automatyczne kodowanie danych</td>
+      </tr>
+      <tr>
+        <td>Ankieta audytoryjna</td>
+        <td>papierowe kwestionariusze rozdawane grupie zebranej w jednym miejscu (klasa, oddział, szkolenie)</td>
+        <td>badania w szkołach i na uczelniach; bardzo wysoka zwrotność</td>
+      </tr>
+      <tr>
+        <td>Ankieta pocztowa / roznoszona (PAPI)</td>
+        <td>papierowy kwestionariusz dostarczany respondentom indywidualnie</td>
+        <td>respondenci bez dostępu do internetu, np. część pacjentów, seniorzy</td>
+      </tr>
+      <tr>
+        <td>Wywiad kwestionariuszowy</td>
+        <td>badacz zadaje pytania z kwestionariusza osobiście lub telefonicznie i notuje odpowiedzi</td>
+        <td>małe próby wymagające kompletnych danych; osoby, którym trudno wypełnić formularz samodzielnie</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Szczegółowy warsztat konstruowania kwestionariusza (typy pytań, kolejność,
+    pilotaż, dystrybucja) znajdziesz w poradniku <a
+      href="/poradniki/metodologia/ankieta/">jak przeprowadzić ankietę</a>.
+    Jeżeli Twoje badanie wymaga rozmów pogłębionych zamiast ustandaryzowanych
+    pytań, to znak, że wychodzisz poza sondaż w stronę <a
+      href="/poradniki/metodologia/wywiad/">wywiadu jakościowego</a>.
+  </p>
+
+  <h2>Sondaż diagnostyczny krok po kroku</h2>
+
+  <p>
+    Procedura sondażu w pracy magisterskiej daje się zamknąć w siedmiu krokach.
+    Kolejność ma znaczenie, bo najczęstsze porażki (za mało odpowiedzi, pytania
+    nie mierzą tego, co miały mierzyć) wynikają z pominięcia wczesnych etapów,
+    a nie z błędów na końcu.
+  </p>
+
+  <ol>
+    <li>
+      <strong>Sformułuj problem i pytania badawcze.</strong> Sondaż odpowiada
+      na pytania o skalę, częstość i zróżnicowanie opinii („ile”, „jak często”,
+      „czy grupy się różnią”). Jeśli Twoje pytania zaczynają się od „dlaczego”
+      i „jak przebiega”, rozważ metodę jakościową.
+    </li>
+    <li>
+      <strong>Postaw <a href="/poradniki/metodologia/hipotezy-badawcze/">hipotezy</a>
+      i zoperacjonalizuj zmienne.</strong> Każda hipoteza musi mieć pokrycie w
+      konkretnych pytaniach kwestionariusza - zanim napiszesz pytania, ustal,
+      co dokładnie mierzysz.
+    </li>
+    <li>
+      <strong>Określ populację i <a href="/poradniki/metodologia/dobor-proby/">dobierz
+      próbę</a>.</strong> Zdecyduj, kogo dotyczą wnioski (populacja) i jak
+      dotrzesz do respondentów (dobór losowy, celowy, kuli śnieżnej). Zapisz tę
+      decyzję - wróci w rozdziale metodologicznym i w ograniczeniach badania.
+    </li>
+    <li>
+      <strong>Zbuduj narzędzie.</strong> Przygotuj kwestionariusz: pytania
+      merytoryczne wynikające z hipotez, potem metryczka. Tam, gdzie istnieją
+      walidowane skale (satysfakcja, stres, wypalenie), użyj ich zamiast
+      wymyślać własne pozycje.
+    </li>
+    <li>
+      <strong>Przeprowadź pilotaż.</strong> Poproś 5-10 osób o wypełnienie
+      ankiety i zgłoszenie niejasności. Pilotaż wyłapuje pytania dwuznaczne,
+      sugerujące i braki w kafeteriach odpowiedzi, których po zebraniu danych
+      nie da się już naprawić.
+    </li>
+    <li>
+      <strong>Zbierz dane.</strong> Ustal z góry okno czasowe (zwykle 2-6
+      tygodni) i kanały dystrybucji. Notuj, ile zaproszeń rozesłano - pozwoli
+      to oszacować zwrotność, o którą recenzenci lubią pytać.
+    </li>
+    <li>
+      <strong>Przeanalizuj wyniki i odnieś je do hipotez.</strong> Zacznij od
+      statystyk opisowych, potem przejdź do testów weryfikujących hipotezy.
+      Dobór testów i sposób ich raportowania opisujemy w poradniku o <a
+        href="/poradniki/metodologia/analiza-ilosciowa/">analizie danych
+      ilościowych</a>.
+    </li>
+  </ol>
+
+  <h2>Jak opisać sondaż w rozdziale metodologicznym - przykład</h2>
+
+  <p>
+    W <a href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a> opis sondażu trafia do podrozdziału o metodach,
+    technikach i narzędziach. Poniższy fragment pokazuje kompletny, poprawny
+    zapis, który możesz zaadaptować do własnego tematu.
+  </p>
+
+  <p>
+    <em>„W badaniu zastosowano metodę sondażu diagnostycznego, rozumianą za T.
+    Pilchem jako sposób gromadzenia wiedzy o opiniach i poglądach wybranych
+    zbiorowości [przypis]. Wybór metody wynika z celu pracy, którym jest
+    poznanie opinii pielęgniarek na temat wypalenia zawodowego, a nie ustalenie
+    związków przyczynowych. Sondaż zrealizowano techniką ankiety internetowej
+    (CAWI). Narzędziem badawczym był kwestionariusz składający się z 28 pytań:
+    22 pytań zamkniętych opartych na pięciostopniowej skali Likerta, 2 pytań
+    otwartych i 4 pytań metryczkowych. Badanie przeprowadzono w okresie od 10
+    marca do 20 kwietnia 2026 roku; link do ankiety rozesłano za pośrednictwem
+    trzech grup zawodowych zrzeszających pielęgniarki. Uzyskano 156 kompletnych
+    odpowiedzi.”</em>
+  </p>
+
+  <p>
+    Zwróć uwagę na cztery elementy tego zapisu. Metoda, technika i narzędzie są
+    nazwane osobno i poprawnie. Wybór metody ma uzasadnienie odniesione do celu
+    pracy. Narzędzie jest opisane liczbowo (ile pytań, jakiego typu). Procedura
+    zawiera daty, kanał dystrybucji i liczbę uzyskanych odpowiedzi, czyli
+    wszystko, czego potrzebuje czytelnik, by ocenić rzetelność badania.
+  </p>
+
+  <h2>Zalety i ograniczenia sondażu diagnostycznego</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Zalety</th>
+        <th>Ograniczenia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>pozwala tanio i szybko zebrać dane od dużej grupy respondentów</td>
+        <td>mierzy deklaracje, nie faktyczne zachowania - respondenci koloryzują</td>
+      </tr>
+      <tr>
+        <td>daje dane liczbowe nadające się do testów statystycznych</td>
+        <td>nie wyjaśnia mechanizmów („dlaczego”) - do tego służą metody jakościowe</td>
+      </tr>
+      <tr>
+        <td>wyniki z dobrze dobranej próby można uogólniać na populację</td>
+        <td>przy doborze nielosowym (typowym w pracach dyplomowych) uogólnianie jest ograniczone</td>
+      </tr>
+      <tr>
+        <td>procedura dobrze opisana w literaturze - łatwo o poprawny warsztat</td>
+        <td>niska zwrotność ankiet online potrafi wypaczyć strukturę próby</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Najczęstsze błędy w badaniach sondażowych</h2>
+
+  <p>
+    Pierwszy błąd już znasz - nazywanie ankiety metodą. Drugi to sondaż bez
+    uzasadnienia, czyli wybór metody „bo wszyscy tak robią”, bez odniesienia do
+    problemu badawczego. Trzeci błąd polega na budowaniu kwestionariusza w
+    oderwaniu od hipotez; po zebraniu danych okazuje się, że żadne pytanie nie
+    mierzy zmiennej z hipotezy pierwszej. Czwarty to pominięcie pilotażu, przez
+    co dwuznaczne pytania psują dane bezpowrotnie. Piąty błąd dotyczy opisu
+    próby - brak informacji o sposobie doboru, zwrotności i strukturze
+    demograficznej respondentów. Szósty wreszcie to nadmierne uogólnianie:
+    wnioski z 120 ankiet zebranych wśród znajomych nie opisują „polskich
+    studentów”, i uczciwiej przyznać to w ograniczeniach badania, niż czekać,
+    aż wytknie to recenzent.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o sondaż diagnostyczny</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Sondaż diagnostyczny wybierz wtedy, gdy chcesz poznać opinie i postawy
+    większej grupy, a Twoje pytania badawcze dotyczą skali i zróżnicowania
+    zjawiska. Opisując go w pracy, pilnuj hierarchii metoda-technika-narzędzie,
+    zacytuj jedną definicję z pełnym przypisem i pokaż liczbowo, jak przebiegło
+    badanie. Warsztat szczegółowy znajdziesz w powiązanych poradnikach: <a
+      href="/poradniki/metodologia/ankieta/">jak przeprowadzić ankietę</a>, <a
+      href="/poradniki/metodologia/dobor-proby/">jak dobrać próbę</a> i jak
+    napisać cały <a href="/poradniki/metodologia/rozdzial-metodologiczny/"
+      >rozdział metodologiczny</a> (z gotowym wzorem PDF do pobrania).
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

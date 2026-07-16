@@ -21,6 +21,11 @@ const relatedLinks = [
 
 const faqItems = [
   {
+    question: "Co to jest metodologia w pracy magisterskiej?",
+    answer:
+      "Metodologia w pracy magisterskiej to opis sposobu przeprowadzenia badań własnych. Wskazuje, po co prowadzono badanie (cel), o co pytano (problem badawczy, pytania, hipotezy), jak zebrano dane (metoda, technika, narzędzie, próba badawcza) i jak je przeanalizowano (testy statystyczne lub analiza treści). W strukturze pracy przyjmuje formę rozdziału metodologicznego umieszczanego między częścią teoretyczną a prezentacją wyników.",
+  },
+  {
     question: "Ile stron powinien mieć rozdział metodologiczny?",
     answer:
       "Rozdział metodologiczny w pracy magisterskiej zajmuje zazwyczaj 10-20 stron znormalizowanego maszynopisu (ok. 3000-6000 słów). W pracach z naukami społecznymi i humanistycznymi bywa dłuższy, w pracach technicznych krótszy. Najważniejsza jest kompletność opisu, a nie objętość.",
@@ -74,8 +79,8 @@ const faqSchema = {
 <ArticleLayout
   title="Rozdział metodologiczny pracy magisterskiej - wzór, przykład [PDF]"
   description="Kompletny wzór rozdziału metodologicznego do pobrania w PDF + struktura podrozdziałów 2.1-2.8 z przykładami. Sprawdź, ile stron powinien mieć rozdział metodologiczny i jak go napisać."
-  updateDate="2026-06-10"
-  readingTime="22 min"
+  updateDate="2026-07-17"
+  readingTime="24 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -110,6 +115,28 @@ const faqSchema = {
       { href: "/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
     ]}
   />
+
+  <h2>Co to jest metodologia w pracy magisterskiej? Krótka definicja</h2>
+
+  <p>
+    <strong>Metodologia w pracy magisterskiej to opis sposobu przeprowadzenia
+    badań własnych.</strong> Odpowiada na cztery pytania. Po co prowadzono
+    badanie (cel i przedmiot badań)? O co pytano (problem badawczy, pytania
+    badawcze, hipotezy)? Jak zebrano dane (metoda, technika, narzędzie i próba
+    badawcza)? Jak te dane przeanalizowano (testy statystyczne lub analiza
+    treści)? W strukturze pracy metodologia przyjmuje formę osobnego rozdziału,
+    umieszczanego między częścią teoretyczną a prezentacją wyników.
+  </p>
+
+  <p>
+    Warto przy tym rozróżnić dwa pojęcia, które bywają mylone. Metodologia w
+    ścisłym sensie to nauka o metodach badawczych i zasadach ich stosowania.
+    Metodyka natomiast to konkretny, praktyczny sposób wykonania badania. W
+    pracy magisterskiej piszemy „rozdział metodologiczny”, ale jego treść jest
+    w istocie metodyką naszego badania, osadzoną w wiedzy metodologicznej.
+    Promotorzy używają obu określeń wymiennie i żadne z nich nie będzie błędem
+    w tytule rozdziału.
+  </p>
 
   <h2>Czym jest rozdział metodologiczny i dlaczego jest tak ważny?</h2>
 
@@ -231,8 +258,9 @@ const faqSchema = {
     danych. Podejście ilościowe jest szczególnie przydatne, gdy chcemy zbadać <a
       href="/poradniki/metodologia/badania-ilosciowe/">skalę zjawisk, zależności statystyczne</a>
     między zmiennymi lub przetestować konkretne hipotezy. Typowe narzędzia
-    ilościowe to ankiety z pytaniami zamkniętymi, testy psychologiczne, analiza
-    dokumentów z wykorzystaniem klucza kategoryzacyjnego oraz analiza danych
+    ilościowe to ankiety z pytaniami zamkniętymi, testy psychologiczne, <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analiza dokumentów</a> z
+    wykorzystaniem klucza kategoryzacyjnego oraz analiza danych
     wtórnych z baz statystycznych.
   </p>
 
@@ -240,10 +268,12 @@ const faqSchema = {
     Metody jakościowe natomiast koncentrują się na głębokim zrozumieniu badanych
     zjawisk, ich znaczeń, kontekstów i procesów. Operują na mniejszych, ale
     bardziej szczegółowo badanych próbach i poszukują odpowiedzi na pytania
-    „jak" i „dlaczego", a nie „ile". Wśród klasycznych technik <a
+    „jak” i „dlaczego”, a nie „ile”. Wśród klasycznych technik <a
       href="/poradniki/metodologia/badania-jakosciowe/">badań jakościowych</a> wymienia
-    się: wywiad pogłębiony (indywidualny lub grupowy), obserwację (jawną lub ukrytą,
-    uczestniczącą lub nieuczestniczącą), studium przypadku, analizę treści, etnografię
+    się: wywiad pogłębiony (indywidualny lub grupowy), <a
+      href="/poradniki/metodologia/obserwacja/">obserwację</a> (jawną lub ukrytą,
+    uczestniczącą lub nieuczestniczącą), <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a>, analizę treści, etnografię
     oraz analizę dyskursu. Wyniki badań jakościowych nie są uogólnialne na populację
     w sensie statystycznym, ale dostarczają głębokiego, kontekstowego zrozumienia
     badanego problemu.
@@ -296,6 +326,58 @@ const faqSchema = {
     adaptacji.
   </p>
 
+  <table>
+    <thead>
+      <tr>
+        <th>Podrozdział</th>
+        <th>Co zawiera</th>
+        <th>Typowa objętość</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2.1. Przedmiot i cel badań</td>
+        <td>co badamy, cel główny i cele szczegółowe</td>
+        <td>1-2 strony</td>
+      </tr>
+      <tr>
+        <td>2.2. Problem, pytania i hipotezy</td>
+        <td>problem główny, 2-5 pytań szczegółowych, hipotezy</td>
+        <td>1-2 strony</td>
+      </tr>
+      <tr>
+        <td>2.3. Zmienne i operacjonalizacja</td>
+        <td>zmienne zależne i niezależne, wskaźniki, skale pomiaru</td>
+        <td>1-2 strony</td>
+      </tr>
+      <tr>
+        <td>2.4. Metody, techniki i narzędzia</td>
+        <td>wybrana metoda z uzasadnieniem, opis narzędzia</td>
+        <td>2-4 strony</td>
+      </tr>
+      <tr>
+        <td>2.5. Dobór i charakterystyka próby</td>
+        <td>populacja, metoda doboru, wielkość, dane demograficzne</td>
+        <td>2-3 strony</td>
+      </tr>
+      <tr>
+        <td>2.6. Procedura i organizacja badań</td>
+        <td>kiedy, gdzie i jak przebiegało badanie</td>
+        <td>1-2 strony</td>
+      </tr>
+      <tr>
+        <td>2.7. Metody analizy danych</td>
+        <td>program, testy statystyczne lub sposób analizy treści</td>
+        <td>1-2 strony</td>
+      </tr>
+      <tr>
+        <td>2.8. Ograniczenia i kwestie etyczne</td>
+        <td>słabości badania, zgody, anonimizacja danych</td>
+        <td>1-2 strony</td>
+      </tr>
+    </tbody>
+  </table>
+
   <p>
     <strong>2.1. Przedmiot i cel badań.</strong> W pierwszym podrozdziale precyzyjnie
     określ, co jest przedmiotem Twoich badań - jakie zjawisko, populację lub proces
@@ -317,15 +399,15 @@ const faqSchema = {
     <strong>2.3. <a href="/poradniki/metodologia/zmienne-badawcze/">Zmienne i ich operacjonalizacja</a> (dotyczy badań ilościowych).</strong>
     Wymień zmienne niezależne, zależne i kontrolne. Dla każdej zmiennej podaj definicję
     teoretyczną oraz operacyjną - czyli sposób, w jaki została zoperacjonalizowana
-    (np. „satysfakcja z pracy" mierzona pięciostopniową skalą Likerta w pytaniach
+    (np. „satysfakcja z pracy” mierzona pięciostopniową skalą Likerta w pytaniach
     7-15 ankiety). Wskaż jednostki miary i typ skali pomiarowej.
   </p>
 
   <p>
     <strong>2.4. Metody, techniki i narzędzia badawcze.</strong> Opisz wybrane <a
       href="/poradniki/metodologia/metody-i-techniki-badawcze/">metody i techniki
-    badawcze</a> wraz z uzasadnieniem. Pamiętaj o trzech warstwach: metoda (np. sondaż
-    diagnostyczny), technika (np. ankieta), narzędzie (np. autorski kwestionariusz
+    badawcze</a> wraz z uzasadnieniem. Pamiętaj o trzech warstwach: metoda (np. <a
+      href="/poradniki/metodologia/sondaz/">sondaż diagnostyczny</a>), technika (np. ankieta), narzędzie (np. autorski kwestionariusz
     ankiety zawierający 25 pytań). Jeśli korzystasz z gotowych, walidowanych narzędzi
     (np. skala stresu PSS-10), podaj źródło i informacje o rzetelności (alfa Cronbacha).
   </p>
@@ -372,7 +454,7 @@ const faqSchema = {
     Aby lepiej zrozumieć, jak wygląda dobrze napisany rozdział metodologiczny w
     praktyce, prześledźmy fragmenty wzorcowego rozdziału z pracy o tematyce
     „Wpływ pracy zdalnej na poziom satysfakcji zawodowej pracowników sektora IT
-    w Polsce". Poniższe fragmenty pochodzą z kompletnego wzoru, który możesz <a
+    w Polsce”. Poniższe fragmenty pochodzą z kompletnego wzoru, który możesz <a
       href="/downloads/wzor-rozdzialu-metodologicznego-praca-magisterska.pdf"
       download>pobrać w całości jako PDF</a
     > i zaadaptować do dowolnego tematu - przenoszą się zasady, nie konkretna
@@ -388,7 +470,7 @@ const faqSchema = {
     najsilniej różnicujących grupy; (3) sformułowanie rekomendacji dla pracodawców
     sektora IT. Problem badawczy główny brzmi: w jakim stopniu model pracy (stacjonarny,
     hybrydowy, zdalny) różnicuje poziom satysfakcji zawodowej pracowników sektora
-    IT?"
+    IT?”
     <em>(Komentarz: jeden cel główny, trzy cele szczegółowe, jedno pytanie
     główne - klarowna, hierarchiczna struktura.)</em>
   </p>
@@ -401,7 +483,7 @@ const faqSchema = {
     pracy w Polsce. Strukturę próby przedstawiono w tabeli 2.1: kobiety stanowiły
     34% (n=84), mężczyźni 66% (n=163). Średni wiek uczestników wyniósł 31,4 roku
     (SD=5,8). Model pracy: stacjonarny 18% (n=44), hybrydowy 52% (n=128), w pełni
-    zdalny 30% (n=75)." <em
+    zdalny 30% (n=75).” <em
       >(Komentarz: konkretne liczby, jasne kryteria, szczegółowa charakterystyka
       demograficzna.)</em
     >
@@ -415,7 +497,7 @@ const faqSchema = {
     aspektów satysfakcji (wynagrodzenie, awans, kierownictwo, dodatki, nagrody, procedury,
     współpracownicy, charakter pracy, komunikacja). Rzetelność narzędzia w badanej
     próbie: alfa Cronbacha = 0,87 dla skali ogólnej. Kwestionariusz uzupełniono o
-    autorskie pytania o model pracy oraz metryczkę demograficzną - łącznie 47 pytań."
+    autorskie pytania o model pracy oraz metryczkę demograficzną - łącznie 47 pytań.”
     <em
       >(Komentarz: walidowane narzędzie z podanym źródłem, raportowanie rzetelności,
       jasne uzupełnienia autorskie.)</em
@@ -432,13 +514,13 @@ const faqSchema = {
     >. To trzy różne poziomy: metoda to ogólne podejście (sondaż, eksperyment),
     technika to sposób realizacji (ankieta, wywiad), narzędzie to konkretny
     instrument (kwestionariusz z 25 pytaniami). Zdanie „metodą badawczą była
-    ankieta" jest błędne metodologicznie - poprawnie: „metodą był sondaż
-    diagnostyczny, techniką ankieta, narzędziem autorski kwestionariusz".
+    ankieta” jest błędne metodologicznie - poprawnie: „metodą był sondaż
+    diagnostyczny, techniką ankieta, narzędziem autorski kwestionariusz”.
   </p>
 
   <p>
     Drugi błąd to <strong>brak uzasadnienia wyboru metody</strong>. Nie wystarczy
-    napisać „wybrano badanie ankietowe" - trzeba wyjaśnić DLACZEGO ta metoda jest
+    napisać „wybrano badanie ankietowe” - trzeba wyjaśnić DLACZEGO ta metoda jest
     odpowiednia do problemu badawczego (np. ze względu na potrzebę dotarcia do dużej
     liczby respondentów, mierzalność zmiennych, możliwość uogólniania wyników).
     Brak uzasadnienia sygnalizuje, że student wybrał metodę intuicyjnie, a nie świadomie.
@@ -456,7 +538,7 @@ const faqSchema = {
 
   <p>
     Piąty błąd to <strong>arbitralna wielkość próby</strong> - „przebadano 100
-    osób" bez uzasadnienia, dlaczego akurat tyle. W badaniach ilościowych liczbę
+    osób” bez uzasadnienia, dlaczego akurat tyle. W badaniach ilościowych liczbę
     powinna uzasadniać kalkulacja statystyczna (analiza mocy testu); w
     jakościowych - osiągnięcie saturacji teoretycznej (moment, gdy nowe wywiady
     nie wnoszą nowych kategorii). Szósty błąd to <strong
@@ -483,9 +565,9 @@ const faqSchema = {
     skrojona pod konkretne pytania badawcze - przeniesienie jej z innej pracy
     powoduje, że nie pasuje do problemu. Dziesiąty błąd to <strong
       >pisanie metodologii w czasie przyszłym</strong
-    > w wersji końcowej pracy („zostanie przeprowadzona ankieta..."). To poprawne
+    > w wersji końcowej pracy („zostanie przeprowadzona ankieta...”). To poprawne
     tylko w projekcie badawczym składanym przed badaniami. Finalna wersja rozdziału
-    metodologicznego pisana jest w czasie przeszłym („przeprowadzono ankietę...").
+    metodologicznego pisana jest w czasie przeszłym („przeprowadzono ankietę...”).
   </p>
 
   <h2>Rozdział metodologiczny w pracach licencjackich i magisterskich - różnice</h2>

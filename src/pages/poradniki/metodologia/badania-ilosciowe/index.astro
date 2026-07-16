@@ -63,9 +63,9 @@ const faqSchema = {
 
 <ArticleLayout
   title="Badania ilościowe w pracy magisterskiej - przykłady i przewodnik"
-  description="Czym są badania ilościowe + 6 konkretnych przykładów z różnych kierunków. Ankieta - ilościowa czy jakościowa, ile osób przebadać, jak analizować wyniki. Tabela porównawcza z badaniami jakościowymi."
-  updateDate="2026-06-11"
-  readingTime="20 min"
+  description="Czym są badania ilościowe + 6 konkretnych przykładów z różnych kierunków. Rodzaje badań ilościowych, skale pomiarowe, tabela wielkości próby, zalety i wady. Porównanie z badaniami jakościowymi."
+  updateDate="2026-07-17"
+  readingTime="25 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
@@ -96,10 +96,11 @@ const faqSchema = {
   <h2>Czym są badania ilościowe i kiedy je stosować?</h2>
 
   <p>
-    Badania ilościowe to systematyczne podejście metodologiczne oparte na
-    zbieraniu danych liczbowych od większej grupy osób, reprezentujących
-    określoną populację. Istotą tej metody jest możliwość pomiaru badanych
-    zjawisk oraz ich kwantyfikacja, co pozwala na obiektywną analizę
+    <strong>Badania ilościowe to badania, w których zjawiska mierzy się
+    liczbowo. Dane zbiera się od dużej grupy osób za pomocą ustandaryzowanych
+    narzędzi (najczęściej ankiety), a wyniki analizuje statystycznie.</strong>
+    Istotą tej metody jest możliwość pomiaru badanych
+    zjawisk i ich kwantyfikacja, co pozwala na obiektywną analizę
     statystyczną i wyciąganie wniosków opartych na twardych danych. W pracach
     magisterskich badania ilościowe znajdują zastosowanie wszędzie tam, gdzie
     istnieje potrzeba zmierzenia nasilenia zjawiska, określenia częstotliwości
@@ -256,8 +257,8 @@ const faqSchema = {
     wprost: <strong>ankieta jest techniką badań ilościowych</strong>. Zbiera
     ustandaryzowane odpowiedzi od wielu osób i pozwala je policzyć, porównać
     między grupami i poddać testom statystycznym. Wątpliwość bierze się stąd,
-    że kwestionariusz może zawierać pytania otwarte („dlaczego?", „co
-    sądzisz o..."), których odpowiedzi analizuje się jakościowo. Kilka pytań
+    że kwestionariusz może zawierać pytania otwarte („dlaczego?”, „co
+    sądzisz o...”), których odpowiedzi analizuje się jakościowo. Kilka pytań
     otwartych nie zmienia jednak charakteru metody - o ilościowości decyduje
     standaryzacja i liczbowa analiza wyników. Jakościowym odpowiednikiem
     ankiety jest <a href="/poradniki/metodologia/wywiad/"
@@ -266,6 +267,67 @@ const faqSchema = {
     statystyki. Analogicznie obserwacja może być ilościowa (liczenie zachowań
     według klucza) albo jakościowa (opis i interpretacja), a o kwalifikacji
     decyduje sposób zapisu i analizy danych, nie sama nazwa techniki.
+  </p>
+
+  <h2>Rodzaje badań ilościowych</h2>
+
+  <p>
+    Pod wspólną nazwą „badania ilościowe” kryje się kilka odmiennych podejść.
+    Różnią się one tym, skąd pochodzą dane i jaki typ wniosków pozwalają
+    wyciągnąć. W pracach magisterskich zdecydowanie dominuje sondaż
+    diagnostyczny, ale warto znać pozostałe rodzaje, bo dla niektórych tematów
+    (zwłaszcza w logistyce, finansach czy zarządzaniu) analiza danych zastanych
+    bywa lepszym i tańszym wyborem niż kolejna ankieta.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rodzaj badania</th>
+        <th>Na czym polega</th>
+        <th>Kiedy go wybrać</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/poradniki/metodologia/sondaz/">Sondaż diagnostyczny</a></td>
+        <td>zbieranie opinii, postaw i deklaracji od próby respondentów, zwykle techniką ankiety</td>
+        <td>badanie opinii, postaw, zachowań deklarowanych; najpopularniejszy wybór w pracach dyplomowych</td>
+      </tr>
+      <tr>
+        <td>Eksperyment</td>
+        <td>manipulacja zmienną niezależną i pomiar jej wpływu na zmienną zależną w kontrolowanych warunkach</td>
+        <td>pytania o związek przyczynowo-skutkowy; częsty w psychologii i pedagogice</td>
+      </tr>
+      <tr>
+        <td>Badanie korelacyjne (przekrojowe)</td>
+        <td>pomiar dwóch lub więcej zmiennych w jednym momencie i analiza związków między nimi</td>
+        <td>gdy nie można manipulować zmiennymi (np. staż pracy, cechy osobowości)</td>
+      </tr>
+      <tr>
+        <td>Analiza <a href="/poradniki/metodologia/analiza-dokumentow/">danych zastanych</a></td>
+        <td>wykorzystanie istniejących danych: statystyk GUS, rejestrów, raportów, dokumentacji firmy</td>
+        <td>tematy ekonomiczne, logistyczne, administracyjne; brak dostępu do respondentów</td>
+      </tr>
+      <tr>
+        <td>Ustrukturyzowana <a href="/poradniki/metodologia/obserwacja/">obserwacja</a></td>
+        <td>liczenie zachowań według wcześniej przygotowanego klucza kategoryzacyjnego</td>
+        <td>badanie faktycznych zachowań zamiast deklaracji (np. interakcje w klasie szkolnej)</td>
+      </tr>
+      <tr>
+        <td>Badanie podłużne (panelowe)</td>
+        <td>wielokrotny pomiar tych samych osób lub wskaźników w odstępach czasu</td>
+        <td>badanie zmian w czasie; w pracach magisterskich rzadkie ze względu na harmonogram</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Wybór rodzaju badania warto zapisać wprost w rozdziale metodologicznym wraz
+    z uzasadnieniem. Zdanie „przeprowadzono sondaż diagnostyczny, ponieważ celem
+    było poznanie opinii szerokiej grupy odbiorców, a nie ustalenie związku
+    przyczynowego” mówi recenzentowi, że autor zna alternatywy i wybrał
+    świadomie.
   </p>
 
   <h2>Przykłady badań ilościowych z różnych kierunków</h2>
@@ -416,6 +478,47 @@ const faqSchema = {
     społecznościowych do rekrutacji uczestników.
   </p>
 
+  <h3>Ile osób przebadać? Orientacyjna wielkość próby</h3>
+
+  <p>
+    Formalnie wielkość próby wylicza się ze wzoru uwzględniającego liczebność
+    populacji, poziom ufności i akceptowany margines błędu. Poniższa tabela
+    podaje wyniki tej kalkulacji dla najczęstszych sytuacji, przy standardowych
+    założeniach przyjmowanych w pracach dyplomowych (poziom ufności 95%,
+    margines błędu 5%).
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Liczebność populacji</th>
+        <th>Minimalna próba (95%, błąd 5%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>100 osób</td><td>80</td></tr>
+      <tr><td>200 osób</td><td>132</td></tr>
+      <tr><td>500 osób</td><td>217</td></tr>
+      <tr><td>1 000 osób</td><td>278</td></tr>
+      <tr><td>5 000 osób</td><td>357</td></tr>
+      <tr><td>10 000 osób</td><td>370</td></tr>
+      <tr><td>100 000 osób</td><td>383</td></tr>
+      <tr><td>1 000 000 i więcej</td><td>384</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Dwie rzeczy zaskakują studentów w tej tabeli. Po pierwsze, powyżej pewnego
+    progu wielkość populacji przestaje mieć znaczenie, czyli dla populacji
+    miliona i dziesięciu milionów osób minimalna próba jest praktycznie taka
+    sama (ok. 384 osoby). Po drugie, w małych populacjach trzeba przebadać
+    znaczny odsetek całości; przy 100-osobowej firmie reprezentatywna próba to
+    aż 80 pracowników. W praktyce prac magisterskich rzadko osiąga się pełną
+    reprezentatywność i promotorzy to akceptują. Wtedy uczciwie opisz próbę
+    jako dobraną nielosowo i wskaż to w ograniczeniach badania, zamiast
+    twierdzić, że wyniki uogólniają się na całą populację.
+  </p>
+
   <h2>Metody i narzędzia zbierania danych ilościowych</h2>
 
   <p>
@@ -478,6 +581,64 @@ const faqSchema = {
     kończąc na pytaniach wrażliwych lub trudnych. Przed właściwym badaniem warto
     przeprowadzić badanie pilotażowe na małej grupie osób, aby zidentyfikować
     ewentualne problemy z formularzem ankiety i wprowadzić niezbędne poprawki.
+  </p>
+
+  <h3>Skale pomiarowe - od nich zależy, jakie analizy będą możliwe</h3>
+
+  <p>
+    Każde pytanie kwestionariusza generuje dane na jednej z czterech skal
+    pomiarowych. To rozróżnienie ma praktyczne konsekwencje, bo typ skali
+    decyduje o tym, jakie statystyki wolno policzyć. Dla zmiennej nominalnej
+    (np. kierunek studiów) nie istnieje „średnia”, a dla zmiennej porządkowej
+    poprawniejszą miarą tendencji centralnej jest mediana.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Skala</th>
+        <th>Co mierzy</th>
+        <th>Przykłady</th>
+        <th>Dozwolone analizy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nominalna</td>
+        <td>przynależność do kategorii, bez uporządkowania</td>
+        <td>płeć, kierunek studiów, tak/nie</td>
+        <td>częstości, dominanta, test chi-kwadrat</td>
+      </tr>
+      <tr>
+        <td>Porządkowa</td>
+        <td>uporządkowanie kategorii bez równych odstępów</td>
+        <td>wykształcenie, oceny „zdecydowanie nie... zdecydowanie tak”</td>
+        <td>mediana, korelacja rho-Spearmana, test U Manna-Whitneya</td>
+      </tr>
+      <tr>
+        <td>Przedziałowa (interwałowa)</td>
+        <td>równe odstępy między wartościami, umowne zero</td>
+        <td>temperatura w °C, wynik testu wiedzy</td>
+        <td>średnia, odchylenie standardowe, test t, ANOVA, r-Pearsona</td>
+      </tr>
+      <tr>
+        <td>Ilorazowa (stosunkowa)</td>
+        <td>równe odstępy i naturalne zero</td>
+        <td>wiek, staż pracy, dochód, liczba dzieci</td>
+        <td>wszystkie powyższe plus porównania ilorazowe</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Praktyczna uwaga o skali Likerta, na której opiera się większość ankiet
+    studenckich. Pojedyncze pytanie likertowskie (1-5) daje formalnie dane
+    porządkowe. Gdy jednak sumujemy lub uśredniamy kilka pozycji mierzących ten
+    sam konstrukt (tak działają walidowane skale, np. skale satysfakcji), wynik
+    łączny traktuje się w praktyce badawczej jak zmienną przedziałową i wolno
+    dla niego liczyć średnie i testy parametryczne. Ta konwencja jest
+    powszechnie akceptowana w naukach społecznych, warto jednak zaznaczyć ją w
+    opisie metod analizy.
   </p>
 
   <h2>Analiza i interpretacja wyników badań</h2>
@@ -557,6 +718,54 @@ const faqSchema = {
     końcowych pracy magisterskiej.
   </p>
 
+  <h2>Zalety i wady badań ilościowych</h2>
+
+  <p>
+    Decydując się na badanie ilościowe, warto znać jego mocne i słabe strony,
+    zwłaszcza że recenzenci chętnie pytają o nie na obronie. Poniższe
+    zestawienie przyda się też przy pisaniu uzasadnienia wyboru metody w
+    rozdziale metodologicznym.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Zalety</th>
+        <th>Wady i ograniczenia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>duża próba przy niskim koszcie i krótkim czasie zbierania danych (ankieta online)</td>
+        <td>powierzchowność - wyniki mówią „ile”, ale nie tłumaczą „dlaczego”</td>
+      </tr>
+      <tr>
+        <td>obiektywność i porównywalność wyników dzięki standaryzacji narzędzia</td>
+        <td>błędów kwestionariusza nie da się naprawić po zebraniu danych</td>
+      </tr>
+      <tr>
+        <td>możliwość uogólniania wniosków przy reprezentatywnej próbie</td>
+        <td>badanie deklaracji, nie faktycznych zachowań (respondenci koloryzują)</td>
+      </tr>
+      <tr>
+        <td>weryfikacja hipotez testami statystycznymi, łatwiejsza obrona wyników</td>
+        <td>wymaga podstaw statystyki i obsługi programu do analiz</td>
+      </tr>
+      <tr>
+        <td>szybka analiza po zakodowaniu danych, automatyczne wykresy z platform ankietowych</td>
+        <td>ryzyko niskiej zwrotności i próby zdominowanej przez jedną grupę (np. znajomych)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Większość wymienionych wad da się ograniczyć na etapie projektowania.
+    Powierzchowność rekompensuje dodanie kilku wywiadów pogłębionych (podejście
+    mieszane), błędom narzędzia zapobiega pilotaż na 5-10 osobach, a ryzyko
+    skrzywionej próby zmniejsza dystrybucja ankiety kilkoma niezależnymi
+    kanałami zamiast wyłącznie wśród znajomych na Facebooku.
+  </p>
+
   <h2>FAQ - najczęściej zadawane pytania o badania ilościowe</h2>
 
   <div class="faq-list">
@@ -576,7 +785,7 @@ const faqSchema = {
 
   <p>
     Badanie ilościowe wybierz wtedy, gdy Twoje pytania badawcze zaczynają się
-    od „ile", „jak często" albo „czy istnieje zależność". Zaplanuj zmienne,
+    od „ile”, „jak często” albo „czy istnieje zależność”. Zaplanuj zmienne,
     próbę i testy statystyczne przed zebraniem pierwszej odpowiedzi, bo błędów
     kwestionariusza nie naprawi żadna analiza. Cały warsztat masz w
     powiązanych poradnikach: <a href="/poradniki/metodologia/ankieta/"

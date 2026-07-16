@@ -2,7 +2,76 @@
 
 ---
 
-## ✅ STAN AKTUALNY (2026-06-13) — sekcja wiążąca
+## 🔵 AKTUALIZACJA 2026-07-11 — sekcja wiążąca (nadrzędna)
+
+> Ta sekcja zastępuje „STAN AKTUALNY (2026-06-13)" poniżej. Zweryfikowano
+> względem faktycznej zawartości `src/pages/` oraz danych GA4/GSC (28 dni).
+
+### Co zrobiono od 2026-06-13 (zweryfikowane w kodzie)
+
+- **Kierunki `/tematy/`: 41 gotowych** (bez zmian ilościowo od 06-14, zgodne z planem).
+- **Przykładowe prace `/tematy/<kierunek>/przykladowa-praca/`: 16 gotowych** — to
+  duży skok od pilota (był tylko psychologia). Mają je: bezpieczenstwo-narodowe,
+  ekonomia, filologia-polska, fizjoterapia, historia, informatyka, kryminologia,
+  pedagogika, pielegniarstwo, politologia, praca-socjalna, prawo, psychologia,
+  rolnictwo, socjologia, zarzadzanie. Źródła w `.wzory-src/` (16 przykładowych prac
+  + 10 wzorów, DOCX+PDF w `public/downloads/`). Pipeline: [[wzory-do-pobrania-pipeline]].
+- **Sklep** `/sklep/praca-magisterska-ebook/` istnieje (łapie ruch, poz. ~11).
+
+### ✅ Zrobione 2026-07-17 (sprint B1 + A1 + metodologia cz. 1)
+
+- **B1** `rozdzial-metodologiczny`: sekcja-definicja pod snippet „co to jest
+  metodologia w pracy magisterskiej" (+ FAQ item), tabela struktury 2.1–2.8,
+  linki do nowych podstron. Title/H1 nietknięte.
+- **A1** `badania-ilosciowe`: nowe sekcje — rodzaje badań ilościowych (tabela),
+  wielkość próby (tabela Cochran/FPC, zweryfikowana), skale pomiarowe (tabela),
+  zalety i wady (tabela); definicja snippet-friendly na początku.
+- **Metodologia hub**: +4 karty, liczniki 12→18, sekcja-definicja pod snippet;
+  `/poradniki/` stat 10+→18.
+- **Nowe poradniki (4/8 z backlogu)**: `sondaz` (definicja Pilcha zweryfikowana
+  w źródłach), `case-study` (Yin + typologia Stake'a zweryfikowane),
+  `obserwacja`, `analiza-dokumentow` (definicja Berelsona zweryfikowana).
+
+### Backlog treści NADAL DO ZROBIENIA (potwierdzone: brak w `src/pages/`)
+
+1. **Metodologia — uzupełnienia** (hub ma 18 podstron, brakuje): `eksperyment`,
+   `triangulacja`, `etyka`, `badania-online`.
+2. **Struktura — uzupełnienia:** `aneksy`, `wykaz-tabel`, `wykaz-skrotow`.
+3. **Przykładowe prace — rozszerzenie** na kierunki, które ŁAPIĄ ruch a ich nie mają:
+   priorytet **administracja** (40 klik/mies bez wzoru), dalej logistyka, marketing,
+   zdrowie-publiczne, finanse-i-rachunkowosc. (CTR wzorów = ~11%, dowiedziony lever.)
+4. **Kierunki niszowe** (opcjonalnie, niski priorytet): gospodarka przestrzenna,
+   biotechnologia, medycyna, teologia, filozofia.
+5. **Ebook per kierunek** (przyszłość): [[ebook-shop-per-kierunek]].
+
+### 🎯 DOKĄD PODĄŻAĆ TERAZ — priorytety oparte na danych GSC (28 dni)
+
+**A) Deep-content na stronach z ogromną liczbą wyświetleń a słabą pozycją** (największy
+lewar — ruch już puka, brakuje pozycji):
+- `/poradniki/metodologia/badania-ilosciowe/` — **1282 wyśw, poz. 17,5, CTR 0,6%**.
+  Największa niewykorzystana pula. Rozbudować treść pod pozycję → skok z str. 2 na 1.
+- `/poradniki/metodologia/` (hub) — 851 wyśw, poz. 13,8, CTR 1,6%.
+- `/poradniki/wstep/` — 578 wyśw, poz. 15,0, CTR 1,2%.
+- `/poradniki/narzedzia/` — 421 wyśw, poz. 15,5.
+
+**B) Docisnąć TOP-3 to, co jest tuż za progiem** (szybki zysk klików):
+- `/poradniki/metodologia/rozdzial-metodologiczny/` — **1445 wyśw, poz. 7,6, CTR 4,1%**.
+  Najmocniejszy poradnik; awans 7→4 = duży przyrost. Sprawdzić title/H1/FAQ + linkowanie.
+- `/tematy/pielegniarstwo/` (poz. 8,8, 61 klik) i `/tematy/pedagogika/` (poz. 9,5, 59 klik).
+- Zapytanie „co to jest metodologia w pracy magisterskiej" — poz. 4,4, **48 wyśw, 0 klik**
+  → dopisać sekcję/definicję odpowiadającą wprost na to pytanie (kandydat na featured snippet).
+
+**C) Utrzymać rozpęd na zwycięzcach:** `/tematy/psychologia/` awansowała z poz. 8,7 → **6,1**
+(127 klik, CTR 9%) — nie ruszać title/H1, kontynuować rozbudowę wewnętrzną i linkowanie.
+Strony `przykladowa-praca` mają najwyższy CTR (11%) → punkt C potwierdza priorytet backloga #3.
+
+**Kolejność sprintu (rekomendacja):** B1 (rozdzial-metodologiczny, tani docisk) →
+A1 (badania-ilosciowe, rozbudowa) → backlog #3 (administracja przykladowa-praca) →
+A2/A3 (metodologia hub, wstep).
+
+---
+
+## ✅ STAN AKTUALNY (2026-06-13) — historyczne (patrz sekcja 2026-07-11 wyżej)
 
 > **Uwaga:** tabele z oznaczeniami ✅/🔴/🟡/🟢 w dalszej części tego pliku są
 > historyczne i **częściowo nieaktualne** (powstały na początku projektu).

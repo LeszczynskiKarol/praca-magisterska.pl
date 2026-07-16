@@ -1,0 +1,351 @@
+---
+// src/pages/poradniki/metodologia/analiza-dokumentow/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  { label: "Analiza dokumentów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+];
+
+const relatedLinks = [
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Badania jakościowe", href: "/poradniki/metodologia/badania-jakosciowe/" },
+  { label: "Studium przypadku", href: "/poradniki/metodologia/case-study/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+];
+
+const faqItems = [
+  {
+    question: "Na czym polega analiza dokumentów jako metoda badawcza?",
+    answer:
+      "Analiza dokumentów polega na systematycznym badaniu materiałów, które powstały niezależnie od badacza (dane zastane): aktów prawnych, sprawozdań, statystyk publicznych, dokumentacji organizacji, prasy czy treści internetowych. Badacz nie wywołuje danych ankietą ani wywiadem, tylko wydobywa informacje z istniejących źródeł według ustalonych kryteriów doboru i analizy.",
+  },
+  {
+    question: "Czym różni się analiza dokumentów od desk research?",
+    answer:
+      "Zakresy tych pojęć w dużej mierze się pokrywają. Desk research (badanie danych zastanych) to szersze określenie z języka badań rynkowych, które oprócz dokumentów w ścisłym sensie zawiera także gotowe zbiory danych liczbowych (statystyki GUS, Eurostat, raporty branżowe). W pracy magisterskiej można używać obu terminów, ale należy zdefiniować wybrany i konsekwentnie się go trzymać.",
+  },
+  {
+    question: "Czy analiza dokumentów wystarczy jako jedyna metoda w pracy magisterskiej?",
+    answer:
+      "Tak, jeśli materiał źródłowy jest wystarczająco bogaty, a analiza ma jasne pytania badawcze i kryteria - prace prawnicze, historyczne i częściowo ekonomiczne rutynowo opierają się wyłącznie na źródłach zastanych. Na kierunkach społecznych promotorzy często oczekują jednak połączenia analizy dokumentów z badaniem własnym (ankietą, wywiadem), więc warto to ustalić na seminarium.",
+  },
+  {
+    question: "Co to jest analiza treści wg Berelsona?",
+    answer:
+      "Klasyczna definicja Bernarda Berelsona (1952) określa analizę treści jako technikę badawczą służącą obiektywnemu, systematycznemu i ilościowemu opisowi jawnej zawartości przekazów. W praktyce oznacza to kodowanie treści dokumentów według klucza kategoryzacyjnego i liczenie wystąpień kategorii, np. częstości tematów w artykułach prasowych.",
+  },
+  {
+    question: "Jak ocenić wiarygodność dokumentu?",
+    answer:
+      "Przed włączeniem dokumentu do analizy odpowiedz na cztery pytania. Czy dokument jest autentyczny (pochodzi od deklarowanego autora, nie jest zmanipulowany)? Czy jest wiarygodny (kto i po co go stworzył, czy autor miał interes w koloryzowaniu)? Czy jest reprezentatywny (typowy dla swojej klasy dokumentów, czy wyjątkowy)? Czy jego znaczenie jest jasne (rozumiesz kontekst i terminologię epoki lub instytucji)?",
+  },
+  {
+    question: "Skąd brać dane zastane do pracy magisterskiej?",
+    answer:
+      "Podstawowe polskie źródła to Bank Danych Lokalnych GUS, roczniki statystyczne, raporty NIK, dane resortowe (np. CKE dla edukacji, NFZ dla zdrowia), rejestry KRS i CEIDG, a europejskie - Eurostat i OECD. Do tego dochodzą raporty branżowe, sprawozdania finansowe spółek i dokumenty wewnętrzne organizacji udostępnione za zgodą. Zawsze podawaj pełne źródło i rok, bo dane zastane szybko się starzeją.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Analiza dokumentów jako metoda badawcza - desk research, przykłady"
+  description="Analiza dokumentów i danych zastanych w pracy magisterskiej: definicja, rodzaje dokumentów, analiza treści wg Berelsona, ocena wiarygodności źródeł i zapis do rozdziału metodologicznego."
+  updateDate="2026-07-17"
+  readingTime="16 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Analiza dokumentów to najbardziej niedoceniana metoda badawcza w pracach
+    magisterskich. Studenci odruchowo planują ankietę, choć na wiele pytań
+    badawczych odpowiedź leży już w istniejących materiałach - statystykach
+    publicznych, sprawozdaniach, aktach prawnych, dokumentacji firm i szkół.
+    Dane zastane bywają przy tym rzetelniejsze od deklaracji stu przypadkowych
+    respondentów, bo rejestrują fakty, a nie opinie o faktach. Ten poradnik
+    wyjaśnia, czym jest analiza dokumentów, jakie materiały mogą być jej
+    przedmiotem, jak odróżnić wariant ilościowy od jakościowego i jak opisać
+    całość w rozdziale metodologicznym.
+  </p>
+
+  <h2>Co to jest analiza dokumentów? Definicja</h2>
+
+  <p>
+    <strong>Analiza dokumentów to metoda badawcza polegająca na systematycznym
+    badaniu materiałów, które powstały niezależnie od badacza, w celu
+    wydobycia z nich informacji odpowiadających na pytania badawcze.</strong>
+    Istotne są tu dwa elementy. Po pierwsze, dane są zastane, czyli istniały
+    przed badaniem i powstały w innym celu niż ono (w odróżnieniu od danych
+    wywołanych, które badacz tworzy ankietą lub wywiadem). Po drugie, analiza
+    jest systematyczna - obejmuje jawne kryteria doboru materiałów, ocenę ich
+    wiarygodności i ustaloną procedurę analizy, co odróżnia ją od swobodnego
+    cytowania źródeł w rozdziale teoretycznym.
+  </p>
+
+  <p>
+    W badaniach rynkowych i społecznych funkcjonuje pokrewne pojęcie
+    <strong>desk research</strong> (badanie danych zastanych), obejmujące poza
+    dokumentami także gotowe zbiory danych liczbowych. W pracy dyplomowej oba
+    terminy są akceptowalne. Ważniejsze od nazwy jest pokazanie, że analiza ma
+    strukturę badania, z pytaniami, kryteriami i procedurą, a nie charakter
+    luźnego przeglądu.
+  </p>
+
+  <h2>Co może być dokumentem - rodzaje materiałów</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rodzaj</th>
+        <th>Przykłady</th>
+        <th>Typowe zastosowanie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dokumenty urzędowe i prawne</td>
+        <td>ustawy, rozporządzenia, orzeczenia, uchwały samorządów, raporty NIK</td>
+        <td>prawo, administracja, bezpieczeństwo narodowe</td>
+      </tr>
+      <tr>
+        <td>Statystyki publiczne</td>
+        <td>Bank Danych Lokalnych GUS, Eurostat, dane CKE, NFZ, policji</td>
+        <td>ekonomia, zdrowie publiczne, pedagogika, kryminologia</td>
+      </tr>
+      <tr>
+        <td>Dokumentacja organizacji</td>
+        <td>sprawozdania finansowe, procedury, raporty operacyjne, statuty, protokoły</td>
+        <td>zarządzanie, logistyka, finanse i rachunkowość</td>
+      </tr>
+      <tr>
+        <td>Dokumentacja indywidualna</td>
+        <td>dokumentacja medyczna, orzeczenia poradni, dzienniki szkolne, akta osobowe</td>
+        <td>pielęgniarstwo, pedagogika, praca socjalna (zawsze za zgodą i po anonimizacji)</td>
+      </tr>
+      <tr>
+        <td>Media i przekazy publiczne</td>
+        <td>artykuły prasowe, audycje, posty i komentarze w mediach społecznościowych, reklamy</td>
+        <td>dziennikarstwo, marketing, politologia, socjologia</td>
+      </tr>
+      <tr>
+        <td>Dokumenty osobiste</td>
+        <td>listy, pamiętniki, blogi, wspomnienia</td>
+        <td>historia, socjologia, kulturoznawstwo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Granica między „analizą dokumentów” a „analizą danych zastanych” przebiega
+    mniej więcej między wierszami tej tabeli - im bliżej statystyk i
+    sprawozdań liczbowych, tym częściej mówi się o danych zastanych i analizuje
+    je metodami <a href="/poradniki/metodologia/badania-ilosciowe/">badań
+    ilościowych</a>; im bliżej tekstów i przekazów, tym częściej o analizie
+    treści lub analizie jakościowej.
+  </p>
+
+  <h2>Analiza ilościowa czy jakościowa - dwa warianty pracy z dokumentami</h2>
+
+  <p>
+    Wariant ilościowy to klasyczna <strong>analiza treści</strong>. Bernard
+    Berelson zdefiniował ją w 1952 roku jako technikę badawczą służącą
+    obiektywnemu, systematycznemu i ilościowemu opisowi jawnej zawartości
+    przekazów (<em>Content Analysis in Communication Research</em>). W
+    praktyce wygląda to tak, że badacz buduje klucz kategoryzacyjny (listę
+    kategorii z definicjami), koduje według niego materiał i liczy wystąpienia
+    kategorii. Przykład: analiza 120 artykułów prasowych o uchodźcach pod
+    kątem tonu przekazu (pozytywny, neutralny, negatywny) i dominujących
+    ram tematycznych. Wyniki da się zestawić w tabelach, porównać między
+    tytułami prasowymi i okresami, a nawet poddać testom statystycznym.
+  </p>
+
+  <p>
+    Wariant jakościowy rezygnuje z liczenia na rzecz interpretacji - bada
+    znaczenia, konteksty i to, co w definicji Berelsona umyka, czyli treści
+    niejawne: aluzje, przemilczenia, sposób kadrowania tematu. Typowe podejścia
+    to analiza tematyczna, analiza dyskursu i analiza hermeneutyczna. Ten
+    wariant opisujemy szerzej w poradniku o <a
+      href="/poradniki/metodologia/analiza-jakosciowa/">analizie danych
+    jakościowych</a>. W wielu pracach oba warianty łączą się naturalnie:
+    najpierw ilościowy przegląd całego korpusu, potem jakościowa analiza
+    wybranych fragmentów.
+  </p>
+
+  <h2>Ocena wiarygodności dokumentu - cztery pytania</h2>
+
+  <p>
+    Dokument nie jest prawdziwy z samego faktu istnienia. Zanim włączysz
+    materiał do analizy, odpowiedz na cztery pytania, a odpowiedzi w
+    wątpliwych przypadkach odnotuj w pracy. Czy dokument jest
+    <strong>autentyczny</strong> - pochodzi od deklarowanego autora i nie
+    został zmanipulowany (dotyczy zwłaszcza treści z internetu)? Czy jest
+    <strong>wiarygodny</strong> - kto i w jakim celu go stworzył, czy autor
+    miał interes w upiększaniu rzeczywistości (raport zarządu o sukcesie
+    wdrożenia czytamy inaczej niż raport audytora)? Czy jest
+    <strong>reprezentatywny</strong> - typowy dla swojej klasy, czy raczej
+    wyjątek, który zachował się przypadkiem? Czy jego <strong>znaczenie</strong>
+    jest dla Ciebie jasne - rozumiesz kontekst powstania, terminologię
+    instytucji lub epoki? Taka krytyka źródła, rutynowa dla historyków, w
+    pracach z innych kierunków wyróżnia analizę dojrzałą od naiwnej.
+  </p>
+
+  <h2>Analiza dokumentów krok po kroku</h2>
+
+  <ol>
+    <li>
+      <strong>Sformułuj pytania badawcze</strong> i sprawdź, czy istnieją
+      materiały zdolne na nie odpowiedzieć. Wstępna kwerenda na tym etapie
+      oszczędza miesięcy pracy nad źle postawionym tematem.
+    </li>
+    <li>
+      <strong>Zdefiniuj korpus.</strong> Ustal jawne kryteria doboru: jakie
+      typy dokumentów, z jakiego okresu, z jakich instytucji lub tytułów, w
+      jakiej liczbie. „Przeanalizowano artykuły z lat 2020-2025 z dwóch
+      dzienników ogólnopolskich, wyszukane po frazach X i Y - łącznie 148
+      tekstów” to zdanie, które musi się dać napisać po tym kroku.
+    </li>
+    <li>
+      <strong>Oceń wiarygodność materiałów</strong> według czterech pytań z
+      poprzedniej sekcji i odrzuć (z uzasadnieniem) to, co ich nie przechodzi.
+    </li>
+    <li>
+      <strong>Zbuduj narzędzie analizy.</strong> Dla wariantu ilościowego
+      będzie to klucz kategoryzacyjny z definicjami kategorii, dla
+      jakościowego lista pytań analitycznych zadawanych każdemu dokumentowi.
+    </li>
+    <li>
+      <strong>Przeprowadź pilotaż</strong> na kilku dokumentach i popraw
+      kategorie, które okazały się nieostre lub puste.
+    </li>
+    <li>
+      <strong>Zakoduj i przeanalizuj cały korpus</strong>, dokumentując
+      przebieg pracy (arkusz kodowania, notatki analityczne).
+    </li>
+    <li>
+      <strong>Zestaw wyniki z pytaniami badawczymi</strong> i omów
+      ograniczenia: czego korpus nie obejmuje, jakie treści mogły umknąć
+      doborowi, gdzie interpretacja jest dyskusyjna.
+    </li>
+  </ol>
+
+  <h2>Jak opisać analizę dokumentów w rozdziale metodologicznym - przykład</h2>
+
+  <p>
+    <em>„W pracy zastosowano metodę analizy dokumentów w wariancie ilościowej
+    analizy treści. Korpus badawczy objął 148 artykułów prasowych
+    opublikowanych w latach 2020-2025 w dziennikach X i Y, wyszukanych w
+    archiwach elektronicznych obu tytułów po frazach kluczowych [lista].
+    Kryterium włączenia był temat główny artykułu; teksty wzmiankujące
+    zjawisko ubocznie wykluczono. Narzędziem badawczym był autorski klucz
+    kategoryzacyjny zawierający 11 kategorii w trzech grupach (ton przekazu,
+    rama tematyczna, źródła cytowane), zweryfikowany w pilotażu na 15
+    artykułach. Kodowanie przeprowadzono w arkuszu kalkulacyjnym; częstości
+    kategorii porównano między tytułami i latami publikacji testem
+    chi-kwadrat”</em>.
+  </p>
+
+  <p>
+    Analogiczny zapis dla danych liczbowych różni się głównie źródłem i
+    narzędziem, np. „analizie poddano dane Banku Danych Lokalnych GUS o
+    bezrobociu rejestrowanym w powiatach województwa Z za lata 2015-2025;
+    wskaźniki zestawiono w szeregi czasowe i porównano dynamikę zmian między
+    powiatami”. W obu wypadkach recenzent dostaje to samo: skąd materiał, ile
+    go jest, według czego dobrany i jak analizowany.
+  </p>
+
+  <h2>Najczęstsze błędy w analizie dokumentów</h2>
+
+  <p>
+    Pierwszy błąd to mylenie analizy dokumentów z przeglądem literatury.
+    Literatura naukowa cytowana w rozdziale teoretycznym to podstawa wywodu, a
+    nie materiał badawczy; dokumentem-danymi staje się tekst dopiero wtedy,
+    gdy jest przedmiotem analizy, a nie jej narzędziem. Drugi błąd to korpus
+    dobrany wygodnie („co znalazłem, to analizuję”) bez jawnych kryteriów.
+    Trzeci to brak krytyki źródła i traktowanie każdego dokumentu jako
+    obiektywnej prawdy - szczególnie ryzykowne przy materiałach firmowych i
+    treściach internetowych. Czwarty błąd polega na kodowaniu bez klucza,
+    czyli przypisywaniu kategorii „na oko”, przez co wyników nie dałoby się
+    powtórzyć. Piąty to przemilczenie luk korpusu, np. analizowania wyłącznie
+    źródeł dostępnych online z pominięciem materiałów archiwalnych, o czym
+    czytelnik ma prawo wiedzieć.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o analizę dokumentów</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Po analizę dokumentów sięgnij, gdy odpowiedź na Twoje pytania badawcze
+    istnieje już w materiałach zastanych albo gdy dostęp do respondentów jest
+    ograniczony. O naukowości tej metody decydują jawne kryteria doboru
+    korpusu, krytyka źródeł i powtarzalna procedura kodowania. Analiza
+    dokumentów dobrze łączy się z innymi metodami - jako filar <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a> lub
+    uzupełnienie <a href="/poradniki/metodologia/sondaz/">sondażu</a> o dane
+    faktograficzne. Opis badania ułożysz według wzoru z poradnika o <a
+      href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>
