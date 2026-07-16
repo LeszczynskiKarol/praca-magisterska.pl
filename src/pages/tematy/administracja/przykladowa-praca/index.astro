@@ -1,0 +1,331 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Administracja", href: "/tematy/administracja/" },
+  { label: "Przykładowa praca", href: "/tematy/administracja/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z administracji", href: "/tematy/administracja/" },
+  { label: "Przykładowa praca z prawa", href: "/tematy/prawo/przykladowa-praca/" },
+  { label: "Analiza dokumentów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Przypisy w pracy", href: "/poradniki/przypisy/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z administracji – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z administracji krok po kroku: analiza dogmatyczno-prawna + analiza praktyki urzędów, cytowanie ustaw i uchwał rad gmin, rozstrzygnięcia nadzorcze, wnioski de lege ferenda i rekomendacje dla praktyki. Wzór do pobrania w PDF i Word."
+  readingTime="19 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z administracji ma swoją specyfikę, której nie widać w
+    ogólnych poradnikach: łączy warsztat prawniczy (przepisy, doktryna,
+    orzecznictwo) z badaniem tego, jak administracja działa naprawdę (uchwały,
+    dokumenty urzędowe, dane z BIP, raporty NIK). Poniżej rozbieramy na części
+    wzorcową pracę – pokazujemy zawartość rozdziałów, wklejamy fragmenty,
+    porównujemy słabsze i mocniejsze rozwiązania i tłumaczymy, na co patrzy
+    recenzent na kierunku administracja.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Budżet obywatelski jako forma partycypacji mieszkańców w
+    zarządzaniu gminą – regulacja prawna i praktyka wybranych miast"</strong>.
+    To schemat typowy dla dobrych prac z administracji: część dogmatyczna
+    (analiza art. 5a ustawy o samorządzie gminnym) plus część empiryczna
+    (porównanie procedur i danych trzech miast).
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z administracji: strona tytułowa, streszczenie, spis treści, wstęp z tezą i dwiema metodami, rozdział dogmatyczny z przypisami do ustaw i rozstrzygnięć nadzorczych, rozdział empiryczny z tabelą porównawczą miast oraz zakończenie z wnioskami de lege lata, de lege ferenda i rekomendacjami dla urzędów. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-administracja.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-administracja.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z administracji</h2>
+
+  <p>
+    Administracja jest kierunkiem z pogranicza prawa, zarządzania i nauk o
+    polityce – i dobra praca magisterska to pogranicze wykorzystuje. Od pracy
+    czysto prawniczej różni się tym, że nie kończy się na wykładni przepisów;
+    od pracy z zarządzania – tym, że analiza praktyki jest osadzona w ramach
+    prawnych. Stąd cztery cechy charakterystyczne:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Dwie metody zamiast jednej.</strong> Typowa praca łączy metodę
+      dogmatyczno-prawną (rozdziały o regulacji) z <a
+        href="/poradniki/metodologia/analiza-dokumentow/">analizą dokumentów
+      urzędowych</a> lub danych o działaniu administracji (rozdział praktyczny).
+    </li>
+    <li>
+      <strong>Specyficzny materiał badawczy.</strong> Obok ustaw i komentarzy:
+      uchwały rad gmin, zarządzenia, regulaminy, rozstrzygnięcia nadzorcze
+      wojewodów, wyroki WSA i NSA, raporty NIK, dane z Biuletynów Informacji
+      Publicznej.
+    </li>
+    <li>
+      <strong>Teza plus pytania badawcze.</strong> Do części dogmatycznej
+      stawia się tezę (jak w pracy prawniczej), a części empirycznej mogą
+      towarzyszyć pytania badawcze.
+    </li>
+    <li>
+      <strong>Trzy warstwy wniosków.</strong> De lege lata (ocena prawa), de
+      lege ferenda (postulaty zmian) i – czego nie ma w pracy prawniczej –
+      rekomendacje dla praktyki urzędów.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Rozstrzygnięcie nadzorcze">
+    <p>
+      Akt wojewody (lub RIO w sprawach finansowych) stwierdzający nieważność
+      uchwały organu gminy sprzecznej z prawem. Dla prac z administracji
+      samorządowej to materiał badawczy pierwszej klasy: pokazuje, gdzie
+      praktyka gmin wchodzi w konflikt z ustawą. Rozstrzygnięcia publikowane są
+      w wojewódzkich dziennikach urzędowych, a orzeczenia sądów administracyjnych
+      w bazie CBOSA (orzeczenia.nsa.gov.pl).
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z administracji</h2>
+
+  <ol>
+    <li>
+      <strong>Analiza zamiast opisu ustroju.</strong> Czy praca odpowiada na
+      postawione pytanie, czy tylko referuje „czym jest gmina i jakie ma
+      organy"? Rozdziały-podręczniki to najczęstsza słabość prac z tego
+      kierunku.
+    </li>
+    <li>
+      <strong>Warstwa praktyczna z prawdziwymi dokumentami.</strong> Czy autor
+      dotarł do uchwał, regulaminów i danych konkretnych jednostek, czy
+      poprzestał na literaturze?
+    </li>
+    <li>
+      <strong>Poprawne cytowanie źródeł administracyjnych.</strong> Ustawy z
+      publikatorem, uchwały z numerem i datą, rozstrzygnięcia nadzorcze z
+      sygnaturą – i aktualny stan prawny.
+    </li>
+    <li>
+      <strong>Wnioski, które czemuś służą.</strong> Czy z pracy wynika coś dla
+      ustawodawcy lub urzędu, czy kończy się ogólnikiem „temat jest ważny i
+      wymaga dalszych badań"?
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z administracji</h2>
+
+  <ul>
+    <li>
+      <strong>Dogmatyczno-prawna</strong> – analiza instytucji prawa
+      administracyjnego (np. milczące załatwienie sprawy w KPA). Bliska pracom
+      z prawa.
+    </li>
+    <li>
+      <strong>Prawno-empiryczna</strong> – regulacja plus praktyka jej
+      stosowania w wybranych jednostkach. Najbardziej ceniony schemat; taki
+      prowadzi nasz wzór.
+    </li>
+    <li>
+      <strong>Analiza funkcjonowania instytucji</strong> – organizacja i
+      działanie urzędu, jednostki lub systemu (np. e-administracja w gminach
+      powiatu X) na podstawie dokumentów, danych i ewentualnie ankiety.
+    </li>
+    <li>
+      <strong>Porównawcza</strong> – zestawienie rozwiązań kilku gmin,
+      województw lub państw.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy prawno-empirycznej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Wykaz skrótów (u.s.g., KPA, BIP, RIO, WSA...)</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – przedmiot, cel, <strong>teza</strong>, pytania badawcze, dwie metody, układ</li>
+    <li>Rozdział 1 – pojęcia i kontekst (partycypacja, konsultacje społeczne)</li>
+    <li>Rozdział 2 – analiza dogmatyczna regulacji</li>
+    <li>Rozdział 3 – praktyka: materiał, porównanie, ocena</li>
+    <li>Zakończenie – de lege lata, de lege ferenda, rekomendacje</li>
+    <li>Wykaz literatury · Wykaz aktów prawnych · Wykaz innych źródeł</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać materiał o praktyce urzędów">
+    <p>
+      Biuletyny Informacji Publicznej (uchwały, zarządzenia, regulaminy,
+      sprawozdania), bazy dzienników urzędowych województw (rozstrzygnięcia
+      nadzorcze), CBOSA (wyroki), raporty NIK (nik.gov.pl – wyszukiwarka
+      wystąpień pokontrolnych), Bank Danych Lokalnych GUS. Jeśli danych nie ma
+      w BIP, złóż wniosek o dostęp do informacji publicznej – odpowiedź jest
+      wiążąca i cytowalna, a sam wniosek możesz opisać w metodologii.
+    </p>
+  </InfoBox>
+
+  <h2>Wstęp – teza, pytania i dwie metody</h2>
+
+  <blockquote>
+    <p>W pracy postawiono tezę, że ustawa gwarantuje jedynie formalne ramy
+      partycypacji, natomiast o jej rzeczywistej jakości rozstrzygają
+      rozwiązania proceduralne przyjmowane w uchwałach rad gmin. W rozdziałach
+      pierwszym i drugim zastosowano metodę dogmatyczno-prawną, w rozdziale
+      trzecim – analizę dokumentów urzędowych trzech celowo dobranych miast za
+      lata 2022–2025.</p>
+  </blockquote>
+
+  <p>
+    Zwróć uwagę na deklarację obu metod z przypisaniem do rozdziałów – recenzent
+    od razu widzi, że autor panuje nad konstrukcją. Sama teza jest oceniana tak
+    jak w pracy prawniczej: ma być twierdzeniem do udowodnienia, nie opisem
+    tematu.
+  </p>
+
+  <h2>Cytowanie źródeł administracyjnych</h2>
+
+  <ul>
+    <li>
+      <strong>Ustawa:</strong> „Ustawa z dnia 8 marca 1990 r. o samorządzie
+      gminnym (tekst jedn. Dz.U. z 2026 r. poz. 662)" – potem skrót u.s.g.
+    </li>
+    <li>
+      <strong>Uchwała organu gminy:</strong> numer, organ, data, tytuł – np.
+      „Uchwała nr XLII/123/24 Rady Miasta X z dnia 15 maja 2024 r. w sprawie
+      wymagań, jakie powinien spełniać projekt budżetu obywatelskiego".
+    </li>
+    <li>
+      <strong>Rozstrzygnięcie nadzorcze:</strong> organ, data, numer, miejsce
+      publikacji (wojewódzki dziennik urzędowy).
+    </li>
+    <li>
+      <strong>Wyrok sądu administracyjnego:</strong> sąd, data, sygnatura – np.
+      „wyrok WSA w Gliwicach z dnia ..., sygn. ...".
+    </li>
+    <li>
+      <strong>Raport lub dane urzędowe:</strong> instytucja, tytuł, rok i
+      miejsce publikacji (np. adres BIP z datą dostępu).
+    </li>
+  </ul>
+
+  <InfoBox variant="pulapka" title="Nieaktualny stan prawny">
+    <p>
+      Prawo samorządowe i procedura administracyjna zmieniają się często.
+      Powołanie uchylonego przepisu albo starego tekstu jednolitego to jeden z
+      najłatwiejszych do wychwycenia błędów – recenzent sprawdzi publikator w
+      minutę. Przed oddaniem pracy zweryfikuj każdy akt w ISAP lub systemie
+      informacji prawnej i zaktualizuj publikatory.
+    </p>
+  </InfoBox>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Opis ustroju vs analiza problemu">
+    <p>
+      <strong>Wersja słabsza.</strong> Rozdział „Budżet obywatelski w Polsce"
+      referuje historię instytucji, przepisy i literaturę, a „część badawcza"
+      streszcza regulamin jednego miasta. Brak porównania, brak oceny, brak
+      odpowiedzi na jakiekolwiek pytanie. To opis – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Praca stawia tezę o rozstrzygającej
+      roli uchwał rad gmin, porównuje w tabeli procedury trzech miast (podpisy
+      poparcia, ścieżka odwoławcza, formy głosowania, frekwencja), konfrontuje
+      różnice z granicami swobody regulacyjnej wyznaczanymi przez nadzór
+      wojewodów i formułuje rekomendacje dla konkretnego miasta. To analiza –
+      ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <h2>Zakończenie – trzy warstwy wniosków</h2>
+
+  <p>
+    Wzorcowe zakończenie pracy z administracji odpowiada trzem adresatom.
+    Ustawodawcy – wnioskami de lege lata i de lege ferenda. Urzędom –
+    rekomendacjami możliwymi do wdrożenia bez zmiany prawa. Nauce – wskazaniem,
+    czego analiza nie objęła. Ta trzecia warstwa („ograniczenia") chroni przed
+    zarzutem nadmiernego uogólniania wyników z trzech miast na całą Polskę.
+  </p>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z administracji</h2>
+
+  <ul>
+    <li><strong>Rozdziały-podręczniki</strong> – referowanie ustroju samorządu
+      zamiast analizy problemu.</li>
+    <li><strong>Część „badawcza" bez badania</strong> – streszczenie jednego
+      regulaminu lub strony internetowej urzędu to nie analiza praktyki.</li>
+    <li><strong>Brak tezy</strong> – praca opisowa, która niczego nie
+      dowodzi.</li>
+    <li><strong>Cytowanie „z drugiej ręki"</strong> – przepisy i uchwały
+      przywoływane za literaturą zamiast ze źródła.</li>
+    <li><strong>Nieaktualny stan prawny</strong> – stare teksty jednolite,
+      uchylone przepisy.</li>
+    <li><strong>Wnioski-ogólniki</strong> – zakończenie bez konkretu dla
+      ustawodawcy ani urzędu.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z administracji musi mieć badania własne?</h3>
+  <p>
+    Nie zawsze – dopuszczalna jest praca czysto dogmatyczna. W praktyce jednak
+    promotorzy na kierunku administracja oczekują części praktycznej, a analiza
+    dokumentów urzędowych (uchwał, sprawozdań, danych BIP) w zupełności ją
+    wypełnia. Ankieta nie jest konieczna.
+  </p>
+
+  <h3>Czym praca z administracji różni się od pracy z prawa?</h3>
+  <p>
+    Warsztatem częściowo tym samym (dogmatyka, przypisy, wykazy), ale praca z
+    administracji dodaje warstwę praktyki działania urzędów i wnioski
+    adresowane do administracji, nie tylko do ustawodawcy. Porównaj nasz
+    <a href="/tematy/prawo/przykladowa-praca/">wzór pracy z prawa</a> – różnice
+    widać najlepiej w strukturze rozdziałów i zakończeniu.
+  </p>
+
+  <h3>Jak opisać metodę w pracy prawno-empirycznej?</h3>
+  <p>
+    Zadeklaruj obie metody z przypisaniem do rozdziałów: dogmatyczno-prawną dla
+    części o regulacji i analizę dokumentów dla części praktycznej. Do drugiej
+    podaj kryteria doboru jednostek i listę typów dokumentów – wzór zapisu
+    znajdziesz w poradniku o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie dokumentów</a>.
+  </p>
+
+  <h3>Ile jednostek (gmin, urzędów) porównywać?</h3>
+  <p>
+    W pracy magisterskiej najczęściej 2–4, dobrane celowo według jawnego
+    kryterium (wielkość, region, typ gminy). Więcej jednostek podnosi
+    pracochłonność szybciej niż wartość pracy – lepiej porównać trzy miasta
+    dokładnie niż dziesięć powierzchownie.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy i skopiowane
+    fragmenty zostaną wykryte. Wzór służy jako szkielet i punkt odniesienia –
+    treść musisz napisać samodzielnie, na podstawie aktualnych przepisów i
+    dokumentów wybranych przez siebie jednostek.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/administracja/">wyboru tematu z administracji</a>
+    i pobierz wzór powyżej, żeby mieć gotowy szkielet do wypełnienia. Przy
+    projektowaniu części praktycznej pomoże Ci poradnik o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie dokumentów</a>,
+    a przy części prawnej – poradniki o <a
+      href="/poradniki/przypisy/">przypisach</a> i <a
+      href="/poradniki/bibliografia/">bibliografii</a>.
+  </p>
+</ArticleLayout>
