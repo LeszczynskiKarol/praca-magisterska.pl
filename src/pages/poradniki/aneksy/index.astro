@@ -1,0 +1,256 @@
+---
+// src/pages/poradniki/aneksy/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Aneksy i załączniki", href: "/poradniki/aneksy/" },
+];
+
+const relatedLinks = [
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+  { label: "Wykaz tabel i rysunków", href: "/poradniki/wykaz-tabel/" },
+  { label: "Formatowanie pracy", href: "/poradniki/formatowanie/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+];
+
+const faqItems = [
+  {
+    question: "Co umieszcza się w aneksie pracy magisterskiej?",
+    answer:
+      "Materiały, które są potrzebne do oceny rzetelności badania, ale zaburzałyby tok wywodu w tekście głównym: kwestionariusz ankiety, scenariusz wywiadu, arkusz obserwacji, przykładową transkrypcję, obszerne tabele z danymi surowymi, wzory formularzy zgody, dodatkowe wykresy i dokumenty źródłowe. Zasada: w tekście głównym wyniki i wnioski, w aneksie narzędzia i materiał.",
+  },
+  {
+    question: "Gdzie w pracy umieszcza się aneksy?",
+    answer:
+      "Na samym końcu pracy - po bibliografii oraz po spisach tabel i rysunków. Kolejność końcowych elementów wygląda zwykle tak: zakończenie, bibliografia, spis tabel, spis rysunków, aneksy (załączniki). Uczelniane wytyczne mogą przewidywać drobne różnice, więc sprawdź wymogi swojego wydziału.",
+  },
+  {
+    question: "Jak numerować aneksy i odwoływać się do nich w tekście?",
+    answer:
+      "Każdy aneks dostaje numer i tytuł, np. „Aneks 1. Kwestionariusz ankiety”, „Aneks 2. Scenariusz wywiadu pogłębionego”. W tekście głównym odwołuj się wprost: „pełny kwestionariusz zamieszczono w aneksie 1”. Aneks, do którego nic w tekście nie odsyła, jest zbędny - albo dopisz odwołanie, albo usuń załącznik.",
+  },
+  {
+    question: "Czy aneksy wliczają się do objętości pracy magisterskiej?",
+    answer:
+      "Zazwyczaj nie - limity objętości (np. 60-80 stron) dotyczą tekstu głównego, a aneksy traktowane są osobno. Dzięki temu obszerny kwestionariusz czy transkrypcje nie „zjadają” miejsca na analizę. Paginacja jest natomiast ciągła: aneksy kontynuują numerację stron pracy. Wymogi bywają uczelniane, więc zweryfikuj je w regulaminie dyplomowania.",
+  },
+  {
+    question: "Czy trzeba załączać transkrypcje wszystkich wywiadów?",
+    answer:
+      "Nie ma takiego obowiązku i zwykle nie jest to wskazane - komplet transkrypcji potrafi liczyć setki stron. Standardem jest załączenie scenariusza wywiadu i jednej przykładowej transkrypcji (zanonimizowanej!) lub jej fragmentu. Pełny materiał przechowuj u siebie na wypadek pytań komisji, o czym można wspomnieć w metodologii.",
+  },
+  {
+    question: "Aneks czy załącznik - jak nazwać tę część pracy?",
+    answer:
+      "Oba określenia są poprawne i używane wymiennie; spotyka się też „Aneksy” jako tytuł całej części i „Załącznik 1, 2...” dla poszczególnych elementów. Wybierz jedną konwencję (najlepiej tę z wytycznych uczelni) i stosuj ją konsekwentnie w całej pracy, także w spisie treści.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Aneksy i załączniki w pracy magisterskiej - co umieścić, jak numerować"
+  description="Aneks w pracy magisterskiej: co powinien zawierać (kwestionariusz, transkrypcje, arkusze), gdzie go umieścić, jak numerować załączniki i odwoływać się do nich w tekście. Z przykładami."
+  updateDate="2026-07-17"
+  readingTime="12 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Aneksy to najbardziej niedoceniana część pracy magisterskiej. Studenci
+    traktują je jak schowek na resztki, a recenzenci - jak miejsce pierwszej
+    kontroli rzetelności: to właśnie w aneksie sprawdzą, czy kwestionariusz
+    rzeczywiście mierzył to, co opisuje metodologia, i czy arkusz obserwacji w
+    ogóle istniał. Brak narzędzia badawczego w załącznikach to jeden z
+    najczęstszych zarzutów recenzenckich, a zarazem jeden z najłatwiejszych do
+    uniknięcia. Ten poradnik wyjaśnia, co do aneksu włożyć, jak go
+    uporządkować i jak powiązać z tekstem głównym.
+  </p>
+
+  <h2>Co powinno znaleźć się w aneksie</h2>
+
+  <p>
+    Reguła podziału jest prosta. Tekst główny prezentuje wyniki i ich
+    interpretację, aneks dokumentuje warsztat - wszystko, co pozwala ocenić i
+    ewentualnie powtórzyć badanie, ale czego nikt nie czyta linearnie.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Kategoria</th>
+        <th>Przykłady</th>
+        <th>Uwagi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Narzędzia badawcze</td>
+        <td>kwestionariusz ankiety, scenariusz wywiadu, arkusz obserwacji, klucz kategoryzacyjny</td>
+        <td>element obowiązkowy każdej pracy empirycznej</td>
+      </tr>
+      <tr>
+        <td>Materiał przykładowy</td>
+        <td>jedna zanonimizowana transkrypcja, przykładowo zakodowany dokument</td>
+        <td>próbka zamiast kompletu; całość przechowuj u siebie</td>
+      </tr>
+      <tr>
+        <td>Dane uzupełniające</td>
+        <td>obszerne tabele z danymi surowymi, dodatkowe zestawienia i wykresy</td>
+        <td>w tekście głównym tylko tabele omawiane wprost</td>
+      </tr>
+      <tr>
+        <td>Dokumenty formalne</td>
+        <td>wzór formularza świadomej zgody, zgoda instytucji na badanie</td>
+        <td>wzór dokumentu, nie podpisane egzemplarze</td>
+      </tr>
+      <tr>
+        <td>Materiały źródłowe</td>
+        <td>reprodukcje analizowanych dokumentów, mapy, schematy organizacyjne</td>
+        <td>tylko z uregulowanym prawem do przedruku</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Do aneksu nie trafiają natomiast: treści dostępne w cytowanej literaturze
+    (wystarczy przypis), materiały bez związku z wywodem („do ozdoby”) ani
+    dane pozwalające zidentyfikować uczestników badania - podpisane zgody czy
+    surowe nagrania zostają w archiwum badacza, nie w pracy.
+  </p>
+
+  <h2>Numeracja, tytuły i odwołania</h2>
+
+  <p>
+    Każdy załącznik otrzymuje numer i opisowy tytuł: „Aneks 1. Kwestionariusz
+    ankiety wykorzystany w badaniu”, „Aneks 2. Arkusz obserwacji z kluczem
+    kategoryzacyjnym”. Kolejność wynika z kolejności przywołań w tekście -
+    pierwszy przywołany załącznik to aneks 1. Zasada wiążąca całość: między
+    tekstem a aneksem musi istnieć obustronne powiązanie. W tekście głównym
+    piszesz „narzędzie badawcze stanowił autorski kwestionariusz (aneks 1)”, a
+    czytelnik aneksu 1 wie z tytułu, czego dotyczy. Załącznik, do którego nic
+    nie odsyła, sygnalizuje bałagan - recenzenci to wychwytują.
+  </p>
+
+  <h2>Umiejscowienie i formatowanie</h2>
+
+  <p>
+    Aneksy zamykają pracę: stoją po bibliografii i po <a
+      href="/poradniki/wykaz-tabel/">spisach tabel i rysunków</a>, a ich lista
+    pojawia się w spisie treści (zwykle jako jedna pozycja „Aneksy” lub
+    wyliczenie poszczególnych załączników). Paginacja biegnie dalej - aneksy
+    kontynuują numerację stron. Każdy załącznik zaczynaj od nowej strony, z
+    numerem i tytułem u góry. Limity objętości pracy zwykle nie obejmują
+    aneksów, co czyni z nich legalny sposób na pomieszczenie obszernego
+    materiału bez „puchnięcia” tekstu głównego - szczegóły ustal w wytycznych
+    swojego wydziału, bo praktyka bywa różna. Tabele i rysunki wewnątrz
+    aneksów numeruje się osobno od tych w tekście głównym (np. „tabela A1”)
+    albo kontynuuje numerację pracy; obie konwencje są spotykane, wybierz
+    jedną.
+  </p>
+
+  <h2>Aneksy w pracach różnych typów</h2>
+
+  <p>
+    W pracy ankietowej minimum to kwestionariusz z metryczką - dokładnie w tej
+    wersji, którą widzieli respondenci. W pracy wywiadowczej: scenariusz
+    wywiadu i przykładowa zanonimizowana transkrypcja. W pracy z <a
+      href="/poradniki/metodologia/obserwacja/">obserwacją</a>: arkusz z
+    kluczem kategoryzacyjnym. W pracy opartej na <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie dokumentów</a>:
+    wykaz analizowanego korpusu i klucz kodowania. W pracach projektowych i
+    technicznych aneksy bywają najobszerniejsze - rysunki techniczne, kod
+    źródłowy, obliczenia - i często mają własne, przewidziane wytycznymi
+    uczelni zasady. Praca teoretyczna może aneksów nie mieć wcale i to nie
+    jest błąd.
+  </p>
+
+  <h2>Najczęstsze błędy</h2>
+
+  <p>
+    Najpoważniejszy błąd to brak narzędzia badawczego w załącznikach - praca
+    opisuje ankietę, której nikt nie może zobaczyć. Drugi to aneks-śmietnik:
+    kilkadziesiąt stron niekomentowanych wydruków bez związku z wywodem.
+    Trzeci błąd to załączniki bez odwołań w tekście (lub odwołania do
+    nieistniejących aneksów - częsty efekt przenumerowania w ostatniej
+    chwili). Czwarty to dane wrażliwe w załącznikach: podpisane zgody,
+    niezanonimizowane transkrypcje, dokumenty firmy załączone bez zgody.
+    Piąty wreszcie to niespójna konwencja - „Aneks 1”, potem „Załącznik B”,
+    a w spisie treści jeszcze inaczej.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o aneksy</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Dobry aneks dokumentuje warsztat: narzędzia, próbkę materiału, wzory
+    dokumentów - ponumerowane, zatytułowane i powiązane odwołaniami z tekstem
+    głównym. Zbuduj go równolegle z rozdziałem metodologicznym, a nie w noc
+    przed oddaniem pracy. Kolejność elementów końcowych pracy znajdziesz w
+    poradniku o <a href="/poradniki/struktura/">strukturze pracy</a>, a
+    sąsiadujące z aneksami spisy omawiamy w poradniku o <a
+      href="/poradniki/wykaz-tabel/">wykazie tabel i rysunków</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

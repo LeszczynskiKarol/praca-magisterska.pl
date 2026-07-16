@@ -1,0 +1,245 @@
+---
+// src/pages/poradniki/wykaz-tabel/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Wykaz tabel i rysunków", href: "/poradniki/wykaz-tabel/" },
+];
+
+const relatedLinks = [
+  { label: "Tabele i wykresy w pracy", href: "/poradniki/tabele-wykresy/" },
+  { label: "Word - formatowanie pracy", href: "/poradniki/word/" },
+  { label: "Spis treści", href: "/poradniki/spis-tresci/" },
+  { label: "Aneksy i załączniki", href: "/poradniki/aneksy/" },
+];
+
+const faqItems = [
+  {
+    question: "Gdzie umieszcza się spis tabel i rysunków w pracy magisterskiej?",
+    answer:
+      "Najczęściej na końcu pracy: po bibliografii, a przed aneksami. Część uczelni preferuje umiejscowienie na początku, zaraz po spisie treści - rozstrzygają wytyczne wydziału. Niezależnie od miejsca, spis tabel i spis rysunków to dwa osobne wykazy, a każdy z nich pojawia się w spisie treści jako odrębna pozycja.",
+  },
+  {
+    question: "Czy spis tabel jest obowiązkowy?",
+    answer:
+      "Przyjęta praktyka: wykaz tworzy się, gdy tabel (lub rysunków) jest co najmniej kilka - umownie od 3-5 wzwyż. Przy jednej czy dwóch tabelach w całej pracy spis bywa zbędny, choć niektóre uczelnie wymagają go zawsze. W pracach empirycznych i analitycznych, gdzie tabel jest kilkanaście, wykaz jest standardem bez dyskusji.",
+  },
+  {
+    question: "Jak numerować tabele i rysunki w pracy?",
+    answer:
+      "Dwie poprawne konwencje: numeracja ciągła przez całą pracę (Tabela 1, 2, 3...) albo numeracja w obrębie rozdziałów (Tabela 2.1, 2.2, 3.1...). Wybierz jedną i stosuj konsekwentnie; tabele i rysunki numeruje się osobno (może istnieć jednocześnie Tabela 3 i Rysunek 3). Wykresy, schematy i fotografie zwykle wchodzą do wspólnej kategorii „rysunek” - chyba że wytyczne uczelni przewidują osobny spis wykresów.",
+  },
+  {
+    question: "Tytuł tabeli na górze czy na dole?",
+    answer:
+      "W polskiej konwencji akademickiej tytuł tabeli umieszcza się NAD tabelą, a tytuł rysunku POD rysunkiem. Pod tabelą podaje się źródło (np. „Źródło: badania własne” albo „Źródło: opracowanie własne na podstawie...”). Ta asymetria to jedna z pierwszych rzeczy, które sprawdza recenzent-formalista.",
+  },
+  {
+    question: "Jak zrobić automatyczny spis tabel w Wordzie?",
+    answer:
+      "Wstawiaj podpisy przez Odwołania → Wstaw podpis (wybierając etykietę Tabela lub Rysunek), a następnie w miejscu wykazu użyj Odwołania → Wstaw spis ilustracji i wskaż odpowiednią etykietę. Word zbuduje spis z numerami stron i zaktualizuje go po zmianach (F9 lub klik prawym → Aktualizuj pole). Ręczne wpisywanie spisu to proszenie się o rozjazd numerów stron po każdej korekcie.",
+  },
+  {
+    question: "Co zrobić z tabelami w aneksach - wchodzą do spisu?",
+    answer:
+      "Zależnie od przyjętej konwencji: albo tabele aneksowe dostają osobną numerację (Tabela A1, A2) i osobną sekcję w wykazie, albo kontynuują numerację pracy i wchodzą do wspólnego spisu. Pierwsza konwencja jest czytelniejsza przy obszernych aneksach. Wybór odnotuj konsekwentnie w całej pracy.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Wykaz tabel i rysunków w pracy magisterskiej - zasady, Word, przykłady"
+  description="Spis tabel i rysunków w pracy magisterskiej: gdzie go umieścić, jak numerować tabele (ciągle czy rozdziałami), tytuł nad tabelą i pod rysunkiem, automatyczny wykaz w Wordzie."
+  updateDate="2026-07-17"
+  readingTime="11 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Wykaz tabel i rysunków wygląda na formalność, ale to formalność o wysokiej
+    wykrywalności błędów: rozjechane numery stron, tabela nazwana w tekście
+    „wykresem”, numeracja skacząca z 3 na 5 - recenzent widzi to w trzydzieści
+    sekund kartkowania. Dobra wiadomość jest taka, że przy odrobinie dyscypliny
+    (i automatyzacji w Wordzie) cała sprawa załatwia się raz i działa do końca
+    pisania. Ten poradnik zbiera zasady numeracji, podpisów i budowania
+    wykazów - wraz z konwencjami, co do których uczelnie się różnią.
+  </p>
+
+  <h2>Podpis tabeli i rysunku - anatomia</h2>
+
+  <p>
+    Zanim powstanie wykaz, każda tabela i każdy rysunek muszą mieć poprawny
+    podpis. W polskiej konwencji akademickiej obowiązuje asymetria, którą
+    warto zapamiętać raz na zawsze: <strong>tytuł tabeli nad tabelą, tytuł
+    rysunku pod rysunkiem</strong>. Pod tabelą (a przy rysunku - w tej samej
+    linii podpisu lub pod nim) podaje się źródło.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Tabela</th>
+        <th>Rysunek</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Numer i tytuł</td>
+        <td>nad tabelą (np. „Tabela 3. Struktura badanej próby”)</td>
+        <td>pod rysunkiem (np. „Rysunek 2. Model badawczy pracy”)</td>
+      </tr>
+      <tr>
+        <td>Źródło</td>
+        <td>pod tabelą</td>
+        <td>pod podpisem rysunku</td>
+      </tr>
+      <tr>
+        <td>Typowy zapis źródła</td>
+        <td>Źródło: badania własne.</td>
+        <td>Źródło: opracowanie własne na podstawie [pozycja].</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Kategoria „rysunek” jest w pracach dyplomowych pojemna - wchodzą do niej
+    wykresy, schematy, diagramy, mapy i fotografie, chyba że wytyczne uczelni
+    każą prowadzić osobny spis wykresów. Jak projektować same tabele i wykresy
+    (dobór typu, opis osi, komentowanie w tekście), omawiamy w osobnym
+    poradniku o <a href="/poradniki/tabele-wykresy/">tabelach i wykresach</a>.
+  </p>
+
+  <h2>Numeracja - dwie konwencje</h2>
+
+  <p>
+    Numeracja ciągła (Tabela 1, 2, 3... przez całą pracę) jest prostsza i
+    sprawdza się przy kilkunastu obiektach. Numeracja rozdziałowa (Tabela 2.1,
+    2.2, 3.1...) ułatwia orientację w pracach z dziesiątkami tabel i jest
+    częstsza w pracach technicznych i ekonomicznych. Obie są poprawne; wybór
+    jednej i konsekwencja to jedyna twarda zasada. Tabele i rysunki numeruje
+    się niezależnie od siebie, a w tekście każde przywołanie pada wprost:
+    „strukturę próby przedstawia tabela 3” - nigdy „poniższa tabela”, bo po
+    składzie i korektach tabela potrafi wylądować na następnej stronie.
+  </p>
+
+  <h2>Budowa wykazu i jego miejsce w pracy</h2>
+
+  <p>
+    Wykaz to lista pozycji w formacie: numer, pełny tytuł, strona - osobno dla
+    tabel, osobno dla rysunków. Umiejscowienie bywa dwojakie. Najczęstsza
+    konwencja stawia spisy na końcu pracy, po bibliografii, a przed <a
+      href="/poradniki/aneksy/">aneksami</a>; część uczelni woli spisy na
+    początku, tuż po <a href="/poradniki/spis-tresci/">spisie treści</a>.
+    Rozstrzygnięcie należy do wytycznych wydziału - sprawdź je, zanim
+    sformatujesz pracę. Oba spisy muszą figurować w spisie treści jako osobne
+    pozycje.
+  </p>
+
+  <h2>Automatyzacja w Wordzie</h2>
+
+  <p>
+    Ręcznie pisany wykaz psuje się przy każdej korekcie - wystarczy jeden nowy
+    akapit, żeby wszystkie numery stron się rozjechały. Rozwiązanie zajmuje
+    dwie minuty. Każdą tabelę i rysunek podpisuj przez <strong>Odwołania →
+    Wstaw podpis</strong>, wybierając właściwą etykietę (Tabela/Rysunek) - Word
+    pilnuje wtedy numeracji automatycznie, także rozdziałowej. W miejscu
+    wykazu wybierz <strong>Odwołania → Wstaw spis ilustracji</strong> i wskaż
+    etykietę; przed oddaniem pracy zaznacz całość i odśwież pola klawiszem F9.
+    Krok po kroku, ze zrzutami ekranu, pokazujemy to w poradniku o <a
+      href="/poradniki/word/">formatowaniu pracy w Wordzie</a> - tam też
+    znajdziesz analogiczny mechanizm dla spisu treści.
+  </p>
+
+  <h2>Najczęstsze błędy</h2>
+
+  <p>
+    Pierwszy błąd to ręczny wykaz z nieaktualnymi numerami stron - klasyka
+    prac składanych na ostatnią chwilę. Drugi: tytuły tabel pod tabelami (lub
+    rysunków nad rysunkami), wbrew konwencji. Trzeci błąd to brak źródła pod
+    tabelą - nawet przy badaniach własnych zapis „Źródło: badania własne” jest
+    wymagany. Czwarty to niespójne nazewnictwo: ten sam obiekt raz nazywany
+    wykresem, raz rysunkiem, a w wykazie jeszcze inaczej. Piąty błąd to
+    przywołania „powyższa/poniższa tabela” zamiast numeru. Szósty wreszcie to
+    tabele-sieroty: obiekt jest w pracy i w wykazie, ale tekst główny nigdzie
+    go nie omawia - a tabela bez komentarza nie pełni żadnej funkcji
+    argumentacyjnej.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o wykaz tabel</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Wykaz tabel i rysunków robi się sam, jeśli od pierwszej tabeli podpisujesz
+    obiekty przez mechanizm podpisów Worda i trzymasz się jednej konwencji
+    numeracji. Tytuł tabeli nad tabelą, rysunku pod rysunkiem, źródło zawsze,
+    przywołania po numerze - i formalna strona pracy przestaje być tematem.
+    Powiązane szczegóły znajdziesz w poradnikach o <a
+      href="/poradniki/tabele-wykresy/">tabelach i wykresach</a>, <a
+      href="/poradniki/word/">Wordzie</a> i <a
+      href="/poradniki/struktura/">strukturze pracy</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

@@ -1,0 +1,250 @@
+---
+// src/pages/poradniki/wykaz-skrotow/index.astro
+import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Wykaz skrótów", href: "/poradniki/wykaz-skrotow/" },
+];
+
+const relatedLinks = [
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+  { label: "Spis treści", href: "/poradniki/spis-tresci/" },
+  { label: "Język naukowy", href: "/poradniki/jezyk-naukowy/" },
+  { label: "Formatowanie pracy", href: "/poradniki/formatowanie/" },
+];
+
+const faqItems = [
+  {
+    question: "Kiedy praca magisterska potrzebuje wykazu skrótów?",
+    answer:
+      "Gdy używasz skrótów specjalistycznych, które nie są powszechnie znane, i robisz to wielokrotnie - umownie od kilku pozycji wzwyż. Wykaz jest standardem w pracach prawniczych i administracyjnych (skróty aktów prawnych: k.c., k.p.a., u.s.g.), medycznych (skale i jednostki chorobowe) oraz technicznych. Praca używająca dwóch popularnych skrótów wykazu nie potrzebuje.",
+  },
+  {
+    question: "Gdzie umieszcza się wykaz skrótów?",
+    answer:
+      "Na początku pracy - najczęściej bezpośrednio po spisie treści, a przed wstępem. Chodzi o funkcję: czytelnik ma znaleźć rozwinięcie skrótu, ZANIM natknie się na niego w tekście. Część uczelni dopuszcza wykaz na końcu pracy; rozstrzygają wytyczne wydziału.",
+  },
+  {
+    question: "Jak uporządkować wykaz skrótów?",
+    answer:
+      "Alfabetycznie, w układzie dwukolumnowym: skrót po lewej, pełne rozwinięcie po prawej (np. „u.s.g. - ustawa z dnia 8 marca 1990 r. o samorządzie gminnym”). W pracach prawniczych często dzieli się wykaz na sekcje: akty prawne, czasopisma i publikatory, inne skróty. Wewnątrz sekcji porządek pozostaje alfabetyczny.",
+  },
+  {
+    question: "Czy skrót trzeba rozwinąć w tekście, skoro jest w wykazie?",
+    answer:
+      "Tak - wykaz nie zwalnia z zasady pierwszego użycia: przy pierwszym wystąpieniu w tekście podaj pełną nazwę ze skrótem w nawiasie, np. „Inwentarz Zachowań Zdrowotnych (IZZ)”, a dalej używaj już samego skrótu. Wykaz służy czytelnikowi, który zagląda do środka pracy i potrzebuje szybkiego przypomnienia.",
+  },
+  {
+    question: "Jakich skrótów nie umieszcza się w wykazie?",
+    answer:
+      "Skrótów powszechnych i słownikowych: np., itd., m.in., tzw., r., art. - ich rozwijanie zaśmieca wykaz. Nie umieszcza się też symboli jednostek miar (kg, km, %) ani skrótów użytych w pracy jednokrotnie (wtedy wystarczy rozwinięcie w tekście). Wykaz jest dla skrótów specjalistycznych, które czytelnik spoza wąskiej dziedziny może nie znać.",
+  },
+  {
+    question: "Czy wykaz skrótów wlicza się do spisu treści i numeracji stron?",
+    answer:
+      "Tak - wykaz skrótów figuruje w spisie treści jako osobna pozycja i objęty jest ciągłą paginacją pracy. Zwykle zajmuje jedną stronę; jeśli skrótów jest bardzo dużo (prace prawnicze), może zająć dwie-trzy, co nie stanowi problemu.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Wykaz skrótów w pracy magisterskiej - kiedy potrzebny, jak go zrobić"
+  description="Wykaz skrótów w pracy magisterskiej: kiedy jest potrzebny, gdzie go umieścić, jak uporządkować (układ, sekcje w pracach prawniczych), zasada pierwszego użycia i częste błędy."
+  updateDate="2026-07-17"
+  readingTime="10 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Wykaz skrótów to jedna strona pracy, która potrafi zaważyć na komforcie
+    czytania całości. Recenzent gubiący się między IZZ, GSES a MHLC w pracy
+    medycznej, albo między u.s.g., u.s.p. i k.p.a. w prawniczej, wraca
+    kartkować początek - i lepiej, żeby znalazł tam porządny wykaz niż jego
+    brak. Ten poradnik wyjaśnia, kiedy wykaz jest potrzebny, jak go zbudować i
+    jakie zasady używania skrótów obowiązują w samym tekście.
+  </p>
+
+  <h2>Kiedy wykaz skrótów jest potrzebny</h2>
+
+  <p>
+    Prosty test: czy w pracy pojawia się kilka lub więcej skrótów, których
+    czytelnik spoza Twojej wąskiej specjalności może nie znać, i czy wracają
+    one wielokrotnie? Dwa razy „tak” oznacza, że wykaz jest wskazany. W
+    niektórych typach prac to standard bez dyskusji: prace prawnicze i
+    administracyjne (skróty kodeksów, ustaw i publikatorów), medyczne i o
+    zdrowiu (nazwy skal, jednostek chorobowych, instytucji), techniczne i
+    informatyczne (protokoły, technologie, normy). Praca humanistyczna
+    używająca trzech powszechnych skrótów wykazu nie potrzebuje - pusty rytuał
+    formalny nie dodaje pracy powagi.
+  </p>
+
+  <h2>Budowa wykazu</h2>
+
+  <p>
+    Wykaz ma formę dwukolumnowej listy uporządkowanej alfabetycznie: skrót po
+    lewej, rozwinięcie po prawej. Kilka przykładów z różnych dziedzin:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Skrót</th>
+        <th>Rozwinięcie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>BDL</td>
+        <td>Bank Danych Lokalnych GUS</td>
+      </tr>
+      <tr>
+        <td>CAWI</td>
+        <td>Computer-Assisted Web Interview (ankieta internetowa)</td>
+      </tr>
+      <tr>
+        <td>IZZ</td>
+        <td>Inwentarz Zachowań Zdrowotnych</td>
+      </tr>
+      <tr>
+        <td>k.c.</td>
+        <td>ustawa z dnia 23 kwietnia 1964 r. - Kodeks cywilny</td>
+      </tr>
+      <tr>
+        <td>NIK</td>
+        <td>Najwyższa Izba Kontroli</td>
+      </tr>
+      <tr>
+        <td>u.s.g.</td>
+        <td>ustawa z dnia 8 marca 1990 r. o samorządzie gminnym</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    W pracach prawniczych wykaz dzieli się zwyczajowo na sekcje - akty prawne,
+    publikatory i czasopisma (Dz.U., OSNC), organy i instytucje (SN, TK, NSA),
+    inne skróty - z porządkiem alfabetycznym wewnątrz każdej sekcji. Przy
+    skrótach anglojęzycznych rozwiniętych po angielsku warto dodać w nawiasie
+    polskie objaśnienie, jak w przykładzie CAWI powyżej.
+  </p>
+
+  <h2>Umiejscowienie i formalności</h2>
+
+  <p>
+    Wykaz skrótów stoi na początku pracy: po <a
+      href="/poradniki/spis-tresci/">spisie treści</a>, przed wstępem - tak,
+    żeby czytelnik poznał rozwinięcia, zanim spotka skróty w tekście. Figuruje
+    w spisie treści jako osobna pozycja i podlega ciągłej numeracji stron.
+    Zajmuje zwykle jedną stronę; w pracach prawniczych bywa dłuższy i to
+    normalne. Część uczelni dopuszcza wykaz na końcu pracy - jak zawsze,
+    pierwszeństwo mają wytyczne wydziału, które warto sprawdzić przed
+    formatowaniem (zbiera je poradnik o <a
+      href="/poradniki/formatowanie/">formatowaniu pracy</a>).
+  </p>
+
+  <h2>Zasada pierwszego użycia - wykaz nie wystarczy</h2>
+
+  <p>
+    Wykaz skrótów uzupełnia, ale nie zastępuje reguły obowiązującej w samym
+    tekście: przy pierwszym wystąpieniu podajesz pełną nazwę ze skrótem w
+    nawiasie - „Inwentarz Zachowań Zdrowotnych (IZZ)”, „ustawa o samorządzie
+    gminnym (dalej: u.s.g.)” - a każde kolejne wystąpienie to już sam skrót.
+    Dzięki temu praca czyta się płynnie linearnie, a wykaz służy tym, którzy
+    otwierają ją w środku (recenzent szukający konkretnego rozdziału robi to
+    nagminnie). Konsekwencja działa też w drugą stronę: skoro wprowadzono
+    skrót, nie wraca się do pełnej nazwy na przemian ze skrótem.
+  </p>
+
+  <h2>Najczęstsze błędy</h2>
+
+  <p>
+    Najczęstszy błąd to wykaz zaśmiecony skrótami słownikowymi (np., itd.,
+    m.in.) i jednostkami miar - one objaśnień nie wymagają. Drugi to skróty
+    obecne w tekście, a nieobecne w wykazie (zwykle te dodane w ostatnich
+    poprawkach); przed oddaniem pracy przeszukaj tekst pod kątem wszystkich
+    ciągów wielkich liter i sprawdź kompletność wykazu. Trzeci błąd to brak
+    rozwinięcia przy pierwszym użyciu, „bo jest w wykazie”. Czwarty to
+    niekonsekwencja zapisu - raz „KC”, raz „k.c.”; w skrótach aktów prawnych
+    obowiązuje utrwalona konwencja z kropkami i małymi literami (k.c., k.p.k.,
+    u.s.g.), której nie warto reformować. Piąty wreszcie to definiowanie
+    skrótu, który pada w pracy raz - wtedy wystarczy pełna nazwa w tekście,
+    bez skrótu i bez pozycji w wykazie.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o wykaz skrótów</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Wykaz skrótów budujesz wtedy, gdy skróty specjalistyczne naprawdę pracują
+    w tekście: alfabetycznie, dwukolumnowo, po spisie treści, z zachowaniem
+    zasady pierwszego użycia w tekście głównym. Listę skrótów kompletuj na
+    bieżąco podczas pisania - odtwarzanie jej na końcu to pewny sposób na
+    braki. Miejsce wykazu w całej konstrukcji pracy pokazuje poradnik o <a
+      href="/poradniki/struktura/">strukturze pracy magisterskiej</a>, a
+    zasady poprawnego posługiwania się skrótami w zdaniach - poradnik o <a
+      href="/poradniki/jezyk-naukowy/">języku naukowym</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>
