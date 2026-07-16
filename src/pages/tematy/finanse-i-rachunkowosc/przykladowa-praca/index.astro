@@ -1,0 +1,279 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Finanse i rachunkowość", href: "/tematy/finanse-i-rachunkowosc/" },
+  { label: "Przykładowa praca", href: "/tematy/finanse-i-rachunkowosc/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z finansów i rachunkowości", href: "/tematy/finanse-i-rachunkowosc/" },
+  { label: "Przykładowa praca z ekonomii", href: "/tematy/ekonomia/przykladowa-praca/" },
+  { label: "Analiza danych zastanych", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Tabele i wykresy w pracy", href: "/poradniki/tabele-wykresy/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z finansów i rachunkowości – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z finansów i rachunkowości: analiza wskaźnikowa na sprawozdaniach z eKRS, płynność, rentowność, zadłużenie, porównanie z branżą (GUS) i ocena syntetyczna. Wzór do pobrania w PDF i Word."
+  readingTime="19 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z finansów i rachunkowości ma jedną przewagę nad
+    większością kierunków: materiał badawczy leży w publicznych rejestrach.
+    Sprawozdanie finansowe każdej spółki z KRS pobierzesz bezpłatnie z eKRS,
+    dane branżowe z GUS – i możesz przeprowadzić pełnowartościową analizę bez
+    proszenia kogokolwiek o zgodę. Poniżej rozbieramy wzorcową pracę
+    analityczną na części: od doboru materiału, przez warsztat wskaźnikowy, po
+    to, co odróżnia analizę od przepisywania liczb.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Ocena kondycji finansowej przedsiębiorstwa produkcyjnego X S.A. w
+    latach 2021–2025 na tle branży – analiza wskaźnikowa”</strong>. Ten sam
+    schemat zadziała dla porównania dwóch spółek, oceny zdolności kredytowej,
+    analizy upadłości czy badania struktury finansowania.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet analitycznej pracy magisterskiej z finansów i rachunkowości: strona tytułowa, streszczenie z wnioskami, spis treści, wstęp z pytaniami badawczymi, metodyka (eKRS, dane GUS, formuły wskaźników z przypisami), rozdział analityczny z pięcioletnimi szeregami wskaźników i interpretacją łączną, porównanie z branżą oraz ocena syntetyczna z rekomendacjami. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-finanse-i-rachunkowosc.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-finanse-i-rachunkowosc.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z finansów i rachunkowości</h2>
+
+  <ul>
+    <li>
+      <strong>Publiczny materiał badawczy.</strong> Sprawozdania finansowe z
+      eKRS, raporty giełdowe, dane GUS i NBP – dostępne bez zgody podmiotu, co
+      czyni ten kierunek najodporniejszym na problem „nie mam danych”.
+    </li>
+    <li>
+      <strong>Warsztat wskaźnikowy.</strong> Analiza wstępna (pozioma i
+      pionowa) plus wskaźniki w czterech obszarach: płynność, rentowność,
+      zadłużenie, sprawność – z formułami i wartościami referencyjnymi z
+      literatury.
+    </li>
+    <li>
+      <strong>Szereg czasowy i tło porównawcze.</strong> Minimum 3, a najlepiej
+      5 lat danych oraz porównanie z branżą – pojedynczy wskaźnik z jednego
+      roku nic nie mówi.
+    </li>
+    <li>
+      <strong>Interpretacja łączna.</strong> Diagnoza wynika z zestawienia
+      kilku wskaźników naraz, nie z odczytania każdego osobno.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Analiza wstępna vs wskaźnikowa">
+    <p>
+      Analiza wstępna bada strukturę sprawozdania (analiza pionowa – udziały
+      pozycji w sumie bilansowej) i jej zmiany w czasie (analiza pozioma –
+      dynamika rok do roku). Analiza wskaźnikowa liczy relacje między pozycjami
+      (np. aktywa obrotowe / zobowiązania krótkoterminowe). Dobra praca zaczyna
+      od wstępnej – wskaźniki dopiero potem, bo bez znajomości struktury łatwo
+      o błędną interpretację.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z finansów</h2>
+
+  <ol>
+    <li>
+      <strong>Analiza, nie sprawozdawczość.</strong> Czy praca stawia diagnozę
+      („spółka finansuje wzrost kosztem płynności”), czy tylko relacjonuje
+      („wskaźnik spadł z 1,64 do 1,08”)?
+    </li>
+    <li>
+      <strong>Formuły i źródła wartości referencyjnych.</strong> Każdy
+      wskaźnik z formułą i przypisem; przedziały normatywne potraktowane
+      orientacyjnie, z pierwszeństwem porównania branżowego.
+    </li>
+    <li>
+      <strong>Pięcioletni szereg i tło branżowe.</strong> Trend plus
+      benchmark – dwa układy odniesienia, bez których ocena jest arbitralna.
+    </li>
+    <li>
+      <strong>Ocena syntetyczna z rekomendacjami.</strong> Zakończenie spina
+      obszary analizy w jedną diagnozę i proponuje działania korygujące.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z finansów i rachunkowości</h2>
+
+  <ul>
+    <li>
+      <strong>Analiza kondycji finansowej podmiotu</strong> – ocena
+      wskaźnikowa jednej spółki w czasie i na tle branży. Najczęstszy schemat;
+      taki prowadzi nasz wzór.
+    </li>
+    <li>
+      <strong>Analiza porównawcza</strong> – dwie lub trzy spółki z tej samej
+      branży, te same wskaźniki, wnioski z różnic.
+    </li>
+    <li>
+      <strong>Praca rachunkowa</strong> – polityka rachunkowości, wycena,
+      sprawozdawczość według UoR vs MSSF, badanie sprawozdań.
+    </li>
+    <li>
+      <strong>Praca rynkowa</strong> – wycena spółki, analiza portfelowa,
+      efektywność rynku na danych giełdowych.
+    </li>
+    <li>
+      <strong>Finanse publiczne</strong> – budżety JST, zadłużenie gmin,
+      wieloletnie prognozy finansowe (dane z BIP i RIO).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy analitycznej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp – cel, pytania badawcze, zakres, materiał</li>
+    <li>Rozdział 1 – teoria: analiza finansowa, wskaźniki, wartości referencyjne</li>
+    <li>Rozdział 2 – metodyka i charakterystyka podmiotu</li>
+    <li>Rozdział 3 – analiza: wstępna → obszary wskaźnikowe → tło branżowe</li>
+    <li>Zakończenie – ocena syntetyczna, rekomendacje, ograniczenia</li>
+    <li>Bibliografia · Spis tabel i wykresów</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać dane">
+    <p>
+      Repozytorium Dokumentów Finansowych eKRS (ekrs.ms.gov.pl) – sprawozdania
+      każdej spółki z KRS, bezpłatnie i bez logowania. Dla spółek giełdowych:
+      raporty okresowe w ESPI i na stronach relacji inwestorskich. Tło
+      branżowe: GUS „Wyniki finansowe przedsiębiorstw niefinansowych” i
+      wskaźniki sektorowe publikowane w opracowaniach branżowych. Stopy i dane
+      makro: NBP. Odnotuj daty pobrania dokumentów.
+    </p>
+  </InfoBox>
+
+  <h2>Interpretacja łączna – to ona robi różnicę</h2>
+
+  <blockquote>
+    <p>Wskaźnik płynności bieżącej obniżył się z 1,64 do 1,08, schodząc poniżej
+      dolnej granicy wartości referencyjnych. Równoległy spadek płynności
+      szybkiej wskazuje, że zjawisko nie wynika wyłącznie z przyrostu zapasów.
+      Zestawienie z dynamiką przychodów (+61%) i wydłużającym się cyklem
+      należności (48 → 68 dni) sugeruje, że spółka finansuje szybki wzrost
+      sprzedaży kredytem kupieckim udzielanym odbiorcom – kosztem własnej
+      płynności.</p>
+  </blockquote>
+
+  <p>
+    Cztery wskaźniki, jedna diagnoza. To jest poziom, którego oczekuje
+    recenzent: nie osobne akapity „o każdym wskaźniku”, ale wnioskowanie z ich
+    współzależności. We wzorze pokazujemy ten warsztat na pełnym rozdziale.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Sprawozdawczość vs diagnoza">
+    <p>
+      <strong>Wersja słabsza.</strong> Rozdział analityczny to seria
+      podrozdziałów, w których każdy wskaźnik dostaje tabelę i zdanie „wskaźnik
+      wzrósł/spadł, co należy ocenić pozytywnie/negatywnie”. Brak powiązań
+      między obszarami, brak porównania z branżą, zakończenie streszcza
+      rozdziały. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Analiza prowadzi od struktury
+      (analiza wstępna) przez obszary wskaźnikowe do diagnozy łącznej:
+      ponadprzeciętna rentowność przy napiętej płynności = profil spółki w
+      ekspansji, główne ryzyko w kapitale obrotowym, rekomendacje (faktoring,
+      wydłużenie finansowania) wprost z liczb. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Wartości referencyjne jako wyrocznia">
+    <p>
+      Przedziały „normatywne” (np. płynność bieżąca 1,2–2,0) pochodzą z
+      literatury sprzed lat i różnią się między autorami oraz branżami –
+      dyskonty spożywcze zdrowo funkcjonują przy płynności poniżej 1,0.
+      Traktuj je orientacyjnie, zawsze z przypisem do źródła, a za właściwy
+      punkt odniesienia przyjmij trend spółki i wskaźniki branżowe. Mechaniczne
+      „wskaźnik poza normą = źle” recenzent oceni jako brak zrozumienia.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy z finansów i rachunkowości</h2>
+
+  <ul>
+    <li><strong>Przepisywanie sprawozdań</strong> – tabele z bilansu bez
+      analizy struktury i dynamiki.</li>
+    <li><strong>Wskaźniki bez formuł i źródeł</strong> – „przyjęto normę
+      1,2–2,0” bez przypisu.</li>
+    <li><strong>Jeden rok danych</strong> – ocena kondycji bez trendu i tła
+      porównawczego.</li>
+    <li><strong>Interpretacja w silosach</strong> – każdy wskaźnik osobno,
+      żadnej diagnozy łącznej.</li>
+    <li><strong>Ignorowanie zdarzeń jednorazowych</strong> – skokowa zmiana
+      wskaźnika bez sprawdzenia w informacji dodatkowej, skąd się wzięła.</li>
+    <li><strong>Zakończenie-streszczenie</strong> – powtórzenie rozdziałów
+      zamiast oceny syntetycznej i rekomendacji.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy potrzebuję zgody spółki na analizę jej sprawozdań?</h3>
+  <p>
+    Nie – sprawozdania złożone do KRS są jawne i publicznie dostępne przez
+    eKRS. Zgoda byłaby potrzebna dopiero na dane zarządcze (budżety, dane
+    śródroczne, kalkulacje kosztów), którymi praca magisterska nie musi
+    dysponować.
+  </p>
+
+  <h3>Ile lat powinna obejmować analiza?</h3>
+  <p>
+    Minimum 3 lata, standard 5. Krótszy okres nie pokazuje trendu i czyni
+    ocenę podatną na zdarzenia jednorazowe. Przy fuzjach, przejęciach lub
+    zmianie zasad rachunkowości w badanym okresie – omów porównywalność danych.
+  </p>
+
+  <h3>Którą spółkę wybrać?</h3>
+  <p>
+    Taką, której sprawozdania są kompletne w eKRS za cały badany okres
+    (sprawdź to PRZED zatwierdzeniem tematu), o działalności na tyle
+    jednorodnej, że da się ją porównać z jednym działem PKD. Spółki giełdowe
+    dają dodatkowo raporty kwartalne i komentarze zarządu.
+  </p>
+
+  <h3>Czy praca może porównywać dwie spółki zamiast analizować jedną?</h3>
+  <p>
+    Tak – analiza porównawcza to pełnoprawny schemat, często ciekawszy w
+    interpretacji. Warunki: ta sama branża, te same lata, te same formuły
+    wskaźników i uczciwe omówienie różnic w polityce rachunkowości, które mogą
+    zaburzać porównanie.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    strukturę, formuły i sposób interpretacji – liczby i tekst muszą pochodzić
+    z Twojej analizy konkretnej spółki.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/finanse-i-rachunkowosc/">wyboru tematu z
+    finansów i rachunkowości</a> i pobierz wzór powyżej. Przy prezentacji
+    szeregów wskaźników pomoże Ci poradnik o <a
+      href="/poradniki/tabele-wykresy/">tabelach i wykresach</a>, a przy
+    opisie materiału badawczego – poradnik o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie danych
+    zastanych</a>.
+  </p>
+</ArticleLayout>
