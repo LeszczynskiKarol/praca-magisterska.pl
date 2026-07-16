@@ -1,0 +1,281 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Marketing", href: "/tematy/marketing/" },
+  { label: "Przykładowa praca", href: "/tematy/marketing/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z marketingu", href: "/tematy/marketing/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Hipotezy badawcze", href: "/poradniki/metodologia/hipotezy-badawcze/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z marketingu – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z marketingu krok po kroku: badanie konsumenckie CAWI, hipotezy z teorii zachowań konsumenta, skale Likerta i alfa Cronbacha, weryfikacja hipotez, rekomendacje dla marek. Wzór do pobrania w PDF i Word."
+  readingTime="19 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z marketingu najczęściej przybiera formę badania
+    konsumenckiego: teoria zachowań konsumenta prowadzi do hipotez, hipotezy do
+    kwestionariusza, a wyniki do rekomendacji dla marek. Brzmi prosto, ale to
+    właśnie na styku tych elementów powstają błędy, które recenzenci wytykają
+    najczęściej – hipotezy bez pokrycia w pytaniach ankiety, wnioski bez
+    pokrycia w danych. Poniżej rozbieramy wzorcową pracę na części i
+    pokazujemy, jak te połączenia zrobić dobrze.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Wpływ współpracy marek z influencerami na decyzje zakupowe
+    konsumentów pokolenia Z na rynku kosmetycznym”</strong> – badanie ankietowe
+    na próbie 214 osób, z trzema hipotezami, wskaźnikami opartymi na skali
+    Likerta i rekomendacjami dla praktyki. Ten sam schemat zadziała dla badań
+    lojalności, postrzegania marki, skuteczności reklamy czy zachowań
+    e-commerce.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet empirycznej pracy magisterskiej z marketingu: strona tytułowa, streszczenie z wynikami, spis treści, wstęp z hipotezami wyprowadzonymi z teorii, metodyka (metoda-technika-narzędzie, alfa Cronbacha, dobór próby), rozdział wynikowy z tabelami i raportowaniem testów statystycznych oraz dyskusja z rekomendacjami dla marek. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-marketing.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-marketing.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z marketingu</h2>
+
+  <ul>
+    <li>
+      <strong>Konsument w centrum.</strong> Materiałem badawczym są najczęściej
+      deklaracje i postawy konsumentów zbierane ankietą – inaczej niż w
+      logistyce (dane operacyjne) czy administracji (dokumenty).
+    </li>
+    <li>
+      <strong>Hipotezy zakotwiczone w teorii.</strong> Każda hipoteza powinna
+      wynikać z modelu zachowań konsumenta omówionego w części teoretycznej, a
+      nie z intuicji autora.
+    </li>
+    <li>
+      <strong>Wskaźniki zamiast pojedynczych pytań.</strong> Konstrukty typu
+      „skłonność do zakupu” czy „postrzegana autentyczność” mierzy się kilkoma
+      stwierdzeniami na skali Likerta i raportuje rzetelność (alfa Cronbacha).
+    </li>
+    <li>
+      <strong>Rekomendacje dla praktyki.</strong> Praca kończy się wnioskami
+      użytecznymi dla marek: kogo angażować, jak komunikować, w co inwestować.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Alfa Cronbacha">
+    <p>
+      Miara spójności wewnętrznej wskaźnika zbudowanego z kilku pozycji
+      kwestionariusza: pokazuje, czy stwierdzenia mierzą ten sam konstrukt.
+      Wartości powyżej 0,7 uznaje się za akceptowalne, powyżej 0,8 za dobre.
+      Policzysz ją w darmowym JASP lub jamovi jedną komendą – a jej podanie w
+      metodyce od razu podnosi warsztatową ocenę pracy.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z marketingu</h2>
+
+  <ol>
+    <li>
+      <strong>Łańcuch teoria → hipoteza → pytanie ankiety → wynik.</strong>
+      Recenzent sprawdza, czy każdą hipotezę da się prześledzić od literatury
+      do konkretnych pytań kwestionariusza i z powrotem do wniosków.
+    </li>
+    <li>
+      <strong>Poprawna metodyka.</strong> Metoda-technika-narzędzie nazwane
+      osobno, opisany dobór próby z jego ograniczeniami, rzetelność wskaźników.
+    </li>
+    <li>
+      <strong>Testy zamiast samych procentów.</strong> Porównania grup i
+      zależności poparte testami statystycznymi z podaną wartością p, nie tylko
+      „kobiety częściej niż mężczyźni”.
+    </li>
+    <li>
+      <strong>Rekomendacje wynikające z danych.</strong> Nie ogólniki „marki
+      powinny być aktywne w social media”, lecz wnioski oparte na konkretnych
+      wynikach.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z marketingu</h2>
+
+  <ul>
+    <li>
+      <strong>Badanie konsumenckie (ankietowe)</strong> – postawy, motywy i
+      deklarowane zachowania nabywców. Najczęstszy schemat; taki prowadzi nasz
+      wzór.
+    </li>
+    <li>
+      <strong>Analiza strategii marki (case study)</strong> – komunikacja,
+      pozycjonowanie i działania wybranej marki na podstawie materiałów
+      publicznych i wywiadów.
+    </li>
+    <li>
+      <strong>Analiza treści komunikacji</strong> – np. przekazy reklamowe lub
+      profile marek w mediach społecznościowych badane <a
+        href="/poradniki/metodologia/analiza-dokumentow/">analizą treści</a> z
+      kluczem kategoryzacyjnym.
+    </li>
+    <li>
+      <strong>Praca projektowa</strong> – plan marketingowy lub strategia
+      komunikacji dla realnego podmiotu, z diagnozą i budżetem.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy empirycznej z marketingu</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie (z wynikami liczbowymi) + spis treści</li>
+    <li>Wstęp – kontekst rynkowy, cel, hipotezy</li>
+    <li>Rozdział 1 – teoria: proces decyzyjny, segment, narzędzie komunikacji</li>
+    <li>Rozdział 2 – metodyka: metoda, narzędzie, wskaźniki, próba</li>
+    <li>Rozdział 3 – wyniki: weryfikacja hipotez z tabelami i testami</li>
+    <li>Rozdział 4 – dyskusja: literatura, rekomendacje, ograniczenia</li>
+    <li>Zakończenie</li>
+    <li>Bibliografia · Spisy · Załącznik: kwestionariusz</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Raporty branżowe jako źródła">
+    <p>
+      Praca z marketingu zyskuje, gdy kontekst rynkowy opiera się na liczbach:
+      wydatki reklamowe, penetracja platform, wartość kategorii. Sięgaj po
+      raporty IAB Polska, GUS, publikacje domów mediowych i platform – zawsze z
+      wydawcą i rokiem w przypisie. Raport branżowy to źródło kontekstu, nie
+      zamiennik literatury naukowej w części teoretycznej.
+    </p>
+  </InfoBox>
+
+  <h2>Hipotezy – najczęstszy słaby punkt</h2>
+
+  <blockquote>
+    <p>H1: rekomendacje influencerów stanowią istotny impuls zakupowy w badanej
+      grupie. H2: postrzegana autentyczność twórcy silniej wiąże się ze
+      skłonnością do zakupu niż wielkość jego zasięgów. H3: kobiety wykazują
+      wyższą podatność na rekomendacje niż mężczyźni.</p>
+  </blockquote>
+
+  <p>
+    Trzy rzeczy robią z tego zestawu dobry warsztat. Każda hipoteza jest
+    falsyfikowalna – może wyjść „nie”. Każda ma pokrycie w konkretnych
+    pytaniach kwestionariusza. I każda wynika z teorii zreferowanej w rozdziale
+    pierwszym. We wzorze H3 zostaje odrzucona (p = 0,21) – i jest to omówione w
+    dyskusji jako pełnoprawny wynik, a nie schowane pod dywan. Więcej o
+    konstruowaniu hipotez w <a
+      href="/poradniki/metodologia/hipotezy-badawcze/">osobnym poradniku</a>.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Procenty vs weryfikacja hipotez">
+    <p>
+      <strong>Wersja słabsza.</strong> Rozdział badawczy to seria wykresów
+      kołowych z ankiety („62% badanych korzysta z Instagrama”) opisanych
+      zdaniami w rodzaju „większość respondentów odpowiedziała twierdząco”.
+      Brak hipotez, brak testów, wnioski: „influencerzy mają duży wpływ na
+      młodych”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Trzy hipotezy, wskaźniki z podaną
+      rzetelnością (alfa 0,84), korelacje rho Spearmana z wartościami p,
+      hipoteza trzecia uczciwie odrzucona, a z porównania siły korelacji
+      (autentyczność 0,52 vs zasięgi 0,19) wynika konkretna rekomendacja:
+      dobierać twórców według dopasowania, nie zasięgu. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Wnioski o zachowaniach z danych o deklaracjach">
+    <p>
+      Ankieta mierzy to, co konsumenci mówią, a nie to, co robią – a te dwie
+      rzeczy potrafią się rozjeżdżać. Pisz „deklarowana skłonność do zakupu”,
+      nie „zachowania zakupowe”, i odnotuj deklaratywność w ograniczeniach
+      badania. Jeśli promotor oczekuje danych behawioralnych, rozważ
+      uzupełnienie ankiety analizą danych sprzedażowych lub eksperymentem z
+      wyborem produktu.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z marketingu</h2>
+
+  <ul>
+    <li><strong>Rozdział teoretyczny-podręcznik</strong> – referowanie „czym
+      jest marketing” i 4P zamiast teorii prowadzącej do hipotez.</li>
+    <li><strong>Hipotezy bez pokrycia w kwestionariuszu</strong> – po zebraniu
+      danych okazuje się, że żadne pytanie nie mierzy zmiennej z H2.</li>
+    <li><strong>Same procenty bez testów</strong> – porównywanie grup „na oko”,
+      bez sprawdzenia istotności różnic.</li>
+    <li><strong>Ukrywanie wyników niewygodnych</strong> – hipoteza odrzucona
+      znika z dyskusji.</li>
+    <li><strong>Próba tylko ze znajomych</strong> – i wnioski uogólniane na
+      „polskich konsumentów” bez słowa o ograniczeniach.</li>
+    <li><strong>Rekomendacje-ogólniki</strong> – „marki powinny słuchać
+      konsumentów” zamiast wniosków z konkretnych liczb.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Ile osób trzeba przebadać w pracy z marketingu?</h3>
+  <p>
+    Standard w pracach magisterskich to 100–250 respondentów – wystarczająco,
+    by stosować testy statystyczne i porównywać podgrupy. Kalkulację i tabelę
+    minimalnych liczebności znajdziesz w poradniku o <a
+      href="/poradniki/metodologia/badania-ilosciowe/">badaniach
+    ilościowych</a>.
+  </p>
+
+  <h3>Czy praca z marketingu może być o jednej marce?</h3>
+  <p>
+    Tak – to schemat analizy strategii marki (case study). Wymaga jednak
+    materiału głębszego niż strona internetowa marki: archiwum kampanii,
+    danych o wynikach, najlepiej wywiadu z osobą odpowiedzialną za komunikację.
+    Sam opis działań marki bez oceny i kryteriów to referat, nie analiza.
+  </p>
+
+  <h3>Jakim programem policzyć wyniki ankiety?</h3>
+  <p>
+    Do częstości i wykresów wystarczy arkusz kalkulacyjny; do testów i alfa
+    Cronbacha – darmowy JASP lub jamovi. Dobór testu do hipotezy omawiamy w
+    poradniku o <a href="/poradniki/metodologia/analiza-ilosciowa/">analizie
+    danych ilościowych</a>.
+  </p>
+
+  <h3>Czy mogę badać skuteczność reklamy bez dostępu do danych marki?</h3>
+  <p>
+    Możesz – od strony konsumenta: rozpoznawalność przekazu, postawy wobec
+    reklamy, deklarowane intencje. Unikaj natomiast tytułów obiecujących
+    „wpływ kampanii na sprzedaż”, jeśli nie masz danych sprzedażowych – tytuł
+    pracy musi odpowiadać temu, co faktycznie zmierzono.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje Ci
+    strukturę, sposób opisu metodyki i raportowania wyników – treść,
+    kwestionariusz i dane muszą być Twoje.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/marketing/">wyboru tematu z marketingu</a> i
+    pobierz wzór powyżej. Badanie zaprojektujesz z pomocą poradników o <a
+      href="/poradniki/metodologia/ankieta/">ankiecie</a>, <a
+      href="/poradniki/metodologia/hipotezy-badawcze/">hipotezach</a> i <a
+      href="/poradniki/metodologia/badania-ilosciowe/">badaniach
+    ilościowych</a>.
+  </p>
+</ArticleLayout>
