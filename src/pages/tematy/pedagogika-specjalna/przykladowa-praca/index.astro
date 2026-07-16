@@ -1,0 +1,292 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Pedagogika specjalna", href: "/tematy/pedagogika-specjalna/" },
+  { label: "Przykładowa praca", href: "/tematy/pedagogika-specjalna/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z pedagogiki specjalnej", href: "/tematy/pedagogika-specjalna/" },
+  { label: "Przykładowa praca z pedagogiki", href: "/tematy/pedagogika/przykladowa-praca/" },
+  { label: "Studium przypadku", href: "/poradniki/metodologia/case-study/" },
+  { label: "Obserwacja w badaniach", href: "/poradniki/metodologia/obserwacja/" },
+  { label: "Etyka badań naukowych", href: "/poradniki/metodologia/etyka/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z pedagogiki specjalnej – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z pedagogiki specjalnej: studium indywidualnego przypadku dziecka (obserwacja, wywiady, analiza orzeczenia, WOPFU, IPET), etyka badań z dzieckiem i wskazania do pracy. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z pedagogiki specjalnej ma metodę, która na innych
+    kierunkach bywa dodatkiem, a tutaj jest sercem warsztatu: studium
+    indywidualnego przypadku. Jedno dziecko, wiele źródeł danych - obserwacja
+    w naturalnych sytuacjach, wywiady z rodzicem i nauczycielami, dokumenty
+    systemu wsparcia (orzeczenie, WOPFU, IPET) - i wskazania do dalszej pracy,
+    które komuś realnie służą. Poniżej rozbieramy taką pracę na części, ze
+    szczególną uwagą dla dwóch rzeczy, które decydują o ocenie: kompletności
+    diagnozy i etyki badań z dzieckiem.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Funkcjonowanie społeczne ucznia w spektrum autyzmu w klasie
+    integracyjnej – studium indywidualnego przypadku”</strong>: 12 sesji
+    obserwacji, cztery wywiady, analiza dokumentacji i wskazania pogrupowane
+    według adresatów. Ten sam schemat zadziała dla dziecka z każdą inną
+    niepełnosprawnością lub trudnością rozwojową.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z pedagogiki specjalnej: strona tytułowa, streszczenie, spis treści, metodologia studium indywidualnego przypadku (problemy eksploracyjne, techniki, zgody i anonimizacja), rozdział z opisem przypadku (obserwacja z tabelą wzorca sytuacyjnego, wywiady, dokumenty) oraz wnioski ze wskazaniami dla nauczycieli i rodziny. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-pedagogika-specjalna.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-pedagogika-specjalna.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z pedagogiki specjalnej</h2>
+
+  <ul>
+    <li>
+      <strong>Studium indywidualnego przypadku jako metoda główna.</strong>
+      Pogłębiona diagnoza jednego dziecka z kilku źródeł zamiast płytkiej
+      ankiety na dużej próbie.
+    </li>
+    <li>
+      <strong>Dokumenty systemu wsparcia jako materiał.</strong> Orzeczenie o
+      potrzebie kształcenia specjalnego, WOPFU i IPET to źródła, których nie
+      ma żaden inny kierunek - praca powinna pokazać, że autor zna ten system.
+    </li>
+    <li>
+      <strong>Problemy eksploracyjne zamiast hipotez.</strong> Przy n = 1
+      pyta się „jak przebiega” i „co warunkuje”, nie testuje statystycznie.
+    </li>
+    <li>
+      <strong>Wskazania do dalszej pracy.</strong> Praca kończy się
+      konkretnymi zaleceniami dla nauczycieli, rodziny i specjalistów,
+      wynikającymi wprost z diagnozy.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Orzeczenie, WOPFU, IPET">
+    <p>
+      Trzy dokumenty tworzące oś wsparcia ucznia ze specjalnymi potrzebami:
+      orzeczenie o potrzebie kształcenia specjalnego (wydaje poradnia
+      psychologiczno-pedagogiczna), WOPFU - wielospecjalistyczna ocena poziomu
+      funkcjonowania ucznia (przygotowuje zespół nauczycieli i specjalistów
+      szkoły) oraz IPET - indywidualny program edukacyjno-terapeutyczny
+      (opracowany na podstawie obu poprzednich). W studium przypadku analizuje
+      się je jako dokumenty źródłowe - z zachowaniem pełnej anonimizacji.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z pedagogiki specjalnej</h2>
+
+  <ol>
+    <li>
+      <strong>Diagnoza wielostronna.</strong> Co najmniej trzy źródła danych
+      (obserwacja + wywiady + dokumenty) i widoczna triangulacja ustaleń.
+    </li>
+    <li>
+      <strong>Etyka wzorowa.</strong> Zgody rodzica i szkoły, forma badania
+      dostosowana do dziecka, anonimizacja bez śladów umożliwiających
+      identyfikację.
+    </li>
+    <li>
+      <strong>Opis zamiast etykiet.</strong> Funkcjonowanie dziecka opisane
+      konkretnymi zachowaniami w konkretnych sytuacjach, nie ogólnikami o
+      „deficytach”.
+    </li>
+    <li>
+      <strong>Wskazania z pokryciem.</strong> Każde zalecenie da się
+      wyprowadzić z ustaleń diagnozy - i ma adresata.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z pedagogiki specjalnej</h2>
+
+  <ul>
+    <li>
+      <strong>Studium indywidualnego przypadku</strong> - schemat naszego
+      wzoru; klasyka kierunku.
+    </li>
+    <li>
+      <strong>Badanie postaw</strong> - np. postawy nauczycieli lub rówieśników
+      wobec uczniów z niepełnosprawnością (ankieta, porównania grup).
+    </li>
+    <li>
+      <strong>Badanie rodzin</strong> - funkcjonowanie i potrzeby rodziców
+      dzieci z niepełnosprawnością (wywiady lub standaryzowane
+      kwestionariusze).
+    </li>
+    <li>
+      <strong>Ocena oddziaływań</strong> - efekty programu terapeutycznego lub
+      rewalidacyjnego w małej grupie (schemat pretest-posttest z ograniczeniami
+      opisanymi uczciwie).
+    </li>
+    <li>
+      <strong>Praca systemowa</strong> - organizacja edukacji włączającej,
+      współpraca szkoły z poradnią (analiza dokumentów + wywiady).
+    </li>
+  </ul>
+
+  <h2>Struktura studium indywidualnego przypadku</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp - problem, cel, uzasadnienie</li>
+    <li>Rozdział teoretyczny - niepełnosprawność/trudność, rozwój, system wsparcia</li>
+    <li>Metodologia - metoda, problemy eksploracyjne, techniki, etyka</li>
+    <li>Studium przypadku - charakterystyka, historia, wyniki obserwacji i wywiadów, analiza czynników</li>
+    <li>Wnioski i wskazania - według adresatów</li>
+    <li>Bibliografia · Aneksy (arkusz obserwacji, dyspozycje wywiadów)</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Jak znaleźć dziecko do badania">
+    <p>
+      Najbezpieczniejsza droga prowadzi przez praktyki lub pracę w placówce:
+      przedszkolu integracyjnym, szkole z oddziałami integracyjnymi, ośrodku
+      szkolno-wychowawczym. Kolejność formalna: zgoda dyrekcji → pisemna zgoda
+      rodzica (z informacją o celu, przebiegu i anonimizacji) → dostosowanie
+      formy badania do dziecka. Obserwacja w naturalnych sytuacjach jest mniej
+      obciążająca niż dodatkowe zadania diagnostyczne - i zwykle w zupełności
+      wystarcza.
+    </p>
+  </InfoBox>
+
+  <h2>Wyniki obserwacji - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>W kontaktach indywidualnych oraz w małych, ustrukturyzowanych grupach
+      Adam inicjuje interakcje i podtrzymuje je adekwatnie do sytuacji. W
+      sytuacjach grupowych o wysokiej stymulacji częstość interakcji spada, a
+      dominującą strategią staje się wycofanie. Aktywności nawiązujące do
+      zainteresowań chłopca pełnią funkcję pomostową: rówieśnicy dołączają do
+      jego zabawy, a on sam dłużej pozostaje w interakcji.</p>
+  </blockquote>
+
+  <p>
+    Zwróć uwagę na charakter tego opisu: wzorzec sytuacyjny (kiedy działa,
+    kiedy nie), strategie dziecka nazwane bez wartościowania i zidentyfikowany
+    zasób (aktywności pomostowe), z którego za chwilę wyrośnie wskazanie dla
+    nauczycieli. To jest różnica między diagnozą a etykietowaniem.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Etykiety vs diagnoza funkcjonalna">
+    <p>
+      <strong>Wersja słabsza.</strong> Rozdział „badawczy” streszcza
+      orzeczenie i diagnozę medyczną chłopca, opisuje autyzm ogólnikami z
+      podręcznika („zaburzenia interakcji społecznych”) i kończy się
+      wskazaniami-uniwersaliami („należy stosować indywidualizację”). Dziecka
+      w tej pracy właściwie nie widać. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> 12 sesji obserwacji z arkuszem,
+      wzorzec sytuacyjny udokumentowany liczbami i scenami z notatek, cztery
+      perspektywy z wywiadów skonfrontowane ze sobą i z dokumentami, a każde
+      wskazanie wyprowadzone z konkretnego ustalenia (aktywności pomostowe →
+      planowe wykorzystanie w pracy zespołowej). Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Anonimizacja przy n = 1">
+    <p>
+      W studium przypadku anonimizacja jest trudniejsza niż w ankiecie:
+      kombinacja wieku, miejscowości, typu szkoły i rzadkiej diagnozy potrafi
+      wskazać dziecko jednoznacznie. Zasady: pseudonim zamiast imienia, szkoła
+      i miejscowość opisane kategorią („szkoła podstawowa w mieście
+      powiatowym”), szczegóły charakterystyczne uogólnione, żadnych dat
+      urodzenia ani nazw poradni. Prześlij gotowy opis przypadku „na próbę”
+      osobie spoza badania - jeśli cokolwiek pozwala jej zgadywać, uogólnij
+      bardziej.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy z pedagogiki specjalnej</h2>
+
+  <ul>
+    <li><strong>Podręcznik zamiast dziecka</strong> - rozdział o „autyzmie w
+      ogóle” zamiast diagnozy konkretnego ucznia.</li>
+    <li><strong>Jedno źródło danych</strong> - studium oparte tylko na
+      rozmowie z mamą albo tylko na dokumentach.</li>
+    <li><strong>Hipotezy statystyczne przy n = 1</strong> - testowanie
+      istotności w badaniu jednego dziecka.</li>
+    <li><strong>Braki formalne</strong> - badanie dziecka bez pisemnej zgody
+      rodzica i dyrekcji.</li>
+    <li><strong>Dane identyfikujące</strong> - szczegóły pozwalające
+      rozpoznać dziecko, rodzinę lub placówkę.</li>
+    <li><strong>Wskazania-uniwersalia</strong> - „indywidualizować pracę”
+      zamiast zaleceń wynikających z diagnozy i mających adresata.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca może dotyczyć jednego dziecka?</h3>
+  <p>
+    Tak - studium indywidualnego przypadku jest pełnoprawną i klasyczną metodą
+    pedagogiki specjalnej. O wartości pracy decyduje głębia i wielostronność
+    diagnozy, nie liczba badanych. Metodę omawiamy szerzej w poradniku o <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a>.
+  </p>
+
+  <h3>Jakie zgody są potrzebne do badania dziecka?</h3>
+  <p>
+    Pisemna zgoda rodzica lub opiekuna prawnego, zgoda dyrekcji placówki oraz
+    przystanie samego dziecka wyrażone stosownie do jego możliwości. Przy
+    dostępie do dokumentacji (orzeczenie, IPET) zgoda rodzica musi obejmować
+    także ten zakres. Całość opisz w podrozdziale o etyce - wzór zapisu
+    znajdziesz w pobieranym szablonie i w poradniku o <a
+      href="/poradniki/metodologia/etyka/">etyce badań</a>.
+  </p>
+
+  <h3>Ile sesji obserwacji wystarczy?</h3>
+  <p>
+    W pracach magisterskich typowe są serie 8-15 sesji rozłożonych na 2-3
+    miesiące, obejmujące różne typy sytuacji (lekcje, przerwy, zajęcia
+    dodatkowe). Pojedyncza wizyta nie uchwyci wzorca sytuacyjnego - a to on
+    jest zwykle najcenniejszym ustaleniem. Warsztat arkusza obserwacji
+    omawiamy w <a href="/poradniki/metodologia/obserwacja/">poradniku o
+    obserwacji</a>.
+  </p>
+
+  <h3>Czym różni się ta praca od pracy z pedagogiki ogólnej?</h3>
+  <p>
+    Materiałem (dokumenty systemu kształcenia specjalnego), wrażliwością
+    etyczną (badanie dziecka z niepełnosprawnością) i charakterem wskazań
+    (rewalidacja, terapia, organizacja wsparcia). Konwencję metodologiczną
+    dzieli z <a href="/tematy/pedagogika/przykladowa-praca/">pracą z
+    pedagogiki</a> - warto porównać oba wzory.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy, a opis przypadku
+    we wzorze jest fikcyjny. Wzór daje strukturę diagnozy i warsztat - Twoje
+    studium musi opisywać rzeczywiste dziecko, zbadane przez Ciebie z
+    zachowaniem wszystkich zgód.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/pedagogika-specjalna/">wyboru tematu z
+    pedagogiki specjalnej</a> i pobierz wzór powyżej. Techniki zbierania
+    danych pogłębisz w poradnikach o <a
+      href="/poradniki/metodologia/obserwacja/">obserwacji</a>, <a
+      href="/poradniki/metodologia/wywiad/">wywiadzie</a> i <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie
+    dokumentów</a>.
+  </p>
+</ArticleLayout>
