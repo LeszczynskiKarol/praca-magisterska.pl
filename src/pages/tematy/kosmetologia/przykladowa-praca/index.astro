@@ -1,0 +1,289 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Kosmetologia", href: "/tematy/kosmetologia/" },
+  { label: "Przykładowa praca", href: "/tematy/kosmetologia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z kosmetologii", href: "/tematy/kosmetologia/" },
+  { label: "Przykładowa praca z dietetyki", href: "/tematy/dietetyka/przykladowa-praca/" },
+  { label: "Eksperyment jako metoda", href: "/poradniki/metodologia/eksperyment/" },
+  { label: "Etyka badań naukowych", href: "/poradniki/metodologia/etyka/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z kosmetologii – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z kosmetologii: ocena skuteczności zabiegu z pomiarami aparaturowymi (korneometria, TEWL), standaryzacja pomiaru, kryteria kwalifikacji, komisja bioetyczna. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Prace magisterskie z kosmetologii dzieli wyraźna linia: po jednej stronie
+    ankiety o nawykach pielęgnacyjnych, po drugiej badania zabiegowe z
+    obiektywnymi pomiarami parametrów skóry. Te drugie bronią się nieporównanie
+    lepiej - i wcale nie wymagają laboratorium klinicznego, tylko dostępu do
+    aparatury pomiarowej (korneometr, tewametr), która stoi na większości
+    uczelni kształcących kosmetologów. Poniżej rozbieramy wzorcową pracę
+    zabiegową, w której warsztat robi różnicę: kryteria kwalifikacji,
+    standaryzacja pomiarów i uczciwa interpretacja schematu przed-po.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Ocena wpływu serii zabiegów mikronakłuwania na parametry
+    nawilżenia i bariery naskórkowej skóry twarzy – badanie z pomiarami
+    aparaturowymi”</strong>: 32 uczestniczki, seria trzech zabiegów, pomiary
+    korneometryczne i TEWL przed serią i po niej oraz konfrontacja samooceny z
+    pomiarami. Ten sam schemat zadziała dla każdego zabiegu i każdego
+    mierzalnego parametru skóry.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z kosmetologii: strona tytułowa, streszczenie strukturalne, spis treści, rozdział Materiał i metody (kryteria włączenia i wykluczenia z przeciwwskazaniami, protokół zabiegowy, standaryzacja pomiarów aparaturowych, komisja bioetyczna), tabela wyników przed-po z wartościami p, dyskusja z ograniczeniami schematu bez grupy kontrolnej i wnioski punktowane. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-kosmetologia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-kosmetologia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z kosmetologii</h2>
+
+  <ul>
+    <li>
+      <strong>Pomiar aparaturowy zamiast wrażeń.</strong> Korneometria
+      (nawilżenie), TEWL (funkcja barierowa), sebumetria, pH-metria - parametry
+      skóry mierzy się obiektywnie, nie „na oko”.
+    </li>
+    <li>
+      <strong>Protokół zabiegowy i bezpieczeństwo.</strong> Kryteria
+      kwalifikacji z przeciwwskazaniami, świadoma zgoda, opinia komisji
+      bioetycznej - badanie zabiegowe to ingerencja w skórę uczestniczek.
+    </li>
+    <li>
+      <strong>Standaryzacja warunków pomiaru.</strong> Parametry skóry zależą
+      od temperatury, wilgotności i pielęgnacji - bez standaryzacji wyniki są
+      szumem.
+    </li>
+    <li>
+      <strong>Konwencja nauk o zdrowiu.</strong> Streszczenie strukturalne,
+      „Materiał i metody”, wnioski punktowane, piśmiennictwo Vancouver.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Korneometria i TEWL">
+    <p>
+      Dwa podstawowe pomiary w badaniach kosmetologicznych. Korneometria
+      ocenia nawilżenie warstwy rogowej naskórka (metodą pojemnościową, wynik
+      w jednostkach umownych aparatu). TEWL (transepidermal water loss) mierzy
+      przeznaskórkową utratę wody w g/m²/h - im niższa, tym szczelniejsza
+      bariera naskórkowa, więc poprawę oznacza SPADEK wartości. Oba pomiary
+      wymagają aklimatyzacji badanej osoby i stałych warunków otoczenia.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z kosmetologii</h2>
+
+  <ol>
+    <li>
+      <strong>Kwalifikacja z przeciwwskazaniami.</strong> Kryteria włączenia
+      i wykluczenia obejmujące bezpieczeństwo zabiegu (ciąża, retinoidy,
+      bliznowce, aktywne zmiany).
+    </li>
+    <li>
+      <strong>Standaryzacja opisana wprost.</strong> Aklimatyzacja,
+      temperatura i wilgotność pomieszczenia, odstęp od aplikacji kosmetyków,
+      te same punkty pomiarowe, uśrednianie odczytów.
+    </li>
+    <li>
+      <strong>Kontrola zmiennych zakłócających.</strong> Stała pielęgnacja
+      domowa w okresie badania, kontrolowana ankietą przy wizytach.
+    </li>
+    <li>
+      <strong>Interpretacja na miarę schematu.</strong> Badanie przed-po bez
+      grupy kontrolnej pokazuje zmianę, nie dowodzi wyłącznego wpływu zabiegu
+      - dobra praca pisze to wprost.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z kosmetologii</h2>
+
+  <ul>
+    <li>
+      <strong>Ocena skuteczności zabiegu</strong> - pomiary aparaturowe przed
+      serią i po niej; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Porównanie zabiegów lub preparatów</strong> - dwa protokoły w
+      dwóch grupach albo połówki twarzy (split-face) u tych samych osób.
+    </li>
+    <li>
+      <strong>Ocena stanu skóry wybranej grupy</strong> - parametry skóry np.
+      u osób pracujących w określonych warunkach (badanie przekrojowe).
+    </li>
+    <li>
+      <strong>Badanie nawyków i świadomości</strong> - pielęgnacja, fotoprotekcja,
+      czytanie składów INCI (ankieta; poprawne, ale trudniej o wyróżnienie).
+    </li>
+    <li>
+      <strong>Analiza składów kosmetyków</strong> - przegląd receptur wybranej
+      kategorii produktów pod kątem składników aktywnych (analiza danych
+      zastanych z INCI).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy zabiegowej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie strukturalne PL + Abstract EN</li>
+    <li>Wykaz skrótów + spis treści</li>
+    <li>Rozdział teoretyczny - skóra, zabieg, metody pomiaru, stan badań</li>
+    <li>Materiał i metody - grupa, kwalifikacja, protokół, standaryzacja, statystyka, etyka</li>
+    <li>Wyniki - tabele przed-po z wartościami p, samoocena vs pomiary</li>
+    <li>Dyskusja - piśmiennictwo, interpretacja, ograniczenia</li>
+    <li>Wnioski punktowane</li>
+    <li>Piśmiennictwo (Vancouver) · Spisy · Załączniki (zgoda, karta kwalifikacji, kwestionariusz)</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Dostęp do aparatury i uczestniczek">
+    <p>
+      Aparatura pomiarowa (korneometr, tewametr, sebumetr) jest na wyposażeniu
+      większości pracowni kosmetologicznych uczelni - zapytaj promotora o
+      dostęp i terminy. Uczestniczki najłatwiej rekrutować wśród studentek
+      (ogłoszenie na wydziale) z jasną informacją o liczbie wizyt i
+      przeciwwskazaniach. Zaplanuj realnie: seria 3 zabiegów co 4 tygodnie +
+      pomiar końcowy to ponad 4 miesiące badania - zacznij najpóźniej na
+      początku przedostatniego semestru.
+    </p>
+  </InfoBox>
+
+  <h2>Standaryzacja pomiaru - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Pomiary wykonano po 20-minutowej aklimatyzacji w pomieszczeniu o
+      temperaturze 20–22°C i wilgotności względnej 40–50%, minimum 12 godzin
+      od ostatniej aplikacji kosmetyków, w trzech punktach pomiarowych (czoło,
+      policzek prawy, policzek lewy), przyjmując do analizy średnią z trzech
+      odczytów w każdym punkcie.</p>
+  </blockquote>
+
+  <p>
+    Jedno zdanie, pięć elementów standaryzacji. Ten akapit jest w pracy
+    zabiegowej odpowiednikiem kalibracji w laboratorium - bez niego różnica
+    +18% nawilżenia może być różnicą wilgotności powietrza między styczniem a
+    majem.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Wrażenia klientek vs pomiary">
+    <p>
+      <strong>Wersja słabsza.</strong> Po serii zabiegów uczestniczki
+      wypełniają ankietę „czy widzisz poprawę?”, 84% odpowiada twierdząco,
+      wniosek: „zabieg jest skuteczny”. Brak pomiarów, brak standaryzacji,
+      brak świadomości, że samoocena po zapłaceniu za zabieg jest
+      systematycznie zawyżona. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Pomiary aparaturowe w
+      wystandaryzowanych warunkach (+18,4% nawilżenia, −9,2% TEWL, p &lt;
+      0,05), samoocena zebrana równolegle i skonfrontowana z pomiarami
+      (korelacja tylko 0,44 - u części osób deklarowana poprawa bez
+      potwierdzenia), ograniczenia schematu przed-po nazwane wprost. Ocena
+      wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Schemat przed-po bez grupy kontrolnej">
+    <p>
+      Najczęstszy schemat prac zabiegowych ma wbudowane ograniczenie: zmiana
+      parametrów mogła częściowo wynikać z sezonu, zmiany pogody czy samego
+      uczestnictwa w badaniu. Nie dyskwalifikuje to pracy - pod warunkiem, że
+      wnioski mówią o „zmianie obserwowanej po serii zabiegów”, a nie o
+      „udowodnionym działaniu”, a ograniczenie jest omówione. Ambitniejszy
+      wariant to schemat split-face (połówka twarzy jako kontrola) - omawiamy
+      go w poradniku o <a
+        href="/poradniki/metodologia/eksperyment/">eksperymencie</a>.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z kosmetologii</h2>
+
+  <ul>
+    <li><strong>Samoocena jako jedyny pomiar</strong> - ankieta zadowolenia
+      zamiast parametrów skóry.</li>
+    <li><strong>Pomiary bez standaryzacji</strong> - różne pory, warunki i
+      punkty pomiarowe między wizytami.</li>
+    <li><strong>Brak kryteriów wykluczenia</strong> - w grupie osoby z
+      przeciwwskazaniami lub zmieniające pielęgnację w trakcie.</li>
+    <li><strong>Brak zgód i opinii komisji</strong> - zabieg to ingerencja;
+      formalności są obowiązkowe.</li>
+    <li><strong>Nadinterpretacja przed-po</strong> - „zabieg udowodnił
+      skuteczność” bez grupy kontrolnej.</li>
+    <li><strong>Błędny kierunek TEWL</strong> - odczytywanie wzrostu utraty
+      wody jako poprawy.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Ile uczestniczek potrzeba do badania zabiegowego?</h3>
+  <p>
+    W pracach magisterskich typowe grupy to 20-40 osób - wystarczająco dla
+    testów dla prób zależnych (przed-po), realnie do przeprowadzenia serii
+    zabiegów w jeden semestr. Przy porównaniu dwóch grup potrzeba więcej;
+    policz to zawczasu z poradnikiem o <a
+      href="/poradniki/metodologia/analiza-ilosciowa/">analizie danych</a>.
+  </p>
+
+  <h3>Czy praca z kosmetologii wymaga komisji bioetycznej?</h3>
+  <p>
+    Przy badaniu zabiegowym - tak, traktuj opinię jako obowiązkową (ingerencja
+    w skórę uczestniczek); przy badaniu ankietowym zwykle wystarcza dobra
+    praktyka, ale na uczelniach medycznych wystąp o opinię zawsze. Formalności
+    omawia poradnik o <a href="/poradniki/metodologia/etyka/">etyce badań</a>.
+  </p>
+
+  <h3>Nie mam dostępu do aparatury - co zamiast badania zabiegowego?</h3>
+  <p>
+    Dwa sensowne kierunki: analiza składów (przegląd receptur wybranej
+    kategorii produktów pod kątem składników aktywnych - analiza danych
+    zastanych z jawnym korpusem) albo badanie przekrojowe świadomości i
+    nawyków z porządnym warsztatem ankietowym. Oba dają się obronić, jeśli
+    metodyka jest kompletna.
+  </p>
+
+  <h3>Czy mogę wykonywać zabiegi samodzielnie?</h3>
+  <p>
+    Zabiegi w ramach badania wykonuj w pracowni uczelnianej, pod nadzorem i w
+    zakresie uprawnień kosmetologa - to warunek zarówno bezpieczeństwa, jak i
+    zgody komisji. Zabiegi wykraczające poza kompetencje kosmetologa
+    (np. z naruszeniem ciągłości skóry w zakresie zastrzeżonym dla medycyny)
+    nie mogą być przedmiotem badania studenckiego.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    protokół i warsztat - Twoje badanie, pomiary i tekst muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/kosmetologia/">wyboru tematu z
+    kosmetologii</a> i pobierz wzór powyżej. Konwencję nauk o zdrowiu
+    zobaczysz też we wzorach prac z <a
+      href="/tematy/dietetyka/przykladowa-praca/">dietetyki</a> i <a
+      href="/tematy/zdrowie-publiczne/przykladowa-praca/">zdrowia
+    publicznego</a>, a schematy badawcze omawia poradnik o <a
+      href="/poradniki/metodologia/eksperyment/">eksperymencie</a>.
+  </p>
+</ArticleLayout>
