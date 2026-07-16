@@ -1,0 +1,289 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Stosunki międzynarodowe", href: "/tematy/stosunki-miedzynarodowe/" },
+  { label: "Przykładowa praca", href: "/tematy/stosunki-miedzynarodowe/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac ze stosunków międzynarodowych", href: "/tematy/stosunki-miedzynarodowe/" },
+  { label: "Przykładowa praca z politologii", href: "/tematy/politologia/przykladowa-praca/" },
+  { label: "Studium przypadku", href: "/poradniki/metodologia/case-study/" },
+  { label: "Analiza dokumentów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Przypisy w pracy", href: "/poradniki/przypisy/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska ze stosunków międzynarodowych – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska ze stosunków międzynarodowych: studium przypadku polityki, analiza dokumentów źródłowych (EUR-Lex, konkluzje Rady), rama teoretyczna, kryteria oceny skuteczności. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska ze stosunków międzynarodowych balansuje na granicy,
+    której przekroczenie kosztuje najwięcej punktów: między analizą naukową a
+    publicystyką międzynarodową. Po jednej stronie jest tekst z tezą, ramą
+    teoretyczną, źródłami pierwotnymi i jawnymi kryteriami oceny; po drugiej -
+    esej o „sytuacji geopolitycznej” pisany z doniesień medialnych. Poniżej
+    rozbieramy wzorcową pracę analityczną i pokazujemy, co konkretnie trzyma
+    ją po właściwej stronie tej granicy.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Polityka sankcyjna Unii Europejskiej wobec Federacji Rosyjskiej
+    po 2022 roku – cele, instrumenty i ograniczenia skuteczności”</strong>:
+    studium przypadku na dokumentach źródłowych (EUR-Lex, konkluzje Rady
+    Europejskiej, dane Eurostatu), z tezą i trzema odrębnymi kryteriami oceny
+    skuteczności. Ten sam schemat zadziała dla analizy dowolnej polityki
+    zagranicznej, organizacji międzynarodowej czy konfliktu.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet analitycznej pracy magisterskiej ze stosunków międzynarodowych: strona tytułowa, streszczenie z tezą, spis treści, rozdział metodologiczny (materiał źródłowy vs literatura, kryteria oceny skuteczności per typ celu), rozdziały analityczne, tabela ocen według kryteriów i bibliografia z podziałem na źródła i opracowania. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-stosunki-miedzynarodowe.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-stosunki-miedzynarodowe.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską ze stosunków międzynarodowych</h2>
+
+  <ul>
+    <li>
+      <strong>Rama teoretyczna nazwana wprost.</strong> Praca deklaruje, przez
+      jaką perspektywę patrzy (teorie SM, badania nad sankcjami, studia nad
+      bezpieczeństwem) - i konsekwentnie jej używa w analizie.
+    </li>
+    <li>
+      <strong>Źródła pierwotne zamiast mediów.</strong> Dokumenty organizacji
+      międzynarodowych, akty prawne, strategie, oświadczenia, dane
+      statystyczne - media tylko wyjątkowo, dla faktów nieudokumentowanych
+      gdzie indziej.
+    </li>
+    <li>
+      <strong>Teza i kryteria oceny.</strong> Zamiast „oceny sytuacji” -
+      twierdzenie do udowodnienia i jawne kryteria, według których ocenia się
+      np. skuteczność polityki.
+    </li>
+    <li>
+      <strong>Precyzja pojęciowa.</strong> Rozróżnienia typów celów, funkcji
+      instrumentów i poziomów analizy są w SM oceniane na równi z materiałem.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Źródło a opracowanie">
+    <p>
+      Źródło (materiał pierwotny) to dokument wytworzony przez uczestników
+      analizowanych procesów: decyzja Rady UE, strategia bezpieczeństwa,
+      traktat, przemówienie, dane statystyczne. Opracowanie to tekst naukowy O
+      tych procesach. W pracy z SM źródła są materiałem badawczym, opracowania
+      - literaturą przedmiotu, a bibliografia dzieli się na te dwie sekcje.
+      Pomieszanie obu kategorii recenzent zauważa natychmiast.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z SM</h2>
+
+  <ol>
+    <li>
+      <strong>Analiza, nie kronika.</strong> Praca odpowiada na pytanie
+      badawcze, a nie relacjonuje chronologii wydarzeń znanej z mediów.
+    </li>
+    <li>
+      <strong>Źródła z sygnaturami.</strong> Dokumenty UE/ONZ/NATO cytowane z
+      pełnymi oznaczeniami i miejscem publikacji (EUR-Lex, rejestry), nie „za
+      portalem informacyjnym”.
+    </li>
+    <li>
+      <strong>Kryteria oceny przed oceną.</strong> Zanim praca oceni
+      skuteczność polityki, definiuje, co znaczy „skuteczna” - najlepiej
+      osobno dla różnych typów celów.
+    </li>
+    <li>
+      <strong>Język analityczny.</strong> Kategorie zamiast epitetów,
+      twierdzenia z przypisami zamiast oczywistości „jak powszechnie
+      wiadomo”.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich ze stosunków międzynarodowych</h2>
+
+  <ul>
+    <li>
+      <strong>Studium przypadku polityki</strong> - analiza konkretnej
+      polityki państwa lub organizacji (sankcje, polityka energetyczna,
+      rozszerzenie); schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Analiza porównawcza</strong> - dwie-trzy polityki, strategie
+      lub reakcje państw na ten sam problem, według wspólnych kryteriów.
+    </li>
+    <li>
+      <strong>Analiza dokumentów strategicznych</strong> - rekonstrukcja
+      percepcji zagrożeń i priorytetów ze strategii bezpieczeństwa (schemat
+      bliski pracy z <a
+        href="/tematy/bezpieczenstwo-narodowe/przykladowa-praca/">bezpieczeństwa
+      narodowego</a>).
+    </li>
+    <li>
+      <strong>Praca teoretyczna</strong> - test użyteczności teorii SM na
+      wybranym przypadku (np. wyjaśnienia realistyczne vs instytucjonalne).
+    </li>
+    <li>
+      <strong>Analiza organizacji międzynarodowej</strong> - mandat,
+      instrumenty i praktyka działania organizacji w wybranym obszarze.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy analitycznej z SM</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Wykaz skrótów + streszczenie + spis treści</li>
+    <li>Wstęp - problem, cel, pytania, teza, układ</li>
+    <li>Rozdział teoretyczny - pojęcia, typologie, debata w literaturze</li>
+    <li>Metodologia - metoda, materiał źródłowy, kryteria oceny</li>
+    <li>Rozdziały analityczne - rekonstrukcja i systematyzacja materiału</li>
+    <li>Rozdział oceniający - wyniki według kryteriów</li>
+    <li>Zakończenie - teza, wkład teoretyczny, ograniczenia</li>
+    <li>Bibliografia: źródła / opracowania · Spisy</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać źródła pierwotne">
+    <p>
+      EUR-Lex (akty prawne UE z sygnaturami), rejestr dokumentów Rady UE i
+      Rady Europejskiej, ONZ (undocs.org), NATO (teksty komunikatów ze
+      szczytów), strategie bezpieczeństwa państw (strony rządowe), traktaty
+      (UNTS), dane: Eurostat, Bank Światowy, SIPRI (wydatki zbrojeniowe),
+      UN Comtrade (handel). Raporty think tanków (OSW, PISM, ECFR) traktuj
+      jako literaturę, nie źródło - chyba że analizujesz sam dyskurs
+      ekspercki.
+    </p>
+  </InfoBox>
+
+  <h2>Kryteria oceny - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Skuteczność oceniano odrębnie dla trzech typów celów: sygnalizacyjnych
+      (kryterium: spójność i tempo przyjmowania pakietów), przymuszających
+      (kryterium: zachowanie adresata) oraz osłabiających (kryterium: dynamika
+      wymiany handlowej i dochodów budżetowych adresata). Rozdzielenie
+      kryteriów pozwala uniknąć oceniania wszystkich celów jedną miarą.</p>
+  </blockquote>
+
+  <p>
+    Ten krótki podrozdział zmienia status całej pracy: ocena przestaje być
+    opinią autora, a staje się wynikiem procedury. To także gotowa odpowiedź
+    na klasyczne pytanie obrony „a skąd pan/pani wie, że sankcje (nie)
+    działają?”.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Publicystyka vs analiza">
+    <p>
+      <strong>Wersja słabsza.</strong> Chronologiczna opowieść o konflikcie i
+      sankcjach pisana z portali informacyjnych, oceny w rodzaju „Zachód
+      pokazał jedność”, brak tezy i kryteriów, bibliografia pełna artykułów
+      prasowych. To publicystyka - ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Teza o warunkach skuteczności
+      sankcji, cele zrekonstruowane z konkluzji Rady Europejskiej (z
+      sygnaturami), instrumenty usystematyzowane z aktów prawnych EUR-Lex,
+      ocena według trzech kryteriów na danych Eurostatu i wniosek teoretyczny
+      o rozbieżności funkcji sygnalizacyjnej i przymuszającej. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Temat „w toku”">
+    <p>
+      Prace z SM często dotyczą procesów, które trwają - a praca musi mieć
+      domkniętą cezurę czasową. Zapisz ją wprost („analiza obejmuje okres do
+      grudnia 2025 r.”) i pilnuj jej konsekwentnie; w zakończeniu odnotuj, że
+      ocena dotyczy stanu na moment zamknięcia badania. Bez cezury praca
+      starzeje się między złożeniem a obroną, a recenzent wytknie każde
+      zdanie, które wydarzenia zdążyły sfalsyfikować.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z SM</h2>
+
+  <ul>
+    <li><strong>Kronika zamiast analizy</strong> - relacja wydarzeń bez
+      pytania badawczego i tezy.</li>
+    <li><strong>Media jako materiał źródłowy</strong> - bibliografia z
+      portali, gdy istnieją dokumenty pierwotne.</li>
+    <li><strong>Rama teoretyczna-ozdobnik</strong> - rozdział o teoriach SM,
+      z których żadna nie wraca w analizie.</li>
+    <li><strong>Ocena bez kryteriów</strong> - „polityka okazała się
+      skuteczna/nieskuteczna” bez zdefiniowanej miary.</li>
+    <li><strong>Język publicystyczny</strong> - epitety i oceny moralne
+      zamiast kategorii analitycznych.</li>
+    <li><strong>Brak cezury czasowej</strong> - praca o trwającym procesie
+      bez domkniętego zakresu analizy.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z SM wymaga badań empirycznych (ankiety)?</h3>
+  <p>
+    Nie - standardem kierunku jest analiza jakościowa na dokumentach i danych
+    zastanych. Ankieta pojawia się wyjątkowo (np. percepcja zagrożeń w
+    wybranej grupie), a jej brak niczego pracy nie ujmuje, jeśli materiał
+    źródłowy jest solidny.
+  </p>
+
+  <h3>Jak opisać metodę w pracy analitycznej z SM?</h3>
+  <p>
+    Najczęściej jako <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a> z <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizą dokumentów</a>:
+    wskaż kategorie materiału źródłowego (skąd, z jakiego okresu), sposób
+    rekonstrukcji celów i - jeśli praca ocenia politykę - kryteria oceny.
+  </p>
+
+  <h3>Czy pisać po polsku o źródłach anglojęzycznych?</h3>
+  <p>
+    Tak, to norma - dokumenty organizacji międzynarodowych i literatura SM są
+    w większości po angielsku. Cytaty tłumacz w tekście (z oryginałem w
+    przypisie, jeśli sformułowanie jest kluczowe), a tytuły w bibliografii
+    zostaw w języku oryginału.
+  </p>
+
+  <h3>Jak uniknąć zdezaktualizowania pracy przed obroną?</h3>
+  <p>
+    Cezurą czasową i konstrukcją wniosków: oceniaj mechanizmy i warunki
+    („skuteczność zależy od...”), nie prognozuj wyniku trwających procesów.
+    Praca o mechanizmach broni się niezależnie od tego, co wydarzy się po jej
+    złożeniu.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    konstrukcję i warsztat źródłowy - materiał, analizę i tekst musisz
+    wypracować samodzielnie, z aktualnymi dokumentami.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/stosunki-miedzynarodowe/">wyboru tematu ze
+    stosunków międzynarodowych</a> i pobierz wzór powyżej. Warsztat źródłowy
+    pogłębisz w poradnikach o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie dokumentów</a>
+    i <a href="/poradniki/przypisy/">przypisach</a>, a pokrewną konwencję
+    zobaczysz we wzorach prac z <a
+      href="/tematy/politologia/przykladowa-praca/">politologii</a> i <a
+      href="/tematy/bezpieczenstwo-narodowe/przykladowa-praca/">bezpieczeństwa
+    narodowego</a>.
+  </p>
+</ArticleLayout>
