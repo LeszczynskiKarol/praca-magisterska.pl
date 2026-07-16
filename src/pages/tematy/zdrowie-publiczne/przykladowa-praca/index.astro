@@ -1,0 +1,284 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Zdrowie publiczne", href: "/tematy/zdrowie-publiczne/" },
+  { label: "Przykładowa praca", href: "/tematy/zdrowie-publiczne/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac ze zdrowia publicznego", href: "/tematy/zdrowie-publiczne/" },
+  { label: "Przykładowa praca z pielęgniarstwa", href: "/tematy/pielegniarstwo/przykladowa-praca/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Etyka badań i komisja bioetyczna", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska ze zdrowia publicznego – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska ze zdrowia publicznego: streszczenie strukturalne, standaryzowane narzędzie (IZZ), komisja bioetyczna, piśmiennictwo Vancouver, wnioski dla promocji zdrowia. Wzór do pobrania w PDF i Word."
+  readingTime="19 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska ze zdrowia publicznego pisze się w konwencji nauk
+    medycznych – i to właśnie ta konwencja najczęściej zaskakuje studentów,
+    którzy wzorują się na poradnikach „uniwersyteckich”. Streszczenie ma być
+    strukturalne, piśmiennictwo w stylu Vancouver, rozdział metodyczny nazywa
+    się „Materiał i metody”, a przed badaniem trzeba pomyśleć o komisji
+    bioetycznej. Poniżej rozbieramy wzorcową pracę na części i pokazujemy
+    wszystkie te elementy w praktyce.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Zachowania zdrowotne studentów kierunków medycznych i
+    niemedycznych – badanie z wykorzystaniem Inwentarza Zachowań
+    Zdrowotnych”</strong> – badanie przekrojowe na 186 osobach ze
+    standaryzowanym narzędziem (IZZ Juczyńskiego). Ten sam schemat zadziała
+    dla badań jakości życia, wiedzy zdrowotnej, szczepień czy profilaktyki w
+    dowolnej populacji.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej ze zdrowia publicznego: strona tytułowa, streszczenie strukturalne (Wstęp/Cel/Materiał i metody/Wyniki/Wnioski), spis treści, rozdział Materiał i metody z opisem IZZ i zgodą komisji bioetycznej, tabela wynikowa z wartościami p, dyskusja z ograniczeniami, wnioski punktowane i piśmiennictwo Vancouver. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-zdrowie-publiczne.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-zdrowie-publiczne.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską ze zdrowia publicznego</h2>
+
+  <ul>
+    <li>
+      <strong>Perspektywa populacyjna.</strong> Przedmiotem jest zdrowie
+      zbiorowości – grup, środowisk, populacji – a nie pojedynczego pacjenta.
+      Wstęp osadza problem w danych epidemiologicznych (GUS, NIZP PZH-PIB,
+      WHO, NFZ).
+    </li>
+    <li>
+      <strong>Konwencja medyczna.</strong> Streszczenie strukturalne, układ
+      zbliżony do IMRAD (teoria → materiał i metody → wyniki → dyskusja →
+      wnioski), piśmiennictwo numerowane w stylu Vancouver.
+    </li>
+    <li>
+      <strong>Standaryzowane narzędzia.</strong> Zamiast autorskiej ankiety
+      „czy odżywia się Pan/Pani zdrowo?” – walidowane polskie narzędzia z
+      podaną rzetelnością (IZZ, WHOQOL-BREF, MHLC i inne).
+    </li>
+    <li>
+      <strong>Wnioski dla praktyki zdrowia publicznego.</strong> Praca kończy
+      się punktowanymi wnioskami przekładalnymi na działania promocji zdrowia
+      lub politykę zdrowotną.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Inwentarz Zachowań Zdrowotnych (IZZ)">
+    <p>
+      Standaryzowane polskie narzędzie Z. Juczyńskiego (z pakietu „Narzędzia
+      pomiaru w promocji i psychologii zdrowia”): 24 stwierdzenia na
+      pięciostopniowej skali, ogólny wskaźnik 24–120 punktów i cztery
+      kategorie – prawidłowe nawyki żywieniowe, zachowania profilaktyczne,
+      pozytywne nastawienie psychiczne, praktyki zdrowotne. Rzetelność podawana
+      przez autora: alfa Cronbacha 0,85. Licencję kupisz w Pracowni Testów
+      Psychologicznych PTP – uwzględnij czas i koszt w harmonogramie.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę ze zdrowia publicznego</h2>
+
+  <ol>
+    <li>
+      <strong>Konwencja zachowana od streszczenia po piśmiennictwo.</strong>
+      Streszczenie strukturalne, „Materiał i metody”, wnioski punktowane,
+      Vancouver – recenzent z nauk o zdrowiu wychwyci każde odstępstwo.
+    </li>
+    <li>
+      <strong>Walidowane narzędzie z opisem.</strong> Nazwa, autor, liczba
+      pozycji, skala, zakres wyników, rzetelność – i źródło w piśmiennictwie.
+    </li>
+    <li>
+      <strong>Etyka udokumentowana.</strong> Dobrowolność, anonimowość i
+      opinia komisji bioetycznej z numerem w podrozdziale o organizacji
+      badania.
+    </li>
+    <li>
+      <strong>Wnioski na miarę danych.</strong> Badanie przekrojowe nie
+      dowodzi przyczynowości – dobra praca pisze o „współwystępowaniu”, nie o
+      „wpływie”, i uczciwie wymienia ograniczenia.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich ze zdrowia publicznego</h2>
+
+  <ul>
+    <li>
+      <strong>Badanie przekrojowe populacji</strong> – zachowania, wiedza lub
+      postawy zdrowotne wybranej grupy, mierzone standaryzowanym narzędziem.
+      Najczęstszy schemat; taki prowadzi nasz wzór.
+    </li>
+    <li>
+      <strong>Analiza danych epidemiologicznych</strong> – zachorowalność,
+      umieralność, hospitalizacje na podstawie danych zastanych (GUS, NFZ,
+      NIZP PZH-PIB, rejestry).
+    </li>
+    <li>
+      <strong>Ocena programu zdrowotnego</strong> – analiza realizacji i
+      efektów programu polityki zdrowotnej (dokumenty, mierniki, budżet).
+    </li>
+    <li>
+      <strong>Praca systemowa</strong> – organizacja i finansowanie ochrony
+      zdrowia, dostępność świadczeń, porównania międzynarodowe.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy w konwencji nauk o zdrowiu</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie strukturalne PL + Abstract EN</li>
+    <li>Wykaz skrótów + spis treści</li>
+    <li>Wstęp – kontekst epidemiologiczny, cel, hipotezy</li>
+    <li>Rozdział teoretyczny – determinanty zdrowia, przegląd badań</li>
+    <li>Materiał i metody – organizacja, etyka, narzędzia, grupa, statystyka</li>
+    <li>Wyniki – tabele i ryciny z wartościami p</li>
+    <li>Dyskusja – konfrontacja z piśmiennictwem, ograniczenia</li>
+    <li>Wnioski – punktowane, odpowiadające hipotezom</li>
+    <li>Piśmiennictwo (Vancouver) · Spisy · Załączniki</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać dane populacyjne">
+    <p>
+      Raporty „Sytuacja zdrowotna ludności Polski” (NIZP PZH-PIB), Bank Danych
+      Lokalnych GUS, statystyki NFZ (w tym portal Zdrowe Dane), Krajowy Rejestr
+      Nowotworów, bazy WHO i OECD Health Statistics, mapy potrzeb zdrowotnych
+      Ministerstwa Zdrowia. Każde przywołanie z rokiem i pełnym źródłem – dane
+      epidemiologiczne szybko się starzeją i recenzenci sprawdzają aktualność.
+    </p>
+  </InfoBox>
+
+  <h2>Materiał i metody – fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Badanie przekrojowe przeprowadzono od marca do kwietnia 2026 roku metodą
+      sondażu diagnostycznego. Zachowania zdrowotne mierzono Inwentarzem
+      Zachowań Zdrowotnych (IZZ) Z. Juczyńskiego: 24 stwierdzenia, wskaźnik
+      ogólny 24–120, rzetelność alfa = 0,85. Udział był dobrowolny i anonimowy;
+      uzyskano pozytywną opinię uczelnianej komisji bioetycznej (nr ...).
+      Różnice między grupami weryfikowano testem t-Studenta, przyjmując
+      p &lt; 0,05.</p>
+  </blockquote>
+
+  <p>
+    Pięć zdań, a jest wszystko: typ badania, okres, metoda, narzędzie z
+    parametrami, etyka i plan statystyczny. Ten poziom zwięzłej kompletności
+    to standard, do którego warto dążyć w całym rozdziale metodycznym.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Autorska ankieta vs narzędzie standaryzowane">
+    <p>
+      <strong>Wersja słabsza.</strong> Autorska ankieta z pytaniami „czy
+      uważasz, że odżywiasz się zdrowo?”, wyniki jako procenty odpowiedzi
+      „tak/nie”, brak rzetelności, brak odniesienia do norm. Wnioski: „studenci
+      powinni bardziej dbać o zdrowie”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> IZZ z licencją, wskaźniki z
+      odchyleniami standardowymi, porównanie grup testem t z wartościami p,
+      wynik odniesiony do kategorii narzędzia (najsłabsze nawyki żywieniowe w
+      obu grupach) i wniosek wprost dla praktyki: programy promocji zdrowia na
+      uczelniach powinny priorytetowo traktować żywienie. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="„Wpływ” w badaniu przekrojowym">
+    <p>
+      Badanie przekrojowe mierzy stan w jednym momencie – nie dowodzi
+      przyczynowości. Tytuł „Wpływ kierunku studiów na zachowania zdrowotne”
+      obiecuje więcej, niż badanie może dać; poprawnie: „Zachowania zdrowotne
+      studentów kierunków medycznych i niemedycznych”. Analogicznie we
+      wnioskach: „współwystępuje”, „różnicuje”, nie „powoduje”. Recenzenci z
+      nauk o zdrowiu są na to szczególnie wyczuleni.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy ze zdrowia publicznego</h2>
+
+  <ul>
+    <li><strong>Konwencja „uniwersytecka” zamiast medycznej</strong> –
+      streszczenie opisowe, przypisy dolne zamiast Vancouver, brak wniosków
+      punktowanych.</li>
+    <li><strong>Autorska ankieta zamiast walidowanego narzędzia</strong> – gdy
+      istnieje polskie standaryzowane narzędzie dla badanego konstruktu.</li>
+    <li><strong>Brak komisji bioetycznej</strong> – nieodnotowana opinia lub
+      jej brak przy badaniu z udziałem ludzi.</li>
+    <li><strong>Wnioskowanie przyczynowe z badania przekrojowego</strong> –
+      „wpływ” tam, gdzie zmierzono współwystępowanie.</li>
+    <li><strong>Przestarzałe dane epidemiologiczne</strong> – raporty sprzed
+      dekady cytowane jako stan obecny.</li>
+    <li><strong>Wnioski bez adresata</strong> – zamiast rekomendacji dla
+      promocji zdrowia ogólnik „należy prowadzić dalsze badania”.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca ze zdrowia publicznego wymaga zgody komisji bioetycznej?</h3>
+  <p>
+    Przy badaniu z udziałem ludzi – wystąp o opinię zawsze, nawet jeśli
+    uczelnia formalnie jej nie wymaga dla badań ankietowych. Anonimowa ankieta
+    wśród zdrowych dorosłych zwykle dostaje opinię szybko, a jej numer w
+    rozdziale metodycznym zamyka temat na obronie. Badania z danymi medycznymi
+    lub grupami wrażliwymi wymagają zgody bezwzględnie.
+  </p>
+
+  <h3>Jakie standaryzowane narzędzia są dostępne po polsku?</h3>
+  <p>
+    Najczęściej używane w pracach: IZZ (zachowania zdrowotne), WHOQOL-BREF
+    (jakość życia), MHLC (umiejscowienie kontroli zdrowia), GSES (własna
+    skuteczność), AIS (akceptacja choroby). Część wymaga licencji Pracowni
+    Testów Psychologicznych PTP, część jest dostępna za zgodą autorów – ustal
+    to przed zaplanowaniem badania.
+  </p>
+
+  <h3>Czy mogę napisać pracę bez własnej ankiety, na danych publicznych?</h3>
+  <p>
+    Tak – analiza danych epidemiologicznych (GUS, NFZ, rejestry) to
+    pełnoprawny schemat pracy ze zdrowia publicznego, często wartościowszy niż
+    kolejna ankieta. Wymaga jawnych kryteriów doboru danych i poprawnej
+    interpretacji wskaźników (surowe vs standaryzowane współczynniki).
+  </p>
+
+  <h3>Czym różni się praca ze zdrowia publicznego od pielęgniarskiej?</h3>
+  <p>
+    Perspektywą: pielęgniarstwo patrzy na pacjenta (studium przypadku, proces
+    pielęgnowania), zdrowie publiczne na populację (grupy, programy, system).
+    Konwencja pisania jest podobna – porównaj nasz <a
+      href="/tematy/pielegniarstwo/przykladowa-praca/">wzór pracy z
+    pielęgniarstwa</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    konwencję, strukturę i sposób raportowania – badanie, dane i tekst muszą
+    być Twoje.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/zdrowie-publiczne/">wyboru tematu ze zdrowia
+    publicznego</a> i pobierz wzór powyżej. Badanie zaplanujesz z poradnikami o
+    <a href="/poradniki/metodologia/badania-ilosciowe/">badaniach
+    ilościowych</a> i <a
+      href="/poradniki/metodologia/analiza-ilosciowa/">analizie danych</a>.
+  </p>
+</ArticleLayout>
