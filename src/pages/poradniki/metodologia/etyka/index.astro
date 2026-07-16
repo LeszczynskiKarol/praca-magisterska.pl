@@ -1,0 +1,277 @@
+---
+// src/pages/poradniki/metodologia/etyka/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  { label: "Etyka badań", href: "/poradniki/metodologia/etyka/" },
+];
+
+const relatedLinks = [
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Jak przeprowadzić wywiad", href: "/poradniki/metodologia/wywiad/" },
+  { label: "Unikanie plagiatu", href: "/poradniki/plagiat/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy badanie ankietowe do pracy magisterskiej wymaga zgody komisji etycznej?",
+    answer:
+      "Zależy od uczelni i charakteru badania. Anonimowa ankieta wśród dorosłych o tematyce niewrażliwej często nie wymaga formalnej zgody, ale wiele uczelni (zwłaszcza medycznych) oczekuje opinii komisji dla każdego badania z udziałem ludzi. Zasada praktyczna: zapytaj promotora i dziekanat na etapie planowania, a przy badaniach z pacjentami, nieletnimi, interwencją lub danymi wrażliwymi traktuj opinię komisji jako obowiązkową.",
+  },
+  {
+    question: "Co musi zawierać świadoma zgoda uczestnika badania?",
+    answer:
+      "Informację o celu badania i tym, kto je prowadzi, opis, na czym polega udział i ile trwa, zapewnienie o dobrowolności i prawie wycofania się na każdym etapie bez konsekwencji, informację o anonimowości lub zasadach poufności oraz kontakt do badacza. W ankiecie online rolę zgody pełni ekran informacyjny przed pierwszym pytaniem z przyciskiem potwierdzenia.",
+  },
+  {
+    question: "Czym różni się anonimowość od poufności?",
+    answer:
+      "Anonimowość oznacza, że nikt (nawet badacz) nie jest w stanie powiązać danych z osobą - typowa dla ankiet bez zbierania danych identyfikujących. Poufność oznacza, że badacz zna tożsamość uczestników (np. w wywiadach), ale zobowiązuje się jej nie ujawniać i anonimizuje dane w pracy. Nie pisz o „anonimowych wywiadach”, które nagrywasz i transkrybujesz - to badanie poufne, nie anonimowe.",
+  },
+  {
+    question: "Jak anonimizować dane w pracy magisterskiej?",
+    answer:
+      "Usuń lub zamień wszystko, co pozwala zidentyfikować osobę lub organizację: imiona i nazwiska zastąp kodami (W1, W2 lub pseudonimami), nazwy firm i miejscowości uogólnij (przedsiębiorstwo X, miasto powiatowe w województwie Y), a szczegóły charakterystyczne (rzadkie stanowisko, nietypowa choroba) opisz na wyższym poziomie ogólności. Sprawdź też cytaty z wywiadów - to w nich najczęściej zostają dane identyfikujące.",
+  },
+  {
+    question: "Czy RODO dotyczy badań do pracy magisterskiej?",
+    answer:
+      "Tak, jeśli przetwarzasz dane osobowe (imiona, e-maile, nagrania głosu, dane pozwalające zidentyfikować osobę). W praktyce: zbieraj tylko dane niezbędne, poinformuj uczestników o celu przetwarzania, przechowuj materiały na zabezpieczonym nośniku, a po obronie usuń nagrania i klucz kodowy. W pełni anonimowa ankieta bez danych identyfikujących nie podlega RODO, bo nie zawiera danych osobowych.",
+  },
+  {
+    question: "Co opisać w podrozdziale o etyce badania?",
+    answer:
+      "Sposób uzyskania świadomej zgody, zapewnienie dobrowolności i możliwości wycofania się, anonimowość lub zasady poufności i anonimizacji, sposób przechowywania i usunięcia danych, zgody instytucjonalne (dyrekcja, zarząd) oraz opinię komisji etycznej z numerem, jeśli ją uzyskano. Przy grupach wymagających szczególnej ochrony (nieletni, pacjenci, podopieczni) dodatkowo opisz zgody opiekunów i środki minimalizujące obciążenie badanych.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Etyka badań naukowych - zgoda, anonimizacja, komisja etyczna"
+  description="Etyka badań w pracy magisterskiej: świadoma zgoda, anonimowość vs poufność, RODO, komisja bioetyczna, grupy wrażliwe i wzorcowy podrozdział o etyce do rozdziału metodologicznego."
+  updateDate="2026-07-17"
+  readingTime="15 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Etyka badań bywa traktowana w pracach magisterskich jak formalność do
+    odhaczenia jednym zdaniem („badanie było anonimowe i dobrowolne”).
+    Tymczasem recenzenci czytają ten fragment coraz uważniej, a braki potrafią
+    wrócić na obronie w najmniej wygodnym momencie: „czy miał pan zgodę
+    rodziców na ankietowanie uczniów?”, „co się stało z nagraniami wywiadów po
+    badaniu?”. Ten poradnik zbiera wszystko, co student musi załatwić przed
+    badaniem i opisać w pracy - od świadomej zgody, przez RODO, po komisję
+    etyczną.
+  </p>
+
+  <h2>Cztery filary etyki badania z udziałem ludzi</h2>
+
+  <p>
+    Niezależnie od dyscypliny i metody, etyczna strona badania opiera się na
+    czterech zasadach. <strong>Dobrowolność</strong> - udział wynika z wolnej
+    decyzji, bez presji, a wycofanie się jest możliwe na każdym etapie i bez
+    konsekwencji; szczególnej uwagi wymaga sytuacja zależności (przełożony
+    badający podwładnych, nauczyciel uczniów). <strong>Świadoma zgoda</strong> -
+    uczestnik wie, w czym bierze udział, zanim się zgodzi. <strong>Nieszkodzenie</strong> -
+    badanie nie naraża na krzywdę, nadmierny stres ani dyskomfort, a pytania o
+    tematy trudne mają uzasadnienie i wyjście awaryjne (możliwość pominięcia,
+    kontakt do wsparcia). <strong>Ochrona danych</strong> - materiały są
+    zabezpieczone, dane zanonimizowane, a to, co identyfikuje osoby, znika po
+    zakończeniu projektu.
+  </p>
+
+  <h2>Świadoma zgoda w praktyce</h2>
+
+  <p>
+    Formularz świadomej zgody (lub ekran informacyjny w ankiecie online)
+    powinien zmieścić się na jednej stronie i zawierać sześć elementów: kto
+    prowadzi badanie i w jakim celu, na czym polega udział i ile potrwa,
+    zapewnienie o dobrowolności i prawie wycofania się, zasady anonimowości lub
+    poufności, informację o przechowywaniu i usunięciu danych oraz kontakt do
+    badacza. W badaniach ustnych zgoda może być ustna, ale odnotuj w pracy, jak
+    ją uzyskano; nagranie zgody na początku wywiadu to dobra praktyka.
+  </p>
+
+  <p>
+    Odrębnego trybu wymagają <strong>osoby małoletnie</strong> - potrzebna jest
+    zgoda rodzica lub opiekuna prawnego, a obok niej przystanie samego dziecka
+    (assent) wyrażone w sposób dostosowany do wieku. W szkole dochodzi zgoda
+    dyrekcji, w szpitalu - kierownictwa placówki, w firmie - zarządu. Wszystkie
+    te zgody wymień potem w podrozdziale o organizacji badania.
+  </p>
+
+  <h2>Anonimowość, poufność, anonimizacja</h2>
+
+  <p>
+    Te trzy pojęcia bywają mylone, a rozróżnienie jest proste. Badanie
+    <strong>anonimowe</strong> nie zbiera żadnych danych pozwalających
+    zidentyfikować uczestnika - badacz sam nie wie, kto odpowiadał (typowa
+    ankieta online bez adresów e-mail). Badanie <strong>poufne</strong> to
+    takie, w którym badacz zna tożsamość uczestników - jak w wywiadach - ale
+    zobowiązuje się jej nie ujawniać. <strong>Anonimizacja</strong> to zabieg na
+    danych: zastąpienie nazwisk kodami (W1, W2), uogólnienie nazw organizacji i
+    miejscowości, usunięcie szczegółów charakterystycznych. Wywiad nigdy nie
+    jest „anonimowy” - jest poufny, a jego dane anonimizuje się w pracy; to
+    rozróżnienie warto mieć opanowane przed obroną.
+  </p>
+
+  <h2>RODO w badaniach studenckich</h2>
+
+  <p>
+    Jeżeli zbierasz dane osobowe (imiona, e-maile, nagrania głosu, wizerunek,
+    dane umożliwiające identyfikację), przetwarzasz je w rozumieniu RODO i
+    obowiązują Cię jego zasady: minimalizacja (zbieraj tylko to, co niezbędne),
+    celowość (dane służą wyłącznie badaniu), informowanie uczestników oraz
+    zabezpieczenie i ograniczone przechowywanie. W praktyce pracy magisterskiej
+    wystarczą trzy nawyki. Nagrania i transkrypcje trzymaj na zaszyfrowanym
+    lub zabezpieczonym hasłem nośniku, nie w otwartej chmurze. Klucz kodowy
+    (kto jest W1, kto W2) przechowuj osobno od danych. Po obronie usuń nagrania
+    i klucz, zostawiając wyłącznie zanonimizowane transkrypcje. Ankieta w pełni
+    anonimowa nie zawiera danych osobowych, więc RODO jej nie obejmuje - ale
+    napisz to świadomie, upewniwszy się, że narzędzie nie zbiera np. adresów
+    IP powiązanych z odpowiedziami.
+  </p>
+
+  <h2>Komisja etyczna i bioetyczna - kiedy jest potrzebna</h2>
+
+  <p>
+    Praktyka różni się między uczelniami, więc pierwszym krokiem jest zawsze
+    pytanie do promotora. Orientacyjna mapa wygląda tak. <strong>Opinia
+    komisji bioetycznej jest konieczna</strong> przy badaniach z pacjentami,
+    dostępie do dokumentacji medycznej, jakiejkolwiek interwencji zdrowotnej i
+    ogólnie na uczelniach medycznych. <strong>Opinia komisji etycznej ds.
+    badań jest mocno wskazana</strong> przy badaniach z nieletnimi, grupami
+    wrażliwymi (osoby w kryzysie, podopieczni instytucji), tematyką drażliwą
+    (przemoc, uzależnienia, seksualność), eksperymentach z interwencją oraz
+    wszędzie tam, gdzie istnieje relacja zależności. <strong>Zwykle
+    wystarcza dobra praktyka bez formalnej opinii</strong> przy anonimowej
+    ankiecie wśród dorosłych o tematyce niewrażliwej - choć coraz więcej
+    uczelni i czasopism oczekuje opinii dla każdego badania z ludźmi, a jej
+    posiadanie nigdy pracy nie osłabia. Wniosek składa się przed badaniem;
+    opinii nie da się uzyskać wstecz, więc uwzględnij czas oczekiwania w
+    harmonogramie.
+  </p>
+
+  <h2>Grupy wymagające szczególnej ochrony</h2>
+
+  <p>
+    Dzieci i młodzież, pacjenci, osoby z niepełnosprawnością intelektualną,
+    osoby w kryzysie bezdomności, uchodźcy, osadzeni, podopieczni instytucji -
+    wspólnym mianownikiem jest ograniczona swoboda odmowy lub podwyższona
+    podatność na szkodę. Badając takie grupy, zaplanuj dodatkowe środki:
+    zgody opiekunów obok zgody badanych, neutralne miejsce i obecność osoby
+    zaufanej, prawo pominięcia każdego pytania, skrócony czas badania,
+    informację o miejscach wsparcia przy tematach trudnych. Opisz te środki w
+    pracy - recenzenci oceniają je jako wskaźnik dojrzałości badacza.
+  </p>
+
+  <h2>Podrozdział o etyce - przykład zapisu</h2>
+
+  <p>
+    <em>„Udział w badaniu był dobrowolny i poufny. Uczestnicy wywiadów otrzymali
+    przed rozmową pisemną informację o celu badania, przebiegu, prawie
+    wycofania się na każdym etapie oraz zasadach ochrony danych; zgodę na
+    udział i nagrywanie wyrażali ustnie, co rejestrowano na początku nagrania.
+    Dane zanonimizowano: rozmówców oznaczono kodami W1-W6, a nazwę organizacji
+    i szczegóły umożliwiające identyfikację uogólniono. Nagrania przechowywano
+    na zaszyfrowanym nośniku i usunięto po sporządzeniu transkrypcji. Na
+    realizację badania uzyskano zgodę zarządu organizacji; projekt uzyskał
+    pozytywną opinię uczelnianej komisji ds. etyki badań naukowych (nr ...)”</em>.
+  </p>
+
+  <h2>Najczęstsze błędy</h2>
+
+  <p>
+    Najczęstszy błąd to etyka jednym zdaniem - „badanie było anonimowe i
+    dobrowolne” bez opisu, jak to zapewniono. Drugi to mylenie anonimowości z
+    poufnością w badaniach wywiadowczych. Trzeci błąd to identyfikowalne cytaty:
+    wypowiedź „jako jedyna kobieta w zarządzie uważam...” demaskuje rozmówczynię
+    mimo kodu W3. Czwarty to badanie nieletnich bez zgód rodziców albo badanie
+    podwładnych przez przełożonego bez omówienia relacji zależności. Piąty błąd
+    dotyczy danych: nagrania wywiadów wiszące latami w prywatnej chmurze. Szósty
+    wreszcie to występowanie o opinię komisji po przeprowadzeniu badania -
+    opinia działa tylko w przód, a jej brak bywa nieusuwalny.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o etykę badań</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Etykę badania załatwia się przed badaniem, a opisuje w pracy konkretami:
+    jak uzyskano zgody, jak chroniono dane, co się z nimi stało po projekcie i
+    jaka komisja wydała opinię. Zaplanuj te elementy razem z metodą - poradniki
+    o <a href="/poradniki/metodologia/ankieta/">ankiecie</a>, <a
+      href="/poradniki/metodologia/wywiad/">wywiadzie</a> i <a
+      href="/poradniki/metodologia/eksperyment/">eksperymencie</a> wskazują
+    wymogi specyficzne dla każdej techniki, a miejsce zapisu w strukturze pracy
+    pokazuje poradnik o <a
+      href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a> (podrozdział 2.8).
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

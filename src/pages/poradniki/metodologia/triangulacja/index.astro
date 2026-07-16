@@ -1,0 +1,278 @@
+---
+// src/pages/poradniki/metodologia/triangulacja/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  { label: "Triangulacja", href: "/poradniki/metodologia/triangulacja/" },
+];
+
+const relatedLinks = [
+  { label: "Badania jakościowe", href: "/poradniki/metodologia/badania-jakosciowe/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Studium przypadku", href: "/poradniki/metodologia/case-study/" },
+  { label: "Rozdział metodologiczny", href: "/poradniki/metodologia/rozdzial-metodologiczny/" },
+];
+
+const faqItems = [
+  {
+    question: "Co to jest triangulacja w badaniach naukowych?",
+    answer:
+      "Triangulacja to strategia zwiększania wiarygodności badania przez łączenie różnych perspektyw: źródeł danych, metod, badaczy lub teorii. Nazwa pochodzi z nawigacji i geodezji, gdzie położenie punktu wyznacza się z co najmniej dwóch innych punktów. W badaniach analogicznie: jeśli niezależne źródła lub metody prowadzą do zbieżnych wniosków, zaufanie do wyników rośnie.",
+  },
+  {
+    question: "Jakie są rodzaje triangulacji?",
+    answer:
+      "Klasyczna typologia Normana Denzina (The Research Act, 1978) wyróżnia cztery rodzaje: triangulację danych (różne źródła, czasy, miejsca, osoby), triangulację badaczy (więcej niż jedna osoba zbiera lub analizuje dane), triangulację teorii (interpretacja wyników z perspektywy różnych koncepcji) i triangulację metodologiczną (łączenie metod, np. ankiety z wywiadami).",
+  },
+  {
+    question: "Czym różni się triangulacja od badań mieszanych (mixed methods)?",
+    answer:
+      "Zakresy się nakładają, ale pojęcia nie są tożsame. Badania mieszane to typ projektu badawczego łączącego podejście ilościowe i jakościowe. Triangulacja to szersza strategia uwiarygodniania wyników - może zachodzić także w obrębie jednego paradygmatu (np. wywiady + dokumenty w badaniu czysto jakościowym) i dotyczyć nie tylko metod, ale też danych, badaczy i teorii.",
+  },
+  {
+    question: "Czy triangulacja jest obowiązkowa w pracy magisterskiej?",
+    answer:
+      "Nie - pojedyncza, dobrze zastosowana metoda w zupełności wystarcza na dobrą pracę. Triangulacja jest natomiast standardem w studium przypadku (tam zbieżność źródeł to główne kryterium wiarygodności) i mocnym atutem każdej pracy jakościowej. Nie stosuj jej na siłę: dorzucenie pięciu wywiadów do ankiety bez pomysłu na ich analizę osłabia pracę zamiast ją wzmacniać.",
+  },
+  {
+    question: "Jak opisać triangulację w rozdziale metodologicznym?",
+    answer:
+      "Nazwij rodzaj triangulacji, wskaż, co konkretnie łączysz, i napisz, po co. Przykład: „Zastosowano triangulację metodologiczną i danych: wyniki ankiety (N = 150) zestawiono z pięcioma wywiadami pogłębionymi oraz analizą dokumentacji szkolnej, a za kryterium wiarygodności wniosków przyjęto zbieżność ustaleń z trzech źródeł”. Unikaj wrzucania terminu bez pokrycia w faktycznej procedurze.",
+  },
+  {
+    question: "Co zrobić, gdy wyniki z różnych źródeł są sprzeczne?",
+    answer:
+      "Rozbieżność to wartościowy wynik, nie porażka. Opisz ją uczciwie i poszukaj wyjaśnienia: różne metody mogą mierzyć różne aspekty zjawiska (deklaracje vs zachowania), a rozbieżność deklaracji ankietowych i danych z dokumentów bywa najciekawszym ustaleniem pracy. Ukrywanie sprzeczności lub dopasowywanie interpretacji pod tezę to błąd poważniejszy niż sama rozbieżność.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Triangulacja w badaniach - rodzaje wg Denzina, przykłady zastosowania"
+  description="Triangulacja w pracy magisterskiej: definicja, cztery rodzaje wg Denzina (danych, badaczy, teorii, metod), różnica względem mixed methods, przykładowy zapis do rozdziału metodologicznego."
+  updateDate="2026-07-17"
+  readingTime="14 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Triangulacja należy do pojęć, które w pracach magisterskich pojawiają się
+    częściej jako ozdobnik niż jako faktyczna procedura - „w pracy zastosowano
+    triangulację” pisze się łatwo, trudniej pokazać ją w praktyce. Tymczasem
+    poprawnie użyta triangulacja jest jednym z najskuteczniejszych sposobów
+    obrony pracy jakościowej przed zarzutem subiektywizmu i podstawowym
+    kryterium wiarygodności studium przypadku. Ten poradnik wyjaśnia, czym
+    triangulacja jest, jakie ma odmiany i jak ją opisać tak, żeby recenzent
+    zobaczył procedurę, a nie słowo-wytrych.
+  </p>
+
+  <h2>Co to jest triangulacja? Definicja</h2>
+
+  <p>
+    <strong>Triangulacja to strategia zwiększania wiarygodności badania przez
+    łączenie różnych perspektyw - źródeł danych, metod, badaczy lub teorii - w
+    analizie tego samego zjawiska.</strong> Nazwa pochodzi z geodezji i
+    nawigacji, gdzie położenie punktu wyznacza się z co najmniej dwóch innych
+    punktów obserwacyjnych. Logika badawcza jest analogiczna: pojedynczy pomiar
+    może być obciążony błędem właściwym danej metodzie czy źródłu, ale jeśli
+    niezależne ścieżki prowadzą do zbieżnych ustaleń, prawdopodobieństwo, że
+    wszystkie mylą się w ten sam sposób, wyraźnie maleje.
+  </p>
+
+  <h2>Cztery rodzaje triangulacji według Denzina</h2>
+
+  <p>
+    Klasyczną typologię sformułował Norman Denzin w książce <em>The Research
+    Act</em> (1978) i to na nią najbezpieczniej powołać się w rozdziale
+    metodologicznym.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rodzaj</th>
+        <th>Co łączysz</th>
+        <th>Przykład w pracy magisterskiej</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Triangulacja danych</td>
+        <td>różne źródła, momenty, miejsca lub grupy badanych</td>
+        <td>wywiady z nauczycielami, uczniami i rodzicami o tym samym problemie</td>
+      </tr>
+      <tr>
+        <td>Triangulacja badaczy</td>
+        <td>więcej niż jedna osoba zbiera lub koduje dane</td>
+        <td>drugi koder klasyfikuje próbkę wywiadów; porównanie zgodności kodowania</td>
+      </tr>
+      <tr>
+        <td>Triangulacja teorii</td>
+        <td>różne ramy teoretyczne w interpretacji wyników</td>
+        <td>wyniki o motywacji pracowników czytane przez teorię Herzberga i teorię autodeterminacji</td>
+      </tr>
+      <tr>
+        <td>Triangulacja metodologiczna</td>
+        <td>różne metody lub techniki badania tego samego zjawiska</td>
+        <td>ankieta + wywiady pogłębione; obserwacja + analiza dokumentów</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    W pracach dyplomowych najczęstsza i najpraktyczniejsza jest triangulacja
+    metodologiczna w parze z triangulacją danych - np. w <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a>, gdzie
+    łączenie wywiadów, obserwacji i dokumentów jest standardem metody, a nie
+    dodatkiem. Triangulacja badaczy bywa trudna w pracy pisanej samodzielnie,
+    choć prosty wariant jest osiągalny: poproś drugą osobę (np. w ramach
+    seminarium) o zakodowanie próbki materiału i zraportuj zgodność ocen.
+  </p>
+
+  <h2>Po co triangulować - trzy funkcje</h2>
+
+  <p>
+    Funkcja pierwsza to <strong>potwierdzanie</strong>: zbieżność ustaleń z
+    niezależnych źródeł uwiarygodnia wniosek. Funkcja druga to
+    <strong>uzupełnianie</strong>: różne metody oświetlają różne aspekty
+    zjawiska - ankieta pokazuje skalę, wywiady mechanizm, dokumenty kontekst -
+    i dopiero razem dają pełny obraz. Funkcja trzecia, najmniej doceniana, to
+    <strong>odkrywanie rozbieżności</strong>: gdy deklaracje z ankiet rozmijają
+    się z danymi z dokumentów, powstaje najciekawsze pytanie badawcze pracy -
+    dlaczego? Zaplanuj z góry, której funkcji oczekujesz, bo od tego zależy
+    sposób analizy: potwierdzanie wymaga porównywalnych pytań w każdej metodzie,
+    uzupełnianie - podziału zagadnień między metody.
+  </p>
+
+  <h2>Triangulacja a badania mieszane</h2>
+
+  <p>
+    Pojęcia bywają używane wymiennie, ale warto je rozróżnić. Badania mieszane
+    (mixed methods) to typ projektu łączącego paradygmat ilościowy z
+    jakościowym, opisany w poradnikach o <a
+      href="/poradniki/metodologia/badania-ilosciowe/">badaniach ilościowych</a>
+    i <a href="/poradniki/metodologia/badania-jakosciowe/">jakościowych</a>.
+    Triangulacja to strategia wiarygodności, która może (ale nie musi)
+    przybierać formę badań mieszanych: łączenie wywiadów z analizą dokumentów
+    to triangulacja w całości jakościowa. Innymi słowy, każde badanie mieszane
+    zawiera triangulację metodologiczną, ale nie każda triangulacja czyni
+    badanie mieszanym.
+  </p>
+
+  <h2>Jak opisać triangulację w rozdziale metodologicznym - przykład</h2>
+
+  <p>
+    <em>„W celu zwiększenia wiarygodności wyników zastosowano triangulację
+    metodologiczną oraz triangulację danych w rozumieniu N. Denzina. Zjawisko
+    adaptacji nowych pracowników badano trzema technikami: ankietą wśród
+    pracowników zatrudnionych w ostatnich 24 miesiącach (N = 87), wywiadami
+    półustrukturyzowanymi z czterema opiekunami wdrożenia oraz analizą
+    dokumentacji procesu onboardingu. Za wniosek wiarygodny uznawano ustalenie
+    potwierdzone w co najmniej dwóch źródłach; rozbieżności między deklaracjami
+    a dokumentacją raportowano odrębnie i omówiono w dyskusji wyników”</em>.
+  </p>
+
+  <p>
+    Ten zapis spełnia trzy warunki dobrego opisu triangulacji: nazywa jej
+    rodzaj z odwołaniem do typologii, konkretyzuje łączone źródła i - co
+    najważniejsze - podaje kryterium rozstrzygania, czyli jak zbieżność i
+    rozbieżność przekładają się na wnioski. Bez tego trzeciego elementu
+    triangulacja pozostaje deklaracją.
+  </p>
+
+  <h2>Najczęstsze błędy</h2>
+
+  <p>
+    Najczęstszy błąd to triangulacja deklaratywna - termin pada w metodologii,
+    ale w pracy nie widać, gdzie i jak źródła zostały skonfrontowane. Drugi
+    błąd to triangulacja pozorowana: kilka wywiadów doklejonych do ankiety bez
+    planu analizy, których wyniki nigdy nie spotykają się z wynikami
+    ilościowymi. Trzeci to mylenie triangulacji z powtórzeniem - dwie ankiety
+    na podobnych grupach to więcej tego samego, a nie inna perspektywa.
+    Czwarty błąd polega na dopasowywaniu interpretacji tak, by rozbieżności
+    zniknęły; sprzeczność źródeł należy zaraportować i wyjaśniać, nie
+    retuszować. Piąty wreszcie to przeciążenie projektu - trzy metody wykonane
+    powierzchownie dają słabszą pracę niż jedna wykonana porządnie.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o triangulację</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Triangulacja to procedura, nie słowo. Zastosuj ją, gdy badasz zjawisko
+    złożone lub jakościowe i możesz zestawić co najmniej dwie niezależne
+    perspektywy; nazwij rodzaj według Denzina, opisz łączone źródła i kryterium
+    rozstrzygania, a rozbieżności potraktuj jako wynik. Naturalne konteksty
+    triangulacji znajdziesz w poradnikach o <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a>, <a
+      href="/poradniki/metodologia/obserwacja/">obserwacji</a> i <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie dokumentów</a>,
+    a całość opiszesz według wzoru z poradnika o <a
+      href="/poradniki/metodologia/rozdzial-metodologiczny/">rozdziale
+    metodologicznym</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

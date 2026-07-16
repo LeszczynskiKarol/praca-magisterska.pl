@@ -1,0 +1,303 @@
+---
+// src/pages/poradniki/metodologia/badania-online/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  { label: "Badania online", href: "/poradniki/metodologia/badania-online/" },
+];
+
+const relatedLinks = [
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Jak przeprowadzić wywiad", href: "/poradniki/metodologia/wywiad/" },
+  { label: "Dobór próby badawczej", href: "/poradniki/metodologia/dobor-proby/" },
+  { label: "Etyka badań naukowych", href: "/poradniki/metodologia/etyka/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy badania online są akceptowane w pracach magisterskich?",
+    answer:
+      "Tak - ankieta internetowa (CAWI) jest dziś najczęstszą formą badania w pracach dyplomowych, a wywiady przez wideorozmowę stały się standardem po 2020 roku. Warunkiem akceptacji nie jest kanał, lecz warsztat: poprawny opis doboru próby z jego ograniczeniami, kontrola jakości odpowiedzi i rzetelny opis procedury w rozdziale metodologicznym.",
+  },
+  {
+    question: "Gdzie dystrybuować ankietę online, żeby nie badać samych znajomych?",
+    answer:
+      "Użyj kilku niezależnych kanałów naraz: grup tematycznych związanych z badaną populacją (nie ogólnych „ankiety do prac”), forów i społeczności branżowych, mailingu przez instytucje (uczelnia, stowarzyszenie, pracodawca za zgodą) oraz kuli śnieżnej z prośbą o podanie dalej. Zapisuj, ile odpowiedzi przyszło z każdego kanału - ta informacja wzmacnia opis próby.",
+  },
+  {
+    question: "Jak kontrolować jakość odpowiedzi w ankiecie internetowej?",
+    answer:
+      "Kilka sprawdzonych zabezpieczeń: pytanie kontrolne uwagi („w tym pytaniu zaznacz odpowiedź C”), analiza czasu wypełnienia (odpowiedzi poniżej realnego minimum do odrzucenia), wychwycenie tzw. straight-liningu (identyczna odpowiedź we wszystkich pozycjach skali), pytania otwarte weryfikujące sensowność. Liczbę odrzuconych rekordów i kryteria odrzucenia podaj w pracy.",
+  },
+  {
+    question: "Czy wywiad przez Zoom/Teams jest pełnoprawnym wywiadem badawczym?",
+    answer:
+      "Tak - wywiad zdalny przez wideorozmowę jest uznaną formą wywiadu pogłębionego. Zadbaj o zgodę na nagrywanie wyrażoną na początku rozmowy, stabilne warunki techniczne i plan awaryjny (dokończenie telefonicznie). W metodologii zaznacz formę zdalną i krótko omów jej konsekwencje (łatwiejszy dostęp do rozmówców, ale uboższa obserwacja kontekstu i mowy ciała).",
+  },
+  {
+    question: "Co to jest netnografia?",
+    answer:
+      "Netnografia to adaptacja etnografii do środowisk internetowych, rozwinięta przez Roberta Kozinetsa: systematyczne badanie społeczności online (forów, grup, serwerów Discord) poprzez obserwację ich naturalnej komunikacji. W pracy magisterskiej wymaga jasnego określenia, co jest analizowaną społecznością, jakie dane i z jakiego okresu zbierasz oraz refleksji etycznej - czy przestrzeń jest publiczna i jak anonimizujesz cytowane wypowiedzi.",
+  },
+  {
+    question: "Jakie są główne ograniczenia badań online i jak je opisać?",
+    answer:
+      "Trzy najważniejsze: samoselekcja (odpowiadają osoby o wyższej motywacji lub silniejszych opiniach), pokryciowość (wykluczenie osób mniej aktywnych cyfrowo - istotne przy seniorach) i brak kontroli warunków wypełniania. W ograniczeniach pracy napisz wprost: próba nielosowa, wyniki nie uprawniają do uogólnień statystycznych na populację, a kierunek zniekształceń jest możliwy do wskazania.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Badania online w pracy magisterskiej - CAWI, wywiady zdalne, netnografia"
+  description="Jak poprawnie prowadzić badania przez internet: dystrybucja ankiety CAWI, kontrola jakości odpowiedzi, wywiady przez wideorozmowę, netnografia i opis ograniczeń próby internetowej."
+  updateDate="2026-07-17"
+  readingTime="15 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Większość badań do prac magisterskich odbywa się dziś w internecie - i
+    dobrze, bo online pozwala w kilka tygodni zebrać dane, na które kiedyś
+    trzeba było miesięcy chodzenia z papierowymi ankietami. Problem w tym, że
+    łatwość zbierania danych rozleniwia metodologicznie: link wrzucony na trzy
+    grupy „ankiety do prac dyplomowych” da próbę, o której trudno powiedzieć
+    cokolwiek sensownego. Ten poradnik pokazuje, jak prowadzić badania online
+    tak, żeby wygoda nie odbywała się kosztem wiarygodności - od ankiety CAWI,
+    przez wywiady zdalne, po badania społeczności internetowych.
+  </p>
+
+  <h2>Formy badań online</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Forma</th>
+        <th>Co to jest</th>
+        <th>Typowe zastosowanie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ankieta internetowa (CAWI)</td>
+        <td>kwestionariusz wypełniany samodzielnie online</td>
+        <td>sondaż postaw i opinii; najczęstsza forma w pracach dyplomowych</td>
+      </tr>
+      <tr>
+        <td>Wywiad zdalny</td>
+        <td>wywiad pogłębiony przez wideorozmowę lub telefon</td>
+        <td>badania jakościowe z rozmówcami rozproszonymi geograficznie</td>
+      </tr>
+      <tr>
+        <td>Netnografia</td>
+        <td>badanie społeczności internetowych przez obserwację ich komunikacji</td>
+        <td>fora, grupy, społeczności fanowskie i konsumenckie</td>
+      </tr>
+      <tr>
+        <td>Analiza treści internetowych</td>
+        <td>systematyczne kodowanie treści online (posty, komentarze, artykuły)</td>
+        <td>komunikacja marek, dyskurs medialny, media społecznościowe</td>
+      </tr>
+      <tr>
+        <td>Eksperyment online</td>
+        <td>losowy przydział uczestników do wariantów bodźca w przeglądarce</td>
+        <td>testy przekazów reklamowych, badania decyzji</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Ankieta CAWI - dystrybucja, która nie psuje próby</h2>
+
+  <p>
+    O jakości ankiety internetowej rozstrzyga nie narzędzie, lecz sposób
+    dotarcia do respondentów. Podstawowa zasada brzmi: kanały dystrybucji mają
+    prowadzić do badanej populacji, a nie do „kogokolwiek, kto wypełni”. Jeśli
+    badasz pielęgniarki, szukaj grup zawodowych pielęgniarek, a nie ogólnych
+    grup ankietowych; jeśli rodziców przedszkolaków - grup rodzicielskich i
+    kontaktu przez przedszkola. Warto łączyć kilka niezależnych kanałów
+    (grupy tematyczne, instytucje, kula śnieżna) i notować przybliżoną liczbę
+    odpowiedzi z każdego - te informacje trafiają potem do opisu <a
+      href="/poradniki/metodologia/dobor-proby/">doboru próby</a> i uczciwie
+    pokazują, kogo badanie objęło. Konstrukcję samego kwestionariusza omawiamy
+    w poradniku o <a href="/poradniki/metodologia/ankieta/">ankiecie</a>.
+  </p>
+
+  <h2>Kontrola jakości odpowiedzi</h2>
+
+  <p>
+    Część odpowiedzi w każdej ankiecie online jest bezwartościowa - wypełniana
+    bez czytania, dla żartu albo przez boty. Zaplanuj filtry z góry i opisz je
+    w metodologii, bo liczba odrzuconych rekordów z kryteriami odrzucenia to
+    element rzetelności badania:
+  </p>
+
+  <ul>
+    <li><strong>Pytanie kontrolne uwagi</strong> - „w tym pytaniu zaznacz
+      odpowiedź »raczej się nie zgadzam«”; odpowiedź inna dyskwalifikuje
+      rekord.</li>
+    <li><strong>Czas wypełnienia</strong> - większość platform go rejestruje;
+      ustal realne minimum (pilotaż!) i odrzucaj rekordy poniżej progu.</li>
+    <li><strong>Straight-lining</strong> - identyczna odpowiedź we wszystkich
+      pozycjach długiej skali sugeruje wypełnianie mechaniczne.</li>
+    <li><strong>Weryfikacja logiczna</strong> - sprzeczne odpowiedzi (staż
+      pracy dłuższy niż wiek) wychwytuj przy czyszczeniu danych.</li>
+    <li><strong>Zabezpieczenie przed wielokrotnym wypełnieniem</strong> -
+      opcja platformy ograniczająca ponowne przesłanie z tego samego
+      urządzenia.</li>
+  </ul>
+
+  <h2>Wywiady zdalne</h2>
+
+  <p>
+    Wywiad przez wideorozmowę jest dziś pełnoprawną techniką jakościową i w
+    wielu projektach przewyższa spotkanie osobiste: łatwiej umówić ekspertów,
+    zniknęły bariery geograficzne, a rozmówcy we własnym otoczeniu bywają
+    swobodniejsi. Warsztatowo obowiązują te same zasady co w <a
+      href="/poradniki/metodologia/wywiad/">wywiadzie klasycznym</a>, plus
+    kilka specyficznych. Zgodę na udział i nagrywanie uzyskaj na początku
+    nagrania. Przetestuj technikę przed pierwszą rozmową i miej plan awaryjny
+    (przejście na telefon). Kamery zostaw włączone, jeśli rozmówca się zgadza -
+    kontakt wzrokowy podtrzymuje narrację. W metodologii wskaż formę zdalną
+    wraz z jej konsekwencją: uboższą obserwacją kontekstu i komunikacji
+    niewerbalnej.
+  </p>
+
+  <h2>Netnografia i analiza treści internetowych</h2>
+
+  <p>
+    Internet bywa nie tylko kanałem zbierania danych, ale samym terenem
+    badania. Netnografia - adaptacja etnografii do środowisk cyfrowych,
+    rozwinięta przez Roberta Kozinetsa - polega na systematycznej obserwacji
+    naturalnej komunikacji społeczności online: forum chorych na konkretną
+    chorobę, grupy rodziców, społeczności graczy. Od „czytania internetu”
+    odróżniają ją te same elementy, co obserwację naukową od potocznej:
+    zdefiniowana społeczność i okres, kryteria doboru materiału, systematyczna
+    rejestracja i analiza. Pokrewną ścieżką jest ilościowa analiza treści
+    postów czy komentarzy według klucza kategoryzacyjnego, którą omawiamy w
+    poradniku o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie dokumentów</a>.
+  </p>
+
+  <p>
+    Etyka wymaga tu osobnej uwagi. To, że treść jest technicznie dostępna, nie
+    znaczy, że jej autorzy traktują ją jako publiczną - zamknięta grupa
+    wsparcia to nie to samo co publiczny profil marki. Zasady bezpieczne dla
+    pracy magisterskiej: badaj przestrzenie otwarte lub uzyskaj zgodę
+    administratora i społeczności, anonimizuj autorów cytowanych wypowiedzi
+    (pseudonim też bywa rozpoznawalny - parafrazuj zamiast cytować dosłownie,
+    gdy treść jest wrażliwa) i opisz te decyzje w podrozdziale o <a
+      href="/poradniki/metodologia/etyka/">etyce badania</a>.
+  </p>
+
+  <h2>Ograniczenia badań online - jak je uczciwie opisać</h2>
+
+  <p>
+    Trzy ograniczenia wracają w każdym badaniu internetowym i recenzent
+    oczekuje ich świadomości. <strong>Samoselekcja</strong>: ankietę wypełniają
+    osoby o wyższej motywacji lub silniejszych poglądach w badanym temacie, co
+    systematycznie przesuwa wyniki. <strong>Pokryciowość</strong>: badanie nie
+    dociera do osób mniej aktywnych cyfrowo, co przy populacjach starszych lub
+    wykluczonych cyfrowo bywa dyskwalifikujące dla wniosków. <strong>Brak
+    kontroli warunków</strong>: nie wiadomo, kto, gdzie i w jakim skupieniu
+    wypełniał kwestionariusz. Wzorcowy zapis w ograniczeniach: „próba miała
+    charakter nielosowy z samodoborem, a dystrybucja online mogła wykluczyć
+    osoby mniej aktywne w internecie; wyniki opisują badaną próbę i nie
+    uprawniają do uogólnień statystycznych na populację”. Takie zdanie nie
+    osłabia pracy - uprzedza zarzut, który inaczej padłby na obronie.
+  </p>
+
+  <h2>Najczęstsze błędy w badaniach online</h2>
+
+  <p>
+    Pierwszy błąd to dystrybucja wyłącznie wśród znajomych i na grupach
+    wzajemnej pomocy ankietowej, czyli próba niezwiązana z badaną populacją.
+    Drugi to brak jakiejkolwiek kontroli jakości - wszystkie rekordy wchodzą
+    do analizy, łącznie z wypełnionymi w 40 sekund. Trzeci błąd to
+    przemilczenie kanałów dystrybucji w metodologii, przez co nie wiadomo,
+    kogo badanie w ogóle mogło objąć. Czwarty to uogólnianie wyników próby
+    internetowej na całą populację. Piąty błąd dotyczy netnografii: cytowanie
+    dosłownych wypowiedzi z forów z pseudonimami autorów - fraza wklejona w
+    wyszukiwarkę prowadzi wprost do profilu. Szósty wreszcie to ignorowanie
+    RODO przy zbieraniu adresów e-mail „do losowania nagród” w anonimowej
+    rzekomo ankiecie.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o badania online</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Badania online to dziś domyślny sposób zbierania danych w pracach
+    magisterskich - akceptowany bez zastrzeżeń, o ile warsztat nadąża za
+    wygodą. Trzy elementy robią różnicę: dystrybucja celowana w badaną
+    populację (kilkoma kanałami, z ewidencją), filtry jakości odpowiedzi
+    opisane w metodologii i uczciwy akapit o ograniczeniach próby
+    internetowej. Szczegóły techniczne znajdziesz w poradnikach o <a
+      href="/poradniki/metodologia/ankieta/">ankiecie</a> i <a
+      href="/poradniki/metodologia/wywiad/">wywiadzie</a>, a kwestie zgód i
+    anonimizacji w poradniku o <a
+      href="/poradniki/metodologia/etyka/">etyce badań</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

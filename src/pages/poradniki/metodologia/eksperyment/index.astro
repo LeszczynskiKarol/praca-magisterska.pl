@@ -1,0 +1,288 @@
+---
+// src/pages/poradniki/metodologia/eksperyment/index.astro
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+
+const breadcrumbs = [
+  { label: "Poradniki", href: "/poradniki/" },
+  { label: "Metodologia", href: "/poradniki/metodologia/" },
+  { label: "Eksperyment", href: "/poradniki/metodologia/eksperyment/" },
+];
+
+const relatedLinks = [
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Zmienne badawcze", href: "/poradniki/metodologia/zmienne-badawcze/" },
+  { label: "Hipotezy badawcze", href: "/poradniki/metodologia/hipotezy-badawcze/" },
+  { label: "Etyka badań naukowych", href: "/poradniki/metodologia/etyka/" },
+];
+
+const faqItems = [
+  {
+    question: "Na czym polega eksperyment jako metoda badawcza?",
+    answer:
+      "Eksperyment polega na celowej manipulacji zmienną niezależną (badacz wprowadza jakiś czynnik) i pomiarze jej wpływu na zmienną zależną, przy kontroli pozostałych warunków. Od innych metod odróżnia go to, że jako jedyny pozwala wnioskować o związkach przyczynowo-skutkowych, a nie tylko o współwystępowaniu zjawisk.",
+  },
+  {
+    question: "Czym różni się eksperyment od quasi-eksperymentu?",
+    answer:
+      "Losowym przydziałem do grup. W eksperymencie właściwym uczestnicy trafiają do grupy eksperymentalnej i kontrolnej losowo (randomizacja), co wyrównuje różnice między grupami. W quasi-eksperymencie badacz korzysta z grup już istniejących (np. dwie klasy szkolne) - schemat jest praktyczniejszy, ale słabiej chroni przed zarzutem, że grupy różniły się od początku.",
+  },
+  {
+    question: "Czy w pracy magisterskiej można przeprowadzić eksperyment?",
+    answer:
+      "Tak, ale realistycznie planuj skalę. W pracach dyplomowych dominują quasi-eksperymenty w naturalnych warunkach (klasa szkolna, grupa treningowa) i proste schematy z pretestem oraz posttestem na 2 grupach po 20-40 osób. Pełny eksperyment laboratoryjny z randomizacją częściej spotyka się w psychologii, a polowy w marketingu (testy A/B).",
+  },
+  {
+    question: "Co to jest grupa kontrolna i czy zawsze jest potrzebna?",
+    answer:
+      "Grupa kontrolna nie podlega oddziaływaniu eksperymentalnemu i służy za punkt odniesienia - pokazuje, co działoby się bez interwencji. Bez niej trudno wykluczyć, że zmiana wyniku ma inne przyczyny (naturalny rozwój, upływ czasu, sam fakt pomiaru). Schematy bez grupy kontrolnej istnieją, ale ich wnioski są znacznie słabsze i wymagają uczciwego omówienia w ograniczeniach.",
+  },
+  {
+    question: "Co zagraża trafności eksperymentu?",
+    answer:
+      "Klasyczne zagrożenia trafności wewnętrznej to m.in. historia (zdarzenia zewnętrzne w trakcie badania), dojrzewanie uczestników, efekt testowania (sam pretest uczy), zmiana narzędzia pomiaru, regresja do średniej, selekcja (grupy różne od początku) i wykruszanie się uczestników. Dobra praca wymienia te zagrożenia i opisuje, jak je ograniczono.",
+  },
+  {
+    question: "Czy eksperyment wymaga zgody komisji etycznej?",
+    answer:
+      "Przy badaniach z udziałem ludzi - wystąp o opinię komisji zawsze, a przy jakiejkolwiek interwencji (trening, program edukacyjny, manipulacja bodźcem) traktuj ją jako obowiązkową. Uczestnik musi wyrazić świadomą zgodę, mieć prawo do wycofania się i zostać poinformowany o celu badania po jego zakończeniu, jeśli pełna informacja wcześniej zaburzyłaby wynik.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<ArticleLayout
+  title="Eksperyment jako metoda badawcza - schematy, przykłady, quasi-eksperyment"
+  description="Eksperyment w pracy magisterskiej: grupa eksperymentalna i kontrolna, pretest-posttest, randomizacja, quasi-eksperyment, zagrożenia trafności i zapis do rozdziału metodologicznego."
+  updateDate="2026-07-17"
+  readingTime="16 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+
+  <p>
+    Eksperyment jest jedyną metodą badawczą, która pozwala odpowiedzieć na
+    pytanie „czy X powoduje Y” - a nie tylko „czy X współwystępuje z Y”.
+    Sondaż pokaże, że uczniowie ćwiczący technikę powtórek mają lepsze wyniki,
+    ale dopiero eksperyment rozstrzygnie, czy to technika poprawia wyniki, czy
+    po prostu sięgają po nią lepsi uczniowie. Ta moc ma swoją cenę: eksperyment
+    jest najbardziej wymagającą metodą pod względem planowania, kontroli i
+    etyki. Ten poradnik pokazuje, jak zaprojektować eksperyment na miarę pracy
+    magisterskiej i jak uczciwie opisać jego ograniczenia.
+  </p>
+
+  <h2>Co to jest eksperyment? Definicja</h2>
+
+  <p>
+    <strong>Eksperyment to metoda badawcza polegająca na celowej manipulacji
+    zmienną niezależną i pomiarze jej wpływu na zmienną zależną, przy kontroli
+    pozostałych warunków.</strong> Trzy elementy tej definicji są nienegocjowalne.
+    Manipulacja oznacza, że badacz sam wprowadza czynnik (np. prowadzi trening,
+    pokazuje różne wersje reklamy), a nie tylko mierzy czynnik zastany. Pomiar
+    dotyczy zmiennej zależnej przed i po oddziaływaniu lub między grupami.
+    Kontrola oznacza, że pozostałe warunki są dla wszystkich uczestników
+    możliwie identyczne, a najlepszym jej narzędziem jest <strong>randomizacja</strong>,
+    czyli losowy przydział uczestników do grup. Pojęcia zmiennych wyjaśniamy w
+    poradniku o <a href="/poradniki/metodologia/zmienne-badawcze/">zmiennych
+    badawczych</a>.
+  </p>
+
+  <h2>Podstawowe schematy eksperymentalne</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Schemat</th>
+        <th>Jak wygląda</th>
+        <th>Kiedy wystarcza</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dwie grupy z pretestem i posttestem</td>
+        <td>pomiar → oddziaływanie w grupie eksperymentalnej → pomiar w obu grupach</td>
+        <td>standard prac magisterskich; pozwala porównać przyrosty między grupami</td>
+      </tr>
+      <tr>
+        <td>Dwie grupy tylko z posttestem</td>
+        <td>oddziaływanie → jeden pomiar w obu grupach</td>
+        <td>gdy pretest mógłby uczulić uczestników (efekt testowania), a grupy są zrandomizowane</td>
+      </tr>
+      <tr>
+        <td>Jedna grupa z pretestem i posttestem</td>
+        <td>pomiar → oddziaływanie → pomiar</td>
+        <td>tylko z konieczności - brak grupy kontrolnej mocno osłabia wnioski</td>
+      </tr>
+      <tr>
+        <td>Plan czynnikowy (np. 2×2)</td>
+        <td>dwie manipulowane zmienne naraz, cztery kombinacje warunków</td>
+        <td>gdy interesuje Cię interakcja czynników; wymaga większej próby</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    W opisie schematu podawaj go wprost, np. „zastosowano plan eksperymentalny
+    z grupą kontrolną, pretestem i posttestem”. Taki jednozdaniowy zapis
+    natychmiast komunikuje recenzentowi konstrukcję badania i odróżnia pracę od
+    tekstów, w których „eksperyment” znaczy tyle co „coś sprawdziłem”.
+  </p>
+
+  <h2>Eksperyment właściwy a quasi-eksperyment</h2>
+
+  <p>
+    W realiach pracy magisterskiej rzadko da się losowo przydzielić uczestników
+    do grup - pracuje się z klasami szkolnymi, grupami pacjentów, oddziałami
+    firmy, które istnieją niezależnie od badania. Schemat z gotowymi grupami
+    nazywa się quasi-eksperymentem i jest w pełni akceptowalny, pod dwoma
+    warunkami. Po pierwsze, nazwij go po imieniu - pisanie „eksperyment” tam,
+    gdzie nie było randomizacji, recenzent odbierze jako brak świadomości
+    metodologicznej. Po drugie, wykaż porównywalność grup na starcie: porównaj
+    wyniki pretestu i cechy demograficzne, a różnice omów w ograniczeniach.
+    Rozróżnienie to spopularyzowali D.T. Campbell i J.C. Stanley, których
+    klasyfikacja schematów eksperymentalnych i quasi-eksperymentalnych pozostaje
+    kanonem metodologii.
+  </p>
+
+  <h2>Zagrożenia trafności - o co zapyta recenzent</h2>
+
+  <p>
+    Trafność wewnętrzna odpowiada na pytanie, czy zmiana zmiennej zależnej
+    rzeczywiście wynika z manipulacji, a nie z czynników ubocznych. Klasyczna
+    lista zagrożeń pomaga zaplanować kontrolę i napisać uczciwy podrozdział o
+    ograniczeniach:
+  </p>
+
+  <ul>
+    <li><strong>Historia</strong> - zdarzenia zewnętrzne w trakcie badania
+      (np. w środku eksperymentu edukacyjnego szkoła wprowadza nowy program).</li>
+    <li><strong>Dojrzewanie</strong> - uczestnicy zmieniają się z czasem
+      niezależnie od oddziaływania (dzieci po prostu rosną).</li>
+    <li><strong>Efekt testowania</strong> - sam pretest ćwiczy lub uczula;
+      posttest wychodzi lepiej bez związku z interwencją.</li>
+    <li><strong>Instrumentacja</strong> - zmiana narzędzia lub sposobu pomiaru
+      między pomiarami.</li>
+    <li><strong>Regresja do średniej</strong> - grupy dobrane ze względu na
+      skrajne wyniki naturalnie „wracają” ku przeciętnej.</li>
+    <li><strong>Selekcja</strong> - grupy różniły się od początku (główne
+      ryzyko quasi-eksperymentu).</li>
+    <li><strong>Wykruszanie</strong> - uczestnicy odpadają w trakcie, i to
+      nielosowo (odpadają najsłabsi lub najmniej zmotywowani).</li>
+  </ul>
+
+  <p>
+    Trafność zewnętrzna dotyczy z kolei uogólnialności: czy wynik uzyskany w
+    wyselekcjonowanej grupie i kontrolowanych warunkach powtórzy się w
+    rzeczywistości? Napięcie między obiema trafnościami jest nieusuwalne -
+    im ściślejsza kontrola (laboratorium), tym dalej od naturalnych warunków.
+    W pracy wystarczy to napięcie nazwać i uzasadnić przyjęty kompromis.
+  </p>
+
+  <h2>Jak opisać eksperyment w rozdziale metodologicznym - przykład</h2>
+
+  <p>
+    <em>„W badaniu zastosowano schemat quasi-eksperymentalny z grupą kontrolną,
+    pretestem i posttestem. Grupę eksperymentalną stanowiła klasa IIa (n = 24),
+    w której przez 8 tygodni prowadzono trening strategii uczenia się (2 zajęcia
+    tygodniowo po 45 minut), grupę kontrolną - równoległa klasa IIb (n = 25)
+    realizująca program standardowy. Przydział klas do warunków był losowy,
+    przydział uczniów do klas - zastany, co czyni schemat quasi-eksperymentalnym.
+    Porównanie pretestów nie wykazało istotnych różnic między grupami w zmiennej
+    zależnej ani w ocenach szkolnych. Zmienną zależną mierzono testem wiedzy w
+    dwóch równoległych wersjach (pretest/posttest), aby ograniczyć efekt
+    testowania. Na badanie uzyskano zgodę dyrekcji, rodziców i uczniów oraz
+    opinię uczelnianej komisji etycznej”</em>.
+  </p>
+
+  <h2>Najczęstsze błędy w eksperymentach dyplomowych</h2>
+
+  <p>
+    Pierwszy błąd to nazywanie eksperymentem badania bez manipulacji -
+    porównanie grup zastanych (np. graczy i niegraczy) jest badaniem
+    porównawczym, nie eksperymentem, bo badacz niczym nie manipulował. Drugi
+    to brak grupy kontrolnej i przypisywanie interwencji całej zmiany
+    pretest-posttest. Trzeci błąd polega na przemilczeniu braku randomizacji.
+    Czwarty to zbyt małe grupy - przy kilkunastu osobach na grupę testy
+    statystyczne wykryją tylko bardzo silne efekty, więc „brak istotności”
+    niczego nie rozstrzyga; zaplanuj liczebność zawczasu. Piąty błąd dotyczy
+    etyki - prowadzenie interwencji bez świadomej zgody i opinii komisji.
+    Szósty wreszcie to pominięcie zagrożeń trafności w ograniczeniach pracy,
+    czyli oddanie recenzentowi inicjatywy w najprzyjemniejszym dla niego
+    momencie.
+  </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o eksperyment</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <h2>Podsumowanie</h2>
+
+  <p>
+    Eksperyment wybierz wtedy, gdy Twoje pytanie badawcze dotyczy
+    przyczynowości i masz realną możliwość manipulacji oraz kontroli. W pracy
+    magisterskiej najpraktyczniejszy jest quasi-eksperyment z grupą kontrolną
+    oraz pretestem i posttestem - nazwany po imieniu, z wykazaną
+    porównywalnością grup i uczciwą listą ograniczeń. Hipotezy sformułujesz z
+    poradnikiem o <a href="/poradniki/metodologia/hipotezy-badawcze/">hipotezach
+    badawczych</a>, zmienne zoperacjonalizujesz według poradnika o <a
+      href="/poradniki/metodologia/zmienne-badawcze/">zmiennych</a>, a kwestie
+    zgód i komisji omawia poradnik o <a
+      href="/poradniki/metodologia/etyka/">etyce badań</a>.
+  </p>
+</ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>
