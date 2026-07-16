@@ -1,0 +1,291 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Filologia angielska", href: "/tematy/filologia-angielska/" },
+  { label: "Przykładowa praca", href: "/tematy/filologia-angielska/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z filologii angielskiej", href: "/tematy/filologia-angielska/" },
+  { label: "Przykładowa praca z filologii polskiej", href: "/tematy/filologia-polska/przykladowa-praca/" },
+  { label: "Pisanie pracy po angielsku", href: "/poradniki/pisanie-angielski/" },
+  { label: "Analiza dokumentów i tekstów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Bibliografia i style cytowania", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z filologii angielskiej – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z filologii angielskiej (po angielsku): analiza przekładoznawcza culture-specific items, korpus par oryginał-przekład, taksonomia strategii, research questions. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z filologii angielskiej różni się od prac z innych
+    kierunków już na poziomie języka: pisze się ją po angielsku, w konwencji
+    anglosaskiej (research questions, abstract, references w stylu
+    autor-rok), a materiałem badawczym jest tekst - literacki, przekładowy
+    albo językowy korpus. Poniżej rozbieramy wzorcową pracę przekładoznawczą,
+    czyli najpopularniejszy typ anglistycznej magisterki, i pokazujemy
+    warsztat, o który pytają promotorzy: kryteria ekscerpcji, taksonomię
+    strategii i analizę przykładów, która nie jest tylko cytowaniem.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Translating Culture-Specific Items in Contemporary Polish
+    Fiction”</strong>: korpus 187 jednostek kulturowych z pary
+    oryginał-przekład, siedmioprocedurowa taksonomia i odpowiedź na pytanie o
+    globalną orientację przekładu (udomowienie czy egzotyzacja). Ten sam
+    szkielet zadziała dla analizy językoznawczej i literaturoznawczej - o
+    wariantach piszemy niżej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z anglistyki, z sekcjami PO ANGIELSKU (abstract, research questions, material and method, analysis, discussion, references) i polskimi komentarzami do każdej części: kryteria ekscerpcji korpusu, taksonomia procedur tłumaczeniowych, tabela ilościowa i wzorzec analizy przykładu. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-angielska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-angielska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z filologii angielskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Język i konwencja anglosaska.</strong> Praca po angielsku, z
+      abstractem, jawnie numerowanymi research questions i bibliografią w
+      stylu wskazanym przez instytut (autor-rok, MLA lub Chicago).
+    </li>
+    <li>
+      <strong>Tekst jako materiał badawczy.</strong> Powieść i jej przekład,
+      korpus językowy, dyskurs medialny - anglistyka bada teksty, nie
+      respondentów.
+    </li>
+    <li>
+      <strong>Korpus z kryteriami ekscerpcji.</strong> Jednostki analizy
+      wybiera się według jawnych kryteriów i zestawia w aneksie - to
+      odpowiednik „metodologii” z kierunków społecznych.
+    </li>
+    <li>
+      <strong>Analiza przykładów z komentarzem.</strong> Oryginał → przekład →
+      nazwana procedura → skutek dla odbioru. Przykład bez komentarza to
+      cytat, nie analiza.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Culture-specific items (CSI)">
+    <p>
+      Elementy tekstu źródłowego oznaczające zjawiska charakterystyczne dla
+      kultury wyjściowej (potrawy, instytucje, realia historyczne, formy
+      adresatywne), których standardowy odpowiednik w języku docelowym nie
+      istnieje albo gubi konotacje. Sposób ich tłumaczenia odczytuje się jako
+      wskaźnik globalnej orientacji przekładu: ku udomowieniu (przybliżanie
+      czytelnikowi) lub egzotyzacji (zachowanie obcości) - opozycji
+      spopularyzowanej przez Lawrence'a Venutiego.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym promotor pozna dobrą pracę z anglistyki</h2>
+
+  <ol>
+    <li>
+      <strong>Angielszczyzna akademicka.</strong> Spójny wariant (BrE lub
+      AmE), rejestr formalny, poprawna terminologia przekładoznawcza lub
+      językoznawcza.
+    </li>
+    <li>
+      <strong>Korpus policzalny i powtarzalny.</strong> Kryteria ekscerpcji,
+      liczba jednostek, sposób rozstrzygania przypadków granicznych, pełne
+      zestawienie w aneksie.
+    </li>
+    <li>
+      <strong>Taksonomia z literatury, nie z intuicji.</strong> Procedury
+      nazwane i przypisane do źródeł teoretycznych, stosowane konsekwentnie.
+    </li>
+    <li>
+      <strong>Wnioski na miarę materiału.</strong> Jedna para tekstów nie
+      dowodzi prawidłowości „polsko-angielskiego przekładu w ogóle” - dobra
+      praca zna swoje granice.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z filologii angielskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Przekładoznawcza</strong> - strategie tłumaczenia wybranego
+      zjawiska (CSI, humor, dialekt, gry słowne) na parze tekstów; schemat
+      naszego wzoru.
+    </li>
+    <li>
+      <strong>Językoznawcza</strong> - analiza korpusowa (kolokacje,
+      frazeologia, zmiany semantyczne), pragmatyka, analiza dyskursu
+      medialnego lub politycznego.
+    </li>
+    <li>
+      <strong>Literaturoznawcza</strong> - interpretacja utworów przez ramę
+      teoretyczną (postkolonializm, gender studies, ekokrytyka), z tezą
+      interpretacyjną jak w pracy z <a
+        href="/tematy/filologia-polska/przykladowa-praca/">filologii
+      polskiej</a>.
+    </li>
+    <li>
+      <strong>Glottodydaktyczna</strong> - nauczanie angielskiego: badanie
+      technik, materiałów lub przekonań uczących się (tu pojawia się warsztat
+      ankietowo-wywiadowczy).
+    </li>
+    <li>
+      <strong>Kulturoznawcza</strong> - zjawiska kultury krajów
+      anglojęzycznych analizowane na materiale tekstowym i medialnym.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy przekładoznawczej</h2>
+
+  <ol>
+    <li>Title page + oświadczenia</li>
+    <li>Abstract (EN) + streszczenie (PL) + table of contents</li>
+    <li>Introduction - kontekst, research questions, struktura</li>
+    <li>Chapter One - rama teoretyczna: pojęcia, taksonomie, stan badań</li>
+    <li>Chapter Two - material and method: teksty, kryteria ekscerpcji, taksonomia</li>
+    <li>Chapter Three - analysis: przegląd ilościowy + kategorie jakościowo</li>
+    <li>Chapter Four - discussion: wyniki vs literatura, ograniczenia</li>
+    <li>Conclusions · References · Appendix: korpus jednostek</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Jak wybrać parę tekstów do analizy">
+    <p>
+      Szukaj tekstu, który jest „gęsty” od badanego zjawiska (realia,
+      humor, dialekt) i ma opublikowany przekład - najlepiej autorstwa
+      uznanego tłumacza, bo wtedy analiza wpisuje się w istniejącą dyskusję.
+      Sprawdź przed zatwierdzeniem tematu, czy z pary da się wyekscerpować
+      co najmniej 100-200 jednostek: zbyt ubogi materiał to najczęstszy powód
+      zmiany tematu w połowie semestru. Do pary tekstów masz dostęp legalnie
+      przez biblioteki; do analizy nie potrzebujesz zgody wydawcy.
+    </p>
+  </InfoBox>
+
+  <h2>Analiza przykładu - wzorzec</h2>
+
+  <blockquote>
+    <p>The source item <em>bigos</em> is transferred without modification but
+      accompanied by an appositive gloss on first occurrence ("bigos, the
+      hunter's stew of sauerkraut and meat"), a combination of borrowing and
+      explicitation that preserves local colour while securing comprehension.</p>
+  </blockquote>
+
+  <p>
+    Cztery ruchy w jednym zdaniu: jednostka źródłowa, rozwiązanie tłumacza,
+    nazwane procedury (borrowing + explicitation) i skutek dla odbioru.
+    Taki wzorzec, powtórzony konsekwentnie dla kilkudziesięciu przykładów i
+    podsumowany ilościowo, stanowi rdzeń rozdziału analitycznego.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Katalog cytatów vs analiza strategii">
+    <p>
+      <strong>Wersja słabsza.</strong> Rozdział analityczny to lista
+      kilkudziesięciu par oryginał-przekład z komentarzami w rodzaju „tłumacz
+      dobrze oddał sens”. Brak taksonomii, brak liczb, brak odpowiedzi na
+      jakiekolwiek pytanie badawcze. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Korpus 187 jednostek z kryteriami
+      ekscerpcji, siedem procedur z literatury, rozkład ilościowy (61%
+      rozwiązań globalizujących), wzorzec odstępstw zlokalizowany w dwóch
+      polach semantycznych i wniosek o umiarkowanie udomowiającej orientacji
+      przekładu - z ograniczeniami nazwanymi wprost. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Ocenianie tłumacza zamiast analizy">
+    <p>
+      Praca przekładoznawcza nie jest recenzją („tłumacz poradził sobie
+      świetnie/fatalnie”). Zadaniem jest opis i wyjaśnienie strategii, nie
+      wystawianie not. Zamiast „błędu tłumacza” pisz o konsekwencjach
+      wybranej procedury dla odbioru; zamiast pochwał - o wzorcach i ich
+      możliwych motywacjach (norma wydawnicza, zakładany czytelnik). Ta zmiana
+      rejestru to często różnica między oceną dobrą a bardzo dobrą.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z anglistyki</h2>
+
+  <ul>
+    <li><strong>Katalog cytatów bez taksonomii</strong> - przykłady
+      niesklasyfikowane i niepodsumowane ilościowo.</li>
+    <li><strong>Korpus bez kryteriów</strong> - nie wiadomo, jak wybrano
+      jednostki i czy zebrano wszystkie.</li>
+    <li><strong>Recenzowanie tłumacza</strong> - oceny zamiast analizy
+      strategii i ich skutków.</li>
+    <li><strong>Mieszanie wariantów języka</strong> - foreignisation obok
+      foreignization w jednej pracy.</li>
+    <li><strong>Teoria bez powrotu</strong> - rozdział o Venutim, po którym
+      analiza nie używa opozycji udomowienie-egzotyzacja.</li>
+    <li><strong>Uogólnienia ponad materiał</strong> - wnioski o „przekładzie
+      literatury polskiej w ogóle” z jednej pary tekstów.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z filologii angielskiej musi być po angielsku?</h3>
+  <p>
+    Na zdecydowanej większości polskich anglistyk - tak, wraz z abstractem;
+    uczelnie wymagają dodatkowo streszczenia po polsku. Poziom języka jest
+    elementem oceny, więc zaplanuj czas na korektę językową. Praktyczne
+    wskazówki zebraliśmy w poradniku o <a
+      href="/poradniki/pisanie-angielski/">pisaniu pracy po angielsku</a>.
+  </p>
+
+  <h3>Ile jednostek powinien liczyć korpus?</h3>
+  <p>
+    W pracach przekładoznawczych i językoznawczych typowe korpusy magisterskie
+    to 100-300 jednostek - wystarczająco, by rozkłady procedur były sensowne,
+    a analiza jakościowa wykonalna. Ważniejsza od liczby jest kompletność:
+    zbieraj wszystkie jednostki spełniające kryteria, nie „najciekawsze”.
+  </p>
+
+  <h3>Jakiego stylu cytowania używać?</h3>
+  <p>
+    Instytuty anglistyki wymagają zwykle stylu autor-rok (APA lub wariant
+    własny), rzadziej MLA lub Chicago - rozstrzygają wytyczne instytutu i
+    praktyka seminarium. Przegląd systemów znajdziesz w poradniku o <a
+      href="/poradniki/bibliografia/">bibliografii i stylach cytowania</a>.
+  </p>
+
+  <h3>Czy praca literaturoznawcza wymaga „metodologii”?</h3>
+  <p>
+    Wymaga ramy teoretycznej i tezy interpretacyjnej - to one pełnią funkcję
+    metodologii. Zamiast rozdziału o ankietach opisujesz przyjętą perspektywę
+    (np. ekokrytyczną), stan badań nad autorem i sposób doboru analizowanych
+    utworów. Konwencję pokazujemy też we wzorze z <a
+      href="/tematy/filologia-polska/przykladowa-praca/">filologii
+    polskiej</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    strukturę, konwencję językową i warsztat korpusowy - Twoja para tekstów,
+    ekscerpcja i analiza muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/filologia-angielska/">wyboru tematu z
+    filologii angielskiej</a> i pobierz wzór powyżej. Warsztat pisania po
+    angielsku znajdziesz w <a
+      href="/poradniki/pisanie-angielski/">dedykowanym poradniku</a>, a
+    metodę pracy na tekstach - w poradniku o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie tekstów i
+    dokumentów</a>.
+  </p>
+</ArticleLayout>
