@@ -1,0 +1,297 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Logistyka", href: "/tematy/logistyka/" },
+  { label: "Przykładowa praca", href: "/tematy/logistyka/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z logistyki", href: "/tematy/logistyka/" },
+  { label: "Przykładowa praca z zarządzania", href: "/tematy/zarzadzanie/przykladowa-praca/" },
+  { label: "Studium przypadku", href: "/poradniki/metodologia/case-study/" },
+  { label: "Analiza dokumentów i danych zastanych", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Tabele i wykresy w pracy", href: "/poradniki/tabele-wykresy/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z logistyki – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z logistyki krok po kroku: studium przypadku firmy, analiza ABC/XYZ na danych magazynowych, wskaźniki rotacji, rekomendacje z szacunkiem oszczędności. Wzór aplikacyjnej pracy do pobrania w PDF i Word."
+  readingTime="19 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Typowa dobra praca magisterska z logistyki nie jest ani teoretycznym
+    referatem, ani ankietą „co pracownicy sądzą o logistyce”. Jest analizą
+    rzeczywistego procesu w konkretnym przedsiębiorstwie, przeprowadzoną na
+    danych operacyjnych i zakończoną rekomendacjami, które dałoby się wdrożyć.
+    Poniżej rozbieramy taką pracę na części: pokazujemy, skąd wziąć dane, jak
+    opisać metodykę, jak prezentować wyniki w tabelach i jak policzyć efekty
+    rekomendacji – bo o to recenzent zapyta na obronie.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Doskonalenie gospodarki zapasami w przedsiębiorstwie
+    dystrybucyjnym z wykorzystaniem analizy ABC/XYZ – studium przypadku firmy
+    X”</strong>. Analiza ABC/XYZ to warsztatowa klasyka logistyki – ale ten sam
+    schemat pracy zadziała dla optymalizacji transportu, kompletacji zamówień,
+    oceny dostawców czy wdrożenia WMS.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet aplikacyjnej pracy magisterskiej z logistyki: strona tytułowa, streszczenie z wynikami liczbowymi, spis treści, wstęp z celami i pytaniami badawczymi, metodyka analizy danych zastanych (progi ABC/XYZ z przypisem), rozdział analityczny z tabelami, rekomendacje z szacunkiem efektów w złotówkach i zakończenie. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-logistyka.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-logistyka.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z logistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Dane operacyjne zamiast deklaracji.</strong> Materiałem badawczym
+      są dane zastane firmy: ewidencja magazynowa, rejestry zleceń, dane o
+      terminowości dostaw, koszty. Ankieta bywa tylko uzupełnieniem.
+    </li>
+    <li>
+      <strong>Cel praktyczny i pytania badawcze.</strong> Zamiast hipotez
+      statystycznych – cel „opracowanie rekomendacji” i pytania o strukturę,
+      przyczyny i możliwe usprawnienia procesu.
+    </li>
+    <li>
+      <strong>Warsztat narzędziowy kierunku.</strong> Analiza ABC/XYZ,
+      wskaźniki rotacji i pokrycia, OTIF, mapowanie procesów, ekonomiczna
+      wielkość zamówienia – recenzent oczekuje nazwanych i poprawnie
+      zastosowanych narzędzi.
+    </li>
+    <li>
+      <strong>Rekomendacje z liczbami.</strong> Praca kończy się propozycjami
+      zmian wraz z oszacowaniem efektów (złotówki, punkty procentowe, dni).
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Analiza ABC/XYZ">
+    <p>
+      Podwójna klasyfikacja asortymentu: ABC dzieli pozycje według udziału w
+      wartości obrotu (zasada Pareto – nieliczne pozycje generują większość
+      wartości), XYZ – według regularności zużycia mierzonej współczynnikiem
+      zmienności. Złożenie daje macierz dziewięciu grup (AX...CZ), dla których
+      projektuje się różne polityki zamawiania. Progi klasyfikacji (np. A = 80%
+      wartości, X = zmienność do 20%) podaj z przypisem do literatury i stosuj
+      konsekwentnie.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z logistyki</h2>
+
+  <ol>
+    <li>
+      <strong>Rzeczywiste dane z firmy.</strong> Czy analiza opiera się na
+      ewidencji przedsiębiorstwa (z podanym okresem i liczbą rekordów), czy na
+      danych „przykładowych”?
+    </li>
+    <li>
+      <strong>Powtarzalna metodyka.</strong> Czy progi klasyfikacji, wzory
+      wskaźników i procedura analizy są opisane tak, że ktoś inny mógłby ją
+      powtórzyć?
+    </li>
+    <li>
+      <strong>Wyniki skomentowane, nie tylko pokazane.</strong> Czy każda
+      tabela ma numer, źródło i omówienie w tekście?
+    </li>
+    <li>
+      <strong>Rekomendacje policzalne.</strong> Czy z pracy wynika, co
+      konkretnie zmienić i jaki da to efekt – choćby w ostrożnym szacunku?
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z logistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Aplikacyjna (studium przypadku firmy)</strong> – analiza i
+      doskonalenie procesu w konkretnym przedsiębiorstwie. Najczęstszy i
+      najlepiej oceniany schemat; taki prowadzi nasz wzór.
+    </li>
+    <li>
+      <strong>Porównawcza</strong> – zestawienie rozwiązań (np. operatorów
+      logistycznych, wariantów transportu) według jawnych kryteriów.
+    </li>
+    <li>
+      <strong>Projektowa</strong> – zaprojektowanie rozwiązania (układ
+      magazynu, sieć dystrybucji, harmonogram dostaw) z uzasadnieniem
+      obliczeniowym.
+    </li>
+    <li>
+      <strong>Empiryczna ankietowa</strong> – np. badanie satysfakcji klientów
+      z usług kurierskich; poprawna, ale trudniej o wyróżnienie się.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy aplikacyjnej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie (z wynikami liczbowymi) + spis treści</li>
+    <li>Wstęp – kontekst, cel główny i szczegółowe, pytania badawcze, metoda</li>
+    <li>Rozdział 1 – teoria: proces, koszty, narzędzia analizy</li>
+    <li>Rozdział 2 – metodyka: firma, materiał badawczy, procedura</li>
+    <li>Rozdział 3 – analiza: wyniki w tabelach z komentarzem</li>
+    <li>Rozdział 4 – rekomendacje z szacunkiem efektów</li>
+    <li>Zakończenie – odpowiedzi na pytania badawcze, ograniczenia</li>
+    <li>Bibliografia · Spis tabel · Spis rysunków</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Jak zdobyć dane z firmy">
+    <p>
+      Najprościej przez własne miejsce pracy lub praktyki – poproś o zgodę
+      zarząd, zaproponuj anonimizację nazwy i danych wrażliwych oraz udostępnij
+      firmie wyniki. Wystarczy eksport z systemu ERP/WMS do arkusza: obroty
+      magazynowe po indeksach, stany miesięczne, terminy dostaw. Zgodę i
+      anonimizację odnotuj w metodyce – to element rzetelności, o który pytają
+      recenzenci. Gdy dostępu do firmy brak, alternatywą są dane publiczne (GUS
+      „Transport – wyniki działalności”, Eurostat) i praca porównawcza.
+    </p>
+  </InfoBox>
+
+  <h2>Metodyka – serce pracy aplikacyjnej</h2>
+
+  <blockquote>
+    <p>Klasyfikację ABC przeprowadzono według rocznej wartości rozchodu: grupa
+      A obejmuje indeksy tworzące łącznie 80% wartości, grupa B – kolejne 15%,
+      grupa C – pozostałe 5%. Klasyfikację XYZ oparto na współczynniku
+      zmienności miesięcznego zużycia: X – do 20%, Y – 20–50%, Z – powyżej 50%.
+      Materiał badawczy: ewidencja obrotów 1 840 indeksów za 12 miesięcy,
+      pozyskana za zgodą zarządu i zanonimizowana.</p>
+  </blockquote>
+
+  <p>
+    Ten krótki fragment robi trzy rzeczy naraz: podaje progi (z przypisem do
+    literatury we wzorze), definiuje materiał i dokumentuje zgodę firmy. W
+    pracach bez takiego podrozdziału recenzent nie jest w stanie ocenić, czy
+    wyniki są wiarygodne – i zwykle to wytyka.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Referat z ankietą vs analiza na danych">
+    <p>
+      <strong>Wersja słabsza.</strong> Trzy rozdziały teorii o logistyce
+      magazynowej, a w części „badawczej” ankieta wśród 40 pracowników firmy z
+      pytaniami „czy Pana/Pani zdaniem gospodarka zapasami działa sprawnie?”.
+      Wnioski: „firma powinna usprawnić zarządzanie zapasami”. Brak danych,
+      brak konkretu – ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Analiza 1 840 indeksów z 12 miesięcy:
+      macierz ABC/XYZ, identyfikacja 23% indeksów bez rotacji o wartości 486
+      tys. zł, zróżnicowane polityki zamawiania dla dziewięciu grup i szacunek
+      oszczędności 110 tys. zł rocznie. Każda liczba ma źródło w ewidencji –
+      ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <h2>Wskaźniki, które warto znać na obronie</h2>
+
+  <ul>
+    <li><strong>Rotacja zapasu</strong> – wartość rozchodu / średni zapas;
+      pokazuje, ile razy w roku zapas „obraca się” w sprzedaż.</li>
+    <li><strong>Pokrycie zapasem</strong> – na ile dni sprzedaży wystarczy
+      bieżący stan.</li>
+    <li><strong>OTIF (On Time In Full)</strong> – odsetek dostaw kompletnych i
+      na czas; podstawowy miernik obsługi klienta.</li>
+    <li><strong>Współczynnik zmienności</strong> – odchylenie standardowe /
+      średnia; podstawa klasyfikacji XYZ.</li>
+    <li><strong>Koszt utrzymania zapasu</strong> – zwykle kilkanaście–20%
+      wartości zapasu rocznie (kapitał, magazynowanie, ryzyko); przyjętą
+      wartość uzasadnij źródłem.</li>
+  </ul>
+
+  <InfoBox variant="pulapka" title="Dane „przykładowe” zamiast rzeczywistych">
+    <p>
+      Praca na wymyślonych danych traci sens aplikacyjny i łatwo ją rozpoznać
+      (okrągłe liczby, idealny rozkład Pareto). Jeśli nie masz dostępu do
+      firmy, nie fabrykuj – zmień schemat na pracę porównawczą lub projektową
+      na danych publicznych. We wzorze dane są fikcyjne celowo i jest to
+      wyraźnie oznaczone: to szkielet do podstawienia własnych.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z logistyki</h2>
+
+  <ul>
+    <li><strong>Za dużo teorii</strong> – trzy rozdziały przeglądu literatury i
+      jeden „badawczy”; proporcja powinna być odwrotna.</li>
+    <li><strong>Ankieta zamiast danych</strong> – pytanie pracowników o opinie
+      tam, gdzie proces opisują twarde liczby z systemu.</li>
+    <li><strong>Metodyka bez progów i wzorów</strong> – „przeprowadzono analizę
+      ABC” bez podania kryteriów podziału.</li>
+    <li><strong>Tabele bez komentarza i źródła</strong> – wyniki wklejone,
+      nieomówione.</li>
+    <li><strong>Rekomendacje-życzenia</strong> – „należy optymalizować zapasy”
+      zamiast konkretnych polityk z szacunkiem efektu.</li>
+    <li><strong>Brak zgody firmy</strong> – użycie danych przedsiębiorstwa bez
+      udokumentowanej zgody i anonimizacji.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z logistyki musi opierać się na konkretnej firmie?</h3>
+  <p>
+    Nie musi, ale schemat studium przypadku jest najczęstszy i najlepiej
+    przyjmowany. Alternatywy to praca porównawcza albo projektowa na danych
+    publicznych (GUS, Eurostat, raporty branżowe). Wybór uzasadnij we wstępie.
+  </p>
+
+  <h3>Jak opisać metodę badawczą w pracy aplikacyjnej?</h3>
+  <p>
+    Jako <a href="/poradniki/metodologia/case-study/">studium przypadku</a> z
+    ilościową analizą <a
+      href="/poradniki/metodologia/analiza-dokumentow/">danych zastanych</a>
+    przedsiębiorstwa. Podaj źródło danych, okres, liczbę rekordów, progi
+    klasyfikacji i narzędzie analizy (arkusz kalkulacyjny w zupełności
+    wystarcza).
+  </p>
+
+  <h3>Ile danych potrzeba do analizy ABC/XYZ?</h3>
+  <p>
+    Minimum to 12 miesięcy obrotów magazynowych, żeby klasyfikacja XYZ
+    uchwyciła sezonowość w skali roku. Krótszy okres zaniża wiarygodność
+    współczynnika zmienności – jeśli masz tylko pół roku danych, napisz to
+    wprost w ograniczeniach pracy.
+  </p>
+
+  <h3>Czy muszę podawać nazwę firmy?</h3>
+  <p>
+    Nie – standardem jest anonimizacja („przedsiębiorstwo X z branży
+    elektrotechnicznej, zatrudniające ok. 120 osób”). Ważne, żeby podać skalę i
+    branżę (kontekst wyników) oraz odnotować zgodę zarządu na wykorzystanie
+    danych.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy, a wzór służy jako
+    szkielet: strukturę i sposób prezentacji danych przenosisz, treść i liczby
+    muszą pochodzić z Twojego badania.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/logistyka/">wyboru tematu z logistyki</a> i
+    pobierz wzór powyżej. Przy prezentacji wyników pomoże Ci poradnik o <a
+      href="/poradniki/tabele-wykresy/">tabelach i wykresach</a>, a przy opisie
+    badania – poradniki o <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a> i <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie danych
+    zastanych</a>.
+  </p>
+</ArticleLayout>

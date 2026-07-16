@@ -180,7 +180,7 @@ Porównanie regulaminów ujawnia istotne różnice proceduralne. Miasto A wymaga
 # Wykaz literatury
 
 ::: {.anno}
-[Praca z administracji dzieli źródła na wykazy jak praca prawnicza, z tym że zamiast wykazu orzecznictwa często pojawia się szerszy „wykaz innych źródeł": uchwały, raporty, dokumenty urzędowe, strony BIP.]
+[Praca z administracji dzieli źródła na wykazy jak praca prawnicza, z tym że zamiast wykazu orzecznictwa często pojawia się szerszy „wykaz innych źródeł”: uchwały, raporty, dokumenty urzędowe, strony BIP.]
 :::
 
 1. Dolnicki B. (red.), *Ustawa o samorządzie gminnym. Komentarz*, Warszawa 2021.
