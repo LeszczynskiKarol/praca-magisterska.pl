@@ -1,0 +1,286 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Dietetyka", href: "/tematy/dietetyka/" },
+  { label: "Przykładowa praca", href: "/tematy/dietetyka/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z dietetyki", href: "/tematy/dietetyka/" },
+  { label: "Przykładowa praca ze zdrowia publicznego", href: "/tematy/zdrowie-publiczne/przykladowa-praca/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Etyka badań naukowych", href: "/poradniki/metodologia/etyka/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z dietetyki – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z dietetyki: ocena sposobu żywienia (wywiad 24h, KomPAN), stan odżywienia (BMI, WHR), porównanie z normami żywienia, konwencja medyczna. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z dietetyki opiera się na warsztacie, którego nie ma
+    żaden inny kierunek: wywiadach żywieniowych przeliczanych na składniki
+    odżywcze, porównaniach z normami żywienia i pomiarach antropometrycznych.
+    To dobrze - bo konkretna metodyka chroni przed pracą-esejem o zdrowym
+    odżywianiu. I groźnie - bo każdy element tego warsztatu (metoda wywiadu,
+    program obliczeniowy, poziom normy, procedura pomiaru) recenzent może
+    sprawdzić jednym pytaniem. Poniżej rozbieramy wzorcową pracę na części i
+    pokazujemy, jak ten warsztat opisać kompletnie.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Ocena sposobu żywienia i stanu odżywienia kobiet w wieku 19–30
+    lat o różnym poziomie aktywności fizycznej”</strong> - badanie porównawcze
+    dwóch grup po 48 osób, z trzykrotnym wywiadem 24-godzinnym, kwestionariuszem
+    częstotliwości spożycia i antropometrią. Ten sam schemat zadziała dla
+    każdej grupy: sportowców, seniorów, dzieci, pacjentów, wegetarian.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z dietetyki: strona tytułowa, streszczenie strukturalne, spis treści, rozdział Materiał i metody (kryteria włączenia, wywiad 24h z albumem porcji, normy EAR/AI, antropometria, komisja bioetyczna), tabela wynikowa z realizacją norm i wartościami p, dyskusja z ograniczeniami, wnioski punktowane i piśmiennictwo Vancouver. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-dietetyka.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-dietetyka.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z dietetyki</h2>
+
+  <ul>
+    <li>
+      <strong>Podwójna ocena: dieta + stan odżywienia.</strong> Typowa praca
+      łączy ocenę sposobu żywienia (co i ile badani jedzą) z oceną stanu
+      odżywienia (antropometria, czasem skład ciała) - dwie warstwy, dwa
+      zestawy metod.
+    </li>
+    <li>
+      <strong>Odniesienie do norm.</strong> Wyniki spożycia porównuje się z
+      normami żywienia dla populacji Polski na określonym poziomie (EAR/AI/RDA)
+      - a wybór poziomu trzeba uzasadnić.
+    </li>
+    <li>
+      <strong>Konwencja medyczna.</strong> Streszczenie strukturalne,
+      „Materiał i metody”, wnioski punktowane, piśmiennictwo Vancouver,
+      komisja bioetyczna.
+    </li>
+    <li>
+      <strong>Jednostki i precyzja.</strong> Białko w g/kg masy ciała, błonnik
+      w g/d, realizacja norm w procentach - praca z dietetyki mówi liczbami o
+      ustalonych jednostkach.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Wywiad 24-godzinny i FFQ">
+    <p>
+      Wywiad 24-godzinny to szczegółowe odtworzenie wszystkiego, co badany
+      spożył w ciągu poprzedniej doby - dla wiarygodności powtarza się go
+      trzykrotnie (dni powszednie + weekend) i prowadzi z albumem fotografii
+      porcji. FFQ (kwestionariusz częstotliwości spożycia; w Polsce standardem
+      jest walidowany KomPAN) opisuje z kolei zwyczaje żywieniowe w dłuższym
+      okresie. Metody się uzupełniają: wywiad daje liczby, FFQ - obraz
+      nawyków.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z dietetyki</h2>
+
+  <ol>
+    <li>
+      <strong>Kompletna metodyka oceny żywienia.</strong> Ile wywiadów, jakie
+      dni, jaki album porcji, jaki program obliczeniowy, jakie normy i na
+      jakim poziomie - wszystko nazwane.
+    </li>
+    <li>
+      <strong>Kryteria włączenia i wykluczenia.</strong> Ciąża, diety
+      lecznicze, suplementacja - czynniki zmieniające zapotrzebowanie muszą
+      być kontrolowane.
+    </li>
+    <li>
+      <strong>Procedury pomiarów antropometrycznych.</strong> Kiedy, czym i
+      jak mierzono - „rano na czczo, waga ze wzrostomierzem” to standard
+      zapisu.
+    </li>
+    <li>
+      <strong>Świadomość ograniczeń metody.</strong> Wywiady żywieniowe
+      niedoszacowują spożycia i praca powinna to wprost przyznać w dyskusji.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z dietetyki</h2>
+
+  <ul>
+    <li>
+      <strong>Ocena sposobu żywienia grupy</strong> - schemat naszego wzoru;
+      dowolna populacja: studenci, sportowcy, seniorzy, pracownicy zmianowi.
+    </li>
+    <li>
+      <strong>Praca kliniczna</strong> - żywienie pacjentów z konkretną
+      jednostką chorobową (cukrzyca, otyłość, choroby tarczycy), często we
+      współpracy z poradnią.
+    </li>
+    <li>
+      <strong>Wiedza i zachowania żywieniowe</strong> - badanie ankietowe
+      wiedzy żywieniowej, czytelnictwa etykiet, stosowania suplementów.
+    </li>
+    <li>
+      <strong>Analiza produktów lub jadłospisów</strong> - ocena wartości
+      odżywczej jadłospisów (przedszkola, szpitale, catering dietetyczny) lub
+      analiza składu produktów z rynku.
+    </li>
+    <li>
+      <strong>Studium przypadku</strong> - opieka dietetyczna nad pacjentem:
+      diagnoza, plan, realizacja, efekty (schemat kazuistyczny).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy w konwencji nauk o zdrowiu</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie strukturalne PL + Abstract EN</li>
+    <li>Wykaz skrótów + spis treści</li>
+    <li>Wstęp i rozdział teoretyczny - normy, metody oceny, stan badań</li>
+    <li>Materiał i metody - grupa, kryteria, narzędzia, normy, statystyka, etyka</li>
+    <li>Wyniki - tabele z jednostkami i wartościami p</li>
+    <li>Dyskusja - piśmiennictwo, interpretacja, ograniczenia</li>
+    <li>Wnioski punktowane</li>
+    <li>Piśmiennictwo (Vancouver) · Spisy · Załączniki (kwestionariusze)</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Warsztat obliczeniowy dietetyka">
+    <p>
+      Wartość odżywczą diet liczy się w programach opartych na krajowych
+      tabelach składu żywności (na uczelniach najczęściej Dieta lub Aliant) -
+      podaj nazwę i wersję programu. Wyniki odnoś do aktualnych „Norm żywienia
+      dla populacji Polski” (NIZP-PZH), wskazując poziom odniesienia: EAR do
+      oceny częstości niedoborów w grupie, RDA w poradnictwie indywidualnym,
+      AI tam, gdzie EAR nie ustalono. Pomylenie poziomów to częsty i łatwy do
+      wychwycenia błąd.
+    </p>
+  </InfoBox>
+
+  <h2>Materiał i metody - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Sposób żywienia oceniono metodą trzykrotnego wywiadu 24-godzinnego (dwa
+      dni powszednie i jeden weekendowy) z użyciem albumu fotografii produktów
+      i potraw. Wartość odżywczą obliczono w programie opartym na krajowych
+      tabelach składu żywności i odniesiono do norm dla populacji Polski na
+      poziomie EAR lub AI. Zwyczaje żywieniowe scharakteryzowano walidowanym
+      kwestionariuszem częstotliwości spożycia. Badanie uzyskało pozytywną
+      opinię komisji bioetycznej (nr ...).</p>
+  </blockquote>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Ankieta o odżywianiu vs ocena żywienia">
+    <p>
+      <strong>Wersja słabsza.</strong> Autorska ankieta z pytaniami „czy
+      odżywiasz się zdrowo?” i „ile razy dziennie jesz warzywa?”, wyniki w
+      procentach odpowiedzi, zero liczb o faktycznym spożyciu, wnioski:
+      „badane powinny jeść więcej warzyw”. To praca o deklaracjach, nie o
+      żywieniu - ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Trzykrotny wywiad 24h przeliczony w
+      programie, realizacja norm w procentach (wapń 72%, witamina D 38%),
+      porównanie grup testami z wartościami p, antropometria według procedury
+      i wniosek kliniczny: niedobory wapnia i witaminy D są populacyjne,
+      niezależne od aktywności. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Niedoszacowanie spożycia">
+    <p>
+      Badani systematycznie zaniżają raportowane spożycie (zapominanie,
+      zaokrąglanie porcji, „wstydliwe” produkty) - w literaturze mowa o
+      kilkunastu-dwudziestu procentach. Nie unieważnia to metody, ale wymaga
+      dwóch rzeczy: starannej techniki wywiadu (album porcji, dopytywanie o
+      przekąski i napoje) i uczciwego akapitu w ograniczeniach. Praca, która
+      traktuje wywiad jak pomiar absolutny, traci wiarygodność.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z dietetyki</h2>
+
+  <ul>
+    <li><strong>Deklaracje zamiast pomiaru</strong> - ankieta „czy zdrowo się
+      odżywiasz” zamiast wywiadu żywieniowego z przeliczeniem.</li>
+    <li><strong>Metodyka bez szczegółów</strong> - „przeprowadzono wywiad
+      żywieniowy” bez liczby powtórzeń, dni i programu obliczeniowego.</li>
+    <li><strong>Złe poziomy norm</strong> - ocena grupy względem RDA zamiast
+      EAR, bez uzasadnienia.</li>
+    <li><strong>Brak kryteriów wykluczenia</strong> - w próbie osoby na
+      dietach leczniczych czy w ciąży.</li>
+    <li><strong>Pomiar antropometryczny bez procedury</strong> - BMI z
+      deklarowanej masy ciała i wzrostu, nieoznaczone jako deklaratywne.</li>
+    <li><strong>Wnioski przyczynowe z badania przekrojowego</strong> -
+      „aktywność poprawia dietę” tam, gdzie zmierzono współwystępowanie.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Ile osób przebadać w pracy z dietetyki?</h3>
+  <p>
+    Przy ocenie sposobu żywienia z wywiadami 24h realny standard prac
+    magisterskich to 60-100 osób (wywiady są czasochłonne - każda osoba to
+    trzy rozmowy). Przy badaniu ankietowym wiedzy lub zachowań - 100-200
+    respondentów, jak w typowych <a
+      href="/poradniki/metodologia/badania-ilosciowe/">badaniach
+    ilościowych</a>.
+  </p>
+
+  <h3>Czy praca z dietetyki wymaga komisji bioetycznej?</h3>
+  <p>
+    Na uczelniach medycznych - w praktyce tak, dla każdego badania z udziałem
+    ludzi; przy pomiarach antropometrycznych i pracy z pacjentami bezwzględnie.
+    Wystąp o opinię przed badaniem i podaj jej numer w rozdziale metodycznym.
+    Szczegóły w poradniku o <a
+      href="/poradniki/metodologia/etyka/">etyce badań</a>.
+  </p>
+
+  <h3>Jakim programem policzyć wartość odżywczą diet?</h3>
+  <p>
+    Najczęściej używane na uczelniach są programy Dieta (NIZP-PZH) i Aliant,
+    oba oparte na krajowych tabelach składu żywności. Użyj tego, do którego
+    masz licencję uczelnianą, i podaj w metodyce nazwę oraz wersję. Statystykę
+    porównań policzysz osobno - w darmowym JASP lub jamovi.
+  </p>
+
+  <h3>Czy mogę badać skuteczność diety (np. redukcyjnej)?</h3>
+  <p>
+    To schemat interwencyjny - wymaga pomiarów przed i po, kontroli
+    przestrzegania diety i bezwzględnie zgody komisji bioetycznej. W ramach
+    pracy magisterskiej bywa realizowany we współpracy z poradnią dietetyczną;
+    samodzielne „przepisywanie” diet uczestnikom wykracza poza badanie
+    studenckie. Bezpieczniejsza alternatywa to badanie obserwacyjne osób już
+    stosujących daną dietę.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    konwencję i kompletny warsztat metodyczny - badanie, obliczenia i tekst
+    muszą być Twoje.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/dietetyka/">wyboru tematu z dietetyki</a> i
+    pobierz wzór powyżej. Analizę statystyczną zaplanujesz z poradnikiem o <a
+      href="/poradniki/metodologia/analiza-ilosciowa/">analizie danych
+    ilościowych</a>, a konwencję medyczną zobaczysz też we wzorze pracy ze <a
+      href="/tematy/zdrowie-publiczne/przykladowa-praca/">zdrowia
+    publicznego</a>.
+  </p>
+</ArticleLayout>
