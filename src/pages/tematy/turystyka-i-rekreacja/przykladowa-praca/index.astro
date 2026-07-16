@@ -1,0 +1,283 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Turystyka i rekreacja", href: "/tematy/turystyka-i-rekreacja/" },
+  { label: "Przykładowa praca", href: "/tematy/turystyka-i-rekreacja/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z turystyki i rekreacji", href: "/tematy/turystyka-i-rekreacja/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Analiza danych zastanych", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Tabele i wykresy w pracy", href: "/poradniki/tabele-wykresy/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z turystyki i rekreacji – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z turystyki: ocena potencjału turystycznego obszaru, inwentaryzacja walorów i bazy, ankieta terenowa wśród odwiedzających, SWOT z rekomendacjami. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z turystyki i rekreacji ma swój rozpoznawalny schemat:
+    bierzesz konkretny obszar (gminę, powiat, region), oceniasz jego potencjał
+    turystyczny z kilku stron naraz i kończysz rekomendacjami dla samorządu lub
+    lokalnej organizacji turystycznej. Brzmi przystępnie - i właśnie ta
+    przystępność bywa pułapką, bo różnica między pracą magisterską a folderem
+    promocyjnym gminy leży w warsztacie: inwentaryzacji ze źródłami, ankiecie
+    przeprowadzonej w terenie i macierzy SWOT, której każda pozycja ma pokrycie
+    w badaniu. Poniżej rozbieramy taką pracę na części.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Uwarunkowania rozwoju turystyki weekendowej w powiecie X -
+    walory, zagospodarowanie i opinie odwiedzających”</strong>. Ten sam schemat
+    zadziała dla oceny atrakcyjności dowolnego obszaru, analizy produktu
+    turystycznego, agroturystyki czy turystyki aktywnej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z turystyki i rekreacji: strona tytułowa, streszczenie z wynikami, spis treści, wstęp z pytaniami badawczymi, metodyka trzech metod (inwentaryzacja + ankieta terenowa + SWOT), rozdziały wynikowe z tabelami oraz rekomendacje dla samorządu. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-turystyka-i-rekreacja.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-turystyka-i-rekreacja.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z turystyki i rekreacji</h2>
+
+  <ul>
+    <li>
+      <strong>Obszar jako przedmiot badania.</strong> Praca dotyczy zwykle
+      konkretnego terytorium, a ocena jego potencjału łączy walory,
+      zagospodarowanie i dostępność - trzy składowe, które trzeba zbadać
+      osobno.
+    </li>
+    <li>
+      <strong>Kilka metod naraz.</strong> Standard kierunku to triangulacja:
+      inwentaryzacja (dane zastane + wizja lokalna), badanie odwiedzających
+      lub mieszkańców (ankieta) i synteza w postaci SWOT.
+    </li>
+    <li>
+      <strong>Badanie terenowe.</strong> Ankieta przeprowadzona w miejscach
+      koncentracji ruchu wśród faktycznych odwiedzających bije jakością każdą
+      ankietę internetową „o podróżowaniu”.
+    </li>
+    <li>
+      <strong>Adresat praktyczny.</strong> Rekomendacje kieruje się do gminy,
+      LOT-u lub przedsiębiorców - praca ma wymiar aplikacyjny.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Potencjał turystyczny obszaru">
+    <p>
+      Łączna zdolność obszaru do generowania ruchu turystycznego, na którą
+      składają się: walory (przyrodnicze i kulturowe - to, co przyciąga),
+      zagospodarowanie (baza noclegowa, gastronomiczna, szlaki - to, co
+      umożliwia pobyt) i dostępność komunikacyjna (to, co pozwala dojechać).
+      Dobra praca bada wszystkie trzy składowe, bo o rozwoju turystyki
+      rozstrzyga najsłabsza z nich.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z turystyki</h2>
+
+  <ol>
+    <li>
+      <strong>Inwentaryzacja ze źródłami i datą stanu.</strong> Baza noclegowa
+      według BDL GUS i ewidencji gminnych ze wskazaniem „stan na...”, a nie
+      „w powiecie jest dużo pensjonatów”.
+    </li>
+    <li>
+      <strong>Ankieta z opisaną procedurą terenową.</strong> Gdzie, kiedy i
+      jak dobierano respondentów - lokalizacje, weekendy, kwoty.
+    </li>
+    <li>
+      <strong>SWOT z pokryciem w badaniu.</strong> Każda pozycja macierzy
+      wynika z inwentaryzacji lub ankiety, a nie z ogólnej wiedzy o regionie.
+    </li>
+    <li>
+      <strong>Rekomendacje adresowane i wykonalne.</strong> Konkretne
+      działania dla konkretnych podmiotów, wynikające z przecięcia mocnych
+      stron i szans.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z turystyki i rekreacji</h2>
+
+  <ul>
+    <li>
+      <strong>Ocena potencjału turystycznego obszaru</strong> - schemat
+      opisany wyżej; najczęstszy wybór i taki prowadzi nasz wzór.
+    </li>
+    <li>
+      <strong>Badanie ruchu turystycznego</strong> - profil, motywy i wydatki
+      odwiedzających wybranej destynacji lub atrakcji.
+    </li>
+    <li>
+      <strong>Analiza produktu turystycznego</strong> - szlak, event,
+      atrakcja lub pakiet jako studium przypadku z oceną i propozycjami
+      rozwoju.
+    </li>
+    <li>
+      <strong>Praca z rynku usług</strong> - jakość obsługi w hotelarstwie,
+      strategie obiektów, wpływ platform rezerwacyjnych (ankieta lub analiza
+      danych).
+    </li>
+    <li>
+      <strong>Turystyka a społeczność lokalna</strong> - postawy mieszkańców,
+      overtourism, funkcja turystyczna gmin (wskaźniki Baretje'a-Deferta i
+      pokrewne).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy o potencjale obszaru</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp - kontekst, cel, pytania badawcze</li>
+    <li>Rozdział teoretyczny - pojęcia, składowe potencjału, produkt turystyczny</li>
+    <li>Metodyka i charakterystyka obszaru</li>
+    <li>Wyniki inwentaryzacji - walory, baza, dostępność</li>
+    <li>Wyniki badania odwiedzających - profil, oceny, bariery</li>
+    <li>SWOT i rekomendacje</li>
+    <li>Zakończenie · Bibliografia · Spisy · Kwestionariusz w aneksie</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać dane o turystyce">
+    <p>
+      Bank Danych Lokalnych GUS (kategoria „turystyka”: obiekty, miejsca
+      noclegowe, udzielone noclegi - do poziomu gmin), rejestry zabytków i
+      formy ochrony przyrody (NID, GDOŚ), dokumenty strategiczne gmin i
+      powiatów (BIP), dane lokalnych organizacji turystycznych, serwisy
+      rezerwacyjne jako uzupełnienie obrazu bazy. Zawsze podawaj datę stanu -
+      baza noclegowa potrafi zmienić się w rok.
+    </p>
+  </InfoBox>
+
+  <h2>Ankieta terenowa - fragment wzorcowego opisu</h2>
+
+  <blockquote>
+    <p>Badanie ankietowe przeprowadzono techniką ankiety bezpośredniej w
+      czterech punktach koncentracji ruchu turystycznego (parking przy
+      rezerwacie Y, rynek w Z, przystań kajakowa, punkt widokowy W) w sześć
+      weekendów lipca i sierpnia 2026 roku. Dobór respondentów był przypadkowy
+      w ramach kwot płci i grup wieku; uzyskano 176 poprawnie wypełnionych
+      kwestionariuszy.</p>
+  </blockquote>
+
+  <p>
+    Trzy rzeczy robią z tego zapisu warsztat: nazwane lokalizacje (wybrane
+    celowo, bo tam są odwiedzający), określony czas (sezon i pory, które
+    praca ma opisywać) i procedura doboru z liczebnością. Porównaj to z
+    „przeprowadzono ankietę wśród turystów” - różnica jest oczywista także
+    dla recenzenta.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Folder promocyjny vs diagnoza">
+    <p>
+      <strong>Wersja słabsza.</strong> Trzy rozdziały opisu regionu
+      przepisanego ze stron gmin („powiat słynie z malowniczych krajobrazów”),
+      SWOT ułożony przy biurku i wnioski w rodzaju „należy promować region w
+      internecie”. Zero danych, zero badania - ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Inwentaryzacja z BDL GUS i wizji
+      lokalnej (stan na czerwiec 2026), ankieta terenowa N = 176 z czterech
+      lokalizacji, bariera nr 1 zidentyfikowana w danych (dostępność
+      komunikacyjna w weekendy, 47% wskazań) i rekomendacja wprost z niej
+      wynikająca: pilotaż weekendowej linii dowozowej. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="SWOT bez pokrycia">
+    <p>
+      Analiza SWOT to najczęściej nadużywane narzędzie na tym kierunku -
+      macierz wypełniana ogólnikami („piękna przyroda”, „mała promocja”) bez
+      związku z przeprowadzonym badaniem. Recenzenci sprawdzają to jednym
+      pytaniem: skąd wiadomo? Zasada obronna: przy każdej pozycji SWOT podaj w
+      nawiasie źródło ustalenia (rozdział, tabelę lub wynik ankiety). Pozycja
+      bez źródła wylatuje.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy z turystyki i rekreacji</h2>
+
+  <ul>
+    <li><strong>Praca-folder</strong> - opis atrakcji regionu bez pytania
+      badawczego i bez badania.</li>
+    <li><strong>Inwentaryzacja bez źródeł i daty stanu</strong> - dane o bazie
+      przepisane „skądś” i nieweryfikowalne.</li>
+    <li><strong>Ankieta internetowa zamiast terenowej</strong> - badanie
+      „osób, które kiedyś gdzieś pojechały” zamiast odwiedzających konkretny
+      obszar.</li>
+    <li><strong>SWOT z sufitu</strong> - macierz bez pokrycia w wynikach.</li>
+    <li><strong>Rekomendacje-życzenia</strong> - „zwiększyć promocję” zamiast
+      konkretnych działań z adresatem.</li>
+    <li><strong>Pominięcie sezonowości</strong> - wnioski z badania letniego
+      uogólnione na cały rok bez zastrzeżenia w ograniczeniach.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z turystyki musi dotyczyć konkretnego obszaru?</h3>
+  <p>
+    Nie musi, ale schemat terytorialny jest najczęstszy i najłatwiejszy do
+    zrealizowania samodzielnie. Alternatywy to praca o rynku usług (hotele,
+    biura podróży), o produkcie turystycznym albo o zachowaniach turystów
+    określonego segmentu.
+  </p>
+
+  <h3>Ilu odwiedzających przebadać w ankiecie terenowej?</h3>
+  <p>
+    Standard prac magisterskich to 120-200 poprawnie wypełnionych
+    kwestionariuszy, zebranych w kilku lokalizacjach i terminach, żeby
+    uchwycić różne grupy odwiedzających. Mniejsza próba utrudnia porównywanie
+    podgrup - szczegóły w poradniku o <a
+      href="/poradniki/metodologia/badania-ilosciowe/">badaniach
+    ilościowych</a>.
+  </p>
+
+  <h3>Jak opisać wizję lokalną w metodologii?</h3>
+  <p>
+    Jako element inwentaryzacji: podaj terminy objazdów, trasę lub listę
+    odwiedzonych obiektów i to, co rejestrowano (stan infrastruktury,
+    oznakowanie, dostępność). Dokumentacja fotograficzna z opisami trafia do
+    aneksu i wzmacnia wiarygodność.
+  </p>
+
+  <h3>Czy mogę pisać o swojej gminie?</h3>
+  <p>
+    To wręcz zaleta - znajomość terenu ułatwia inwentaryzację i kontakty z
+    urzędem czy LOT-em. Pamiętaj tylko o dyscyplinie warsztatowej: znajomość
+    obszaru zastępuje Ci mapę, ale nie zastępuje danych i badania.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje schemat
+    i warsztat - inwentaryzację, ankietę i SWOT musisz wykonać dla swojego
+    obszaru samodzielnie.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/turystyka-i-rekreacja/">wyboru tematu z
+    turystyki i rekreacji</a> i pobierz wzór powyżej. Badanie zaplanujesz z
+    poradnikami o <a href="/poradniki/metodologia/ankieta/">ankiecie</a> i <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie danych
+    zastanych</a>.
+  </p>
+</ArticleLayout>
