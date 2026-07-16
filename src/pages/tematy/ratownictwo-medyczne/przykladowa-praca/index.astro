@@ -1,0 +1,281 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Ratownictwo medyczne", href: "/tematy/ratownictwo-medyczne/" },
+  { label: "Przykładowa praca", href: "/tematy/ratownictwo-medyczne/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z ratownictwa medycznego", href: "/tematy/ratownictwo-medyczne/" },
+  { label: "Przykładowa praca z pielęgniarstwa", href: "/tematy/pielegniarstwo/przykladowa-praca/" },
+  { label: "Analiza danych zastanych", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Etyka badań naukowych", href: "/poradniki/metodologia/etyka/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z ratownictwa medycznego – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z ratownictwa medycznego: retrospektywna analiza wyjazdów ZRM, czasy dotarcia vs parametry ustawowe (art. 24 ustawy o PRM), zgoda dysponenta, konwencja medyczna. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Prace magisterskie z ratownictwa medycznego dzielą się z grubsza na dwie
+    grupy: te o wiedzy i deklaracjach (ankieta „czy umiesz udzielić pierwszej
+    pomocy?”) oraz te na twardych danych systemu - kartach zlecenia wyjazdu,
+    czasach dotarcia, strukturze interwencji. Druga grupa broni się na
+    obronie o niebo lepiej, a wbrew pozorom jest wykonalna: wystarczy zgoda
+    dysponenta i dobrze zaplanowana analiza retrospektywna. Poniżej rozbieramy
+    taką pracę na części.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Struktura wyjazdów zespołów ratownictwa medycznego w powiecie X w
+    latach 2023–2025 – analiza retrospektywna”</strong>: 18 642 karty
+    wyjazdów, struktura przyczyn wezwań, czasy dotarcia odniesione do
+    parametrów ustawowych i rosnący odsetek interwencji bez transportu. Ten
+    sam schemat zadziała dla analizy zdarzeń określonego typu (NZK, urazy,
+    zatrucia), pracy SOR czy porównania sezonów.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z ratownictwa medycznego: strona tytułowa, streszczenie strukturalne z liczbami, spis treści, rozdział Materiał i metody (zgoda dysponenta, anonimizacja, komisja bioetyczna, zmienne, wykluczenia), tabela czasów dotarcia zestawionych z parametrami art. 24 ustawy o PRM, dyskusja z ograniczeniami i wnioski punktowane. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-ratownictwo-medyczne.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-ratownictwo-medyczne.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z ratownictwa medycznego</h2>
+
+  <ul>
+    <li>
+      <strong>Dane systemu zamiast deklaracji.</strong> Najcenniejszy materiał
+      to dokumentacja wyjazdowa ZRM, dane SOR i rejestry zdarzeń - rzeczywisty
+      obraz funkcjonowania systemu PRM.
+    </li>
+    <li>
+      <strong>Punkt odniesienia w ustawie.</strong> Czasy dotarcia mają
+      ustawowe parametry (art. 24 ustawy o PRM: mediana, trzeci kwartyl, czas
+      maksymalny) - własne wyniki zestawia się z nimi wprost.
+    </li>
+    <li>
+      <strong>Konwencja medyczna.</strong> Streszczenie strukturalne,
+      „Materiał i metody”, wnioski punktowane, piśmiennictwo Vancouver, wykaz
+      skrótów (ZRM, SOR, PRM, K1/K2).
+    </li>
+    <li>
+      <strong>Formalności przed badaniem.</strong> Zgoda dysponenta na
+      udostępnienie zanonimizowanych danych i opinia komisji bioetycznej to
+      warunki wejścia.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Parametry czasu dotarcia (art. 24 ustawy o PRM)">
+    <p>
+      Ustawa o Państwowym Ratownictwie Medycznym określa parametry czasu
+      dotarcia ZRM na miejsce zdarzenia liczone w skali miesiąca: mediana nie
+      większa niż 8 minut w mieście powyżej 10 tys. mieszkańców i 15 minut
+      poza nim, trzeci kwartyl odpowiednio 12 i 20 minut oraz czas maksymalny
+      15 i 20 minut - przy czym 0,5% wyjazdów o najdłuższych czasach pomija
+      się w obliczeniach. Te wartości to naturalny układ odniesienia dla
+      każdej pracy o czasach dotarcia.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z ratownictwa</h2>
+
+  <ol>
+    <li>
+      <strong>Materiał opisany kompletnie.</strong> Liczba kart, okres,
+      dysponent, sposób anonimizacji, liczba i odsetek rekordów wykluczonych.
+    </li>
+    <li>
+      <strong>Formalna ścieżka dostępu do danych.</strong> Zgoda kierownictwa
+      dysponenta i numer opinii komisji bioetycznej w rozdziale metodycznym.
+    </li>
+    <li>
+      <strong>Wyniki na tle norm i literatury.</strong> Czasy dotarcia
+      zestawione z parametrami ustawowymi, odsetki porównane z innymi
+      badaniami w dyskusji.
+    </li>
+    <li>
+      <strong>Wnioski organizacyjne.</strong> Z analizy wynika coś dla
+      systemu: lokalizacja stacjonowania, edukacja o zasadności wezwań,
+      obciążenie zespołów.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z ratownictwa medycznego</h2>
+
+  <ul>
+    <li>
+      <strong>Retrospektywna analiza dokumentacji wyjazdowej</strong> -
+      schemat naszego wzoru; struktura wyjazdów, czasy, sezonowość,
+      konkretne typy zdarzeń.
+    </li>
+    <li>
+      <strong>Analiza postępowania w wybranym stanie nagłym</strong> - np.
+      NZK, udar, uraz wielonarządowy: zgodność postępowania ZRM z wytycznymi
+      na podstawie dokumentacji.
+    </li>
+    <li>
+      <strong>Wiedza i umiejętności z pierwszej pomocy</strong> - badanie
+      ankietowe lub testowe wybranej grupy (kierowcy, nauczyciele, uczniowie);
+      poprawne, ale trudniej o wyróżnienie.
+    </li>
+    <li>
+      <strong>Praca o zawodzie</strong> - obciążenie psychiczne, wypalenie,
+      agresja wobec ratowników (standaryzowane kwestionariusze, np. MBI).
+    </li>
+    <li>
+      <strong>Studium przypadku</strong> - analiza przebiegu nietypowego
+      zdarzenia lub działań ratowniczych w zdarzeniu masowym.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy retrospektywnej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie strukturalne PL + Abstract EN</li>
+    <li>Wykaz skrótów + spis treści</li>
+    <li>Rozdział teoretyczny - system PRM, podstawy prawne, stan badań</li>
+    <li>Materiał i metody - materiał, zgody, zmienne, statystyka, wykluczenia</li>
+    <li>Wyniki - dynamika, struktura, czasy vs parametry, tabele z p</li>
+    <li>Dyskusja - literatura, interpretacja, ograniczenia</li>
+    <li>Wnioski punktowane</li>
+    <li>Piśmiennictwo (Vancouver) · Spisy</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Jak zdobyć dane wyjazdowe">
+    <p>
+      Najprostsza ścieżka prowadzi przez miejsce pracy lub praktyk: pisemna
+      prośba do kierownictwa dysponenta z opisem celu, zakresu danych i
+      zobowiązaniem do anonimizacji. Poproś o zestawienie zbiorcze (bez danych
+      osobowych pacjentów) - łatwiej o zgodę i mniej problemów z RODO.
+      Równolegle złóż wniosek do komisji bioetycznej; analiza retrospektywna
+      zanonimizowanej dokumentacji zwykle dostaje opinię sprawnie. Publiczne
+      uzupełnienie danych: raporty NIK o systemie PRM i statystyki wojewódzkie.
+    </p>
+  </InfoBox>
+
+  <h2>Materiał i metody - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Przeprowadzono retrospektywną analizę 18 642 kart zlecenia wyjazdu ZRM
+      z lat 2023–2025, udostępnionych przez dysponenta za pisemną zgodą
+      kierownictwa w postaci zanonimizowanego zestawienia. Z analizy wykluczono
+      karty niekompletne (n = 214; 1,1%). Czasy dotarcia odniesiono do
+      parametrów art. 24 ustawy o PRM. Badanie uzyskało pozytywną opinię
+      komisji bioetycznej (nr ...).</p>
+  </blockquote>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Opis systemu vs analiza danych">
+    <p>
+      <strong>Wersja słabsza.</strong> Trzy rozdziały o historii i organizacji
+      systemu PRM przepisane z ustawy i podręczników, a w części „badawczej”
+      ankieta wśród 40 znajomych ratowników o tym, czy system działa dobrze.
+      Wnioski: „system wymaga usprawnień”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> 18 642 karty wyjazdów z trzech lat,
+      struktura przyczyn z odsetkami, mediana czasów dotarcia zestawiona z
+      art. 24 (7:40 vs limit 8:00 w mieście), przekroczenia zlokalizowane
+      przestrzennie (61% w dwóch gminach) i wniosek organizacyjny: analiza
+      miejsca stacjonowania dla północy powiatu. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Dane wrażliwe w dokumentacji medycznej">
+    <p>
+      Karty wyjazdów zawierają dane osobowe i medyczne pacjentów - surowej
+      dokumentacji nie wolno kopiować ani wynosić. Pracuj na zestawieniu
+      zanonimizowanym przygotowanym po stronie dysponenta (lub anonimizowanym
+      na miejscu), bez nazwisk, adresów i numerów PESEL. W pracy opisz ten
+      proces wprost - to jedno z pierwszych pytań komisji bioetycznej i
+      recenzenta. Zasady szerzej w poradniku o <a
+        href="/poradniki/metodologia/etyka/">etyce badań</a>.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy z ratownictwa medycznego</h2>
+
+  <ul>
+    <li><strong>Rozdziały-przepisana ustawa</strong> - teoria będąca
+      streszczeniem aktów prawnych zamiast przeglądu badań.</li>
+    <li><strong>Ankieta zamiast danych</strong> - deklaracje o systemie tam,
+      gdzie dostępna jest dokumentacja wyjazdowa.</li>
+    <li><strong>Brak formalnej ścieżki</strong> - dane „z pracy” bez zgody
+      dysponenta i opinii komisji.</li>
+    <li><strong>Materiał bez opisu wykluczeń</strong> - nie wiadomo, ile kart
+      odrzucono i dlaczego.</li>
+    <li><strong>Czasy dotarcia bez punktu odniesienia</strong> - liczby
+      niezestawione z parametrami ustawowymi.</li>
+    <li><strong>Wnioski kliniczne z danych administracyjnych</strong> - karty
+      wyjazdów nie mówią o skuteczności leczenia, tylko o strukturze i
+      czasach interwencji.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy dostanę dane wyjazdowe, jeśli nie pracuję w systemie?</h3>
+  <p>
+    Trudniej, ale to możliwe - przez praktyki, promotora współpracującego z
+    dysponentem albo oficjalny wniosek do jednostki z poparciem uczelni.
+    Alternatywą jest praca na danych publicznych (raporty NIK, statystyki
+    wojewódzkie) lub schemat ankietowy.
+  </p>
+
+  <h3>Ile kart wyjazdów potrzeba do analizy?</h3>
+  <p>
+    Więcej znaczy stabilniej, ale realne minimum to komplet z jednego roku
+    jednej dysponentury (zwykle kilka tysięcy rekordów). Dwu-trzyletni okres
+    pozwala dodatkowo pokazać dynamikę i sezonowość, co wzmacnia pracę.
+  </p>
+
+  <h3>Czy analiza retrospektywna wymaga komisji bioetycznej?</h3>
+  <p>
+    Na uczelniach medycznych - tak, wystąp o opinię zawsze; analiza
+    zanonimizowanej dokumentacji zwykle przechodzi szybko. Numer opinii i
+    zgodę dysponenta podaj w rozdziale Materiał i metody.
+  </p>
+
+  <h3>Jakim programem analizować dane?</h3>
+  <p>
+    Struktury i odsetki policzysz w arkuszu kalkulacyjnym; do porównań
+    (chi-kwadrat, trendy) wystarczy darmowy JASP lub jamovi. Dobór testów
+    omawia poradnik o <a
+      href="/poradniki/metodologia/analiza-ilosciowa/">analizie danych
+    ilościowych</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje schemat
+    i warsztat - materiał, analizę i tekst musisz wypracować na danych swojej
+    jednostki.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/ratownictwo-medyczne/">wyboru tematu z
+    ratownictwa medycznego</a> i pobierz wzór powyżej. Metodykę pracy na
+    danych zastanych omawia poradnik o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie
+    dokumentów</a>, a konwencję medyczną zobaczysz też we wzorach prac z <a
+      href="/tematy/pielegniarstwo/przykladowa-praca/">pielęgniarstwa</a> i <a
+      href="/tematy/zdrowie-publiczne/przykladowa-praca/">zdrowia
+    publicznego</a>.
+  </p>
+</ArticleLayout>
