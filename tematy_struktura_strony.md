@@ -32,14 +32,36 @@
   w źródłach), `case-study` (Yin + typologia Stake'a zweryfikowane),
   `obserwacja`, `analiza-dokumentow` (definicja Berelsona zweryfikowana).
 
+### ✅ Zrobione 2026-07-17 nocna sesja (commity 3061f49..HEAD)
+
+- **Przykładowe prace +5** (razem 21): administracja (prawno-empiryczna, budżet
+  obywatelski), logistyka (ABC/XYZ), marketing (badanie konsumenckie CAWI),
+  zdrowie-publiczne (IZZ, konwencja medyczna), finanse-i-rachunkowosc (analiza
+  wskaźnikowa eKRS). Każda: wzór PDF+DOCX + strona + callout na kierunku.
+- **Metodologia KOMPLET (22 podstrony):** dopisane eksperyment, triangulacja,
+  etyka, badania-online.
+- **Struktura — uzupełnienia GOTOWE:** aneksy, wykaz-tabel, wykaz-skrotow
+  (podpięte w hubie poradników, kategoria Struktura).
+
+### ✅ Zrobione 2026-07-17 c.d. (fale 2-3 nocnej sesji)
+
+- **Przykładowe prace +9** (razem 25): turystyka-i-rekreacja (potencjał obszaru
+  + SWOT), dietetyka (wywiad 24h/IZZ-normy), ratownictwo-medyczne (retrospektywa
+  ZRM, art. 24 PRM zweryf.), stosunki-miedzynarodowe (sankcje UE, źródła vs
+  opracowania), pedagogika-specjalna (studium indywidualnego przypadku,
+  WOPFU/IPET), dziennikarstwo (analiza zawartości, framing), filologia-angielska
+  (przekładoznawcza, PO ANGIELSKU z polskimi adnotacjami), kosmetologia
+  (zabiegowa, korneometria/TEWL).
+- **Docisk /poradniki/wstep/**: definicja pod snippet, checklista przed oddaniem,
+  sekcja linkująca wzory prac per kierunek.
+
 ### Backlog treści NADAL DO ZROBIENIA (potwierdzone: brak w `src/pages/`)
 
-1. **Metodologia — uzupełnienia** (hub ma 18 podstron, brakuje): `eksperyment`,
-   `triangulacja`, `etyka`, `badania-online`.
-2. **Struktura — uzupełnienia:** `aneksy`, `wykaz-tabel`, `wykaz-skrotow`.
-3. **Przykładowe prace — rozszerzenie** na kierunki, które ŁAPIĄ ruch a ich nie mają:
-   priorytet **administracja** (40 klik/mies bez wzoru), dalej logistyka, marketing,
-   zdrowie-publiczne, finanse-i-rachunkowosc. (CTR wzorów = ~11%, dowiedziony lever.)
+3. **Przykładowe prace — pozostałe kierunki bez wzoru**: budownictwo,
+   ochrona-srodowiska, geografia, architektura, resocjalizacja, kulturoznawstwo,
+   kognitywistyka, filologie: germańska/hiszpańska/rosyjska/francuska/włoska
+   (adaptacje wzoru anglistyki). (CTR wzorów = ~11%.)
+3a. **Docisk /poradniki/narzedzia/** (421 wyśw, poz. 15,5) — ostatni z priorytetów A.
 4. **Kierunki niszowe** (opcjonalnie, niski priorytet): gospodarka przestrzenna,
    biotechnologia, medycyna, teologia, filozofia.
 5. **Ebook per kierunek** (przyszłość): [[ebook-shop-per-kierunek]].
