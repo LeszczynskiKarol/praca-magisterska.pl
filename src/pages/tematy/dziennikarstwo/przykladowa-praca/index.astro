@@ -1,0 +1,289 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Dziennikarstwo", href: "/tematy/dziennikarstwo/" },
+  { label: "Przykładowa praca", href: "/tematy/dziennikarstwo/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z dziennikarstwa", href: "/tematy/dziennikarstwo/" },
+  { label: "Analiza dokumentów i treści", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Badania ilościowe", href: "/poradniki/metodologia/badania-ilosciowe/" },
+  { label: "Analiza danych jakościowych", href: "/poradniki/metodologia/analiza-jakosciowa/" },
+  { label: "Tabele i wykresy w pracy", href: "/poradniki/tabele-wykresy/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z dziennikarstwa – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z dziennikarstwa: analiza zawartości mediów krok po kroku - dobór korpusu, klucz kategoryzacyjny, zgodność kodowania, analiza ramowania. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z dziennikarstwa ma do dyspozycji materiał, który sam
+    się archiwizuje: teksty, audycje, posty, okładki. Dlatego królową metod
+    jest tu analiza zawartości - i dlatego właśnie na niej najłatwiej
+    stracić punkty, gdy „analiza” okazuje się omówieniem kilkunastu artykułów
+    wybranych po uważaniu. Różnicę robią cztery elementy warsztatu: jawne
+    kryteria doboru korpusu, klucz kategoryzacyjny z definicjami, pilotaż i
+    zgodność kodowania. Poniżej rozbieramy wzorcową pracę, w której wszystkie
+    cztery działają.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Ramowanie sztucznej inteligencji w polskich tygodnikach opinii w
+    latach 2024–2025 – analiza zawartości”</strong>: korpus 214 tekstów z
+    jawną ścieżką selekcji, klucz 14 kategorii, zgodność kodowania 87% i
+    porównanie tytułów testem chi-kwadrat. Ten sam schemat zadziała dla
+    analizy dowolnego tematu w prasie, telewizji, podcastach czy mediach
+    społecznościowych.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z dziennikarstwa: strona tytułowa, streszczenie z wielkością korpusu i zgodnością kodowania, spis treści, metodologia analizy zawartości (kryteria doboru, ścieżka selekcji, klucz kategoryzacyjny, pilotaż, intercoder reliability), rozdział wynikowy z tabelą rozkładu ram i testem chi-kwadrat oraz analiza jakościowa z dyskusją. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-dziennikarstwo.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-dziennikarstwo.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z dziennikarstwa</h2>
+
+  <ul>
+    <li>
+      <strong>Media jako materiał badawczy.</strong> Przedmiotem analizy są
+      same przekazy: teksty prasowe, serwisy informacyjne, profile
+      społecznościowe, okładki, podcasty.
+    </li>
+    <li>
+      <strong>Analiza zawartości jako metoda główna.</strong> Ilościowe
+      kodowanie według klucza (co i jak często) plus jakościowa analiza
+      wybranych przekazów (jak to działa w tekście).
+    </li>
+    <li>
+      <strong>Teorie komunikowania w tle.</strong> Ramowanie, agenda-setting,
+      gatekeeping - praca osadza wyniki w teorii medioznawczej, nie tylko je
+      liczy.
+    </li>
+    <li>
+      <strong>Zgodność kodowania.</strong> Drugi koder na próbie materiału to
+      standard rzetelności, który odróżnia badanie od prywatnej lektury.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Ramowanie (framing)">
+    <p>
+      Sposób, w jaki przekaz medialny selekcjonuje i uwypukla pewne aspekty
+      rzeczywistości, podsuwając odbiorcy określoną definicję problemu, jego
+      przyczyn i rozwiązań. W analizie zawartości ramy operacjonalizuje się
+      jako kategorie klucza (np. rama konfliktu, konsekwencji ekonomicznych,
+      odpowiedzialności), z definicjami i przykładami rozstrzygającymi
+      przypadki graniczne.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z dziennikarstwa</h2>
+
+  <ol>
+    <li>
+      <strong>Ścieżka selekcji korpusu.</strong> Kryteria włączenia i
+      wykluczenia oraz liczby: ile tekstów zwróciło wyszukiwanie, ile
+      zakwalifikowano i dlaczego odpadła reszta.
+    </li>
+    <li>
+      <strong>Klucz z definicjami w aneksie.</strong> Każda kategoria ma
+      definicję operacyjną - bez tego kodowania nie da się ocenić ani
+      powtórzyć.
+    </li>
+    <li>
+      <strong>Rzetelność udokumentowana.</strong> Pilotaż klucza i zgodność
+      dwóch koderów na próbie materiału, z podanym odsetkiem.
+    </li>
+    <li>
+      <strong>Ilość + jakość.</strong> Rozkłady i testy uzupełnione analizą
+      jakościową, która pokazuje mechanizmy językowe na konkretnych
+      cytatach.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z dziennikarstwa</h2>
+
+  <ul>
+    <li>
+      <strong>Analiza zawartości mediów</strong> - schemat naszego wzoru;
+      dowolny temat, dowolne medium, dowolny okres.
+    </li>
+    <li>
+      <strong>Analiza porównawcza przekazów</strong> - ten sam temat w
+      tytułach o różnych profilach lub w różnych typach mediów.
+    </li>
+    <li>
+      <strong>Analiza dyskursu</strong> - jakościowe badanie języka i
+      strategii narracyjnych (mniejszy korpus, głębsza interpretacja).
+    </li>
+    <li>
+      <strong>Badanie odbiorców</strong> - konsumpcja mediów, zaufanie,
+      rozpoznawanie dezinformacji (ankieta lub wywiady).
+    </li>
+    <li>
+      <strong>Praca o zawodzie i redakcjach</strong> - warunki pracy
+      dziennikarzy, transformacja redakcji (wywiady pogłębione).
+    </li>
+    <li>
+      <strong>Studium przypadku medium lub formatu</strong> - strategia
+      wydawcy, rozwój podcastu, kanału czy serwisu.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy z analizą zawartości</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp - problem, cel, pytania, hipotezy</li>
+    <li>Rozdział teoretyczny - teoria (framing/agenda-setting), metoda, stan badań, kontekst rynkowy</li>
+    <li>Metodologia - korpus, klucz, procedura, zgodność kodowania</li>
+    <li>Wyniki ilościowe - rozkłady, porównania, testy</li>
+    <li>Analiza jakościowa i dyskusja</li>
+    <li>Zakończenie · Bibliografia · Aneks: klucz kategoryzacyjny</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać materiał medialny">
+    <p>
+      Archiwa elektroniczne tytułów prasowych (przez biblioteki uczelniane
+      często z dostępem do pełnych baz), serwisy z transkrypcjami audycji,
+      publiczne API i narzędzia badawcze platform społecznościowych, archiwum
+      internetu (Wayback Machine) dla treści usuniętych. Zawsze zapisuj datę
+      dostępu i - przy treściach online - archiwizuj kopie analizowanych
+      materiałów, bo internetowy korpus potrafi zniknąć przed obroną.
+    </p>
+  </InfoBox>
+
+  <h2>Ścieżka selekcji korpusu - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Kryteria włączenia: (1) data publikacji między 1 stycznia 2024 a 31
+      grudnia 2025 roku; (2) obecność frazy „sztuczna inteligencja” lub „AI” w
+      tytule, leadzie lub co najmniej trzykrotnie w tekście; (3) gatunek:
+      artykuł publicystyczny, reportaż, wywiad lub komentarz. Wyszukiwanie
+      zwróciło 268 tekstów, z których do korpusu zakwalifikowano 214 (T1: 118,
+      T2: 96).</p>
+  </blockquote>
+
+  <p>
+    Trzy kryteria, dwie liczby - i korpus przestaje być podejrzany o dobór
+    pod tezę. Ta przejrzystość kosztuje jeden akapit, a odpiera zarzut, który
+    recenzenci medioznawczy stawiają najczęściej.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Omówienie artykułów vs analiza zawartości">
+    <p>
+      <strong>Wersja słabsza.</strong> Autor „przeanalizował kilkanaście
+      artykułów o AI” (nie wiadomo, jak wybranych), streszcza je po kolei i
+      wnioskuje, że „media straszą sztuczną inteligencją”. Brak korpusu,
+      klucza i liczb - to recenzja prasówki, nie badanie. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Korpus 214 tekstów z jawną ścieżką
+      selekcji, klucz 14 kategorii z definicjami (w aneksie), zgodność
+      kodowania 87%, rozkład ram z testem chi-kwadrat (rama zagrożenia: 34%
+      vs 18% między tytułami, p = 0,008) i analiza jakościowa metaforyki na
+      cytatach. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Korpus dobrany pod tezę">
+    <p>
+      Najczęstszy grzech prac medioznawczych: autor ma tezę („media są
+      stronnicze”) i dobiera teksty, które ją potwierdzają. Zabezpieczenia:
+      kryteria doboru ustalone PRZED lekturą materiału, wyszukiwanie po
+      frazach (nie po pamięci), pełna ścieżka selekcji w metodologii i
+      kodowanie całego korpusu, nie „najciekawszych” tekstów. Jeśli wyniki
+      zaskoczą - tym lepiej dla pracy.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z dziennikarstwa</h2>
+
+  <ul>
+    <li><strong>Recenzja zamiast badania</strong> - streszczanie wybranych
+      artykułów bez korpusu i klucza.</li>
+    <li><strong>Korpus bez ścieżki selekcji</strong> - nie wiadomo, ile
+      tekstów przeszukano i według czego wybrano.</li>
+    <li><strong>Kategorie bez definicji</strong> - „wydźwięk negatywny”
+      kodowany intuicyjnie, bez przykładów granicznych.</li>
+    <li><strong>Brak zgodności kodowania</strong> - jednoosobowa
+      klasyfikacja bez żadnej weryfikacji rzetelności.</li>
+    <li><strong>Teoria odklejona od badania</strong> - rozdział o framingu,
+      po którym analiza liczy tylko tematy.</li>
+    <li><strong>Wnioski o wpływie na odbiorców</strong> - analiza zawartości
+      mówi o przekazie, nie o jego skutkach; do skutków trzeba badania
+      odbiorców.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Ile tekstów powinien liczyć korpus?</h3>
+  <p>
+    Zależy od jednostki analizy i zakresu: dla artykułów prasowych typowe
+    korpusy prac magisterskich to 100-300 tekstów, dla postów
+    społecznościowych - kilkaset. Ważniejsza od liczby jest kompletność w
+    ramach kryteriów (cały okres, wszystkie pasujące teksty), nie próbka „po
+    uważaniu”.
+  </p>
+
+  <h3>Jak zapewnić zgodność kodowania w pracy pisanej samodzielnie?</h3>
+  <p>
+    Poproś osobę z seminarium o zakodowanie losowej próby 20-30 jednostek
+    według Twojego klucza (po krótkim szkoleniu) i podaj odsetek zgodności
+    oraz sposób rozstrzygnięcia rozbieżności. To wystarczający standard na
+    poziomie magisterskim - i mocny punkt w rozdziale metodologicznym.
+  </p>
+
+  <h3>Czy mogę badać media społecznościowe?</h3>
+  <p>
+    Tak - z dwiema uwagami. Zdefiniuj precyzyjnie jednostkę analizy (post,
+    komentarz, wątek) i sposób pozyskania materiału, oraz zadbaj o etykę:
+    treści prywatnych profili i zamkniętych grup wymagają zgód, a cytowane
+    wypowiedzi zwykłych użytkowników anonimizuj. Więcej w poradniku o <a
+      href="/poradniki/metodologia/badania-online/">badaniach online</a>.
+  </p>
+
+  <h3>Czym różni się analiza zawartości od analizy dyskursu?</h3>
+  <p>
+    Analiza zawartości liczy kategorie w dużym korpusie (podejście
+    ilościowe), analiza dyskursu interpretuje język i strategie w mniejszym
+    materiale (podejście jakościowe). W pracy magisterskiej dobrze łączyć
+    obie: rozkłady dają mapę, analiza jakościowa - mechanizmy. Warsztat
+    obu podejść omawiamy w poradnikach o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie treści</a> i
+    <a href="/poradniki/metodologia/analiza-jakosciowa/">analizie danych
+    jakościowych</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    warsztat: strukturę, sposób opisu korpusu i klucza - Twój materiał,
+    kodowanie i tekst muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/dziennikarstwo/">wyboru tematu z
+    dziennikarstwa</a> i pobierz wzór powyżej. Metodę pogłębisz w poradniku o
+    <a href="/poradniki/metodologia/analiza-dokumentow/">analizie treści i
+    dokumentów</a>, a prezentację wyników ułatwi poradnik o <a
+      href="/poradniki/tabele-wykresy/">tabelach i wykresach</a>.
+  </p>
+</ArticleLayout>
