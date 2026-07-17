@@ -1,0 +1,277 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Filologia germańska", href: "/tematy/filologia-germanska/" },
+  { label: "Przykładowa praca", href: "/tematy/filologia-germanska/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z filologii germańskiej", href: "/tematy/filologia-germanska/" },
+  { label: "Przykładowa praca z filologii angielskiej", href: "/tematy/filologia-angielska/przykladowa-praca/" },
+  { label: "Przykładowa praca z filologii polskiej", href: "/tematy/filologia-polska/przykladowa-praca/" },
+  { label: "Analiza dokumentów i tekstów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Bibliografia i style cytowania", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z filologii germańskiej – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z germanistyki (po niemiecku): korpusowa analiza anglicyzmów w prasie, kryteria ekscerpcji, klasyfikacja i funkcje, konwencja lingwistyczna. Wzór do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z filologii germańskiej powstaje po niemiecku, w jednej
+    z trzech głównych konwencji: językoznawczej (analiza korpusowa),
+    przekładoznawczej (para tekstów oryginał-przekład) albo
+    literaturoznawczej (interpretacja z tezą). Wspólny mianownik warsztatu to
+    korpus z jawnymi kryteriami, kategorie analityczne i przykłady cytowane
+    tak, by dało się je sprawdzić. Poniżej rozbieramy wzorcową pracę
+    językoznawczą - najczęstszy wybór na germanistyce - z niemieckimi
+    sekcjami i polskimi komentarzami do każdej części.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Anglizismen in der deutschen Pressesprache: eine korpusbasierte
+    Analyse ausgewählter Wochenzeitungen (2020–2025)”</strong>: korpus 240
+    artykułów (310 tys. słów), 1312 poświadczeń wyekscerpowanych według
+    trzech kryteriów, klasyfikacja według części mowy, integracji i funkcji
+    oraz wynik relatywizujący publicystyczny obraz „anglicyzacji” niemczyzny.
+    Ten sam szkielet zaadaptujesz do analizy przekładu lub tematu
+    literaturoznawczego.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z germanistyki, z sekcjami PO NIEMIECKU (Zusammenfassung, Material und Methode, Analyse, Diskussion) i polskimi komentarzami: skład korpusu z liczbami, operacyjna definicja anglicyzmu z wykluczeniami, obsługa przypadków wątpliwych (Scheinanglizismen), tabela klasyfikacji z przykładami i dyskusja z ograniczeniami. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-germanska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-germanska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z germanistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Język niemiecki i jego jakość.</strong> Praca pisana auf
+      Deutsch; poprawność i rejestr akademicki są elementem oceny na równi z
+      treścią.
+    </li>
+    <li>
+      <strong>Korpus z definicją operacyjną.</strong> Co jest jednostką
+      analizy (a co wykluczasz - nazwy własne, cytaty), rozstrzygasz przed
+      ekscerpcją, z autorytetem słownikowym.
+    </li>
+    <li>
+      <strong>Konwencja cytowania lingwistycznego.</strong> Analizowane formy
+      kursywą (<em>downloaden</em>), znaczenia w „łapkach”, przykłady z
+      lokalizacją źródła.
+    </li>
+    <li>
+      <strong>Types i tokens.</strong> Rozróżnienie liczby poświadczeń od
+      liczby różnych jednostek - podstawa każdej statystyki korpusowej.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Scheinanglizismus (pseudoanglicyzm)">
+    <p>
+      Wyraz o angielskiej formie, który w angielszczyźnie nie istnieje albo
+      znaczy co innego - klasyczny przykład to niemieckie <em>Handy</em>
+      (telefon komórkowy). Pseudoanglicyzmy to poligon warsztatowy pracy o
+      zapożyczeniach: trzeba zdecydować i uzasadnić, czy wchodzą do korpusu
+      (forma angielska) czy nie (semantyka rodzima) - a decyzję stosować
+      konsekwentnie i udokumentować w rozdziale o przypadkach wątpliwych.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym promotor pozna dobrą pracę z germanistyki</h2>
+
+  <ol>
+    <li>
+      <strong>Niemczyzna akademicka.</strong> Rejestr naukowy, poprawna
+      terminologia lingwistyczna, spójna ortografia.
+    </li>
+    <li>
+      <strong>Ekscerpcja powtarzalna.</strong> Kryteria włączenia i
+      wykluczenia, autorytet słownikowy, liczby (belegi, types), aneks z
+      pełną listą.
+    </li>
+    <li>
+      <strong>Przypadki wątpliwe obsłużone.</strong> Pseudoanglicyzmy i
+      hybrydy z jawną regułą klasyfikacji, nie zamiatane pod dywan.
+    </li>
+    <li>
+      <strong>Wynik ponad zliczanie.</strong> Analiza funkcji w kontekście i
+      wniosek interpretacyjny - nie sama tabela częstości.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z filologii germańskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Językoznawcza korpusowa</strong> - zapożyczenia, frazeologia,
+      słowotwórstwo, język prasy i mediów; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Przekładoznawcza</strong> - strategie tłumaczenia na parze
+      tekstów niemiecko-polskiej (warsztat jak we wzorze z <a
+        href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a>).
+    </li>
+    <li>
+      <strong>Literaturoznawcza</strong> - interpretacja utworów
+      niemieckojęzycznych przez ramę teoretyczną, z tezą (konwencja jak w <a
+        href="/tematy/filologia-polska/przykladowa-praca/">filologii
+      polskiej</a>).
+    </li>
+    <li>
+      <strong>Kontrastywna niemiecko-polska</strong> - porównanie zjawisk
+      językowych w obu językach (frazeologia, grzeczność, terminologia).
+    </li>
+    <li>
+      <strong>Glottodydaktyczna</strong> - nauczanie niemieckiego: podręczniki,
+      techniki, przekonania uczących się.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy korpusowej</h2>
+
+  <ol>
+    <li>Titelseite + oświadczenia</li>
+    <li>Zusammenfassung (DE) + streszczenia PL/EN według wymogów</li>
+    <li>Einleitung - problem, cel, układ</li>
+    <li>Theoretische Grundlagen - pojęcia, typologie, stan badań</li>
+    <li>Material und Methode - korpus, kryteria, raster klasyfikacji, przypadki wątpliwe</li>
+    <li>Analyse - przegląd ilościowy + kategorie z przykładami w kontekście</li>
+    <li>Diskussion - wynik wobec stanu badań, ograniczenia</li>
+    <li>Literaturverzeichnis · Quellenverzeichnis · Anhang: lista poświadczeń</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać materiał i narzędzia">
+    <p>
+      Archiwa elektroniczne gazet (przez biblioteki uczelniane), korpusy
+      referencyjne niemczyzny (DWDS, DeReKo/COSMAS przez IDS Mannheim - dostęp
+      akademicki), słowniki jako autorytet klasyfikacji (Duden online).
+      Ekscerpcję i klasyfikację prowadź w arkuszu z kolumnami: beleg, źródło
+      z datą, kontekst, kategorie - ten arkusz stanie się aneksem pracy.
+    </p>
+  </InfoBox>
+
+  <h2>Definicja operacyjna - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Als Anglizismus wurde jede lexikalische Einheit erfasst, die (1)
+      nachweislich aus dem Englischen entlehnt ist, (2) im Text als Lexem und
+      nicht als Eigenname fungiert und (3) kein etabliertes Fremdwort älterer
+      Entlehnungsschichten darstellt. Eigennamen, Zitatwörter und Werbeslogans
+      wurden ausgeschlossen. Die Exzerption ergab 1 312 Belege (Types: 487).</p>
+  </blockquote>
+
+  <p>
+    Trzy kryteria, jawne wykluczenia, wynik z rozróżnieniem tokens/types.
+    Taka definicja zamyka najczęstszą dyskusję recenzencką („a czy X to na
+    pewno anglicyzm?”) zanim się zacznie - bo praca ma regułę, nie intuicję.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Zbiór ciekawostek vs analiza korpusowa">
+    <p>
+      <strong>Wersja słabsza.</strong> Autorka „zauważyła dużo anglicyzmów w
+      prasie” i omawia kilkadziesiąt przykładów zebranych przy okazji
+      lektury, bez korpusu, kryteriów i liczb; wniosek: „niemczyzna ulega
+      anglicyzacji”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Korpus 240 artykułów z dwóch
+      tytułów i dwóch działów, definicja operacyjna z wykluczeniami, 1312
+      poświadczeń sklasyfikowanych według trzech rastrów, analiza funkcji w
+      kontekście i wniosek: 75% użyć pełni funkcje referencyjne, obraz
+      „anglicyzacji” wymaga rewizji. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Purystyczna teza zamiast pytania badawczego">
+    <p>
+      Prace o zapożyczeniach łatwo osuwają się w wartościowanie („zaśmiecanie
+      języka”) - a to publicystyka, nie lingwistyka. Językoznawca opisuje
+      dystrybucję i funkcje, nie wystawia językowi ocen. Jeśli chcesz badać
+      sam dyskurs purystyczny - zrób z niego przedmiot analizy (jak mówi się
+      o anglicyzmach), zamiast go uprawiać.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z germanistyki</h2>
+
+  <ul>
+    <li><strong>Przykłady bez korpusu</strong> - materiał „z lektury” zamiast
+      systematycznej ekscerpcji.</li>
+    <li><strong>Brak definicji operacyjnej</strong> - jednostka analizy
+      rozstrzygana intuicyjnie, przypadek po przypadku.</li>
+    <li><strong>Przypadki wątpliwe przemilczane</strong> - pseudoanglicyzmy i
+      hybrydy bez reguły klasyfikacji.</li>
+    <li><strong>Zliczanie bez funkcji</strong> - tabele częstości bez analizy
+      użyć w kontekście.</li>
+    <li><strong>Wartościowanie języka</strong> - puryzm zamiast opisu.</li>
+    <li><strong>Braki w aneksie</strong> - brak pełnej listy poświadczeń,
+      przez co badania nie da się zweryfikować.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z germanistyki musi być po niemiecku?</h3>
+  <p>
+    Na zdecydowanej większości polskich germanistyk - tak, ze streszczeniami
+    po polsku i często po angielsku. Jakość niemczyzny podlega ocenie,
+    zaplanuj więc korektę językową przed złożeniem.
+  </p>
+
+  <h3>Jak duży powinien być korpus?</h3>
+  <p>
+    Na tyle duży, by kategorie analizy miały sensowne liczebności - w
+    praktyce prac magisterskich: 100-300 tekstów prasowych albo kilkaset
+    poświadczeń zjawiska. Ważniejsza od rozmiaru jest jawność kryteriów i
+    kompletność ekscerpcji w ich ramach.
+  </p>
+
+  <h3>Czy mogę pisać pracę przekładoznawczą albo literacką?</h3>
+  <p>
+    Tak - to dwie pozostałe główne ścieżki germanistyki. Warsztat
+    przekładoznawczy (korpus par, taksonomia strategii) pokazujemy we wzorze
+    z <a href="/tematy/filologia-angielska/przykladowa-praca/">filologii
+    angielskiej</a>, a literaturoznawczy (teza interpretacyjna, stan badań) we
+    wzorze z <a
+      href="/tematy/filologia-polska/przykladowa-praca/">filologii
+    polskiej</a> - oba przenoszą się na materiał niemieckojęzyczny.
+  </p>
+
+  <h3>Z jakich korpusów niemczyzny mogę korzystać?</h3>
+  <p>
+    DWDS i DeReKo (IDS Mannheim) oferują dostęp akademicki i pozwalają
+    weryfikować frekwencje oraz datowania; do pracy prasowej podstawą będą
+    archiwa wybranych tytułów. Podaj w metodzie wersje i daty dostępu.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    warsztat i konwencję - Twój korpus, ekscerpcja i analiza muszą być
+    własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/filologia-germanska/">wyboru tematu z
+    filologii germańskiej</a> i pobierz wzór powyżej. Pokrewne konwencje
+    filologiczne zobaczysz we wzorach z <a
+      href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a> i
+    <a href="/tematy/filologia-polska/przykladowa-praca/">polonistyki</a>.
+  </p>
+</ArticleLayout>
