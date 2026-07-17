@@ -1,0 +1,385 @@
+---
+// src/pages/przykladowe-prace/index.astro
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+import SmartEduCTA from "../../components/SmartEduCTA.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const grupy = [
+  {
+    name: "Kierunki społeczne i humanistyczne",
+    prace: [
+      { title: "Psychologia", desc: "empiryczna korelacyjna: psychometria, MBI/GSES, konwencja APA", slug: "psychologia" },
+      { title: "Pedagogika", desc: "empiryczna wg Pilcha: metoda–technika–narzędzie, mixed methods", slug: "pedagogika" },
+      { title: "Pedagogika specjalna", desc: "studium indywidualnego przypadku: obserwacja, WOPFU, IPET", slug: "pedagogika-specjalna" },
+      { title: "Socjologia", desc: "empiryczna korelacyjna na próbie ankietowej", slug: "socjologia" },
+      { title: "Praca socjalna", desc: "diagnoza środowiskowa z wnioskami dla praktyki", slug: "praca-socjalna" },
+      { title: "Resocjalizacja", desc: "badanie w placówce (MOW): dwie perspektywy, etyka zależności", slug: "resocjalizacja" },
+      { title: "Kryminologia", desc: "statystyka przestępczości, ciemna liczba, wiktymizacja", slug: "kryminologia" },
+      { title: "Politologia", desc: "analiza systemowa: dokumenty i dane wyborcze", slug: "politologia" },
+      { title: "Stosunki międzynarodowe", desc: "studium przypadku polityki: źródła UE, kryteria skuteczności", slug: "stosunki-miedzynarodowe" },
+      { title: "Bezpieczeństwo narodowe", desc: "analiza dokumentów strategicznych: model vs praktyka", slug: "bezpieczenstwo-narodowe" },
+      { title: "Historia", desc: "analiza i krytyka źródeł, przypisy do archiwaliów", slug: "historia" },
+      { title: "Kulturoznawstwo", desc: "analiza tekstów kultury: rama teoretyczna, kategorie, korpus", slug: "kulturoznawstwo" },
+      { title: "Dziennikarstwo", desc: "analiza zawartości mediów: korpus, klucz, zgodność kodowania", slug: "dziennikarstwo" },
+      { title: "Kognitywistyka", desc: "eksperyment behawioralny 2×2: analiza mocy, d′, czasy reakcji", slug: "kognitywistyka" },
+    ],
+  },
+  {
+    name: "Prawo, administracja, ekonomia i zarządzanie",
+    prace: [
+      { title: "Prawo", desc: "dogmatyczno-prawna: teza, przypisy do ustaw i orzeczeń, de lege ferenda", slug: "prawo" },
+      { title: "Administracja", desc: "prawno-empiryczna: regulacja + praktyka urzędów (budżet obywatelski)", slug: "administracja" },
+      { title: "Ekonomia", desc: "ekonometryczna: dane wtórne GUS, model regresji MNK", slug: "ekonomia" },
+      { title: "Zarządzanie", desc: "diagnostyczno-aplikacyjna: case firmy, SWOT, rekomendacje", slug: "zarzadzanie" },
+      { title: "Finanse i rachunkowość", desc: "analiza wskaźnikowa na sprawozdaniach z eKRS, tło branżowe", slug: "finanse-i-rachunkowosc" },
+      { title: "Marketing", desc: "badanie konsumenckie CAWI: hipotezy, skale, alfa Cronbacha", slug: "marketing" },
+      { title: "Logistyka", desc: "aplikacyjna: analiza ABC/XYZ na danych magazynowych firmy", slug: "logistyka" },
+      { title: "Turystyka i rekreacja", desc: "potencjał turystyczny obszaru: inwentaryzacja + ankieta + SWOT", slug: "turystyka-i-rekreacja" },
+    ],
+  },
+  {
+    name: "Kierunki medyczne i o zdrowiu",
+    prace: [
+      { title: "Pielęgniarstwo", desc: "kliniczna kazuistyczna: proces pielęgnowania, skale, Vancouver", slug: "pielegniarstwo" },
+      { title: "Fizjoterapia", desc: "kliniczna: program usprawniania z pomiarami efektów", slug: "fizjoterapia" },
+      { title: "Zdrowie publiczne", desc: "badanie przekrojowe populacji: IZZ, konwencja medyczna", slug: "zdrowie-publiczne" },
+      { title: "Ratownictwo medyczne", desc: "retrospektywna analiza wyjazdów ZRM vs parametry ustawowe", slug: "ratownictwo-medyczne" },
+      { title: "Dietetyka", desc: "ocena sposobu żywienia: wywiad 24h, normy, antropometria", slug: "dietetyka" },
+      { title: "Kosmetologia", desc: "badanie zabiegowe z pomiarami aparaturowymi (korneometria, TEWL)", slug: "kosmetologia" },
+    ],
+  },
+  {
+    name: "Kierunki ścisłe, techniczne i przyrodnicze",
+    prace: [
+      { title: "Informatyka", desc: "projektowo-implementacyjna: wymagania, UML, testy", slug: "informatyka" },
+      { title: "Budownictwo", desc: "analiza porównawcza technologii: U wg PN-EN ISO 6946, WT 2021", slug: "budownictwo" },
+      { title: "Architektura", desc: "dyplom projektowy: teza projektowa, analizy, wykaz plansz", slug: "architektura" },
+      { title: "Rolnictwo", desc: "eksperymentalna: schemat doświadczenia, ANOVA, NIR", slug: "rolnictwo" },
+      { title: "Ochrona środowiska", desc: "monitoring jakości wód: sieć punktów, cykl roczny, klasy jakości", slug: "ochrona-srodowiska" },
+      { title: "Geografia", desc: "analiza przestrzenna GIS: CORINE, macierze przejść, suburbanizacja", slug: "geografia" },
+    ],
+  },
+  {
+    name: "Filologie",
+    prace: [
+      { title: "Filologia polska", desc: "literaturoznawcza: teza interpretacyjna, stan badań", slug: "filologia-polska" },
+      { title: "Filologia angielska", desc: "przekładoznawcza (po angielsku): culture-specific items", slug: "filologia-angielska" },
+      { title: "Filologia germańska", desc: "korpusowa (po niemiecku): anglicyzmy w prasie", slug: "filologia-germanska" },
+      { title: "Filologia hiszpańska", desc: "przekład audiowizualny (po hiszpańsku): humor w napisach", slug: "filologia-hiszpanska" },
+      { title: "Filologia rosyjska", desc: "przekład literacki (po rosyjsku): realia sowieckie", slug: "filologia-rosyjska" },
+      { title: "Filologia francuska", desc: "glottodydaktyczna (po francusku): podręczniki FLE", slug: "filologia-francuska" },
+      { title: "Filologia włoska", desc: "kontrastywna (po włosku): frazeologia kulinarna", slug: "filologia-wloska" },
+    ],
+  },
+];
+
+const liczbaPrac = grupy.reduce((sum, g) => sum + g.prace.length, 0);
+
+const breadcrumbs = [
+  { label: "Start", href: "/" },
+  { label: "Przykładowe prace", href: "/przykladowe-prace/" },
+];
+
+const faqItems = [
+  {
+    question: "Czy przykładowe prace magisterskie są darmowe?",
+    answer:
+      "Tak - każdy wzór pobierzesz w PDF i Word bez podawania adresu e-mail i bez rejestracji. Wzory zawierają kompletny szkielet pracy z komentarzami objaśniającymi funkcję każdej części.",
+  },
+  {
+    question: "Czy mogę skopiować fragmenty przykładowej pracy do swojej?",
+    answer:
+      "Nie - każda praca dyplomowa przechodzi przez Jednolity System Antyplagiatowy i skopiowane fragmenty zostaną wykryte. Wzory służą jako szkielet i punkt odniesienia: pokazują strukturę, konwencję kierunku i warsztat metodologiczny, które przenosisz do własnej pracy, pisząc ją samodzielnie.",
+  },
+  {
+    question: "Czym różnią się wzory między kierunkami?",
+    answer:
+      "Każdy wzór odzwierciedla archetyp badawczy swojego kierunku: praca z prawa jest dogmatyczna (teza, przypisy do ustaw), z pielęgniarstwa kliniczna (proces pielęgnowania, Vancouver), z logistyki aplikacyjna (analiza danych firmy), z psychologii empiryczna (psychometria, APA), a filologie mają strukturę w języku kierunku. Dzięki temu widzisz konwencję, której faktycznie oczekuje Twój promotor.",
+  },
+  {
+    question: "Co zawiera każdy wzór pracy magisterskiej?",
+    answer:
+      "Kompletny szkielet: stronę tytułową, streszczenie, spis treści, wstęp z celami i hipotezami lub tezą, rozdział metodologiczny (lub jego odpowiednik w konwencji kierunku), fragmenty rozdziałów analitycznych z tabelami, zakończenie i bibliografię. Niebieskie adnotacje objaśniają funkcję każdej części - usuwasz je we własnej pracy.",
+  },
+  {
+    question: "Skąd mam wiedzieć, że wzór odpowiada wymogom mojej uczelni?",
+    answer:
+      "Wzory odzwierciedlają ogólnopolskie konwencje kierunków, ale wymogi formalne (objętość, styl cytowania, układ strony tytułowej) różnią się między uczelniami - zawsze porównaj wzór z wytycznymi swojego wydziału i wymaganiami promotora. Strony towarzyszące każdemu wzorowi wskazują, które elementy bywają regulowane uczelnianie.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Layout
+  title={`Przykładowe prace magisterskie - ${liczbaPrac} wzorów PDF i Word do pobrania`}
+  description={`Przykładowa praca magisterska dla ${liczbaPrac} kierunków: psychologia, prawo, pielęgniarstwo, zarządzanie, informatyka i inne. Kompletne wzory PDF + Word z omówieniem, bez rejestracji.`}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
+  <Navbar />
+
+  <main class="pt-20 md:pt-24">
+    <!-- Hero -->
+    <section
+      class="bg-gradient-to-br from-primary-600 via-primary-700 to-accent text-white py-16"
+    >
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <nav class="mb-6" aria-label="Breadcrumb">
+            <ol
+              class="flex flex-wrap items-center gap-2 text-sm text-primary-200"
+            >
+              {
+                breadcrumbs.map((crumb, index) => (
+                  <>
+                    {index > 0 && (
+                      <li>
+                        <svg
+                          class="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </li>
+                    )}
+                    <li>
+                      {index === breadcrumbs.length - 1 ? (
+                        <span class="text-white font-medium">
+                          {crumb.label}
+                        </span>
+                      ) : (
+                        <a
+                          href={crumb.href}
+                          class="hover:text-white transition-colors"
+                        >
+                          {crumb.label}
+                        </a>
+                      )}
+                    </li>
+                  </>
+                ))
+              }
+            </ol>
+          </nav>
+
+          <div class="text-center">
+            <span class="text-6xl mb-4 block">📄</span>
+            <h1
+              class="text-3xl text-primary-100 sm:text-4xl lg:text-5xl font-extrabold mb-6"
+            >
+              Przykładowe prace magisterskie
+            </h1>
+            <p class="text-xl text-primary-100 max-w-2xl mx-auto mb-8">
+              Kompletne wzory prac magisterskich dla {liczbaPrac} kierunków
+              studiów - każdy w konwencji swojej dziedziny, z omówieniem
+              krok po kroku i szablonem do pobrania w PDF i Word.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+              <span class="bg-white/20 px-4 py-2 rounded-full text-sm"
+                >{liczbaPrac} wzorów</span
+              >
+              <span class="bg-white/20 px-4 py-2 rounded-full text-sm"
+                >PDF + Word</span
+              >
+              <span class="bg-white/20 px-4 py-2 rounded-full text-sm"
+                >Bez rejestracji</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listing -->
+    <section class="py-16 bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              Wybierz swój kierunek
+            </h2>
+            <p class="text-gray-600 max-w-3xl mx-auto">
+              Każdy wzór pokazuje archetyp badawczy typowy dla kierunku - od
+              pracy dogmatycznej z prawa, przez kliniczną z pielęgniarstwa, po
+              projektową z architektury. Strona wzoru omawia go fragment po
+              fragmencie, a kompletny szablon pobierzesz w PDF i Word.
+            </p>
+          </div>
+
+          {
+            grupy.map((grupa) => (
+              <div class="mb-12 last:mb-0">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">
+                  {grupa.name}
+                </h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {grupa.prace.map((praca) => (
+                    <a
+                      href={`/tematy/${praca.slug}/przykladowa-praca/`}
+                      class="card card-hover group"
+                    >
+                      <h4 class="font-bold text-gray-900 group-hover:text-primary-600 transition-colors mb-2">
+                        {praca.title}
+                      </h4>
+                      <p class="text-sm text-gray-600 leading-relaxed">
+                        {praca.desc}
+                      </p>
+                      <div class="mt-3 flex items-center text-primary-600 font-medium text-sm">
+                        Zobacz wzór
+                        <svg
+                          class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
+                    </a>
+                  ))
+                }
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO content + FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <article class="article-content">
+            <h2>Jak korzystać z przykładowej pracy magisterskiej</h2>
+
+            <p>
+              Przykładowa praca magisterska najlepiej działa jako mapa, a nie
+              jako materiał do przepisania. Zanim zaczniesz pisać własny
+              tekst, prześledź we wzorze trzy rzeczy. Po pierwsze, konstrukcję:
+              jak wstęp zapowiada rozdziały, jak metodologia łączy się z
+              wynikami i jak zakończenie wraca do postawionych hipotez lub
+              tezy. Po drugie, konwencję kierunku - to, czego ogólne poradniki
+              nie pokazują: praca z prawa cytuje ustawy w przypisach dolnych i
+              kończy się wnioskami de lege ferenda, praca z pielęgniarstwa ma
+              streszczenie strukturalne i piśmiennictwo Vancouver, a praca z
+              logistyki zaczyna rozdział badawczy od danych firmy, nie od
+              ankiety. Po trzecie, poziom konkretu: liczebności prób, nazwy
+              narzędzi, wartości wskaźników - dobre prace mówią liczbami, a
+              wzory pokazują, gdzie te liczby powinny się znaleźć.
+            </p>
+
+            <p>
+              Każdy wzór składa się z dwóch części. Strona internetowa omawia
+              pracę fragment po fragmencie: co wyróżnia kierunek, po czym
+              recenzent poznaje dobrą pracę, jakie błędy powtarzają się
+              najczęściej i jak wygląda ten sam temat w wersji słabszej i
+              mocniejszej. Pobierany szablon (PDF i Word) zawiera natomiast
+              kompletny szkielet dokumentu z niebieskimi adnotacjami
+              objaśniającymi funkcję każdej części - wystarczy podmienić
+              treść na własną i usunąć komentarze. Formatowanie szablonów
+              odpowiada standardowi akademickiemu: Times New Roman 12 pkt,
+              interlinia 1,5, marginesy z zapasem na oprawę.
+            </p>
+
+            <p>
+              Pamiętaj o granicy między inspiracją a plagiatem. Struktura,
+              konwencja cytowania i sposób prezentacji wyników są wspólnym
+              dobrem warsztatu naukowego - możesz je przejąć w całości. Treść,
+              dane i sformułowania muszą być Twoje: każda praca przechodzi
+              przez Jednolity System Antyplagiatowy, a przepisane fragmenty
+              wzoru zostaną wykryte tak samo jak każde inne. Jeśli dopiero
+              szukasz tematu, zajrzyj do naszej <a href="/tematy/">bazy
+              2500+ tematów prac magisterskich</a>, a warsztat badawczy
+              zbudujesz z <a href="/poradniki/metodologia/">22 poradników
+              metodologicznych</a>.
+            </p>
+
+            <h2>FAQ - najczęściej zadawane pytania</h2>
+
+            <div class="faq-list">
+              {
+                faqItems.map((item) => (
+                  <details class="faq-item">
+                    <summary>
+                      <strong>{item.question}</strong>
+                    </summary>
+                    <p>{item.answer}</p>
+                  </details>
+                ))
+              }
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 bg-gray-50">
+      <div class="container-custom">
+        <div class="max-w-5xl mx-auto">
+          <SmartEduCTA variant="full" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>
