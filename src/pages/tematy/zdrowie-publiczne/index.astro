@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -50,6 +51,13 @@ const relatedLinks = [
       bioetyczna) i udostępniamy cały szablon do pobrania w PDF i Word.
     </p>
   </div>
+
+  <EbookKierunkowyCTA
+    kierunek="zdrowia publicznego"
+    productName="Jak napisać pracę magisterską ze zdrowia publicznego"
+    icon="🏥"
+    landingHref="/sklep/jak-napisac-prace-magisterska-ze-zdrowia-publicznego/"
+  />
 
   <h2>Epidemiologia chorób przewlekłych</h2>
 
