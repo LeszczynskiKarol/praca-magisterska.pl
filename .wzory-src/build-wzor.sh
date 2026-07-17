@@ -11,7 +11,12 @@ DEST="$ROOT/public/downloads"
 mkdir -p "$DEST"
 
 # Strona promo na końcu każdego wzoru — poza formalnym oświadczeniem do podpisu.
+# Oświadczenie dostaje też nagłówek bez stopki reklamowej (header-plain.tex).
 BUILD_SRC="$SRC"
+HEADER="$HERE/header.tex"
+if [[ "$(basename "$SRC")" == wzor-oswiadczenia* ]]; then
+  HEADER="$HERE/header-plain.tex"
+fi
 if [[ "$(basename "$SRC")" != wzor-oswiadczenia* ]]; then
   BUILD_SRC="$(mktemp --suffix=.md)"
   cat "$SRC" > "$BUILD_SRC"
@@ -29,7 +34,7 @@ pandoc "$BUILD_SRC" \
 echo "→ PDF:  $OUT.pdf"
 pandoc "$BUILD_SRC" \
   --pdf-engine=xelatex \
-  -H "$HERE/header.tex" \
+  -H "$HEADER" \
   --lua-filter="$HERE/center.lua" \
   -V lang=pl \
   -o "$DEST/$OUT.pdf"
