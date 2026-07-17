@@ -24,8 +24,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'Inter Fallback', 'system-ui', 'sans-serif'],
+        heading: ['Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

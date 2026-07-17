@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fonty ładowane przez <link> w Layout.astro (parallel, nie render-blocking @import) */
+/* Fonty ładowane async przez <link> w Layout.astro (nie blokują renderu).
+   Metric-matched fallbacki: fallback zajmuje tyle samo miejsca co font docelowy,
+   więc podmiana Inter / Plus Jakarta Sans nie przesuwa układu (CLS ~0).
+   Wartości overridów jak w next/font (Arial jako baza). */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  ascent-override: 90.2%;
+  descent-override: 22.48%;
+  line-gap-override: 0%;
+  size-adjust: 107.4%;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans Fallback";
+  src: local("Arial");
+  ascent-override: 91.24%;
+  descent-override: 24.79%;
+  line-gap-override: 0%;
+  size-adjust: 105.66%;
+}
 
 @layer base {
   html {

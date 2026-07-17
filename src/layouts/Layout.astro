@@ -60,13 +60,22 @@ const fullCanonical = canonical ? `${siteUrl}${canonical}` : Astro.url.href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Fonts (parallel <link> zamiast render-blocking @import w CSS) -->
+    <!-- Fonts: async (nie blokuja renderu); metric-matched fallbacki (global.css)
+         sprawiaja, ze podmiana fontow nie przesuwa ukladu (CLS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      />
+    </noscript>
 
     <!-- Preconnect to Google domains for faster loading after consent -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
