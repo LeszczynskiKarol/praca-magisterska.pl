@@ -2,6 +2,7 @@
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
 import InfoBox from "../../../../components/InfoBox.astro";
+import EbookKierunkowyCTA from "../../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -52,6 +53,13 @@ const relatedLinks = [
       { href: "/downloads/przykladowa-praca-magisterska-finanse-i-rachunkowosc.pdf", label: "Pobierz wzór (PDF)" },
       { href: "/downloads/przykladowa-praca-magisterska-finanse-i-rachunkowosc.docx", label: "Pobierz wzór (Word .docx)", primary: false },
     ]}
+  />
+
+  <EbookKierunkowyCTA
+    kierunek="finansów i rachunkowości"
+    productName="Jak napisać pracę magisterską z finansów i rachunkowości"
+    icon="💰"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-finansow-i-rachunkowosci/"
   />
 
   <h2>Co wyróżnia pracę magisterską z finansów i rachunkowości</h2>
