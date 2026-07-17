@@ -57,11 +57,16 @@
 
 ### Backlog treści NADAL DO ZROBIENIA (potwierdzone: brak w `src/pages/`)
 
-3. **Przykładowe prace — pozostałe kierunki bez wzoru**: budownictwo,
-   ochrona-srodowiska, geografia, architektura, resocjalizacja, kulturoznawstwo,
-   kognitywistyka, filologie: germańska/hiszpańska/rosyjska/francuska/włoska
-   (adaptacje wzoru anglistyki). (CTR wzorów = ~11%.)
-3a. **Docisk /poradniki/narzedzia/** (421 wyśw, poz. 15,5) — ostatni z priorytetów A.
+3. ✅ **PRZYKŁADOWE PRACE — BACKLOG WYCZERPANY (2026-07-17, koniec sesji).**
+   WSZYSTKIE 37 kierunków ma wzór (PDF+DOCX + strona + callout). Ostatnie fale
+   dodały: budownictwo, ochrona-srodowiska, resocjalizacja, geografia,
+   architektura (dyplom projektowy), kulturoznawstwo, kognitywistyka i 5
+   filologii (germańska — korpusowa DE, hiszpańska — TAV ES, rosyjska —
+   realia RU, francuska — glottodydaktyka FR, włoska — frazeologia IT).
+3a. ✅ **Docisk /poradniki/narzedzia/ ZROBIONY** — fix błędnego breadcrumba,
+   tabela porównawcza narzędzi, FAQ schema, relatedLinks do dedykowanych stron.
+   Za ~4 tygodnie sprawdzić w GSC efekty wszystkich docisków
+   (rozdzial-metodologiczny, badania-ilosciowe, wstep, narzedzia) i CTR wzorów.
 4. **Kierunki niszowe** (opcjonalnie, niski priorytet): gospodarka przestrzenna,
    biotechnologia, medycyna, teologia, filozofia.
 5. **Ebook per kierunek** (przyszłość): [[ebook-shop-per-kierunek]].
