@@ -1,0 +1,282 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Filologia hiszpańska", href: "/tematy/filologia-hiszpanska/" },
+  { label: "Przykładowa praca", href: "/tematy/filologia-hiszpanska/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z filologii hiszpańskiej", href: "/tematy/filologia-hiszpanska/" },
+  { label: "Przykładowa praca z filologii angielskiej", href: "/tematy/filologia-angielska/przykladowa-praca/" },
+  { label: "Przykładowa praca z filologii germańskiej", href: "/tematy/filologia-germanska/przykladowa-praca/" },
+  { label: "Analiza dokumentów i tekstów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Bibliografia i style cytowania", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z filologii hiszpańskiej – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z hispanistyki (po hiszpańsku): przekład audiowizualny - tłumaczenie humoru w napisach, korpus segmentów z kodami czasowymi, gradient przekładalności, ograniczenia techniczne. Wzór do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z filologii hiszpańskiej powstaje po hiszpańsku i
+    najczęściej wybiera jedną z trzech ścieżek: przekładoznawczą,
+    językoznawczą albo literaturoznawczą. Hispanistyka ma przy tym swojego
+    asa: przekład audiowizualny (TAV) - seriale i filmy hiszpańskojęzyczne
+    zalały platformy streamingowe, a ich polskie napisy to gotowy, atrakcyjny
+    materiał badawczy. Poniżej rozbieramy wzorcową pracę o tłumaczeniu humoru
+    w napisach - z warsztatem, którego wymaga TAV: kodami czasowymi, drugim
+    oceniającym i rozliczaniem ograniczeń technicznych medium.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„La traducción del humor en el subtitulado polaco de una serie
+    española contemporánea”</strong>: 142 segmenty humorystyczne z 8 odcinków,
+    identyfikowane według trzech kryteriów z udziałem native speakera,
+    klasyfikacja typów humoru i strategii oraz wynik-gradient: humor
+    uniwersalny przekłada się niemal w całości, gry słowne giną w 38%
+    przypadków. Ten sam szkielet zadziała dla dubbingu, literatury czy
+    dowolnej pary tekstów hiszpańsko-polskich.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z hispanistyki, z sekcjami PO HISZPAŃSKU (resumen, marco teórico, material y método, análisis) i polskimi komentarzami: kryteria identyfikacji segmentów humorystycznych z drugim oceniającym, taksonomie typów humoru i strategii, analiza przykładów z kodami czasowymi, tabela gradientu przekładalności i rozliczenie ograniczeń technicznych napisów. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-hiszpanska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-hiszpanska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z hispanistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Język hiszpański i jego jakość.</strong> Praca pisana po
+      hiszpańsku, z hiszpańską terminologią przekładoznawczą i lingwistyczną;
+      poziom języka podlega ocenie.
+    </li>
+    <li>
+      <strong>Materiał z kultury hiszpańskojęzycznej.</strong> Literatura
+      Hiszpanii i Ameryki Łacińskiej, kino i seriale, prasa - zawsze jako
+      korpus z kryteriami, nie luźne przykłady.
+    </li>
+    <li>
+      <strong>Specyfika TAV.</strong> W pracach o napisach i dubbingu do
+      analizy strategii dochodzą ograniczenia medium: prędkość czytania,
+      limity znaków, synchronizacja.
+    </li>
+    <li>
+      <strong>Cytowanie sprawdzalne.</strong> Segmenty z kodami czasowymi,
+      transkrypcją oryginału i napisem - pełny korpus w aneksie.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Przekład audiowizualny (TAV)">
+    <p>
+      Tłumaczenie tekstów sprzężonych z obrazem i dźwiękiem: napisy
+      (subtitulado), dubbing (doblaje), voice-over, audiodeskrypcja. Od
+      przekładu literackiego różni się ograniczeniami technicznymi - napis
+      musi zmieścić się w limicie znaków i czasie ekspozycji zsynchronizowanym
+      z dialogiem. Dobra praca TAV rozlicza osobno straty wynikające z
+      nieprzekładalności językowej i te wymuszone przez medium.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym promotor pozna dobrą pracę z hispanistyki</h2>
+
+  <ol>
+    <li>
+      <strong>Hiszpański akademicki.</strong> Rejestr naukowy i poprawna
+      terminologia (estrategias, restricciones, compensación) - nie kalki z
+      polskiego.
+    </li>
+    <li>
+      <strong>Identyfikacja materiału z procedurą.</strong> Kryteria uznania
+      segmentu za humorystyczny + drugi oceniający (najlepiej native speaker).
+    </li>
+    <li>
+      <strong>Analiza z mechanizmem.</strong> Przykład → strategia → skutek i
+      mechanizm (np. kompensacja przesunięta), nie tylko etykieta.
+    </li>
+    <li>
+      <strong>Uczciwe rozliczenie medium.</strong> Które straty to
+      nieprzekładalność, a które wymusiły limity znaków - rozdzielone i
+      policzone.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z filologii hiszpańskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Przekład audiowizualny</strong> - humor, kulturemy, wulgaryzmy
+      w napisach lub dubbingu; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Przekład literacki</strong> - strategie na parze tekstów (proza
+      hiszpańska lub latynoamerykańska i jej polski przekład) - warsztat jak
+      we wzorze z <a
+        href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a>.
+    </li>
+    <li>
+      <strong>Językoznawcza</strong> - odmiany hiszpańszczyzny, język prasy,
+      hiszpański w mediach społecznościowych (analiza korpusowa jak we wzorze
+      z <a
+        href="/tematy/filologia-germanska/przykladowa-praca/">germanistyki</a>).
+    </li>
+    <li>
+      <strong>Literaturoznawcza</strong> - interpretacja utworów przez ramę
+      teoretyczną, z tezą.
+    </li>
+    <li>
+      <strong>Glottodydaktyczna</strong> - nauczanie hiszpańskiego (ELE):
+      podręczniki, techniki, motywacja uczących się.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy o przekładzie audiowizualnym</h2>
+
+  <ol>
+    <li>Portada + oświadczenia</li>
+    <li>Resumen (ES) + streszczenie PL według wymogów</li>
+    <li>Introducción - problem, cel, układ</li>
+    <li>Marco teórico - TAV, napisy, humor jako problem przekładowy, stan badań</li>
+    <li>Material y método - serial, kryteria identyfikacji, taksonomie</li>
+    <li>Análisis - panorama ilościowa + kategorie z przykładami (kody czasowe)</li>
+    <li>Discusión y conclusiones - gradient, medium, ograniczenia</li>
+    <li>Bibliografía · Filmografía · Anexo: korpus segmentów</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Warsztat techniczny pracy o napisach">
+    <p>
+      Materiał: serial z oficjalnymi polskimi napisami (platformy
+      streamingowe); do analizy wystarczy dostęp abonencki i systematyczna
+      rejestracja segmentów w arkuszu (kod czasowy, oryginał, napis,
+      kategorie). Parametry techniczne napisów (limity znaków, prędkość
+      czytania) opisują wytyczne platform i literatura TAV - przywołaj je w
+      rozdziale o konwencjach. Pracuj na jednej, wskazanej wersji napisów i
+      odnotuj datę dostępu: wersje bywają aktualizowane.
+    </p>
+  </InfoBox>
+
+  <h2>Analiza przykładu - wzorzec</h2>
+
+  <blockquote>
+    <p>Ejemplo (ep. 3, 00:21:15): el doble sentido de <em>banco</em>
+      desaparece en el subtítulo polaco, que opta por la lectura financiera;
+      la pérdida se compensa dos réplicas después con un juego fonético
+      ausente del original - estrategia de compensación desplazada
+      característica del subtitulado profesional.</p>
+  </blockquote>
+
+  <p>
+    Kod czasowy, mechanizm straty, decyzja tłumacza i nazwana strategia
+    (kompensacja przesunięta) - wszystko w jednym zdaniu analitycznym. Zwróć
+    uwagę na dowartościowanie warsztatu tłumacza zamiast wytykania „błędu”:
+    praca przekładoznawcza opisuje strategie, nie recenzuje.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Lista wpadek vs analiza strategii">
+    <p>
+      <strong>Wersja słabsza.</strong> Autorka wynotowała „śmieszne błędy w
+      napisach” z kilku seriali, bez korpusu i kryteriów, ocenia tłumaczy
+      („niestety tłumacz nie poradził sobie z grą słów”) i wnioskuje, że
+      „humor jest nieprzekładalny”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> 142 segmenty z jednej serii według
+      trzech kryteriów z drugim oceniającym, gradient przekładalności
+      policzony (94% / 61% / 32%), straty rozdzielone na językowe i
+      techniczne (22% decyzji wymuszonych przez medium), kompensacja
+      przesunięta udokumentowana jako strategia globalna. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Napisy fanowskie jako materiał">
+    <p>
+      Napisy amatorskie (fansubs) kuszą dostępnością, ale mieszają dwie
+      rzeczy: strategie tłumaczeniowe i kompetencję tłumacza. Jeśli badasz
+      strategie profesjonalnego subtitlingu - pracuj na napisach oficjalnych.
+      Fansuby są świetnym materiałem, gdy to ONE są przedmiotem badania
+      (normy społeczności, różnice wobec wersji oficjalnej) - wtedy porównanie
+      obu wersji potrafi być mocnym tematem pracy.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z hispanistyki</h2>
+
+  <ul>
+    <li><strong>Przykłady bez korpusu</strong> - „ciekawe przypadki” zamiast
+      systematycznej rejestracji segmentów.</li>
+    <li><strong>Humor identyfikowany intuicyjnie</strong> - bez kryteriów i
+      drugiego oceniającego.</li>
+    <li><strong>Recenzowanie tłumacza</strong> - oceny zamiast analizy
+      strategii i mechanizmów.</li>
+    <li><strong>Ignorowanie medium</strong> - straty przypisywane
+      nieprzekładalności tam, gdzie zdecydowały limity znaków.</li>
+    <li><strong>Cytaty bez kodów czasowych</strong> - analiza niesprawdzalna.</li>
+    <li><strong>Mieszanie wersji napisów</strong> - materiał z różnych źródeł
+      i wydań bez odnotowania.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z hispanistyki musi być po hiszpańsku?</h3>
+  <p>
+    Na większości polskich iberystyk - tak, ze streszczeniem po polsku.
+    Jakość hiszpańszczyzny jest częścią oceny; zaplanuj korektę, najlepiej z
+    udziałem native speakera.
+  </p>
+
+  <h3>Ile segmentów powinien liczyć korpus TAV?</h3>
+  <p>
+    W pracach magisterskich typowo 100-200 segmentów z jednego sezonu lub
+    filmu pełnometrażowego - wystarczająco dla sensownych odsetków i
+    wykonalnie dla analizy jakościowej. Kompletność w ramach kryteriów jest
+    ważniejsza niż liczba.
+  </p>
+
+  <h3>Czy potrzebuję zgody platformy na badanie napisów?</h3>
+  <p>
+    Do analizy naukowej z cytowaniem fragmentów w pracy dyplomowej wystarcza
+    legalny dostęp do materiału (konto abonenckie) i poprawne cytowanie w
+    ramach prawa cytatu. Nie kopiujesz całych plików napisów - rejestrujesz i
+    cytujesz analizowane segmenty.
+  </p>
+
+  <h3>Wolę literaturę - jak ugryźć pracę literaturoznawczą?</h3>
+  <p>
+    Przez ramę teoretyczną i tezę interpretacyjną, ze stanem badań
+    hispanistycznych - konwencję pokazuje wzór z <a
+      href="/tematy/filologia-polska/przykladowa-praca/">filologii
+    polskiej</a>, którą łatwo przenieść na prozę hiszpańskojęzyczną.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    warsztat i strukturę - Twój serial, korpus i analiza muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/filologia-hiszpanska/">wyboru tematu z
+    filologii hiszpańskiej</a> i pobierz wzór powyżej. Pokrewne warsztaty
+    filologiczne zobaczysz we wzorach z <a
+      href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a>
+    (przekład literacki) i <a
+      href="/tematy/filologia-germanska/przykladowa-praca/">germanistyki</a>
+    (analiza korpusowa).
+  </p>
+</ArticleLayout>
