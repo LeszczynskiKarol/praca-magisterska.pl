@@ -1,0 +1,290 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Resocjalizacja", href: "/tematy/resocjalizacja/" },
+  { label: "Przykładowa praca", href: "/tematy/resocjalizacja/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z resocjalizacji", href: "/tematy/resocjalizacja/" },
+  { label: "Przykładowa praca z pedagogiki", href: "/tematy/pedagogika/przykladowa-praca/" },
+  { label: "Przykładowa praca z kryminologii", href: "/tematy/kryminologia/przykladowa-praca/" },
+  { label: "Etyka badań naukowych", href: "/poradniki/metodologia/etyka/" },
+  { label: "Jak przeprowadzić ankietę", href: "/poradniki/metodologia/ankieta/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z resocjalizacji – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z resocjalizacji: badanie w placówce (MOW), porównanie perspektyw wychowanków i kadry, trzy poziomy zgód, etyka badań w warunkach zależności. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z resocjalizacji ma warsztatową specyfikę, której nie
+    zna żaden ogólny poradnik: badania prowadzi się w instytucjach (MOW,
+    zakłady poprawcze, areszty, ośrodki kuratorskie), wśród osób pozostających
+    w zależności od tych instytucji - często nieletnich. To podnosi poprzeczkę
+    etyczną i formalną: zgody wielopoziomowe, badanie bez obecności
+    przełożonych, gwarancje braku konsekwencji. Poniżej rozbieramy wzorcową
+    pracę, w której ten warsztat jest kompletny - i pokazujemy schemat
+    badawczy, który w placówce działa najlepiej: porównanie perspektyw dwóch
+    stron tej samej rzeczywistości.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Klimat społeczny młodzieżowego ośrodka wychowawczego w percepcji
+    wychowanków i kadry pedagogicznej”</strong>: 42 wychowanków i 18 członków
+    kadry, pomiar czterech wymiarów klimatu, analiza rozbieżności perspektyw i
+    wnioski dla praktyki ośrodka. Ten sam schemat zadziała dla zakładu
+    poprawczego, schroniska dla nieletnich czy oddziału penitencjarnego.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z resocjalizacji: strona tytułowa, streszczenie, spis treści, metodologia badania w placówce (problemy i hipoteza kierunkowa, trzy poziomy zgód, procedura bez obecności wychowawców, anonimizacja ośrodka), tabela porównania perspektyw z testami, analiza wypowiedzi otwartych oraz wnioski dla praktyki z ograniczeniami. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-resocjalizacja.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-resocjalizacja.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z resocjalizacji</h2>
+
+  <ul>
+    <li>
+      <strong>Teren: instytucja resocjalizacyjna.</strong> MOW, zakład
+      poprawczy, areszt śledczy, zespół kuratorski - dostęp do terenu i jego
+      formalna ścieżka są częścią warsztatu.
+    </li>
+    <li>
+      <strong>Badani w sytuacji zależności.</strong> Wychowankowie i osadzeni
+      zależą od instytucji, w której są badani - dobrowolność wymaga tu
+      realnych gwarancji, nie deklaracji.
+    </li>
+    <li>
+      <strong>Zgody wielopoziomowe.</strong> Dyrekcja placówki, opiekunowie
+      prawni nieletnich i sami badani; przy zakładach karnych dodatkowo
+      procedury służby więziennej.
+    </li>
+    <li>
+      <strong>Wnioski dla praktyki.</strong> Praca kończy się zaleceniami dla
+      konkretnej placówki lub systemu - resocjalizacja jest dyscypliną
+      stosowaną.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Klimat społeczny instytucji">
+    <p>
+      Względnie trwały zespół spostrzeganych przez uczestników cech życia
+      instytucji: wsparcia ze strony personelu, jasności reguł,
+      restrykcyjności, możliwości rozwoju. W badaniach instytucji
+      resocjalizacyjnych klimat mierzy się kwestionariuszowo z dwóch
+      perspektyw (podopieczni i personel), a rozbieżność ocen sama w sobie
+      jest wartościowym wynikiem diagnostycznym.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z resocjalizacji</h2>
+
+  <ol>
+    <li>
+      <strong>Etyka na poziomie procedury.</strong> Nie „badanie było
+      dobrowolne”, lecz: kto zbierał dane, czy bez obecności wychowawców,
+      jaką gwarancję braku konsekwencji otrzymali badani.
+    </li>
+    <li>
+      <strong>Komplet zgód opisany.</strong> Dyrekcja + opiekunowie prawni +
+      badani; przy nieletnich to trzy odrębne poziomy.
+    </li>
+    <li>
+      <strong>Anonimizacja placówki.</strong> Nazwa i lokalizacja ośrodka
+      uogólnione - środowisko resocjalizacyjne jest małe i rozpoznawalne.
+    </li>
+    <li>
+      <strong>Świadomość ograniczeń terenu.</strong> Jeden ośrodek to nie
+      system; autoselekcja (badani obecni i wyrażający zgodę) nazwana wprost.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z resocjalizacji</h2>
+
+  <ul>
+    <li>
+      <strong>Badanie w placówce</strong> - klimat, relacje, oddziaływania w
+      MOW/zakładzie; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Badanie kadry systemu</strong> - kuratorzy sądowi, wychowawcy,
+      funkcjonariusze SW: obciążenia, wypalenie, ocena narzędzi pracy
+      (łatwiejszy dostęp niż do podopiecznych).
+    </li>
+    <li>
+      <strong>Studium indywidualnego przypadku</strong> - droga wychowanka
+      przez system (schemat jak w <a
+        href="/tematy/pedagogika-specjalna/przykladowa-praca/">pedagogice
+      specjalnej</a>, z dokumentacją placówki).
+    </li>
+    <li>
+      <strong>Readaptacja społeczna</strong> - wywiady z osobami
+      opuszczającymi placówki lub z pracownikami instytucji wsparcia.
+    </li>
+    <li>
+      <strong>Analiza danych zastanych</strong> - statystyki nieletnich,
+      powrotność do przestępstwa, dokumentacja systemowa (schemat bliski <a
+        href="/tematy/kryminologia/przykladowa-praca/">kryminologii</a>).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy z badaniem w placówce</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp - problem i uzasadnienie</li>
+    <li>Rozdział teoretyczny - system, pojęcia, przegląd badań</li>
+    <li>Metodologia - problemy, hipotezy, narzędzia, teren, ZGODY I ETYKA</li>
+    <li>Wyniki - per grupa, porównanie perspektyw, materiał jakościowy</li>
+    <li>Dyskusja i wnioski dla praktyki</li>
+    <li>Bibliografia · Aneksy (kwestionariusze, wzory zgód)</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Jak uzyskać dostęp do placówki">
+    <p>
+      Najpewniejsza droga wiedzie przez praktyki, wolontariat lub kontakty
+      promotora - ośrodki chętniej wpuszczają osoby, które znają. Formalnie:
+      pisemny wniosek do dyrekcji z opisem celu, narzędzi, procedury zgód i
+      zobowiązaniem do anonimizacji placówki; przy zakładach karnych wniosek
+      przechodzi przez okręgowy inspektorat SW i wymaga dłuższego
+      wyprzedzenia. Zaplanuj alternatywę (badanie kadry, kuratorów), gdyby
+      dostęp do podopiecznych okazał się niemożliwy.
+    </p>
+  </InfoBox>
+
+  <h2>Etyka badania w warunkach zależności - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Ze względu na sytuację zależności wychowanków od instytucji ankietę
+      przeprowadzała wyłącznie badaczka, bez obecności wychowawców, z
+      jednoznacznym komunikatem, że odmowa udziału i treść odpowiedzi nie mają
+      żadnego wpływu na sytuację wychowanka w ośrodku. Kwestionariusze były
+      bezimienne, a wyniki prezentowane wyłącznie zbiorczo; nazwę i
+      lokalizację ośrodka zanonimizowano.</p>
+  </blockquote>
+
+  <p>
+    Ten akapit rozstrzyga o wiarygodności całego badania: wychowanek
+    wypełniający ankietę przy wychowawcy nie odpowiada szczerze na pytania o
+    wsparcie ze strony tego wychowawcy. Procedura, która to rozumie, jest w
+    resocjalizacji warunkiem sensowności danych - nie tylko etycznym
+    obowiązkiem.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Ankieta „przy wychowawcy” vs procedura z gwarancjami">
+    <p>
+      <strong>Wersja słabsza.</strong> Ankiety rozdane wychowankom przez
+      wychowawców na zajęciach, zebrane przez tych samych wychowawców, bez
+      zgód opiekunów; wyniki: 92% wychowanków ocenia wsparcie „dobrze lub
+      bardzo dobrze”. Dane bezwartościowe (kto odpowie szczerze w tej
+      sytuacji?), procedura nie do obrony. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Trzy poziomy zgód, badanie
+      prowadzone osobiście przez autorkę bez obecności kadry, gwarancja braku
+      konsekwencji, porównanie dwóch perspektyw z testami (wsparcie: 2,7 vs
+      3,9; p &lt; 0,001) i materiał jakościowy wskazujący wspólne źródło
+      rozbieżności. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Rozpoznawalność placówki i osób">
+    <p>
+      Środowisko resocjalizacyjne jest małe: kombinacja typu placówki,
+      województwa i kilku szczegółów potrafi jednoznacznie wskazać ośrodek, a
+      cytat z wypowiedzi - konkretnego wychowanka lub wychowawcę. Anonimizuj
+      placówkę (typ + region, bez nazwy), uogólniaj szczegóły
+      charakterystyczne i parafrazuj wypowiedzi rozpoznawalne. Zasada testu:
+      jeśli ktoś z branży mógłby zgadnąć, o który ośrodek chodzi - uogólnij
+      bardziej.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z resocjalizacji</h2>
+
+  <ul>
+    <li><strong>Badanie rękami personelu</strong> - ankiety rozdawane i
+      zbierane przez wychowawców.</li>
+    <li><strong>Braki w zgodach</strong> - pominięcie opiekunów prawnych
+      nieletnich albo zgody „ustne, ogólne”.</li>
+    <li><strong>Placówka rozpoznawalna</strong> - nazwa ośrodka lub detale
+      umożliwiające identyfikację.</li>
+    <li><strong>Jedna perspektywa</strong> - tylko kadra albo tylko
+      podopieczni tam, gdzie sednem jest relacja.</li>
+    <li><strong>Uogólnianie z jednego ośrodka</strong> - wnioski o „systemie
+      MOW w Polsce” z badania 42 osób.</li>
+    <li><strong>Wnioski bez adresata</strong> - zamiast zaleceń dla praktyki
+      ogólnik o „potrzebie zmian w resocjalizacji”.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy student w ogóle dostanie zgodę na badania w MOW lub zakładzie?</h3>
+  <p>
+    Tak, to codzienność prac dyplomowych - pod warunkiem porządnego wniosku
+    (cel, narzędzia, procedura zgód, anonimizacja) i realistycznego zakresu.
+    Najłatwiej o zgodę w placówce znanej z praktyk; najtrudniej i najdłużej -
+    w jednostkach penitencjarnych, gdzie procedura idzie przez SW.
+  </p>
+
+  <h3>Jakie zgody są potrzebne przy badaniu nieletnich w placówce?</h3>
+  <p>
+    Trzy poziomy: dyrekcja placówki, opiekunowie prawni (rodzice lub - przy
+    ograniczeniu władzy - właściwa instytucja) i przystanie samego
+    nieletniego. Procedury i wzory dokumentów omawia poradnik o <a
+      href="/poradniki/metodologia/etyka/">etyce badań</a>; wzory zgód
+    znajdziesz też w aneksach pobieranego szablonu.
+  </p>
+
+  <h3>Czy zamiast placówki mogę badać kuratorów sądowych?</h3>
+  <p>
+    Tak - badania kadry systemu (kuratorzy, wychowawcy, pracownicy hosteli
+    readaptacyjnych) są pełnoprawnym i logistycznie łatwiejszym schematem:
+    dorośli profesjonaliści, zgoda indywidualna, dostęp przez zespoły
+    kuratorskie przy sądach. Tracisz perspektywę podopiecznych, ale zyskujesz
+    wykonalność.
+  </p>
+
+  <h3>Jak analizować dane przy małych grupach?</h3>
+  <p>
+    Przy grupach rzędu kilkunastu-kilkudziesięciu osób stosuj testy
+    nieparametryczne (U Manna-Whitneya, Wilcoxona) i raportuj mediany obok
+    średnich, a wyniki ilościowe wzmacniaj materiałem jakościowym z pytań
+    otwartych. Dobór testów omawia poradnik o <a
+      href="/poradniki/metodologia/analiza-ilosciowa/">analizie danych</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    procedurę i konstrukcję - Twoje badanie w placówce, zgody i dane muszą
+    być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/resocjalizacja/">wyboru tematu z
+    resocjalizacji</a> i pobierz wzór powyżej. Procedury etyczne pogłębisz w
+    poradniku o <a href="/poradniki/metodologia/etyka/">etyce badań</a>, a
+    pokrewne konwencje zobaczysz we wzorach prac z <a
+      href="/tematy/pedagogika/przykladowa-praca/">pedagogiki</a> i <a
+      href="/tematy/kryminologia/przykladowa-praca/">kryminologii</a>.
+  </p>
+</ArticleLayout>
