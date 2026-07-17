@@ -1,0 +1,290 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Filologia francuska", href: "/tematy/filologia-francuska/" },
+  { label: "Przykładowa praca", href: "/tematy/filologia-francuska/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z filologii francuskiej", href: "/tematy/filologia-francuska/" },
+  { label: "Przykładowa praca z filologii angielskiej", href: "/tematy/filologia-angielska/przykladowa-praca/" },
+  { label: "Przykładowa praca z filologii hiszpańskiej", href: "/tematy/filologia-hiszpanska/przykladowa-praca/" },
+  { label: "Analiza dokumentów i tekstów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Bibliografia i style cytowania", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z filologii francuskiej – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z romanistyki (po francusku): analiza glottodydaktyczna podręczników FLE - kompetencja interkulturowa, siatka analizy z ESOKJ, zgodność kodowania, fiszki dydaktyczne. Wzór do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z filologii francuskiej powstaje po francusku i - obok
+    ścieżek literaturoznawczej, językoznawczej i przekładowej - ma ścieżkę,
+    którą romanistyki szczególnie lubią: glottodydaktyczną. Analiza
+    podręczników FLE to jej najbardziej wykonalny wariant: materiał leży na
+    półce, rama teoretyczna (ESOKJ) jest gotowa, a wynik potrafi mieć realną
+    wartość praktyczną dla nauczycieli. Warunkiem jest warsztat, który
+    odróżnia analizę od recenzji podręcznika - i to jego elementy rozbieramy
+    poniżej.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„La compétence interculturelle dans les manuels de FLE utilisés
+    en Pologne”</strong>: trzy metody B1 dobrane według kryteriów, siatka
+    analizy z 14 wskaźnikami wyprowadzona z ESOKJ, drugi koder (zgodność
+    86%), tabela porównawcza i - jako wkład praktyczny - osiem fiszek
+    dydaktycznych do interkulturowego wykorzystania analizowanych
+    podręczników. Ten sam szkielet zadziała dla analizy gramatyki, fonetyki
+    czy sprawności w dowolnych podręcznikach językowych.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z romanistyki, z sekcjami PO FRANCUSKU (résumé, méthodologie, analyse comparative, propositions didactiques) i polskimi komentarzami: kryteria doboru podręczników, siatka analizy z poziomami wskaźników, drugi koder ze zgodnością, tabela porównawcza trzech metod i propozycje dydaktyczne jako wkład praktyczny. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-francuska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-francuska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z romanistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Język francuski akademicki.</strong> Praca pisana po francusku,
+      z terminologią dydaktyki języków (compétence, décentration, CECRL);
+      jakość języka podlega ocenie.
+    </li>
+    <li>
+      <strong>Rama z ESOKJ.</strong> Europejski system opisu kształcenia
+      językowego dostarcza kategorii, z których buduje się siatkę analizy -
+      rama jest gotowa, trzeba ją zoperacjonalizować.
+    </li>
+    <li>
+      <strong>Podręcznik jako korpus.</strong> Jednostki dydaktyczne
+      analizowane systematycznie według siatki, z odsyłaczami do stron - nie
+      wrażenia z kartkowania.
+    </li>
+    <li>
+      <strong>Wkład praktyczny.</strong> Dobra praca glottodydaktyczna kończy
+      się propozycjami dla klasy - fiszkami, scenariuszami, adaptacjami.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Kompetencja interkulturowa i décentration">
+    <p>
+      Kompetencja interkulturowa to zdolność rozumienia innej kultury i
+      własnej w relacji do niej - w dydaktyce języków opisana m.in. w pracach
+      Byrama i w ESOKJ. Kluczowym wskaźnikiem jej rozwijania w podręczniku są
+      aktywności décentration: ćwiczenia, które każą uczniowi spojrzeć na
+      własną kulturę z zewnątrz i porównać perspektywy, zamiast tylko
+      przyswajać fakty o Francji. Policzenie takich aktywności w podręczniku
+      to prosty, mocny wskaźnik analityczny.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym promotor pozna dobrą pracę glottodydaktyczną</h2>
+
+  <ol>
+    <li>
+      <strong>Korpus z kryteriami.</strong> Podręczniki faktycznie używane w
+      Polsce (listy dopuszczeń, dane wydawców), porównywalny poziom i zakres
+      analizy.
+    </li>
+    <li>
+      <strong>Siatka zoperacjonalizowana.</strong> Wymiary → wskaźniki
+      obserwowalne → poziomy (np. stereotyp: przywołany / nazwany /
+      sproblematyzowany).
+    </li>
+    <li>
+      <strong>Rzetelność kodowania.</strong> Drugi koder na próbie jednostek
+      z podanym odsetkiem zgodności.
+    </li>
+    <li>
+      <strong>Od analizy do praktyki.</strong> Wnioski przełożone na
+      propozycje dydaktyczne, nie tylko na krytykę wydawców.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z filologii francuskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Glottodydaktyczna</strong> - podręczniki, techniki nauczania,
+      motywacja uczących się FLE; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Przekładoznawcza</strong> - literatura lub przekład
+      audiowizualny na parze francusko-polskiej (warsztaty jak we wzorach z
+      <a href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a>
+      i <a
+        href="/tematy/filologia-hiszpanska/przykladowa-praca/">hispanistyki</a>).
+    </li>
+    <li>
+      <strong>Językoznawcza</strong> - współczesna francuszczyzna: anglicyzmy,
+      język mediów, socjolingwistyka (analiza korpusowa jak we wzorze z <a
+        href="/tematy/filologia-germanska/przykladowa-praca/">germanistyki</a>).
+    </li>
+    <li>
+      <strong>Literaturoznawcza</strong> - interpretacja utworów
+      francuskojęzycznych przez ramę teoretyczną, z tezą.
+    </li>
+    <li>
+      <strong>Kulturoznawcza (frankofonia)</strong> - zjawiska kultur
+      francuskojęzycznych na materiale tekstowym i medialnym.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy o podręcznikach</h2>
+
+  <ol>
+    <li>Page de titre + oświadczenia</li>
+    <li>Résumé (FR) + streszczenie PL według wymogów</li>
+    <li>Introduction - problem, cel, układ</li>
+    <li>Cadre théorique - kompetencja interkulturowa, ESOKJ, podręcznik jako obiekt badań</li>
+    <li>Méthodologie - korpus z kryteriami, siatka, procedura, rzetelność</li>
+    <li>Analyse comparative - wymiar po wymiarze, z przykładami i tabelą</li>
+    <li>Discussion et propositions didactiques - wnioski + fiszki dla klasy</li>
+    <li>Bibliographie · Corpus analysé · Annexes: siatka, fiszki</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Dobór podręczników do analizy">
+    <p>
+      Sprawdź, czego faktycznie używają polskie szkoły: wykaz podręczników
+      dopuszczonych MEN dla języka francuskiego, oferty głównych wydawców i -
+      najlepiej - krótka sonda wśród nauczycieli FLE (grupy metodyczne).
+      Analizuj pełne komponenty (podręcznik + zeszyt ćwiczeń) dla jednego
+      poziomu, żeby porównanie było uczciwe. Egzemplarze wypożyczysz z
+      bibliotek pedagogicznych lub od wydawców (egzemplarze okazowe dla
+      studentów piszących prace - warto napisać).
+    </p>
+  </InfoBox>
+
+  <h2>Siatka analizy - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>La dimension « traitement des stéréotypes » distingue trois niveaux :
+      évocation simple (le stéréotype est présent sans commentaire),
+      thématisation (le stéréotype est nommé comme tel), problématisation
+      (des activités amènent l'apprenant à le questionner). Un second codage
+      de 25% du corpus par une enseignante de FLE a donné un taux d'accord de
+      86%.</p>
+  </blockquote>
+
+  <p>
+    Trzy poziomy zamiast binarnego „jest/nie ma” - to ta subtelność czyni
+    siatkę narzędziem analitycznym. Podręcznik może być pełen stereotypów
+    przywołanych bez komentarza (co pogłębia problem) albo sproblematyzowanych
+    (co buduje kompetencję) - i dopiero poziomy to rozróżniają.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Recenzja podręcznika vs analiza porównawcza">
+    <p>
+      <strong>Wersja słabsza.</strong> Omówienie jednego podręcznika rozdział
+      po rozdziale („w unité 3 znajdujemy ciekawy tekst o Prowansji”), oceny
+      bez kryteriów („podręcznik dobrze rozwija kompetencję kulturową”), zero
+      liczb i porównania. To recenzja wydawnicza - ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Trzy metody według kryteriów
+      doboru, siatka 14 wskaźników z ESOKJ, drugi koder (86%), tabela
+      porównawcza (hexagon 78% treści kulturowych, décentration: 2/1/7
+      aktywności) i osiem fiszek dydaktycznych jako wkład praktyczny. Ocena
+      wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Analiza podręcznika ≠ analiza nauczania">
+    <p>
+      Podręcznik pokazuje, co zaproponowano, a nie co dzieje się w klasie -
+      nauczyciel może pominąć każdą kapsułkę kulturową albo zbudować na niej
+      całą lekcję. Wnioskuj więc o podręcznikach („M3 oferuje najwięcej
+      aktywności décentration”), nie o polskiej szkole. Jeśli chcesz sięgnąć
+      po praktykę - dodaj komponent empiryczny (ankieta lub wywiady z
+      nauczycielami), jawnie opisany w metodologii.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z romanistyki</h2>
+
+  <ul>
+    <li><strong>Recenzja zamiast analizy</strong> - omawianie podręcznika bez
+      siatki i porównania.</li>
+    <li><strong>Siatka bez operacjonalizacji</strong> - wymiary bez
+      obserwowalnych wskaźników i poziomów.</li>
+    <li><strong>Korpus przypadkowy</strong> - podręczniki „które miałam w
+      domu” zamiast używanych w szkołach.</li>
+    <li><strong>Brak rzetelności kodowania</strong> - jednoosobowa
+      klasyfikacja bez weryfikacji.</li>
+    <li><strong>Wnioski o nauczaniu z analizy podręcznika</strong> - skok od
+      materiału do praktyki klasowej.</li>
+    <li><strong>Krytyka bez propozycji</strong> - diagnoza braków bez wkładu
+      dydaktycznego.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z romanistyki musi być po francusku?</h3>
+  <p>
+    Na większości polskich romanistyk - tak, ze streszczeniem po polsku.
+    Jakość francuszczyzny akademickiej podlega ocenie; zaplanuj relekturę i
+    korektę.
+  </p>
+
+  <h3>Ile podręczników i jednostek analizować?</h3>
+  <p>
+    Typowo 2-4 metody jednego poziomu, po 10-15 jednostek dydaktycznych
+    każda - wystarczająco dla porównania i wykonalnie w semestr. Kompletne
+    komponenty (podręcznik + ćwiczenia) dla uczciwości porównania.
+  </p>
+
+  <h3>Wolę literaturę albo przekład - gdzie szukać warsztatu?</h3>
+  <p>
+    Konwencję literaturoznawczą (teza interpretacyjna, stan badań) pokazuje
+    wzór z <a
+      href="/tematy/filologia-polska/przykladowa-praca/">filologii
+    polskiej</a>, a przekładoznawczą - wzory z <a
+      href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a>
+    (literatura) i <a
+      href="/tematy/filologia-hiszpanska/przykladowa-praca/">hispanistyki</a>
+    (napisy filmowe); oba przenoszą się na materiał francuski.
+  </p>
+
+  <h3>Czy mogę dodać badanie wśród nauczycieli lub uczniów?</h3>
+  <p>
+    Tak - ankieta lub wywiady z nauczycielami FLE naturalnie uzupełniają
+    analizę podręczników (triangulacja). Pamiętaj o osobnym opisie tego
+    komponentu w metodologii: dobór, narzędzie, zgody - warsztat znajdziesz w
+    poradnikach o <a href="/poradniki/metodologia/ankieta/">ankiecie</a> i <a
+      href="/poradniki/metodologia/wywiad/">wywiadzie</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    siatkę, strukturę i standard rzetelności - Twój korpus, kodowanie i
+    propozycje muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/filologia-francuska/">wyboru tematu z
+    filologii francuskiej</a> i pobierz wzór powyżej. Pokrewne warsztaty
+    filologiczne znajdziesz we wzorach z <a
+      href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a>,
+    <a href="/tematy/filologia-germanska/przykladowa-praca/">germanistyki</a>
+    i <a
+      href="/tematy/filologia-hiszpanska/przykladowa-praca/">hispanistyki</a>.
+  </p>
+</ArticleLayout>
