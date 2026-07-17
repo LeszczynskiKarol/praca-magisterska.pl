@@ -1,0 +1,281 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Filologia włoska", href: "/tematy/filologia-wloska/" },
+  { label: "Przykładowa praca", href: "/tematy/filologia-wloska/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z filologii włoskiej", href: "/tematy/filologia-wloska/" },
+  { label: "Przykładowa praca z filologii hiszpańskiej", href: "/tematy/filologia-hiszpanska/przykladowa-praca/" },
+  { label: "Przykładowa praca z filologii rosyjskiej", href: "/tematy/filologia-rosyjska/przykladowa-praca/" },
+  { label: "Analiza dokumentów i tekstów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Bibliografia i style cytowania", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z filologii włoskiej – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z italianistyki (po włosku): analiza kontrastywna frazeologii kulinarnej włosko-polskiej, typologia ekwiwalencji, weryfikacja korpusowa, implikacje przekładowe. Wzór do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z filologii włoskiej powstaje po włosku i chętnie sięga
+    po analizę kontrastywną - zestawienie zjawisk włoszczyzny z ich polskimi
+    odpowiednikami. Frazeologia kulinarna to dla tej metody materiał
+    pierwszej klasy: kuchnia jest osią włoskiej kultury i zostawiła w języku
+    setki utrwalonych obrazów, których polszczyzna często nie współdzieli.
+    Poniżej rozbieramy wzorcową pracę kontrastywną - z warsztatem, który
+    odróżnia badanie od przepisywania słowników: weryfikacją korpusową,
+    typologią ekwiwalencji i przejściem do implikacji przekładowych.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„La fraseologia gastronomica italiana e i suoi equivalenti
+    polacchi”</strong>: 214 jednostek frazeologicznych z komponentem
+    kulinarnym, cztery stopnie ekwiwalencji, dominacja ekwiwalencji
+    substytucyjnej (41%) i luk (23%) oraz rozdział o konsekwencjach dla
+    tłumaczy na materiale opublikowanych przekładów. Ten sam szkielet
+    zadziała dla frazeologii somatycznej, animalistycznej czy dowolnego pola
+    leksykalnego pary włosko-polskiej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z italianistyki, z sekcjami PO WŁOSKU (riassunto, materiale e metodo, analisi contrastiva, implicazioni traduttive) i polskimi komentarzami: kryteria kompilacji korpusu ze źródeł słownikowych, weryfikacja korpusowa aktualności użyć, czterostopniowa typologia ekwiwalencji z przykładami i tabelą oraz implikacje przekładowe. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-wloska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-wloska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z italianistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Język włoski akademicki.</strong> Praca pisana po włosku, z
+      włoską terminologią lingwistyczną (unità fraseologica, equivalenza,
+      lacuna); jakość języka podlega ocenie.
+    </li>
+    <li>
+      <strong>Perspektywa kontrastywna.</strong> Zestawienie z polszczyzną
+      według typologii ekwiwalencji - to metoda, nie „ciekawostki o różnicach”.
+    </li>
+    <li>
+      <strong>Weryfikacja korpusowa.</strong> Jednostki ze słowników
+      sprawdzane w korpusach obu języków pod kątem aktualności użycia.
+    </li>
+    <li>
+      <strong>Most do przekładu.</strong> Wyniki kontrastywne testowane na
+      opublikowanych tłumaczeniach - analiza zyskuje wymiar praktyczny.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Typologia ekwiwalencji frazeologicznej">
+    <p>
+      Cztery stopnie porównania jednostek dwóch języków: ekwiwalencja totalna
+      (ten sam obraz i znaczenie: buono come il pane / dobry jak chleb),
+      częściowa (obraz pokrewny, różnice struktury lub użycia),
+      substytucyjna (znaczenie analogiczne, obraz inny: pan per focaccia /
+      pięknym za nadobne) i luka (brak utrwalonego odpowiednika - konieczna
+      parafraza). Rozkład jednostek po stopniach to główny wynik ilościowy
+      pracy kontrastywnej.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym promotor pozna dobrą pracę z italianistyki</h2>
+
+  <ol>
+    <li>
+      <strong>Włoski akademicki.</strong> Rejestr naukowy, terminologia
+      lingwistyczna, konwencja cytowania jednostek (kursywa, „łapki” dla
+      znaczeń).
+    </li>
+    <li>
+      <strong>Korpus z regułami kompilacji.</strong> Źródła słownikowe,
+      kryterium komponentu, wykluczenia, weryfikacja korpusowa - z liczbami.
+    </li>
+    <li>
+      <strong>Ekwiwalenty ustalone metodycznie.</strong> Polskie odpowiedniki
+      ze słowników frazeologicznych i korpusu narodowego, nie z intuicji.
+    </li>
+    <li>
+      <strong>Wynik interpretowany kulturowo.</strong> Rozkład ekwiwalencji
+      czytany jako świadectwo różnic kultury materialnej, nie tylko policzony.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z filologii włoskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Kontrastywna włosko-polska</strong> - frazeologia, leksyka pól
+      tematycznych, grzeczność językowa; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Przekładoznawcza</strong> - literatura lub przekład
+      audiowizualny (warsztaty jak we wzorach z <a
+        href="/tematy/filologia-hiszpanska/przykladowa-praca/">hispanistyki</a>
+      i <a
+        href="/tematy/filologia-rosyjska/przykladowa-praca/">rusycystyki</a>).
+    </li>
+    <li>
+      <strong>Językoznawcza</strong> - włoszczyzna współczesna: italianizmy w
+      polszczyźnie, język mediów, dialekty a standard.
+    </li>
+    <li>
+      <strong>Literaturoznawcza</strong> - interpretacja utworów włoskich
+      przez ramę teoretyczną, z tezą.
+    </li>
+    <li>
+      <strong>Kulturoznawcza</strong> - zjawiska kultury włoskiej (kino,
+      kuchnia jako praktyka kulturowa, made in Italy) na materiale tekstowym.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy kontrastywnej</h2>
+
+  <ol>
+    <li>Frontespizio + oświadczenia</li>
+    <li>Riassunto (IT) + streszczenie PL według wymogów</li>
+    <li>Introduzione - problem, cel, układ</li>
+    <li>Quadro teorico - frazeologia, ekwiwalencja, stan badań pary IT-PL</li>
+    <li>Materiale e metodo - źródła, kryteria, weryfikacja korpusowa, typologia</li>
+    <li>Analisi contrastiva - panorama ilościowa + stopnie z przykładami</li>
+    <li>Implicazioni traduttive - wyniki na materiale przekładów</li>
+    <li>Bibliografia · Fonti · Appendice: korpus jednostek</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Źródła i narzędzia italianisty">
+    <p>
+      Słowniki frazeologiczne włoskie jako źródło korpusu (z wydaniami),
+      korpusy referencyjne włoszczyzny do weryfikacji użyć (np. korpusy
+      dostępne akademicko), Narodowy Korpus Języka Polskiego dla
+      ekwiwalentów, słowniki frazeologiczne polskie. Kompilację prowadź w
+      arkuszu: jednostka, definicja, źródło, poświadczenie korpusowe,
+      ekwiwalent, stopień - arkusz stanie się aneksem pracy.
+    </p>
+  </InfoBox>
+
+  <h2>Analiza jednostki - wzorzec</h2>
+
+  <blockquote>
+    <p>Esemplare il caso di <em>essere come il prezzemolo</em> („essere
+      dappertutto”): l'equivalente funzionale polacco rinuncia all'immagine
+      vegetale. La sostituzione conserva di norma il registro e l'intensità
+      pragmatica, sacrificando la specificità culturale dell'immagine.</p>
+  </blockquote>
+
+  <p>
+    Jednostka kursywą, znaczenie w „łapkach”, stopień ekwiwalencji i bilans:
+    co zachowane (rejestr, pragmatyka), co stracone (kulturowa specyfika
+    obrazu). Ten bilans - a nie samo dopasowanie odpowiednika - jest treścią
+    analizy kontrastywnej.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Słowniczek ciekawostek vs analiza kontrastywna">
+    <p>
+      <strong>Wersja słabsza.</strong> Alfabetyczna lista „ciekawych włoskich
+      powiedzeń o jedzeniu” z tłumaczeniami na polski i komentarzami „w
+      polskim mówimy inaczej”. Bez typologii, bez korpusowej weryfikacji, bez
+      liczb. To słowniczek turystyczny - ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> 214 jednostek według jawnych
+      kryteriów, weryfikacja korpusowa (18 jednostek z markerem archaiczności),
+      cztery stopnie ekwiwalencji z rozkładem (41% substytucji, 23% luk),
+      interpretacja kulturowa asymetrii obrazów i rozdział przekładowy na
+      opublikowanych tłumaczeniach. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Słownik jako jedyny autorytet">
+    <p>
+      Słowniki frazeologiczne konserwują jednostki, które z żywego języka
+      dawno wyszły - praca oparta wyłącznie na nich opisuje włoszczyznę
+      sprzed półwiecza. Weryfikacja korpusowa (czy jednostka ma współczesne
+      poświadczenia?) to niewielki nakład, a chroni przed najpoważniejszym
+      zarzutem recenzenckim i sama w sobie daje ciekawy wynik: które obrazy
+      kulinarne wychodzą z użycia.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z italianistyki</h2>
+
+  <ul>
+    <li><strong>Słowniczek zamiast analizy</strong> - lista jednostek z
+      tłumaczeniami, bez typologii i liczb.</li>
+    <li><strong>Brak weryfikacji korpusowej</strong> - materiał archaiczny
+      traktowany jako współczesny.</li>
+    <li><strong>Ekwiwalenty z intuicji</strong> - polskie odpowiedniki bez
+      oparcia w słownikach i korpusie.</li>
+    <li><strong>Zliczanie bez interpretacji</strong> - rozkład stopni
+      ekwiwalencji bez pytania, skąd się bierze.</li>
+    <li><strong>Cytowanie bez konwencji</strong> - jednostki bez kursywy,
+      znaczenia bez „łapek”, brak źródeł.</li>
+    <li><strong>Brak aneksu</strong> - korpus nieudostępniony, analiza
+      nieweryfikowalna.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z italianistyki musi być po włosku?</h3>
+  <p>
+    Na większości polskich italianistyk - tak, ze streszczeniem po polsku.
+    Jakość włoszczyzny akademickiej podlega ocenie; zaplanuj korektę
+    językową.
+  </p>
+
+  <h3>Ile jednostek powinien liczyć korpus frazeologiczny?</h3>
+  <p>
+    Typowo 150-300 jednostek jednego pola tematycznego - na tyle dużo, by
+    rozkład stopni ekwiwalencji był sensowny, i na tyle wąsko, by analiza
+    jakościowa była wykonalna. Pole kulinarne, somatyczne i animalistyczne
+    należą do najbogatszych.
+  </p>
+
+  <h3>Czy analiza kontrastywna wymaga znajomości metod statystycznych?</h3>
+  <p>
+    Nie - wystarczą rozkłady procentowe i staranna analiza jakościowa.
+    Warsztat leży w kryteriach kompilacji, typologii i weryfikacji korpusowej,
+    nie w testach istotności.
+  </p>
+
+  <h3>Wolę przekład albo literaturę - gdzie szukać warsztatu?</h3>
+  <p>
+    Wzory przekładoznawcze: <a
+      href="/tematy/filologia-rosyjska/przykladowa-praca/">rusycystyka</a>
+    (realia w prozie) i <a
+      href="/tematy/filologia-hiszpanska/przykladowa-praca/">hispanistyka</a>
+    (napisy filmowe); konwencję literaturoznawczą pokazuje wzór z <a
+      href="/tematy/filologia-polska/przykladowa-praca/">filologii
+    polskiej</a>. Wszystkie przenoszą się na materiał włoski.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    warsztat i strukturę - Twój korpus, ekwiwalenty i analiza muszą być
+    własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/filologia-wloska/">wyboru tematu z filologii
+    włoskiej</a> i pobierz wzór powyżej. Pokrewne warsztaty filologiczne
+    znajdziesz we wzorach z <a
+      href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a>,
+    <a href="/tematy/filologia-germanska/przykladowa-praca/">germanistyki</a>
+    i <a
+      href="/tematy/filologia-hiszpanska/przykladowa-praca/">hispanistyki</a>.
+  </p>
+</ArticleLayout>
