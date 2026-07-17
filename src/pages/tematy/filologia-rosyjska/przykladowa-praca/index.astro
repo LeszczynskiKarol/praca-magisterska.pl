@@ -1,0 +1,278 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Filologia rosyjska", href: "/tematy/filologia-rosyjska/" },
+  { label: "Przykładowa praca", href: "/tematy/filologia-rosyjska/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z filologii rosyjskiej", href: "/tematy/filologia-rosyjska/" },
+  { label: "Przykładowa praca z filologii angielskiej", href: "/tematy/filologia-angielska/przykladowa-praca/" },
+  { label: "Przykładowa praca z filologii germańskiej", href: "/tematy/filologia-germanska/przykladowa-praca/" },
+  { label: "Analiza dokumentów i tekstów", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Bibliografia i style cytowania", href: "/poradniki/bibliografia/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z filologii rosyjskiej – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z rusycystyki (po rosyjsku): przekład literacki - realia sowieckie w polskim tłumaczeniu, sploszna wyborka, typologia Włachowa i Florina, asymetria strategii. Wzór do pobrania w PDF i Word."
+  readingTime="17 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z filologii rosyjskiej powstaje po rosyjsku i ma do
+    dyspozycji ramę, którą rosyjskie przekładoznawstwo dało światu: teorię
+    realiów, czyli leksyki bezekwiwalentnej (Włachow i Florin). Para
+    rosyjsko-polska jest dla tej ramy wyjątkowo wdzięczna - bliskość języków
+    słowiańskich zderza się z odmiennością doświadczeń historycznych, więc
+    strategie tłumaczy układają się w czytelne, interpretowalne wzorce.
+    Poniżej rozbieramy wzorcową pracę o przekładzie realiów - z warsztatem
+    sploshnoj wyborki i tabelą krzyżową, która robi z listy przykładów wynik
+    badawczy.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Советские реалии в польском переводе современной русской
+    прозы”</strong>: 168 jednostek bezekwiwalentnych wyekscerpowanych metodą
+    ciągłą z pary tekstów, klasyfikacja przyjęta za typologią realiów i
+    wynik-asymetria: realia bytowe ulegają udomowieniu, społeczno-polityczne
+    zachowują koloryt. Ten sam szkielet zadziała dla frazeologii, języka
+    potocznego w przekładzie czy analizy porównawczej dwóch tłumaczeń.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z rusycystyki, z sekcjami PO ROSYJSKU (аннотация, материал и метод, анализ, обсуждение) i polskimi komentarzami: kryteria sploshnoj wyborki z obsługą przypadków granicznych, korpus 168 jednostek z lokalizacją w obu wydaniach, tabela krzyżowa priomów i kategorii oraz interpretacja asymetrii strategii. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-rosyjska.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-filologia-rosyjska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z rusycystyki</h2>
+
+  <ul>
+    <li>
+      <strong>Język rosyjski i cyrylica.</strong> Praca pisana po rosyjsku, z
+      rosyjską terminologią przekładoznawczą (реалия, безэквивалентная
+      лексика, приём передачи).
+    </li>
+    <li>
+      <strong>Rodzima rama teoretyczna.</strong> Typologia realiów Włachowa i
+      Florina to klasyka rosyjskiej szkoły przekładu - naturalny punkt
+      odniesienia prac rusycystycznych.
+    </li>
+    <li>
+      <strong>Sploszna wyborka.</strong> Ekscerpcja ciągła całego tekstu
+      według kryteriów - zamiast „wybranych przykładów”.
+    </li>
+    <li>
+      <strong>Para wydań z lokalizacją.</strong> Każda jednostka z kontekstem
+      i stronami oryginału oraz przekładu - analiza w pełni sprawdzalna.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Realia (лексика bezekwiwalentna)">
+    <p>
+      Jednostki oznaczające przedmioty i zjawiska specyficzne dla danej
+      kultury, pozbawione pełnego odpowiednika w języku docelowym - od
+      przedmiotów codzienności (коммуналка, авоська) po instytucje
+      społeczno-polityczne. Klasyczną typologię realiów i priomów ich
+      przekazu (transkrypcja, kalka, przekład przybliżony, opisowy,
+      opuszczenie) sformułowali S. Włachow i S. Florin w „Непереводимое в
+      переводе” - kanonicznej pozycji każdej rusycystycznej bibliografii
+      przekładoznawczej.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym promotor pozna dobrą pracę z rusycystyki</h2>
+
+  <ol>
+    <li>
+      <strong>Rosyjski akademicki.</strong> Rejestr naukowy i utrwalona
+      terminologia szkoły rosyjskiej, nie kalki z polskiego.
+    </li>
+    <li>
+      <strong>Wyborka z regułami.</strong> Kryteria, obsługa przypadków
+      granicznych (sowietyzmy zadomowione w polszczyźnie), liczby per
+      kategoria.
+    </li>
+    <li>
+      <strong>Analiza konotacji, nie tylko denotatu.</strong> Co ginie w
+      przekładzie przybliżonym (np. konotacje ciasnoty w „коммуналке”) - to
+      sedno analizy realiów.
+    </li>
+    <li>
+      <strong>Wynik ponad katalog.</strong> Wzorzec strategii (asymetria
+      kategorii) i jego interpretacja kulturowa - nie sama lista przykładów.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z filologii rosyjskiej</h2>
+
+  <ul>
+    <li>
+      <strong>Przekładoznawcza</strong> - realia, frazeologia, język potoczny
+      na parze tekstów; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Porównanie przekładów</strong> - dwa polskie tłumaczenia tego
+      samego utworu (klasyka rosyjska ma ich zwykle kilka!) - wdzięczny
+      wariant z wbudowanym materiałem porównawczym.
+    </li>
+    <li>
+      <strong>Językoznawcza</strong> - współczesna ruszczyzna: zapożyczenia,
+      język mediów, nowomowa (analiza korpusowa jak we wzorze z <a
+        href="/tematy/filologia-germanska/przykladowa-praca/">germanistyki</a>).
+    </li>
+    <li>
+      <strong>Literaturoznawcza</strong> - interpretacja utworów przez ramę
+      teoretyczną, z tezą.
+    </li>
+    <li>
+      <strong>Kulturoznawcza</strong> - zjawiska kultury rosyjskiej na
+      materiale tekstowym i medialnym.
+    </li>
+  </ul>
+
+  <h2>Struktura pracy o przekładzie realiów</h2>
+
+  <ol>
+    <li>Титульный лист + oświadczenia</li>
+    <li>Аннотация (RU) + streszczenie PL według wymogów</li>
+    <li>Введение - problem, cel, układ</li>
+    <li>Теоретические основы - realia, typologie, stan badań pary RU-PL</li>
+    <li>Материал и метод - para tekstów, kryteria wyborki, klasyfikacja robocza</li>
+    <li>Анализ - przegląd ilościowy + kategorie z przykładami i lokalizacją</li>
+    <li>Обсуждение - wzorzec strategii, interpretacja, ograniczenia</li>
+    <li>Библиография · Источники · Приложение: korpus jednostek</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Dobór pary tekstów">
+    <p>
+      Szukaj prozy „gęstej” od realiów (akcja osadzona w wyrazistych realiach
+      epoki) z opublikowanym polskim przekładem uznanego tłumacza. Przed
+      zatwierdzeniem tematu przeczytaj równolegle 2-3 rozdziały i policz
+      jednostki - jeśli nie zbierzesz z całości co najmniej 100-150, materiał
+      jest za ubogi. Rejestruj od razu w arkuszu: jednostka, kontekst,
+      rozwiązanie, strony obu wydań, kategoria wstępna.
+    </p>
+  </InfoBox>
+
+  <h2>Analiza jednostki - wzorzec</h2>
+
+  <blockquote>
+    <p>*Коммуналка* передаётся как *mieszkanie komunalne* - решение,
+      сохраняющее денотат, но стирающее коннотации тесноты и вынужденного
+      соседства, центральные для сцены (с. 84 оригинала / с. 79 перевода).</p>
+  </blockquote>
+
+  <p>
+    Jednostka, rozwiązanie, rozdzielenie denotatu od konotacji i lokalizacja
+    w obu wydaniach - kompletny ruch analityczny w jednym zdaniu. Analiza
+    realiów żyje właśnie na tym poziomie: nie „czy tłumacz przełożył”, ale
+    co z kulturowego ładunku jednostki przetrwało przeprawę.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Katalog ciekawostek vs analiza strategii">
+    <p>
+      <strong>Wersja słabsza.</strong> Kilkadziesiąt „ciekawych realiów”
+      zebranych przy lekturze, omówionych po kolei („tłumacz dobrze poradził
+      sobie z samowarem”), bez wyborki ciągłej, bez typologii, bez liczb.
+      Wniosek: „przekład realiów jest trudny”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Sploszna wyborka 168 jednostek z
+      regułami dla przypadków granicznych, klasyfikacja za typologią realiów,
+      tabela krzyżowa priom × kategoria i wynik interpretowalny kulturowo:
+      udomowienie sfery bytowej przy egzotyzacji instytucji sowieckich jako
+      odbicie podwójnego statusu tej rzeczywistości dla polskiego czytelnika.
+      Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Sowietyzmy zadomowione w polszczyźnie">
+    <p>
+      Część realiów sowieckich weszła do polszczyzny (kołchoz, łagier,
+      pierestrojka) i dla polskiego czytelnika nie jest już „obca”. Jeśli
+      potraktujesz je jak zwykłe realia, zafałszujesz statystykę strategii -
+      transkrypcja takiej jednostki nie jest decyzją egzotyzującą, tylko
+      użyciem zasobu docelowego języka. Oznaczaj je w korpusie osobno i omów
+      jako kategorię graniczną - to detal, po którym poznaje się świadomość
+      warsztatową.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z rusycystyki</h2>
+
+  <ul>
+    <li><strong>Przykłady bez wyborki ciągłej</strong> - materiał „z
+      lektury” zamiast ekscerpcji całego tekstu.</li>
+    <li><strong>Typologia własna zamiast kanonicznej</strong> - wymyślanie
+      kategorii przy istniejącej, utrwalonej typologii realiów.</li>
+    <li><strong>Analiza samego denotatu</strong> - „przetłumaczone poprawnie”
+      bez pytania o konotacje.</li>
+    <li><strong>Recenzowanie tłumacza</strong> - oceny zamiast opisu
+      strategii.</li>
+    <li><strong>Brak lokalizacji</strong> - cytaty bez stron obu wydań.</li>
+    <li><strong>Generalizacja z jednej pary</strong> - wnioski o „przekładzie
+      rosyjsko-polskim w ogóle” z jednego utworu.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca z rusycystyki musi być po rosyjsku?</h3>
+  <p>
+    Na większości polskich rusycystyk - tak, ze streszczeniem po polsku.
+    Jakość rosyjszczyzny akademickiej podlega ocenie; zaplanuj korektę
+    językową.
+  </p>
+
+  <h3>Ile jednostek powinien liczyć korpus realiów?</h3>
+  <p>
+    Typowo 100-200 jednostek z jednego utworu - na tyle dużo, by odsetki
+    priomów per kategoria były sensowne. Sprawdź „gęstość” tekstu przed
+    zatwierdzeniem tematu, czytając równolegle próbkę.
+  </p>
+
+  <h3>Czy mogę porównać dwa przekłady tego samego utworu?</h3>
+  <p>
+    To jeden z najlepszych schematów rusycystycznych - klasyka rosyjska ma po
+    kilka polskich tłumaczeń z różnych epok, więc porównanie strategii (i ich
+    uwarunkowań historycznych) ma wbudowany materiał. Warsztat pozostaje ten
+    sam: wspólny korpus jednostek, te same kategorie, tabela porównawcza.
+  </p>
+
+  <h3>Wolę językoznawstwo współczesne - co zamiast przekładu?</h3>
+  <p>
+    Analiza korpusowa współczesnej ruszczyzny (język mediów, zapożyczenia,
+    dyskurs) według warsztatu ze wzoru <a
+      href="/tematy/filologia-germanska/przykladowa-praca/">germanistyki</a> -
+    z korpusami narodowymi rosyjskiego jako źródłem materiału.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    warsztat i strukturę - Twoja para tekstów, wyborka i analiza muszą być
+    własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/filologia-rosyjska/">wyboru tematu z
+    filologii rosyjskiej</a> i pobierz wzór powyżej. Pokrewne warsztaty
+    przekładoznawcze zobaczysz we wzorach z <a
+      href="/tematy/filologia-angielska/przykladowa-praca/">anglistyki</a> i
+    <a href="/tematy/filologia-hiszpanska/przykladowa-praca/">hispanistyki</a>.
+  </p>
+</ArticleLayout>
