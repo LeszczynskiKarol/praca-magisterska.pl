@@ -10,10 +10,9 @@ const API_URL =
 const ebook = {
   id: "ebook-magisterska-psychologia",
   name: "Jak napisać pracę magisterską z psychologii",
-  subtitle: "Przewodnik po metodologii, badaniach i pisaniu",
+  subtitle: "Od konstruktu do obrony — kompletny przewodnik",
   price: 39,
-  pages: "120+",
-  chapters: 12,
+  chapters: 16,
   format: "PDF",
 };
 ---
@@ -33,7 +32,8 @@ const ebook = {
             <div class="flex flex-wrap gap-2 mb-6">
               <span class="bg-accent/30 text-accent-light px-3 py-1 rounded-full text-sm font-medium">📚 Ebook PDF</span>
               <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Psychologia</span>
-              <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">{ebook.pages} stron</span>
+              <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">{ebook.chapters} rozdziałów</span>
+              <span class="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-3 py-1 rounded-full text-sm font-medium">✨ Nowe wydanie 2026</span>
             </div>
 
             <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
@@ -93,9 +93,9 @@ const ebook = {
                   <div class="mt-4 pt-4 border-t border-slate-200 flex justify-center gap-4 text-xs text-slate-400">
                     <span>PDF</span>
                     <span>•</span>
-                    <span>{ebook.pages} stron</span>
+                    <span>{ebook.chapters} rozdziałów</span>
                     <span>•</span>
-                    <span>2026</span>
+                    <span>Wydanie II · 2026</span>
                   </div>
                 </div>
               </div>
@@ -118,33 +118,33 @@ const ebook = {
             [
               {
                 icon: "🎯",
-                title: "Dobór tematu i zawężanie problemu badawczego",
-                desc: "Jak wybrać temat, który przejdzie na Twoim kierunku i ma sens naukowy.",
+                title: "Od tematu do modelu badania",
+                desc: "Zawężanie problemu, operacjonalizacja konstruktów, hipotezy z uzasadnieniem — bez HARKingu.",
               },
               {
                 icon: "📊",
-                title: "Metodologia dla psychologii",
-                desc: "Metody ilościowe i jakościowe: kwestionariusze, wywiady, eksperyment, analiza dokumentów.",
+                title: "Schemat, próba i moc statystyczna",
+                desc: "Co wolno wnioskować z badania przekrojowego, jak policzyć liczebność próby w G*Power.",
+              },
+              {
+                icon: "🧰",
+                title: "Narzędzia w polskich adaptacjach",
+                desc: "SES, NPI, GSES i inne: jak wybrać, opisać i zaraportować rzetelność we własnej próbie.",
               },
               {
                 icon: "🧪",
-                title: "Etyka badań psychologicznych",
-                desc: "Zgoda uczestnika, anonimowość, etyczne dylematy — co musisz wiedzieć przed badaniami.",
+                title: "Etyka i badanie online",
+                desc: "Zgody, komisja etyczna, tematy wrażliwe oraz kontrola jakości danych z ankiet internetowych.",
               },
               {
                 icon: "📈",
-                title: "Analiza i interpretacja wyników",
-                desc: "Jak zaprezentować wyniki, zweryfikować hipotezy i napisać dyskusję.",
-              },
-              {
-                icon: "✍️",
-                title: "Pisanie poszczególnych rozdziałów",
-                desc: "Wstęp, teoria, metodologia, wyniki, dyskusja, zakończenie — z przykładami.",
+                title: "Statystyka i standard APA",
+                desc: "Mapa hipoteza → test, wzorce zdań wynikowych, tabele APA i dyskusja, która broni pracę.",
               },
               {
                 icon: "🎤",
-                title: "Przygotowanie do obrony",
-                desc: "Typowe pytania komisji na kierunku psychologia i jak na nie odpowiadać.",
+                title: "Finisz i obrona",
+                desc: "Streszczenie, antyplagiat, harmonogram ostatniego miesiąca i kanon pytań komisji z odpowiedziami.",
               },
             ].map((item) => (
               <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-accent transition-colors">
