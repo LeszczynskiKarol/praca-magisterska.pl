@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -53,6 +54,12 @@ const relatedLinks = [
       pobrania w PDF i Word.
     </p>
   </div>
+
+  <EbookKierunkowyCTA
+    kierunek="informatyki"
+    icon="💻"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-informatyki/"
+  />
 
   <h2>Sztuczna inteligencja i uczenie maszynowe</h2>
 
