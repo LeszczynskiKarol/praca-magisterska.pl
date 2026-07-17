@@ -4,22 +4,72 @@ import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 
 const breadcrumbs = [
   { label: "Poradniki", href: "/poradniki/" },
-  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Narzędzia do pisania pracy", href: "/poradniki/narzedzia/" },
 ];
 
 const relatedLinks = [
-  { label: "Zakończenie pracy magisterskiej", href: "/poradniki/zakonczenie/" },
-  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+  { label: "Word - formatowanie pracy", href: "/poradniki/word/" },
+  { label: "LaTeX dla początkujących", href: "/poradniki/latex/" },
+  { label: "Zotero - zarządzanie bibliografią", href: "/poradniki/zotero/" },
+  { label: "Mendeley", href: "/poradniki/mendeley/" },
+  { label: "Sprawdzanie antyplagiatowe", href: "/poradniki/antyplagiat/" },
 ];
+
+const faqItems = [
+  {
+    question: "W jakim programie najlepiej pisać pracę magisterską?",
+    answer:
+      "Dla większości studentów najlepszym wyborem pozostaje Microsoft Word (lub darmowy LibreOffice Writer) - promotorzy oczekują plików .docx z widocznymi poprawkami, a style i automatyczne spisy załatwiają formatowanie. LaTeX opłaca się w pracach z dużą liczbą wzorów matematycznych (kierunki ścisłe i techniczne). Dokumenty Google sprawdzają się na etapie szkiców i współpracy, ale finalne formatowanie lepiej wykonać w Wordzie.",
+  },
+  {
+    question: "Jaki darmowy program do bibliografii wybrać?",
+    answer:
+      "Zotero - jest w pełni darmowe, ma wtyczkę do Worda i przeglądarki (zapisywanie źródeł jednym kliknięciem) oraz obsługuje polskie style cytowania. Mendeley to porównywalna alternatywa z większym naciskiem na pliki PDF. Oba narzędzia generują bibliografię automatycznie i przeliczają przypisy przy każdej zmianie - ręczne pisanie bibliografii przy 60+ źródłach to proszenie się o błędy.",
+  },
+  {
+    question: "Czy warto pisać pracę magisterską w LaTeX-u?",
+    answer:
+      "Warto, jeśli praca zawiera dużo wzorów, algorytmów lub kodu (matematyka, fizyka, informatyka) - skład jest wtedy nieporównywalnie lepszy. Nie warto, jeśli promotor pracuje w trybie recenzji Worda albo praca jest czysto tekstowa - próg wejścia LaTeX-a nie zwróci się. Kompromisem jest Overleaf (LaTeX w przeglądarce, bez instalacji).",
+  },
+  {
+    question: "Jakim programem sprawdzić plagiat przed oddaniem pracy?",
+    answer:
+      "Praca i tak przejdzie przez uczelniany JSA (Jednolity System Antyplagiatowy), do którego student nie ma bezpośredniego dostępu. Komercyjne przedsprawdzenia dają wynik orientacyjny, ale działają na innych bazach niż JSA - traktuj je poglądowo. Najskuteczniejsza profilaktyka to poprawne cytowanie i parafrazowanie od początku pisania, nie sprawdzanie na końcu.",
+  },
+  {
+    question: "Czy mogę używać narzędzi AI przy pisaniu pracy magisterskiej?",
+    answer:
+      "Zależnie od regulaminu uczelni - coraz więcej uczelni reguluje użycie AI wprost, od zakazu po dopuszczenie z ujawnieniem. Bezpieczne zastosowania to zwykle korekta językowa i wyszukiwanie literatury; generowanie treści pracy jest powszechnie traktowane jak naruszenie samodzielności. Sprawdź regulamin i ustal zasady z promotorem, zanim użyjesz czegokolwiek.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 ---
 
 <ArticleLayout
-  title="Narzędzia, programy i aplikacje do pisania pracy magisterskiej - z czego korzystać?"
-  description="Kompletny poradnik dotyczący korzystania z aplikacji, programów i narzędzia do pisania pracy mgr"
-  readingTime="18 min"
+  title="Narzędzia i programy do pisania pracy magisterskiej - porównanie 2026"
+  description="Jakie programy do pisania pracy magisterskiej: Word czy LaTeX, Zotero czy Mendeley, organizacja pracy i sprawdzanie tekstu. Tabela porównawcza + darmowe alternatywy."
+  updateDate="2026-07-17"
+  readingTime="19 min"
   breadcrumbs={breadcrumbs}
   relatedLinks={relatedLinks}
 >
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+    slot="head"
+  />
   <p>
     Pisanie pracy magisterskiej to złożony proces, który wymaga nie tylko wiedzy
     merytorycznej, ale także odpowiedniego wsparcia technologicznego.
@@ -35,6 +85,57 @@ const relatedLinks = [
     wszystkie fazy tworzenia pracy magisterskiej, minimalizując stres i
     maksymalizując jakość końcowego rezultatu.
   </p>
+
+  <h2>Niezbędnik w pigułce - co do czego</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Zadanie</th>
+        <th>Standard</th>
+        <th>Darmowa alternatywa</th>
+        <th>Nasz poradnik</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pisanie i formatowanie</td>
+        <td>Microsoft Word</td>
+        <td>LibreOffice Writer</td>
+        <td><a href="/poradniki/word/">Word krok po kroku</a></td>
+      </tr>
+      <tr>
+        <td>Prace ze wzorami (ścisłe)</td>
+        <td>LaTeX (Overleaf)</td>
+        <td>Overleaf - plan darmowy</td>
+        <td><a href="/poradniki/latex/">LaTeX dla początkujących</a></td>
+      </tr>
+      <tr>
+        <td>Bibliografia i przypisy</td>
+        <td>Zotero</td>
+        <td>Zotero / Mendeley</td>
+        <td><a href="/poradniki/zotero/">Zotero</a>, <a href="/poradniki/mendeley/">Mendeley</a></td>
+      </tr>
+      <tr>
+        <td>Statystyka (prace empiryczne)</td>
+        <td>SPSS (licencja uczelni)</td>
+        <td>JASP, jamovi</td>
+        <td><a href="/poradniki/metodologia/analiza-ilosciowa/">Analiza danych</a></td>
+      </tr>
+      <tr>
+        <td>Ankiety online</td>
+        <td>Webankieta, LimeSurvey</td>
+        <td>Google Forms</td>
+        <td><a href="/poradniki/metodologia/ankieta/">Jak przeprowadzić ankietę</a></td>
+      </tr>
+      <tr>
+        <td>Kontrola antyplagiatowa</td>
+        <td>JSA (uczelnia)</td>
+        <td>poprawny warsztat cytowania</td>
+        <td><a href="/poradniki/antyplagiat/">Antyplagiat i JSA</a></td>
+      </tr>
+    </tbody>
+  </table>
 
   <h2>Edytory tekstu i programy do formatowania pracy magisterskiej</h2>
 
@@ -423,4 +524,48 @@ const relatedLinks = [
     w naukę obsługi programów na początku zwróci się wielokrotnie w postaci
     zaoszczędzonego czasu i nerwów w dalszych etapach. Powodzenia w pisaniu!
   </p>
+
+  <h2>FAQ - najczęściej zadawane pytania o narzędzia</h2>
+
+  <div class="faq-list">
+    {
+      faqItems.map((item) => (
+        <details class="faq-item">
+          <summary>
+            <strong>{item.question}</strong>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
 </ArticleLayout>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #f9fafb;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item[open] summary {
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>
