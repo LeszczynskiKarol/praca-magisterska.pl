@@ -9,11 +9,13 @@ interface Props {
   title?: string;
   description?: string;
   files: FileLink[];
+  ebookHint?: boolean;
 }
 const {
   title = "📄 Pobierz wzór – PDF i Word",
   description,
   files,
+  ebookHint = false,
 } = Astro.props;
 ---
 
@@ -33,6 +35,12 @@ const {
       ))
     }
   </div>
+  {ebookHint && (
+    <p class="download-hint">
+      Chcesz przejść przez pisanie każdego z tych rozdziałów krok po kroku?
+      Zobacz ebook <a href="/sklep/praca-magisterska-ebook/">„Jak napisać pracę magisterską od A do Z"</a> (250 stron, 39 zł).
+    </p>
+  )}
 </div>
 
 <style>
@@ -77,5 +85,19 @@ const {
   }
   .download-btn-alt:hover {
     background: #eef2ff;
+  }
+  .download-hint {
+    margin: 0.9rem 0 0;
+    font-size: 0.875rem;
+    color: #4b5563;
+  }
+  .download-hint a {
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .download-hint a:hover {
+    color: #4338ca;
   }
 </style>
