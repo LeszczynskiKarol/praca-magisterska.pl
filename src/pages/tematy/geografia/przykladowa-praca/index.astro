@@ -1,0 +1,285 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Geografia", href: "/tematy/geografia/" },
+  { label: "Przykładowa praca", href: "/tematy/geografia/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z geografii", href: "/tematy/geografia/" },
+  { label: "Przykładowa praca z turystyki", href: "/tematy/turystyka-i-rekreacja/przykladowa-praca/" },
+  { label: "Analiza danych zastanych", href: "/poradniki/metodologia/analiza-dokumentow/" },
+  { label: "Tabele i wykresy w pracy", href: "/poradniki/tabele-wykresy/" },
+  { label: "Wykaz tabel i rysunków", href: "/poradniki/wykaz-tabel/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z geografii – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z geografii: analiza GIS zmian użytkowania ziemi (CORINE, BDOT10k, ortofotomapy), macierze przejść, ocena dokładności i interpretacja suburbanizacji. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z geografii ma dziś do dyspozycji coś, o czym starsze
+    roczniki mogły pomarzyć: darmowe dane przestrzenne o Polsce (ortofotomapy,
+    BDOT10k, CORINE, dane GUS do poziomu gmin) i darmowe narzędzie do ich
+    analizy (QGIS). Dzięki temu solidna analiza przestrzenna jest w zasięgu
+    każdego magistranta - pod warunkiem opanowania warsztatu, po którym
+    recenzent-geograf poznaje jakość pracy: nazwane źródła z datami, wspólny
+    układ współrzędnych, ocena dokładności i mapy z pełnym wyposażeniem
+    kartograficznym. Poniżej rozbieramy wzorcową pracę GIS-ową na części.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Zmiany użytkowania ziemi w strefie podmiejskiej miasta X w
+    latach 2000–2024 – analiza z wykorzystaniem narzędzi GIS”</strong>: trzy
+    przekroje czasowe CORINE zweryfikowane ortofotomapą, macierze przejść,
+    mapy koncentracji zmian i interpretacja przez model suburbanizacji. Ten
+    sam schemat zadziała dla zmian lesistości, zagospodarowania dolin
+    rzecznych, dostępności usług czy analiz klimatu lokalnego.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z geografii: strona tytułowa, streszczenie ze źródłami danych, spis treści, rozdział Materiały i metody (dane z poziomami czasowymi, przygotowanie warstw, procedura GIS, ocena dokładności w punktach kontrolnych), macierz przejść z interpretacją, analiza rozkładu przestrzennego i wnioski dla polityki przestrzennej. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-geografia.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-geografia.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z geografii</h2>
+
+  <ul>
+    <li>
+      <strong>Przestrzeń jako oś analizy.</strong> Pytania badawcze dotyczą
+      rozkładów, gradientów i wzorców przestrzennych - a odpowiedzi mają
+      postać map i wskaźników.
+    </li>
+    <li>
+      <strong>Publiczne dane przestrzenne.</strong> Geoportal (ortofotomapy,
+      BDOT10k), Copernicus (CORINE), BDL GUS, dane IMGW - praca geograficzna
+      rzadko wymaga płatnych danych.
+    </li>
+    <li>
+      <strong>Warsztat GIS.</strong> Ujednolicenie układów współrzędnych,
+      operacje na warstwach, macierze przejść, ocena dokładności - procedura
+      musi być powtarzalna.
+    </li>
+    <li>
+      <strong>Kartografia jako dowód.</strong> Mapy własne są materiałem
+      wynikowym pracy: numerowane, ze skalą, legendą, źródłem i układem.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Macierz przejść (change matrix)">
+    <p>
+      Tabela pokazująca, ile powierzchni przeszło z każdej kategorii
+      użytkowania do każdej innej między dwoma przekrojami czasowymi (grunty
+      orne → zabudowa, łąki → lasy...). To analityczne serce badań zmian
+      pokrycia terenu: zamiast „zabudowy przybyło” pokazuje, czyim kosztem i
+      w jakiej skali. W GIS uzyskuje się ją przecięciem warstw z dwóch
+      okresów.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z geografii</h2>
+
+  <ol>
+    <li>
+      <strong>Źródła danych nazwane z datami.</strong> CORINE z poziomami
+      czasowymi, BDOT10k i ortofotomapy z datą pobrania, BDL z rokiem stanu.
+    </li>
+    <li>
+      <strong>Świadomość ograniczeń danych.</strong> Minimalna jednostka
+      kartowania CORINE (25 ha), generalizacja, różnice metodyczne między
+      przekrojami - nazwane i omówione.
+    </li>
+    <li>
+      <strong>Ocena dokładności.</strong> Punkty kontrolne, zgodność z
+      ortofotomapą, wskazanie słabych klas - zamiast ślepej wiary w dane.
+    </li>
+    <li>
+      <strong>Mapy z pełnym wyposażeniem.</strong> Skala, legenda, źródło,
+      układ współrzędnych; „opracowanie własne na podstawie...” pod każdą.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z geografii</h2>
+
+  <ul>
+    <li>
+      <strong>Analiza zmian przestrzennych (GIS)</strong> - użytkowanie
+      ziemi, lesistość, zabudowa; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Geografia społeczno-ekonomiczna</strong> - zróżnicowania
+      przestrzenne zjawisk (depopulacja, dostępność usług, dojazdy) na danych
+      GUS z wizualizacją kartograficzną.
+    </li>
+    <li>
+      <strong>Geografia fizyczna z badaniami terenowymi</strong> - kartowanie
+      geomorfologiczne, hydrografia, klimat lokalny (schemat pomiarowy bliski
+      <a href="/tematy/ochrona-srodowiska/przykladowa-praca/">ochronie
+      środowiska</a>).
+    </li>
+    <li>
+      <strong>Geografia turyzmu i osadnictwa</strong> - potencjał i
+      zagospodarowanie obszarów (schemat pokrewny <a
+        href="/tematy/turystyka-i-rekreacja/przykladowa-praca/">turystyce</a>).
+    </li>
+    <li>
+      <strong>Praca teledetekcyjna</strong> - klasyfikacja zobrazowań
+      satelitarnych (Sentinel, Landsat), wskaźniki spektralne (NDVI).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy GIS-owej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści + wykaz skrótów</li>
+    <li>Wstęp - cel, zakres, układ</li>
+    <li>Podstawy teoretyczne - pojęcia, modele, źródła danych</li>
+    <li>Obszar badań - delimitacja i charakterystyka</li>
+    <li>Materiały i metody - dane, przygotowanie, procedura, dokładność</li>
+    <li>Wyniki - struktura, macierze przejść, rozkład przestrzenny, kontekst</li>
+    <li>Dyskusja i wnioski</li>
+    <li>Bibliografia + źródła danych · Spis map, rycin i tabel</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Darmowy stos narzędzi i danych geografa">
+    <p>
+      QGIS (analiza i kartografia), geoportal krajowy (ortofotomapy, BDOT10k,
+      NMT), Copernicus Land Monitoring (CORINE, warstwy HRL), Sentinel Hub /
+      Copernicus Browser (zobrazowania satelitarne), BDL GUS (statystyka do
+      gmin), IMGW (dane hydro-meteo). Wszystko bezpłatne; pobieraj z
+      notowaniem dat i wersji, a surowe warstwy archiwizuj - powtarzalność
+      procedury to część oceny pracy.
+    </p>
+  </InfoBox>
+
+  <h2>Ocena dokładności - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Ze względu na generalizację danych CORINE (minimalna jednostka
+      kartowania 25 ha) przeprowadzono weryfikację klas użytkowania w 120
+      losowo rozmieszczonych punktach kontrolnych, porównując klasyfikację z
+      ortofotomapą z odpowiedniego okresu. Zgodność ogólna wyniosła 89%, przy
+      najniższej zgodności dla klas przejściowych; dla stref
+      najintensywniejszych zmian analizę uzupełniono ręczną wektoryzacją
+      zabudowy.</p>
+  </blockquote>
+
+  <p>
+    Ten akapit robi z pracy badanie: autor zna ograniczenia swoich danych,
+    zmierzył ich skalę i zaprojektował uzupełnienie tam, gdzie dane były za
+    słabe. To dokładnie ten poziom refleksji metodycznej, który odróżnia
+    analizę GIS od kolorowej mapki.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Mapka-ilustracja vs analiza przestrzenna">
+    <p>
+      <strong>Wersja słabsza.</strong> Dwie mapy CORINE (2000 i 2024) wstawione
+      obok siebie z komentarzem „widać wzrost zabudowy”, bez macierzy przejść,
+      bez oceny dokładności, mapy bez skali i źródła. Wniosek: „strefa
+      podmiejska się rozwija”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Macierz przejść (58% zmian to grunty
+      orne → zabudowa mieszkaniowa), dynamika w podokresach (+64% zabudowy,
+      przyspieszenie po 2012), wzorzec przestrzenny zmierzony (mediana
+      odległości nowej zabudowy 9,2 → 12,6 km) i interpretacja modelem
+      suburbanizacji pasmowej - na mapach z pełnym wyposażeniem. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Pokrycie terenu ≠ użytkowanie ziemi">
+    <p>
+      CORINE i klasyfikacje teledetekcyjne opisują POKRYCIE terenu (co
+      fizycznie jest na powierzchni), a nie UŻYTKOWANIE (jak człowiek z niej
+      korzysta) - łąka może być pastwiskiem, ugorem albo działką czekającą na
+      zabudowę. W tytule i wnioskach używaj pojęcia adekwatnego do danych albo
+      omów to utożsamienie wprost w ograniczeniach. Recenzenci-geografowie są
+      na tę parę pojęć szczególnie wyczuleni.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z geografii</h2>
+
+  <ul>
+    <li><strong>Mapy-ilustracje</strong> - kartografia bez funkcji dowodowej,
+      bez skali, legendy i źródła.</li>
+    <li><strong>Źródła danych bez wersji i dat</strong> - „dane z
+      geoportalu” zamiast konkretnych zbiorów.</li>
+    <li><strong>Brak oceny dokładności</strong> - wyniki klasyfikacji
+      przyjęte bez weryfikacji.</li>
+    <li><strong>Mieszanie układów współrzędnych</strong> - warstwy w różnych
+      układach i „przesunięte” analizy.</li>
+    <li><strong>Wniosek bez macierzy</strong> - „zabudowy przybyło” bez
+      pokazania, czyim kosztem i gdzie.</li>
+    <li><strong>Pominięcie kontekstu</strong> - zmiany przestrzenne bez
+      danych demograficznych i planistycznych, które je tłumaczą.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy muszę umieć programować, żeby napisać pracę GIS-ową?</h3>
+  <p>
+    Nie - QGIS pozwala wykonać całą analizę (reprojekcje, przecięcia warstw,
+    macierze przejść, kartografia) z poziomu interfejsu. Programowanie
+    (Python, R) przydaje się przy automatyzacji i teledetekcji, ale nie jest
+    warunkiem dobrej pracy magisterskiej.
+  </p>
+
+  <h3>Skąd wziąć dane, jeśli badam małą gminę?</h3>
+  <p>
+    Dla małych obszarów CORINE bywa za gruby (jednostka 25 ha) - podstawą
+    stają się wtedy BDOT10k i ortofotomapy z ręczną wektoryzacją zmian, a
+    kontekst daje BDL GUS. To więcej pracy manualnej, ale dokładność wyników
+    rośnie i praca zyskuje walor materiału pierwotnego.
+  </p>
+
+  <h3>Czy praca z geografii może być czysto terenowa, bez GIS?</h3>
+  <p>
+    Może - kartowanie terenowe, pomiary i badania ankietowe w geografii
+    społecznej są pełnoprawne. W praktyce jednak nawet prace terenowe zyskują
+    na wizualizacji GIS-owej wyników, a znajomość QGIS jest atutem na rynku
+    pracy - warto ją w magisterce udokumentować.
+  </p>
+
+  <h3>Jak podpisywać mapy własne?</h3>
+  <p>
+    „Opracowanie własne na podstawie [zbiór, poziom czasowy]” pod każdą mapą,
+    plus skala, legenda i układ współrzędnych na samej mapie. Mapy numeruje
+    się osobno od rycin i zestawia w odrębnym spisie - konwencje omawia
+    poradnik o <a href="/poradniki/wykaz-tabel/">wykazach tabel i
+    rysunków</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    procedurę i strukturę - Twój obszar, dane i analiza muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/geografia/">wyboru tematu z geografii</a> i
+    pobierz wzór powyżej. Pracę na danych zastanych omawia poradnik o <a
+      href="/poradniki/metodologia/analiza-dokumentow/">analizie danych</a>, a
+    pokrewne schematy zobaczysz we wzorach prac z <a
+      href="/tematy/turystyka-i-rekreacja/przykladowa-praca/">turystyki</a> i
+    <a href="/tematy/ochrona-srodowiska/przykladowa-praca/">ochrony
+    środowiska</a>.
+  </p>
+</ArticleLayout>
