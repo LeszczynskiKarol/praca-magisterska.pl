@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -50,6 +51,12 @@ const relatedLinks = [
       do pobrania w PDF i Word.
     </p>
   </div>
+
+  <EbookKierunkowyCTA
+    kierunek="marketingu"
+    icon="📣"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-marketingu/"
+  />
 
   <h2>Marketing cyfrowy</h2>
 
