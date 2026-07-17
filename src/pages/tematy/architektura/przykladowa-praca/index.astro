@@ -1,0 +1,286 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Architektura", href: "/tematy/architektura/" },
+  { label: "Przykładowa praca", href: "/tematy/architektura/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z architektury", href: "/tematy/architektura/" },
+  { label: "Przykładowa praca z budownictwa", href: "/tematy/budownictwo/przykladowa-praca/" },
+  { label: "Studium przypadku", href: "/poradniki/metodologia/case-study/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Wykaz tabel i rysunków", href: "/poradniki/wykaz-tabel/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z architektury – wzór części opisowej (PDF + Word)"
+  description="Przykładowa praca dyplomowa z architektury: część opisowa projektu koncepcyjnego - analizy przedprojektowe, teza projektowa, studia referencyjne, zestawienie powierzchni, wykaz plansz. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Dyplom magisterski z architektury różni się od prac ze wszystkich innych
+    kierunków: jego sednem jest projekt (plansze, model), a tekst pełni rolę
+    części opisowej. I właśnie ta część opisowa bywa niedoceniana - pisana na
+    końcu, „do plansz”, jako opowiadanie o tym, co widać. Tymczasem dobra
+    część opisowa robi coś innego: dokumentuje drogę od analiz do decyzji
+    projektowych, tak aby projekt stał się argumentem w wywodzie, a nie
+    albumem. Poniżej rozbieramy wzorcową część opisową dyplomu projektowego.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Adaptacja zespołu poprzemysłowego dawnej przędzalni na centrum
+    kultury – projekt koncepcyjny z analizami przedprojektowymi”</strong>:
+    teza projektowa, analizy formalne i kontekstowe, studia trzech realizacji
+    referencyjnych z wytycznymi, opis koncepcji z zestawieniem powierzchni i
+    wykaz ośmiu plansz. Ten sam szkielet zadziała dla projektu nowego obiektu,
+    zespołu mieszkaniowego czy przestrzeni publicznej.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet części opisowej dyplomu z architektury: strona tytułowa, streszczenie z tezą projektową, spis treści w układzie część studialna / część projektowa, uwarunkowania formalne (MPZP, konserwator) z przypisami, studia referencyjne z metodą analizy, opis koncepcji z zestawieniem powierzchni, podsumowanie wobec tezy i wykaz plansz ze skalami. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-architektura.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-architektura.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę dyplomową z architektury</h2>
+
+  <ul>
+    <li>
+      <strong>Projekt jako rdzeń, tekst jako dokumentacja wywodu.</strong>
+      Dyplom = część graficzna (plansze, model) + część opisowa; ocenie
+      podlega spójność obu.
+    </li>
+    <li>
+      <strong>Teza projektowa.</strong> Zamiast hipotez - twierdzenie, które
+      projekt ma wykazać („program publiczny da się wpisać w zabytek przy
+      jednej ingerencji kubaturowej”).
+    </li>
+    <li>
+      <strong>Analizy przedprojektowe.</strong> MPZP i ochrona konserwatorska
+      (warunki brzegowe), kontekst urbanistyczny, kwerenda historyczna,
+      studia realizacji referencyjnych.
+    </li>
+    <li>
+      <strong>Wytyczne jako łącznik.</strong> Wnioski z analiz przełożone na
+      wytyczne projektowe - to one wiążą część studialną z decyzjami
+      koncepcji.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Teza projektowa">
+    <p>
+      Twierdzenie o charakterze projektowym, którego prawdziwość praca
+      wykazuje samym projektem - np. że daną funkcję można pomieścić w danej
+      strukturze przy określonych ograniczeniach, albo że przyjęta zasada
+      kompozycyjna rozwiązuje zdiagnozowany problem miejsca. Teza nadaje
+      dyplomowi konstrukcję wywodu: analizy ją uzasadniają, koncepcja
+      realizuje, a podsumowanie ocenia, w jakim stopniu została wykazana - i
+      gdzie przebiegają granice rozwiązania.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym komisja pozna dobrą część opisową</h2>
+
+  <ol>
+    <li>
+      <strong>Analizy pracujące na projekt.</strong> Każda analiza kończy się
+      wnioskiem projektowym; nie ma rozdziałów-wypełniaczy o „historii
+      architektury przemysłowej w ogóle”.
+    </li>
+    <li>
+      <strong>Uwarunkowania z przypisami.</strong> Ustalenia MPZP i ochrony
+      konserwatorskiej przywołane konkretnie (paragrafy, publikatory), bo to
+      warunki brzegowe koncepcji.
+    </li>
+    <li>
+      <strong>Studia referencyjne z metodą.</strong> Kryteria doboru
+      przykładów i jednolity schemat ich analizy - zamiast luźnych inspiracji.
+    </li>
+    <li>
+      <strong>Decyzje uzasadnione, granice nazwane.</strong> Opis koncepcji
+      tłumaczy „dlaczego tak” (odwołaniem do analiz), a podsumowanie uczciwie
+      wskazuje kompromisy.
+    </li>
+  </ol>
+
+  <h2>Typy dyplomów magisterskich z architektury</h2>
+
+  <ul>
+    <li>
+      <strong>Adaptacja i przekształcenie istniejącej struktury</strong> -
+      dziedzictwo poprzemysłowe, nadbudowy, zmiany funkcji; schemat naszego
+      wzoru.
+    </li>
+    <li>
+      <strong>Projekt nowego obiektu publicznego</strong> - z rozbudowaną
+      analizą programu i kontekstu miejsca.
+    </li>
+    <li>
+      <strong>Projekt urbanistyczny</strong> - kwartał, fragment dzielnicy,
+      przestrzeń publiczna; większa waga analiz strukturalnych miasta.
+    </li>
+    <li>
+      <strong>Mieszkalnictwo</strong> - zespół lub typologia mieszkaniowa,
+      często z tezą dotyczącą modelu zamieszkiwania.
+    </li>
+    <li>
+      <strong>Praca badawczo-projektowa</strong> - komponent badawczy
+      (np. badania zachowań użytkowników) prowadzący do eksperymentalnej
+      koncepcji.
+    </li>
+  </ul>
+
+  <h2>Struktura części opisowej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie (z tezą projektową) + spis treści</li>
+    <li>Wstęp - przedmiot, cel, teza projektowa</li>
+    <li>Część I: analizy - uwarunkowania formalne, kontekst, kwerenda, studia referencyjne</li>
+    <li>Wnioski z analiz → wytyczne projektowe</li>
+    <li>Część II: projekt - idea, dyspozycja, program i powierzchnie, materiały i konstrukcja, dostępność i ppoż</li>
+    <li>Podsumowanie - koncepcja wobec tezy, granice rozwiązania</li>
+    <li>Bibliografia i źródła · Spis rycin · Wykaz plansz ze skalami</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Źródła do analiz przedprojektowych">
+    <p>
+      MPZP i studium: BIP gminy oraz wojewódzki dziennik urzędowy
+      (publikatory!). Ochrona zabytków: rejestr i ewidencja (karty
+      ewidencyjne u konserwatora), portal zabytek.pl. Kwerenda historyczna:
+      archiwa państwowe, muzea miejskie, archiwalne mapy (np. geoportale
+      historyczne). Kontekst: ortofotomapy i BDOT10k z geoportalu, inwentaryzacja
+      własna z dokumentacją fotograficzną. Wszystko cytuj z sygnaturami i
+      datami dostępu.
+    </p>
+  </InfoBox>
+
+  <h2>Wytyczne projektowe - najważniejszy łącznik</h2>
+
+  <blockquote>
+    <p>Każdą realizację przeanalizowano według jednolitego schematu:
+      dyspozycja nowych funkcji względem istniejącej struktury, lokalizacja i
+      język ingerencji współczesnych, rozwiązanie komunikacji i dostępności,
+      relacja z przestrzenią publiczną. Wnioski z analiz zestawiono w tabeli i
+      przełożono na wytyczne projektowe.</p>
+  </blockquote>
+
+  <p>
+    Najczęstsza wada dyplomów projektowych to część studialna i projekt jako
+    dwie niepowiązane połówki: analizy „bo trzeba”, koncepcja „z głowy”.
+    Krok pośredni - wytyczne wynikające z analiz i przywoływane potem przy
+    decyzjach koncepcji - zszywa całość w wywód, którego komisja szuka podczas
+    obrony.
+  </p>
+
+  <h2>Lepiej i gorzej – ta sama praca, dwie wersje opisu</h2>
+
+  <InfoBox variant="przyklad" title="Opowiadanie plansz vs dokumentacja decyzji">
+    <p>
+      <strong>Wersja słabsza.</strong> Część opisowa streszcza plansze („na
+      parterze zlokalizowano foyer, na piętrze sale warsztatowe”), historia
+      przędzalni zajmuje 20 stron bez jednego wniosku projektowego, a wybór
+      rozwiązań nie ma uzasadnień. Komisja pyta „dlaczego łącznik właśnie
+      tu?” - i nie znajduje odpowiedzi w tekście. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Teza projektowa we wstępie, ustalenia
+      MPZP z paragrafami jako warunki brzegowe, trzy realizacje referencyjne
+      według wspólnego schematu, wytyczne, a każda decyzja koncepcji
+      (dyspozycja funkcji wg konstrukcji hal, lokalizacja łącznika w obrysie
+      niezachowanej hali) uzasadniona odwołaniem do analiz. Podsumowanie
+      wraca do tezy i nazywa kompromisy. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Sprzeczność z planem miejscowym">
+    <p>
+      Koncepcja naruszająca ustalenia MPZP (wysokość, linie zabudowy,
+      przeznaczenie) jest na obronie bezbronna - to pierwsza rzecz, którą
+      sprawdzi recenzent znający teren. Analizę planu rób PRZED pierwszymi
+      szkicami, przywołuj konkretne paragrafy, a jeśli projekt świadomie
+      wykracza poza plan (dyplomy bywają postulatywne), napisz to wprost i
+      uzasadnij jako element tezy - zamiast liczyć, że nikt nie zauważy.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w części opisowej dyplomu</h2>
+
+  <ul>
+    <li><strong>Opis-streszczenie plansz</strong> - tekst opowiada, co widać,
+      zamiast dokumentować decyzje.</li>
+    <li><strong>Analizy bez wniosków</strong> - rozdziały historyczne i
+      kontekstowe niepowiązane z projektem.</li>
+    <li><strong>Brak tezy projektowej</strong> - dyplom-album bez wywodu.</li>
+    <li><strong>Inspiracje zamiast studiów</strong> - luźne przykłady bez
+      kryteriów doboru i schematu analizy.</li>
+    <li><strong>Ignorowanie uwarunkowań formalnych</strong> - koncepcja
+      sprzeczna z MPZP lub wymogami konserwatorskimi.</li>
+    <li><strong>Brak zestawień i wykazu plansz</strong> - opis bez
+      powierzchni, tekst bez formalnego łącznika z częścią graficzną.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Ile stron powinna mieć część opisowa dyplomu z architektury?</h3>
+  <p>
+    Zwykle 40-80 stron - mniej niż prace „tekstowe” z innych kierunków, bo
+    rdzeniem dyplomu są plansze. Rozstrzygają wymogi wydziału; ważniejsza od
+    objętości jest kompletność drogi analizy → wytyczne → decyzje.
+  </p>
+
+  <h3>Czy część opisowa wymaga metodologii badawczej?</h3>
+  <p>
+    W klasycznym dyplomie projektowym rolę metodologii pełni opis metody
+    analiz przedprojektowych (jak analizowano kontekst, według czego dobrano
+    realizacje referencyjne). W pracach badawczo-projektowych dochodzi
+    komponent badawczy z pełnym warsztatem - np. <a
+      href="/poradniki/metodologia/case-study/">studium przypadku</a> lub
+    badanie użytkowników.
+  </p>
+
+  <h3>Jak cytować MPZP i dokumenty konserwatorskie?</h3>
+  <p>
+    Jak akty prawa miejscowego: pełna nazwa uchwały z numerem, datą i
+    publikatorem w wojewódzkim dzienniku urzędowym, a w tekście - konkretne
+    paragrafy ustaleń. Karty ewidencyjne i materiały archiwalne z sygnaturami
+    i nazwą archiwum.
+  </p>
+
+  <h3>Czym różni się dyplom z architektury od pracy z budownictwa?</h3>
+  <p>
+    Architektura projektuje i argumentuje przestrzennie (teza projektowa,
+    kompozycja, program), budownictwo liczy i porównuje technicznie (normy,
+    obliczenia, koszty). Zestaw oba wzory - <a
+      href="/tematy/budownictwo/przykladowa-praca/">praca z budownictwa</a>
+    pokazuje konwencję inżynierską tego samego świata.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Część opisowa przechodzi przez system antyplagiatowy jak każda praca,
+    a projekt musi być autorski. Wzór daje konstrukcję wywodu i standard
+    opisu - Twoje analizy, teza i koncepcja muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/architektura/">wyboru tematu z
+    architektury</a> i pobierz wzór powyżej. Zwięzły wstęp z tezą napiszesz
+    według poradnika o <a href="/poradniki/wstep/">wstępie</a>, a porządek
+    rycin i plansz ogarnie poradnik o <a
+      href="/poradniki/wykaz-tabel/">wykazach</a>.
+  </p>
+</ArticleLayout>
