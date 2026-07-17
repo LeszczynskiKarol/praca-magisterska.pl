@@ -1,0 +1,287 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Budownictwo", href: "/tematy/budownictwo/" },
+  { label: "Przykładowa praca", href: "/tematy/budownictwo/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z budownictwa", href: "/tematy/budownictwo/" },
+  { label: "Przykładowa praca z informatyki", href: "/tematy/informatyka/przykladowa-praca/" },
+  { label: "Tabele i wykresy w pracy", href: "/poradniki/tabele-wykresy/" },
+  { label: "Jak napisać wstęp", href: "/poradniki/wstep/" },
+  { label: "Wykaz tabel i rysunków", href: "/poradniki/wykaz-tabel/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z budownictwa – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z budownictwa: analiza porównawcza technologii ścian, obliczenia współczynnika U wg PN-EN ISO 6946, wymagania WT 2021, koszty i analiza wielokryterialna z analizą wrażliwości. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z budownictwa rządzi się konwencją techniczną, która
+    studentów kierunków „miękkich” zdziwiłaby ascezą: wstęp na dwie strony z
+    tezą i zakresem, obliczenia z powołaniem norm, jednostki SI w nagłówkach
+    tabel, rysunki przekrojów zamiast rozważań. Za tą ascezą stoi jednak
+    warsztat, który łatwo zepsuć - dane materiałowe bez źródeł, analiza
+    wielokryterialna z wagami „z sufitu”, wnioski szersze niż zakres. Poniżej
+    rozbieramy wzorcową pracę porównawczą i pokazujemy, gdzie recenzent-inżynier
+    patrzy najpierw.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Analiza porównawcza technologii wznoszenia ścian zewnętrznych
+    budynku jednorodzinnego pod kątem izolacyjności cieplnej i kosztów
+    realizacji”</strong>: trzy warianty przegród, obliczenia U według PN-EN
+    ISO 6946 na tle wymagań WT 2021, koszty 1 m², pracochłonność i analiza
+    wielokryterialna z analizą wrażliwości. Ten sam schemat zadziała dla
+    porównania stropów, technologii wykończenia, materiałów izolacyjnych czy
+    rozwiązań instalacyjnych.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z budownictwa: strona tytułowa, streszczenie, spis treści w konwencji technicznej (numeracja 1., 1.1.), wstęp z tezą i zakresem, wymagania WT 2021 z przypisem, metodyka z danymi materiałowymi ze źródłami, tok obliczeń U (wzór → podstawienie → wynik), tabela zbiorcza wariantów, analiza wielokryterialna z analizą wrażliwości i wnioski punktowane. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-budownictwo.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-budownictwo.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z budownictwa</h2>
+
+  <ul>
+    <li>
+      <strong>Teza i zakres zamiast hipotez.</strong> Praca techniczna stawia
+      tezę do wykazania i precyzyjnie wyznacza zakres analizy (co obejmuje, a
+      co świadomie pomija).
+    </li>
+    <li>
+      <strong>Obliczenia z powołaniem norm.</strong> Każda metoda obliczeniowa
+      ma swoją normę (PN-EN), a wymagania - swoje rozporządzenie (WT); praca
+      cytuje je precyzyjnie.
+    </li>
+    <li>
+      <strong>Dane ze źródłami i datą.</strong> Współczynniki lambda z kart
+      technicznych producentów, koszty z cenników i KNR - wszystko z datą
+      stanu.
+    </li>
+    <li>
+      <strong>Rysunki techniczne.</strong> Przekroje przegród, detale, schematy
+      - wykonane w CAD, ponumerowane, ze spisem rysunków.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Współczynnik przenikania ciepła U i WT 2021">
+    <p>
+      U [W/(m²·K)] opisuje, ile ciepła przenika przez 1 m² przegrody przy
+      różnicy temperatur 1 K - im niższy, tym cieplejsza przegroda. Oblicza
+      się go z oporów cieplnych warstw (R = d/λ) według PN-EN ISO 6946.
+      Warunki techniczne (standard WT 2021) wyznaczają maksima: dla ścian
+      zewnętrznych U ≤ 0,20, dla dachów 0,15, dla podłóg na gruncie 0,30
+      W/(m²·K) - to naturalne kryterium brzegowe każdej analizy przegród.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z budownictwa</h2>
+
+  <ol>
+    <li>
+      <strong>Zakres wyznaczony i pilnowany.</strong> Praca deklaruje, że
+      analizuje przegrody pełne bez mostków punktowych - i nie wyciąga
+      wniosków o „całym budynku”.
+    </li>
+    <li>
+      <strong>Tok obliczeń pokazany raz, wyniki w tabeli.</strong> Wzór,
+      podstawienie i wynik dla jednego wariantu, reszta zbiorczo - zamiast
+      dziesięciu stron powtarzanych podstawień.
+    </li>
+    <li>
+      <strong>Źródła danych z datami.</strong> Lambda różni się między
+      producentami, ceny między kwartałami - recenzent sprawdzi, czy praca to
+      wie.
+    </li>
+    <li>
+      <strong>Analiza wrażliwości przy rankingu.</strong> Wynik analizy
+      wielokryterialnej zależy od wag; dobra praca pokazuje, przy jakich
+      wagach ranking się odwraca.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z budownictwa</h2>
+
+  <ul>
+    <li>
+      <strong>Analiza porównawcza technologii lub materiałów</strong> -
+      schemat naszego wzoru; warianty, kryteria, obliczenia, ranking.
+    </li>
+    <li>
+      <strong>Praca projektowa</strong> - projekt konstrukcji lub jej elementu
+      z obliczeniami statycznymi (wg Eurokodów) i rysunkami wykonawczymi.
+    </li>
+    <li>
+      <strong>Praca technologiczno-organizacyjna</strong> - harmonogram,
+      zagospodarowanie placu budowy, kosztorys przedsięwzięcia.
+    </li>
+    <li>
+      <strong>Diagnostyka i ocena stanu</strong> - badanie istniejącego
+      obiektu (inwentaryzacja, badania nieniszczące, ocena mykologiczna,
+      termowizja).
+    </li>
+    <li>
+      <strong>Praca badawczo-laboratoryjna</strong> - badania właściwości
+      materiałów według norm badawczych (schemat bliski pracy z <a
+        href="/tematy/rolnictwo/przykladowa-praca/">rolnictwa</a> -
+      eksperyment z powtórzeniami).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy porównawczej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści + wykaz oznaczeń</li>
+    <li>Wstęp - wprowadzenie, cel, zakres, teza (1-2 strony)</li>
+    <li>Wymagania i podstawy teoretyczne - przepisy, normy, technologie</li>
+    <li>Metodyka - obiekt odniesienia, warianty, dane, kryteria</li>
+    <li>Obliczenia i wyniki - tok obliczeń, tabele zbiorcze, analiza wielokryterialna</li>
+    <li>Wnioski punktowane</li>
+    <li>Bibliografia + wykaz norm + źródła danych · Spisy tabel i rysunków</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Skąd brać dane do analizy">
+    <p>
+      Parametry materiałów: karty techniczne i deklaracje właściwości
+      użytkowych ze stron producentów (z datą pobrania). Koszty: cenniki
+      SEKOCENBUD (podaj kwartał), kalkulatory producenckie, KNR dla nakładów
+      rzeczowych. Wymagania: aktualny tekst jednolity warunków technicznych i
+      normy PN-EN (dostęp przez bibliotekę uczelnianą). Do obliczeń cieplnych
+      wystarczy arkusz kalkulacyjny; przy mostkach liniowych przyda się
+      program typu THERM.
+    </p>
+  </InfoBox>
+
+  <h2>Tok obliczeń - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Współczynnik przenikania ciepła obliczono zgodnie z PN-EN ISO 6946 jako
+      U = 1/(Rsi + Σdᵢ/λᵢ + Rse), przyjmując Rsi = 0,13 i Rse = 0,04
+      (m²·K)/W. Dla wariantu W1: opór muru 0,25/0,30 = 0,83, opór ocieplenia
+      0,15/0,031 = 4,84, co po uwzględnieniu tynków daje U = 0,17 W/(m²·K).
+      Wyniki wszystkich wariantów zestawiono w tabeli 4.1.</p>
+  </blockquote>
+
+  <p>
+    Norma, wzór, podstawienie z jednostkami, wynik, odesłanie do tabeli
+    zbiorczej - kompletny wzorzec prezentacji obliczeń. Powtarzanie pełnych
+    podstawień dla każdego wariantu to najczęstszy sposób sztucznego
+    „pompowania” objętości, który recenzenci rozpoznają natychmiast.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Katalog technologii vs analiza porównawcza">
+    <p>
+      <strong>Wersja słabsza.</strong> Trzy rozdziały opisujące technologie
+      ścienne przepisane z materiałów producentów, porównanie w formie tabeli
+      zalet i wad („ceramika - trwała; beton komórkowy - lekki”), wniosek:
+      „każda technologia ma swoje zalety”. Zero obliczeń własnych, zero
+      liczb. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Warianty zaprojektowane pod wspólne
+      kryterium (U ≤ 0,20 z zapasem), obliczenia według normy, koszty 1 m² ze
+      źródłami i datą, ranking wielokryterialny z analizą wrażliwości
+      pokazującą próg odwrócenia (waga izolacyjności 0,45) i wnioski
+      warunkowe względem preferencji inwestora. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Nieaktualne przepisy i normy wycofane">
+    <p>
+      Wymagania cieplne zaostrzały się etapami (WT 2014 → 2017 → 2021), a
+      normy bywają wycofywane i zastępowane. Praca cytująca stare U(max) albo
+      wycofaną normę traci wiarygodność w pierwszej lekturze. Przed oddaniem
+      sprawdź aktualność każdego przepisu (ISAP) i status każdej normy (sklep
+      PKN) - to kwadrans pracy, który recenzent i tak wykona za Ciebie.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z budownictwa</h2>
+
+  <ul>
+    <li><strong>Katalog zamiast analizy</strong> - opisy technologii bez
+      obliczeń i wspólnych kryteriów.</li>
+    <li><strong>Dane bez źródeł i dat</strong> - lambda i ceny „skądś”, bez
+      kart technicznych i cenników.</li>
+    <li><strong>Obliczenia-tasiemce</strong> - pełne podstawienia dla każdego
+      wariantu zamiast toku raz + tabeli.</li>
+    <li><strong>Wagi bez analizy wrażliwości</strong> - ranking zależny od
+      arbitralnych wag, bez sprawdzenia stabilności.</li>
+    <li><strong>Wnioski ponad zakres</strong> - rekomendacje o „całym
+      budynku” z analizy samych przegród pełnych.</li>
+    <li><strong>Brak rysunków</strong> - praca o przegrodach bez przekrojów
+      to praca niekompletna.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Czy praca magisterska z budownictwa musi mieć obliczenia?</h3>
+  <p>
+    Praktycznie zawsze - obliczenia (cieplne, statyczne, kosztowe) są rdzeniem
+    warsztatu inżynierskiego. Wyjątkiem bywają prace
+    technologiczno-organizacyjne, ale i one operują liczbami (harmonogramy,
+    kosztorysy). Praca czysto opisowa nie obroni się na tym kierunku.
+  </p>
+
+  <h3>Czym różni się praca magisterska od inżynierskiej?</h3>
+  <p>
+    Praca inżynierska ma charakter projektowy lub wykonawczy (zaprojektuj,
+    policz, narysuj), magisterska - analityczny lub badawczy: porównanie
+    wariantów, analiza wrażliwości, element badawczy lub optymalizacyjny.
+    Nasz wzór pokazuje właśnie tę warstwę analityczną nadbudowaną nad
+    warsztatem inżynierskim.
+  </p>
+
+  <h3>Jak cytować normy i warunki techniczne?</h3>
+  <p>
+    Normy: pełne oznaczenie z tytułem (PN-EN ISO 6946: Komponenty budowlane...)
+    w wykazie norm, w tekście samo oznaczenie. Przepisy: pełna nazwa
+    rozporządzenia z aktualnym publikatorem w przypisie przy pierwszym
+    powołaniu. Bibliografię dziel na literaturę, normy/przepisy i źródła
+    danych.
+  </p>
+
+  <h3>W czym wykonać rysunki?</h3>
+  <p>
+    Standardem jest AutoCAD lub darmowe alternatywy (np. wersje edukacyjne
+    dostępne dla studentów); przekroje przegród można też poprawnie wykonać w
+    programach do charakterystyki energetycznej. Rysunki numeruj i zestaw w
+    spisie - zasady omawia poradnik o <a
+      href="/poradniki/wykaz-tabel/">wykazie tabel i rysunków</a>.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje
+    konwencję i warsztat - Twoje warianty, obliczenia na aktualnych danych i
+    rysunki muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/budownictwo/">wyboru tematu z budownictwa</a>
+    i pobierz wzór powyżej. Prezentację obliczeń i wyników ułatwią poradniki o
+    <a href="/poradniki/tabele-wykresy/">tabelach i wykresach</a> oraz <a
+      href="/poradniki/wykaz-tabel/">wykazach</a>, a zwięzły wstęp techniczny
+    napiszesz według poradnika o <a href="/poradniki/wstep/">wstępie</a>.
+  </p>
+</ArticleLayout>
