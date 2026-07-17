@@ -1,0 +1,288 @@
+---
+import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
+import DownloadBox from "../../../../components/DownloadBox.astro";
+import InfoBox from "../../../../components/InfoBox.astro";
+
+const breadcrumbs = [
+  { label: "Kierunki", href: "/tematy/" },
+  { label: "Kognitywistyka", href: "/tematy/kognitywistyka/" },
+  { label: "Przykładowa praca", href: "/tematy/kognitywistyka/przykladowa-praca/" },
+];
+
+const relatedLinks = [
+  { label: "Tematy prac z kognitywistyki", href: "/tematy/kognitywistyka/" },
+  { label: "Przykładowa praca z psychologii", href: "/tematy/psychologia/przykladowa-praca/" },
+  { label: "Eksperyment jako metoda", href: "/poradniki/metodologia/eksperyment/" },
+  { label: "Zmienne badawcze", href: "/poradniki/metodologia/zmienne-badawcze/" },
+  { label: "Analiza danych ilościowych", href: "/poradniki/metodologia/analiza-ilosciowa/" },
+  { label: "Struktura pracy magisterskiej", href: "/poradniki/struktura/" },
+];
+---
+
+<ArticleLayout
+  title="Przykładowa praca magisterska z kognitywistyki – wzór (PDF + Word)"
+  description="Przykładowa praca magisterska z kognitywistyki: eksperyment behawioralny w planie mieszanym 2×2, analiza mocy a priori, pomiar d′ i czasów reakcji, interakcja z efektami prostymi. Wzór do pobrania w PDF i Word."
+  readingTime="18 min"
+  breadcrumbs={breadcrumbs}
+  relatedLinks={relatedLinks}
+>
+  <p>
+    Praca magisterska z kognitywistyki mówi językiem eksperymentu: hipotezy
+    wyprowadzone z modeli poznawczych, plan z manipulacją i randomizacją,
+    procedura opisana do poziomu milisekund, a wyniki raportowane z
+    wielkościami efektów. Ta precyzja bywa onieśmielająca, ale ma jasną
+    strukturę do opanowania - i to ją właśnie pokazujemy poniżej, rozbierając
+    wzorcowy eksperyment behawioralny na części: od analizy mocy, przez
+    kontrbalansację bodźców, po rozkładanie interakcji efektami prostymi.
+  </p>
+
+  <p>
+    Jako przykład prowadzimy pracę
+    <strong>„Wpływ obciążenia poznawczego na wykrywanie nieprawdziwych
+    informacji – badanie eksperymentalne”</strong>: plan mieszany 2×2, 84
+    osoby z liczebnością uzasadnioną analizą mocy, wskaźnik d′ i czasy
+    reakcji, istotna interakcja zgodna z modelem dwuprocesowym. Ten sam
+    szkielet zadziała dla badań uwagi, pamięci, języka, percepcji czy
+    podejmowania decyzji.
+  </p>
+
+  <DownloadBox
+    title="📄 Pobierz cały wzór pracy – PDF i Word"
+    description="Kompletny szkielet pracy magisterskiej z kognitywistyki: strona tytułowa, streszczenie z hipotezami i wielkościami efektów, spis treści, rozdział Metoda (plan mieszany, analiza mocy a priori, pretest bodźców, procedura z czasami ekspozycji, kontrola manipulacji), wyniki z ANOVA i efektami prostymi w konwencji APA oraz dyskusja z ograniczeniami. Z komentarzami do każdej części. Bez podawania adresu e-mail."
+    files={[
+      { href: "/downloads/przykladowa-praca-magisterska-kognitywistyka.pdf", label: "Pobierz wzór (PDF)" },
+      { href: "/downloads/przykladowa-praca-magisterska-kognitywistyka.docx", label: "Pobierz wzór (Word .docx)", primary: false },
+    ]}
+  />
+
+  <h2>Co wyróżnia pracę magisterską z kognitywistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Eksperyment jako metoda domyślna.</strong> Manipulacja,
+      randomizacja, kontrola - kognitywistyka pyta o mechanizmy przyczynowe
+      procesów poznawczych.
+    </li>
+    <li>
+      <strong>Hipotezy z modeli.</strong> Przewidywania wyprowadza się z
+      teorii przetwarzania informacji (modele dwuprocesowe, pamięć robocza,
+      uwaga), a wynik interpretuje jako test modelu.
+    </li>
+    <li>
+      <strong>Precyzja proceduralna.</strong> Czasy ekspozycji, liczba prób,
+      kontrbalansacja, trening, kryteria odrzucania danych - wszystko opisane
+      do replikacji.
+    </li>
+    <li>
+      <strong>Raportowanie w konwencji APA.</strong> Statystyki testów ze
+      stopniami swobody, wartości p i wielkości efektów; interakcje rozkładane
+      efektami prostymi.
+    </li>
+  </ul>
+
+  <InfoBox variant="definicja" title="Analiza mocy a priori">
+    <p>
+      Obliczenie przed badaniem, ilu uczestników potrzeba, by z założoną mocą
+      (zwykle 0,80) wykryć efekt oczekiwanej wielkości na przyjętym poziomie
+      istotności. Wykonuje się je w darmowym G*Power, podając plan analizy i
+      spodziewaną wielkość efektu (z literatury lub konwencji Cohena). Zdanie
+      „liczebność oszacowano analizą mocy a priori (f = 0,25, moc 0,80)” w
+      rozdziale Metoda to sygnatura współczesnego warsztatu - i tarcza przed
+      pytaniem „dlaczego akurat 84 osoby?”.
+    </p>
+  </InfoBox>
+
+  <h2>Po czym recenzent pozna dobrą pracę z kognitywistyki</h2>
+
+  <ol>
+    <li>
+      <strong>Liczebność uzasadniona mocą.</strong> Analiza a priori zamiast
+      „przebadano tylu, ilu się udało”.
+    </li>
+    <li>
+      <strong>Bodźce z pretestem i kontrbalansacją.</strong> Materiał
+      zrównoważony i przetestowany na osobnej próbie, kolejności
+      randomizowane.
+    </li>
+    <li>
+      <strong>Kontrola manipulacji i jawne kryteria czyszczenia.</strong>
+      Sprawdzenie, że manipulacja działała, oraz z góry określone zasady
+      odrzucania osób i prób.
+    </li>
+    <li>
+      <strong>Interakcja rozłożona i zinterpretowana.</strong> W planach
+      czynnikowych to wzorzec interakcji, nie efekty główne, testuje
+      hipotezę - i dyskusja musi to odzwierciedlać.
+    </li>
+  </ol>
+
+  <h2>Typy prac magisterskich z kognitywistyki</h2>
+
+  <ul>
+    <li>
+      <strong>Eksperyment behawioralny</strong> - poprawność i czasy reakcji
+      w zadaniach poznawczych; schemat naszego wzoru.
+    </li>
+    <li>
+      <strong>Badanie okoruchowe lub psychofizjologiczne</strong> -
+      eye-tracking, EEG (zależnie od dostępności laboratorium); ta sama
+      logika planu, bogatsze wskaźniki.
+    </li>
+    <li>
+      <strong>Eksperyment online</strong> - procedury w przeglądarce
+      (jsPsych, lab.js) na większych próbach; wymaga dodatkowej kontroli
+      jakości danych (zob. <a
+        href="/poradniki/metodologia/badania-online/">badania online</a>).
+    </li>
+    <li>
+      <strong>Praca korelacyjno-testowa</strong> - związki między zdolnościami
+      poznawczymi mierzonymi zadaniami i testami (schemat bliski <a
+        href="/tematy/psychologia/przykladowa-praca/">psychologii</a>).
+    </li>
+    <li>
+      <strong>Praca modelująca lub przeglądowa</strong> - modele obliczeniowe
+      procesów, systematyczne przeglądy literatury (rzadsze, ustal wymogi z
+      promotorem).
+    </li>
+  </ul>
+
+  <h2>Struktura pracy eksperymentalnej</h2>
+
+  <ol>
+    <li>Strona tytułowa i oświadczenia</li>
+    <li>Streszczenie + spis treści</li>
+    <li>Wstęp i podstawy teoretyczne - modele, dotychczasowe wyniki, hipotezy</li>
+    <li>Metoda - plan i osoby (z analizą mocy), materiały (z pretestem), procedura, analiza</li>
+    <li>Wyniki - kontrola manipulacji, czyszczenie danych, testy hipotez z wielkościami efektów</li>
+    <li>Dyskusja - wynik wobec modeli, ograniczenia, kierunki</li>
+    <li>Bibliografia (APA) · Spisy · Załączniki (bodźce, instrukcje)</li>
+  </ol>
+
+  <InfoBox variant="wskazowka" title="Narzędzia darmowe na całą pracę">
+    <p>
+      Procedury: PsychoPy (desktop) lub jsPsych/lab.js (online). Analiza mocy:
+      G*Power. Statystyka: JASP lub jamovi (ANOVA planów mieszanych,
+      wielkości efektów jednym kliknięciem). Rekrutacja: systemy uczelniane
+      lub ogłoszenia wydziałowe. Wszystko bezpłatne - koszt pracy
+      eksperymentalnej z kognitywistyki to głównie czas na pilotaż i zbieranie
+      danych, więc zacznij najpóźniej dwa semestry przed obroną.
+    </p>
+  </InfoBox>
+
+  <h2>Procedura - fragment wzorcowy</h2>
+
+  <blockquote>
+    <p>Każda próba obejmowała: punkt fiksacji (500 ms), prezentację
+      twierdzenia do odpowiedzi klawiszem (limit 6 s) i przerwę międzypróbową
+      (1000 ms). W grupie z obciążeniem każdą serię 10 twierdzeń poprzedzała
+      sekwencja sześciu cyfr do zapamiętania, odpytywana po serii. Sesję
+      poprzedzał trening (8 prób z informacją zwrotną) i kończył debriefing.</p>
+  </blockquote>
+
+  <p>
+    Milisekundy, limity, struktura próby, zadanie równoległe z kontrolą
+    wykonania, trening, debriefing - komplet. Opis procedury w kognitywistyce
+    pisze się tak, żeby inna osoba mogła odtworzyć eksperyment co do sekundy;
+    wszystko mniej precyzyjne recenzent odczyta jako niedbałość warsztatową.
+  </p>
+
+  <h2>Lepiej i gorzej – ten sam temat, dwie wersje</h2>
+
+  <InfoBox variant="przyklad" title="Quiz w ankiecie vs eksperyment">
+    <p>
+      <strong>Wersja słabsza.</strong> Ankieta online z 10 nagłówkami
+      prawdziwymi i fałszywymi, pytanie „czy ta informacja jest prawdziwa?”,
+      porównanie „na oko” odsetków poprawnych odpowiedzi, brak manipulacji,
+      brak kontroli czasu i warunków. Wniosek: „ludzie słabo rozpoznają
+      fake newsy”. Ocena niższa.
+    </p>
+    <p>
+      <strong>Wersja mocniejsza.</strong> Plan mieszany 2×2 z randomizacją,
+      liczebność z analizy mocy, bodźce z pretestu i kontrbalansacja,
+      wskaźnik d′ zamiast surowych odsetków, ANOVA z interakcją (η²p = 0,07)
+      rozłożoną efektami prostymi i dyskusja wprost testująca model
+      dwuprocesowy. Ocena wyższa.
+    </p>
+  </InfoBox>
+
+  <InfoBox variant="pulapka" title="Efekty główne zamiast interakcji">
+    <p>
+      W planach czynnikowych hipoteza teoretyczna zwykle dotyczy INTERAKCJI
+      (np. „obciążenie szkodzi bardziej przy wysokiej płynności”), a nie
+      efektów głównych. Praca, która raportuje tylko efekty główne albo
+      interpretuje istotną interakcję bez analizy efektów prostych, testuje
+      co innego, niż zapowiedziała. Zaplanuj analizę interakcji już na etapie
+      hipotez - i wróć do niej wprost w dyskusji.
+    </p>
+  </InfoBox>
+
+  <h2>Najczęstsze błędy w pracy magisterskiej z kognitywistyki</h2>
+
+  <ul>
+    <li><strong>Liczebność bez uzasadnienia</strong> - brak analizy mocy,
+      próba „ile się zebrało”.</li>
+    <li><strong>Bodźce bez pretestu</strong> - materiał niezrównoważony,
+      manipulacja niezweryfikowana.</li>
+    <li><strong>Procedura opisana ogólnikowo</strong> - bez czasów, liczby
+      prób i kontrbalansacji.</li>
+    <li><strong>Czyszczenie danych ad hoc</strong> - kryteria odrzucania
+      ustalane po obejrzeniu wyników.</li>
+    <li><strong>Raportowanie bez wielkości efektów</strong> - same wartości
+      p, bez η²p czy d Cohena.</li>
+    <li><strong>Dyskusja odklejona od modelu</strong> - wynik nieodniesiony
+      do teorii, z której wyprowadzono hipotezy.</li>
+  </ul>
+
+  <h2>Najczęstsze pytania</h2>
+
+  <h3>Ile osób potrzeba do eksperymentu kognitywistycznego?</h3>
+  <p>
+    Tyle, ile wskaże analiza mocy dla Twojego planu i oczekiwanego efektu -
+    typowo 60-120 osób przy planach mieszanych z efektem średniej wielkości.
+    Plany wewnątrzosobowe wymagają mniej osób (każdy jest własną kontrolą),
+    co czyni je przyjaznymi dla prac magisterskich.
+  </p>
+
+  <h3>Czy mogę przeprowadzić eksperyment online?</h3>
+  <p>
+    Tak - procedury w jsPsych/lab.js działają w przeglądarce, a większa próba
+    rekompensuje mniejszą kontrolę warunków. Dodaj kontrolę jakości (czasy,
+    pytania uwagi) i omów ograniczenia; pomiar bardzo krótkich czasów reakcji
+    jest online mniej precyzyjny, więc dobieraj zadanie odpowiednio.
+  </p>
+
+  <h3>Czy eksperyment wymaga komisji etycznej?</h3>
+  <p>
+    Standardem jest opinia uczelnianej komisji: badanie z ludźmi, manipulacja,
+    czasem bodźce obciążające. Zaplanuj świadomą zgodę i debriefing - a
+    procedury opisuje poradnik o <a
+      href="/poradniki/metodologia/eksperyment/">eksperymencie</a> i <a
+      href="/poradniki/metodologia/etyka/">etyce badań</a>.
+  </p>
+
+  <h3>Czym różni się praca z kognitywistyki od psychologicznej?</h3>
+  <p>
+    Środkiem ciężkości: kognitywistyka celuje w mechanizmy przetwarzania
+    informacji (eksperyment, czasy reakcji, modele), psychologia częściej
+    bada różnice indywidualne i zmienne społeczne kwestionariuszami. Porównaj
+    wzór z <a href="/tematy/psychologia/przykladowa-praca/">psychologii</a> -
+    to dwa dialekty tego samego języka.
+  </p>
+
+  <h3>Czy mogę skopiować przykładową pracę?</h3>
+  <p>
+    Nie. Każda praca przechodzi przez system antyplagiatowy. Wzór daje plan,
+    konwencję raportowania i standard procedury - Twój eksperyment, bodźce i
+    dane muszą być własne.
+  </p>
+
+  <p>
+    Zacznij od <a href="/tematy/kognitywistyka/">wyboru tematu z
+    kognitywistyki</a> i pobierz wzór powyżej. Schematy eksperymentalne
+    omawia poradnik o <a
+      href="/poradniki/metodologia/eksperyment/">eksperymencie</a>, a analizę
+    statystyczną - poradnik o <a
+      href="/poradniki/metodologia/analiza-ilosciowa/">analizie danych
+    ilościowych</a>.
+  </p>
+</ArticleLayout>
