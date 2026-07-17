@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -51,6 +52,12 @@ const relatedLinks = [
       fragmencie i udostępniamy cały szablon do pobrania w PDF i Word.
     </p>
   </div>
+
+  <EbookKierunkowyCTA
+    kierunek="logistyki"
+    icon="🚚"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-logistyki/"
+  />
 
   <h2>Zarządzanie łańcuchem dostaw</h2>
 
