@@ -32,3 +32,11 @@
 
 % Adnotacje (komentarze do akapitów) — szary, mniejszy, bez wcięcia
 \newcommand{\anno}[1]{\par\noindent{\small\itshape\textcolor{brand}{#1}}\par}
+
+% Box promocyjny (ostatnia strona wzoru)
+\usepackage{tcolorbox}
+\definecolor{promoBg}{HTML}{EEF2FF}
+\newtcolorbox{promobox}{%
+  colback=promoBg, colframe=brand, boxrule=1.2pt, arc=3mm,
+  left=12pt, right=12pt, top=12pt, bottom=12pt,
+  before skip=14pt, after skip=14pt}

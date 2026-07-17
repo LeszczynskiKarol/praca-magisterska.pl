@@ -188,6 +188,8 @@
   // ============================================
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
+  // Udostępnij globalnie — skrypty sklepu (purchase, begin_checkout itd.) wołają window.gtag
+  window.gtag = gtag;
 
   // Set default consent state (denied by default - GDPR compliant)
   gtag('consent', 'default', {

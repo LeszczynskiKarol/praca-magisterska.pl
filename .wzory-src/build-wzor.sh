@@ -10,14 +10,24 @@ OUT="$2"
 DEST="$ROOT/public/downloads"
 mkdir -p "$DEST"
 
+# Strona promo na końcu każdego wzoru — poza formalnym oświadczeniem do podpisu.
+BUILD_SRC="$SRC"
+if [[ "$(basename "$SRC")" != wzor-oswiadczenia* ]]; then
+  BUILD_SRC="$(mktemp --suffix=.md)"
+  cat "$SRC" > "$BUILD_SRC"
+  printf '\n\n' >> "$BUILD_SRC"
+  cat "$HERE/promo-page.md" >> "$BUILD_SRC"
+  trap 'rm -f "$BUILD_SRC"' EXIT
+fi
+
 echo "→ DOCX: $OUT.docx"
-pandoc "$SRC" \
+pandoc "$BUILD_SRC" \
   --reference-doc="$HERE/reference.docx" \
   --lua-filter="$HERE/center.lua" \
   -o "$DEST/$OUT.docx"
 
 echo "→ PDF:  $OUT.pdf"
-pandoc "$SRC" \
+pandoc "$BUILD_SRC" \
   --pdf-engine=xelatex \
   -H "$HERE/header.tex" \
   --lua-filter="$HERE/center.lua" \

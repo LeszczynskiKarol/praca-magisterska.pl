@@ -15,6 +15,11 @@ function Div(el)
       return wrap_latex("\\par\\noindent\\begingroup\\small\\itshape\\color{brand}", "\\par\\endgroup")
     end
     if FORMAT:match("docx") then el.attributes["custom-style"] = "Anno"; return el end
+  elseif el.classes:includes("promo") then
+    if FORMAT:match("latex") then
+      return wrap_latex("\\begin{promobox}\\setlength{\\parindent}{0pt}", "\\end{promobox}")
+    end
+    if FORMAT:match("docx") then el.attributes["custom-style"] = "Note"; return el end
   elseif el.classes:includes("note") then
     if FORMAT:match("latex") then
       return wrap_latex(
