@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import EbookKierunkowyCTA from "../../../../components/EbookKierunkowyCTA.astro";
 import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
@@ -51,6 +52,12 @@ const relatedLinks = [
       { href: "/downloads/przykladowa-praca-magisterska-pedagogika.pdf", label: "Pobierz wzór (PDF)" },
       { href: "/downloads/przykladowa-praca-magisterska-pedagogika.docx", label: "Pobierz wzór (Word .docx)", primary: false },
     ]}
+  />
+
+  <EbookKierunkowyCTA
+    kierunek="pedagogiki"
+    icon="🧑‍🏫"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-pedagogiki/"
   />
 
   <h2>Co wyróżnia pracę magisterską z pedagogiki</h2>

@@ -1,5 +1,5 @@
 ---
-// src/pages/sklep/jak-napisac-prace-magisterska-z-psychologii/index.astro
+// src/pages/sklep/jak-napisac-prace-magisterska-z-pedagogiki/index.astro
 import Layout from "../../../layouts/Layout.astro";
 import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
@@ -8,9 +8,9 @@ const API_URL =
   "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
 
 const ebook = {
-  id: "ebook-magisterska-psychologia",
-  name: "Jak napisać pracę magisterską z psychologii",
-  subtitle: "Od konstruktu do obrony — kompletny przewodnik",
+  id: "ebook-magisterska-pedagogika",
+  name: "Jak napisać pracę magisterską z pedagogiki",
+  subtitle: "Od problemu wychowawczego do obrony — kompletny przewodnik",
   price: 49,
   chapters: 16,
   format: "PDF + EPUB",
@@ -18,22 +18,22 @@ const ebook = {
 ---
 
 <Layout
-  title="Ebook: Jak napisać pracę magisterską z psychologii | Przewodnik PDF + EPUB"
-  description="Praktyczny przewodnik po pisaniu pracy magisterskiej z psychologii. Metodologia badań, dobór narzędzi, analiza wyników, przykłady. PDF + EPUB za 49 zł."
+  title="Ebook: Jak napisać pracę magisterską z pedagogiki | Przewodnik PDF + EPUB"
+  description="Praktyczny przewodnik po pisaniu pracy magisterskiej z pedagogiki. Sondaż i eksperyment, narzędzia badawcze, badania w szkole, statystyka. PDF + EPUB za 49 zł."
 >
   <Navbar />
 
   <main class="min-h-screen">
     <!-- HERO -->
-    <section class="bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-white py-16 md:py-24">
+    <section class="bg-gradient-to-br from-rose-950 via-red-900 to-rose-950 text-white py-16 md:py-24">
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div class="flex flex-wrap gap-2 mb-6">
               <span class="bg-accent/30 text-accent-light px-3 py-1 rounded-full text-sm font-medium">📚 PDF + EPUB</span>
-              <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Psychologia</span>
+              <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">Pedagogika</span>
               <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm">{ebook.chapters} rozdziałów</span>
-              <span class="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-3 py-1 rounded-full text-sm font-medium">✨ Nowe wydanie 2026</span>
+              <span class="bg-gradient-to-r from-rose-400 to-amber-400 text-white px-3 py-1 rounded-full text-sm font-medium">✨ Wydanie 2026</span>
             </div>
 
             <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
@@ -42,8 +42,8 @@ const ebook = {
             <p class="text-2xl text-accent-light font-medium mb-4">
               {ebook.subtitle}
             </p>
-            <p class="text-indigo-200 mb-6 leading-relaxed text-lg">
-              Psychologia wymaga <strong class="text-white">rygorystycznej metodologii, etycznego podejścia do badanych i precyzyjnej analizy danych</strong>. Ten przewodnik pokazuje, jak napisać pracę magisterską z tego kierunku krok po kroku — od tematu, przez badania, aż po obronę.
+            <p class="text-rose-100 mb-6 leading-relaxed text-lg">
+              Pedagogika to najczęściej <strong class="text-white">badania własne w szkole lub przedszkolu</strong>: sondaż, eksperyment, wywiady z nauczycielami i rodzicami. Ten przewodnik prowadzi przez cały proces — od problemu wychowawczego, przez metodologię, po obronę.
             </p>
 
             <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
@@ -51,7 +51,7 @@ const ebook = {
                 <span class="text-4xl font-bold text-white ml-2">{ebook.price} zł</span>
               </div>
               <button
-                class="buy-button bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-accent/30 text-lg"
+                class="buy-button bg-gradient-to-r from-rose-500 to-amber-500 hover:from-amber-500 hover:to-rose-500 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-rose-500/30 text-lg"
                 data-product-id={ebook.id}
               >
                 <span>Kup przewodnik</span>
@@ -61,7 +61,7 @@ const ebook = {
               </button>
             </div>
 
-            <div class="flex flex-wrap gap-4 text-sm text-indigo-300">
+            <div class="flex flex-wrap gap-4 text-sm text-rose-200">
               <span class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -84,10 +84,10 @@ const ebook = {
           </div>
 
           <div class="relative">
-            <div class="bg-gradient-to-br from-accent to-purple-600 rounded-2xl p-8 shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform">
+            <div class="bg-gradient-to-br from-rose-700 to-red-800 rounded-2xl p-8 shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform">
               <div class="bg-white rounded-lg p-6">
                 <div class="text-center">
-                  <div class="text-6xl mb-4">🧠</div>
+                  <div class="text-6xl mb-4">🧑‍🏫</div>
                   <h3 class="text-xl font-bold text-slate-800 mb-2">{ebook.name}</h3>
                   <p class="text-slate-500 text-sm">{ebook.subtitle}</p>
                   <div class="mt-4 pt-4 border-t border-slate-200 flex justify-center gap-4 text-xs text-slate-400">
@@ -95,7 +95,7 @@ const ebook = {
                     <span>•</span>
                     <span>{ebook.chapters} rozdziałów</span>
                     <span>•</span>
-                    <span>Wydanie II · 2026</span>
+                    <span>Wydanie I · 2026</span>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const ebook = {
       <div class="max-w-5xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-center text-slate-900 mb-4">Co znajdziesz w przewodniku?</h2>
         <p class="text-center text-slate-600 mb-12">
-          Materiał przygotowany specjalnie pod wymagania pracy magisterskiej z psychologii.
+          Materiał przygotowany specjalnie pod wymagania pracy magisterskiej z pedagogiki.
         </p>
 
         <div class="grid md:grid-cols-2 gap-6">
@@ -118,33 +118,33 @@ const ebook = {
             [
               {
                 icon: "🎯",
-                title: "Od tematu do modelu badania",
-                desc: "Zawężanie problemu, operacjonalizacja konstruktów, hipotezy z uzasadnieniem — bez HARKingu.",
+                title: "Od problemu wychowawczego do tematu",
+                desc: "Jak zamienić obserwację z praktyk w problem badawczy, zmienne i hipotezy, które da się zbadać.",
               },
               {
-                icon: "📊",
-                title: "Schemat, próba i moc statystyczna",
-                desc: "Co wolno wnioskować z badania przekrojowego, jak policzyć liczebność próby w G*Power.",
+                icon: "🏫",
+                title: "Badania w szkole i przedszkolu",
+                desc: "Zgoda dyrekcji, zgody rodziców, badanie dzieci — procedura i teren badań krok po kroku.",
               },
               {
                 icon: "🧰",
-                title: "Narzędzia w polskich adaptacjach",
-                desc: "SES, NPI, GSES i inne: jak wybrać, opisać i zaraportować rzetelność we własnej próbie.",
+                title: "Metody i narzędzia badawcze",
+                desc: "Sondaż, eksperyment pedagogiczny, wywiad, obserwacja — jak wybrać metodę i zbudować narzędzie.",
               },
               {
-                icon: "🧪",
-                title: "Etyka i badanie online",
-                desc: "Zgody, komisja etyczna, tematy wrażliwe oraz kontrola jakości danych z ankiet internetowych.",
+                icon: "📊",
+                title: "Próba i statystyka bez paniki",
+                desc: "Ile osób przebadać, jak zakodować ankiety i które testy wystarczą w typowej pracy z pedagogiki.",
               },
               {
-                icon: "📈",
-                title: "Statystyka i standard APA",
-                desc: "Mapa hipoteza → test, wzorce zdań wynikowych, tabele APA i dyskusja, która broni pracę.",
+                icon: "📚",
+                title: "Część teoretyczna i redakcja",
+                desc: "Jak napisać przegląd literatury, który pracuje na badania, i uniknąć plagiatu z podręczników.",
               },
               {
                 icon: "🎤",
-                title: "Finisz i obrona",
-                desc: "Streszczenie, antyplagiat, harmonogram ostatniego miesiąca i kanon pytań komisji z odpowiedziami.",
+                title: "Wnioski, finisz i obrona",
+                desc: "Wnioski i postulaty pedagogiczne, harmonogram ostatniego miesiąca, kanon pytań komisji.",
               },
             ].map((item) => (
               <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-accent transition-colors">
@@ -166,13 +166,13 @@ const ebook = {
         <div class="space-y-4">
           {
             [
-              "Nie wiesz, jaki temat z psychologii wybrać na magisterkę",
-              "Masz problem z sformułowaniem problemu badawczego i hipotez",
-              "Nie rozumiesz różnicy między metodą, techniką a narzędziem badawczym",
-              "Nie wiesz, jak dobrać próbę i ile osób musisz zbadać",
-              "Boisz się etyki badań i zgody uczestników",
-              "Nie wiesz, jak interpretować wyniki ankiet lub wywiadów",
-              "Chcesz napisać metodologię poprawnie od pierwszego razu",
+              "Nie wiesz, jaki temat z pedagogiki wybrać i od czego zacząć",
+              "Masz problem ze sformułowaniem problemu badawczego i hipotez",
+              "Nie wiesz, czy wybrać sondaż, eksperyment czy badania jakościowe",
+              "Planujesz badania w szkole i nie wiesz, jakie zgody są potrzebne",
+              "Boisz się statystyki i analizy wyników ankiet",
+              "Nie wiesz, jak napisać część teoretyczną, która nie będzie „watą”",
+              "Chcesz przejść przez pisanie bez poprawek „na trzeci raz”",
             ].map((item) => (
               <div class="flex items-start gap-3 bg-white p-4 rounded-lg border border-slate-200">
                 <span class="text-accent text-xl">✓</span>
@@ -185,19 +185,19 @@ const ebook = {
     </section>
 
     <!-- CTA -->
-    <section class="py-16 bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950">
+    <section class="py-16 bg-gradient-to-br from-rose-950 via-red-900 to-rose-950">
       <div class="max-w-3xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6 text-white">Gotowy napisać magisterkę z psychologii?</h2>
-        <p class="text-xl text-indigo-300 mb-8">
-          Za cenę jednej kawy ☕ dostajesz praktyczny plan, który zaoszczędzi Ci godziny stresu.
+        <h2 class="text-3xl font-bold mb-6 text-white">Gotowa napisać magisterkę z pedagogiki?</h2>
+        <p class="text-xl text-rose-200 mb-8">
+          Za cenę jednej kawy ☕ dostajesz praktyczny plan, który zaoszczędzi Ci tygodnie błądzenia.
         </p>
 
-        <div class="bg-indigo-900/50 rounded-2xl p-8 max-w-lg mx-auto mb-8">
+        <div class="bg-red-900/50 rounded-2xl p-8 max-w-lg mx-auto mb-8">
           <div class="text-5xl font-bold mb-2 text-white">{ebook.price} zł</div>
           <p class="text-accent-light font-medium mb-6">Jednorazowa płatność • PDF + EPUB natychmiast po zakupie</p>
 
           <button
-            class="buy-button w-full bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-accent/30 text-lg"
+            class="buy-button w-full bg-gradient-to-r from-rose-500 to-amber-500 hover:from-amber-500 hover:to-rose-500 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-rose-500/30 text-lg"
             data-product-id={ebook.id}
           >
             <span>Kupuję przewodnik</span>
@@ -207,7 +207,7 @@ const ebook = {
           </button>
         </div>
 
-        <p class="text-sm text-indigo-400">
+        <p class="text-sm text-rose-300">
           Potrzebujesz bardziej uniwersalnego poradnika? Sprawdź
           <a href="/sklep/praca-magisterska-ebook/" class="text-accent-light hover:underline">„Jak napisać pracę magisterską od A do Z”</a>.
         </p>
@@ -222,25 +222,25 @@ const ebook = {
         <div class="space-y-4">
           <details class="bg-slate-50 rounded-xl p-6 group">
             <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
-              Czy ten przewodnik zastępuje podręcznik z metodologii?
+              Czy przewodnik obejmuje też badania jakościowe?
               <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <p class="mt-4 text-slate-600">
-              Nie — to praktyczny przewodnik, który pokazuje, <strong>jak napisać pracę magisterską z psychologii</strong> krok po kroku. Teoria jest wyjaśniona konkretnie i skoncentrowana na tym, co naprawdę potrzebne w pracy dyplomowej.
+              Tak — obok sondażu i eksperymentu przewodnik omawia wywiad, obserwację i analizę dokumentów, wraz z zasadami łączenia podejść w jednej pracy.
             </p>
           </details>
 
           <details class="bg-slate-50 rounded-xl p-6 group">
             <summary class="font-semibold text-slate-900 cursor-pointer flex justify-between items-center">
-              Czy znajdę tu gotowe przykłady hipotez lub metod?
+              W jakich formatach dostanę ebooka?
               <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
             <p class="mt-4 text-slate-600">
-              Tak — przewodnik zawiera przykłady problemów badawczych, hipotez, doboru próby, narzędzi i sposobów analizy danych adekwatnych dla psychologii.
+              W paczce ZIP dostajesz <strong>PDF</strong> (ładny układ do czytania na komputerze i druku) i <strong>EPUB</strong> (wygodny na czytniku i telefonie).
             </p>
           </details>
 
@@ -252,7 +252,7 @@ const ebook = {
               </svg>
             </summary>
             <p class="mt-4 text-slate-600">
-              <strong>Natychmiast.</strong> Po udanej płatności otrzymasz email z linkiem do pobrania paczki PDF + EPUB w ciągu 30–60 sekund. Link jest ważny 7 dni.
+              <strong>Natychmiast.</strong> Po udanej płatności otrzymasz email z linkiem do pobrania w ciągu 30–60 sekund. Link jest ważny 7 dni.
             </p>
           </details>
         </div>
@@ -268,7 +268,7 @@ const ebook = {
     class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden"
   >
     <div class="bg-white rounded-2xl p-8 text-center">
-      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-rose-600 mx-auto mb-4"></div>
       <p class="text-slate-700">Przekierowuję do płatności...</p>
     </div>
   </div>
@@ -277,8 +277,8 @@ const ebook = {
     // cSpell:ignore gtag
     document.addEventListener("DOMContentLoaded", function () {
       var PRODUCTS = {
-        "ebook-magisterska-psychologia": {
-          name: "Jak napisać pracę magisterską z psychologii",
+        "ebook-magisterska-pedagogika": {
+          name: "Jak napisać pracę magisterską z pedagogiki",
           price: 49.0,
         },
       };

@@ -5,6 +5,7 @@ interface Props {
   kierunek: string;           // nazwa kierunku do wyświetlenia, np. "psychologii"
   productName?: string;       // pełna nazwa produktu, np. "Jak napisać pracę magisterską z psychologii"
   landingHref?: string;       // URL landing page; domyślnie /sklep/jak-napisac-prace-magisterska-z-{kierunek}/
+  icon?: string;              // emoji kierunku, np. "🩺"
   variant?: 'inline' | 'sidebar';
 }
 
@@ -12,6 +13,7 @@ const {
   kierunek,
   productName = `Jak napisać pracę magisterską z ${kierunek}`,
   landingHref = `/sklep/jak-napisac-prace-magisterska-z-${kierunek}/`,
+  icon = '🧠',
   variant = 'inline',
 } = Astro.props;
 ---
@@ -19,7 +21,7 @@ const {
 {variant === 'inline' && (
   <div class="bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 border border-indigo-100 rounded-xl p-6 my-6">
     <div class="flex flex-col sm:flex-row items-center gap-5">
-      <div class="text-5xl flex-shrink-0">🧠</div>
+      <div class="text-5xl flex-shrink-0">{icon}</div>
       <div class="flex-1 text-center sm:text-left">
         <h4 class="font-bold text-gray-900 mb-2">
           Piszesz magisterkę z {kierunek}?
@@ -27,7 +29,7 @@ const {
         <p class="text-gray-600 text-sm mb-1">
           Pobierz przewodnik <strong>„{productName}”</strong> — metodologia, dobór narzędzi, analiza wyników i pisanie poszczególnych rozdziałów krok po kroku.
         </p>
-        <p class="text-indigo-700 font-bold text-sm">49 zł · PDF na zawsze · dostęp natychmiast</p>
+        <p class="text-indigo-700 font-bold text-sm">49 zł · PDF + EPUB na zawsze · dostęp natychmiast</p>
       </div>
       <a
         href={landingHref}
@@ -45,7 +47,7 @@ const {
 {variant === 'sidebar' && (
   <div class="card border border-indigo-100">
     <div class="flex items-start gap-3 mb-4">
-      <div class="text-3xl flex-shrink-0">🧠</div>
+      <div class="text-3xl flex-shrink-0">{icon}</div>
       <div>
         <h3 class="font-bold text-gray-900 mb-1">Magisterka z {kierunek}?</h3>
         <p class="text-sm text-gray-600">Przewodnik „{productName}” — 49 zł.</p>

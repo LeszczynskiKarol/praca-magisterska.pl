@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -52,6 +53,12 @@ const relatedLinks = [
       fragment po fragmencie i udostępniamy cały szablon do pobrania w PDF i Word.
     </p>
   </div>
+
+  <EbookKierunkowyCTA
+    kierunek="pielęgniarstwa"
+    icon="🩺"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-pielegniarstwa/"
+  />
 
   <h2>Pielęgniarstwo internistyczne</h2>
 

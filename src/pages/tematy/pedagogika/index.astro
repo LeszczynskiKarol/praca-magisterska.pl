@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -48,6 +49,12 @@ const relatedLinks = [
       po fragmencie i udostępniamy cały szablon do pobrania w PDF i Word.
     </p>
   </div>
+
+  <EbookKierunkowyCTA
+    kierunek="pedagogiki"
+    icon="🧑‍🏫"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-pedagogiki/"
+  />
 
   <h2>Pedagogika przedszkolna i wczesnoszkolna</h2>
 

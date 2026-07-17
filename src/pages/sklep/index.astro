@@ -4,6 +4,53 @@ import Footer from "../../components/Footer.astro";
 import Navbar from "../../components/Navbar.astro";
 import Layout from "../../layouts/Layout.astro";
 
+const kierunkowe = [
+  {
+    id: "psychologia",
+    kierunek: "Psychologia",
+    icon: "🧠",
+    subtitle: "Od konstruktu do obrony",
+    desc: "Operacjonalizacja, moc statystyczna, narzędzia w polskich adaptacjach, standard APA.",
+    href: "/sklep/jak-napisac-prace-magisterska-z-psychologii/",
+    gradient: "from-indigo-900 to-purple-800",
+    border: "hover:border-purple-400",
+    badge: "Wydanie II · 2026",
+  },
+  {
+    id: "pielegniarstwo",
+    kierunek: "Pielęgniarstwo",
+    icon: "🩺",
+    subtitle: "Od problemu klinicznego do obrony",
+    desc: "Badania na oddziale, zgody i komisja bioetyczna, skale standaryzowane, styl Vancouver.",
+    href: "/sklep/jak-napisac-prace-magisterska-z-pielegniarstwa/",
+    gradient: "from-teal-900 to-emerald-800",
+    border: "hover:border-teal-400",
+    badge: "Nowość 2026",
+  },
+  {
+    id: "pedagogika",
+    kierunek: "Pedagogika",
+    icon: "🧑‍🏫",
+    subtitle: "Od problemu wychowawczego do obrony",
+    desc: "Sondaż i eksperyment, badania w szkole, narzędzia badawcze, statystyka bez paniki.",
+    href: "/sklep/jak-napisac-prace-magisterska-z-pedagogiki/",
+    gradient: "from-rose-900 to-red-800",
+    border: "hover:border-rose-400",
+    badge: "Nowość 2026",
+  },
+  {
+    id: "prawo",
+    kierunek: "Prawo",
+    icon: "⚖️",
+    subtitle: "Od tezy do obrony",
+    desc: "Metoda dogmatyczna, wykładnia, orzecznictwo, przypisy prawnicze i trzy wykazy.",
+    href: "/sklep/jak-napisac-prace-magisterska-z-prawa/",
+    gradient: "from-slate-900 to-blue-900",
+    border: "hover:border-blue-400",
+    badge: "Nowość 2026",
+  },
+];
+
 const products = [
   {
     id: "magisterska",
@@ -55,8 +102,8 @@ const products = [
 ---
 
 <Layout
-  title="Ebook: Jak napisać pracę magisterską - Poradnik PDF 250 stron | Praca-Magisterska.pl"
-  description="Kompletny poradnik pisania pracy magisterskiej w PDF (250 stron): wybór tematu, zaawansowana metodologia, analiza statystyczna, formatowanie, obrona. Szablony i checklisty. Piszesz licencjat? Ebook na licencjackie.pl."
+  title="Sklep: ebooki o pisaniu pracy magisterskiej — poradnik ogólny i przewodniki kierunkowe | Praca-Magisterska.pl"
+  description="Kompletny poradnik pisania pracy magisterskiej (250 stron, 39 zł) oraz przewodniki kierunkowe PDF + EPUB za 49 zł: psychologia, pielęgniarstwo, pedagogika, prawo. Dostęp natychmiast po zakupie."
 >
   <Navbar />
 
@@ -66,14 +113,14 @@ const products = [
     <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 md:py-24">
       <div class="max-w-6xl mx-auto px-4 text-center">
         <div class="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-6">
-          📚 Ebooki PDF • Poradniki pisania prac dyplomowych
+          📚 Ebooki • Poradniki pisania prac dyplomowych
         </div>
-        
+
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
           Jak napisać pracę dyplomową?
         </h1>
         <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
-          Kompletne poradniki dla studentów piszących prace licencjackie i magisterskie. 
+          Uniwersalne poradniki od A do Z i przewodniki kierunkowe pisane pod konkretny kierunek studiów.
           <strong class="text-white">Bez stresu. Bez błądzenia po omacku.</strong>
         </p>
         
@@ -84,7 +131,7 @@ const products = [
           </span>
           <span class="flex items-center gap-2">
             <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Aktualizowane na 2025
+            Aktualizowane na 2026
           </span>
           <span class="flex items-center gap-2">
             <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -177,11 +224,60 @@ const products = [
         <div class="mt-12 text-center">
           <div class="inline-block bg-amber-50 border border-amber-200 rounded-xl px-6 py-4">
             <p class="text-amber-800">
-              <strong>💡 Wskazówka:</strong> Jeśli planujesz też pisać magisterską — kup od razu poradnik magisterski. 
+              <strong>💡 Wskazówka:</strong> Jeśli planujesz też pisać magisterską — kup od razu poradnik magisterski.
               Zawiera wszystko z wersji licencjackiej + zaawansowane tematy.
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <!-- ============ PRZEWODNIKI KIERUNKOWE ============ -->
+    <section id="kierunkowe" class="py-16 bg-slate-900">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <div class="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-medium mb-4">
+            ✨ Nowa seria 2026
+          </div>
+          <h2 class="text-3xl font-bold text-white mb-4">Przewodniki kierunkowe — 49 zł</h2>
+          <p class="text-slate-300 max-w-2xl mx-auto">
+            Piszesz magisterkę z konkretnego kierunku? Te przewodniki mówią językiem Twojej dziedziny:
+            jej metod, narzędzi i wymagań recenzentów. 16 rozdziałów, format <strong class="text-white">PDF + EPUB</strong>.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {kierunkowe.map((k) => (
+            <a
+              href={k.href}
+              class={`group flex flex-col rounded-2xl overflow-hidden border-2 border-transparent ${k.border} bg-slate-800 transition-all hover:scale-105 hover:shadow-2xl`}
+            >
+              <div class={`bg-gradient-to-br ${k.gradient} p-6 text-center`}>
+                <span class="text-5xl block mb-3">{k.icon}</span>
+                <h3 class="text-xl font-bold text-white">{k.kierunek}</h3>
+                <p class="text-sm text-white/70 mt-1">{k.subtitle}</p>
+              </div>
+              <div class="p-5 flex flex-col flex-1">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded-full">PDF + EPUB</span>
+                  <span class="bg-slate-700 text-slate-300 text-xs px-2 py-0.5 rounded-full">16 rozdziałów</span>
+                  <span class="bg-accent/20 text-accent text-xs px-2 py-0.5 rounded-full">{k.badge}</span>
+                </div>
+                <p class="text-slate-400 text-sm flex-1">{k.desc}</p>
+                <div class="mt-4 pt-4 border-t border-slate-700 flex items-center justify-between">
+                  <span class="text-2xl font-bold text-white">49 zł</span>
+                  <span class="text-accent font-medium text-sm group-hover:translate-x-1 transition-transform">Zobacz →</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <p class="text-center text-slate-400 text-sm mt-8">
+          Piszesz pracę licencjacką z pielęgniarstwa? Przewodnik znajdziesz na
+          <a href="https://www.licencjackie.pl/ebook-pielegniarstwo/" class="text-accent hover:underline" rel="noopener">licencjackie.pl</a>.
+        </p>
       </div>
     </section>
 
@@ -221,7 +317,7 @@ const products = [
             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">🔄</span>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">Aktualizowane na 2025</h3>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Aktualne wydania 2026</h3>
             <p class="text-slate-600 text-sm">Żadnych przestarzałych informacji. Poradniki są regularnie aktualizowane zgodnie z aktualnymi wymogami.</p>
           </div>
           
@@ -575,7 +671,7 @@ const products = [
               <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </summary>
             <p class="mt-4 text-slate-600">
-              Ebooki są w formacie <strong>PDF</strong>. Otworzysz je na każdym urządzeniu — komputerze, tablecie, telefonie. Nie potrzebujesz specjalnego programu.
+              Poradniki ogólne są w formacie <strong>PDF</strong>, a przewodniki kierunkowe dostajesz w paczce <strong>PDF + EPUB</strong> (EPUB jest wygodny na czytniku i telefonie). Otworzysz je na każdym urządzeniu, bez specjalnego programu.
             </p>
           </details>
 
@@ -640,10 +736,13 @@ const products = [
           <a href="/sklep/praca-magisterska-ebook" class="inline-block bg-accent hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 text-lg">
             📗 Praca magisterska — 39 zł
           </a>
+          <a href="#kierunkowe" class="inline-block bg-slate-700 hover:bg-slate-600 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 text-lg">
+            ✨ Przewodniki kierunkowe — 49 zł
+          </a>
         </div>
-        
+
         <p class="text-slate-500 mt-6 text-sm">
-          Płatność jednorazowa • Dostęp natychmiast • PDF na zawsze
+          Płatność jednorazowa • Dostęp natychmiast • Pliki na zawsze
         </p>
       </div>
     </section>
@@ -661,7 +760,10 @@ const products = [
             Nasze <strong>ebooki to kompletne poradniki pisania prac dyplomowych</strong>, które przeprowadzą Cię przez cały proces krok po kroku. Znajdziesz w nich nie tylko teorię, ale przede wszystkim <strong>praktyczne instrukcje, przykłady, szablony i checklisty</strong>. Dowiesz się jak zawęzić temat, gdzie szukać literatury (Google Scholar, JSTOR, BazEkon i inne bazy danych), jak pisać rozdziały teoretyczne metodą syntezy, jak robić przypisy w systemie harwardzkim lub przypisach dolnych, oraz jak przygotować się do obrony.
           </p>
           <p>
-            Poradniki są <strong>uniwersalne dla każdego kierunku studiów</strong>: zarządzania, pedagogiki, psychologii, socjologii, ekonomii, prawa, filologii i wielu innych. Wybierz wersję odpowiednią dla siebie — licencjacką (250 stron) lub magisterską (250 stron z zaawansowaną metodologią) — i zacznij pisać bez stresu.
+            Poradniki ogólne są <strong>uniwersalne dla każdego kierunku studiów</strong>: zarządzania, pedagogiki, psychologii, socjologii, ekonomii, prawa, filologii i wielu innych. Wybierz wersję odpowiednią dla siebie — licencjacką (250 stron) lub magisterską (250 stron z zaawansowaną metodologią) — i zacznij pisać bez stresu.
+          </p>
+          <p>
+            Dla najpopularniejszych kierunków przygotowaliśmy dodatkowo <strong>przewodniki kierunkowe</strong> (PDF + EPUB): <a href="/sklep/jak-napisac-prace-magisterska-z-psychologii/">psychologia</a>, <a href="/sklep/jak-napisac-prace-magisterska-z-pielegniarstwa/">pielęgniarstwo</a>, <a href="/sklep/jak-napisac-prace-magisterska-z-pedagogiki/">pedagogika</a> i <a href="/sklep/jak-napisac-prace-magisterska-z-prawa/">prawo</a>. Każdy z nich mówi językiem konkretnej dziedziny — od metod badawczych, przez narzędzia i cytowanie, po kanon pytań na obronie.
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
+import EbookKierunkowyCTA from "../../../../components/EbookKierunkowyCTA.astro";
 import InfoBox from "../../../../components/InfoBox.astro";
 
 const breadcrumbs = [
@@ -52,6 +53,12 @@ const relatedLinks = [
       { href: "/downloads/przykladowa-praca-magisterska-prawo.pdf", label: "Pobierz wzór (PDF)" },
       { href: "/downloads/przykladowa-praca-magisterska-prawo.docx", label: "Pobierz wzór (Word .docx)", primary: false },
     ]}
+  />
+
+  <EbookKierunkowyCTA
+    kierunek="prawa"
+    icon="⚖️"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-prawa/"
   />
 
   <h2>Co wyróżnia pracę magisterską z prawa</h2>
