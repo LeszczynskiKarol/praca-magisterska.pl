@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -55,6 +56,12 @@ const relatedLinks = [
       szablon do pobrania w PDF i Word.
     </p>
   </div>
+
+  <EbookKierunkowyCTA
+    kierunek="administracji"
+    icon="🏛️"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-administracji/"
+  />
 
   <h2>Administracja rządowa</h2>
 
