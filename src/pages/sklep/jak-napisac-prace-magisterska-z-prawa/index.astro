@@ -7,6 +7,9 @@ import Footer from "../../../components/Footer.astro";
 const API_URL =
   "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
 
+const PREVIEW_PDF_URL =
+  "https://praca-magisterska-ebooks.s3.eu-central-1.amazonaws.com/jak-napisac-prace-magisterska-z-prawa-preview.pdf";
+
 const ebook = {
   id: "ebook-magisterska-prawo",
   name: "Jak napisać pracę magisterską z prawa",
@@ -154,6 +157,61 @@ const ebook = {
               </div>
             ))
           }
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIEW PDF -->
+    <section class="py-16 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-white mb-4">
+            📖 Zajrzyj do środka — przeczytaj fragment za darmo
+          </h2>
+          <p class="text-blue-200">
+            Okładka, pełny spis treści i cały pierwszy rozdział do przejrzenia.
+          </p>
+        </div>
+
+        <!-- PDF EMBED -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <div class="bg-blue-950 px-6 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <span class="text-sm text-blue-200">Fragment przewodnika — spis treści i rozdział 1</span>
+            </div>
+            <a
+              href={PREVIEW_PDF_URL}
+              target="_blank"
+              class="text-sm text-accent-light hover:text-white flex items-center gap-1"
+            >
+              Otwórz w nowej karcie ↗
+            </a>
+          </div>
+
+          <iframe
+            src={PREVIEW_PDF_URL}
+            class="w-full h-[600px] md:h-[700px] border-0"
+            title="Preview przewodnika — prawo"></iframe>
+        </div>
+
+        <div class="text-center mt-8">
+          <p class="text-blue-200 mb-6">
+            Podoba Ci się? To zaledwie <strong class="text-white">1 z {ebook.chapters} rozdziałów</strong> pisanych z tą samą gęstością konkretu.
+          </p>
+          <button
+            class="buy-button bg-gradient-to-r from-blue-600 to-amber-500 hover:from-amber-500 hover:to-blue-600 text-white font-bold py-4 px-10 rounded-xl transition-all hover:scale-105 inline-flex items-center gap-2 shadow-lg shadow-blue-500/30 text-lg"
+            data-product-id={ebook.id}
+          >
+            <span>Kup pełny przewodnik za {ebook.price} zł</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
