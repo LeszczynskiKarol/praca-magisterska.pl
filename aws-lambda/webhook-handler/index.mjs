@@ -1,6 +1,11 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import {
+  DynamoDBClient,
+  PutItemCommand,
+  DeleteItemCommand,
+} from "@aws-sdk/client-dynamodb";
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
@@ -28,6 +33,46 @@ const s3 = new S3Client({ region: process.env.AWS_REGION });
 const ses = new SESClient({
   region: process.env.SES_REGION || process.env.AWS_REGION,
 });
+const dynamo = new DynamoDBClient({ region: process.env.AWS_REGION });
+
+const ORDERS_TABLE = process.env.ORDERS_TABLE || "praca-magisterska-orders";
+
+// Stripe wysyła dla jednej sesji więcej niż jedno zdarzenie (completed +
+// async_payment_succeeded, retransmisje) — mail wolno wysłać tylko temu
+// wywołaniu, które jako pierwsze zapisze sesję w tabeli zamówień.
+async function claimSession(session, productId, customerEmail) {
+  try {
+    await dynamo.send(
+      new PutItemCommand({
+        TableName: ORDERS_TABLE,
+        Item: {
+          sessionId: { S: session.id },
+          productId: { S: productId },
+          customerEmail: { S: customerEmail },
+          amountTotal: { N: String(session.amount_total ?? 0) },
+          currency: { S: session.currency || "pln" },
+          createdAt: { S: new Date().toISOString() },
+        },
+        ConditionExpression: "attribute_not_exists(sessionId)",
+      })
+    );
+    return true;
+  } catch (err) {
+    if (err.name === "ConditionalCheckFailedException") {
+      return false;
+    }
+    throw err;
+  }
+}
+
+async function releaseSession(sessionId) {
+  await dynamo.send(
+    new DeleteItemCommand({
+      TableName: ORDERS_TABLE,
+      Key: { sessionId: { S: sessionId } },
+    })
+  );
+}
 
 export const handler = async (event) => {
   const sig =
@@ -83,6 +128,12 @@ async function handleSuccessfulPayment(session) {
     return;
   }
 
+  const claimed = await claimSession(session, productId, customerEmail);
+  if (!claimed) {
+    console.log(`Session ${session.id} already fulfilled, skipping`);
+    return;
+  }
+
   try {
     const command = new GetObjectCommand({
       Bucket: process.env.S3_BUCKET,
@@ -98,6 +149,10 @@ async function handleSuccessfulPayment(session) {
     console.log(`Email sent to ${customerEmail} for product ${productId}`);
   } catch (error) {
     console.error("Error handling payment:", error);
+    // Zwalniamy rezerwację, żeby retransmisja Stripe mogła dokończyć wysyłkę.
+    await releaseSession(session.id).catch((e) =>
+      console.error("Failed to release session claim:", e)
+    );
     throw error;
   }
 }
