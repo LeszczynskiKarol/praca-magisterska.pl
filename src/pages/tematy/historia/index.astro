@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -41,14 +42,7 @@ const relatedLinks = [
     regionalną, społeczną i gospodarczą.
   </p>
 
-  <div class="callout-box">
-    <p>
-      📄 <strong>Zobacz, jak wygląda gotowa praca:</strong>
-      <a href="/tematy/historia/przykladowa-praca/">Przykładowa praca magisterska z
-      historii – wzór z omówieniem</a>. Rozbieramy wzorcową pracę opartą na źródłach
-      fragment po fragmencie i udostępniamy cały szablon do pobrania w PDF i Word.
-    </p>
-  </div>
+  <WzorPracyCTA kierunekZ="z historii" href="/tematy/historia/przykladowa-praca/" />
 
   <h2>Historia starożytna</h2>
 
@@ -561,17 +555,6 @@ const relatedLinks = [
     badawczej, których oczekuje się od magistra historii.
   </p>
 
-  <style>
-    .callout-box {
-      border: 1px solid #c7d2fe;
-      border-left: 4px solid #4f46e5;
-      border-radius: 0.5rem;
-      background: #f5f7ff;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0;
-    }
-    .callout-box p {
-      margin: 0;
-    }
-  </style>
+
+  <WzorPracyCTA kierunekZ="z historii" href="/tematy/historia/przykladowa-praca/" variant="bottom" />
 </ArticleLayout>

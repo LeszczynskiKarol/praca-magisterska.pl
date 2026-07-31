@@ -2,6 +2,329 @@
 
 ---
 
+## 🟢 AKTUALIZACJA 2026-07-31 — sekcja wiążąca (nadrzędna, zastępuje 2026-07-11)
+
+### ✅ Zrobione 2026-07-31 — naprawa ścieżki do wzorów (CTA)
+
+**Diagnoza (GA4, 2026-04-30..2026-07-29).** Pobranie pliku jest zdecydowanie
+najczęstszą akcją na serwisie: `file_download` = **222**, `click` (wyjścia na
+smart-edu / ebooki) = **52**, `add_to_cart` = **1**, `begin_checkout` = **1**.
+Przy 3159 sesjach i 3521 odsłonach oznacza to, że płatne CTA są ignorowane,
+a darmowy plik — nie.
+
+Kluczowe odkrycie: stary `.callout-box` linkujący do `/przykladowa-praca/`
+**nie działał**. Podział odsłon na wejścia z Google vs nawigację wewnętrzną:
+
+| strona | odsłony | z Google | z linku wewn. |
+|---|---|---|---|
+| `/tematy/psychologia/przykladowa-praca/` | 96 | 95 | **1** |
+| `/tematy/pedagogika/przykladowa-praca/` | 26 | 23 | 3 |
+| `/tematy/prawo/przykladowa-praca/` | 25 | 25 | 0 |
+| `/tematy/pielegniarstwo/przykladowa-praca/` | 18 | 16 | 2 |
+| `/tematy/administracja/przykladowa-praca/` | 1 | 1 | 0 |
+
+Z ~305 sesji na `/tematy/psychologia/` **jedna osoba** kliknęła w callout
+(CTR ~0,3%). Psychologia ma pobrania wyłącznie dlatego, że jej podstrona sama
+rankuje w Google. To był problem systemowy wszystkich 41 kierunków, nie
+pojedynczych stron.
+
+**Co zrobiono:** nowy komponent `src/components/WzorPracyCTA.astro` (zielony —
+celowo odróżnia darmowy wzór od płatnych CTA w fiolecie), dwa warianty:
+`inline` (zastąpił callout po pierwszym akapicie) i `bottom` (nowy, przed
+`</ArticleLayout>` — łapie czytelnika po przejrzeniu listy tematów).
+Zmigrowano **41/41 kierunków**, usunięto osierocone bloki `<style>.callout-box`.
+Build: 172 strony OK.
+
+**Do zmierzenia za ~2 tygodnie:** kolumna „z linku wewn." w GA4 (pagePath
+`przykladowa-praca` — odsłony minus sesje-landing). Cel: z ~0,3% do ≥5%.
+Jeśli wzrośnie, baza pobrań rośnie proporcjonalnie i zasila punkt niżej.
+
+---
+
+### 🆕 NOWA ODNOGA: sklep z gotowymi pracami wzorcowymi (do zrobienia)
+
+**Produkt.** Gotowe, kompletne prace magisterskie wzorcowe do pobrania —
+**59 zł za sztukę**, na najpopularniejsze tematy. Generowane przez
+`D:\smart-edu.ai` (realne przypisy + rzeczywista bibliografia z `D:\cytado`),
+koszt wytworzenia 6–10 zł/szt. Przy każdej pracy **licznik pobrań** widoczny dla
+kupującego (dowód społeczny). **Prawa autorskie nie przechodzą na kupca** —
+sprzedawany jest materiał wzorcowy/referencyjny, nie licencja do podpisania się
+pod pracą. Musi to być jednoznaczne w opisie produktu, regulaminie i w samym
+pliku (stopka na każdej stronie).
+
+#### Dlaczego ta domena i to miejsce — uzasadnienie z danych
+
+- praca-magisterska.pl: 1927 kliknięć GSC / 90 dni (+174% kw/kw), 3159 sesji GA4,
+  spam score 6, trend 10 → 1180 sesji/mies., **bez załamania wakacyjnego**
+  (VI: 1177 → VII: 1180). Dla porównania licencjackie.pl spadło 867 → 520.
+- Intencja ruchu jest zakupowa, nie poradnikowa: `praca magisterska psychologia
+  pdf`, `praca magisterska pielęgniarstwo przykład`, `przykładowe prace
+  magisterskie badawcze`, `praca magisterska prawo pdf`. Frazy z
+  „pdf/przykład/przykładowa" to ~28% kliknięć z top-40.
+- Format „plik do pobrania" ma już potwierdzoną trakcję (222 downloady), a płatne
+  CTA w obecnej formie — nie (1 add_to_cart).
+
+#### ⚠️ Czego dane NIE dowodzą (nie budować na tym prognoz)
+
+Chęć pobrania **darmowego** pliku nie dowodzi gotowości zapłaty 59 zł.
+Istnieje realna kontrhipoteza: kto pobiera szkielet z komentarzami, ten chce
+**pisać sam** — i jest poza rynkiem gotowca. Próbki są małe (57 pobrań
+psychologii). Dlatego krok 0 poniżej to test, a nie budowa sklepu.
+
+#### Krok 0 — fake door (ZANIM cokolwiek się buduje)
+
+Na 3 stronach z potwierdzonymi pobraniami (psychologia, prawo, pedagogika)
+dodać w `DownloadBox` drugi, płatny przycisk prowadzący na prostą stronę
+z opisem, spisem treści, liczbą stron i formularzem „powiadom mnie".
+Zero płatności, zero infrastruktury. Mierzona metryka: **% osób, które pobrały
+darmowy wzór i kliknęły też w płatny**. Przy ~74 pobraniach/mies. na tych
+trzech stronach sygnał będzie w 2–3 tygodnie.
+
+#### Gdzie w UI — wewnątrz istniejącego bloku pobierania, nie obok
+
+Sklep NIE dostaje nowego bannera. Rozbudowie podlega istniejący `DownloadBox`
+na `/tematy/<kierunek>/przykladowa-praca/` — do dwóch poziomów:
+
+```
+📄 Pobierz wzór pracy
+   [ Wzór — szkielet z komentarzami (PDF / DOCX) ]   ← darmowe, jest dziś
+   [ Pełna praca wzorcowa, 87 stron — 59 zł       ]   ← nowe
+   ✓ pobrano 128 razy
+```
+
+Uzasadnienie: user jest już w trybie „pobieram plik" (nie trzeba go przełączać
+z trybu czytania w tryb zakupu — to właśnie zabija obecne ebooki), a decyzja
+o zapłacie pada **po** obejrzeniu jakości darmowego wzoru.
+
+#### Warunek konieczny: odejmowanie, nie dodawanie
+
+Strona jest już przeładowana CTA. Żeby wdrożyć sklep „gładko", równolegle:
+
+- **usunąć** `EbookKierunkowyCTA` (49 zł) ze stron kierunków i przykładowych prac
+  — 1 add_to_cart / 90 dni to element martwy, zajmujący najlepsze miejsce;
+- **przyciąć** bloki smart-edu do jednego wystąpienia na stronę (52 wyjścia /
+  3521 odsłon = 1,5%);
+- zwolnione miejsce oddać pracom wzorcowym.
+
+Efekt: mimo nowego produktu strona wychodzi z tego **czystsza** niż jest teraz.
+Podział rynku pozostaje naturalny: kto chce pisać sam → smart-edu.ai;
+kto chce gotowy dokument → sklep.
+
+#### Technologia — rozszerzenie istniejącego pipeline'u, NIE nowa aplikacja
+
+Cała potrzebna infrastruktura już stoi i jest sterowana jednym plikiem
+`aws-lambda/products.json` (patrz `aws-lambda/README-ebooki.md`):
+
+- `create-checkout` — sesja Stripe wg `id`/`price`
+- `webhook-handler` — mail z linkiem po opłaceniu (idempotentny od 95b360c,
+  rejestr zamówień w DynamoDB `praca-magisterska-orders`)
+- `get-download` — presigned URL S3, ważny 24 h
+
+Dodanie pracy = upload pliku na S3 + jedna pozycja w `products.json` + landing.
+**Nie ma powodu stawiać serwera na instancji cytado ani osobnego backendu** —
+byłby to nowy, płatny punkt awarii dla funkcji, którą obecny stack już pełni.
+
+Do zrobienia technicznie:
+
+1. `get-download/index.mjs` ma **zahardkodowany** `ResponseContentType:
+   "application/pdf"` (linia ~95). Prace mają iść w PDF **i** DOCX →
+   sparametryzować z `products.json` (pole `contentType`), albo pakować w ZIP.
+2. **Licznik pobrań** — źródłem prawdy DynamoDB `praca-magisterska-orders`
+   (rejestr zamówień już tam trafia). Zliczać per `productId`, wystawić przez
+   lambdę + cache, wyświetlać na karcie produktu. Uwaga: licznik ma pokazywać
+   liczbę **realnych zakupów**; nie zawyżać, bo to wprost wprowadzałoby kupca
+   w błąd.
+3. **Ochrona pliku** — presigned URL 24 h już jest. Dodatkowo: stopka
+   z numerem zamówienia na każdej stronie PDF (znacznik źródła przy
+   redystrybucji) + jednoznaczna informacja o braku przeniesienia praw.
+4. Nowa kategoria w `products.json` (`"category": "Praca wzorcowa"`) i cena
+   `5900`.
+5. Struktura URL — patrz „Taksonomia" w planie realizacji niżej.
+
+---
+
+## 📐 PLAN REALIZACJI — katalog prac wzorcowych + head terms
+
+> **Decyzja właściciela (2026-07-31):** celujemy również we frazy „gotowe prace".
+> Uzasadnienie: „gotowa" jest dwuznaczna (bywa rozumiana jako „kompletna,
+> wzorcowa”), frazy ogólne mają większy wolumen, a model one-to-many wyklucza
+> przeniesienie praw — po pierwszej sprzedaży pracę trzeba by zdjąć z oferty.
+> Zastępuje to wcześniejsze zalecenie „nie celować w gotowe prace”.
+
+### A. Gdzie jest realny potencjał — head terms bez kliknięć
+
+Pełny eksport GSC (2026-04-30..2026-07-29, obie domeny, 2817 fraz, 54 665
+wyświetleń, 463 kliknięcia). **20 fraz „head" = 24 388 wyświetleń i 32
+kliknięcia — 44,6% całego wolumenu wyświetleń.**
+
+| fraza | domena | wyśw. | poz. | klik. |
+|---|---|---|---|---|
+| pisanie prac licencjackich | licencjackie.pl | 4096 | 29,7 | 0 |
+| pisanie pracy licencjackiej | licencjackie.pl | 3057 | 34,0 | 0 |
+| pisanie prac dyplomowych | licencjackie.pl | 2533 | 25,4 | 0 |
+| prace licencjackie | licencjackie.pl | 2021 | 26,4 | 0 |
+| pisanie prac magisterskich | licencjackie.pl | 1548 | 22,2 | 1 |
+| praca licencjacka | licencjackie.pl | 1481 | 38,9 | 0 |
+| pisanie prac | licencjackie.pl | 1479 | 27,3 | 0 |
+| praca magisterska | praca-magisterska.pl | 1379 | 41,2 | 0 |
+| pisanie pracy magisterskiej | licencjackie.pl | 1283 | 33,8 | 0 |
+| prace magisterskie | licencjackie.pl | 769 | 43,6 | 0 |
+
+Rozkład pozycji tych 20 fraz: **13 na miejscach 21–50**, 4 na 11–20, 2 w top 10.
+To zasięg realny do poprawy — nie fantazja o pozycji 1.
+
+Dla kontrastu: frazy z „gotow" mają dziś **61 wyświetleń** (13 fraz), a z „wzór"
+— **969 wyświetleń i 2 kliknięcia**. Obie to puste karty: brak treści, nie brak
+rynku.
+
+**Uwaga interpretacyjna:** te liczby mierzą obecną widoczność, nie wolumen
+rynkowy. Wolumen fraz „gotowe prace” pozostaje niezmierzony (potrzebny Keyword
+Planner) — nie budować na nim prognoz przychodu.
+
+### B. Krytyczne ustalenie: long-tail tematycznego NIE MA
+
+Sprawdzono frazy 4+ słów oraz zawierające konkretne zjawiska badawcze
+(wypalenie, jakość życia, satysfakcja, depresja, motywacja, uzależnienie,
+cukrzyca, COVID…). **Zero fraz typu „praca magisterska wypalenie zawodowe
+pielęgniarek".** Cały ruch siedzi na poziomie:
+
+- `praca magisterska psychologia` (489 wyśw., poz. 9,0)
+- `praca magisterska psychologia przykład` (236, poz. 9,7)
+- `tematy prac magisterskich psychologia` (207, poz. 6,6)
+- `praca magisterska z psychologii pdf` (107, poz. 10,5)
+
+To istotne, bo `/tematy/<kierunek>/` zawierają po ~110 tematów każdy — gdyby
+long-tail tematyczny miał wolumen, zbierałyby na nim wyświetlenia. Nie zbierają.
+
+**Konsekwencja: wartość SEO leży w stronie KATEGORII, nie w stronach
+produktowych.** Liczba prac na kierunek to kwestia atrakcyjności oferty
+i konwersji, nie rankingu. Nie ma powodu robić 10 prac na kierunek „dla SEO".
+
+### C. Wybór kierunków — wg wyświetleń w obu domenach łącznie
+
+| # | kierunek | fraz | wyśw. | klik. | z tego MGR | z tego LIC |
+|---|---|---|---|---|---|---|
+| 1 | psychologia | 80 | 2704 | 116 | 2056 | 648 |
+| 2 | pielęgniarstwo | 96 | 2302 | 83 | 1291 | 1011 |
+| 3 | pedagogika | 85 | 1581 | 37 | 744 | 837 |
+| 4 | prawo | 73 | 592 | 17 | 391 | 201 |
+| 5 | filologia angielska | 35 | 484 | 30 | 36 | **448** |
+| 6 | finanse i rachunkowość | 36 | 387 | 9 | 58 | 329 |
+| 7 | informatyka | 28 | 365 | 10 | 107 | 258 |
+| 8 | administracja | 39 | 344 | 10 | 133 | 211 |
+
+Wnioski do doboru:
+
+- **psychologia** — najsilniejsza i wyraźnie magisterska (2056/648). Pilot.
+- **pielęgniarstwo i pedagogika** — ruch rozłożony niemal po równo mgr/lic,
+  więc dla nich robimy **obie wersje** (praca-magisterska.pl + licencjackie.pl).
+- **filologia angielska, finanse, socjologia, kosmetologia** — niemal wyłącznie
+  licencjat; jeśli wchodzą, to na licencjackie.pl.
+
+### D. Ile prac na kierunek
+
+**6–8 prac na kierunek na start** (nie 10). Uzasadnienie: brak long-tailu
+tematycznego (pkt B) sprawia, że dodatkowe prace nie dokładają fraz — dokładają
+tylko wybór dla kupującego i ryzyko thin contentu. 6–8 wystarcza, by kategoria
+wyglądała na pełną ofertę, a nie na pustkę.
+
+Kryterium doboru tematów: bierzemy je z istniejących list `/tematy/<kierunek>/`
+— tych, które są najbardziej typowe dla kierunku (dają się obronić jako wzór
+metodologiczny), a nie najbardziej niszowe.
+
+### E. Taksonomia URL
+
+```
+/prace/                       → "prace magisterskie", "gotowe prace magisterskie"
+/prace/<kierunek>/            → "prace magisterskie z psychologii",
+                                "gotowe prace magisterskie psychologia"
+/prace/<kierunek>/<temat>/    → strona produktu (konwersja + treść unikalna)
+```
+
+Analogicznie na licencjackie.pl (`/prace/` = prace licencjackie).
+
+Istniejące `/tematy/<kierunek>/` i `/tematy/<kierunek>/przykladowa-praca/`
+zostają bez zmian i **karmią `/prace/` linkami** (po naprawie CTA z 2026-07-31
+ta ścieżka wreszcie przepuszcza ruch).
+
+Rozdział fraz bez kanibalizacji:
+
+| strona | fraza główna |
+|---|---|
+| `/prace/` | gotowe prace magisterskie |
+| `/prace/<kierunek>/` | prace magisterskie z `<kierunek>` |
+| `/tematy/<kierunek>/` | tematy prac magisterskich `<kierunek>` (jest, działa) |
+| `/tematy/<kierunek>/przykladowa-praca/` | przykładowa praca magisterska `<kierunek>` (jest) |
+| `/prace/<kierunek>/<temat>/` | long tail + konwersja |
+
+### F. Największe ryzyko: thin content
+
+Docelowo katalog potroi serwis (dziś 172 strony). Szablonowe opisy produktów =
+sygnał doorway i ocena jakościowa **całej domeny**, łącznie z poradnikami,
+które dziś rosną (+174% kw/kw). To realne zagrożenie dla assetu wartego
+1927 kliknięć kwartalnie.
+
+Przewaga, która to neutralizuje: prace są prawdziwe, z realną bibliografią
+z `D:\cytado`. Każda strona produktu musi zawierać:
+
+- pełny, realny spis treści,
+- streszczenie i problem badawczy,
+- opis metodologii i próby badawczej,
+- **pełną bibliografię** (unikalny content, nie do podrobienia),
+- fragment do podglądu (wstęp + kawałek rozdziału metodologicznego),
+- licznik pobrań.
+
+Zasada: to ma być strona treściowa, która przy okazji sprzedaje — nie karta
+produktu.
+
+### G. Co lokalnie, co na produkcji
+
+**Lokalnie (do czasu ukończenia 3 kierunków):** cała sekcja `/prace/` — hub,
+kategorie, produkty. Powód: hub z jednym kierunkiem wygląda ubogo, a pierwsze
+wrażenie crawlera dotyczy całej sekcji. Jednorazowa publikacja ~28 stron
+(3 kategorie + ~22 produkty + hub) czyta się jak kompletny dział.
+
+**Wyjątki — wchodzą na produkcję wcześniej, niezależnie od katalogu:**
+
+1. **Naprawa CTA** (zrobiona 2026-07-31) — deploy od razu, to samodzielna
+   poprawka nawigacji.
+2. **Fake door** — musi być na produkcji, bo tylko tam zmierzy popyt. Bez tego
+   katalog powstaje w ciemno.
+3. **Head terms** — strony pod `pisanie prac licencjackich` (4096 wyśw.,
+   poz. 29,7) i `pisanie prac dyplomowych` (2533, poz. 25,4) na licencjackie.pl.
+   To osobna praca, niezwiązana z katalogiem, a im wcześniej wystartuje, tym
+   wcześniej się zaindeksuje.
+
+**Nigdy:** 41 kierunków naraz. Partiami, z obserwacją crawlu i pozycji.
+
+### H. Kolejność zadań
+
+| # | zadanie | gdzie | bramka wejścia |
+|---|---|---|---|
+| 1 | deploy naprawy CTA | prod | — (gotowe) |
+| 2 | strony head-term na licencjackie.pl | prod | — |
+| 3 | fake door (psychologia, prawo, pedagogika) | prod | — |
+| 4 | pomiar fake door | — | 2–3 tyg. danych |
+| 5 | `/prace/` + psychologia, 6–8 prac | local | wynik z p. 4 |
+| 6 | pielęgniarstwo + pedagogika (mgr i lic) | local | p. 5 gotowe |
+| 7 | publikacja sekcji `/prace/` | prod | 3 kierunki gotowe |
+| 8 | pomiar indeksacji i pozycji | — | 3–4 tyg. |
+| 9 | kolejne kierunki partiami | local → prod | p. 8 bez regresu |
+
+### I. Bramki bezpieczeństwa (kiedy się zatrzymać)
+
+Po publikacji sekcji `/prace/` monitorować **co tydzień**:
+
+- **Crawl praca-magisterska.pl** — dziś raz na dobę (URL Inspection API).
+  Wydłużenie do >7 dni = sygnał ostrzegawczy.
+- **Kliknięcia poradników** (`/poradniki/*`) — nie mogą spaść. Spadek >20%
+  w 4 tygodnie = wstrzymać rozbudowę katalogu.
+- **Indeksacja nowych stron** — jeśli po 3 tygodniach <50% stron `/prace/` jest
+  w indeksie, problem jest w treści (thin content), nie w liczbie.
+- **Pozycje head terms** — mają rosnąć albo stać. Spadek = konflikt intencji.
+
+---
+
 ## 🔵 AKTUALIZACJA 2026-07-11 — sekcja wiążąca (nadrzędna)
 
 > Ta sekcja zastępuje „STAN AKTUALNY (2026-06-13)" poniżej. Zweryfikowano

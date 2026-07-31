@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -43,14 +44,7 @@ const relatedLinks = [
     konkretne zmienne ekonomiczne, okres analizy lub grupę badawczą.
   </p>
 
-  <div class="callout-box">
-    <p>
-      📄 <strong>Zobacz, jak wygląda gotowa praca:</strong>
-      <a href="/tematy/ekonomia/przykladowa-praca/">Przykładowa praca magisterska z
-      ekonomii – wzór z omówieniem</a>. Rozbieramy wzorcową pracę ekonometryczną
-      fragment po fragmencie i udostępniamy cały szablon do pobrania w PDF i Word.
-    </p>
-  </div>
+  <WzorPracyCTA kierunekZ="z ekonomii" href="/tematy/ekonomia/przykladowa-praca/" />
 
   <h2>Makroekonomia i polityka gospodarcza</h2>
 
@@ -597,17 +591,6 @@ const relatedLinks = [
     być ostrożna w formułowaniu wniosków przyczynowo-skutkowych.
   </p>
 
-  <style>
-    .callout-box {
-      border: 1px solid #c7d2fe;
-      border-left: 4px solid #4f46e5;
-      border-radius: 0.5rem;
-      background: #f5f7ff;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0;
-    }
-    .callout-box p {
-      margin: 0;
-    }
-  </style>
+
+  <WzorPracyCTA kierunekZ="z ekonomii" href="/tematy/ekonomia/przykladowa-praca/" variant="bottom" />
 </ArticleLayout>

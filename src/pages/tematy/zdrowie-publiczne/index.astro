@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
+import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -42,15 +43,7 @@ const relatedLinks = [
     konkretne, zawężone i możliwe do realizacji.
   </p>
 
-  <div class="callout-box">
-    <p>
-      📄 <strong>Zobacz, jak wygląda gotowa praca:</strong>
-      <a href="/tematy/zdrowie-publiczne/przykladowa-praca/">Przykładowa praca
-      magisterska ze zdrowia publicznego – wzór z omówieniem</a>. Rozbieramy
-      wzorcowe badanie przekrojowe (IZZ, konwencja medyczna, komisja
-      bioetyczna) i udostępniamy cały szablon do pobrania w PDF i Word.
-    </p>
-  </div>
+  <WzorPracyCTA kierunekZ="ze zdrowia publicznego" href="/tematy/zdrowie-publiczne/przykladowa-praca/" />
 
   <EbookKierunkowyCTA
     kierunek="zdrowia publicznego"
@@ -362,17 +355,6 @@ const relatedLinks = [
     ankietowe.
   </p>
 
-  <style>
-    .callout-box {
-      border: 1px solid #c7d2fe;
-      border-left: 4px solid #4f46e5;
-      border-radius: 0.5rem;
-      background: #f5f7ff;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0;
-    }
-    .callout-box p {
-      margin: 0;
-    }
-  </style>
+
+  <WzorPracyCTA kierunekZ="ze zdrowia publicznego" href="/tematy/zdrowie-publiczne/przykladowa-praca/" variant="bottom" />
 </ArticleLayout>

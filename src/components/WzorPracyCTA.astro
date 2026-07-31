@@ -1,0 +1,100 @@
+---
+// src/components/WzorPracyCTA.astro
+// CTA prowadzące do strony z darmowym wzorem pracy: /tematy/<kierunek>/przykladowa-praca/
+//
+// Zastępuje wcześniejszy callout tekstowy (.callout-box). Powód zmiany: w GA4 za okres
+// 2026-04-30..2026-07-29 strony /przykladowa-praca/ miały 96 odsłon (psychologia),
+// z czego 95 pochodziło bezpośrednio z Google, a tylko 1 z nawigacji wewnętrznej.
+// Dla pielęgniarstwa było to 2, dla administracji 0 — callout przepuszczał ~0,3% ruchu.
+// Pobranie pliku jest najczęstszą akcją na serwisie (222 file_download / 90 dni),
+// więc ścieżka do wzoru musi być przyciskiem, nie linkiem w akapicie.
+//
+// Zieleń celowo odróżnia darmowy wzór od płatnych CTA (EbookKierunkowyCTA – fiolet).
+interface Props {
+  kierunekZ: string; // przyimek + dopełniacz, np. "z psychologii", "ze zdrowia publicznego"
+  href: string; // /tematy/<slug>/przykladowa-praca/
+  typPracy?: string; // "magisterska" | "dyplomowa" (architektura)
+  variant?: "inline" | "bottom";
+}
+
+const {
+  kierunekZ,
+  href,
+  typPracy = "magisterska",
+  variant = "inline",
+} = Astro.props;
+---
+
+{
+  variant === "inline" && (
+    <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200 rounded-xl p-6 my-6">
+      <div class="flex flex-col sm:flex-row items-center gap-5">
+        <div class="text-5xl flex-shrink-0">📄</div>
+        <div class="flex-1 text-center sm:text-left">
+          <h4 class="font-bold text-gray-900 mb-2">
+            Zobacz, jak wygląda gotowa praca {`${typPracy} ${kierunekZ}`}
+          </h4>
+          <p class="text-gray-600 text-sm mb-1">
+            Rozbieramy wzorcową pracę fragment po fragmencie — wstęp, metodologia,
+            wyniki, bibliografia — i pokazujemy, na co patrzy recenzent.
+          </p>
+          <p class="text-emerald-700 font-bold text-sm">
+            Cały szablon do pobrania · PDF + Word · za darmo, bez podawania e-maila
+          </p>
+        </div>
+        <a
+          href={href}
+          class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-teal-500 hover:to-emerald-600 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-105 shadow-lg shadow-emerald-600/20 whitespace-nowrap"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          Zobacz wzór pracy
+        </a>
+      </div>
+    </div>
+  )
+}
+
+{
+  variant === "bottom" && (
+    <div class="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6 my-8 text-center">
+      <div class="text-4xl mb-3">📄</div>
+      <h3 class="font-bold text-gray-900 text-lg mb-2">
+        Masz już temat? Zobacz, jak rozpisać go na całą pracę
+      </h3>
+      <p class="text-gray-600 text-sm mb-4 max-w-2xl mx-auto">
+        Przykładowa praca {`${typPracy} ${kierunekZ}`} — kompletny wzór z omówieniem
+        każdego rozdziału. Strona tytułowa, streszczenie, spis treści, wstęp,
+        część teoretyczna, metodologia, wyniki, wnioski i bibliografia.
+      </p>
+      <a
+        href={href}
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-teal-500 hover:to-emerald-600 text-white font-bold py-3 px-8 rounded-xl transition-all hover:scale-105 shadow-lg shadow-emerald-600/20"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
+        </svg>
+        Pobierz wzór (PDF + Word)
+      </a>
+      <p class="text-gray-500 text-xs mt-3">
+        Za darmo, bez podawania adresu e-mail
+      </p>
+    </div>
+  )
+}

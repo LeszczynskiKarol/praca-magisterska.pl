@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -46,16 +47,7 @@ const relatedLinks = [
     materiały źródłowe.
   </p>
 
-  <div class="callout-box">
-    <p>
-      📄 <strong>Zobacz, jak wygląda gotowa praca:</strong>
-      <a href="/tematy/stosunki-miedzynarodowe/przykladowa-praca/">Przykładowa
-      praca magisterska ze stosunków międzynarodowych – wzór z omówieniem</a>.
-      Rozbieramy wzorcowe studium przypadku polityki (dokumenty źródłowe,
-      kryteria oceny skuteczności) i udostępniamy cały szablon do pobrania w
-      PDF i Word.
-    </p>
-  </div>
+  <WzorPracyCTA kierunekZ="ze stosunków międzynarodowych" href="/tematy/stosunki-miedzynarodowe/przykladowa-praca/" />
 
   <h2>Polityka zagraniczna Polski</h2>
 
@@ -472,17 +464,6 @@ const relatedLinks = [
     strony mają odmienne interpretacje wydarzeń.
   </p>
 
-  <style>
-    .callout-box {
-      border: 1px solid #c7d2fe;
-      border-left: 4px solid #4f46e5;
-      border-radius: 0.5rem;
-      background: #f5f7ff;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0;
-    }
-    .callout-box p {
-      margin: 0;
-    }
-  </style>
+
+  <WzorPracyCTA kierunekZ="ze stosunków międzynarodowych" href="/tematy/stosunki-miedzynarodowe/przykladowa-praca/" variant="bottom" />
 </ArticleLayout>

@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
+import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -41,15 +42,7 @@ const relatedLinks = [
     możliwe do opracowania z wykorzystaniem odpowiednich metod badawczych.
   </p>
 
-  <div class="callout-box">
-    <p>
-      📄 <strong>Zobacz, jak wygląda gotowa praca:</strong>
-      <a href="/tematy/filologia-angielska/przykladowa-praca/">Przykładowa
-      praca magisterska z filologii angielskiej – wzór z omówieniem</a>.
-      Rozbieramy wzorcową analizę przekładoznawczą (po angielsku, z polskimi
-      komentarzami) i udostępniamy cały szablon do pobrania w PDF i Word.
-    </p>
-  </div>
+  <WzorPracyCTA kierunekZ="z filologii angielskiej" href="/tematy/filologia-angielska/przykladowa-praca/" />
 
   <h2>Językoznawstwo angielskie</h2>
 
@@ -466,17 +459,6 @@ const relatedLinks = [
 
   <p><strong>Piszesz najpierw pracę licencjacką?</strong> Na siostrzanym serwisie znajdziesz osobną listę <a href="https://www.licencjackie.pl/blog/filologia-angielska/" target="_blank" rel="noopener">tematów prac licencjackich z filologii angielskiej</a> wraz z poradnikiem pisania licencjatu na tym kierunku.</p>
 
-  <style>
-    .callout-box {
-      border: 1px solid #c7d2fe;
-      border-left: 4px solid #4f46e5;
-      border-radius: 0.5rem;
-      background: #f5f7ff;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0;
-    }
-    .callout-box p {
-      margin: 0;
-    }
-  </style>
+
+  <WzorPracyCTA kierunekZ="z filologii angielskiej" href="/tematy/filologia-angielska/przykladowa-praca/" variant="bottom" />
 </ArticleLayout>
