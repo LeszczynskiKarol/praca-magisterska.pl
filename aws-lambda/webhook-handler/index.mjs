@@ -5,6 +5,7 @@ import {
   DynamoDBClient,
   PutItemCommand,
   DeleteItemCommand,
+  ScanCommand,
 } from "@aws-sdk/client-dynamodb";
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
@@ -72,6 +73,149 @@ async function releaseSession(sessionId) {
       Key: { sessionId: { S: sessionId } },
     })
   );
+}
+
+// ─── Raportowanie konwersji do seo-panelu ────────────────────────────────
+//
+// Panel NIGDY nie bierze konwersji z GA4 (ga4.service.ts wpisuje twarde 0) —
+// jedynym źródłem prawdy jest webhook /api/webhook/conversion. Bez tego
+// wywołania sprzedaż nie pojawia się w panelu w ogóle: 2026-08-01 poszła
+// realna transakcja 39 zł, a panel do 2026-08-02 pokazywał 0 konwersji.
+//
+// Endpoint panelu robi UPSERT po (integrationId, date) i NADPISUJE wartość,
+// więc nie wolno wysyłać "1" per zdarzenie — druga sprzedaż tego samego dnia
+// cofnęłaby licznik do 1. Wysyłamy sumę całego dnia, przeliczoną z tabeli
+// zamówień. Dzięki temu wywołanie jest idempotentne i odporne na retransmisje
+// Stripe'a.
+//
+// Doba liczona wg Europe/Warsaw, bo taką strefę ma property GA4 — inaczej
+// zamówienia z godzin 00:00–02:00 lądowałyby w panelu na poprzednim dniu.
+
+function warsawDate(iso) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Warsaw",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date(iso));
+}
+
+async function notifySeoPanel() {
+  const url = process.env.SEO_PANEL_WEBHOOK_URL;
+  const apiKey = process.env.SEO_PANEL_API_KEY;
+  const integrationId = process.env.SEO_PANEL_INTEGRATION_ID;
+
+  // Brak konfiguracji = funkcja nieaktywna. Celowo cicho, żeby lambda
+  // działała tak jak dotąd, dopóki zmienne nie zostaną ustawione.
+  if (!url || !apiKey || !integrationId) return;
+
+  const today = warsawDate(new Date().toISOString());
+
+  let orders = 0;
+  let revenueGrosze = 0;
+  let startKey;
+  do {
+    const page = await dynamo.send(
+      new ScanCommand({
+        TableName: ORDERS_TABLE,
+        ExclusiveStartKey: startKey,
+      })
+    );
+    for (const item of page.Items || []) {
+      const createdAt = item.createdAt?.S;
+      if (!createdAt || warsawDate(createdAt) !== today) continue;
+      orders += 1;
+      revenueGrosze += Number(item.amountTotal?.N || 0);
+    }
+    startKey = page.LastEvaluatedKey;
+  } while (startKey);
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      apiKey,
+      integrationId,
+      date: today,
+      orders,
+      revenue: revenueGrosze / 100,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`seo-panel ${res.status}: ${await res.text()}`);
+  }
+  console.log(
+    `seo-panel: ${today} orders=${orders} revenue=${revenueGrosze / 100}`
+  );
+}
+
+// ─── Serwerowe zdarzenie `purchase` do GA4 (Measurement Protocol) ────────
+//
+// Zdarzenie po stronie przegladarki (sklep/sukces.astro) odpala sie tylko
+// wtedy, gdy kupujacy wroci ze Stripe'a na strone sukcesu i ma zgode na
+// analitykę. W praktyce zawodzi: w GA4 za 30 dni bylo add_to_cart=2,
+// begin_checkout=2 i purchase=0 przy jednej realnej sprzedazy (2026-08-01).
+// Tutaj wysylamy je z serwera, gdzie platnosc jest faktem.
+//
+// client_id pochodzi z ciasteczka _ga zebranego na stronie sklepu i
+// przekazanego przez metadata Stripe'a — dzieki temu GA4 doklei zakup do
+// tej samej sesji i zrodla ruchu, zamiast tworzyc nowego uzytkownika.
+//
+// transaction_id jest taki sam jak w zdarzeniu przegladarkowym (id sesji
+// Stripe), wiec GA4 odfiltruje duplikat, gdyby zadzialaly oba.
+
+async function sendGa4Purchase(session, productId) {
+  const measurementId = process.env.GA4_MEASUREMENT_ID;
+  const apiSecret = process.env.GA4_API_SECRET;
+  if (!measurementId || !apiSecret) return;
+
+  const clientId = session.metadata?.gaClientId;
+  if (!clientId) {
+    console.warn("GA4: brak gaClientId w metadanych sesji — pomijam purchase");
+    return;
+  }
+
+  const value = (session.amount_total ?? 0) / 100;
+  const currency = (session.currency || "pln").toUpperCase();
+
+  const res = await fetch(
+    `https://www.google-analytics.com/mp/collect?measurement_id=${encodeURIComponent(
+      measurementId
+    )}&api_secret=${encodeURIComponent(apiSecret)}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        client_id: clientId,
+        events: [
+          {
+            name: "purchase",
+            params: {
+              transaction_id: session.id,
+              currency,
+              value,
+              items: [
+                {
+                  item_id: productId,
+                  item_name: PRODUCT_NAMES[productId] || productId,
+                  price: value,
+                  quantity: 1,
+                },
+              ],
+            },
+          },
+        ],
+      }),
+    }
+  );
+
+  // Measurement Protocol zwraca 204 i NIE raportuje bledow walidacji —
+  // realne problemy widac tylko w GA4 DebugView / raporcie realtime.
+  if (!res.ok) {
+    throw new Error(`GA4 MP ${res.status}: ${await res.text()}`);
+  }
+  console.log(`GA4 purchase wyslany: ${session.id} ${value} ${currency}`);
 }
 
 export const handler = async (event) => {
@@ -147,6 +291,21 @@ async function handleSuccessfulPayment(session) {
     await sendDownloadEmail(customerEmail, productId, downloadUrl, session);
 
     console.log(`Email sent to ${customerEmail} for product ${productId}`);
+
+    // Raport do panelu dopiero PO zrealizowaniu zamówienia i w osobnym
+    // try/catch — awaria panelu nie może zwolnić rezerwacji sesji ani
+    // wywołać retransmisji Stripe'a, bo ebook jest już wysłany.
+    try {
+      await notifySeoPanel();
+    } catch (e) {
+      console.error("seo-panel notify failed (bez wpływu na zamówienie):", e.message);
+    }
+
+    try {
+      await sendGa4Purchase(session, productId);
+    } catch (e) {
+      console.error("GA4 purchase failed (bez wpływu na zamówienie):", e.message);
+    }
   } catch (error) {
     console.error("Error handling payment:", error);
     // Zwalniamy rezerwację, żeby retransmisja Stripe mogła dokończyć wysyłkę.

@@ -66,7 +66,7 @@ export const handler = async (event) => {
   }
 
   try {
-    const { productId, customerEmail } = JSON.parse(event.body);
+    const { productId, customerEmail, clientId } = JSON.parse(event.body);
 
     if (!productId || !PRODUCTS[productId]) {
       return {
@@ -98,7 +98,10 @@ export const handler = async (event) => {
       success_url: `${redirects.success}?session_id={CHECKOUT_SESSION_ID}&productId=${productId}`,
       cancel_url: redirects.cancel,
       customer_email: customerEmail || undefined,
-      metadata: { productId },
+      // gaClientId ze strony sklepu wedruje przez Stripe'a do webhook-handlera,
+      // ktory wysyla serwerowe zdarzenie `purchase` do GA4 (Measurement Protocol).
+      // Bez tej wartosci zakup trafilby do GA4 jako nowy uzytkownik bez zrodla.
+      metadata: { productId, ...(clientId ? { gaClientId: String(clientId) } : {}) },
       billing_address_collection: "auto",
       invoice_creation: { enabled: true },
     });
