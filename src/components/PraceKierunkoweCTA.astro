@@ -23,18 +23,17 @@ const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliogra
   prace.length > 0 && (
     <aside class="not-prose my-10 border-2 border-primary-200 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 md:p-8">
       <p class="text-xs uppercase tracking-wide text-primary-700 font-semibold mb-2">
-        Krok dalej niż szkielet
+        Kompletne prace do pobrania
       </p>
       <h2 class="text-2xl font-bold text-gray-900 mb-3 mt-0">
         Kompletne prace {k.dopelniacz} — {prace.length}{" "}
         {prace.length === 1 ? "temat" : prace.length < 5 ? "tematy" : "tematów"} do adaptacji
       </h2>
       <p class="text-gray-700 leading-relaxed mb-4">
-        Wzór powyżej to <strong>pusty szkielet z komentarzami</strong> — pokazuje, co gdzie
-        wpisać. Jeśli potrzebujesz zobaczyć rzecz napisaną do końca, w katalogu są prace
-        na konkretnych tematach: do {najwieksza} stron, z bibliografią liczącą nawet{" "}
-        {maxZrodel} pozycji i przypisami prowadzącymi do numeru strony źródła. Materiał
-        źródłowy możesz wykorzystać we własnym rozdziale teoretycznym.
+        W katalogu znajdziesz prace napisane w całości, na konkretnych tematach:
+        do {najwieksza} stron, z bibliografią liczącą nawet {maxZrodel} pozycji
+        i przypisami wskazującymi numer strony w źródle. Materiał źródłowy wykorzystasz
+        we własnym rozdziale teoretycznym.
       </p>
 
       <ul class="space-y-2 mb-5">
@@ -56,7 +55,7 @@ const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliogra
           Zobacz prace {k.dopelniacz} →
         </a>
         <span class="text-sm text-gray-600">
-          {CENA_PLN} zł za pracę · PDF + Word · rozdział badawczy z danymi przykładowymi
+          {CENA_PLN} zł za pracę · PDF + Word · do pobrania od razu
         </span>
       </div>
     </aside>
