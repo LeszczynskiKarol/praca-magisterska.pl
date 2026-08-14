@@ -75,14 +75,54 @@ const PROBLEMY = [
   },
 ];
 
+const ZASTOSOWANIA = [
+  {
+    ikona: "dokument" as const,
+    tytul: "Wzór struktury",
+    opis:
+      "Widzisz, w jakiej kolejności prowadzi się wywód: gdzie kończy się teoria, " +
+      "jak formułuje się pytania badawcze i hipotezy, co wchodzi do dyskusji wyników. " +
+      "Ten szkielet przenosi się na każdy temat w obrębie kierunku.",
+  },
+  {
+    ikona: "bibliografia" as const,
+    tytul: "Gotowa bibliografia",
+    opis:
+      "Od 35 do 42 pozycji dobranych do tematu, z linkami do publikacji. " +
+      "Masz od czego zacząć własną kwerendę i wiesz, które prace w tym obszarze " +
+      "są cytowane najczęściej.",
+  },
+  {
+    ikona: "przypis" as const,
+    tytul: "Baza przypisów",
+    opis:
+      "Każde twierdzenie ma wskazaną stronę w źródle. Otwierasz publikację, " +
+      "czytasz fragment i budujesz na nim własny akapit — z własnym sformułowaniem " +
+      "i własnym przypisem.",
+  },
+  {
+    ikona: "lupa" as const,
+    tytul: "Inspiracja tematyczna",
+    opis:
+      "Zawężenie tematu, dobór zmiennych i narzędzi pokazują, jak z szerokiego " +
+      "zagadnienia zrobić problem badawczy, który da się opracować i obronić.",
+  },
+];
+
 const FAQ = [
   {
-    pytanie: "Czy mogę oddać tę pracę jako własną?",
+    pytanie: "Jak szybko dostanę pliki?",
     odpowiedz:
-      "Nie. Zakup nie przenosi autorskich praw majątkowych, a rozdział badawczy " +
-      "zawiera dane przykładowe, nie wyniki przeprowadzonego badania. To wzór do " +
-      "adaptacji: struktura, aparat naukowy i materiał źródłowy, na których budujesz " +
-      "własną pracę pod własnym tematem.",
+      "Od razu po opłaceniu — na stronie potwierdzenia pojawiają się dwa przyciski, " +
+      "osobno PDF i osobno Word. Komplet linków idzie też mailem, więc możesz wrócić " +
+      "do pobierania później.",
+  },
+  {
+    pytanie: "W jakim formacie dostaję pliki?",
+    odpowiedz:
+      "PDF i Word (DOCX) — oba w cenie. PDF ma skład gotowy do druku: Times New " +
+      "Roman 12 pkt, interlinia 1,5, margines wewnętrzny pod oprawę, żywa pagina " +
+      "i spis treści z numeracją. Word służy do przerabiania treści pod własny temat.",
   },
   {
     pytanie: "Czym to się różni od darmowych wzorów na tej stronie?",
@@ -96,25 +136,17 @@ const FAQ = [
       " stron ciągłego wywodu z pełną bibliografią.",
   },
   {
-    pytanie: "Skąd wiadomo, że przypisy nie są zmyślone?",
+    pytanie: "Skąd wiadomo, że przypisy prowadzą do prawdziwych publikacji?",
     odpowiedz:
       "Bibliografia podaje linki do publikacji, a przypisy — numer strony. " +
       "Możesz otworzyć dowolne źródło i sprawdzić powołanie. Właśnie po to " +
       "podajemy stronę zamiast samego autora i roku.",
   },
   {
-    pytanie: "Czy praca przejdzie antyplagiat?",
+    pytanie: "Czy dostanę fakturę?",
     odpowiedz:
-      "Pracy w tej postaci nie należy składać — jest sprzedawana wielokrotnie, " +
-      "więc system antyplagiatowy wykaże zbieżność. Bezpiecznie wykorzystuje się " +
-      "materiał źródłowy i strukturę, pisząc tekst własnymi słowami.",
-  },
-  {
-    pytanie: "W jakim formacie dostaję pliki?",
-    odpowiedz:
-      "PDF i Word (DOCX) — oba w cenie. PDF ma skład gotowy do druku: Times New " +
-      "Roman 12 pkt, interlinia 1,5, margines wewnętrzny pod oprawę, żywa pagina. " +
-      "Word służy do przerabiania treści pod własny temat.",
+      "Tak. Płatność obsługuje Stripe, potwierdzenie zakupu przychodzi mailem " +
+      "od razu po transakcji. W sprawie faktury napisz na adres podany w stopce.",
   },
 ];
 ---
@@ -149,14 +181,14 @@ const FAQ = [
             </p>
 
             <h1 class="text-white text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.1] mb-6">
-              Zobacz pracę magisterską,<br class="hidden md:block" />
-              która jest napisana do końca
+              Gotowe prace magisterskie<br class="hidden md:block" />
+              do pobrania
             </h1>
 
             <p class="text-lg md:text-xl text-indigo-100 leading-relaxed mb-8 max-w-xl">
-              Nie szkielet z nagłówkami i nie trzystronicowy fragment.
-              {najkrotsza}–{najdluzsza} stron ciągłego wywodu, w którym każde twierdzenie
-              ma przypis prowadzący do numeru strony w źródle.
+              Kompletne prace po {najkrotsza}–{najdluzsza} stron, napisane na publikacjach
+              naukowych. Każde twierdzenie ma przypis z numerem strony źródła, a bibliografia
+              liczy od 35 do 42 pozycji z linkami.
             </p>
 
             <div class="flex flex-wrap items-center gap-4 mb-10">
@@ -298,16 +330,16 @@ const FAQ = [
                 Sedno produktu
               </span>
               <h3 class="text-white text-2xl md:text-3xl font-bold mb-5 leading-tight">
-                Przypis prowadzi do numeru strony, nie do samego nazwiska
+                Każdy przypis wskazuje numer strony w źródle
               </h3>
               <p class="text-gray-300 leading-relaxed mb-5">
                 Zapis <code class="text-indigo-300 bg-white/10 rounded px-1.5 py-0.5 text-sm">[13,&nbsp;s.&nbsp;13]</code>
                 znaczy: pozycja 13 z bibliografii, strona 13. Otwierasz źródło z linku,
-                sprawdzasz zdanie i wiesz, że możesz się na nie powołać we własnej pracy.
+                sprawdzasz zdanie i powołujesz się na nie we własnej pracy.
               </p>
               <p class="text-gray-300 leading-relaxed mb-8">
-                Bez numeru strony przypis jest nie do zweryfikowania — ani przez ciebie,
-                ani przez promotora. Dlatego liczymy go osobno i podajemy przy każdej pracy.
+                Taki przypis promotor sprawdzi w minutę, a ty masz gotowy punkt zaczepienia
+                do dalszej lektury. Dlatego liczymy je osobno i podajemy przy każdej pracy.
               </p>
               <ul class="space-y-3">
                 {
@@ -335,33 +367,31 @@ const FAQ = [
       </div>
     </section>
 
-    <!-- ================= UCZCIWE ZASTRZEŻENIE ================= -->
+    <!-- ================= JAK WYKORZYSTAĆ ================= -->
     <section class="pb-16 md:pb-24">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-6 md:p-8">
-          <div class="flex flex-col md:flex-row gap-5">
-            <span class="shrink-0 grid place-items-center w-12 h-12 rounded-xl bg-amber-500 text-white">
-              <Ikona nazwa="ostrzezenie" klasa="w-6 h-6" />
-            </span>
-            <div>
-              <h2 class="text-xl font-bold text-gray-900 mb-3">
-                Czego ten wzór nie zastąpi — przeczytaj przed zakupem
-              </h2>
-              <p class="text-gray-800 leading-relaxed mb-3">
-                Rozdział badawczy zawiera <strong>dane przykładowe</strong>. Liczebność
-                próby, statystyki opisowe i wyniki testów pokazują sposób opracowania
-                materiału, ale nie pochodzą z przeprowadzonego badania. Przed złożeniem
-                pracy trzeba zastąpić je własnymi wynikami. Informacja o tym jest też
-                w samym dokumencie — na stronie redakcyjnej i na początku rozdziału.
-              </p>
-              <p class="text-gray-800 leading-relaxed">
-                Zakup <strong>nie przenosi autorskich praw majątkowych</strong>, a praca
-                sprzedawana jest wielokrotnie — złożona w tej postaci zostanie wykazana
-                przez system antyplagiatowy. To materiał pomocniczy: struktura, aparat
-                naukowy i baza źródeł do własnego wywodu.
-              </p>
-            </div>
-          </div>
+        <div class="max-w-2xl mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            Jak wykorzystać te prace
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Jeden plik odpowiada na kilka różnych potrzeb — zależnie od tego, na jakim
+            etapie pisania jesteś.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {
+            ZASTOSOWANIA.map((z) => (
+              <article class="rounded-2xl border border-gray-200 p-6 hover:border-primary-400 transition-colors">
+                <span class="inline-grid place-items-center w-12 h-12 rounded-xl bg-primary-600 text-white mb-5">
+                  <Ikona nazwa={z.ikona} klasa="w-6 h-6" />
+                </span>
+                <h3 class="text-lg font-bold text-gray-900 mb-3 leading-snug">{z.tytul}</h3>
+                <p class="text-gray-700 leading-relaxed text-sm">{z.opis}</p>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -396,9 +426,8 @@ const FAQ = [
                     <h3 class="text-lg font-bold text-gray-900 leading-snug mt-1 mb-3">
                       <a
                         href={p.url}
-                        class="hover:text-primary-700 transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                        class="hover:text-primary-700 transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 rounded"
                       >
-                        <span class="absolute inset-0" aria-hidden="true" />
                         {p.tytul}
                       </a>
                     </h3>
@@ -407,7 +436,7 @@ const FAQ = [
                     </p>
                   </div>
                 </div>
-                <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 px-6 py-4 border-t border-gray-100 bg-gray-50/70 text-sm text-gray-600">
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2 px-6 py-3 border-t border-gray-100 text-sm text-gray-600">
                   <span class="inline-flex items-center gap-1.5">
                     <Ikona nazwa="dokument" klasa="w-4 h-4 text-gray-400" />
                     {p.stron} stron
@@ -420,7 +449,17 @@ const FAQ = [
                     <Ikona nazwa="bibliografia" klasa="w-4 h-4 text-gray-400" />
                     {p.pozycjeBibliografii} źródeł
                   </span>
-                  <span class="ml-auto font-bold text-gray-900">{CENA_PLN} zł</span>
+                </div>
+
+                <div class="mt-auto flex items-center justify-between gap-4 px-6 py-4 border-t border-gray-100 bg-gray-50/70">
+                  <a
+                    href={p.url}
+                    class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-5 rounded-lg transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                  >
+                    Zobacz tę pracę
+                    <Ikona nazwa="strzalka" klasa="w-4 h-4" />
+                  </a>
+                  <span class="text-lg font-bold text-gray-900">{CENA_PLN} zł</span>
                 </div>
               </article>
             ))

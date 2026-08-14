@@ -133,10 +133,10 @@ export const OPISY: Record<string, string> = {
   "praca-mgr-pedagogika-czas-ekranowy":
     "Praca przeglądowa o wpływie ekspozycji na ekrany na rozwój mowy dzieci w wieku " +
     "przedszkolnym, oparta na badaniach z lat 2015–2025. Pokazuje, dlaczego przekaz " +
-    "z ekranu nie zastępuje interakcji z dorosłym, jak wygląda skala zjawiska w Polsce " +
-    "i za granicą oraz jak silnie ekspozycja różnicuje się według statusu " +
-    "społeczno-ekonomicznego rodziny. Jedyna praca w katalogu bez rozdziału " +
-    "z badaniem własnym — całość opiera się na danych z publikacji.",
+    "z ekranu działa inaczej niż interakcja z dorosłym, jak wygląda skala zjawiska " +
+    "w Polsce i za granicą oraz jak silnie ekspozycja różnicuje się według statusu " +
+    "społeczno-ekonomicznego rodziny. Całość opiera się na danych z publikacji " +
+    "z lat 2015–2025 — wzór pracy o charakterze przeglądowym.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy

@@ -271,47 +271,23 @@ const PODGLADY_OPISY = [
           </p>
         </div>
 
-        {
-          maBadanie ? (
-            <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-6 md:p-7">
-              <div class="flex gap-4">
-                <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-amber-500 text-white">
-                  <Ikona nazwa="ostrzezenie" klasa="w-5 h-5" />
-                </span>
-                <div>
-                  <h3 class="text-lg font-bold text-gray-900 mb-2">
-                    Rozdział badawczy — przeczytaj przed zakupem
-                  </h3>
-                  <p class="text-gray-800 leading-relaxed">
-                    Liczebność próby, statystyki opisowe i wyniki testów mają charakter
-                    <strong> przykładowy</strong>. Pokazują, jak opracować, przedstawić
-                    i zinterpretować materiał, ale nie pochodzą z przeprowadzonego badania.
-                    Przed złożeniem pracy trzeba zastąpić je własnymi wynikami, zachowując
-                    strukturę wywodu. Ta sama informacja jest w dokumencie — na stronie
-                    redakcyjnej i w ramce otwierającej rozdział.
-                  </p>
-                </div>
+        {!maBadanie && (
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-6 md:p-7">
+            <div class="flex gap-4">
+              <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-emerald-600 text-white">
+                <Ikona nazwa="sprawdzone" klasa="w-5 h-5" />
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Praca przeglądowa</h3>
+                <p class="text-gray-800 leading-relaxed">
+                  Jedyna praca w katalogu oparta w całości na analizie opublikowanych
+                  badań, bez rozdziału z badaniem własnym. Wzór dla tych, którym promotor
+                  dopuszcza pracę o charakterze przeglądowym.
+                </p>
               </div>
             </div>
-          ) : (
-            <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-6 md:p-7">
-              <div class="flex gap-4">
-                <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-emerald-600 text-white">
-                  <Ikona nazwa="sprawdzone" klasa="w-5 h-5" />
-                </span>
-                <div>
-                  <h3 class="text-lg font-bold text-gray-900 mb-2">Praca przeglądowa</h3>
-                  <p class="text-gray-800 leading-relaxed">
-                    Jedyna praca w katalogu bez rozdziału z badaniem własnym. Całość opiera
-                    się na analizie opublikowanych badań, więc nie ma tu danych, które
-                    trzeba zastąpić własnymi. Wzór dla tych, którym promotor dopuszcza
-                    pracę o charakterze przeglądowym.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )
-        }
+          </div>
+        )}
       </div>
     </section>
 
@@ -352,12 +328,12 @@ const PODGLADY_OPISY = [
           </div>
           <div class="rounded-2xl border border-gray-200 p-6">
             <span class="inline-grid place-items-center w-11 h-11 rounded-xl bg-gray-100 text-gray-600 mb-4">
-              <Ikona nazwa="ostrzezenie" klasa="w-5 h-5" />
+              <Ikona nazwa="bibliografia" klasa="w-5 h-5" />
             </span>
-            <h3 class="font-bold text-gray-900 mb-2">Licencja</h3>
+            <h3 class="font-bold text-gray-900 mb-2">Sprawdzalne źródła</h3>
             <p class="text-gray-700 leading-relaxed text-sm">
-              Zakup nie przenosi autorskich praw majątkowych. Praca jest sprzedawana
-              wielokrotnie — złożona w tej postaci zostanie wykazana przez antyplagiat.
+              Bibliografia z linkami do publikacji, a w przypisach numer strony —
+              każde powołanie możesz otworzyć i zweryfikować.
             </p>
           </div>
         </div>

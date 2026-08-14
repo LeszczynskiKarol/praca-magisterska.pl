@@ -254,29 +254,43 @@ const bohater = prace[0];
       </div>
     </section>
 
-    <!-- ZASTRZEŻENIE -->
+    <!-- JAK WYKORZYSTAĆ -->
     <section class="py-14">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-6 md:p-8">
-          <div class="flex flex-col md:flex-row gap-5">
-            <span class="shrink-0 grid place-items-center w-12 h-12 rounded-xl bg-amber-500 text-white">
-              <Ikona nazwa="ostrzezenie" klasa="w-6 h-6" />
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
+          Jak wykorzystać te prace
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="rounded-2xl border border-gray-200 p-6">
+            <span class="inline-grid place-items-center w-11 h-11 rounded-xl bg-primary-600 text-white mb-4">
+              <Ikona nazwa="dokument" klasa="w-5 h-5" />
             </span>
-            <div>
-              <h2 class="text-xl font-bold text-gray-900 mb-3">Co dokładnie kupujesz</h2>
-              <p class="text-gray-800 leading-relaxed mb-3">
-                Warstwa teoretyczna opiera się na publikacjach wskazanych w bibliografii,
-                a twierdzenia mają przypisy z numerem strony źródła — to materiał, który
-                realnie skraca pisanie własnego rozdziału.
-              </p>
-              <p class="text-gray-800 leading-relaxed">
-                Rozdział badawczy zawiera dane <strong>przykładowe</strong>: pokazuje sposób
-                opracowania i interpretacji wyników, ale liczby nie pochodzą
-                z przeprowadzonego badania i trzeba zastąpić je własnymi. Zakup nie przenosi
-                autorskich praw majątkowych.
-              </p>
-            </div>
-          </div>
+            <h3 class="font-bold text-gray-900 mb-2">Jako wzór struktury</h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              Kolejność wywodu, granica między teorią a metodologią, sposób formułowania
+              hipotez i budowa dyskusji — do przeniesienia na własny temat.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 p-6">
+            <span class="inline-grid place-items-center w-11 h-11 rounded-xl bg-primary-600 text-white mb-4">
+              <Ikona nazwa="bibliografia" klasa="w-5 h-5" />
+            </span>
+            <h3 class="font-bold text-gray-900 mb-2">Jako baza źródeł</h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              {sumaZrodel} pozycji dobranych do tematów kierunku, z linkami do publikacji
+              i wskazaniem stron, na których stoją konkretne twierdzenia.
+            </p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 p-6">
+            <span class="inline-grid place-items-center w-11 h-11 rounded-xl bg-primary-600 text-white mb-4">
+              <Ikona nazwa="lupa" klasa="w-5 h-5" />
+            </span>
+            <h3 class="font-bold text-gray-900 mb-2">Jako inspiracja</h3>
+            <p class="text-gray-700 leading-relaxed text-sm">
+              Zawężenie zagadnienia, dobór zmiennych i narzędzi pokazują, jak z szerokiego
+              tematu zrobić problem badawczy, który da się opracować.
+            </p>
+          </article>
         </div>
       </div>
     </section>
