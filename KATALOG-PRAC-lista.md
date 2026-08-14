@@ -219,12 +219,54 @@ Montessori 1 399, bajkoterapia 392.
 
 ## 7. DO ZROBIENIA TECHNICZNIE
 
+Stan na 2026-08-14.
+
 | zadanie                                                                  | stan |
 | ------------------------------------------------------------------------ | ---- |
-| szablon strony produktu                                                  | ⬜   |
-| hub `/prace/` + kategorie                                                | ⬜   |
-| `get-download` — `contentType` dla DOCX (dziś hardkod `application/pdf`) | ⬜   |
+| szablon strony produktu                                                  | ✅   |
+| hub `/prace/` + kategorie                                                | ✅   |
+| `get-download` — `contentType` dla DOCX (dziś hardkod `application/pdf`) | ✅   |
 | licznik pobrań z DynamoDB `praca-magisterska-orders`                     | ⬜   |
-| `products.json` — kategoria „Praca wzorcowa", cena 5900                  | ⬜   |
-| linkowanie z list `/tematy/` do produktów                                | ⬜   |
-| stopka z nr zamówienia w PDF + informacja o braku przeniesienia praw     | ⬜   |
+| `products.json` — kategoria „Praca wzorcowa", cena 5900                  | ✅   |
+| linkowanie z list `/tematy/` do produktów                                | ✅   |
+| stopka z nr zamówienia w PDF + informacja o braku przeniesienia praw     | 🟡   |
+
+🟡 Informacja o braku przeniesienia praw jest w PDF-ie (strona redakcyjna „O tym
+dokumencie") i na stronach produktowych. Numeru zamówienia w stopce nie ma —
+wymagałby generowania PDF-a per zamówienie, dziś pliki są statyczne w S3.
+
+### Weryfikacja danych GSC (2026-08-14, okres 2026-05-14..08-13, obie domeny)
+
+Liczby z sekcji 1 i 2 potwierdzone, wszystkie lekko w górę — katalog jest wiarygodny:
+
+| kierunek       | katalog (IV–VII) | pomiar (V–VIII) |
+| -------------- | ---------------- | --------------- |
+| psychologia    | 2704             | 2662            |
+| pielęgniarstwo | 2302             | 2274            |
+| pedagogika     | 1581             | 1808            |
+| prawo          | 592              | 662             |
+| finanse        | 387              | 453             |
+| informatyka    | 365              | 416             |
+
+Teza „zero fraz na zjawiska badawcze" — potwierdzona na 3099 frazach. Osiemnaście
+pozornych trafień to zapytania narzędzi SEO (`-site:instagram.com`), 0 kliknięć.
+
+**Czego katalog nie przewidział — uzasadnienie architektury URL:**
+
+- „gotowe prace magisterskie" i „prace magisterskie" obsługiwała **strona główna
+  z pozycji 50–60**, czyli w praktyce nikt. Hub `/prace/` wchodzi na puste miejsce.
+- `/tematy/psychologia/` stoi na „prace magisterskie psychologia" na pozycji 6,4,
+  ale zbiera **1 kliknięcie ze 188 wyświetleń** (CTR 0,5%). Lista tematów nie
+  odpowiada na intencję „pokaż gotowe prace" — stąd osobny podhub `/prace/<kierunek>/`
+  zamiast rozbudowy istniejącej strony.
+- `/tematy/<kierunek>/przykladowa-praca/` rankuje na frazach zakupowych
+  („praca magisterska z psychologii pdf" — poz. 6,7, 16 klik). To stamtąd prowadzi
+  baner do katalogu, nie odwrotnie.
+
+### Incydent bezpieczeństwa naprawiony 2026-08-14
+
+Bucket `praca-magisterska-ebooks` miał policy `PublicReadForAll` na `/*` — **35
+płatnych plików** (23 ebooki + 12 plików prac) było do pobrania bez podpisu, HTTP 200
+na goły adres. Presigned URL-e z lambd nie chroniły niczego. Policy zawężona do
+`*-preview.pdf` (26 podglądów linkowanych ze stron ebooków). Zweryfikowane: podglądy
+200, płatne 403, presigned 200. Kopia starej policy: `.aws-backup/` (poza repo).
