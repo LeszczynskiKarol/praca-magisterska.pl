@@ -1,0 +1,136 @@
+---
+// Hub katalogu prac wzorcowych.
+// Cel wyszukiwarkowy: „gotowe prace magisterskie", „prace magisterskie".
+// Obie frazy obsługiwała dotąd strona główna z pozycji 50–60 (GSC, V–VIII 2026),
+// czyli w praktyce nikt — stąd osobna strona zamiast sekcji na istniejącej.
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { PRACE, KIERUNKI, kierunkiZPracami, odmien, CENA_PLN } from "../../data/prace";
+
+const kierunki = kierunkiZPracami();
+const laczniePrac = PRACE.length;
+const najdluzsza = Math.max(...PRACE.map((p) => p.stron));
+const najkrotsza = Math.min(...PRACE.map((p) => p.stron));
+---
+
+<Layout
+  title={`Gotowe prace magisterskie — ${laczniePrac} wzorów z pełnym aparatem naukowym (PDF + Word)`}
+  description={`Katalog wzorcowych prac magisterskich: psychologia, pielęgniarstwo, pedagogika. Każda praca ${najkrotsza}–${najdluzsza} stron, z przypisami do numeru strony źródła i bibliografią. Do pobrania w PDF i Word za ${CENA_PLN} zł.`}
+>
+  <Navbar />
+
+  <main class="min-h-screen">
+    <section class="bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-white py-16 md:py-20">
+      <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Gotowe prace magisterskie — wzory do adaptacji
+        </h1>
+        <p class="text-xl text-indigo-100 mb-6 leading-relaxed">
+          {laczniePrac} kompletnych prac po {najkrotsza}–{najdluzsza} stron, napisanych na
+          realnych publikacjach naukowych. Każde twierdzenie ma przypis z numerem strony
+          źródła, więc możesz je sprawdzić i wykorzystać we własnej pracy.
+        </p>
+        <p class="text-indigo-200 leading-relaxed">
+          To wzory do przerobienia pod własny temat i własne badanie — nie prace na sprzedaż
+          pod cudzym nazwiskiem. Poniżej opisujemy dokładnie, co dostajesz i czego wzór
+          nie zastąpi.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-14 bg-white">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Wybierz kierunek</h2>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+          {kierunki.map((k) => {
+            const prace = PRACE.filter((p) => p.kierunek === k.slug);
+            return (
+              <a
+                href={`/prace/${k.slug}/`}
+                class="block border-2 border-gray-200 hover:border-primary-500 rounded-2xl p-6 transition-colors group"
+              >
+                <h3 class="text-xl font-bold text-gray-900 group-hover:text-primary-700 mb-2">
+                  {k.nazwa}
+                </h3>
+                <p class="text-sm text-gray-500 mb-4">
+                  {prace.length} {odmien(prace.length, "praca", "prace", "prac")}
+                </p>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  {prace.slice(0, 3).map((p) => (
+                    <li class="leading-snug">· {p.tytul}</li>
+                  ))}
+                </ul>
+                <span class="inline-block mt-4 text-primary-600 font-semibold text-sm">
+                  Zobacz wszystkie →
+                </span>
+              </a>
+            );
+          })}
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Co dostajesz</h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-16">
+          <div class="bg-gray-50 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 mb-3">Kompletny dokument</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Strona tytułowa, streszczenie, abstrakt w języku angielskim, wykaz skrótów,
+              spis treści, cztery rozdziały, zakończenie, bibliografia i spisy tabel.
+              Skład zgodny z typowym regulaminem: Times New Roman 12&nbsp;pkt, interlinia 1,5,
+              margines wewnętrzny pod oprawę.
+            </p>
+          </div>
+          <div class="bg-gray-50 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 mb-3">Aparat naukowy, który da się sprawdzić</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Od 90 do 218 przypisów na pracę, w większości z numerem strony źródła.
+              Bibliografia liczy 35–42 pozycje z linkami do publikacji. Możesz otworzyć
+              źródło, sprawdzić powołanie i sięgnąć po nie we własnym wywodzie.
+            </p>
+          </div>
+          <div class="bg-gray-50 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 mb-3">PDF i Word</h3>
+            <p class="text-gray-700 leading-relaxed">
+              PDF do czytania i druku, Word do przerabiania. Oba pliki dostajesz od razu
+              po zakupie, bez zapisów na newsletter i bez czekania na maila od człowieka.
+            </p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 mb-3">Czego wzór nie zastąpi</h3>
+            <p class="text-gray-700 leading-relaxed">
+              Rozdział badawczy zawiera dane <strong>przykładowe</strong>: pokazuje, jak
+              opracować i zinterpretować wyniki, ale nie pochodzą one z przeprowadzonego
+              badania. Trzeba je zastąpić własnymi. Zakup nie przenosi autorskich praw
+              majątkowych.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Wszystkie prace</h2>
+        <div class="space-y-4">
+          {PRACE.map((p) => (
+            <a
+              href={p.url}
+              class="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 border border-gray-200 hover:border-primary-400 rounded-xl p-5 transition-colors"
+            >
+              <div class="flex-1">
+                <span class="text-xs uppercase tracking-wide text-primary-600 font-semibold">
+                  {KIERUNKI[p.kierunek].nazwa}
+                </span>
+                <h3 class="font-semibold text-gray-900 leading-snug mt-1">{p.tytul}</h3>
+                <p class="text-sm text-gray-500 mt-1">
+                  {p.stron} stron · {p.przypisy} przypisów · {p.pozycjeBibliografii} pozycji
+                  bibliografii
+                </p>
+              </div>
+              <span class="text-primary-700 font-bold whitespace-nowrap">{CENA_PLN} zł</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,138 @@
+---
+// Kategoria kierunku — strona akwizycyjna pod „prace magisterskie <kierunek>"
+// i „gotowe prace magisterskie <kierunek>".
+//
+// Dlaczego osobno od /tematy/<kierunek>/: tamta strona stoi na frazie
+// „prace magisterskie psychologia" na pozycji 6,4, ale zbiera 1 kliknięcie
+// ze 188 wyświetleń (GSC, V–VIII 2026). Lista tematów nie odpowiada na intencję
+// „pokaż gotowe prace" — ta strona odpowiada.
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import { KIERUNKI, praceKierunku, kierunkiZPracami, odmien, CENA_PLN } from "../../../data/prace";
+
+export function getStaticPaths() {
+  return kierunkiZPracami().map((k) => ({ params: { kierunek: k.slug } }));
+}
+
+const { kierunek } = Astro.params;
+const k = KIERUNKI[kierunek!];
+const prace = praceKierunku(kierunek!);
+const sumaStron = prace.reduce((s, p) => s + p.stron, 0);
+---
+
+<Layout
+  title={`Prace magisterskie ${k.dopelniacz} — ${prace.length} ${odmien(prace.length, "gotowy wzór", "gotowe wzory", "gotowych wzorów")} (PDF + Word)`}
+  description={`Gotowe prace magisterskie ${k.dopelniacz}: ${prace
+    .map((p) => p.tytul.split(" ").slice(0, 5).join(" "))
+    .join(", ")}. Każda z pełnym aparatem przypisów i bibliografią. Do pobrania za ${CENA_PLN} zł.`}
+>
+  <Navbar />
+
+  <main class="min-h-screen">
+    <section class="bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-white py-14">
+      <div class="max-w-4xl mx-auto px-4">
+        <nav class="text-sm text-indigo-300 mb-4">
+          <a href="/prace/" class="hover:text-white">Prace wzorcowe</a>
+          <span class="mx-2">/</span>
+          <span class="text-white">{k.nazwa}</span>
+        </nav>
+        <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-tight">
+          Prace magisterskie {k.dopelniacz} — wzory do adaptacji
+        </h1>
+        <p class="text-lg text-indigo-100 leading-relaxed">
+          {prace.length}{" "}
+          {odmien(prace.length, "kompletna praca", "kompletne prace", "kompletnych prac")},
+          razem {sumaStron} stron. Każda pokazuje pełną ścieżkę: od problemu badawczego,
+          przez przegląd literatury, po opracowanie i interpretację wyników.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <p class="text-lg text-gray-700 leading-relaxed mb-10">{k.opis}</p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-5">
+          Czego promotor szuka w pracy {k.dopelniacz}
+        </h2>
+        <ul class="space-y-3 mb-12">
+          {k.czegoOczekujePromotor.map((punkt) => (
+            <li class="flex gap-3 text-gray-700 leading-relaxed">
+              <span class="text-primary-600 font-bold shrink-0">✓</span>
+              <span>{punkt}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          Dostępne prace {k.dopelniacz}
+        </h2>
+        <div class="space-y-6 mb-14">
+          {prace.map((p) => (
+            <article class="border-2 border-gray-200 hover:border-primary-400 rounded-2xl p-6 transition-colors">
+              <h3 class="text-xl font-bold text-gray-900 mb-3 leading-snug">
+                <a href={p.url} class="hover:text-primary-700">{p.tytul}</a>
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">{p.opis}</p>
+              <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-gray-500 mb-4">
+                <span>{p.stron} stron</span>
+                <span>{p.przypisy} przypisów</span>
+                <span>{p.pozycjeBibliografii} pozycji bibliografii</span>
+                {p.tabele > 0 && <span>{p.tabele} tabel</span>}
+                <span>PDF + Word</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <a
+                  href={p.url}
+                  class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-colors"
+                >
+                  Zobacz spis treści
+                </a>
+                <span class="text-gray-900 font-bold">{CENA_PLN} zł</span>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-12">
+          <h2 class="text-lg font-bold text-gray-900 mb-3">Co dokładnie kupujesz</h2>
+          <p class="text-gray-700 leading-relaxed mb-3">
+            Warstwa teoretyczna każdej pracy opiera się na publikacjach wskazanych
+            w bibliografii, a twierdzenia mają przypisy z numerem strony źródła — to
+            materiał, który realnie przyspiesza pisanie własnego rozdziału.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Rozdział badawczy zawiera dane <strong>przykładowe</strong>. Pokazuje sposób
+            opracowania i interpretacji wyników, ale liczby w nim nie pochodzą
+            z przeprowadzonego badania i trzeba je zastąpić własnymi. Zakup nie przenosi
+            autorskich praw majątkowych.
+          </p>
+        </div>
+
+        <div class="border-t border-gray-200 pt-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Zobacz też</h2>
+          <ul class="space-y-2 text-primary-700">
+            <li>
+              <a href={`/tematy/${k.slug}/`} class="hover:underline">
+                Tematy prac magisterskich {k.dopelniacz} — lista propozycji
+              </a>
+            </li>
+            <li>
+              <a href={`/tematy/${k.slug}/przykladowa-praca/`} class="hover:underline">
+                Jak napisać pracę {k.dopelniacz} — omówienie krok po kroku
+              </a>
+            </li>
+            <li>
+              <a href="/prace/" class="hover:underline">
+                Wszystkie prace wzorcowe — pozostałe kierunki
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,64 @@
+---
+// Baner kierujący z treści poradnikowej do katalogu prac wzorcowych.
+//
+// Miejsce docelowe: strony, które już zbierają ruch na frazach zakupowych
+// („praca magisterska z psychologii pdf" — pozycja 6,7 w GSC). Wstawiany PO
+// DownloadBox z darmowym szkieletem, bo dopiero wtedy różnica między jednym
+// a drugim jest dla czytelnika czytelna — i tę różnicę baner musi nazwać wprost,
+// inaczej wygląda na próbę sprzedania czegoś, co przed chwilą było za darmo.
+import { praceKierunku, KIERUNKI, odmien, CENA_PLN } from "../data/prace";
+
+interface Props {
+  kierunek: string;
+}
+
+const { kierunek } = Astro.props;
+const k = KIERUNKI[kierunek];
+const prace = praceKierunku(kierunek);
+const najwieksza = prace.length ? Math.max(...prace.map((p) => p.stron)) : 0;
+const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliografii)) : 0;
+---
+
+{
+  prace.length > 0 && (
+    <aside class="not-prose my-10 border-2 border-primary-200 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 md:p-8">
+      <p class="text-xs uppercase tracking-wide text-primary-700 font-semibold mb-2">
+        Krok dalej niż szkielet
+      </p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3 mt-0">
+        Kompletne prace {k.dopelniacz} — {prace.length}{" "}
+        {prace.length === 1 ? "temat" : prace.length < 5 ? "tematy" : "tematów"} do adaptacji
+      </h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Wzór powyżej to <strong>pusty szkielet z komentarzami</strong> — pokazuje, co gdzie
+        wpisać. Jeśli potrzebujesz zobaczyć rzecz napisaną do końca, w katalogu są prace
+        na konkretnych tematach: do {najwieksza} stron, z bibliografią liczącą nawet{" "}
+        {maxZrodel} pozycji i przypisami prowadzącymi do numeru strony źródła. Materiał
+        źródłowy możesz wykorzystać we własnym rozdziale teoretycznym.
+      </p>
+
+      <ul class="space-y-2 mb-5">
+        {prace.map((p) => (
+          <li>
+            <a href={p.url} class="text-primary-800 hover:underline font-medium leading-snug">
+              {p.tytul}
+            </a>
+            <span class="text-gray-500 text-sm"> — {p.stron} stron</span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href={`/prace/${k.slug}/`}
+          class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+        >
+          Zobacz prace {k.dopelniacz} →
+        </a>
+        <span class="text-sm text-gray-600">
+          {CENA_PLN} zł za pracę · PDF + Word · rozdział badawczy z danymi przykładowymi
+        </span>
+      </div>
+    </aside>
+  )
+}

@@ -1,0 +1,220 @@
+---
+// Strona produktu — jedna praca wzorcowa.
+//
+// Title celowo NIE zaczyna się od tytułu pracy, tylko od frazy wyszukiwanej
+// („Praca magisterska z psychologii — …"). Nikt nie wpisuje w Google pełnego
+// tytułu tematu; sprawdzone na 2817 frazach z GSC, zero trafień na zjawiska
+// badawcze. Tytuł pracy idzie do H1 i podtytułu (KATALOG-PRAC, sekcja 1).
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import KupPrace from "../../../components/KupPrace.astro";
+import { PRACE, KIERUNKI, praceKierunku, CENA_PLN } from "../../../data/prace";
+
+export function getStaticPaths() {
+  return PRACE.map((p) => ({
+    params: { kierunek: p.kierunek, temat: p.slug },
+    props: { praca: p },
+  }));
+}
+
+const { praca } = Astro.props;
+const k = KIERUNKI[praca.kierunek];
+const inne = praceKierunku(praca.kierunek).filter((p) => p.slug !== praca.slug);
+const maBadanie = praca.productId !== "praca-mgr-pedagogika-czas-ekranowy";
+const procentZeStrona = Math.round((praca.przypisyZeStrona / praca.przypisy) * 100);
+---
+
+<Layout
+  title={`Praca magisterska ${k.dopelniacz} — ${praca.tytulKrotki} (wzór, ${praca.stron} stron, PDF + Word)`}
+  description={`${praca.opis.slice(0, 155)}…`}
+>
+  <Navbar />
+
+  <main class="min-h-screen">
+    <section class="bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-white py-14">
+      <div class="max-w-4xl mx-auto px-4">
+        <nav class="text-sm text-indigo-300 mb-4">
+          <a href="/prace/" class="hover:text-white">Prace wzorcowe</a>
+          <span class="mx-2">/</span>
+          <a href={`/prace/${k.slug}/`} class="hover:text-white">{k.nazwa}</a>
+        </nav>
+
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="bg-white/10 px-3 py-1 rounded-full text-sm">{k.nazwa}</span>
+          <span class="bg-white/10 px-3 py-1 rounded-full text-sm">{praca.stron} stron</span>
+          <span class="bg-white/10 px-3 py-1 rounded-full text-sm">PDF + Word</span>
+          <span class="bg-accent/30 text-accent-light px-3 py-1 rounded-full text-sm font-medium">
+            {praca.pozycjeBibliografii} pozycji bibliografii
+          </span>
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-bold mb-5 leading-tight">{praca.tytul}</h1>
+        <p class="text-lg text-indigo-100 leading-relaxed mb-8">{praca.opis}</p>
+
+        <div class="flex flex-wrap items-center gap-5">
+          <KupPrace
+            productId={praca.productId}
+            cena={CENA_PLN}
+            nazwa={praca.tytul}
+            etykieta="Kup i pobierz od razu"
+          />
+          <span class="text-indigo-200 text-sm">
+            Płatność Stripe · pliki dostępne natychmiast po opłaceniu
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Co jest w środku</h2>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          <div class="bg-gray-50 rounded-xl p-5 text-center">
+            <div class="text-3xl font-bold text-primary-700">{praca.stron}</div>
+            <div class="text-sm text-gray-600 mt-1">stron</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-5 text-center">
+            <div class="text-3xl font-bold text-primary-700">{praca.przypisy}</div>
+            <div class="text-sm text-gray-600 mt-1">
+              przypisów, {procentZeStrona}% z numerem strony
+            </div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-5 text-center">
+            <div class="text-3xl font-bold text-primary-700">{praca.pozycjeBibliografii}</div>
+            <div class="text-sm text-gray-600 mt-1">pozycji bibliografii</div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-5 text-center">
+            <div class="text-3xl font-bold text-primary-700">
+              {praca.tabele + praca.rysunki}
+            </div>
+            <div class="text-sm text-gray-600 mt-1">
+              tabel i rysunków
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-5">Spis treści</h2>
+        <ol class="space-y-2 mb-12 border-l-2 border-gray-200 pl-6">
+          {praca.rozdzialy.map((r) => (
+            <li class="text-gray-800 leading-snug">{r}</li>
+          ))}
+        </ol>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-5">Jak z tego korzystać</h2>
+        <div class="space-y-4 text-gray-700 leading-relaxed mb-10">
+          <p>
+            Najwięcej daje warstwa teoretyczna. Każde twierdzenie ma przypis z numerem
+            strony konkretnej publikacji, więc możesz otworzyć źródło, sprawdzić powołanie
+            i wykorzystać je we własnym rozdziale — z własnym sformułowaniem i własnym
+            przypisem. To zwykle najbardziej czasochłonna część pisania.
+          </p>
+          <p>
+            Druga rzecz to struktura. Praca pokazuje, w jakiej kolejności prowadzi się
+            wywód, gdzie kończy się teoria i zaczyna metodologia, jak formułuje się pytania
+            badawcze i hipotezy oraz jak wygląda dyskusja odnosząca wyniki do literatury.
+            Ten szkielet przenosi się na dowolny temat w obrębie kierunku.
+          </p>
+          {maBadanie && (
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-xl">
+              <p class="font-semibold text-gray-900 mb-2">Rozdział badawczy — przeczytaj to przed zakupem</p>
+              <p>
+                Liczebność próby, statystyki opisowe i wyniki testów w rozdziale badawczym
+                mają charakter <strong>przykładowy</strong>. Pokazują, jak opracować,
+                przedstawić i zinterpretować materiał, ale nie pochodzą z przeprowadzonego
+                badania. Przed złożeniem pracy trzeba je zastąpić wynikami własnymi,
+                zachowując strukturę i logikę wywodu. Informacja o tym jest też w samym
+                dokumencie, na stronie redakcyjnej i na początku rozdziału.
+              </p>
+            </div>
+          )}
+          {!maBadanie && (
+            <div class="bg-green-50 border-l-4 border-green-600 p-5 rounded-r-xl">
+              <p class="font-semibold text-gray-900 mb-2">Praca przeglądowa</p>
+              <p>
+                To jedyna praca w katalogu bez rozdziału z badaniem własnym. Całość opiera
+                się na analizie opublikowanych badań, więc nie ma tu danych, które trzeba
+                zastąpić własnymi. Wzór dla tych, których promotor dopuszcza pracę
+                o charakterze przeglądowym.
+              </p>
+            </div>
+          )}
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-5">Format i licencja</h2>
+        <ul class="space-y-3 text-gray-700 mb-12">
+          <li class="flex gap-3">
+            <span class="text-primary-600 shrink-0">·</span>
+            <span>
+              <strong>PDF</strong> — skład gotowy do druku: Times New Roman 12&nbsp;pkt,
+              interlinia 1,5, margines wewnętrzny pod oprawę, żywa pagina, spis treści.
+            </span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary-600 shrink-0">·</span>
+            <span>
+              <strong>Word (DOCX)</strong> — ta sama treść do przerabiania pod własny temat.
+            </span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary-600 shrink-0">·</span>
+            <span>
+              Strona tytułowa ma pola do wypełnienia (uczelnia, wydział, promotor) — nie
+              wpisujemy tam zmyślonych danych.
+            </span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary-600 shrink-0">·</span>
+            <span>
+              Zakup <strong>nie przenosi autorskich praw majątkowych</strong>. Dokument służy
+              jako materiał pomocniczy: wzór struktury, aparatu naukowego i sposobu
+              prowadzenia wywodu.
+            </span>
+          </li>
+        </ul>
+
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 border border-primary-200 rounded-2xl p-8 text-center mb-14">
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">
+            {praca.stron} stron, {praca.pozycjeBibliografii} źródeł, PDF i Word
+          </h2>
+          <p class="text-gray-700 mb-6">
+            Pliki dostajesz od razu po opłaceniu — bez zapisu na newsletter i bez czekania.
+          </p>
+          <KupPrace
+            productId={praca.productId}
+            cena={CENA_PLN}
+            nazwa={praca.tytul}
+            etykieta="Kup wzór pracy"
+          />
+        </div>
+
+        {inne.length > 0 && (
+          <div class="border-t border-gray-200 pt-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-5">
+              Pozostałe prace {k.dopelniacz}
+            </h2>
+            <div class="space-y-3">
+              {inne.map((p) => (
+                <a
+                  href={p.url}
+                  class="flex items-center justify-between gap-4 border border-gray-200 hover:border-primary-400 rounded-xl p-4 transition-colors"
+                >
+                  <span class="text-gray-900 font-medium leading-snug">{p.tytul}</span>
+                  <span class="text-sm text-gray-500 whitespace-nowrap">{p.stron} stron</span>
+                </a>
+              ))}
+            </div>
+            <p class="mt-6">
+              <a href={`/prace/${k.slug}/`} class="text-primary-700 font-semibold hover:underline">
+                Wszystkie prace magisterskie {k.dopelniacz} →
+              </a>
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -38,3 +38,9 @@ stripe-switch.sh
 aws-lambda/create-checkout/products.json
 aws-lambda/webhook-handler/products.json
 aws-lambda/get-download/products.json
+
+# Prace wzorcowe — pliki płatne, poza public/
+.prace-out/
+
+# Kopie policy S3 przed zmianą — ślad operacyjny, nie kod
+.aws-backup/

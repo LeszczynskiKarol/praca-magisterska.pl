@@ -17,8 +17,13 @@ const productsConfig = JSON.parse(
   readFileSync(join(__dirname, "products.json"), "utf8")
 );
 
+// Jak w get-download: ebook ma jeden `s3Key`, praca wzorcowa listę `files`
+// (PDF + DOCX). Normalizujemy do listy, żeby mail dostał komplet linków.
 const PRODUCT_FILES = Object.fromEntries(
-  productsConfig.products.map((p) => [p.id, p.s3Key])
+  productsConfig.products.map((p) => [
+    p.id,
+    p.files?.length ? p.files : [{ s3Key: p.s3Key, fileName: p.fileName }],
+  ])
 );
 
 const PRODUCT_NAMES = Object.fromEntries(
@@ -266,8 +271,8 @@ async function handleSuccessfulPayment(session) {
     return;
   }
 
-  const s3Key = PRODUCT_FILES[productId];
-  if (!s3Key) {
+  const pliki = PRODUCT_FILES[productId];
+  if (!pliki?.length) {
     console.error("Unknown product:", productId);
     return;
   }
@@ -279,16 +284,22 @@ async function handleSuccessfulPayment(session) {
   }
 
   try {
-    const command = new GetObjectCommand({
-      Bucket: process.env.S3_BUCKET,
-      Key: s3Key,
-    });
+    const linki = await Promise.all(
+      pliki.map(async (plik) => ({
+        fileName: plik.fileName,
+        label: plik.label || plik.fileName?.split(".").pop()?.toUpperCase(),
+        url: await getSignedUrl(
+          s3,
+          new GetObjectCommand({
+            Bucket: process.env.S3_BUCKET,
+            Key: plik.s3Key,
+          }),
+          { expiresIn: 7 * 24 * 60 * 60 }
+        ),
+      }))
+    );
 
-    const downloadUrl = await getSignedUrl(s3, command, {
-      expiresIn: 7 * 24 * 60 * 60,
-    });
-
-    await sendDownloadEmail(customerEmail, productId, downloadUrl, session);
+    await sendDownloadEmail(customerEmail, productId, linki, session);
 
     console.log(`Email sent to ${customerEmail} for product ${productId}`);
 
@@ -316,10 +327,23 @@ async function handleSuccessfulPayment(session) {
   }
 }
 
-async function sendDownloadEmail(email, productId, downloadUrl, session) {
+async function sendDownloadEmail(email, productId, linki, session) {
   const productName = PRODUCT_NAMES[productId];
   const subjectPrefix = PRODUCT_EMAIL_SUBJECTS[productId] || "📚 Twój ebook jest gotowy do pobrania";
   const amountPaid = (session.amount_total / 100).toFixed(2);
+
+  // Jeden plik czyta się jak dotąd („Pobierz"); pakiet dostaje przycisk na
+  // format, żeby kupujący nie musiał zgadywać, który link jest który.
+  const jedenPlik = linki.length === 1;
+  const przyciski = linki
+    .map(
+      (p) =>
+        `<a href="${p.url}" class="button">📥 Pobierz${jedenPlik ? "" : " " + p.label}</a>`
+    )
+    .join("&nbsp;&nbsp;");
+  const linkiTekst = linki
+    .map((p) => (jedenPlik ? p.url : `${p.label}: ${p.url}`))
+    .join("\n\n");
 
   const htmlBody = `
 <!DOCTYPE html>
@@ -345,13 +369,13 @@ async function sendDownloadEmail(email, productId, downloadUrl, session) {
     </div>
     <div class="content">
       <p>Cześć!</p>
-      <p>Dziękujemy za zakup ebooka <strong>${productName}</strong>!</p>
+      <p>Dziękujemy za zakup: <strong>${productName}</strong>!</p>
       <p><strong>Kwota:</strong> ${amountPaid} PLN</p>
 
-      <p>Kliknij poniższy przycisk, aby pobrać swój ebook:</p>
+      <p>${jedenPlik ? "Kliknij poniższy przycisk, aby pobrać plik:" : "Pliki do pobrania — w obu formatach:"}</p>
 
       <p style="text-align: center;">
-        <a href="${downloadUrl}" class="button">📥 Pobierz Ebook</a>
+        ${przyciski}
       </p>
 
       <div class="warning">
@@ -383,10 +407,10 @@ Dziękujemy za zakup!
 Zakupiony produkt: ${productName}
 Kwota: ${amountPaid} PLN
 
-Kliknij poniższy link, aby pobrać swój ebook:
-${downloadUrl}
+${jedenPlik ? "Kliknij poniższy link, aby pobrać plik:" : "Pliki do pobrania:"}
+${linkiTekst}
 
-WAŻNE: Link jest ważny przez 7 dni. Zapisz plik po pobraniu.
+WAŻNE: ${jedenPlik ? "Link jest ważny" : "Linki są ważne"} przez 7 dni. Zapisz ${jedenPlik ? "plik" : "pliki"} po pobraniu.
 
 Jeśli masz pytania, odpowiedz na tego maila.
 

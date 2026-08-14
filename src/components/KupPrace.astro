@@ -1,0 +1,93 @@
+---
+// Przycisk zakupu pracy wzorcowej + obsługa checkoutu.
+// Wydzielony z powtarzającego się skryptu na stronach ebooków: ten sam kod
+// żył w kilku kopiach i rozjeżdżał się przy każdej zmianie (raz z gtag, raz bez).
+interface Props {
+  productId: string;
+  cena: number;
+  etykieta?: string;
+  nazwa: string;
+  pelnaSzerokosc?: boolean;
+}
+
+const {
+  productId,
+  cena,
+  etykieta = "Kup wzór pracy",
+  nazwa,
+  pelnaSzerokosc = false,
+} = Astro.props;
+
+const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
+---
+
+<button
+  class:list={[
+    "kup-prace bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 shadow-lg shadow-accent/30 text-lg disabled:opacity-60 disabled:cursor-wait disabled:hover:scale-100",
+    pelnaSzerokosc ? "w-full flex items-center justify-center gap-2" : "inline-flex items-center gap-2",
+  ]}
+  data-product-id={productId}
+  data-product-name={nazwa}
+  data-product-price={cena}
+>
+  <span>{etykieta}</span>
+  <span class="opacity-80">· {cena} zł</span>
+</button>
+
+<script is:inline define:vars={{ API_URL }}>
+  // @ts-nocheck
+  // cSpell:ignore gtag
+  (function () {
+    if (window.__kupPraceGotowe) return;
+    window.__kupPraceGotowe = true;
+
+    function gaClientId() {
+      try {
+        var m = document.cookie.match(/_ga=GA\d\.\d\.(\d+\.\d+)/);
+        return m ? m[1] : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    document.addEventListener("click", async function (ev) {
+      var button = ev.target.closest(".kup-prace");
+      if (!button || button.disabled) return;
+
+      var productId = button.dataset.productId;
+      var item = {
+        item_id: productId,
+        item_name: button.dataset.productName,
+        price: Number(button.dataset.productPrice),
+        quantity: 1,
+        item_category: "Praca wzorcowa",
+      };
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "add_to_cart", { value: item.price, currency: "PLN", items: [item] });
+        window.gtag("event", "begin_checkout", { value: item.price, currency: "PLN", items: [item] });
+      }
+
+      var etykieta = button.querySelector("span");
+      var poprzednia = etykieta ? etykieta.textContent : "";
+      button.disabled = true;
+      if (etykieta) etykieta.textContent = "Przekierowuję do płatności…";
+
+      try {
+        var res = await fetch(API_URL + "/create-checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ productId: productId, clientId: gaClientId() }),
+        });
+        var data = await res.json();
+        if (!data.url) throw new Error(data.error || "Brak adresu płatności");
+        window.location.href = data.url;
+      } catch (err) {
+        console.error("Checkout error:", err);
+        button.disabled = false;
+        if (etykieta) etykieta.textContent = poprzednia;
+        alert("Nie udało się otworzyć płatności. Spróbuj ponownie za chwilę.");
+      }
+    });
+  })();
+</script>

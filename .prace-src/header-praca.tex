@@ -1,0 +1,96 @@
+% Nagłówek LaTeX dla prac wzorcowych praca-magisterska.pl (XeLaTeX)
+% W odróżnieniu od .wzory-src/header.tex: to jest produkt PŁATNY, więc bez
+% stopki „Wzór do adaptacji" i bez promo smart-edu na każdej stronie.
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{polyglossia}
+\setdefaultlanguage{polish}
+
+% Układ strony zgodny z typowym regulaminem prac dyplomowych:
+% margines wewnętrzny szerszy pod oprawę.
+\usepackage{geometry}
+\geometry{a4paper, top=2.5cm, bottom=2.5cm, left=3.5cm, right=2.5cm}
+% Interlinia idzie przez -V linestretch=1.5 w build-prace.py, nie przez
+% \onehalfspacing tutaj: tcolorbox (ładowany niżej pod notę) resetował je
+% po cichu i skład spadł z 72 na 56 stron przy niezmienionej treści.
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+
+\usepackage[table]{xcolor}
+\definecolor{brand}{HTML}{4F46E5}
+\definecolor{annoGray}{HTML}{555555}
+\definecolor{ruleGray}{HTML}{CCCCCC}
+
+% Żywa pagina: tytuł skrócony po lewej, numer strony po prawej.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\footnotesize\textcolor{annoGray}{\nouppercase{\leftmark}}}
+\fancyfoot[C]{\footnotesize\thepage}
+% Strony otwierające rozdział też mają numerację, ale bez żywej paginy.
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\footnotesize\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+
+% Tytuły rozdziałów i podrozdziałów
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0pt}{18pt}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{16pt}{8pt}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.6em}{}
+
+% Tabele — czytelne, bez pionowych linii (styl booktabs)
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\renewcommand{\arraystretch}{1.25}
+
+% Podpisy tabel i rysunków
+\usepackage[font=small,labelfont=bf,skip=6pt]{caption}
+
+% Bibliografia jako lista numerowana bez dodatkowych odstępów
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=3pt, parsep=0pt}
+
+% Odsyłacze do bibliografii w kolorze marki, reszta czarna
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=brand,
+  urlcolor=brand,
+  linktoc=all,
+  pdfborder={0 0 0}
+}
+
+% Streszczenie / abstrakt — węższy blok, mniejszy stopień pisma
+\newenvironment{streszczenie}
+  {\begin{quote}\small}
+  {\end{quote}}
+
+% Nota o charakterze danych w rozdziale badawczym.
+% Rozdział empiryczny każdej pracy zawiera wyniki przykładowe, nie pochodzące
+% z przeprowadzonego badania. Kupujący ma to wiedzieć z dokumentu, a nie
+% dopiero z regulaminu — stąd ramka na starcie rozdziału i akapit na stronie
+% redakcyjnej.
+% Znaki, których Times New Roman nie ma. Bez tego xelatex wypisuje
+% „Missing character" i wyrzuca je z PDF-u bez śladu — strzałka w schemacie
+% przepływu znika, a zdanie przestaje się kleić.
+\usepackage{newunicodechar}
+\newunicodechar{→}{$\rightarrow$}
+\newunicodechar{⟶}{$\longrightarrow$}
+\newunicodechar{⟵}{$\longleftarrow$}
+\newunicodechar{↔}{$\leftrightarrow$}
+\newunicodechar{✔}{$\checkmark$}
+\newunicodechar{✓}{$\checkmark$}
+\newunicodechar{⚠}{\textbf{!}}
+
+\usepackage{tcolorbox}
+\definecolor{notaBg}{HTML}{FFF7ED}
+\definecolor{notaFrame}{HTML}{EA580C}
+\newtcolorbox{nota}{%
+  colback=notaBg, colframe=notaFrame, boxrule=1pt, arc=2mm,
+  left=10pt, right=10pt, top=9pt, bottom=9pt,
+  before skip=12pt, after skip=14pt}

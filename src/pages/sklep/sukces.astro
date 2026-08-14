@@ -39,6 +39,9 @@ const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod"
             <a id="download-link" href="#" class="block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition-colors text-lg mb-3">
               📥 Pobierz ebook
             </a>
+            <!-- Produkty wieloplikowe (praca wzorcowa = PDF + DOCX) dostają
+                 przycisk na każdy format; przy jednym pliku zostaje sam link wyżej. -->
+            <div id="download-extra" class="hidden space-y-3 mb-3"></div>
             <p class="text-xs text-gray-500">Link ważny 24 godziny. Sprawdź też email — wysłaliśmy kopię zapasową.</p>
           </div>
           <div id="download-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-4">
@@ -134,7 +137,22 @@ const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod"
   .then(function(res) { return res.json(); })
   .then(function(data) {
     loadingEl.classList.add('hidden');
-    if (data.downloadUrl) {
+    var pliki = data.downloads || [];
+
+    if (pliki.length > 1) {
+      // Pakiet: przycisk na każdy format, bez wyróżniania pierwszego.
+      linkEl.classList.add('hidden');
+      var box = document.getElementById('download-extra');
+      pliki.forEach(function(p) {
+        var a = document.createElement('a');
+        a.href = p.url;
+        a.className = 'block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition-colors text-lg';
+        a.textContent = '📥 Pobierz ' + (p.label || p.fileName);
+        box.appendChild(a);
+      });
+      box.classList.remove('hidden');
+      readyEl.classList.remove('hidden');
+    } else if (data.downloadUrl) {
       linkEl.href = data.downloadUrl;
       linkEl.textContent = '📥 Pobierz: ' + (data.productName || 'Ebook');
       readyEl.classList.remove('hidden');

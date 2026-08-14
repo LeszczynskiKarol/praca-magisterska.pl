@@ -2,6 +2,7 @@
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import PraceKierunkoweCTA from "../../../components/PraceKierunkoweCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -491,6 +492,9 @@ const relatedLinks = [
   </p>
 
   <p><strong>Piszesz najpierw pracę licencjacką?</strong> Na siostrzanym serwisie znajdziesz osobną listę <a href="https://www.licencjackie.pl/blog/pielegniarstwo/" target="_blank" rel="noopener">tematów prac licencjackich z pielęgniarstwa</a> wraz z poradnikiem pisania licencjatu na tym kierunku.</p>
+
+  <PraceKierunkoweCTA kierunek="pielegniarstwo" />
+
 
 
   <WzorPracyCTA kierunekZ="z pielęgniarstwa" href="/tematy/pielegniarstwo/przykladowa-praca/" variant="bottom" />

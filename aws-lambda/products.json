@@ -29,6 +29,126 @@
       "fileName": "Jak-napisac-prace-magisterska-z-psychologii.pdf",
       "emailSubject": "🧠 Twój przewodnik po psychologii jest gotowy",
       "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "praca-mgr-psychologia-instagram",
+      "name": "Praca magisterska z psychologii — Instagram a obraz ciała i zaburzenia odżywiania u dziewcząt 14–18 lat (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/instagram-obraz-ciala-zaburzenia-odzywiania-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-instagram.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/instagram-obraz-ciala-zaburzenia-odzywiania-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-instagram.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-psychologia-prokrastynacja",
+      "name": "Praca magisterska z psychologii — Prokrastynacja akademicka studentów medycyny a lęk przed oceną i perfekcjonizm (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/prokrastynacja-akademicka-medycyna-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-prokrastynacja.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/prokrastynacja-akademicka-medycyna-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-prokrastynacja.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-psychologia-stres-psp",
+      "name": "Praca magisterska z psychologii — Stres zawodowy i strategie radzenia sobie u funkcjonariuszy PSP (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/stres-funkcjonariuszy-psp-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-stres-psp.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/stres-funkcjonariuszy-psp-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-stres-psp.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-psychologia-wypalenie-nauczycieli",
+      "name": "Praca magisterska z psychologii — Wypalenie zawodowe nauczycieli edukacji wczesnoszkolnej po nauczaniu zdalnym (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/wypalenie-zawodowe-nauczycieli-edukacji-wczesnoszkolnej-po-okresie-nauczania-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-wypalenie-nauczycieli.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/wypalenie-zawodowe-nauczycieli-edukacji-wczesnoszkolnej-po-okresie-nauczania-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-wypalenie-nauczycieli.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-pielegniarstwo-wypalenie",
+      "name": "Praca magisterska z pielęgniarstwa — Wypalenie zawodowe pielęgniarek anestezjologicznych i intensywnej opieki (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/wypalenie-pielegniarek-anestezjologicznych-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pielegniarstwo-wypalenie.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/wypalenie-pielegniarek-anestezjologicznych-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pielegniarstwo-wypalenie.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-pedagogika-czas-ekranowy",
+      "name": "Praca magisterska z pedagogiki — Wpływ czasu ekranowego na rozwój mowy dzieci 2–5 lat (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/czas-ekranowy-rozwoj-mowy-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pedagogika-czas-ekranowy.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/czas-ekranowy-rozwoj-mowy-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pedagogika-czas-ekranowy.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {

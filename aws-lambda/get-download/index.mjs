@@ -10,16 +10,35 @@ const productsConfig = JSON.parse(
   readFileSync(join(__dirname, "products.json"), "utf8")
 );
 
+// Produkt ma albo jeden plik (`s3Key` + `fileName` — tak są opisane ebooki),
+// albo listę plików (`files` — prace wzorcowe sprzedawane jako PDF + DOCX).
+// Normalizujemy do listy, żeby dalej był jeden przypadek zamiast dwóch.
 const PRODUCT_FILES = Object.fromEntries(
   productsConfig.products.map((p) => [
     p.id,
     {
-      s3Key: p.s3Key,
-      fileName: p.fileName,
       name: p.name,
+      files: p.files?.length
+        ? p.files
+        : [{ s3Key: p.s3Key, fileName: p.fileName }],
     },
   ])
 );
+
+// Do 2026-08 lambda podawała każdemu plikowi `application/pdf`. Przy pakiecie
+// PDF + DOCX oznaczałoby to, że Word pobiera się jako PDF i nie chce otworzyć.
+const TYPY = {
+  pdf: "application/pdf",
+  docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  doc: "application/msword",
+  zip: "application/zip",
+  epub: "application/epub+zip",
+};
+
+function typMime(nazwaPliku) {
+  const ext = String(nazwaPliku).split(".").pop()?.toLowerCase();
+  return TYPY[ext] || "application/octet-stream";
+}
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const s3 = new S3Client({ region: process.env.AWS_REGION || "eu-central-1" });
@@ -87,25 +106,35 @@ export const handler = async (event) => {
       };
     }
 
-    // Generuj presigned URL (ważny 24h)
-    const command = new GetObjectCommand({
-      Bucket: process.env.S3_BUCKET,
-      Key: product.s3Key,
-      ResponseContentDisposition: `attachment; filename="${product.fileName}"`,
-      ResponseContentType: "application/pdf",
-    });
-
-    const downloadUrl = await getSignedUrl(s3, command, {
-      expiresIn: 24 * 60 * 60,
-    });
+    // Presigned URL na każdy plik pakietu (ważny 24h)
+    const downloads = await Promise.all(
+      product.files.map(async (plik) => ({
+        fileName: plik.fileName,
+        label: plik.label || plik.fileName.split(".").pop()?.toUpperCase(),
+        url: await getSignedUrl(
+          s3,
+          new GetObjectCommand({
+            Bucket: process.env.S3_BUCKET,
+            Key: plik.s3Key,
+            ResponseContentDisposition: `attachment; filename="${plik.fileName}"`,
+            ResponseContentType: typMime(plik.fileName),
+          }),
+          { expiresIn: 24 * 60 * 60 }
+        ),
+      }))
+    );
 
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        downloadUrl,
+        // `downloads` to format docelowy; `downloadUrl`/`fileName` zostają dla
+        // strony sukcesu, która czyta pojedynczy link — bez tego każdy dotąd
+        // sprzedany ebook przestałby się pobierać w chwili wgrania tej wersji.
+        downloads,
+        downloadUrl: downloads[0]?.url,
+        fileName: downloads[0]?.fileName,
         productName: product.name,
-        fileName: product.fileName,
       }),
     };
   } catch (error) {
