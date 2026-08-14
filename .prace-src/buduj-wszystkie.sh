@@ -39,6 +39,10 @@ buduj czas-ekranowy-rozwoj-mowy-mgr-pl.html \
   "Pedagogika" \
   "Wpływ czasu ekranowego na rozwój mowy dzieci w wieku 2–5 lat w świetle badań z lat 2015–2025"
 
+buduj depresja-poporodowa-wsparcie-mgr-pl.html \
+  "Psychologia" \
+  "Wpływ wsparcia społecznego na przebieg depresji poporodowej — badania longitudinalne"
+
 echo
 echo "Gotowe:"
 ls -la "$OUT"

@@ -149,6 +149,26 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-psychologia-depresja-poporodowa",
+      "name": "Praca magisterska z psychologii — Wsparcie społeczne a przebieg depresji poporodowej (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/depresja-poporodowa-wsparcie-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-depresja-poporodowa.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/depresja-poporodowa-wsparcie-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-depresja-poporodowa.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {

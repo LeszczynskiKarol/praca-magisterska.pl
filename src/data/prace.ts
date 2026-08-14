@@ -130,6 +130,13 @@ export const OPISY: Record<string, string> = {
     "psychiczne, ekspozycję na śmierć pacjenta, presję czasu i deficyty kadrowe. Rozdział " +
     "badawczy prowadzi przez pomiar wypalenia w trzech wymiarach i analizę czynników " +
     "organizacyjnych.",
+  "praca-mgr-psychologia-depresja-poporodowa":
+    "Praca o tym, jak wsparcie ze strony partnera, rodziny i otoczenia wpływa na przebieg " +
+    "depresji poporodowej. Część teoretyczna prowadzi przez kryteria diagnostyczne DSM-5 " +
+    "i ICD-10, odróżnienie depresji poporodowej od baby blues i psychozy połogowej, " +
+    "neurobiologiczne mechanizmy patogenezy oraz modele wsparcia społecznego wraz z hipotezą " +
+    "buforową. Rozdział badawczy pokazuje schemat podłużny z trzema pomiarami i narzędziami " +
+    "EPDS, BSSS i PSS-10.",
   "praca-mgr-pedagogika-czas-ekranowy":
     "Praca przeglądowa o wpływie ekspozycji na ekrany na rozwój mowy dzieci w wieku " +
     "przedszkolnym, oparta na badaniach z lat 2015–2025. Pokazuje, dlaczego przekaz " +
@@ -149,6 +156,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-psychologia-wypalenie-nauczycieli": "wypalenie nauczycieli",
   "praca-mgr-pielegniarstwo-wypalenie": "wypalenie pielęgniarek z OIT",
   "praca-mgr-pedagogika-czas-ekranowy": "czas ekranowy a rozwój mowy dzieci",
+  "praca-mgr-psychologia-depresja-poporodowa": "wsparcie a depresja poporodowa",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({

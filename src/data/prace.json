@@ -164,5 +164,31 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-psychologia-depresja-poporodowa",
+    "slugPdf": "depresja-poporodowa-wsparcie-mgr-pl",
+    "kierunek": "psychologia",
+    "slug": "depresja-poporodowa-wsparcie",
+    "tytul": "Wpływ wsparcia społecznego na przebieg depresji poporodowej — badania longitudinalne",
+    "stron": 49,
+    "slow": 14592,
+    "przypisy": 98,
+    "przypisyZeStrona": 80,
+    "pozycjeBibliografii": 36,
+    "tabele": 10,
+    "rysunki": 4,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Depresja poporodowa — ujęcie kliniczne i epidemiologiczne",
+      "Rozdział 2. Wsparcie społeczne — konceptualizacja teoretyczna i jego rola w zdrowiu perinatalnym",
+      "Rozdział 3. Metodologia badań własnych",
+      "Rozdział 4. Wyniki badań własnych i ich interpretacja",
+      "Zakończenie",
+      "Bibliografia"
+    ]
   }
 ]
