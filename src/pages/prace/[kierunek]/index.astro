@@ -1,134 +1,324 @@
 ---
-// Kategoria kierunku — strona akwizycyjna pod „prace magisterskie <kierunek>"
-// i „gotowe prace magisterskie <kierunek>".
+// Kategoria kierunku — strona akwizycyjna pod „prace magisterskie <kierunek>”
+// i „gotowe prace magisterskie <kierunek>”.
+//
+// Powstaje TYLKO dla kierunków z co najmniej MIN_PRAC_NA_KATEGORIE pracami.
+// Kategoria z jedną pracą powielałaby opis produktu i konkurowała z nim o tę
+// samą frazę, nie wnosząc treści — prace takich kierunków są dostępne z huba.
 //
 // Dlaczego osobno od /tematy/<kierunek>/: tamta strona stoi na frazie
-// „prace magisterskie psychologia" na pozycji 6,4, ale zbiera 1 kliknięcie
+// „prace magisterskie psychologia” na pozycji 6,4, ale zbiera 1 kliknięcie
 // ze 188 wyświetleń (GSC, V–VIII 2026). Lista tematów nie odpowiada na intencję
-// „pokaż gotowe prace" — ta strona odpowiada.
+// „pokaż gotowe prace” — ta strona odpowiada.
+//
+// UWAGA: global.css nadaje h1–h6 kolor text-gray-900, więc na ciemnym tle
+// każdy nagłówek MUSI mieć jawne `text-white`.
 import Layout from "../../../layouts/Layout.astro";
 import Navbar from "../../../components/Navbar.astro";
 import Footer from "../../../components/Footer.astro";
-import { KIERUNKI, praceKierunku, kierunkiZPracami, odmien, CENA_PLN } from "../../../data/prace";
+import Ikona from "../../../components/Ikona.astro";
+import MockupPracy from "../../../components/MockupPracy.astro";
+import {
+  KIERUNKI,
+  praceKierunku,
+  kierunkiZKategoria,
+  kierunkiZPracami,
+  maKategorie,
+  odmien,
+  CENA_PLN,
+} from "../../../data/prace";
 
 export function getStaticPaths() {
-  return kierunkiZPracami().map((k) => ({ params: { kierunek: k.slug } }));
+  const zKategoria = kierunkiZKategoria().map((k) => ({
+    params: { kierunek: k.slug },
+    props: { stub: false },
+  }));
+
+  // Kierunki, które kategorię MIAŁY, a straciły ją po wprowadzeniu progu
+  // MIN_PRAC_NA_KATEGORIE. Ich adresy były już opublikowane, a deploy robi
+  // `s3 sync --delete`, więc bez tego zostałby po nich twardy 404. Stub kieruje
+  // do jedynej pracy kierunku i nie wchodzi do indeksu.
+  const stuby = kierunkiZPracami()
+    .filter((k) => !maKategorie(k.slug))
+    .map((k) => ({ params: { kierunek: k.slug }, props: { stub: true } }));
+
+  return [...zKategoria, ...stuby];
 }
 
 const { kierunek } = Astro.params;
+const { stub } = Astro.props;
 const k = KIERUNKI[kierunek!];
 const prace = praceKierunku(kierunek!);
+const celStuba = prace[0]?.url ?? "/prace/";
 const sumaStron = prace.reduce((s, p) => s + p.stron, 0);
+const sumaZrodel = prace.reduce((s, p) => s + p.pozycjeBibliografii, 0);
+const bohater = prace[0];
 ---
 
+{
+  stub && (
+    <Layout
+      title={`Prace magisterskie ${k.dopelniacz}`}
+      description={`Wzorcowa praca magisterska ${k.dopelniacz} — przejdź do opisu i podglądu.`}
+      noindex={true}
+      canonical={celStuba}
+    >
+      <meta http-equiv="refresh" content={`0; url=${celStuba}`} slot="head" />
+      <Navbar />
+      <main class="min-h-screen grid place-items-center px-4 py-24">
+        <div class="text-center max-w-md">
+          <h1 class="text-2xl font-bold text-gray-900 mb-3">
+            Prace magisterskie {k.dopelniacz}
+          </h1>
+          <p class="text-gray-600 mb-6">Przenosimy Cię do opisu pracy…</p>
+          <a
+            href={celStuba}
+            class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors cursor-pointer"
+          >
+            Przejdź teraz
+            <Ikona nazwa="strzalka" klasa="w-4 h-4" />
+          </a>
+        </div>
+      </main>
+      <Footer />
+    </Layout>
+  )
+}
+
+{!stub && (
 <Layout
   title={`Prace magisterskie ${k.dopelniacz} — ${prace.length} ${odmien(prace.length, "gotowy wzór", "gotowe wzory", "gotowych wzorów")} (PDF + Word)`}
-  description={`Gotowe prace magisterskie ${k.dopelniacz}: ${prace
-    .map((p) => p.tytul.split(" ").slice(0, 5).join(" "))
-    .join(", ")}. Każda z pełnym aparatem przypisów i bibliografią. Do pobrania za ${CENA_PLN} zł.`}
+  description={`Gotowe prace magisterskie ${k.dopelniacz}, każda ${Math.min(...prace.map((p) => p.stron))}–${Math.max(...prace.map((p) => p.stron))} stron z przypisami do numeru strony źródła. Razem ${sumaZrodel} pozycji bibliografii. PDF i Word za ${CENA_PLN} zł.`}
 >
   <Navbar />
 
-  <main class="min-h-screen">
-    <section class="bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-white py-14">
-      <div class="max-w-4xl mx-auto px-4">
-        <nav class="text-sm text-indigo-300 mb-4">
-          <a href="/prace/" class="hover:text-white">Prace wzorcowe</a>
-          <span class="mx-2">/</span>
+  <main class="min-h-screen bg-white">
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950">
+      <div class="absolute inset-0 opacity-[0.07]" aria-hidden="true">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="siatka-kat" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M48 0H0V48" fill="none" stroke="white" stroke-width="1"></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#siatka-kat)"></rect>
+        </svg>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <nav class="text-sm text-indigo-300 mb-6" aria-label="Ścieżka nawigacji">
+          <a href="/prace/" class="hover:text-white transition-colors cursor-pointer">
+            Gotowe prace
+          </a>
+          <span class="mx-2" aria-hidden="true">/</span>
           <span class="text-white">{k.nazwa}</span>
         </nav>
-        <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-tight">
-          Prace magisterskie {k.dopelniacz} — wzory do adaptacji
-        </h1>
-        <p class="text-lg text-indigo-100 leading-relaxed">
-          {prace.length}{" "}
-          {odmien(prace.length, "kompletna praca", "kompletne prace", "kompletnych prac")},
-          razem {sumaStron} stron. Każda pokazuje pełną ścieżkę: od problemu badawczego,
-          przez przegląd literatury, po opracowanie i interpretację wyników.
-        </p>
+
+        <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+          <div>
+            <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-[1.12]">
+              Prace magisterskie {k.dopelniacz}
+            </h1>
+            <p class="text-lg md:text-xl text-indigo-100 leading-relaxed mb-8 max-w-xl">
+              {prace.length}{" "}
+              {odmien(prace.length, "kompletna praca", "kompletne prace", "kompletnych prac")},
+              razem {sumaStron} stron i {sumaZrodel} pozycji bibliografii. Każda pokazuje
+              pełną ścieżkę: od problemu badawczego, przez przegląd literatury, po
+              opracowanie wyników.
+            </p>
+
+            <a
+              href="#lista"
+              class="inline-flex items-center gap-2 bg-white text-indigo-950 hover:bg-indigo-50 font-bold py-4 px-7 rounded-xl transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Zobacz tematy
+              <Ikona nazwa="strzalka" klasa="w-5 h-5" />
+            </a>
+          </div>
+
+          <div class="hidden lg:block">
+            <MockupPracy
+              src={bohater.podglad.spis!}
+              alt={`Spis treści wzorcowej pracy magisterskiej ${k.dopelniacz}`}
+              obrot="prawo"
+              priorytet={true}
+              klasa="max-w-xs mx-auto"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="py-12 bg-white">
-      <div class="max-w-4xl mx-auto px-4">
-        <p class="text-lg text-gray-700 leading-relaxed mb-10">{k.opis}</p>
+    <!-- CZEGO OCZEKUJE PROMOTOR -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-5 leading-tight">
+              Za co ocenia się pracę {k.dopelniacz}
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">{k.opis}</p>
+          </div>
 
-        <h2 class="text-2xl font-bold text-gray-900 mb-5">
-          Czego promotor szuka w pracy {k.dopelniacz}
-        </h2>
-        <ul class="space-y-3 mb-12">
-          {k.czegoOczekujePromotor.map((punkt) => (
-            <li class="flex gap-3 text-gray-700 leading-relaxed">
-              <span class="text-primary-600 font-bold shrink-0">✓</span>
-              <span>{punkt}</span>
-            </li>
-          ))}
-        </ul>
-
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">
-          Dostępne prace {k.dopelniacz}
-        </h2>
-        <div class="space-y-6 mb-14">
-          {prace.map((p) => (
-            <article class="border-2 border-gray-200 hover:border-primary-400 rounded-2xl p-6 transition-colors">
-              <h3 class="text-xl font-bold text-gray-900 mb-3 leading-snug">
-                <a href={p.url} class="hover:text-primary-700">{p.tytul}</a>
-              </h3>
-              <p class="text-gray-700 leading-relaxed mb-4">{p.opis}</p>
-              <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-gray-500 mb-4">
-                <span>{p.stron} stron</span>
-                <span>{p.przypisy} przypisów</span>
-                <span>{p.pozycjeBibliografii} pozycji bibliografii</span>
-                {p.tabele > 0 && <span>{p.tabele} tabel</span>}
-                <span>PDF + Word</span>
-              </div>
-              <div class="flex items-center gap-4">
-                <a
-                  href={p.url}
-                  class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-colors"
-                >
-                  Zobacz spis treści
-                </a>
-                <span class="text-gray-900 font-bold">{CENA_PLN} zł</span>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-12">
-          <h2 class="text-lg font-bold text-gray-900 mb-3">Co dokładnie kupujesz</h2>
-          <p class="text-gray-700 leading-relaxed mb-3">
-            Warstwa teoretyczna każdej pracy opiera się na publikacjach wskazanych
-            w bibliografii, a twierdzenia mają przypisy z numerem strony źródła — to
-            materiał, który realnie przyspiesza pisanie własnego rozdziału.
-          </p>
-          <p class="text-gray-700 leading-relaxed">
-            Rozdział badawczy zawiera dane <strong>przykładowe</strong>. Pokazuje sposób
-            opracowania i interpretacji wyników, ale liczby w nim nie pochodzą
-            z przeprowadzonego badania i trzeba je zastąpić własnymi. Zakup nie przenosi
-            autorskich praw majątkowych.
-          </p>
-        </div>
-
-        <div class="border-t border-gray-200 pt-8">
-          <h2 class="text-xl font-bold text-gray-900 mb-4">Zobacz też</h2>
-          <ul class="space-y-2 text-primary-700">
-            <li>
-              <a href={`/tematy/${k.slug}/`} class="hover:underline">
-                Tematy prac magisterskich {k.dopelniacz} — lista propozycji
-              </a>
-            </li>
-            <li>
-              <a href={`/tematy/${k.slug}/przykladowa-praca/`} class="hover:underline">
-                Jak napisać pracę {k.dopelniacz} — omówienie krok po kroku
-              </a>
-            </li>
-            <li>
-              <a href="/prace/" class="hover:underline">
-                Wszystkie prace wzorcowe — pozostałe kierunki
-              </a>
-            </li>
+          <ul class="space-y-4">
+            {
+              k.czegoOczekujePromotor.map((punkt) => (
+                <li class="flex gap-4 items-start bg-gray-50 rounded-xl p-5">
+                  <span class="shrink-0 grid place-items-center w-9 h-9 rounded-lg bg-primary-600 text-white">
+                    <Ikona nazwa="sprawdzone" klasa="w-5 h-5" />
+                  </span>
+                  <span class="text-gray-800 leading-relaxed pt-1">{punkt}</span>
+                </li>
+              ))
+            }
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTA PRAC -->
+    <section id="lista" class="py-16 md:py-20 bg-gray-100/70 scroll-mt-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+          Dostępne tematy
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          {CENA_PLN} zł za pracę. PDF i Word w komplecie, do pobrania od razu po opłaceniu.
+        </p>
+
+        <div class="space-y-8">
+          {
+            prace.map((p) => (
+              <article class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                <div class="grid md:grid-cols-[240px_1fr] gap-0">
+                  <div class="bg-gray-50 p-6 grid place-items-center border-b md:border-b-0 md:border-r border-gray-100">
+                    <img
+                      src={p.podglad.tytulowa}
+                      alt=""
+                      loading="lazy"
+                      width="900"
+                      height="1273"
+                      class="w-32 md:w-full max-w-[170px] h-auto rounded ring-1 ring-gray-900/10 shadow-lg"
+                    />
+                  </div>
+
+                  <div class="p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-snug">
+                      <a
+                        href={p.url}
+                        class="hover:text-primary-700 transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 rounded"
+                      >
+                        {p.tytul}
+                      </a>
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">{p.opis}</p>
+
+                    <dl class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 border-y border-gray-100 py-4">
+                      <div>
+                        <dt class="text-xs uppercase tracking-wide text-gray-500 mb-1">stron</dt>
+                        <dd class="text-lg font-bold text-gray-900">{p.stron}</dd>
+                      </div>
+                      <div>
+                        <dt class="text-xs uppercase tracking-wide text-gray-500 mb-1">przypisów</dt>
+                        <dd class="text-lg font-bold text-gray-900">{p.przypisy}</dd>
+                      </div>
+                      <div>
+                        <dt class="text-xs uppercase tracking-wide text-gray-500 mb-1">źródeł</dt>
+                        <dd class="text-lg font-bold text-gray-900">{p.pozycjeBibliografii}</dd>
+                      </div>
+                      <div>
+                        <dt class="text-xs uppercase tracking-wide text-gray-500 mb-1">rozdziałów</dt>
+                        <dd class="text-lg font-bold text-gray-900">
+                          {p.rozdzialy.filter((r) => r.toLowerCase().startsWith("rozdział")).length}
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                      <a
+                        href={p.url}
+                        class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                      >
+                        Zobacz spis treści i podgląd
+                        <Ikona nazwa="strzalka" klasa="w-4 h-4" />
+                      </a>
+                      <span class="text-xl font-bold text-gray-900">{CENA_PLN} zł</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ZASTRZEŻENIE -->
+    <section class="py-14">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-6 md:p-8">
+          <div class="flex flex-col md:flex-row gap-5">
+            <span class="shrink-0 grid place-items-center w-12 h-12 rounded-xl bg-amber-500 text-white">
+              <Ikona nazwa="ostrzezenie" klasa="w-6 h-6" />
+            </span>
+            <div>
+              <h2 class="text-xl font-bold text-gray-900 mb-3">Co dokładnie kupujesz</h2>
+              <p class="text-gray-800 leading-relaxed mb-3">
+                Warstwa teoretyczna opiera się na publikacjach wskazanych w bibliografii,
+                a twierdzenia mają przypisy z numerem strony źródła — to materiał, który
+                realnie skraca pisanie własnego rozdziału.
+              </p>
+              <p class="text-gray-800 leading-relaxed">
+                Rozdział badawczy zawiera dane <strong>przykładowe</strong>: pokazuje sposób
+                opracowania i interpretacji wyników, ale liczby nie pochodzą
+                z przeprowadzonego badania i trzeba zastąpić je własnymi. Zakup nie przenosi
+                autorskich praw majątkowych.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINKOWANIE WEWNĘTRZNE -->
+    <section class="pb-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-xl font-bold text-gray-900 mb-5">Zobacz też</h2>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <a
+            href={`/tematy/${k.slug}/`}
+            class="group flex items-start gap-3 rounded-xl border border-gray-200 hover:border-primary-400 p-5 transition-colors cursor-pointer"
+          >
+            <span class="shrink-0 text-gray-400 group-hover:text-primary-600 transition-colors">
+              <Ikona nazwa="lupa" klasa="w-5 h-5" />
+            </span>
+            <span class="text-gray-800 leading-snug">
+              Tematy prac magisterskich {k.dopelniacz} — lista propozycji
+            </span>
+          </a>
+          <a
+            href={`/tematy/${k.slug}/przykladowa-praca/`}
+            class="group flex items-start gap-3 rounded-xl border border-gray-200 hover:border-primary-400 p-5 transition-colors cursor-pointer"
+          >
+            <span class="shrink-0 text-gray-400 group-hover:text-primary-600 transition-colors">
+              <Ikona nazwa="dokument" klasa="w-5 h-5" />
+            </span>
+            <span class="text-gray-800 leading-snug">
+              Jak napisać pracę {k.dopelniacz} — omówienie krok po kroku
+            </span>
+          </a>
+          <a
+            href="/prace/"
+            class="group flex items-start gap-3 rounded-xl border border-gray-200 hover:border-primary-400 p-5 transition-colors cursor-pointer"
+          >
+            <span class="shrink-0 text-gray-400 group-hover:text-primary-600 transition-colors">
+              <Ikona nazwa="bibliografia" klasa="w-5 h-5" />
+            </span>
+            <span class="text-gray-800 leading-snug">
+              Wszystkie prace wzorcowe — pozostałe kierunki
+            </span>
+          </a>
         </div>
       </div>
     </section>
@@ -136,3 +326,4 @@ const sumaStron = prace.reduce((s, p) => s + p.stron, 0);
 
   <Footer />
 </Layout>
+)}

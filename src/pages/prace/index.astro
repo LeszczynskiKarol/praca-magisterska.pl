@@ -1,132 +1,495 @@
 ---
-// Hub katalogu prac wzorcowych.
-// Cel wyszukiwarkowy: „gotowe prace magisterskie", „prace magisterskie".
-// Obie frazy obsługiwała dotąd strona główna z pozycji 50–60 (GSC, V–VIII 2026),
-// czyli w praktyce nikt — stąd osobna strona zamiast sekcji na istniejącej.
+// Landing katalogu prac wzorcowych.
+// Cel wyszukiwarkowy: „gotowe prace magisterskie”, „prace magisterskie” —
+// obie frazy obsługiwała dotąd strona główna z pozycji 50–60 (GSC V–VIII 2026).
+//
+// UWAGA przy edycji: global.css nadaje h1–h6 kolor text-gray-900, więc na
+// ciemnych sekcjach każdy nagłówek MUSI mieć jawne `text-white`. Dziedziczenie
+// koloru z rodzica tu nie zadziała.
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import { PRACE, KIERUNKI, kierunkiZPracami, odmien, CENA_PLN } from "../../data/prace";
+import Ikona from "../../components/Ikona.astro";
+import MockupPracy from "../../components/MockupPracy.astro";
+import {
+  PRACE,
+  KIERUNKI,
+  kierunkiZKategoria,
+  maKategorie,
+  odmien,
+  CENA_PLN,
+} from "../../data/prace";
 
-const kierunki = kierunkiZPracami();
+const kategorie = kierunkiZKategoria();
 const laczniePrac = PRACE.length;
 const najdluzsza = Math.max(...PRACE.map((p) => p.stron));
 const najkrotsza = Math.min(...PRACE.map((p) => p.stron));
+const sumaZrodel = PRACE.reduce((s, p) => s + p.pozycjeBibliografii, 0);
+const najwiecejPrzypisow = Math.max(...PRACE.map((p) => p.przypisy));
+const bohater = PRACE.find((p) => p.slug === "prokrastynacja-akademicka") ?? PRACE[0];
+
+// Zdania z pierwszej kolumny to realne sformułowania z zapytań w Google
+// (GSC, V–VIII 2026) — „praca magisterska psychologia przykład”, „jak napisać
+// rozdział metodologiczny”, „ile źródeł w pracy magisterskiej”.
+const PROBLEMY = [
+  {
+    ikona: "lupa" as const,
+    cytat: "Nie wiem, jak to ma w ogóle wyglądać",
+    opis:
+      "Promotor mówi „proszę napisać rozdział teoretyczny”, ale nie pokazuje, " +
+      "jak wygląda skończony. Wzory w internecie to trzystronicowe fragmenty " +
+      "albo szkielety z samymi nagłówkami.",
+    odpowiedz:
+      "Dostajesz pracę przeczytaną do końca — od strony tytułowej po bibliografię, " +
+      "z widocznym rytmem wywodu w każdym rozdziale.",
+  },
+  {
+    ikona: "przypis" as const,
+    cytat: "Znalezienie źródeł zajmuje mi więcej czasu niż pisanie",
+    opis:
+      "Godzina w bazie, żeby znaleźć jedno zdanie nadające się do zacytowania. " +
+      "Potem druga, żeby ustalić, z której strony dokładnie pochodzi.",
+    odpowiedz:
+      "Każde twierdzenie ma przypis z numerem strony. Otwierasz źródło, " +
+      "sprawdzasz powołanie, używasz go we własnym rozdziale.",
+  },
+  {
+    ikona: "tabela" as const,
+    cytat: "Nie wiem, jaki test statystyczny zastosować",
+    opis:
+      "Hipotezy sformułowane, dane zebrane, a rozdział z wynikami stoi. " +
+      "Podręczniki tłumaczą testy osobno, nie w kontekście konkretnej hipotezy.",
+    odpowiedz:
+      "Rozdział badawczy prowadzi od hipotezy do testu i do interpretacji — " +
+      "widzisz, co z czego wynika, na tabelach i opisie wyników.",
+  },
+  {
+    ikona: "zegar" as const,
+    cytat: "Zostały mi trzy tygodnie",
+    opis:
+      "Termin oddania blisko, a największy kawałek pracy — teoria z porządnym " +
+      "aparatem przypisów — wciąż od zera.",
+    odpowiedz:
+      "Pliki dostajesz od razu po opłaceniu, w PDF i w Wordzie. " +
+      "Bez zapisu na newsletter i bez czekania na maila od człowieka.",
+  },
+];
+
+const FAQ = [
+  {
+    pytanie: "Czy mogę oddać tę pracę jako własną?",
+    odpowiedz:
+      "Nie. Zakup nie przenosi autorskich praw majątkowych, a rozdział badawczy " +
+      "zawiera dane przykładowe, nie wyniki przeprowadzonego badania. To wzór do " +
+      "adaptacji: struktura, aparat naukowy i materiał źródłowy, na których budujesz " +
+      "własną pracę pod własnym tematem.",
+  },
+  {
+    pytanie: "Czym to się różni od darmowych wzorów na tej stronie?",
+    odpowiedz:
+      "Darmowe wzory w sekcji „przykładowa praca” to szkielety z komentarzami — " +
+      "pokazują, co gdzie wpisać. Tutaj dostajesz rzecz napisaną do końca na " +
+      "konkretnym temacie: " +
+      najkrotsza +
+      "–" +
+      najdluzsza +
+      " stron ciągłego wywodu z pełną bibliografią.",
+  },
+  {
+    pytanie: "Skąd wiadomo, że przypisy nie są zmyślone?",
+    odpowiedz:
+      "Bibliografia podaje linki do publikacji, a przypisy — numer strony. " +
+      "Możesz otworzyć dowolne źródło i sprawdzić powołanie. Właśnie po to " +
+      "podajemy stronę zamiast samego autora i roku.",
+  },
+  {
+    pytanie: "Czy praca przejdzie antyplagiat?",
+    odpowiedz:
+      "Pracy w tej postaci nie należy składać — jest sprzedawana wielokrotnie, " +
+      "więc system antyplagiatowy wykaże zbieżność. Bezpiecznie wykorzystuje się " +
+      "materiał źródłowy i strukturę, pisząc tekst własnymi słowami.",
+  },
+  {
+    pytanie: "W jakim formacie dostaję pliki?",
+    odpowiedz:
+      "PDF i Word (DOCX) — oba w cenie. PDF ma skład gotowy do druku: Times New " +
+      "Roman 12 pkt, interlinia 1,5, margines wewnętrzny pod oprawę, żywa pagina. " +
+      "Word służy do przerabiania treści pod własny temat.",
+  },
+];
 ---
 
 <Layout
   title={`Gotowe prace magisterskie — ${laczniePrac} wzorów z pełnym aparatem naukowym (PDF + Word)`}
-  description={`Katalog wzorcowych prac magisterskich: psychologia, pielęgniarstwo, pedagogika. Każda praca ${najkrotsza}–${najdluzsza} stron, z przypisami do numeru strony źródła i bibliografią. Do pobrania w PDF i Word za ${CENA_PLN} zł.`}
+  description={`Katalog wzorcowych prac magisterskich. Każda ${najkrotsza}–${najdluzsza} stron, z przypisami do numeru strony źródła i bibliografią liczącą 35–42 pozycje. PDF i Word za ${CENA_PLN} zł.`}
 >
   <Navbar />
 
-  <main class="min-h-screen">
-    <section class="bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-950 text-white py-16 md:py-20">
-      <div class="max-w-5xl mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          Gotowe prace magisterskie — wzory do adaptacji
-        </h1>
-        <p class="text-xl text-indigo-100 mb-6 leading-relaxed">
-          {laczniePrac} kompletnych prac po {najkrotsza}–{najdluzsza} stron, napisanych na
-          realnych publikacjach naukowych. Każde twierdzenie ma przypis z numerem strony
-          źródła, więc możesz je sprawdzić i wykorzystać we własnej pracy.
-        </p>
-        <p class="text-indigo-200 leading-relaxed">
-          To wzory do przerobienia pod własny temat i własne badanie — nie prace na sprzedaż
-          pod cudzym nazwiskiem. Poniżej opisujemy dokładnie, co dostajesz i czego wzór
-          nie zastąpi.
-        </p>
+  <main class="min-h-screen bg-white">
+    <!-- ================= HERO ================= -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950">
+      <!-- Siatka w tle: własny wzór SVG, nie obrazek z zewnątrz -->
+      <div class="absolute inset-0 opacity-[0.07]" aria-hidden="true">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="siatka" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M48 0H0V48" fill="none" stroke="white" stroke-width="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#siatka)" />
+        </svg>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24">
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+          <div>
+            <p class="inline-flex items-center gap-2 text-sm font-medium text-indigo-200 bg-white/10 rounded-full px-4 py-1.5 mb-6">
+              <Ikona nazwa="dokument" klasa="w-4 h-4" />
+              {laczniePrac} prac · psychologia, pielęgniarstwo, pedagogika
+            </p>
+
+            <h1 class="text-white text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.1] mb-6">
+              Zobacz pracę magisterską,<br class="hidden md:block" />
+              która jest napisana do końca
+            </h1>
+
+            <p class="text-lg md:text-xl text-indigo-100 leading-relaxed mb-8 max-w-xl">
+              Nie szkielet z nagłówkami i nie trzystronicowy fragment.
+              {najkrotsza}–{najdluzsza} stron ciągłego wywodu, w którym każde twierdzenie
+              ma przypis prowadzący do numeru strony w źródle.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 mb-10">
+              <a
+                href="#prace"
+                class="inline-flex items-center gap-2 bg-white text-indigo-950 hover:bg-indigo-50 font-bold py-4 px-7 rounded-xl transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Zobacz prace
+                <Ikona nazwa="strzalka" klasa="w-5 h-5" />
+              </a>
+              <a
+                href="#srodek"
+                class="inline-flex items-center gap-2 text-white/90 hover:text-white font-semibold py-4 px-2 transition-colors cursor-pointer"
+              >
+                Co jest w środku
+              </a>
+            </div>
+
+            <dl class="grid grid-cols-3 gap-6 max-w-lg border-t border-white/15 pt-6">
+              <div>
+                <dt class="text-indigo-300 text-sm mb-1">stron</dt>
+                <dd class="text-white text-2xl font-bold">{najkrotsza}–{najdluzsza}</dd>
+              </div>
+              <div>
+                <dt class="text-indigo-300 text-sm mb-1">przypisów</dt>
+                <dd class="text-white text-2xl font-bold">do {najwiecejPrzypisow}</dd>
+              </div>
+              <div>
+                <dt class="text-indigo-300 text-sm mb-1">źródeł łącznie</dt>
+                <dd class="text-white text-2xl font-bold">{sumaZrodel}</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Realne strony dokumentu, nie rysunek poglądowy -->
+          <div class="relative hidden sm:block">
+            <MockupPracy
+              src={bohater.podglad.przypisy!}
+              alt="Strona pracy magisterskiej z widocznymi przypisami zawierającymi numer strony źródła"
+              obrot="prawo"
+              priorytet={true}
+              klasa="relative z-10 max-w-sm mx-auto"
+            />
+            <MockupPracy
+              src={bohater.podglad.tytulowa!}
+              alt="Strona tytułowa wzorcowej pracy magisterskiej"
+              obrot="lewo"
+              klasa="absolute -bottom-8 -left-2 w-40 md:w-48 z-20 hidden md:block"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="py-14 bg-white">
-      <div class="max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8">Wybierz kierunek</h2>
+    <!-- ================= PROBLEM → ODPOWIEDŹ ================= -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-2xl mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            Cztery rzeczy, na których zwykle staje pisanie
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Zdania po lewej to sformułowania, z jakimi ludzie trafiają na tę stronę
+            z wyszukiwarki. Po prawej — co konkretnie z tym robi wzór pracy.
+          </p>
+        </div>
 
-        <div class="grid md:grid-cols-3 gap-6 mb-16">
-          {kierunki.map((k) => {
-            const prace = PRACE.filter((p) => p.kierunek === k.slug);
-            return (
-              <a
-                href={`/prace/${k.slug}/`}
-                class="block border-2 border-gray-200 hover:border-primary-500 rounded-2xl p-6 transition-colors group"
-              >
-                <h3 class="text-xl font-bold text-gray-900 group-hover:text-primary-700 mb-2">
+        <div class="grid md:grid-cols-2 gap-6">
+          {
+            PROBLEMY.map((p) => (
+              <article class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                <div class="p-6 md:p-7 border-b border-gray-100">
+                  <div class="flex items-start gap-4">
+                    <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-gray-100 text-gray-500">
+                      <Ikona nazwa={p.ikona} klasa="w-5 h-5" />
+                    </span>
+                    <div>
+                      <p class="text-lg font-bold text-gray-900 leading-snug mb-2">
+                        „{p.cytat}”
+                      </p>
+                      <p class="text-gray-600 leading-relaxed">{p.opis}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 md:p-7 bg-indigo-50/60">
+                  <div class="flex items-start gap-4">
+                    <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-primary-600 text-white">
+                      <Ikona nazwa="sprawdzone" klasa="w-5 h-5" />
+                    </span>
+                    <p class="text-gray-800 leading-relaxed pt-2">{p.odpowiedz}</p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CO JEST W ŚRODKU ================= -->
+    <!-- Tło szare, nie białe: kartki podglądu są białe i na białym tle
+         gubią krawędzie mimo cienia. -->
+    <section id="srodek" class="py-16 md:py-24 scroll-mt-20 bg-gray-100/70">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-2xl mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+            Co jest w środku
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Poniżej strony z pliku, który dostajesz — nie wizualizacja, tylko
+            zrzuty z gotowego PDF-a.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 md:gap-10 mb-16">
+          <MockupPracy
+            src={bohater.podglad.tytulowa!}
+            alt="Strona tytułowa z polami do uzupełnienia: uczelnia, wydział, promotor"
+            podpis="Strona tytułowa — pola do wypełnienia, bez zmyślonych danych"
+          />
+          <MockupPracy
+            src={bohater.podglad.spis!}
+            alt="Spis treści pracy magisterskiej z numeracją stron i podrozdziałami"
+            podpis="Spis treści — pełna hierarchia rozdziałów i podrozdziałów"
+          />
+          <MockupPracy
+            src={bohater.podglad.tabela!}
+            alt="Strona z tabelą zestawiającą dane w pracy magisterskiej"
+            podpis="Tabele z podpisami i odwołaniami w tekście"
+          />
+        </div>
+
+        <!-- Dowód: zbliżenie na aparat przypisów -->
+        <div class="rounded-3xl bg-gray-900 overflow-hidden">
+          <div class="grid lg:grid-cols-2 gap-0 items-center">
+            <div class="p-8 md:p-12">
+              <span class="inline-flex items-center gap-2 text-sm font-medium text-indigo-300 bg-white/10 rounded-full px-4 py-1.5 mb-6">
+                <Ikona nazwa="przypis" klasa="w-4 h-4" />
+                Sedno produktu
+              </span>
+              <h3 class="text-white text-2xl md:text-3xl font-bold mb-5 leading-tight">
+                Przypis prowadzi do numeru strony, nie do samego nazwiska
+              </h3>
+              <p class="text-gray-300 leading-relaxed mb-5">
+                Zapis <code class="text-indigo-300 bg-white/10 rounded px-1.5 py-0.5 text-sm">[13,&nbsp;s.&nbsp;13]</code>
+                znaczy: pozycja 13 z bibliografii, strona 13. Otwierasz źródło z linku,
+                sprawdzasz zdanie i wiesz, że możesz się na nie powołać we własnej pracy.
+              </p>
+              <p class="text-gray-300 leading-relaxed mb-8">
+                Bez numeru strony przypis jest nie do zweryfikowania — ani przez ciebie,
+                ani przez promotora. Dlatego liczymy go osobno i podajemy przy każdej pracy.
+              </p>
+              <ul class="space-y-3">
+                {
+                  PRACE.slice(0, 3).map((p) => (
+                    <li class="flex items-baseline gap-3 text-gray-300">
+                      <span class="text-white font-bold tabular-nums w-16 shrink-0">
+                        {Math.round((p.przypisyZeStrona / p.przypisy) * 100)}%
+                      </span>
+                      <span class="text-sm leading-snug">
+                        przypisów z numerem strony — {p.tytulKrotki}
+                      </span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div class="p-6 md:p-10 lg:p-12 lg:pl-0">
+              <MockupPracy
+                src={bohater.podglad.przypisy!}
+                alt="Zbliżenie na akapit pracy z przypisami w formacie numer pozycji i numer strony"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UCZCIWE ZASTRZEŻENIE ================= -->
+    <section class="pb-16 md:pb-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-6 md:p-8">
+          <div class="flex flex-col md:flex-row gap-5">
+            <span class="shrink-0 grid place-items-center w-12 h-12 rounded-xl bg-amber-500 text-white">
+              <Ikona nazwa="ostrzezenie" klasa="w-6 h-6" />
+            </span>
+            <div>
+              <h2 class="text-xl font-bold text-gray-900 mb-3">
+                Czego ten wzór nie zastąpi — przeczytaj przed zakupem
+              </h2>
+              <p class="text-gray-800 leading-relaxed mb-3">
+                Rozdział badawczy zawiera <strong>dane przykładowe</strong>. Liczebność
+                próby, statystyki opisowe i wyniki testów pokazują sposób opracowania
+                materiału, ale nie pochodzą z przeprowadzonego badania. Przed złożeniem
+                pracy trzeba zastąpić je własnymi wynikami. Informacja o tym jest też
+                w samym dokumencie — na stronie redakcyjnej i na początku rozdziału.
+              </p>
+              <p class="text-gray-800 leading-relaxed">
+                Zakup <strong>nie przenosi autorskich praw majątkowych</strong>, a praca
+                sprzedawana jest wielokrotnie — złożona w tej postaci zostanie wykazana
+                przez system antyplagiatowy. To materiał pomocniczy: struktura, aparat
+                naukowy i baza źródeł do własnego wywodu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KATALOG ================= -->
+    <section id="prace" class="py-16 md:py-20 bg-gray-50 scroll-mt-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+          Dostępne prace
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          {CENA_PLN} zł za pracę. PDF i Word w komplecie.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {
+            PRACE.map((p) => (
+              <article class="group bg-white rounded-2xl border border-gray-200 hover:border-primary-400 transition-colors overflow-hidden flex flex-col">
+                <div class="flex gap-5 p-6">
+                  <img
+                    src={p.podglad.tytulowa}
+                    alt=""
+                    loading="lazy"
+                    width="900"
+                    height="1273"
+                    class="hidden sm:block w-24 h-auto self-start rounded ring-1 ring-gray-900/10 shadow-md"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <span class="text-xs uppercase tracking-wide text-primary-700 font-semibold">
+                      {KIERUNKI[p.kierunek].nazwa}
+                    </span>
+                    <h3 class="text-lg font-bold text-gray-900 leading-snug mt-1 mb-3">
+                      <a
+                        href={p.url}
+                        class="hover:text-primary-700 transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                      >
+                        <span class="absolute inset-0" aria-hidden="true" />
+                        {p.tytul}
+                      </a>
+                    </h3>
+                    <p class="text-sm text-gray-600 leading-relaxed line-clamp-3">
+                      {p.opis}
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 px-6 py-4 border-t border-gray-100 bg-gray-50/70 text-sm text-gray-600">
+                  <span class="inline-flex items-center gap-1.5">
+                    <Ikona nazwa="dokument" klasa="w-4 h-4 text-gray-400" />
+                    {p.stron} stron
+                  </span>
+                  <span class="inline-flex items-center gap-1.5">
+                    <Ikona nazwa="przypis" klasa="w-4 h-4 text-gray-400" />
+                    {p.przypisy} przypisów
+                  </span>
+                  <span class="inline-flex items-center gap-1.5">
+                    <Ikona nazwa="bibliografia" klasa="w-4 h-4 text-gray-400" />
+                    {p.pozycjeBibliografii} źródeł
+                  </span>
+                  <span class="ml-auto font-bold text-gray-900">{CENA_PLN} zł</span>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        {
+          kategorie.length > 0 && (
+            <div class="mt-12 flex flex-wrap items-center gap-4">
+              <span class="text-gray-600">Przeglądaj według kierunku:</span>
+              {kategorie.map((k) => (
+                <a
+                  href={`/prace/${k.slug}/`}
+                  class="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white hover:border-primary-500 px-5 py-2.5 font-semibold text-gray-800 transition-colors cursor-pointer"
+                >
                   {k.nazwa}
-                </h3>
-                <p class="text-sm text-gray-500 mb-4">
-                  {prace.length} {odmien(prace.length, "praca", "prace", "prac")}
-                </p>
-                <ul class="space-y-2 text-sm text-gray-600">
-                  {prace.slice(0, 3).map((p) => (
-                    <li class="leading-snug">· {p.tytul}</li>
-                  ))}
-                </ul>
-                <span class="inline-block mt-4 text-primary-600 font-semibold text-sm">
-                  Zobacz wszystkie →
-                </span>
-              </a>
-            );
-          })}
-        </div>
+                  <span class="text-gray-400 text-sm">
+                    {PRACE.filter((p) => p.kierunek === k.slug).length}
+                  </span>
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </section>
 
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">Co dostajesz</h2>
-        <div class="grid md:grid-cols-2 gap-6 mb-16">
-          <div class="bg-gray-50 rounded-2xl p-6">
-            <h3 class="font-bold text-gray-900 mb-3">Kompletny dokument</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Strona tytułowa, streszczenie, abstrakt w języku angielskim, wykaz skrótów,
-              spis treści, cztery rozdziały, zakończenie, bibliografia i spisy tabel.
-              Skład zgodny z typowym regulaminem: Times New Roman 12&nbsp;pkt, interlinia 1,5,
-              margines wewnętrzny pod oprawę.
-            </p>
-          </div>
-          <div class="bg-gray-50 rounded-2xl p-6">
-            <h3 class="font-bold text-gray-900 mb-3">Aparat naukowy, który da się sprawdzić</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Od 90 do 218 przypisów na pracę, w większości z numerem strony źródła.
-              Bibliografia liczy 35–42 pozycje z linkami do publikacji. Możesz otworzyć
-              źródło, sprawdzić powołanie i sięgnąć po nie we własnym wywodzie.
-            </p>
-          </div>
-          <div class="bg-gray-50 rounded-2xl p-6">
-            <h3 class="font-bold text-gray-900 mb-3">PDF i Word</h3>
-            <p class="text-gray-700 leading-relaxed">
-              PDF do czytania i druku, Word do przerabiania. Oba pliki dostajesz od razu
-              po zakupie, bez zapisów na newsletter i bez czekania na maila od człowieka.
-            </p>
-          </div>
-          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6">
-            <h3 class="font-bold text-gray-900 mb-3">Czego wzór nie zastąpi</h3>
-            <p class="text-gray-700 leading-relaxed">
-              Rozdział badawczy zawiera dane <strong>przykładowe</strong>: pokazuje, jak
-              opracować i zinterpretować wyniki, ale nie pochodzą one z przeprowadzonego
-              badania. Trzeba je zastąpić własnymi. Zakup nie przenosi autorskich praw
-              majątkowych.
-            </p>
-          </div>
+    <!-- ================= FAQ ================= -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-10 leading-tight">
+          Pytania, które padają najczęściej
+        </h2>
+        <div class="divide-y divide-gray-200 border-y border-gray-200">
+          {
+            FAQ.map((f) => (
+              <details class="group py-5">
+                <summary class="flex items-start justify-between gap-4 cursor-pointer list-none font-semibold text-gray-900 text-lg leading-snug focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 rounded">
+                  {f.pytanie}
+                  <span class="shrink-0 mt-1 text-gray-400 transition-transform duration-200 motion-safe:group-open:rotate-90">
+                    <Ikona nazwa="strzalka" klasa="w-5 h-5" />
+                  </span>
+                </summary>
+                <p class="mt-3 text-gray-700 leading-relaxed pr-8">{f.odpowiedz}</p>
+              </details>
+            ))
+          }
         </div>
+      </div>
+    </section>
 
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">Wszystkie prace</h2>
-        <div class="space-y-4">
-          {PRACE.map((p) => (
-            <a
-              href={p.url}
-              class="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 border border-gray-200 hover:border-primary-400 rounded-xl p-5 transition-colors"
-            >
-              <div class="flex-1">
-                <span class="text-xs uppercase tracking-wide text-primary-600 font-semibold">
-                  {KIERUNKI[p.kierunek].nazwa}
-                </span>
-                <h3 class="font-semibold text-gray-900 leading-snug mt-1">{p.tytul}</h3>
-                <p class="text-sm text-gray-500 mt-1">
-                  {p.stron} stron · {p.przypisy} przypisów · {p.pozycjeBibliografii} pozycji
-                  bibliografii
-                </p>
-              </div>
-              <span class="text-primary-700 font-bold whitespace-nowrap">{CENA_PLN} zł</span>
-            </a>
-          ))}
+    <!-- ================= CTA ================= -->
+    <section class="pb-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="rounded-3xl bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950 px-6 py-12 md:px-14 md:py-16 text-center">
+          <h2 class="text-white text-3xl md:text-4xl font-bold mb-5 leading-tight">
+            {laczniePrac} {odmien(laczniePrac, "praca", "prace", "prac")}, {sumaZrodel} źródeł, PDF i Word
+          </h2>
+          <p class="text-lg text-indigo-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Wybierz temat najbliższy własnemu i zobacz spis treści oraz opis, zanim
+            zdecydujesz. Pliki dostajesz od razu po opłaceniu.
+          </p>
+          <a
+            href="#prace"
+            class="inline-flex items-center gap-2 bg-white text-indigo-950 hover:bg-indigo-50 font-bold py-4 px-8 rounded-xl transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            <Ikona nazwa="pobierz" klasa="w-5 h-5" />
+            Przejdź do katalogu
+          </a>
         </div>
       </div>
     </section>

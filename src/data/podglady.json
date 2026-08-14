@@ -1,0 +1,38 @@
+{
+  "praca-mgr-psychologia-instagram": {
+    "tytulowa": "/prace-podglad/instagram-obraz-ciala-tytulowa.webp",
+    "spis": "/prace-podglad/instagram-obraz-ciala-spis.webp",
+    "przypisy": "/prace-podglad/instagram-obraz-ciala-przypisy.webp",
+    "tabela": "/prace-podglad/instagram-obraz-ciala-tabela.webp"
+  },
+  "praca-mgr-psychologia-prokrastynacja": {
+    "tytulowa": "/prace-podglad/prokrastynacja-akademicka-tytulowa.webp",
+    "spis": "/prace-podglad/prokrastynacja-akademicka-spis.webp",
+    "przypisy": "/prace-podglad/prokrastynacja-akademicka-przypisy.webp",
+    "tabela": "/prace-podglad/prokrastynacja-akademicka-tabela.webp"
+  },
+  "praca-mgr-psychologia-stres-psp": {
+    "tytulowa": "/prace-podglad/stres-strazakow-psp-tytulowa.webp",
+    "spis": "/prace-podglad/stres-strazakow-psp-spis.webp",
+    "przypisy": "/prace-podglad/stres-strazakow-psp-przypisy.webp",
+    "tabela": "/prace-podglad/stres-strazakow-psp-tabela.webp"
+  },
+  "praca-mgr-psychologia-wypalenie-nauczycieli": {
+    "tytulowa": "/prace-podglad/wypalenie-nauczycieli-tytulowa.webp",
+    "spis": "/prace-podglad/wypalenie-nauczycieli-spis.webp",
+    "przypisy": "/prace-podglad/wypalenie-nauczycieli-przypisy.webp",
+    "tabela": "/prace-podglad/wypalenie-nauczycieli-tabela.webp"
+  },
+  "praca-mgr-pielegniarstwo-wypalenie": {
+    "tytulowa": "/prace-podglad/wypalenie-pielegniarek-anestezjologicznych-tytulowa.webp",
+    "spis": "/prace-podglad/wypalenie-pielegniarek-anestezjologicznych-spis.webp",
+    "przypisy": "/prace-podglad/wypalenie-pielegniarek-anestezjologicznych-przypisy.webp",
+    "tabela": "/prace-podglad/wypalenie-pielegniarek-anestezjologicznych-tabela.webp"
+  },
+  "praca-mgr-pedagogika-czas-ekranowy": {
+    "tytulowa": "/prace-podglad/czas-ekranowy-rozwoj-mowy-tytulowa.webp",
+    "spis": "/prace-podglad/czas-ekranowy-rozwoj-mowy-spis.webp",
+    "przypisy": "/prace-podglad/czas-ekranowy-rozwoj-mowy-przypisy.webp",
+    "tabela": "/prace-podglad/czas-ekranowy-rozwoj-mowy-tabela.webp"
+  }
+}

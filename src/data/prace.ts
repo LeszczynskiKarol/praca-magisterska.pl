@@ -5,6 +5,12 @@
 // przepisujemy ich ręcznie: strona sprzedażowa musi mówić to samo, co dostaje
 // kupujący, także po poprawce pracy.
 import metryki from "./prace.json";
+import podgladyJson from "./podglady.json";
+
+/** Renderowane strony PDF-a: tytułowa, spis treści, strona z przypisami, tabela.
+ *  Generuje `.prace-src/podglady.py` — nie edytować ręcznie. */
+export const PODGLADY: Record<string, Partial<Record<string, string>>> =
+  podgladyJson as Record<string, Partial<Record<string, string>>>;
 
 export type Metryka = {
   productId: string;
@@ -151,6 +157,7 @@ export const PRACE = (metryki as Metryka[]).map((m) => ({
   tytulKrotki: TYTULY_KROTKIE[m.productId] ?? m.tytul,
   cena: CENA_PLN,
   url: `/prace/${m.kierunek}/${m.slug}/`,
+  podglad: PODGLADY[m.productId] ?? {},
 }));
 
 export type Praca = (typeof PRACE)[number];
@@ -169,6 +176,24 @@ export function praceKierunku(kierunek: string): Praca[] {
   return PRACE.filter((p) => p.kierunek === kierunek);
 }
 
+/** Ile prac musi mieć kierunek, żeby dostał własną stronę kategorii.
+ *  Kategoria z jedną pracą to thin content: powiela opis produktu i konkuruje
+ *  z nim o tę samą frazę, nie wnosząc treści. Prace takich kierunków są
+ *  dostępne z huba i mają własne strony produktowe — znika tylko pośrednik. */
+export const MIN_PRAC_NA_KATEGORIE = 2;
+
+/** Kierunki z własną stroną kategorii. */
+export function kierunkiZKategoria(): Kierunek[] {
+  return Object.values(KIERUNKI).filter(
+    (k) => praceKierunku(k.slug).length >= MIN_PRAC_NA_KATEGORIE
+  );
+}
+
+export function maKategorie(kierunek: string): boolean {
+  return praceKierunku(kierunek).length >= MIN_PRAC_NA_KATEGORIE;
+}
+
+/** Wszystkie kierunki, które mają choć jedną pracę — do list i nawigacji. */
 export function kierunkiZPracami(): Kierunek[] {
   return Object.values(KIERUNKI).filter((k) => praceKierunku(k.slug).length > 0);
 }

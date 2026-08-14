@@ -1,6 +1,7 @@
 [
   {
     "productId": "praca-mgr-psychologia-instagram",
+    "slugPdf": "instagram-obraz-ciala-zaburzenia-odzywiania-mgr-pl",
     "kierunek": "psychologia",
     "slug": "instagram-obraz-ciala",
     "tytul": "Nadmierne korzystanie z Instagrama a obraz ciała i objawy zaburzeń odżywiania u dziewcząt w wieku 14–18 lat",
@@ -26,6 +27,7 @@
   },
   {
     "productId": "praca-mgr-psychologia-prokrastynacja",
+    "slugPdf": "prokrastynacja-akademicka-medycyna-mgr-pl",
     "kierunek": "psychologia",
     "slug": "prokrastynacja-akademicka",
     "tytul": "Prokrastynacja akademicka studentów kierunków medycznych a lęk przed oceną i perfekcjonizm",
@@ -51,6 +53,7 @@
   },
   {
     "productId": "praca-mgr-psychologia-stres-psp",
+    "slugPdf": "stres-funkcjonariuszy-psp-mgr-pl",
     "kierunek": "psychologia",
     "slug": "stres-strazakow-psp",
     "tytul": "Stres zawodowy i strategie radzenia sobie u funkcjonariuszy Państwowej Straży Pożarnej",
@@ -76,6 +79,7 @@
   },
   {
     "productId": "praca-mgr-psychologia-wypalenie-nauczycieli",
+    "slugPdf": "wypalenie-zawodowe-nauczycieli-edukacji-wczesnoszkolnej-po-okresie-nauczania-mgr-pl",
     "kierunek": "psychologia",
     "slug": "wypalenie-nauczycieli",
     "tytul": "Wypalenie zawodowe nauczycieli edukacji wczesnoszkolnej po okresie nauczania zdalnego",
@@ -101,6 +105,7 @@
   },
   {
     "productId": "praca-mgr-pielegniarstwo-wypalenie",
+    "slugPdf": "wypalenie-pielegniarek-anestezjologicznych-mgr-pl",
     "kierunek": "pielegniarstwo",
     "slug": "wypalenie-pielegniarek-anestezjologicznych",
     "tytul": "Wypalenie zawodowe pielęgniarek anestezjologicznych i intensywnej opieki",
@@ -136,6 +141,7 @@
   },
   {
     "productId": "praca-mgr-pedagogika-czas-ekranowy",
+    "slugPdf": "czas-ekranowy-rozwoj-mowy-mgr-pl",
     "kierunek": "pedagogika",
     "slug": "czas-ekranowy-rozwoj-mowy",
     "tytul": "Wpływ czasu ekranowego na rozwój mowy dzieci w wieku 2–5 lat w świetle badań z lat 2015–2025",
