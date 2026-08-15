@@ -40,5 +40,17 @@
     "spis": "/prace-podglad/depresja-poporodowa-wsparcie-spis.webp",
     "przypisy": "/prace-podglad/depresja-poporodowa-wsparcie-przypisy.webp",
     "tabela": "/prace-podglad/depresja-poporodowa-wsparcie-tabela.webp"
+  },
+  "praca-mgr-pielegniarstwo-cukrzyca": {
+    "tytulowa": "/prace-podglad/edukacja-pielegniarska-cukrzyca-tytulowa.webp",
+    "spis": "/prace-podglad/edukacja-pielegniarska-cukrzyca-spis.webp",
+    "przypisy": "/prace-podglad/edukacja-pielegniarska-cukrzyca-przypisy.webp",
+    "tabela": "/prace-podglad/edukacja-pielegniarska-cukrzyca-tabela.webp"
+  },
+  "praca-mgr-pedagogika-gotowosc-szkolna": {
+    "tytulowa": "/prace-podglad/gotowosc-szkolna-szesciolatkow-tytulowa.webp",
+    "spis": "/prace-podglad/gotowosc-szkolna-szesciolatkow-spis.webp",
+    "przypisy": "/prace-podglad/gotowosc-szkolna-szesciolatkow-przypisy.webp",
+    "tabela": "/prace-podglad/gotowosc-szkolna-szesciolatkow-tabela.webp"
   }
 }

@@ -137,6 +137,18 @@ export const OPISY: Record<string, string> = {
     "neurobiologiczne mechanizmy patogenezy oraz modele wsparcia społecznego wraz z hipotezą " +
     "buforową. Rozdział badawczy pokazuje schemat podłużny z trzema pomiarami i narzędziami " +
     "EPDS, BSSS i PSS-10.",
+  "praca-mgr-pielegniarstwo-cukrzyca":
+    "Praca o tym, jak edukacja prowadzona przez pielęgniarkę przekłada się na wyrównanie " +
+    "metaboliczne u chorych na cukrzycę typu 2. Część teoretyczna prowadzi przez patogenezę " +
+    "i kryteria rozpoznania, powikłania przewlekłe, modele edukacji terapeutycznej i pomiar " +
+    "wyrównania hemoglobiną glikowaną. Rozdział badawczy pokazuje porównanie grupy objętej " +
+    "edukacją z grupą kontrolną wraz z analizą adherencji terapeutycznej.",
+  "praca-mgr-pedagogika-gotowosc-szkolna":
+    "Praca o diagnozie gotowości szkolnej sześciolatków i o tym, jak jej poziom przekłada się " +
+    "na osiągnięcia w klasie pierwszej. Omawia sfery gotowości: poznawczo-percepcyjną, " +
+    "emocjonalno-społeczną i fizyczną, polskie reformy wieku szkolnego z lat 2009 i 2016 oraz " +
+    "narzędzia diagnostyczne stosowane w przedszkolach. Rozdział badawczy prowadzi przez " +
+    "schemat dwufalowy: diagnozę przed startem szkolnym i pomiar osiągnięć po roku nauki.",
   "praca-mgr-pedagogika-czas-ekranowy":
     "Praca przeglądowa o wpływie ekspozycji na ekrany na rozwój mowy dzieci w wieku " +
     "przedszkolnym, oparta na badaniach z lat 2015–2025. Pokazuje, dlaczego przekaz " +
@@ -157,6 +169,8 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-pielegniarstwo-wypalenie": "wypalenie pielęgniarek z OIT",
   "praca-mgr-pedagogika-czas-ekranowy": "czas ekranowy a rozwój mowy dzieci",
   "praca-mgr-psychologia-depresja-poporodowa": "wsparcie a depresja poporodowa",
+  "praca-mgr-pielegniarstwo-cukrzyca": "edukacja pielęgniarska w cukrzycy",
+  "praca-mgr-pedagogika-gotowosc-szkolna": "gotowość szkolna sześciolatków",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({

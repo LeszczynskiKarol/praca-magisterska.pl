@@ -75,6 +75,39 @@ def rozbij(h: str) -> tuple[str, str, str]:
     return stresz, abstr, h
 
 
+def splaszcz_zagniezdzone_tabele(html: str) -> str:
+    """Rozbraja tabele zawierające inne tabele.
+
+    Pipeline rysuje część schematów (np. model ekosystemowy) jako tabelę
+    w tabeli — w HTML to działa, ale LaTeX nie potrafi zagnieździć longtable
+    i cały skład pada na `Forbidden control sequence … \\LT@nofcols`.
+    Zewnętrzną tabelę zamieniamy więc na ciąg akapitów: treść zostaje,
+    ginie tylko siatka, której i tak nie da się wiernie odwzorować w druku.
+    """
+    wynik, zmienione = [], 0
+    pozycja = 0
+    for m in re.finditer(r"<table[^>]*>.*?</table>", html, re.S):
+        blok = m.group(0)
+        # tabela zagnieżdżona: drugie otwarcie <table> wewnątrz bloku
+        if blok.count("<table") < 2:
+            continue
+        wiersze = []
+        for kom in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", blok, re.S):
+            tekst = re.sub(r"<[^>]+>", " ", kom)
+            tekst = re.sub(r"\s+", " ", tekst).strip()
+            if tekst:
+                wiersze.append(f"<p>{tekst}</p>")
+        wynik.append(html[pozycja:m.start()])
+        wynik.append("\n".join(wiersze))
+        pozycja = m.end()
+        zmienione += 1
+    if not zmienione:
+        return html
+    wynik.append(html[pozycja:])
+    print(f"  spłaszczono tabel zagnieżdżonych: {zmienione}")
+    return "".join(wynik)
+
+
 def na_markdown(fragment: str) -> str:
     """HTML → markdown przez pandoc. Osobno, żeby dało się złożyć dokument
     z kawałków (streszczenie, abstrakt, korpus) bez zgadywania granic."""
@@ -274,7 +307,7 @@ def strona_tytulowa(tytul: str, kierunek: str, typ: str) -> str:
 # ---------------------------------------------------------------- budowanie
 
 def zbuduj(zrodlo: Path, tytul: str, kierunek: str, typ: str, out: Path) -> None:
-    surowy = wczytaj(zrodlo)
+    surowy = splaszcz_zagniezdzone_tabele(wczytaj(zrodlo))
     stresz_html, abstr_html, korpus_html = rozbij(surowy)
 
     stresz = posprzataj(na_markdown(stresz_html))

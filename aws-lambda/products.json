@@ -169,6 +169,46 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-pielegniarstwo-cukrzyca",
+      "name": "Praca magisterska z pielęgniarstwa — Edukacja pielęgniarska a wyrównanie metaboliczne cukrzycy (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/edukacja-pielegniarska-cukrzyca-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pielegniarstwo-cukrzyca.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/edukacja-pielegniarska-cukrzyca-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pielegniarstwo-cukrzyca.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-pedagogika-gotowosc-szkolna",
+      "name": "Praca magisterska z pedagogiki — Gotowość szkolna sześciolatków a osiągnięcia w klasie I (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/gotowosc-szkolna-szesciolatkow-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pedagogika-gotowosc-szkolna.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/gotowosc-szkolna-szesciolatkow-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pedagogika-gotowosc-szkolna.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {
