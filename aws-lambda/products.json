@@ -3,7 +3,7 @@
     {
       "id": "ebook-pisanie-pracy-licencjackiej",
       "name": "Jak napisać pracę licencjacką - Kompletny Poradnik",
-      "price": 2900,
+      "price": 3900,
       "currency": "pln",
       "s3Key": "ebooks/poradnik-praca-licencjacka.pdf",
       "fileName": "Jak-napisac-prace-licencjacka.pdf",
@@ -249,6 +249,96 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "ebook-licencjacka-pielegniarstwo",
+      "name": "Jak napisać pracę licencjacką z pielęgniarstwa",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-z-pielegniarstwa.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-z-pielegniarstwa.zip",
+      "emailSubject": "🩺 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-licencjacka-filologia-angielska",
+      "name": "Jak napisać pracę licencjacką z filologii angielskiej",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-z-filologii-angielskiej.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-z-filologii-angielskiej.zip",
+      "emailSubject": "🇬🇧 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-licencjacka-finanse",
+      "name": "Jak napisać pracę licencjacką z finansów i rachunkowości",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-z-finansow-i-rachunkowosci.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-z-finansow-i-rachunkowosci.zip",
+      "emailSubject": "💰 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-licencjacka-administracja",
+      "name": "Jak napisać pracę licencjacką z administracji",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-z-administracji.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-z-administracji.zip",
+      "emailSubject": "🏛️ Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-licencjacka-pedagogika",
+      "name": "Jak napisać pracę licencjacką z pedagogiki",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-z-pedagogiki.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-z-pedagogiki.zip",
+      "emailSubject": "🧑‍🏫 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-inzynierska-informatyka",
+      "name": "Jak napisać pracę inżynierską z informatyki",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-inzynierska-z-informatyki.zip",
+      "fileName": "Jak-napisac-prace-inzynierska-z-informatyki.zip",
+      "emailSubject": "💻 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-licencjacka-logistyka",
+      "name": "Jak napisać pracę licencjacką z logistyki",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-z-logistyki.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-z-logistyki.zip",
+      "emailSubject": "🚚 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-licencjacka-marketing",
+      "name": "Jak napisać pracę licencjacką z marketingu",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-z-marketingu.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-z-marketingu.zip",
+      "emailSubject": "📣 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-licencjacka-zdrowie-publiczne",
+      "name": "Jak napisać pracę licencjacką ze zdrowia publicznego",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-licencjacka-ze-zdrowia-publicznego.zip",
+      "fileName": "Jak-napisac-prace-licencjacka-ze-zdrowia-publicznego.zip",
+      "emailSubject": "🏥 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
     }
   ],
   "settings": {

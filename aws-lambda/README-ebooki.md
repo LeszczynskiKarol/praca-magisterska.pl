@@ -51,8 +51,9 @@
 ## Ceny
 
 - Ebooki kierunkowe (magisterka): **3900** (= 39 zł)
-- Istniejące produkty pozostają bez zmian:
-  - licencjacka: **2900** (= 29 zł)
+- Ebooki kierunkowe (licencjat/inżynier, licencjackie.pl): **4900** (= 49 zł)
+- Poradniki ogólne:
+  - licencjacka: **3900** (= 39 zł)
   - magisterska ogólna: **3900** (= 39 zł)
 
 ## Architektura
