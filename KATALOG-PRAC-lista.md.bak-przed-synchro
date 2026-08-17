@@ -1,14 +1,7 @@
 # 📚 Katalog prac wzorcowych — ustalenia i lista produkcyjna
 
 > Domena: **praca-magisterska.pl**. Wchodzimy od razu z realnymi produktami (bez fake doora).
-> Ostatnia aktualizacja: **2026-08-17** (synchronizacja ze stanem faktycznym).
->
-> **Stan katalogu:** 9 prac w sprzedaży — psychologia 5, pielęgniarstwo 2 (+1 gotowa,
-> czeka na wystawienie), pedagogika 2, prawo 1. Pierwsza sprzedaż: 15.08.2026,
-> `praca-mgr-pielegniarstwo-wypalenie`, 59 zł.
-> **Próg kategorii:** kierunek dostaje stronę `/prace/<kierunek>/` od 3 prac
-> (do 17.08 było 2). Poniżej progu prace mają własne strony produktowe, ale
-> kategoria renderuje się jako stub z noindex.
+> Ostatnia aktualizacja: 2026-07-31.
 > Kontekst strategiczny: `tematy_struktura_strony.md` → „PLAN REALIZACJI".
 
 ---
@@ -132,98 +125,46 @@ zapraszają model do opisania badania w konkretnej placówce, czyli prosto pod
 
 ## 4. LISTA TEMATÓW
 
-### Status realizacji — stan faktyczny na 2026-08-17
+### Status realizacji
 
-**Legenda.** Do 17.08.2026 ✅ na tej liście oznaczało „zaplanowane albo puszczone",
-a nie „istnieje". Przy 30 ptaszkach realnie istniało 9 prac, przez co dwa razy
-szukaliśmy plików, których nigdy nie było, i raz o mało nie wygenerowaliśmy
-duplikatu. Od teraz:
+| #   | temat                                                                                 | kierunek    | status                      |
+| --- | ------------------------------------------------------------------------------------- | ----------- | --------------------------- |
+| 14  | Wypalenie zawodowe nauczycieli edukacji wczesnoszkolnej po okresie nauczania zdalnego | psychologia | 🔄 run puszczony 2026-07-31 |
 
-| znak | znaczenie |
-| ---- | --------- |
-| 🛒   | **w sprzedaży** na praca-magisterska.pl/prace/ — plik istnieje |
-| 📖   | **portfolio smart-edu** — praca publiczna, celowo NIE w sprzedaży |
-| 🔄   | run w toku |
-| ⬜   | nie istnieje — temat wolny |
+### PRAWO (dogmatyczne — najłatwiejsze źródłowo)
 
-Prace w sprzedaży są ukryte w bazie smart-edu (`isPublished=false`); prace
-portfolio zostają publiczne. To dwa rozłączne strumienie — patrz sekcja 2.
+1. Obowiązek alimentacyjny wobec pełnoletniego dziecka kontynuującego naukę w świetle orzecznictwa SN z lat 2015–2025
+2. Kryteria kwalifikacji mobbingu i rozkład ciężaru dowodu w orzecznictwie sądów pracy
+3. Przesłanki orzeczenia rozwodu z winy wyłącznej małżonka w praktyce sądów apelacyjnych
+4. Odpowiedzialność administratora za naruszenie ochrony danych osobowych w decyzjach Prezesa UODO 2019–2025
+5. Zadośćuczynienie za krzywdę osób najbliższych po nowelizacji art. 446(2) k.c.
+6. Przestępstwo uporczywego nękania (art. 190a k.k.) — znamiona i problemy dowodowe
 
-### PRAWO (662 wyśw.) — jedyny kierunek, gdzie rozdział badawczy stoi na orzecznictwie
+### PIELĘGNIARSTWO (2302 wyśw.)
 
-1. ⬜ Obowiązek alimentacyjny wobec pełnoletniego dziecka kontynuującego naukę w świetle orzecznictwa SN z lat 2015–2025
-2. ⬜ Kryteria kwalifikacji mobbingu i rozkład ciężaru dowodu w orzecznictwie sądów pracy
-3. ⬜ Przesłanki orzeczenia rozwodu z winy wyłącznej małżonka w praktyce sądów apelacyjnych
-4. ⬜ Odpowiedzialność administratora za naruszenie ochrony danych osobowych w decyzjach Prezesa UODO 2019–2025
-5. ⬜ Zadośćuczynienie za krzywdę osób najbliższych po nowelizacji art. 446(2) k.c.
-6. ⬜ Przestępstwo uporczywego nękania (art. 190a k.k.) — znamiona i problemy dowodowe
+7. ✅ Obciążenie opiekunów nieformalnych osób z chorobą Alzheimera — analiza badań 2018–2025
+8. ✅ Wypalenie zawodowe pielęgniarek anestezjologicznych i intensywnej opieki
+9. Profilaktyka odleżyn u pacjentów OIT — skuteczność interwencji pielęgniarskich
+10. ✅ Jakość życia pacjentów dializowanych otrzewnowo i hemodializowanych — analiza porównawcza
+11. ✅ Adherencja terapeutyczna pacjentów po zawale serca w pierwszym roku po hospitalizacji
+12. ✅ Rola pielęgniarki w opiece nad pacjentem geriatrycznym z zespołem kruchości (frailty)
 
-🛒 **Odszkodowanie i zadośćuczynienie za błąd medyczny** (spoza listy, `prawo-007`)
-— 31 źródeł, 142 odwołania do przepisów, **zero śladów fikcyjnego badania**.
-Kierunek ma 1 pracę, więc kategoria `/prace/prawo/` jeszcze nie powstaje.
+### PSYCHOLOGIA (2704 wyśw. — buduj tę kategorię do końca)
 
-### PIELĘGNIARSTWO (2274 wyśw.) — pierwsza sprzedaż poszła właśnie stąd
+13. ✅ Nadmierne korzystanie z Instagrama a obraz ciała i objawy zaburzeń odżywiania u dziewcząt 14–18 lat
+14. ✅ Wypalenie zawodowe nauczycieli edukacji wczesnoszkolnej po okresie nauczania zdalnego
+15. ✅ Prokrastynacja akademicka studentów kierunków medycznych a lęk przed oceną i perfekcjonizm
+16. ✅ Depresja poporodowa u kobiet po porodzie przedwczesnym — czynniki ryzyka i formy wsparcia
+17. ✅ Stres zawodowy i strategie radzenia sobie u funkcjonariuszy Państwowej Straży Pożarnej
+18. ✅ Poczucie samotności młodych dorosłych 18–25 lat a intensywność korzystania z komunikatorów
 
-7. ⬜ Obciążenie opiekunów nieformalnych osób z chorobą Alzheimera — analiza badań 2018–2025
-8. 🛒 Wypalenie zawodowe pielęgniarek anestezjologicznych i intensywnej opieki
-9. ⬜ Profilaktyka odleżyn u pacjentów OIT — skuteczność interwencji pielęgniarskich
-10. ⬜ Jakość życia pacjentów dializowanych otrzewnowo i hemodializowanych
-11. ⬜ Adherencja terapeutyczna pacjentów po zawale serca w pierwszym roku po hospitalizacji
-12. ⬜ Rola pielęgniarki w opiece nad pacjentem geriatrycznym z zespołem kruchości (frailty)
+### PEDAGOGIKA (1581 wyśw.)
 
-🛒 **Edukacja pielęgniarska a wyrównanie metaboliczne cukrzycy** (`pielegniarstwo-009`)
-— 38 źródeł, 134 przypisy, 93% ze stroną (najlepszy aparat w katalogu).
-🛒 **Jakość życia w niewydolności serca NYHA III–IV** (`pielegniarstwo-002`)
-— 29 źródeł, 111 przypisów, 80%. Dociąganie bibliografii cofnięte: wszystkie
-5 dopisanych źródeł trafiło do własnych wyników.
-📖 Przestrzeganie zaleceń terapeutycznych w nadciśnieniu — z crona.
-
-### PSYCHOLOGIA (2662 wyśw.) — kategoria domknięta, 5 prac
-
-13. 🛒 Nadmierne korzystanie z Instagrama a obraz ciała i objawy zaburzeń odżywiania u dziewcząt 14–18 lat
-14. 🛒 Wypalenie zawodowe nauczycieli edukacji wczesnoszkolnej po okresie nauczania zdalnego
-15. 🛒 Prokrastynacja akademicka studentów kierunków medycznych a lęk przed oceną i perfekcjonizm
-16. 🛒 Depresja poporodowa — wsparcie społeczne a przebieg (`psychologia-004`, nie „po porodzie przedwczesnym")
-17. 🛒 Stres zawodowy i strategie radzenia sobie u funkcjonariuszy Państwowej Straży Pożarnej
-18. ⬜ Poczucie samotności młodych dorosłych 18–25 lat a intensywność korzystania z komunikatorów
-
-📖 Z crona: perfekcjonizm a depresja, ruminacje a lęk, media społecznościowe
-a zdrowie psychiczne, wypalenie w grupach zawodowych, uzależnienie od mediów,
-psychologia w języku reklamy.
-
-### PEDAGOGIKA (1808 wyśw.) — 2 prace, brakuje trzeciej
-
-19. ⬜ Cyberprzemoc rówieśnicza wśród uczniów klas VII–VIII a rola nauczyciela-wychowawcy
-20. ⬜ Funkcjonowanie społeczne uczniów z zespołem Aspergera w szkole ogólnodostępnej
-21. 🛒 Wpływ czasu ekranowego na rozwój mowy dzieci 2–5 lat — badania 2015–2025
-22. 🛒 Gotowość szkolna dzieci sześcioletnich (`pedagogika-006`)
-23. ⬜ Wsparcie rodzin wychowujących dziecko z niepełnosprawnością sprzężoną
-
-🔄 **Cyberprzemoc a funkcjonowanie psychospołeczne ofiar** (`pedagogika-088`) — run w toku.
-📖 **Metody nauki czytania** (`pedagogika-005`) i **zabawa tematyczna**
-(`pedagogika-003`) — obie do portfolio, nie do sklepu: patrz „dobór tematów" niżej.
-📖 Z crona: Montessori, bajki i baśnie, uczniowie zdolni, wypalenie nauczycieli.
-
-### DOBÓR TEMATÓW — czego nauczyły dwie nieudane próby (17.08.2026)
-
-W pedagogice dwie prace z rzędu wyszły ze zbyt ubogim aparatem i trafiły do
-portfolio zamiast do sklepu. Różnica nie jest losowa:
-
-| temat | profil | źródeł | przypisów | ze stroną |
-| ----- | ------ | ------ | --------- | --------- |
-| czas ekranowy | przegląd zjawiska | 38 | 90 | 90% |
-| gotowość szkolna | diagnoza i narzędzia | 48 | 115 | 89% |
-| nauka czytania | metodyka nauczania | 31 | 56 | 54% |
-| zabawa tematyczna | dydaktyka przedszkolna | 23 | 47 | 57% |
-
-**Tematy oparte na przeglądzie badań albo na narzędziach diagnostycznych mają
-w polskim korpusie cytado mocne pokrycie; metodyka nauczania i dydaktyka
-przedszkolna — nie.** Przy `pedagogika-003` autopilot sam zgłosił `LOW_SOURCES`
-(po ~3 użyteczne źródła na rozdział). Wybierając temat, patrz na profil, nie na
-samą atrakcyjność tytułu.
-
-Próg jakości do sklepu: **min. 29 pozycji bibliografii i ≥80% przypisów ze
-stroną**. Poniżej — praca idzie do portfolio smart-edu.
+19. ✅ Cyberprzemoc rówieśnicza wśród uczniów klas VII–VIII a rola nauczyciela-wychowawcy
+20. ✅ Funkcjonowanie społeczne uczniów z zespołem Aspergera w szkole ogólnodostępnej
+21. ✅ Wpływ czasu ekranowego na rozwój mowy dzieci 2–5 lat — badania 2015–2025
+22. ✅ Gotowość szkolna dzieci sześcioletnich a odroczenie obowiązku szkolnego
+23. ✅ Wsparcie rodzin wychowujących dziecko z niepełnosprawnością sprzężoną
 
 ### ZARZĄDZANIE / MARKETING / LOGISTYKA
 
