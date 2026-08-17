@@ -149,6 +149,18 @@ export const OPISY: Record<string, string> = {
     "emocjonalno-społeczną i fizyczną, polskie reformy wieku szkolnego z lat 2009 i 2016 oraz " +
     "narzędzia diagnostyczne stosowane w przedszkolach. Rozdział badawczy prowadzi przez " +
     "schemat dwufalowy: diagnozę przed startem szkolnym i pomiar osiągnięć po roku nauki.",
+  "praca-mgr-pielegniarstwo-niewydolnosc-serca":
+    "Praca o tym, jak zaawansowana niewydolność serca odbija się na codziennym " +
+    "funkcjonowaniu chorych. Część teoretyczna prowadzi przez patofizjologię, " +
+    "klasyfikację czynnościową NYHA, objawy ograniczające aktywność i narzędzia " +
+    "pomiaru jakości życia stosowane w kardiologii. Rozdział badawczy pokazuje " +
+    "opracowanie wyników kwestionariusza MLHFQ z porównaniem klas III i IV.",
+  "praca-mgr-pedagogika-cyberprzemoc":
+    "Praca o tym, jak doświadczenie cyberprzemocy odbija się na funkcjonowaniu " +
+    "psychospołecznym uczniów szkół ponadpodstawowych. Omawia formy i skalę zjawiska " +
+    "w polskich badaniach, różnice między przemocą rówieśniczą offline a online, " +
+    "skutki dla samooceny i relacji rówieśniczych oraz rolę szkoły w profilaktyce. " +
+    "Rozdział badawczy prowadzi przez pomiar nasilenia doświadczeń i dobrostanu.",
   "praca-mgr-pedagogika-czas-ekranowy":
     "Praca przeglądowa o wpływie ekspozycji na ekrany na rozwój mowy dzieci w wieku " +
     "przedszkolnym, oparta na badaniach z lat 2015–2025. Pokazuje, dlaczego przekaz " +
@@ -171,6 +183,8 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-psychologia-depresja-poporodowa": "wsparcie a depresja poporodowa",
   "praca-mgr-pielegniarstwo-cukrzyca": "edukacja pielęgniarska w cukrzycy",
   "praca-mgr-pedagogika-gotowosc-szkolna": "gotowość szkolna sześciolatków",
+  "praca-mgr-pielegniarstwo-niewydolnosc-serca": "jakość życia w niewydolności serca",
+  "praca-mgr-pedagogika-cyberprzemoc": "cyberprzemoc a funkcjonowanie ofiar",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({
@@ -199,10 +213,15 @@ export function praceKierunku(kierunek: string): Praca[] {
 }
 
 /** Ile prac musi mieć kierunek, żeby dostał własną stronę kategorii.
- *  Kategoria z jedną pracą to thin content: powiela opis produktu i konkuruje
- *  z nim o tę samą frazę, nie wnosząc treści. Prace takich kierunków są
- *  dostępne z huba i mają własne strony produktowe — znika tylko pośrednik. */
-export const MIN_PRAC_NA_KATEGORIE = 2;
+ *  Kategoria z jedną–dwiema pracami powiela opis produktu i konkuruje z nim
+ *  o tę samą frazę, nie wnosząc treści. Prace takich kierunków są dostępne
+ *  z huba i mają własne strony produktowe — znika tylko pośrednik.
+ *
+ *  Próg podniesiony z 2 na 3 dnia 2026-08-17, w tym samym commicie, w którym
+ *  pielęgniarstwo i pedagogika dostały trzecią pracę — inaczej obie kategorie
+ *  cofnęłyby się do stubów z noindex dzień po tym, jak Google zaczął je
+ *  odkrywać. Przy kolejnym podniesieniu progu zrobić tak samo. */
+export const MIN_PRAC_NA_KATEGORIE = 3;
 
 /** Kierunki z własną stroną kategorii. */
 export function kierunkiZKategoria(): Kierunek[] {

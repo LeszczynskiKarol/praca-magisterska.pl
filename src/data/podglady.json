@@ -52,5 +52,17 @@
     "spis": "/prace-podglad/gotowosc-szkolna-szesciolatkow-spis.webp",
     "przypisy": "/prace-podglad/gotowosc-szkolna-szesciolatkow-przypisy.webp",
     "tabela": "/prace-podglad/gotowosc-szkolna-szesciolatkow-tabela.webp"
+  },
+  "praca-mgr-pielegniarstwo-niewydolnosc-serca": {
+    "tytulowa": "/prace-podglad/niewydolnosc-serca-jakosc-zycia-tytulowa.webp",
+    "spis": "/prace-podglad/niewydolnosc-serca-jakosc-zycia-spis.webp",
+    "przypisy": "/prace-podglad/niewydolnosc-serca-jakosc-zycia-przypisy.webp",
+    "tabela": "/prace-podglad/niewydolnosc-serca-jakosc-zycia-tabela.webp"
+  },
+  "praca-mgr-pedagogika-cyberprzemoc": {
+    "tytulowa": "/prace-podglad/cyberprzemoc-funkcjonowanie-ofiar-tytulowa.webp",
+    "spis": "/prace-podglad/cyberprzemoc-funkcjonowanie-ofiar-spis.webp",
+    "przypisy": "/prace-podglad/cyberprzemoc-funkcjonowanie-ofiar-przypisy.webp",
+    "tabela": "/prace-podglad/cyberprzemoc-funkcjonowanie-ofiar-tabela.webp"
   }
 }

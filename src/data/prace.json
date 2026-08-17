@@ -251,5 +251,59 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-pielegniarstwo-niewydolnosc-serca",
+    "slugHtml": "niewydolnosc-serca-jakosc-zycia-mgr-pl",
+    "slugPdf": "niewydolnosc-serca-jakosc-zycia-mgr-pl",
+    "kierunek": "pielegniarstwo",
+    "slug": "niewydolnosc-serca-jakosc-zycia",
+    "tytul": "Jakość życia pacjentów z przewlekłą niewydolnością serca w klasie NYHA III i IV",
+    "stron": 49,
+    "slow": 15027,
+    "przypisy": 111,
+    "przypisyZeStrona": 89,
+    "pozycjeBibliografii": 29,
+    "tabele": 11,
+    "rysunki": 8,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Przewlekła niewydolność serca — charakterystyka kliniczna i epidemiologiczna",
+      "Rozdział 2. Jakość życia jako konstrukt wielowymiarowy w przewlekłych chorobach układu krążenia",
+      "Rozdział 3. Metodologia badań własnych",
+      "Rozdział 4. Wyniki badań własnych i ich dyskusja",
+      "Zakończenie",
+      "Bibliografia"
+    ]
+  },
+  {
+    "productId": "praca-mgr-pedagogika-cyberprzemoc",
+    "slugHtml": "cyberprzemoc-funkcjonowanie-ofiar-mgr-pl",
+    "slugPdf": "cyberprzemoc-funkcjonowanie-ofiar-mgr-pl",
+    "kierunek": "pedagogika",
+    "slug": "cyberprzemoc-funkcjonowanie-ofiar",
+    "tytul": "Wpływ cyberprzemocy na funkcjonowanie psychospołeczne ofiar — badania wśród uczniów szkół ponadpodstawowych",
+    "stron": 46,
+    "slow": 13635,
+    "przypisy": 97,
+    "przypisyZeStrona": 83,
+    "pozycjeBibliografii": 30,
+    "tabele": 9,
+    "rysunki": 2,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Cyberprzemoc — charakterystyka zjawiska i jego uwarunkowania",
+      "Rozdział 2. Psychospołeczne konsekwencje cyberprzemocy dla jej ofiar",
+      "Rozdział 3. Metodologia badań własnych",
+      "Rozdział 4. Wyniki badań własnych i dyskusja",
+      "Zakończenie",
+      "Bibliografia"
+    ]
   }
 ]

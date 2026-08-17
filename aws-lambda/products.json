@@ -209,6 +209,46 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-pielegniarstwo-niewydolnosc-serca",
+      "name": "Praca magisterska z pielęgniarstwa — Jakość życia pacjentów z niewydolnością serca NYHA III i IV (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/niewydolnosc-serca-jakosc-zycia-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pielegniarstwo-niewydolnosc-serca.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/niewydolnosc-serca-jakosc-zycia-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pielegniarstwo-niewydolnosc-serca.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-pedagogika-cyberprzemoc",
+      "name": "Praca magisterska z pedagogiki — Cyberprzemoc a funkcjonowanie psychospołeczne ofiar (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/cyberprzemoc-funkcjonowanie-ofiar-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pedagogika-cyberprzemoc.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/cyberprzemoc-funkcjonowanie-ofiar-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pedagogika-cyberprzemoc.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {
