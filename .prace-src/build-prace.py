@@ -75,6 +75,67 @@ def rozbij(h: str) -> tuple[str, str, str]:
     return stresz, abstr, h
 
 
+def dodaj_szerokosci_kolumn(html: str) -> str:
+    """Dopisuje <colgroup> do tabel, które go nie mają.
+
+    Bez szerokości pandoc generuje `\\begin{longtable}{@{}llll@{}}` — kolumny
+    typu `l` nie zawijają tekstu, więc tabela z czterema kolumnami zdania
+    wychodzi poza margines i LaTeX ucina ją na krawędzi strony (widoczne
+    w sprzedanym PDF-ie: „Kluczowy mechanizm" urwany w połowie słowa).
+    Z <colgroup> pandoc robi kolumny `p{…}`, które łamią wiersz.
+
+    Szerokość liczymy z długości zawartości: kolumna ze zdaniami dostaje
+    więcej miejsca niż kolumna z nazwiskiem i rokiem. Skrajne proporcje
+    przycinamy, żeby żadna kolumna nie zwęziła się do nieczytelnego paska.
+    """
+    def przelicz(m: re.Match) -> str:
+        tabela = m.group(0)
+        if "<colgroup" in tabela or "<col " in tabela:
+            return tabela
+
+        wiersze = re.findall(r"<tr[^>]*>(.*?)</tr>", tabela, re.S)
+        if not wiersze:
+            return tabela
+        dlugosci: list[list[int]] = []
+        for w in wiersze:
+            kom = re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", w, re.S)
+            dlugosci.append([len(re.sub(r"<[^>]+>", "", k).strip()) for k in kom])
+
+        ile = max((len(d) for d in dlugosci), default=0)
+        if ile < 2:
+            return tabela
+
+        srednie = []
+        for i in range(ile):
+            wartosci = [d[i] for d in dlugosci if len(d) > i]
+            srednie.append(max(sum(wartosci) / len(wartosci), 1) if wartosci else 1)
+
+        suma = sum(srednie)
+        # 8% dolnego ograniczenia: poniżej tego kolumna łamie się po jednej
+        # literze i tabela staje się nieczytelna.
+        udzialy = [max(0.08, s / suma) for s in srednie]
+        norm = sum(udzialy)
+        udzialy = [u / norm for u in udzialy]
+
+        cols = "".join(f'<col style="width: {u * 100:.1f}%" />' for u in udzialy)
+        grupa = f"<colgroup>{cols}</colgroup>"
+
+        # Kolejność elementów w <table> jest w HTML sztywna: caption, potem
+        # colgroup, potem thead. Wstawienie colgroup przed <caption> rozbija
+        # tabelę — pandoc przestaje ją widzieć jako tabelę i wypisuje komórki
+        # jako osobne akapity (sprawdzone na własnej skórze 17.08.2026).
+        m_cap = re.search(r"</caption>", tabela)
+        if m_cap:
+            return tabela[: m_cap.end()] + grupa + tabela[m_cap.end():]
+        m_tab = re.search(r"<table[^>]*>", tabela)
+        return tabela[: m_tab.end()] + grupa + tabela[m_tab.end():]
+
+    wynik, ile = re.subn(r"<table[^>]*>.*?</table>", przelicz, html, flags=re.S)
+    if ile:
+        print(f"  wyliczono szerokości kolumn dla {ile} tabel")
+    return wynik
+
+
 def splaszcz_zagniezdzone_tabele(html: str) -> str:
     """Rozbraja tabele zawierające inne tabele.
 
@@ -307,7 +368,7 @@ def strona_tytulowa(tytul: str, kierunek: str, typ: str) -> str:
 # ---------------------------------------------------------------- budowanie
 
 def zbuduj(zrodlo: Path, tytul: str, kierunek: str, typ: str, out: Path) -> None:
-    surowy = splaszcz_zagniezdzone_tabele(wczytaj(zrodlo))
+    surowy = dodaj_szerokosci_kolumn(splaszcz_zagniezdzone_tabele(wczytaj(zrodlo)))
     stresz_html, abstr_html, korpus_html = rozbij(surowy)
 
     stresz = posprzataj(na_markdown(stresz_html))

@@ -22,6 +22,7 @@ export type Metryka = {
   przypisy: number;
   przypisyZeStrona: number;
   pozycjeBibliografii: number;
+  pozycjeZLinkiem: number;   // ile pozycji ma odnośnik do źródła (DOI, repozytorium)
   tabele: number;
   rysunki: number;
   rozdzialy: string[];

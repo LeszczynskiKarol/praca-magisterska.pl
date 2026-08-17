@@ -49,6 +49,11 @@
 
 % Podpisy tabel i rysunków
 \usepackage[font=small,labelfont=bf,skip=6pt]{caption}
+% Praca numeruje tabele sama, w konwencji rozdziałowej („Tabela 1.1.”), i tak są
+% wypisane w jej własnym spisie tabel. LaTeX dokładał do tego swoją numerację
+% ciągłą, więc podpis brzmiał „Tabela 1: Tabela 1.1. Klasyfikacja…”.
+\captionsetup[table]{labelformat=empty}
+\captionsetup[longtable]{labelformat=empty}
 
 % Bibliografia jako lista numerowana bez dodatkowych odstępów
 \usepackage{enumitem}

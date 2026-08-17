@@ -15,7 +15,8 @@ interface Props {
     | "pobierz"
     | "strzalka"
     | "lupa"
-    | "cudzyslow";
+    | "cudzyslow"
+    | "link";
   klasa?: string;
 }
 
@@ -40,6 +41,7 @@ const SCIEZKI: Record<Props["nazwa"], string> = {
   lupa: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
   cudzyslow:
     '<path d="M9 11H5a1 1 0 0 1-1-1V7a3 3 0 0 1 3-3"/><path d="M9 11v3a5 5 0 0 1-5 5"/><path d="M20 11h-4a1 1 0 0 1-1-1V7a3 3 0 0 1 3-3"/><path d="M20 11v3a5 5 0 0 1-5 5"/>',
+  link: '<path d="M10 13a5 5 0 0 0 7.1.1l3-3a5 5 0 0 0-7.1-7.1L11.2 4.8"/><path d="M14 11a5 5 0 0 0-7.1-.1l-3 3a5 5 0 0 0 7.1 7.1l1.8-1.8"/>',
 };
 ---
 

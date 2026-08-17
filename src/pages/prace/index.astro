@@ -26,6 +26,15 @@ const najdluzsza = Math.max(...PRACE.map((p) => p.stron));
 const najkrotsza = Math.min(...PRACE.map((p) => p.stron));
 const sumaZrodel = PRACE.reduce((s, p) => s + p.pozycjeBibliografii, 0);
 const najwiecejPrzypisow = Math.max(...PRACE.map((p) => p.przypisy));
+
+// Bibliografia z odnośnikami. Liczone przy każdym buildzie z prace.json, a ten
+// z samych plików prac — pierwsze oszacowanie „ponad 95%” było o włos za wysokie
+// (realnie 94,6%), a taka liczba trafia na stronę sprzedażową.
+const zrodelZLinkiem = PRACE.reduce((s, p) => s + p.pozycjeZLinkiem, 0);
+const procentZLinkiem = Math.floor((zrodelZLinkiem / sumaZrodel) * 100);
+const pracKompletZLinkami = PRACE.filter(
+  (p) => p.pozycjeZLinkiem === p.pozycjeBibliografii,
+).length;
 const bohater = PRACE.find((p) => p.slug === "prokrastynacja-akademicka") ?? PRACE[0];
 
 // Zdania z pierwszej kolumny to realne sformułowania z zapytań w Google
@@ -363,6 +372,83 @@ const FAQ = [
               />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BIBLIOGRAFIA Z LINKAMI ================= -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
+          <div>
+            <span
+              class="inline-flex items-center gap-2 text-sm font-medium text-primary-700 bg-primary-50 rounded-full px-4 py-1.5 mb-6"
+            >
+              <Ikona nazwa="link" klasa="w-4 h-4" />
+              Bibliografia, którą sprawdzisz w kwadrans
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
+              {procentZLinkiem}% źródeł ma link prowadzący prosto do publikacji
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-5">
+              Na {sumaZrodel} pozycji bibliograficznych w całym katalogu {zrodelZLinkiem}
+              ma przy sobie adres — najczęściej numer DOI, czasem odnośnik do repozytorium
+              albo do strony czasopisma. Klikasz i od razu, za darmo, masz przed sobą
+              komplet danych o źródle: autorów, pełny tytuł, czasopismo, tom, rok, strony.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+              Dzięki temu bibliografię przepisujesz do własnej pracy z pewnością, że każda
+              pozycja istnieje i zgadza się co do przecinka. W {pracKompletZLinkami} z
+              {" "}{laczniePrac} prac odnośnik ma <strong>każda</strong> pozycja.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="inline-flex items-center gap-2 rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800"
+              >
+                <Ikona nazwa="bibliografia" klasa="w-4 h-4 text-primary-700" />
+                {sumaZrodel} pozycji w katalogu
+              </span>
+              <span
+                class="inline-flex items-center gap-2 rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800"
+              >
+                <Ikona nazwa="link" klasa="w-4 h-4 text-primary-700" />
+                {zrodelZLinkiem} z odnośnikiem
+              </span>
+              <span
+                class="inline-flex items-center gap-2 rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800"
+              >
+                <Ikona nazwa="przypis" klasa="w-4 h-4 text-primary-700" />
+                DOI jako podstawowy format
+              </span>
+            </div>
+          </div>
+
+          <ul class="space-y-3">
+            {
+              [...PRACE]
+                .sort(
+                  (a, b) =>
+                    b.pozycjeZLinkiem / b.pozycjeBibliografii -
+                    a.pozycjeZLinkiem / a.pozycjeBibliografii,
+                )
+                .slice(0, 6)
+                .map((p) => (
+                  <li class="flex items-center gap-4 rounded-2xl border border-gray-200 px-5 py-4">
+                    <span class="text-2xl font-bold text-primary-700 tabular-nums w-20 shrink-0">
+                      {Math.floor((p.pozycjeZLinkiem / p.pozycjeBibliografii) * 100)}%
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block text-sm font-semibold text-gray-900 leading-snug">
+                        {p.tytulKrotki}
+                      </span>
+                      <span class="block text-sm text-gray-600">
+                        {p.pozycjeZLinkiem} z {p.pozycjeBibliografii} pozycji z linkiem
+                      </span>
+                    </span>
+                  </li>
+                ))
+            }
+          </ul>
         </div>
       </div>
     </section>

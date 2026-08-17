@@ -33,6 +33,12 @@ const { praca } = Astro.props;
 const k = KIERUNKI[praca.kierunek];
 const inne = praceKierunku(praca.kierunek).filter((p) => p.slug !== praca.slug);
 const maBadanie = praca.productId !== "praca-mgr-pedagogika-czas-ekranowy";
+
+// „Do 42 z tych 42 pozycji” czyta się źle, gdy komplet ma odnośnik.
+const wszystkieZLinkiem = praca.pozycjeZLinkiem === praca.pozycjeBibliografii;
+const opisLinkow = wszystkieZLinkiem
+  ? "Każda z tych pozycji ma przy sobie odnośnik"
+  : `Do ${praca.pozycjeZLinkiem} z tych ${praca.pozycjeBibliografii} pozycji dołączony jest odnośnik`;
 const procentZeStrona = Math.round((praca.przypisyZeStrona / praca.przypisy) * 100);
 
 // Kierunek z jedną pracą nie ma strony kategorii — okruszek prowadzi wtedy
@@ -97,7 +103,7 @@ const PODGLADY_OPISY = [
 
             <p class="text-lg text-indigo-100 leading-relaxed mb-8">{praca.opis}</p>
 
-            <dl class="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-9 border-y border-white/15 py-5">
+            <dl class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 mb-9 border-y border-white/15 py-5">
               <div>
                 <dt class="text-indigo-300 text-sm mb-1">stron</dt>
                 <dd class="text-white text-2xl font-bold">{praca.stron}</dd>
@@ -109,6 +115,10 @@ const PODGLADY_OPISY = [
               <div>
                 <dt class="text-indigo-300 text-sm mb-1">źródeł</dt>
                 <dd class="text-white text-2xl font-bold">{praca.pozycjeBibliografii}</dd>
+              </div>
+              <div>
+                <dt class="text-indigo-300 text-sm mb-1">z linkiem do źródła</dt>
+                <dd class="text-white text-2xl font-bold">{praca.pozycjeZLinkiem}</dd>
               </div>
               <div>
                 <dt class="text-indigo-300 text-sm mb-1">tabel i rysunków</dt>
@@ -262,6 +272,12 @@ const PODGLADY_OPISY = [
             Najwięcej daje warstwa teoretyczna. Zamiast szukać publikacji od zera, masz
             {" "}{praca.pozycjeBibliografii} pozycji dobranych do tematu, a przy każdym
             twierdzeniu wskazaną stronę. To zwykle najbardziej czasochłonna część pisania.
+          </p>
+          <p>
+            {opisLinkow} — w większości numer DOI. Klikasz i za darmo widzisz komplet
+            danych o publikacji: autorów, pełny tytuł, czasopismo, tom, rok i strony.
+            Bibliografię przenosisz więc do własnej pracy ze świadomością, że każda pozycja
+            zgadza się co do przecinka, a wskazane źródło możesz przeczytać dalej.
           </p>
           <p>
             Druga rzecz to struktura. Widzisz, w jakiej kolejności prowadzi się wywód,
