@@ -316,5 +316,33 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-prawo-blad-medyczny",
+    "slugHtml": "odszkodowanie-blad-medyczny-mgr-pl",
+    "slugPdf": "odszkodowanie-blad-medyczny-mgr-pl",
+    "kierunek": "prawo",
+    "slug": "odszkodowanie-blad-medyczny",
+    "tytul": "Odszkodowanie i zadośćuczynienie za błąd medyczny — analiza przesłanek odpowiedzialności i kryteriów ustalania wysokości świadczeń",
+    "stron": 48,
+    "slow": 14985,
+    "przypisy": 86,
+    "przypisyZeStrona": 75,
+    "pozycjeBibliografii": 31,
+    "pozycjeZLinkiem": 31,
+    "tabele": 11,
+    "rysunki": 8,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Odszkodowanie i zadośćuczynienie w polskim prawie cywilnym — pojęcia, funkcje i podstawy normatywne",
+      "Rozdział 2. Błąd medyczny jako zdarzenie sprawcze w świetle prawa i orzecznictwa",
+      "Rozdział 3. Przesłanki odpowiedzialności cywilnej za błąd medyczny",
+      "Rozdział 4. Wysokość świadczeń odszkodowawczych — kryteria ustalania i praktyka sądowa",
+      "Zakończenie",
+      "Bibliografia"
+    ]
   }
 ]

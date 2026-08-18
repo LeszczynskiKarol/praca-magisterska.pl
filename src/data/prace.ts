@@ -95,6 +95,25 @@ export const KIERUNKI: Record<string, Kierunek> = {
       "krytyczne omówienie ograniczeń przywoływanych badań",
     ],
   },
+  prawo: {
+    slug: "prawo",
+    nazwa: "Prawo",
+    dopelniacz: "z prawa",
+    przymiotnik: "prawnicze",
+    opis:
+      "Praca prawnicza stoi na materiale normatywnym i orzecznictwie, a nie na badaniu " +
+      "ankietowym. Recenzent sprawdza, czy autor rozróżnia przepis, jego wykładnię " +
+      "i stanowisko doktryny, czy powołuje orzeczenia sygnaturą, i czy z analizy " +
+      "wyprowadza wniosek, zamiast streszczać kolejne wyroki. Wzór poniżej pokazuje " +
+      "tę ścieżkę na przesłankach odpowiedzialności cywilnej.",
+    czegoOczekujePromotor: [
+      "rozdzielenie warstw: przepis, wykładnia, stanowisko doktryny, praktyka orzecznicza",
+      "orzeczenia powołane sygnaturą, z datą i sądem, a nie samą tezą",
+      "aktualny stan prawny z zaznaczeniem nowelizacji istotnych dla tematu",
+      "analiza prowadząca do wniosku, nie relacja z kolejnych wyroków",
+      "poprawny zapis aktów prawnych wraz z promulgatorem (Dz. U.)",
+    ],
+  },
 };
 
 // Krótki opis każdej pracy — to, co kupujący czyta przed decyzją. Mówi, o czym
@@ -169,6 +188,13 @@ export const OPISY: Record<string, string> = {
     "w Polsce i za granicą oraz jak silnie ekspozycja różnicuje się według statusu " +
     "społeczno-ekonomicznego rodziny. Całość opiera się na danych z publikacji " +
     "z lat 2015–2025 — wzór pracy o charakterze przeglądowym.",
+  "praca-mgr-prawo-blad-medyczny":
+    "Praca o roszczeniach pacjenta po błędzie medycznym: kiedy przysługuje odszkodowanie, " +
+    "kiedy zadośćuczynienie i czym te dwa świadczenia się różnią. Prowadzi przez przesłanki " +
+    "odpowiedzialności cywilnej — zdarzenie sprawcze, szkodę, związek przyczynowy i winę — " +
+    "oraz przez kryteria, którymi sądy ustalają wysokość świadczenia. Rozdział analityczny " +
+    "stoi na przepisach i orzecznictwie, bez badania ankietowego: to wzór pracy prawniczej " +
+    "opartej na materiale normatywnym.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -186,6 +212,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-pedagogika-gotowosc-szkolna": "gotowość szkolna sześciolatków",
   "praca-mgr-pielegniarstwo-niewydolnosc-serca": "jakość życia w niewydolności serca",
   "praca-mgr-pedagogika-cyberprzemoc": "cyberprzemoc a funkcjonowanie ofiar",
+  "praca-mgr-prawo-blad-medyczny": "odszkodowanie za błąd medyczny",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({

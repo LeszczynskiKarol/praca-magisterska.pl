@@ -429,6 +429,26 @@
       "fileName": "Jak-napisac-prace-licencjacka-ze-zdrowia-publicznego.zip",
       "emailSubject": "🏥 Twój przewodnik jest gotowy do pobrania",
       "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "praca-mgr-prawo-blad-medyczny",
+      "name": "Praca magisterska z prawa — Odszkodowanie i zadośćuczynienie za błąd medyczny (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/odszkodowanie-blad-medyczny-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-blad-medyczny.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/odszkodowanie-blad-medyczny-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-blad-medyczny.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {
