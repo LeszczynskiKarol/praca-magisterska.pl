@@ -134,7 +134,11 @@
   @apply list-decimal;
 }
 
-.article-content a {
+/* `:where()` zeruje specyficzność selektora rodzica, dzięki czemu klasa
+   utility na samym linku (np. `text-white` na przycisku CTA) wygrywa.
+   Bez tego przyciski osadzone w treści poradnika dostawały niebieski tekst
+   na niebieskim tle — nieczytelny. */
+:where(.article-content) a {
   @apply text-primary-600 underline decoration-primary-200 underline-offset-2 hover:decoration-primary-600 transition-colors;
 }
 

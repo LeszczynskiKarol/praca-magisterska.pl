@@ -23,11 +23,101 @@
     {
       "id": "ebook-magisterska-psychologia",
       "name": "Jak napisać pracę magisterską z psychologii",
-      "price": 3900,
+      "price": 4900,
       "currency": "pln",
-      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.pdf",
-      "fileName": "Jak-napisac-prace-magisterska-z-psychologii.pdf",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-psychologii.zip",
       "emailSubject": "🧠 Twój przewodnik po psychologii jest gotowy",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-administracja",
+      "name": "Jak napisać pracę magisterską z administracji",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-administracji.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-administracji.zip",
+      "emailSubject": "🏛️ Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-finanse",
+      "name": "Jak napisać pracę magisterską z finansów i rachunkowości",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-finansow-i-rachunkowosci.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-finansow-i-rachunkowosci.zip",
+      "emailSubject": "💰 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-informatyka",
+      "name": "Jak napisać pracę magisterską z informatyki",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-informatyki.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-informatyki.zip",
+      "emailSubject": "💻 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-logistyka",
+      "name": "Jak napisać pracę magisterską z logistyki",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-logistyki.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-logistyki.zip",
+      "emailSubject": "🚚 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-marketing",
+      "name": "Jak napisać pracę magisterską z marketingu",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-marketingu.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-marketingu.zip",
+      "emailSubject": "📣 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-pedagogika",
+      "name": "Jak napisać pracę magisterską z pedagogiki",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pedagogiki.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-pedagogiki.zip",
+      "emailSubject": "🧑‍🏫 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-pielegniarstwo",
+      "name": "Jak napisać pracę magisterską z pielęgniarstwa",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+      "emailSubject": "🩺 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-prawo",
+      "name": "Jak napisać pracę magisterską z prawa",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-prawa.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-prawa.zip",
+      "emailSubject": "⚖️ Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
+      "id": "ebook-magisterska-zdrowie-publiczne",
+      "name": "Jak napisać pracę magisterską ze zdrowia publicznego",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-ze-zdrowia-publicznego.zip",
+      "fileName": "Jak-napisac-prace-magisterska-ze-zdrowia-publicznego.zip",
+      "emailSubject": "🏥 Twój przewodnik jest gotowy do pobrania",
       "category": "Ebook kierunkowy"
     },
     {

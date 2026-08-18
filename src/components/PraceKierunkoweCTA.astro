@@ -2,11 +2,19 @@
 // Baner kierujący z treści poradnikowej do katalogu prac wzorcowych.
 //
 // Miejsce docelowe: strony, które już zbierają ruch na frazach zakupowych
-// („praca magisterska z psychologii pdf" — pozycja 6,7 w GSC). Wstawiany PO
-// DownloadBox z darmowym szkieletem, bo dopiero wtedy różnica między jednym
-// a drugim jest dla czytelnika czytelna — i tę różnicę baner musi nazwać wprost,
-// inaczej wygląda na próbę sprzedania czegoś, co przed chwilą było za darmo.
-import { praceKierunku, KIERUNKI, odmien, CENA_PLN } from "../data/prace";
+// („praca magisterska z psychologii pdf" — pozycja 6,7 w GSC). Na stronach
+// poradnikowych wstawiany PO DownloadBox z darmowym szkieletem, bo dopiero
+// wtedy różnica między jednym a drugim jest dla czytelnika czytelna — i tę
+// różnicę baner musi nazwać wprost, inaczej wygląda na próbę sprzedania
+// czegoś, co przed chwilą było za darmo.
+//
+// Na stronach kierunku (/tematy/<kierunek>/) obowiązuje odwrotna kolejność:
+// jeśli kierunek ma prace na sprzedaż, ten baner idzie NA GÓRĘ, przed
+// EbookKierunkowyCTA, a inline'owe WzorPracyCTA z góry znika — wzór jest
+// nadal promowany banerem końcowym (variant="bottom"). Kierunki bez prac
+// zostają przy dotychczasowym układzie (wzór na górze), bo ten komponent
+// nic wtedy nie renderuje. Dotyczy: psychologia, pedagogika, pielęgniarstwo.
+import { praceKierunku, KIERUNKI, maKategorie, odmien, CENA_PLN } from "../data/prace";
 
 interface Props {
   kierunek: string;
@@ -15,6 +23,9 @@ interface Props {
 const { kierunek } = Astro.props;
 const k = KIERUNKI[kierunek];
 const prace = praceKierunku(kierunek);
+// Kierunek poniżej progu MIN_PRAC_NA_KATEGORIE nie ma strony /prace/<slug>/ —
+// przycisk prowadzi wtedy do huba, żeby nie linkować w 404.
+const celUrl = maKategorie(kierunek) ? `/prace/${k.slug}/` : "/prace/";
 const najwieksza = prace.length ? Math.max(...prace.map((p) => p.stron)) : 0;
 const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliografii)) : 0;
 ---
@@ -49,8 +60,8 @@ const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliogra
 
       <div class="flex flex-wrap items-center gap-4">
         <a
-          href={`/prace/${k.slug}/`}
-          class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+          href={celUrl}
+          class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white no-underline font-semibold py-3 px-6 rounded-xl transition-colors"
         >
           Zobacz prace {k.dopelniacz} →
         </a>
