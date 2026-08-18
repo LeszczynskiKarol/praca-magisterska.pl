@@ -164,9 +164,31 @@ fikcyjnego badania**. W sprzedaży od 18.08.2026: PDF 48 stron + DOCX, produkt
 w trzech lambdach, checkout sprawdzony. Kierunek ma 1 pracę, więc `/prace/prawo/`
 jest stubem z noindex i jest wykluczony z sitemapy do czasu trzeciej pracy.
 
-🔄 W kolejce (`jobs/_KOLEJKA.json`): `prawo-045` mobbing w miejscu pracy
-i `prawo-075` ochrona danych osobowych w RODO. Oba tematy orzeczniczo-doktrynalne,
-zgodnie z regułą doboru niżej. Po nich kategoria się odblokuje.
+📖 **Mobbing w miejscu pracy** (`prawo-045`) — 18.08.2026, poniżej progu:
+22 pozycje (trzeba 29) i 66% przypisów ze stroną (trzeba 80%). Idzie do portfolio.
+🔄 `prawo-075` RODO — run w toku.
+
+**Czego NIE da się przewidzieć przed runem.** Dobierając mobbing kierowałem się
+regułą „temat orzeczniczo-doktrynalny = mocne pokrycie". Nie sprawdziła się.
+Kontrolne `check_corpus` po fakcie pokazało, że mobbing ma w korpusie WIĘCEJ
+źródeł niż błąd medyczny (22 vs 9), a mimo to dał słabszy aparat — bo liczy się
+nie liczba źródeł, tylko ile z nich podaje numery stron, a tego przed runem nie
+widać. Liczba z `check_corpus` nie jest więc predyktorem jakości i nie ma sensu
+opierać na niej doboru.
+
+Twardsze, bo oparte na wynikach: **kierunki medyczno-psychologiczne trafiają
+w próg niemal zawsze, humanistyczno-prawne bywa że nie.**
+
+| kierunek | w sklepie | do portfolio | skuteczność |
+| -------- | --------- | ------------ | ----------- |
+| psychologia | 5 | 0 | 5/5 |
+| pielęgniarstwo | 3 | 0 | 3/3 |
+| pedagogika | 3 | 2 | 3/5 |
+| prawo | 1 | 1 | 1/2 |
+
+Jedyna praca prawnicza, która weszła do sklepu, stoi na literaturze medycznej
+(błąd medyczny, 31 źródeł). W puli nie ma już innych tematów prawno-medycznych —
+trzeba je dopisać ręcznie, jeśli chcemy domknąć prawo tą drogą.
 
 ### PIELĘGNIARSTWO (2274 wyśw.) — pierwsza sprzedaż poszła właśnie stąd
 
