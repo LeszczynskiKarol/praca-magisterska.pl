@@ -76,5 +76,11 @@
     "spis": "/prace-podglad/mobbing-w-miejscu-pracy-spis.webp",
     "przypisy": "/prace-podglad/mobbing-w-miejscu-pracy-przypisy.webp",
     "tabela": "/prace-podglad/mobbing-w-miejscu-pracy-tabela.webp"
+  },
+  "praca-mgr-prawo-rodo": {
+    "tytulowa": "/prace-podglad/rodo-ochrona-danych-osobowych-tytulowa.webp",
+    "spis": "/prace-podglad/rodo-ochrona-danych-osobowych-spis.webp",
+    "przypisy": "/prace-podglad/rodo-ochrona-danych-osobowych-przypisy.webp",
+    "tabela": "/prace-podglad/rodo-ochrona-danych-osobowych-tabela.webp"
   }
 }

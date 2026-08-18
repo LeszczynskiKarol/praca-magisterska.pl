@@ -469,6 +469,26 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-prawo-rodo",
+      "name": "Praca magisterska z prawa — Ochrona danych osobowych w RODO (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/rodo-ochrona-danych-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-rodo.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/rodo-ochrona-danych-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-rodo.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {

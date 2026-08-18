@@ -202,6 +202,13 @@ export const OPISY: Record<string, string> = {
     "skutek w postaci zaniżonej oceny przydatności zawodowej — oraz przez rozkład ciężaru " +
     "dowodu. Rozdział analityczny omawia praktykę stosowania przepisów antymobbingowych " +
     "w orzecznictwie, bez badania ankietowego.",
+  "praca-mgr-prawo-rodo":
+    "Praca o ochronie danych osobowych pod rządami RODO: jakie prawa ma osoba, której " +
+    "dane dotyczą — dostęp, sprostowanie, usunięcie, przenoszenie, sprzeciw — i co po " +
+    "drugiej stronie musi zrobić administrator. Omawia podstawy przetwarzania, obowiązek " +
+    "informacyjny, zgłaszanie naruszeń i rolę inspektora ochrony danych. Rozdział " +
+    "analityczny opiera się na rozporządzeniu, ustawie krajowej i decyzjach organu " +
+    "nadzorczego, bez badania ankietowego.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -221,6 +228,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-pedagogika-cyberprzemoc": "cyberprzemoc a funkcjonowanie ofiar",
   "praca-mgr-prawo-blad-medyczny": "odszkodowanie za błąd medyczny",
   "praca-mgr-prawo-mobbing": "mobbing w miejscu pracy",
+  "praca-mgr-prawo-rodo": "ochrona danych osobowych w RODO",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({

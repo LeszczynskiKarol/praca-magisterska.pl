@@ -372,5 +372,33 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-prawo-rodo",
+    "slugHtml": "rodo-ochrona-danych-mgr-pl",
+    "slugPdf": "rodo-ochrona-danych-mgr-pl",
+    "kierunek": "prawo",
+    "slug": "rodo-ochrona-danych-osobowych",
+    "tytul": "Prawo do ochrony danych osobowych w RODO — prawa podmiotów danych i obowiązki administratorów",
+    "stron": 42,
+    "slow": 13741,
+    "przypisy": 52,
+    "przypisyZeStrona": 34,
+    "pozycjeBibliografii": 17,
+    "pozycjeZLinkiem": 17,
+    "tabele": 8,
+    "rysunki": 0,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Geneza i podstawy prawne ochrony danych osobowych w prawie europejskim",
+      "Rozdział 2. Katalog praw podmiotów danych w świetle art. 15–22 RODO",
+      "Rozdział 3. Obowiązki administratorów danych osobowych",
+      "Rozdział 4. Nadzór, egzekwowanie prawa i praktyczne wyzwania stosowania RODO",
+      "Zakończenie",
+      "Bibliografia"
+    ]
   }
 ]
