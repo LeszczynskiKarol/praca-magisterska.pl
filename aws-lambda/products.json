@@ -449,6 +449,26 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-prawo-mobbing",
+      "name": "Praca magisterska z prawa — Mobbing w miejscu pracy (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/mobbing-w-miejscu-pracy-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-mobbing.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/mobbing-w-miejscu-pracy-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-mobbing.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {

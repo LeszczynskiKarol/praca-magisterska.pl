@@ -344,5 +344,33 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-prawo-mobbing",
+    "slugHtml": "mobbing-w-miejscu-pracy-mgr-pl",
+    "slugPdf": "mobbing-w-miejscu-pracy-mgr-pl",
+    "kierunek": "prawo",
+    "slug": "mobbing-w-miejscu-pracy",
+    "tytul": "Mobbing w miejscu pracy — definicja ustawowa, przesłanki odpowiedzialności pracodawcy i środki ochrony prawnej",
+    "stron": 41,
+    "slow": 13315,
+    "przypisy": 95,
+    "przypisyZeStrona": 63,
+    "pozycjeBibliografii": 22,
+    "pozycjeZLinkiem": 22,
+    "tabele": 6,
+    "rysunki": 4,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Mobbing w miejscu pracy — pojęcie, charakterystyka i regulacja prawna",
+      "Rozdział 2. Przesłanki odpowiedzialności pracodawcy za mobbing",
+      "Rozdział 3. Środki ochrony prawnej ofiar mobbingu",
+      "Rozdział 4. Praktyka stosowania przepisów antymobbingowych — analiza orzecznictwa i ocena skuteczności regulacji",
+      "Zakończenie",
+      "Bibliografia"
+    ]
   }
 ]

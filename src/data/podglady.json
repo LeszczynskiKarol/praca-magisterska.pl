@@ -70,5 +70,11 @@
     "spis": "/prace-podglad/odszkodowanie-blad-medyczny-spis.webp",
     "przypisy": "/prace-podglad/odszkodowanie-blad-medyczny-przypisy.webp",
     "tabela": "/prace-podglad/odszkodowanie-blad-medyczny-tabela.webp"
+  },
+  "praca-mgr-prawo-mobbing": {
+    "tytulowa": "/prace-podglad/mobbing-w-miejscu-pracy-tytulowa.webp",
+    "spis": "/prace-podglad/mobbing-w-miejscu-pracy-spis.webp",
+    "przypisy": "/prace-podglad/mobbing-w-miejscu-pracy-przypisy.webp",
+    "tabela": "/prace-podglad/mobbing-w-miejscu-pracy-tabela.webp"
   }
 }

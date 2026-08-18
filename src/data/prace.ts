@@ -195,6 +195,13 @@ export const OPISY: Record<string, string> = {
     "oraz przez kryteria, którymi sądy ustalają wysokość świadczenia. Rozdział analityczny " +
     "stoi na przepisach i orzecznictwie, bez badania ankietowego: to wzór pracy prawniczej " +
     "opartej na materiale normatywnym.",
+  "praca-mgr-prawo-mobbing":
+    "Praca o mobbingu w miejscu pracy: co musi zajść, by zachowanie spełniło ustawową " +
+    "definicję z art. 94(3) Kodeksu pracy, kiedy odpowiada pracodawca i po jakie środki " +
+    "ochrony może sięgnąć pracownik. Prowadzi przez przesłanki — uporczywość, długotrwałość, " +
+    "skutek w postaci zaniżonej oceny przydatności zawodowej — oraz przez rozkład ciężaru " +
+    "dowodu. Rozdział analityczny omawia praktykę stosowania przepisów antymobbingowych " +
+    "w orzecznictwie, bez badania ankietowego.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -213,6 +220,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-pielegniarstwo-niewydolnosc-serca": "jakość życia w niewydolności serca",
   "praca-mgr-pedagogika-cyberprzemoc": "cyberprzemoc a funkcjonowanie ofiar",
   "praca-mgr-prawo-blad-medyczny": "odszkodowanie za błąd medyczny",
+  "praca-mgr-prawo-mobbing": "mobbing w miejscu pracy",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({
