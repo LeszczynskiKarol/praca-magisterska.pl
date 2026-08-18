@@ -159,8 +159,14 @@ portfolio zostają publiczne. To dwa rozłączne strumienie — patrz sekcja 2.
 6. ⬜ Przestępstwo uporczywego nękania (art. 190a k.k.) — znamiona i problemy dowodowe
 
 🛒 **Odszkodowanie i zadośćuczynienie za błąd medyczny** (spoza listy, `prawo-007`)
-— 31 źródeł, 142 odwołania do przepisów, **zero śladów fikcyjnego badania**.
-Kierunek ma 1 pracę, więc kategoria `/prace/prawo/` jeszcze nie powstaje.
+— 31 źródeł (wszystkie z odnośnikiem), 86 przypisów, 87% ze stroną, **zero śladów
+fikcyjnego badania**. W sprzedaży od 18.08.2026: PDF 48 stron + DOCX, produkt
+w trzech lambdach, checkout sprawdzony. Kierunek ma 1 pracę, więc `/prace/prawo/`
+jest stubem z noindex i jest wykluczony z sitemapy do czasu trzeciej pracy.
+
+🔄 W kolejce (`jobs/_KOLEJKA.json`): `prawo-045` mobbing w miejscu pracy
+i `prawo-075` ochrona danych osobowych w RODO. Oba tematy orzeczniczo-doktrynalne,
+zgodnie z regułą doboru niżej. Po nich kategoria się odblokuje.
 
 ### PIELĘGNIARSTWO (2274 wyśw.) — pierwsza sprzedaż poszła właśnie stąd
 
