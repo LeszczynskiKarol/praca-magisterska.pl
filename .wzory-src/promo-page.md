@@ -17,7 +17,7 @@ Wzór przygotowała redakcja serwisu **praca-magisterska.pl**. Możesz swobodnie
 
 Podajesz temat, kierunek studiów i wytyczne promotora, a sztuczna inteligencja generuje unikalny, gotowy do edycji tekst: z poprawną strukturą rozdziałów, przypisami i bibliografią. Rejestracja jest darmowa, płacisz wyłącznie za wygenerowany tekst.
 
-**[www.smart-edu.ai](https://smart-edu.ai)**
+**[www.smart-edu.ai/pl/masters-thesis](https://www.smart-edu.ai/pl/masters-thesis?utm_source=praca-magisterska.pl&utm_medium=cta&utm_content=wzor-pdf)**
 :::
 
 Wolisz napisać pracę w pełni samodzielnie? Pomoże Ci ebook **„Jak napisać pracę magisterską. Kompletny przewodnik od A do Z"** — 250 stron praktycznych wskazówek, szablonów i checklist, z rozdziałem o etycznym korzystaniu z AI: [www.praca-magisterska.pl/sklep/praca-magisterska-ebook/](https://www.praca-magisterska.pl/sklep/praca-magisterska-ebook/)
