@@ -489,6 +489,66 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-prawo-rozwod",
+      "name": "Praca magisterska z prawa — Rozwód z orzekaniem o winie (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/rozwod-orzekanie-o-winie-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-rozwod.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/rozwod-orzekanie-o-winie-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-rozwod.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-prawo-zachowek",
+      "name": "Praca magisterska z prawa — Zachowek w prawie spadkowym (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/zachowek-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-zachowek.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/zachowek-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-zachowek.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-prawo-obrona-konieczna",
+      "name": "Praca magisterska z prawa — Obrona konieczna po nowelizacji 2018 (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/obrona-konieczna-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-obrona-konieczna.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/obrona-konieczna-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-obrona-konieczna.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {

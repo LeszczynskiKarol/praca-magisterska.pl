@@ -89,6 +89,16 @@ def main() -> int:
             print(f"   BRAK ŹRÓDŁA: {zrodlo}")
             bledy.append(p["slug"])
             continue
+        # Przeciek meta pisarza („Piszę Rozdział 2…", „…źródłem cytado…",
+        # „Kontynuuję od miejsca cięcia…") — 11.09.2026 siedział w ośmiu
+        # pracach ze sklepu, także w sprzedanej, i w ich PDF-ach. Taki plik
+        # nie może trafić do składu: zatrzymujemy go, zanim powstanie PDF.
+        tekst = re.sub(r"<[^>]+>", " ", zrodlo.read_text(encoding="utf-8")).replace("\xa0", " ")
+        meta = re.search(r"Piszę (teraz )?[Rr]ozdzia|Piszę aneks|cytado|od miejsca cięcia", tekst)
+        if meta:
+            print(f"   ✗ PRZECIEK META: …{tekst[max(0, meta.start() - 60):meta.start() + 90]}…")
+            bledy.append(p["slug"])
+            continue
         # Lista argumentów, nie linia poleceń: tytuł omija powłokę.
         wynik = subprocess.run([
             sys.executable, str(ROOT / ".prace-src" / "build-prace.py"), str(zrodlo),

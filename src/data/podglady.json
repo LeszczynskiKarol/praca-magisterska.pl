@@ -82,5 +82,23 @@
     "spis": "/prace-podglad/rodo-ochrona-danych-osobowych-spis.webp",
     "przypisy": "/prace-podglad/rodo-ochrona-danych-osobowych-przypisy.webp",
     "tabela": "/prace-podglad/rodo-ochrona-danych-osobowych-tabela.webp"
+  },
+  "praca-mgr-prawo-rozwod": {
+    "tytulowa": "/prace-podglad/rozwod-z-orzekaniem-o-winie-tytulowa.webp",
+    "spis": "/prace-podglad/rozwod-z-orzekaniem-o-winie-spis.webp",
+    "przypisy": "/prace-podglad/rozwod-z-orzekaniem-o-winie-przypisy.webp",
+    "tabela": "/prace-podglad/rozwod-z-orzekaniem-o-winie-tabela.webp"
+  },
+  "praca-mgr-prawo-zachowek": {
+    "tytulowa": "/prace-podglad/zachowek-w-prawie-spadkowym-tytulowa.webp",
+    "spis": "/prace-podglad/zachowek-w-prawie-spadkowym-spis.webp",
+    "przypisy": "/prace-podglad/zachowek-w-prawie-spadkowym-przypisy.webp",
+    "tabela": "/prace-podglad/zachowek-w-prawie-spadkowym-tabela.webp"
+  },
+  "praca-mgr-prawo-obrona-konieczna": {
+    "tytulowa": "/prace-podglad/obrona-konieczna-po-nowelizacji-tytulowa.webp",
+    "spis": "/prace-podglad/obrona-konieczna-po-nowelizacji-spis.webp",
+    "przypisy": "/prace-podglad/obrona-konieczna-po-nowelizacji-przypisy.webp",
+    "tabela": "/prace-podglad/obrona-konieczna-po-nowelizacji-tabela.webp"
   }
 }

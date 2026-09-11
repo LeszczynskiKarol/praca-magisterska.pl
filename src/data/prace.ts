@@ -209,6 +209,25 @@ export const OPISY: Record<string, string> = {
     "informacyjny, zgłaszanie naruszeń i rolę inspektora ochrony danych. Rozdział " +
     "analityczny opiera się na rozporządzeniu, ustawie krajowej i decyzjach organu " +
     "nadzorczego, bez badania ankietowego.",
+  "praca-mgr-prawo-rozwod":
+    "Praca o rozwodzie z orzekaniem o winie: czym jest wina w rozkładzie pożycia na gruncie " +
+    "art. 57 k.r.o., jakie zachowania sądy uznają za zawinione i jak się tę winę dowodzi. " +
+    "Omawia skutki orzeczenia o winie dla alimentów między byłymi małżonkami, podziału majątku " +
+    "i władzy rodzicielskiej, sprzeciw małżonka niewinnego z art. 56 § 3 k.r.o. oraz wyrok ETPC " +
+    "w sprawie H.W. przeciwko Francji. Opiera się na przepisach, orzecznictwie i piśmiennictwie, " +
+    "bez badania ankietowego.",
+  "praca-mgr-prawo-zachowek":
+    "Praca o zachowku w polskim prawie spadkowym: kto jest uprawniony, jak ustala się substrat " +
+    "zachowku i dolicza darowizny, jak oblicza się należną kwotę i kiedy roszczenie się przedawnia. " +
+    "Omawia zmiany wprowadzone ustawą o fundacji rodzinnej, obniżenie zachowku ze względu na " +
+    "zasady współżycia społecznego i rozłożenie świadczenia na raty z art. 997(1) k.c. Opiera się " +
+    "na przepisach, orzecznictwie Trybunału Konstytucyjnego i piśmiennictwie, bez badania ankietowego.",
+  "praca-mgr-prawo-obrona-konieczna":
+    "Praca o obronie koniecznej w polskim prawie karnym: przesłanki z art. 25 § 1 k.k., przekroczenie " +
+    "granic obrony i jego skutki, a przede wszystkim art. 25 § 2a k.k. dodany nowelizacją z 2018 roku, " +
+    "który wyłącza karalność przekroczenia granic przy odpieraniu wdarcia się do mieszkania, domu " +
+    "lub na ogrodzony teren. Omawia genezę zmiany, jej wykładnię, granice konstytucyjne i konwencyjne " +
+    "oraz krytykę w doktrynie. Opiera się na przepisach, orzecznictwie i piśmiennictwie, bez badania ankietowego.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -229,6 +248,9 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-prawo-blad-medyczny": "odszkodowanie za błąd medyczny",
   "praca-mgr-prawo-mobbing": "mobbing w miejscu pracy",
   "praca-mgr-prawo-rodo": "ochrona danych osobowych w RODO",
+  "praca-mgr-prawo-rozwod": "rozwód z orzekaniem o winie",
+  "praca-mgr-prawo-zachowek": "zachowek w prawie spadkowym",
+  "praca-mgr-prawo-obrona-konieczna": "obrona konieczna po nowelizacji",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({
