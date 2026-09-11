@@ -88,7 +88,7 @@ const bohater = prace[0];
 {!stub && (
 <Layout
   title={`Prace magisterskie ${k.dopelniacz} — ${prace.length} ${odmien(prace.length, "gotowy wzór", "gotowe wzory", "gotowych wzorów")} (PDF + Word)`}
-  description={`Gotowe prace magisterskie ${k.dopelniacz}, każda ${Math.min(...prace.map((p) => p.stron))}–${Math.max(...prace.map((p) => p.stron))} stron z przypisami do numeru strony źródła. Razem ${sumaZrodel} pozycji bibliografii. PDF i Word za ${CENA_PLN} zł.`}
+  description={`Gotowe prace magisterskie ${k.dopelniacz}, każda ${Math.min(...prace.map((p) => p.stron))}–${Math.max(...prace.map((p) => p.stron))} stron z przypisami do numeru strony źródła. Razem ${sumaZrodel} ${odmien(sumaZrodel, "pozycja", "pozycje", "pozycji")} bibliografii. PDF i Word za ${CENA_PLN} zł.`}
 >
   <Navbar />
 
@@ -123,7 +123,7 @@ const bohater = prace[0];
             <p class="text-lg md:text-xl text-indigo-100 leading-relaxed mb-8 max-w-xl">
               {prace.length}{" "}
               {odmien(prace.length, "kompletna praca", "kompletne prace", "kompletnych prac")},
-              razem {sumaStron} stron i {sumaZrodel} pozycji bibliografii. Każda pokazuje
+              razem {sumaStron} {odmien(sumaStron, "strona", "strony", "stron")} i {sumaZrodel} {odmien(sumaZrodel, "pozycja", "pozycje", "pozycji")} bibliografii. Każda pokazuje
               pełną ścieżkę: od problemu badawczego, przez przegląd literatury, po
               opracowanie wyników.
             </p>
@@ -277,7 +277,7 @@ const bohater = prace[0];
             </span>
             <h3 class="font-bold text-gray-900 mb-2">Jako baza źródeł</h3>
             <p class="text-gray-700 leading-relaxed text-sm">
-              {sumaZrodel} pozycji dobranych do tematów kierunku, z linkami do publikacji
+              {sumaZrodel} {odmien(sumaZrodel, "pozycja dobrana", "pozycje dobrane", "pozycji dobranych")} do tematów kierunku, z linkami do publikacji
               i wskazaniem stron, na których stoją konkretne twierdzenia.
             </p>
           </article>

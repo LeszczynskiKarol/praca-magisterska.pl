@@ -24,6 +24,10 @@ const kategorie = kierunkiZKategoria();
 const laczniePrac = PRACE.length;
 const najdluzsza = Math.max(...PRACE.map((p) => p.stron));
 const najkrotsza = Math.min(...PRACE.map((p) => p.stron));
+// Zakres liczony z danych: na sztywno stało „35–42 pozycje”, a od 18.08 w katalogu
+// są prace z 17–22 pozycjami (prawo, administracja) — obietnica przestała być prawdą.
+const minZrodel = Math.min(...PRACE.map((p) => p.pozycjeBibliografii));
+const maxZrodel = Math.max(...PRACE.map((p) => p.pozycjeBibliografii));
 const sumaZrodel = PRACE.reduce((s, p) => s + p.pozycjeBibliografii, 0);
 const najwiecejPrzypisow = Math.max(...PRACE.map((p) => p.przypisy));
 
@@ -97,7 +101,7 @@ const ZASTOSOWANIA = [
     ikona: "bibliografia" as const,
     tytul: "Gotowa bibliografia",
     opis:
-      "Od 35 do 42 pozycji dobranych do tematu, z linkami do publikacji. " +
+      `Od ${minZrodel} do ${maxZrodel} pozycji dobranych do tematu, z linkami do publikacji. ` +
       "Masz od czego zacząć własną kwerendę i wiesz, które prace w tym obszarze " +
       "są cytowane najczęściej.",
   },
@@ -162,7 +166,7 @@ const FAQ = [
 
 <Layout
   title={`Gotowe prace magisterskie — ${laczniePrac} wzorów z pełnym aparatem naukowym (PDF + Word)`}
-  description={`Katalog wzorcowych prac magisterskich. Każda ${najkrotsza}–${najdluzsza} stron, z przypisami do numeru strony źródła i bibliografią liczącą 35–42 pozycje. PDF i Word za ${CENA_PLN} zł.`}
+  description={`Katalog wzorcowych prac magisterskich. Każda ${najkrotsza}–${najdluzsza} stron, z przypisami do numeru strony źródła i bibliografią liczącą ${minZrodel}–${maxZrodel} pozycji. PDF i Word za ${CENA_PLN} zł.`}
 >
   <Navbar />
 
@@ -197,7 +201,7 @@ const FAQ = [
             <p class="text-lg md:text-xl text-indigo-100 leading-relaxed mb-8 max-w-xl">
               Kompletne prace po {najkrotsza}–{najdluzsza} stron, napisane na publikacjach
               naukowych. Każde twierdzenie ma przypis z numerem strony źródła, a bibliografia
-              liczy od 35 do 42 pozycji z linkami.
+              liczy od {minZrodel} do {maxZrodel} pozycji z linkami.
             </p>
 
             <div class="flex flex-wrap items-center gap-4 mb-10">
@@ -391,7 +395,7 @@ const FAQ = [
               {procentZLinkiem}% źródeł ma link prowadzący prosto do publikacji
             </h2>
             <p class="text-lg text-gray-700 leading-relaxed mb-5">
-              Na {sumaZrodel} pozycji bibliograficznych w całym katalogu {zrodelZLinkiem}
+              Na {sumaZrodel} pozycjach bibliograficznych w całym katalogu {zrodelZLinkiem}
               ma przy sobie adres — najczęściej numer DOI, czasem odnośnik do repozytorium
               albo do strony czasopisma. Klikasz i od razu, za darmo, masz przed sobą
               komplet danych o źródle: autorów, pełny tytuł, czasopismo, tom, rok, strony.
@@ -406,7 +410,7 @@ const FAQ = [
                 class="inline-flex items-center gap-2 rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800"
               >
                 <Ikona nazwa="bibliografia" klasa="w-4 h-4 text-primary-700" />
-                {sumaZrodel} pozycji w katalogu
+                {sumaZrodel} {odmien(sumaZrodel, "pozycja", "pozycje", "pozycji")} w katalogu
               </span>
               <span
                 class="inline-flex items-center gap-2 rounded-xl bg-gray-100 px-4 py-2.5 text-sm text-gray-800"
@@ -525,7 +529,7 @@ const FAQ = [
                 <div class="flex flex-wrap items-center gap-x-5 gap-y-2 px-6 py-3 border-t border-gray-100 text-sm text-gray-600">
                   <span class="inline-flex items-center gap-1.5">
                     <Ikona nazwa="dokument" klasa="w-4 h-4 text-gray-400" />
-                    {p.stron} stron
+                    {p.stron} {odmien(p.stron, "strona", "strony", "stron")}
                   </span>
                   <span class="inline-flex items-center gap-1.5">
                     <Ikona nazwa="przypis" klasa="w-4 h-4 text-gray-400" />
@@ -533,7 +537,7 @@ const FAQ = [
                   </span>
                   <span class="inline-flex items-center gap-1.5">
                     <Ikona nazwa="bibliografia" klasa="w-4 h-4 text-gray-400" />
-                    {p.pozycjeBibliografii} źródeł
+                    {p.pozycjeBibliografii} {odmien(p.pozycjeBibliografii, "źródło", "źródła", "źródeł")}
                   </span>
                 </div>
 
@@ -602,7 +606,7 @@ const FAQ = [
       <div class="max-w-6xl mx-auto px-4">
         <div class="rounded-3xl bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950 px-6 py-12 md:px-14 md:py-16 text-center">
           <h2 class="text-white text-3xl md:text-4xl font-bold mb-5 leading-tight">
-            {laczniePrac} {odmien(laczniePrac, "praca", "prace", "prac")}, {sumaZrodel} źródeł, PDF i Word
+            {laczniePrac} {odmien(laczniePrac, "praca", "prace", "prac")}, {sumaZrodel} {odmien(sumaZrodel, "źródło", "źródła", "źródeł")}, PDF i Word
           </h2>
           <p class="text-lg text-indigo-100 mb-8 max-w-2xl mx-auto leading-relaxed">
             Wybierz temat najbliższy własnemu i zobacz spis treści oraz opis, zanim

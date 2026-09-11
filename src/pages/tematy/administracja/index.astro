@@ -2,6 +2,7 @@
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import PraceKierunkoweCTA from "../../../components/PraceKierunkoweCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -48,7 +49,7 @@ const relatedLinks = [
     > i jakościowe.
   </p>
 
-  <WzorPracyCTA kierunekZ="z administracji" href="/tematy/administracja/przykladowa-praca/" />
+  <PraceKierunkoweCTA kierunek="administracja" />
 
   <EbookKierunkowyCTA
     kierunek="administracji"

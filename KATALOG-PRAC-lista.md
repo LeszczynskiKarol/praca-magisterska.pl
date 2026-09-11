@@ -1,11 +1,16 @@
 # 📚 Katalog prac wzorcowych — ustalenia i lista produkcyjna
 
 > Domena: **praca-magisterska.pl**. Wchodzimy od razu z realnymi produktami (bez fake doora).
-> Ostatnia aktualizacja: **2026-08-17** (synchronizacja ze stanem faktycznym).
+> Ostatnia aktualizacja: **2026-09-11** (synchronizacja ze stanem faktycznym).
 >
-> **Stan katalogu:** 9 prac w sprzedaży — psychologia 5, pielęgniarstwo 2 (+1 gotowa,
-> czeka na wystawienie), pedagogika 2, prawo 1. Pierwsza sprzedaż: 15.08.2026,
-> `praca-mgr-pielegniarstwo-wypalenie`, 59 zł.
+> **Stan katalogu:** 18 prac w sprzedaży — prawo 6, psychologia 5, pielęgniarstwo 3,
+> pedagogika 3, administracja 1 (kompetencje wójta, od 11.09; kategoria poniżej progu,
+> produkt dostępny z huba). Sprzedaże: 15.08 `praca-mgr-pielegniarstwo-wypalenie`,
+> 08.09 `praca-mgr-pedagogika-cyberprzemoc`, po 59 zł.
+> **Banery `PraceKierunkoweCTA`** stoją na `/tematy/<kierunek>/` i `/przykladowa-praca/`
+> wszystkich pięciu kierunków — prawo i administracja dostały je dopiero 11.09
+> (prawo przez 3 tygodnie miało 6 prac w sklepie i zero banerów).
+> **Generacja nowych prac wstrzymana 11.09** (kolejka Disabled, flaga `jobs/_WSTRZYMANE`).
 > **Próg kategorii:** kierunek dostaje stronę `/prace/<kierunek>/` od 3 prac
 > (do 17.08 było 2). Poniżej progu prace mają własne strony produktowe, ale
 > kategoria renderuje się jako stub z noindex.

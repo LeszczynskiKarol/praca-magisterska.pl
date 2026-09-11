@@ -485,5 +485,33 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-administracja-wojt",
+    "slugHtml": "kompetencje-wojta-mgr-pl",
+    "slugPdf": "kompetencje-wojta-mgr-pl",
+    "kierunek": "administracja",
+    "slug": "kompetencje-wojta-burmistrza-prezydenta",
+    "tytul": "Kompetencje wójta, burmistrza i prezydenta miasta jako organu wykonawczego gminy",
+    "stron": 64,
+    "slow": 22573,
+    "przypisy": 82,
+    "przypisyZeStrona": 81,
+    "pozycjeBibliografii": 19,
+    "pozycjeZLinkiem": 19,
+    "tabele": 8,
+    "rysunki": 2,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Pozycja ustrojowa organu wykonawczego gminy w polskim systemie samorządu terytorialnego",
+      "Rozdział 2. Zakres kompetencji wójta, burmistrza i prezydenta miasta",
+      "Rozdział 3. Odpowiedzialność prawna organu wykonawczego gminy",
+      "Rozdział 4. Relacje organu wykonawczego z radą gminy i praktyczne aspekty funkcjonowania",
+      "Zakończenie",
+      "Bibliografia"
+    ]
   }
 ]

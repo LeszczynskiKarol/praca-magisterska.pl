@@ -13,7 +13,9 @@
 // EbookKierunkowyCTA, a inline'owe WzorPracyCTA z góry znika — wzór jest
 // nadal promowany banerem końcowym (variant="bottom"). Kierunki bez prac
 // zostają przy dotychczasowym układzie (wzór na górze), bo ten komponent
-// nic wtedy nie renderuje. Dotyczy: psychologia, pedagogika, pielęgniarstwo.
+// nic wtedy nie renderuje. Dotyczy: psychologia, pedagogika, pielęgniarstwo,
+// prawo i administracja (dwa ostatnie od 11.09.2026 — prawo miało 6 prac
+// w sklepie i ani jednego banera na swoich stronach /tematy/).
 import { praceKierunku, KIERUNKI, maKategorie, odmien, CENA_PLN } from "../data/prace";
 
 interface Props {
@@ -42,7 +44,7 @@ const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliogra
       </h2>
       <p class="text-gray-700 leading-relaxed mb-4">
         W katalogu znajdziesz prace napisane w całości, na konkretnych tematach:
-        do {najwieksza} stron, z bibliografią liczącą nawet {maxZrodel} pozycji
+        do {najwieksza} stron, z bibliografią liczącą nawet {maxZrodel} {odmien(maxZrodel, "pozycję", "pozycje", "pozycji")}
         i przypisami wskazującymi numer strony w źródle. Materiał źródłowy wykorzystasz
         we własnym rozdziale teoretycznym.
       </p>
@@ -53,7 +55,7 @@ const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliogra
             <a href={p.url} class="text-primary-800 hover:underline font-medium leading-snug">
               {p.tytul}
             </a>
-            <span class="text-gray-500 text-sm"> — {p.stron} stron</span>
+            <span class="text-gray-500 text-sm"> — {p.stron} {odmien(p.stron, "strona", "strony", "stron")}</span>
           </li>
         ))}
       </ul>

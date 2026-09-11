@@ -19,6 +19,7 @@ import {
   KIERUNKI,
   praceKierunku,
   maKategorie,
+  odmien,
   CENA_PLN,
 } from "../../../data/prace";
 
@@ -60,7 +61,7 @@ const PODGLADY_OPISY = [
 ---
 
 <Layout
-  title={`Praca magisterska ${k.dopelniacz} — ${praca.tytulKrotki} (wzór, ${praca.stron} stron, PDF + Word)`}
+  title={`Praca magisterska ${k.dopelniacz} — ${praca.tytulKrotki} (wzór, ${praca.stron} ${odmien(praca.stron, "strona", "strony", "stron")}, PDF + Word)`}
   description={`${praca.opis.slice(0, 150)}…`}
 >
   <Navbar />
@@ -270,7 +271,7 @@ const PODGLADY_OPISY = [
         <div class="space-y-5 text-gray-700 leading-relaxed mb-8">
           <p>
             Najwięcej daje warstwa teoretyczna. Zamiast szukać publikacji od zera, masz
-            {" "}{praca.pozycjeBibliografii} pozycji dobranych do tematu, a przy każdym
+            {" "}{praca.pozycjeBibliografii} {odmien(praca.pozycjeBibliografii, "pozycja dobrana", "pozycje dobrane", "pozycji dobranych")} do tematu, a przy każdym
             twierdzeniu wskazaną stronę. To zwykle najbardziej czasochłonna część pisania.
           </p>
           <p>
@@ -361,7 +362,7 @@ const PODGLADY_OPISY = [
       <div class="max-w-6xl mx-auto px-4">
         <div class="rounded-3xl bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-950 px-6 py-12 md:px-14 md:py-14 text-center">
           <h2 class="text-white text-2xl md:text-3xl font-bold mb-4 leading-tight">
-            {praca.stron} stron, {praca.pozycjeBibliografii} źródeł, PDF i Word
+            {praca.stron} {odmien(praca.stron, "strona", "strony", "stron")}, {praca.pozycjeBibliografii} {odmien(praca.pozycjeBibliografii, "źródło", "źródła", "źródeł")}, PDF i Word
           </h2>
           <p class="text-indigo-100 mb-8 max-w-xl mx-auto leading-relaxed">
             Pliki dostajesz od razu po opłaceniu — bez zapisu na newsletter i bez czekania.
@@ -401,7 +402,7 @@ const PODGLADY_OPISY = [
                     <span class="block text-gray-900 font-semibold leading-snug group-hover:text-primary-700 transition-colors">
                       {p.tytul}
                     </span>
-                    <span class="block text-sm text-gray-500 mt-1">{p.stron} stron</span>
+                    <span class="block text-sm text-gray-500 mt-1">{p.stron} {odmien(p.stron, "strona", "strony", "stron")}</span>
                   </span>
                 </a>
               ))}

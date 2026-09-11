@@ -100,5 +100,11 @@
     "spis": "/prace-podglad/obrona-konieczna-po-nowelizacji-spis.webp",
     "przypisy": "/prace-podglad/obrona-konieczna-po-nowelizacji-przypisy.webp",
     "tabela": "/prace-podglad/obrona-konieczna-po-nowelizacji-tabela.webp"
+  },
+  "praca-mgr-administracja-wojt": {
+    "tytulowa": "/prace-podglad/kompetencje-wojta-burmistrza-prezydenta-tytulowa.webp",
+    "spis": "/prace-podglad/kompetencje-wojta-burmistrza-prezydenta-spis.webp",
+    "przypisy": "/prace-podglad/kompetencje-wojta-burmistrza-prezydenta-przypisy.webp",
+    "tabela": "/prace-podglad/kompetencje-wojta-burmistrza-prezydenta-tabela.webp"
   }
 }

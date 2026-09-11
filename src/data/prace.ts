@@ -114,6 +114,25 @@ export const KIERUNKI: Record<string, Kierunek> = {
       "poprawny zapis aktów prawnych wraz z promulgatorem (Dz. U.)",
     ],
   },
+  administracja: {
+    slug: "administracja",
+    nazwa: "Administracja",
+    dopelniacz: "z administracji",
+    przymiotnik: "administracyjne",
+    opis:
+      "Praca z administracji łączy analizę przepisów ustrojowych z oceną tego, jak działa " +
+      "konkretny organ. Recenzent sprawdza, czy autor odróżnia zadanie jednostki samorządu " +
+      "od kompetencji organu, czy powołuje ustawy z aktualnym promulgatorem i czy ocenia " +
+      "praktykę — rozstrzygnięcia nadzorcze i orzecznictwo sądów administracyjnych — zamiast " +
+      "przepisywać ustawę. Wzór poniżej pokazuje tę ścieżkę na organie wykonawczym gminy.",
+    czegoOczekujePromotor: [
+      "rozróżnienie zadań jednostki samorządu i kompetencji jej organów",
+      "ustawy ustrojowe powołane w aktualnym brzmieniu, z promulgatorem (Dz. U.)",
+      "orzecznictwo sądów administracyjnych i rozstrzygnięcia nadzorcze, a nie sam przepis",
+      "ocena praktyki działania organu, nie tylko opis procedury",
+      "wnioski de lege ferenda wyprowadzone z analizy, a nie dopisane na końcu",
+    ],
+  },
 };
 
 // Krótki opis każdej pracy — to, co kupujący czyta przed decyzją. Mówi, o czym
@@ -228,6 +247,13 @@ export const OPISY: Record<string, string> = {
     "który wyłącza karalność przekroczenia granic przy odpieraniu wdarcia się do mieszkania, domu " +
     "lub na ogrodzony teren. Omawia genezę zmiany, jej wykładnię, granice konstytucyjne i konwencyjne " +
     "oraz krytykę w doktrynie. Opiera się na przepisach, orzecznictwie i piśmiennictwie, bez badania ankietowego.",
+  "praca-mgr-administracja-wojt":
+    "Praca o wójcie, burmistrzu i prezydencie miasta jako organie wykonawczym gminy: pozycja ustrojowa " +
+    "organu po reformie z 2002 roku, zakres kompetencji (wykonywanie budżetu, gospodarowanie mieniem, " +
+    "decyzje administracyjne, kierowanie urzędem i rola zastępcy), odpowiedzialność polityczna, nadzorcza, " +
+    "antykorupcyjna, cywilna i karna oraz relacje z radą gminy — raport o stanie gminy, absolutorium, " +
+    "wotum zaufania, referendum odwoławcze i spór o kadencyjność. Opiera się na przepisach, orzecznictwie " +
+    "sądów administracyjnych i piśmiennictwie, bez badania ankietowego.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -251,6 +277,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-prawo-rozwod": "rozwód z orzekaniem o winie",
   "praca-mgr-prawo-zachowek": "zachowek w prawie spadkowym",
   "praca-mgr-prawo-obrona-konieczna": "obrona konieczna po nowelizacji",
+  "praca-mgr-administracja-wojt": "kompetencje wójta i burmistrza",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({

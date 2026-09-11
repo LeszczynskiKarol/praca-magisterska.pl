@@ -2,6 +2,7 @@
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import PraceKierunkoweCTA from "../../../components/PraceKierunkoweCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -45,7 +46,7 @@ const relatedLinks = [
     prawną, problem interpretacyjny lub obszar wymagający analizy.
   </p>
 
-  <WzorPracyCTA kierunekZ="z prawa" href="/tematy/prawo/przykladowa-praca/" />
+  <PraceKierunkoweCTA kierunek="prawo" />
 
   <EbookKierunkowyCTA
     kierunek="prawa"
