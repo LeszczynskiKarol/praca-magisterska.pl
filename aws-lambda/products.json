@@ -51,6 +51,16 @@
       "category": "Ebook kierunkowy"
     },
     {
+      "id": "ebook-magisterska-filologia-angielska",
+      "name": "Jak napisać pracę magisterską z filologii angielskiej",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-filologii-angielskiej.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-filologii-angielskiej.zip",
+      "emailSubject": "📘 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
       "id": "ebook-magisterska-finanse",
       "name": "Jak napisać pracę magisterską z finansów i rachunkowości",
       "price": 4900,
