@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -48,6 +49,12 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z bezpieczeństwa narodowego" href="/tematy/bezpieczenstwo-narodowe/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="bezpieczeństwa narodowego"
+    icon="🛡️"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-bezpieczenstwa-narodowego/"
+  />
 
   <h2>Bezpieczeństwo militarne i obronność</h2>
 
