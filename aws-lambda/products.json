@@ -91,6 +91,16 @@
       "category": "Ebook kierunkowy"
     },
     {
+      "id": "ebook-magisterska-ekonomia",
+      "name": "Jak napisać pracę magisterską z ekonomii",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-ekonomii.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-ekonomii.zip",
+      "emailSubject": "📉 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
       "id": "ebook-magisterska-finanse",
       "name": "Jak napisać pracę magisterską z finansów i rachunkowości",
       "price": 4900,
