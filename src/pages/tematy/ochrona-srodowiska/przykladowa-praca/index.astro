@@ -2,6 +2,7 @@
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
 import InfoBox from "../../../../components/InfoBox.astro";
+import EbookKierunkowyCTA from "../../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -56,6 +57,12 @@ const relatedLinks = [
       { href: "/downloads/przykladowa-praca-magisterska-ochrona-srodowiska.pdf", label: "Pobierz wzór (PDF)" },
       { href: "/downloads/przykladowa-praca-magisterska-ochrona-srodowiska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
     ]}
+  />
+
+  <EbookKierunkowyCTA
+    kierunek="ochrony środowiska"
+    icon="🌿"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-ochrony-srodowiska/"
   />
 
   <h2>Co wyróżnia pracę magisterską z ochrony środowiska</h2>
