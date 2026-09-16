@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -43,6 +44,12 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z fizjoterapii" href="/tematy/fizjoterapia/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="fizjoterapii"
+    icon="🏃"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-fizjoterapii/"
+  />
 
   <h2>Fizjoterapia narządu ruchu</h2>
 
