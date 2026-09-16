@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -45,6 +46,12 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z zarządzania" href="/tematy/zarzadzanie/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="zarządzania"
+    icon="📊"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-zarzadzania/"
+  />
 
   <h2>Zarządzanie zasobami ludzkimi (HRM)</h2>
 
