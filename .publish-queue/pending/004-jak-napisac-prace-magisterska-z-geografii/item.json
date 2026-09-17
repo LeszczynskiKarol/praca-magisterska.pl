@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z geografii",
+  "landingSlug": "jak-napisac-prace-magisterska-z-geografii",
+  "productId": "ebook-magisterska-geografia",
+  "card": {
+    "id": "geografia",
+    "kierunek": "Geografia",
+    "icon": "🗺️",
+    "subtitle": "Od pytania o przestrzeń do obrony",
+    "desc": "Dane z geoportalu i GUS, układy współrzędnych, redakcja map, badania terenowe, klimat i hydrologia, teledetekcja, analiza przestrzenna.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-geografii/",
+    "gradient": "from-orange-900 to-amber-900",
+    "border": "hover:border-orange-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "geografia",
+    "kierunek": "geografii",
+    "icon": "🗺️",
+    "h2": "Co wyróżnia pracę magisterską z geografii",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-geografii/",
+    "productName": "Jak napisać pracę magisterską z geografii"
+  }
+}
