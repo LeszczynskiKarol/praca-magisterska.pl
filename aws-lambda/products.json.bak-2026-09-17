@@ -839,46 +839,6 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
-    },
-    {
-      "id": "praca-mgr-administracja-nadzor-wojewody",
-      "name": "Praca magisterska z administracji — Nadzór wojewody nad działalnością samorządu terytorialnego (wzór, PDF + Word)",
-      "price": 5900,
-      "currency": "pln",
-      "files": [
-        {
-          "s3Key": "prace/nadzor-wojewody-mgr-pl.pdf",
-          "fileName": "Praca-magisterska-administracja-nadzor-wojewody.pdf",
-          "label": "PDF"
-        },
-        {
-          "s3Key": "prace/nadzor-wojewody-mgr-pl.docx",
-          "fileName": "Praca-magisterska-administracja-nadzor-wojewody.docx",
-          "label": "Word (DOCX)"
-        }
-      ],
-      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
-      "category": "Praca wzorcowa"
-    },
-    {
-      "id": "praca-mgr-administracja-odpowiedzialnosc-dyscyplinarna",
-      "name": "Praca magisterska z administracji — Odpowiedzialność dyscyplinarna urzędników służby cywilnej (wzór, PDF + Word)",
-      "price": 5900,
-      "currency": "pln",
-      "files": [
-        {
-          "s3Key": "prace/odpowiedzialnosc-dyscyplinarna-mgr-pl.pdf",
-          "fileName": "Praca-magisterska-administracja-odpowiedzialnosc-dyscyplinarna.pdf",
-          "label": "PDF"
-        },
-        {
-          "s3Key": "prace/odpowiedzialnosc-dyscyplinarna-mgr-pl.docx",
-          "fileName": "Praca-magisterska-administracja-odpowiedzialnosc-dyscyplinarna.docx",
-          "label": "Word (DOCX)"
-        }
-      ],
-      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
-      "category": "Praca wzorcowa"
     }
   ],
   "settings": {
