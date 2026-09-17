@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z kognitywistyki",
+  "landingSlug": "jak-napisac-prace-magisterska-z-kognitywistyki",
+  "productId": "ebook-magisterska-kognitywistyka",
+  "card": {
+    "id": "kognitywistyka",
+    "kierunek": "Kognitywistyka",
+    "icon": "🧠",
+    "subtitle": "Od hipotezy do obrony",
+    "desc": "Plan eksperymentu i moc testu, pomiar behawioralny, EEG i okulografia, modele obliczeniowe, statystyka, otwarta nauka i etyka.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-kognitywistyki/",
+    "gradient": "from-indigo-900 to-violet-900",
+    "border": "hover:border-indigo-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "kognitywistyka",
+    "kierunek": "kognitywistyki",
+    "icon": "🧠",
+    "h2": "Co wyróżnia pracę magisterską z kognitywistyki",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-kognitywistyki/",
+    "productName": "Jak napisać pracę magisterską z kognitywistyki"
+  }
+}
