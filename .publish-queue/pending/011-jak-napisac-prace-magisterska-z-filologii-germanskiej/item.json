@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z filologii germańskiej",
+  "landingSlug": "jak-napisac-prace-magisterska-z-filologii-germanskiej",
+  "productId": "ebook-magisterska-filologia-germanska",
+  "card": {
+    "id": "filologia-germanska",
+    "kierunek": "Filologia germańska",
+    "icon": "🇩🇪",
+    "subtitle": "Od tematu do obrony",
+    "desc": "Praca po niemiecku, korpusy DeReKo i DWDS, analiza kontrastywna, literaturoznawstwo, przekładoznawstwo, glottodydaktyka i redakcja.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-filologii-germanskiej/",
+    "gradient": "from-teal-900 to-emerald-900",
+    "border": "hover:border-teal-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "filologia-germanska",
+    "kierunek": "filologii germańskiej",
+    "icon": "🇩🇪",
+    "h2": "Co wyróżnia pracę magisterską z germanistyki",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-filologii-germanskiej/",
+    "productName": "Jak napisać pracę magisterską z filologii germańskiej"
+  }
+}

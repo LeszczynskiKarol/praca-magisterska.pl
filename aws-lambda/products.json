@@ -381,6 +381,16 @@
       "category": "Ebook kierunkowy"
     },
     {
+      "id": "ebook-magisterska-filologia-germanska",
+      "name": "Jak napisać pracę magisterską z filologii germańskiej",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-filologii-germanskiej.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-filologii-germanskiej.zip",
+      "emailSubject": "🇩🇪 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
       "id": "praca-mgr-psychologia-instagram",
       "name": "Praca magisterska z psychologii — Instagram a obraz ciała i zaburzenia odżywiania u dziewcząt 14–18 lat (wzór, PDF + Word)",
       "price": 5900,
