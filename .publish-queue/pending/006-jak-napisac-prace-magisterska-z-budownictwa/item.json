@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z budownictwa",
+  "landingSlug": "jak-napisac-prace-magisterska-z-budownictwa",
+  "productId": "ebook-magisterska-budownictwo",
+  "card": {
+    "id": "budownictwo",
+    "kierunek": "Budownictwo",
+    "icon": "🏗️",
+    "subtitle": "Od projektu do obrony",
+    "desc": "Normy i Eurokody, przepisy budowlane, obliczenia i modele numeryczne, badania laboratoryjne, diagnostyka, kosztorys i rysunki.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-budownictwa/",
+    "gradient": "from-blue-900 to-slate-900",
+    "border": "hover:border-blue-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "budownictwo",
+    "kierunek": "budownictwa",
+    "icon": "🏗️",
+    "h2": "Co wyróżnia pracę magisterską z budownictwa",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-budownictwa/",
+    "productName": "Jak napisać pracę magisterską z budownictwa"
+  }
+}
