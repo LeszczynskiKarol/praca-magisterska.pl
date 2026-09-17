@@ -106,17 +106,5 @@
     "spis": "/prace-podglad/kompetencje-wojta-burmistrza-prezydenta-spis.webp",
     "przypisy": "/prace-podglad/kompetencje-wojta-burmistrza-prezydenta-przypisy.webp",
     "tabela": "/prace-podglad/kompetencje-wojta-burmistrza-prezydenta-tabela.webp"
-  },
-  "praca-mgr-administracja-nadzor-wojewody": {
-    "tytulowa": "/prace-podglad/nadzor-wojewody-nad-samorzadem-tytulowa.webp",
-    "spis": "/prace-podglad/nadzor-wojewody-nad-samorzadem-spis.webp",
-    "przypisy": "/prace-podglad/nadzor-wojewody-nad-samorzadem-przypisy.webp",
-    "tabela": "/prace-podglad/nadzor-wojewody-nad-samorzadem-tabela.webp"
-  },
-  "praca-mgr-administracja-odpowiedzialnosc-dyscyplinarna": {
-    "tytulowa": "/prace-podglad/odpowiedzialnosc-dyscyplinarna-urzednikow-tytulowa.webp",
-    "spis": "/prace-podglad/odpowiedzialnosc-dyscyplinarna-urzednikow-spis.webp",
-    "przypisy": "/prace-podglad/odpowiedzialnosc-dyscyplinarna-urzednikow-przypisy.webp",
-    "tabela": "/prace-podglad/odpowiedzialnosc-dyscyplinarna-urzednikow-tabela.webp"
   }
 }

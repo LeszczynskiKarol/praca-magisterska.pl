@@ -114,25 +114,6 @@ export const KIERUNKI: Record<string, Kierunek> = {
       "poprawny zapis aktów prawnych wraz z promulgatorem (Dz. U.)",
     ],
   },
-  administracja: {
-    slug: "administracja",
-    nazwa: "Administracja",
-    dopelniacz: "z administracji",
-    przymiotnik: "administracyjne",
-    opis:
-      "Praca z administracji łączy analizę przepisów ustrojowych z oceną tego, jak działa " +
-      "konkretny organ. Recenzent sprawdza, czy autor odróżnia zadanie jednostki samorządu " +
-      "od kompetencji organu, czy powołuje ustawy z aktualnym promulgatorem i czy ocenia " +
-      "praktykę — rozstrzygnięcia nadzorcze i orzecznictwo sądów administracyjnych — zamiast " +
-      "przepisywać ustawę. Wzór poniżej pokazuje tę ścieżkę na organie wykonawczym gminy.",
-    czegoOczekujePromotor: [
-      "rozróżnienie zadań jednostki samorządu i kompetencji jej organów",
-      "ustawy ustrojowe powołane w aktualnym brzmieniu, z promulgatorem (Dz. U.)",
-      "orzecznictwo sądów administracyjnych i rozstrzygnięcia nadzorcze, a nie sam przepis",
-      "ocena praktyki działania organu, nie tylko opis procedury",
-      "wnioski de lege ferenda wyprowadzone z analizy, a nie dopisane na końcu",
-    ],
-  },
 };
 
 // Krótki opis każdej pracy — to, co kupujący czyta przed decyzją. Mówi, o czym
@@ -228,50 +209,6 @@ export const OPISY: Record<string, string> = {
     "informacyjny, zgłaszanie naruszeń i rolę inspektora ochrony danych. Rozdział " +
     "analityczny opiera się na rozporządzeniu, ustawie krajowej i decyzjach organu " +
     "nadzorczego, bez badania ankietowego.",
-  "praca-mgr-prawo-rozwod":
-    "Praca o rozwodzie z orzekaniem o winie: czym jest wina w rozkładzie pożycia na gruncie " +
-    "art. 57 k.r.o., jakie zachowania sądy uznają za zawinione i jak się tę winę dowodzi. " +
-    "Omawia skutki orzeczenia o winie dla alimentów między byłymi małżonkami, podziału majątku " +
-    "i władzy rodzicielskiej, sprzeciw małżonka niewinnego z art. 56 § 3 k.r.o. oraz wyrok ETPC " +
-    "w sprawie H.W. przeciwko Francji. Opiera się na przepisach, orzecznictwie i piśmiennictwie, " +
-    "bez badania ankietowego.",
-  "praca-mgr-prawo-zachowek":
-    "Praca o zachowku w polskim prawie spadkowym: kto jest uprawniony, jak ustala się substrat " +
-    "zachowku i dolicza darowizny, jak oblicza się należną kwotę i kiedy roszczenie się przedawnia. " +
-    "Omawia zmiany wprowadzone ustawą o fundacji rodzinnej, obniżenie zachowku ze względu na " +
-    "zasady współżycia społecznego i rozłożenie świadczenia na raty z art. 997(1) k.c. Opiera się " +
-    "na przepisach, orzecznictwie Trybunału Konstytucyjnego i piśmiennictwie, bez badania ankietowego.",
-  "praca-mgr-prawo-obrona-konieczna":
-    "Praca o obronie koniecznej w polskim prawie karnym: przesłanki z art. 25 § 1 k.k., przekroczenie " +
-    "granic obrony i jego skutki, a przede wszystkim art. 25 § 2a k.k. dodany nowelizacją z 2018 roku, " +
-    "który wyłącza karalność przekroczenia granic przy odpieraniu wdarcia się do mieszkania, domu " +
-    "lub na ogrodzony teren. Omawia genezę zmiany, jej wykładnię, granice konstytucyjne i konwencyjne " +
-    "oraz krytykę w doktrynie. Opiera się na przepisach, orzecznictwie i piśmiennictwie, bez badania ankietowego.",
-  "praca-mgr-administracja-wojt":
-    "Praca o wójcie, burmistrzu i prezydencie miasta jako organie wykonawczym gminy: pozycja ustrojowa " +
-    "organu po reformie z 2002 roku, zakres kompetencji (wykonywanie budżetu, gospodarowanie mieniem, " +
-    "decyzje administracyjne, kierowanie urzędem i rola zastępcy), odpowiedzialność polityczna, nadzorcza, " +
-    "antykorupcyjna, cywilna i karna oraz relacje z radą gminy — raport o stanie gminy, absolutorium, " +
-    "wotum zaufania, referendum odwoławcze i spór o kadencyjność. Opiera się na przepisach, orzecznictwie " +
-    "sądów administracyjnych i piśmiennictwie, bez badania ankietowego.",
-  "praca-mgr-administracja-nadzor-wojewody":
-    "Praca o nadzorze wojewody nad działalnością samorządu terytorialnego: podstawy konstytucyjne " +
-    "z art. 171 Konstytucji RP, kryterium legalności jako jedyne dopuszczalne kryterium ingerencji, " +
-    "pozycja ustrojowa wojewody i rozgraniczenie jego właściwości od regionalnych izb obrachunkowych, " +
-    "pełny katalog środków nadzorczych (wstrzymanie wykonania uchwały, rozstrzygnięcie nadzorcze " +
-    "stwierdzające nieważność, wskazanie naruszenia nieistotnego, zarządzenie zastępcze, rozwiązanie " +
-    "organu stanowiącego, zarząd komisaryczny) oraz sądowa kontrola aktów nadzoru jako gwarancja " +
-    "samodzielności gminy. Opiera się na przepisach, orzecznictwie sądów administracyjnych " +
-    "i Trybunału Konstytucyjnego oraz piśmiennictwie, bez badania ankietowego.",
-  "praca-mgr-administracja-odpowiedzialnosc-dyscyplinarna":
-    "Praca o odpowiedzialności dyscyplinarnej członków korpusu służby cywilnej: ustrojowe podstawy " +
-    "służby cywilnej i status prawny urzędnika, przewinienie dyscyplinarne jako naruszenie obowiązków " +
-    "i problem jego niedookreśloności, odgraniczenie odpowiedzialności dyscyplinarnej od porządkowej, " +
-    "karnej i majątkowej, ustrój komisji dyscyplinarnych i Wyższej Komisji Dyscyplinarnej, katalog kar " +
-    "i zasada proporcjonalności, przebieg postępowania wyjaśniającego i dyscyplinarnego, przedawnienie " +
-    "i zatarcie ukarania oraz sądowa kontrola orzeczeń w świetle standardu rzetelnego procesu. " +
-    "Opiera się na przepisach, orzecznictwie Trybunału Konstytucyjnego, Sądu Najwyższego i sądów " +
-    "administracyjnych oraz piśmiennictwie, bez badania ankietowego.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -292,12 +229,6 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-prawo-blad-medyczny": "odszkodowanie za błąd medyczny",
   "praca-mgr-prawo-mobbing": "mobbing w miejscu pracy",
   "praca-mgr-prawo-rodo": "ochrona danych osobowych w RODO",
-  "praca-mgr-prawo-rozwod": "rozwód z orzekaniem o winie",
-  "praca-mgr-prawo-zachowek": "zachowek w prawie spadkowym",
-  "praca-mgr-prawo-obrona-konieczna": "obrona konieczna po nowelizacji",
-  "praca-mgr-administracja-wojt": "kompetencje wójta i burmistrza",
-  "praca-mgr-administracja-nadzor-wojewody": "nadzór wojewody nad samorządem",
-  "praca-mgr-administracja-odpowiedzialnosc-dyscyplinarna": "odpowiedzialność dyscyplinarna urzędników",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({
