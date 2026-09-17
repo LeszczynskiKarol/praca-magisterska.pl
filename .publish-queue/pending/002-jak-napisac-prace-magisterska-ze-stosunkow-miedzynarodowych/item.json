@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską ze stosunków międzynarodowych",
+  "landingSlug": "jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych",
+  "productId": "ebook-magisterska-stosunki-miedzynarodowe",
+  "card": {
+    "id": "stosunki-miedzynarodowe",
+    "kierunek": "Stosunki międzynarodowe",
+    "icon": "🌍",
+    "subtitle": "Od pytania o politykę międzynarodową do obrony",
+    "desc": "Teorie i poziomy analizy, dokumenty i traktaty, studium przypadku, polityka zagraniczna, dane o konfliktach i handlu, neutralność badacza.",
+    "href": "/sklep/jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych/",
+    "gradient": "from-stone-900 to-lime-950",
+    "border": "hover:border-lime-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "stosunki-miedzynarodowe",
+    "kierunek": "stosunków międzynarodowych",
+    "icon": "🌍",
+    "h2": "Co wyróżnia pracę magisterską ze stosunków międzynarodowych",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych/",
+    "productName": "Jak napisać pracę magisterską ze stosunków międzynarodowych"
+  }
+}

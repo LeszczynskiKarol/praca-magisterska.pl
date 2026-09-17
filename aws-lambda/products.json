@@ -291,6 +291,16 @@
       "category": "Ebook kierunkowy"
     },
     {
+      "id": "ebook-magisterska-stosunki-miedzynarodowe",
+      "name": "Jak napisać pracę magisterską ze stosunków międzynarodowych",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych.zip",
+      "fileName": "Jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych.zip",
+      "emailSubject": "🌍 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
       "id": "praca-mgr-psychologia-instagram",
       "name": "Praca magisterska z psychologii — Instagram a obraz ciała i zaburzenia odżywiania u dziewcząt 14–18 lat (wzór, PDF + Word)",
       "price": 5900,

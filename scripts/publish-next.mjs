@@ -59,6 +59,7 @@ function ctaBlock(cta) {
   return (
     `  <EbookKierunkowyCTA\n` +
     `    kierunek=${JSON.stringify(cta.kierunek)}\n` +
+    (cta.productName ? `    productName=${JSON.stringify(cta.productName)}\n` : "") +
     `    icon=${JSON.stringify(cta.icon)}\n` +
     `    landingHref=${JSON.stringify(cta.landingHref)}\n` +
     `  />\n`
