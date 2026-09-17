@@ -2,6 +2,7 @@
 import ArticleLayout from "../../../../layouts/ArticleLayout.astro";
 import DownloadBox from "../../../../components/DownloadBox.astro";
 import InfoBox from "../../../../components/InfoBox.astro";
+import EbookKierunkowyCTA from "../../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -52,6 +53,12 @@ const relatedLinks = [
       { href: "/downloads/przykladowa-praca-magisterska-filologia-polska.pdf", label: "Pobierz wzór (PDF)" },
       { href: "/downloads/przykladowa-praca-magisterska-filologia-polska.docx", label: "Pobierz wzór (Word .docx)", primary: false },
     ]}
+  />
+
+  <EbookKierunkowyCTA
+    kierunek="filologii polskiej"
+    icon="🖋️"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-filologii-polskiej/"
   />
 
   <h2>Co wyróżnia pracę magisterską z filologii polskiej</h2>
