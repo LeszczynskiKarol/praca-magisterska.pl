@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z turystyki i rekreacji",
+  "landingSlug": "jak-napisac-prace-magisterska-z-turystyki-i-rekreacji",
+  "productId": "ebook-magisterska-turystyka-i-rekreacja",
+  "card": {
+    "id": "turystyka-i-rekreacja",
+    "kierunek": "Turystyka i rekreacja",
+    "icon": "🏔️",
+    "subtitle": "Od destynacji do obrony",
+    "desc": "Dane GUS o ruchu turystycznym, badania turystów, potencjał destynacji, jakość usług, rekreacja i aktywność, produkt turystyczny, rekomendacje.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-turystyki-i-rekreacji/",
+    "gradient": "from-sky-900 to-blue-900",
+    "border": "hover:border-sky-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "turystyka-i-rekreacja",
+    "kierunek": "turystyki i rekreacji",
+    "icon": "🏔️",
+    "h2": "Co wyróżnia pracę magisterską z turystyki i rekreacji",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-turystyki-i-rekreacji/",
+    "productName": "Jak napisać pracę magisterską z turystyki i rekreacji"
+  }
+}

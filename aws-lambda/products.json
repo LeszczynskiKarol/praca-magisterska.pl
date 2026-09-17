@@ -301,6 +301,16 @@
       "category": "Ebook kierunkowy"
     },
     {
+      "id": "ebook-magisterska-turystyka-i-rekreacja",
+      "name": "Jak napisać pracę magisterską z turystyki i rekreacji",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-turystyki-i-rekreacji.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-turystyki-i-rekreacji.zip",
+      "emailSubject": "🏔️ Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
       "id": "praca-mgr-psychologia-instagram",
       "name": "Praca magisterska z psychologii — Instagram a obraz ciała i zaburzenia odżywiania u dziewcząt 14–18 lat (wzór, PDF + Word)",
       "price": 5900,
