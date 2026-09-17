@@ -11,6 +11,7 @@ interface Props {
 
 // „ze” przed wyrazami zaczynającymi się od s, z, ś, ź, ż + spółgłoska (ze zdrowia, ze stosunków), w pozostałych „z”
 const zPrefix = /^[szśźż][^aeiouyąęó]/i.test(Astro.props.kierunek) ? 'ze' : 'z';
+const kierunekZ = `${zPrefix} ${Astro.props.kierunek}`;
 
 const {
   kierunek,
@@ -27,7 +28,7 @@ const {
       <div class="text-5xl flex-shrink-0">{icon}</div>
       <div class="flex-1 text-center sm:text-left">
         <h4 class="font-bold text-gray-900 mb-2">
-          Piszesz magisterkę {zPrefix} {kierunek}?
+          Piszesz magisterkę {kierunekZ}?
         </h4>
         <p class="text-gray-600 text-sm mb-1">
           Pobierz przewodnik <strong>„{productName}”</strong> — metodologia, dobór narzędzi, analiza wyników i pisanie poszczególnych rozdziałów krok po kroku.
@@ -52,7 +53,7 @@ const {
     <div class="flex items-start gap-3 mb-4">
       <div class="text-3xl flex-shrink-0">{icon}</div>
       <div>
-        <h3 class="font-bold text-gray-900 mb-1">Magisterka {zPrefix} {kierunek}?</h3>
+        <h3 class="font-bold text-gray-900 mb-1">Magisterka {kierunekZ}?</h3>
         <p class="text-sm text-gray-600">Przewodnik „{productName}” — 49 zł.</p>
       </div>
     </div>
