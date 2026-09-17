@@ -1,0 +1,56 @@
+name: Publikacja przewodników z kolejki
+
+# Codziennie o 07:00 UTC (9:00 czasu letniego w Polsce) publikuje jeden przewodnik
+# z .publish-queue/pending i uruchamia deploy. Pusta kolejka = nic się nie dzieje.
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: publish-queue
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Weź następny przewodnik z kolejki
+        id: queue
+        run: node scripts/publish-next.mjs
+
+      - name: Install dependencies
+        if: steps.queue.outputs.published == 'true'
+        run: npm ci
+
+      - name: Kontrolny build
+        if: steps.queue.outputs.published == 'true'
+        run: npm run build
+
+      - name: Commit i push
+        if: steps.queue.outputs.published == 'true'
+        run: |
+          git config user.name "publish-queue-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src .publish-queue
+          git commit -m "publikacja z kolejki: ${{ steps.queue.outputs.name }} (zostało: ${{ steps.queue.outputs.remaining }})"
+          git push
+
+      - name: Uruchom deploy
+        if: steps.queue.outputs.published == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
