@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z rolnictwa",
+  "landingSlug": "jak-napisac-prace-magisterska-z-rolnictwa",
+  "productId": "ebook-magisterska-rolnictwo",
+  "card": {
+    "id": "rolnictwo",
+    "kierunek": "Rolnictwo",
+    "icon": "🌾",
+    "subtitle": "Od doświadczenia do obrony",
+    "desc": "Metodyka doświadczeń, pomiary polowe, gleba i nawożenie, ochrona roślin, produkcja zwierzęca, ekonomika, WPR i statystyka.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-rolnictwa/",
+    "gradient": "from-lime-900 to-emerald-900",
+    "border": "hover:border-lime-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "rolnictwo",
+    "kierunek": "rolnictwa",
+    "icon": "🌾",
+    "h2": "Co wyróżnia pracę magisterską z rolnictwa",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-rolnictwa/",
+    "productName": "Jak napisać pracę magisterską z rolnictwa"
+  }
+}
