@@ -341,6 +341,16 @@
       "category": "Ebook kierunkowy"
     },
     {
+      "id": "ebook-magisterska-architektura",
+      "name": "Jak napisać pracę magisterską z architektury",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-architektury.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-architektury.zip",
+      "emailSubject": "📐 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
       "id": "praca-mgr-psychologia-instagram",
       "name": "Praca magisterska z psychologii — Instagram a obraz ciała i zaburzenia odżywiania u dziewcząt 14–18 lat (wzór, PDF + Word)",
       "price": 5900,

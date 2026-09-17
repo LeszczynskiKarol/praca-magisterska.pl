@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z architektury",
+  "landingSlug": "jak-napisac-prace-magisterska-z-architektury",
+  "productId": "ebook-magisterska-architektura",
+  "card": {
+    "id": "architektura",
+    "kierunek": "Architektura",
+    "icon": "📐",
+    "subtitle": "Od analizy kontekstu do obrony",
+    "desc": "Planowanie przestrzenne po reformie, analizy przedprojektowe, program, warianty koncepcji, rysunki, konstrukcja, środowisko i badania.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-architektury/",
+    "gradient": "from-fuchsia-900 to-purple-900",
+    "border": "hover:border-fuchsia-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "architektura",
+    "kierunek": "architektury",
+    "icon": "📐",
+    "h2": "Co wyróżnia pracę dyplomową z architektury",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-architektury/",
+    "productName": "Jak napisać pracę magisterską z architektury"
+  }
+}
