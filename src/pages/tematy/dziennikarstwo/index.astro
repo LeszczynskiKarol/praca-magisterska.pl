@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -47,6 +48,12 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z dziennikarstwa" href="/tematy/dziennikarstwo/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="dziennikarstwa"
+    icon="📰"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-dziennikarstwa/"
+  />
 
   <h2>Dziennikarstwo i media informacyjne</h2>
 
