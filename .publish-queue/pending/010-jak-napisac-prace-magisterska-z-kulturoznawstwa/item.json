@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z kulturoznawstwa",
+  "landingSlug": "jak-napisac-prace-magisterska-z-kulturoznawstwa",
+  "productId": "ebook-magisterska-kulturoznawstwo",
+  "card": {
+    "id": "kulturoznawstwo",
+    "kierunek": "Kulturoznawstwo",
+    "icon": "🎭",
+    "subtitle": "Od zjawiska kultury do obrony",
+    "desc": "Dobór korpusu, teorie i kategorie, analiza tekstów kultury, etnografia, badania odbiorców, kultura cyfrowa, instytucje i etyka.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-kulturoznawstwa/",
+    "gradient": "from-pink-900 to-rose-900",
+    "border": "hover:border-pink-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "kulturoznawstwo",
+    "kierunek": "kulturoznawstwa",
+    "icon": "🎭",
+    "h2": "Co wyróżnia pracę magisterską z kulturoznawstwa",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-kulturoznawstwa/",
+    "productName": "Jak napisać pracę magisterską z kulturoznawstwa"
+  }
+}
