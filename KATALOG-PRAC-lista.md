@@ -1,11 +1,13 @@
 # 📚 Katalog prac wzorcowych — ustalenia i lista produkcyjna
 
 > Domena: **praca-magisterska.pl**. Wchodzimy od razu z realnymi produktami (bez fake doora).
-> Ostatnia aktualizacja: **2026-09-11** (synchronizacja ze stanem faktycznym).
+> Ostatnia aktualizacja: **2026-09-17** (synchronizacja ze stanem faktycznym).
 >
-> **Stan katalogu:** 18 prac w sprzedaży — prawo 6, psychologia 5, pielęgniarstwo 3,
-> pedagogika 3, administracja 1 (kompetencje wójta, od 11.09; kategoria poniżej progu,
-> produkt dostępny z huba). Sprzedaże: 15.08 `praca-mgr-pielegniarstwo-wypalenie`,
+> **Stan katalogu:** 20 prac w sprzedaży — prawo 6, psychologia 5, administracja 3,
+> pielęgniarstwo 3, pedagogika 3. **Administracja domknięta do progu 17.09** dwiema
+> pracami z Opusa (nadzór wojewody, odpowiedzialność dyscyplinarna urzędników);
+> `/prace/administracja/` przestała być stubem z noindex.
+> Sprzedaże: 15.08 `praca-mgr-pielegniarstwo-wypalenie`,
 > 08.09 `praca-mgr-pedagogika-cyberprzemoc`, po 59 zł.
 > **Banery `PraceKierunkoweCTA`** stoją na `/tematy/<kierunek>/` i `/przykladowa-praca/`
 > wszystkich pięciu kierunków — prawo i administracja dostały je dopiero 11.09
@@ -276,10 +278,36 @@ stroną**. Poniżej — praca idzie do portfolio smart-edu.
 34. Analiza rentowności spółek z sektora e-commerce notowanych na NewConnect
 35. Leasing operacyjny a finansowy w sprawozdaniach spółek po wdrożeniu MSSF 16
 
-### ADMINISTRACJA / INFORMATYKA
+### ADMINISTRACJA — kategoria domknięta 17.09, 3 prace
+
+🛒 **Nadzór wojewody nad działalnością samorządu terytorialnego** (`administracja-016`)
+— 32 pozycje, 212 przypisów, 96% ze stroną, 69 stron. Najlepszy aparat wśród prac
+prawno-administracyjnych w katalogu.
+🛒 **Odpowiedzialność dyscyplinarna urzędników służby cywilnej** (`administracja-011`)
+— 28 pozycji, 144 przypisy, 74% ze stroną, 68 stron. Wystawiona **poniżej progu**
+29 poz./80% świadomą decyzją: domykała kategorię do trzech prac, a i tak ma lepszy
+aparat niż kompetencje wójta (19 poz.) i niż mobbing (66% ze stroną), które już były
+w sklepie.
+
+**Dlaczego 74%, i czego się tym nie naprawi.** Korpus cytado dla tematów
+proceduralno-ustrojowych zwraca jako źródła **wyroki SN i TK oraz teksty ustaw**,
+a te nie mają drukowanej paginacji — każdy przypis do nich z definicji idzie bez
+strony. Praca o nadzorze stała na artykułach naukowych i dlatego ma 96%. To nie jest
+różnica jakości generacji, tylko materiału: przy doborze tematu z prawa/administracji
+patrz, czy zagadnienie ma dorobek W PIŚMIENNICTWIE, czy głównie w orzecznictwie.
+
+**Pierwszy dowód, że Opus zmienia regułę „humanistyczno-prawne bywa że nie trafia
+w próg".** Obie prace powstały na `claude-opus-5` (wszystkie wywołania child CC),
+obie po ~2 h. Nadzór wojewody jest pierwszą pracą prawno-administracyjną, która
+przekroczyła próg bez naciągania.
+
+Kolejne tematy z administracji (kategoria ma już próg, więc te są na rozrost, nie na ratunek):
 
 36. Realizacja prawa dostępu do informacji publicznej przez gminy — orzecznictwo sądów administracyjnych
 37. Budżet obywatelski jako instrument partycypacji w miastach wojewódzkich
+
+### INFORMATYKA
+
 38. Projekt i implementacja systemu rezerwacji wizyt dla gabinetu fizjoterapii (REST API)
 39. Analiza podatności aplikacji webowych na ataki wstrzykiwania kodu
 40. Zastosowanie modeli uczenia maszynowego do wykrywania transakcji fraudowych
