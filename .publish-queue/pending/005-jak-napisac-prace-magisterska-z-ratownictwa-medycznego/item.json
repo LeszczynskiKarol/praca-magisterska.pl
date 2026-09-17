@@ -1,0 +1,24 @@
+{
+  "name": "Jak napisać pracę magisterską z ratownictwa medycznego",
+  "landingSlug": "jak-napisac-prace-magisterska-z-ratownictwa-medycznego",
+  "productId": "ebook-magisterska-ratownictwo-medyczne",
+  "card": {
+    "id": "ratownictwo-medyczne",
+    "kierunek": "Ratownictwo medyczne",
+    "icon": "🚑",
+    "subtitle": "Od pytania klinicznego do obrony",
+    "desc": "Wytyczne i dowody, przepisy i dokumentacja, dane z kart i rejestrów, badania symulacyjne, czasy dotarcia, badania personelu, statystyka.",
+    "href": "/sklep/jak-napisac-prace-magisterska-z-ratownictwa-medycznego/",
+    "gradient": "from-rose-900 to-red-900",
+    "border": "hover:border-rose-300",
+    "badge": "Nowość 2026"
+  },
+  "cta": {
+    "tematDir": "ratownictwo-medyczne",
+    "kierunek": "ratownictwa medycznego",
+    "icon": "🚑",
+    "h2": "Co wyróżnia pracę magisterską z ratownictwa medycznego",
+    "landingHref": "/sklep/jak-napisac-prace-magisterska-z-ratownictwa-medycznego/",
+    "productName": "Jak napisać pracę magisterską z ratownictwa medycznego"
+  }
+}
