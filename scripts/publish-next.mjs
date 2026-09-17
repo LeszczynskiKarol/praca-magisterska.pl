@@ -16,13 +16,20 @@ function output(key, value) {
   console.log(`${key}=${value}`);
 }
 
+// Pliki mogą mieć końce linii CRLF (kopia na Windows) albo LF (GitHub Actions).
+// Czytamy zawsze jako LF i zapisujemy z tym samym końcem linii, który był w pliku.
+const eolOf = new Map();
+
 function read(p) {
-  return fs.readFileSync(p, "utf8");
+  const raw = fs.readFileSync(p, "utf8");
+  eolOf.set(p, raw.includes("\r\n") ? "\r\n" : "\n");
+  return raw.replace(/\r\n/g, "\n");
 }
 
 function write(p, s) {
   fs.mkdirSync(path.dirname(p), { recursive: true });
-  fs.writeFileSync(p, s, "utf8");
+  const eol = eolOf.get(p) || "\n";
+  fs.writeFileSync(p, eol === "\n" ? s : s.replace(/\n/g, eol), "utf8");
 }
 
 function insertCard(card) {
