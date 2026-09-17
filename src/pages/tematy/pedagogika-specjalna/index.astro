@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -36,6 +37,12 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z pedagogiki specjalnej" href="/tematy/pedagogika-specjalna/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="pedagogiki specjalnej"
+    icon="🧩"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-pedagogiki-specjalnej/"
+  />
 
   <h2>Niepełnosprawność intelektualna (oligofrenopedagogika)</h2>
 

@@ -141,6 +141,16 @@
       "category": "Ebook kierunkowy"
     },
     {
+      "id": "ebook-magisterska-pedagogika-specjalna",
+      "name": "Jak napisać pracę magisterską z pedagogiki specjalnej",
+      "price": 4900,
+      "currency": "pln",
+      "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pedagogiki-specjalnej.zip",
+      "fileName": "Jak-napisac-prace-magisterska-z-pedagogiki-specjalnej.zip",
+      "emailSubject": "🧩 Twój przewodnik jest gotowy do pobrania",
+      "category": "Ebook kierunkowy"
+    },
+    {
       "id": "ebook-magisterska-finanse",
       "name": "Jak napisać pracę magisterską z finansów i rachunkowości",
       "price": 4900,
