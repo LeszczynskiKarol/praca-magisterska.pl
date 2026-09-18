@@ -1,10 +1,11 @@
 # 📚 Katalog prac wzorcowych — ustalenia i lista produkcyjna
 
 > Domena: **praca-magisterska.pl**. Wchodzimy od razu z realnymi produktami (bez fake doora).
-> Ostatnia aktualizacja: **2026-09-17** (synchronizacja ze stanem faktycznym).
+> Ostatnia aktualizacja: **2026-09-18** (synchronizacja ze stanem faktycznym).
 >
-> **Stan katalogu:** 20 prac w sprzedaży — prawo 6, psychologia 5, administracja 3,
-> pielęgniarstwo 3, pedagogika 3. **Administracja domknięta do progu 17.09** dwiema
+> **Stan katalogu:** 23 prace w sprzedaży — prawo 6, psychologia 5, administracja 3,
+> logistyka 3, pielęgniarstwo 3, pedagogika 3. **Logistyka otwarta 18.09** — pierwszy kierunek
+> wybrany z danych GSC (981 wyświetleń `/tematy/logistyka/` w 90 dniach, najwięcej wśród kierunków bez prac). **Administracja domknięta do progu 17.09** dwiema
 > pracami z Opusa (nadzór wojewody, odpowiedzialność dyscyplinarna urzędników);
 > `/prace/administracja/` przestała być stubem z noindex.
 > Sprzedaże: 15.08 `praca-mgr-pielegniarstwo-wypalenie`,
@@ -305,6 +306,19 @@ Kolejne tematy z administracji (kategoria ma już próg, więc te są na rozrost
 
 36. Realizacja prawa dostępu do informacji publicznej przez gminy — orzecznictwo sądów administracyjnych
 37. Budżet obywatelski jako instrument partycypacji w miastach wojewódzkich
+
+### LOGISTYKA — kategoria otwarta 18.09, 3 prace
+
+🛒 **Integracja dostawców w łańcuchu dostaw** — 36 pozycji, 94% ze stroną, 45 stron, z badaniem
+własnym (IDI) i aneksem. Z crona 14.08 — **jest też publicznie na smart-edu.ai** (do decyzji).
+🛒 **Logistyka ostatniej mili w dostawach miejskich** (`logistyka-018`) — 27 pozycji, 94%, 60 stron.
+🛒 **Cyfryzacja łańcucha dostaw** (`logistyka-010`) — 28 pozycji, 94%, 59 stron.
+
+**Korpus logistyczny jest cienki i to ma dwa praktyczne skutki.** Po pierwsze, zapytania do
+cytado trzeba budować z rzeczowych haseł, nie z tytułu rozdziału — rozdział 1 pracy o ostatniej
+mili dostał z tytułu 4 użyteczne źródła, z wąskiego zapytania 11. Po drugie, `dopisz-zrodla`
+na cienkim korpusie podsuwa śmieci z wysoką oceną (dializoterapia i raport o zniszczeniach na
+Ukrainie przy pracy o dostawach miejskich) — przy logistyce każde dopisane źródło trzeba obejrzeć.
 
 ### INFORMATYKA
 
