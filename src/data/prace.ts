@@ -124,13 +124,34 @@ export const KIERUNKI: Record<string, Kierunek> = {
       "konkretny organ. Recenzent sprawdza, czy autor odróżnia zadanie jednostki samorządu " +
       "od kompetencji organu, czy powołuje ustawy z aktualnym promulgatorem i czy ocenia " +
       "praktykę — rozstrzygnięcia nadzorcze i orzecznictwo sądów administracyjnych — zamiast " +
-      "przepisywać ustawę. Wzór poniżej pokazuje tę ścieżkę na organie wykonawczym gminy.",
+      "przepisywać ustawę. Wzory poniżej pokazują tę ścieżkę na organie wykonawczym gminy, " +
+      "nadzorze wojewody i odpowiedzialności dyscyplinarnej urzędników.",
     czegoOczekujePromotor: [
       "rozróżnienie zadań jednostki samorządu i kompetencji jej organów",
       "ustawy ustrojowe powołane w aktualnym brzmieniu, z promulgatorem (Dz. U.)",
       "orzecznictwo sądów administracyjnych i rozstrzygnięcia nadzorcze, a nie sam przepis",
       "ocena praktyki działania organu, nie tylko opis procedury",
       "wnioski de lege ferenda wyprowadzone z analizy, a nie dopisane na końcu",
+    ],
+  },
+  logistyka: {
+    slug: "logistyka",
+    nazwa: "Logistyka",
+    dopelniacz: "z logistyki",
+    przymiotnik: "logistyczne",
+    opis:
+      "Praca z logistyki jest oceniana za to, czy autor potrafi przełożyć proces na mierzalne " +
+      "wskaźniki. Recenzent sprawdza, czy przepływ materiałów jest odróżniony od przepływu " +
+      "informacji, czy koszt, czas i poziom obsługi klienta są ujęte razem, a nie każdy osobno, " +
+      "i czy efekty wdrożeń pochodzą z danych, a nie z deklaracji dostawców technologii. Wzory " +
+      "poniżej pokazują tę ścieżkę na współpracy z dostawcami, dostawach ostatniej mili " +
+      "i cyfryzacji łańcucha dostaw.",
+    czegoOczekujePromotor: [
+      "proces logistyczny opisany mierzalnymi wskaźnikami: koszt, czas, poziom obsługi",
+      "rozróżnienie przepływu materiałów i przepływu informacji w łańcuchu dostaw",
+      "efekty wdrożeń poparte danymi ze źródeł, nie deklaracjami dostawców technologii",
+      "koszty zewnętrzne i ograniczenia wdrożeń, nie wyłącznie korzyści",
+      "rekomendacje wyprowadzone z analizy, dopasowane do skali i branży przedsiębiorstwa",
     ],
   },
 };
@@ -272,6 +293,25 @@ export const OPISY: Record<string, string> = {
     "i zatarcie ukarania oraz sądowa kontrola orzeczeń w świetle standardu rzetelnego procesu. " +
     "Opiera się na przepisach, orzecznictwie Trybunału Konstytucyjnego, Sądu Najwyższego i sądów " +
     "administracyjnych oraz piśmiennictwie, bez badania ankietowego.",
+  "praca-mgr-logistyka-integracja-dostawcow":
+    "Praca o integracji dostawców w łańcuchu dostaw: teoretyczne podstawy współpracy " +
+    "międzyorganizacyjnej, modele i mechanizmy integracji (od relacji transakcyjnych po partnerstwo " +
+    "strategiczne, VMI i wspólne planowanie), korzyści i koszty integracji oraz bariery jej " +
+    "wdrażania. Zawiera rozdział z badaniem własnym metodą wywiadów pogłębionych (IDI) i analizy " +
+    "dokumentów oraz aneks z dyspozycjami do wywiadu i protokołem analizy.",
+  "praca-mgr-logistyka-ostatnia-mila":
+    "Praca o logistyce ostatniej mili w dostawach miejskich: miejsce ostatniego odcinka w systemie " +
+    "dystrybucji i jego udział w kosztach, źródła nieefektywności w warunkach rozwoju handlu " +
+    "elektronicznego (nieudane dostawy, puste przebiegi, rozdrobnienie przesyłek), koszty zewnętrzne " +
+    "transportu dostawczego w miastach, rozwiązania techniczne i organizacyjne (automaty paczkowe, " +
+    "mikrohuby, rowery towarowe, pojazdy elektryczne) oraz regulacje miejskie i ekonomika wdrożeń. " +
+    "Opiera się na literaturze przedmiotu, danych zastanych i studiach przypadków, bez badania ankietowego.",
+  "praca-mgr-logistyka-cyfryzacja":
+    "Praca o cyfryzacji łańcucha dostaw: odróżnienie cyfryzacji od informatyzacji i ramy Logistyki 4.0, " +
+    "warstwa systemowa (ERP, WMS, TMS) i technologie gromadzenia oraz wymiany danych (RFID, IoT, EDI), " +
+    "zaawansowane narzędzia — analityka i uczenie maszynowe w prognozowaniu popytu, rozproszony rejestr, " +
+    "cyfrowy bliźniak — oraz metodyka oceny efektów wdrożenia, bariery i przyczyny niepowodzeń projektów. " +
+    "Opiera się na literaturze przedmiotu, danych zastanych i studiach przypadków, bez badania ankietowego.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -298,6 +338,9 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-administracja-wojt": "kompetencje wójta i burmistrza",
   "praca-mgr-administracja-nadzor-wojewody": "nadzór wojewody nad samorządem",
   "praca-mgr-administracja-odpowiedzialnosc-dyscyplinarna": "odpowiedzialność dyscyplinarna urzędników",
+  "praca-mgr-logistyka-integracja-dostawcow": "integracja dostawców w łańcuchu dostaw",
+  "praca-mgr-logistyka-ostatnia-mila": "logistyka ostatniej mili w miastach",
+  "praca-mgr-logistyka-cyfryzacja": "cyfryzacja łańcucha dostaw",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({

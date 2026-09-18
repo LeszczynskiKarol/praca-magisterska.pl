@@ -889,6 +889,66 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-logistyka-integracja-dostawcow",
+      "name": "Praca magisterska z logistyki — Integracja dostawców w łańcuchu dostaw (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/integracja-dostawcow-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-logistyka-integracja-dostawcow.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/integracja-dostawcow-mgr-pl.docx",
+          "fileName": "Praca-magisterska-logistyka-integracja-dostawcow.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-logistyka-ostatnia-mila",
+      "name": "Praca magisterska z logistyki — Logistyka ostatniej mili w dostawach miejskich (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/ostatnia-mila-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-logistyka-ostatnia-mila.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/ostatnia-mila-mgr-pl.docx",
+          "fileName": "Praca-magisterska-logistyka-ostatnia-mila.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
+      "id": "praca-mgr-logistyka-cyfryzacja",
+      "name": "Praca magisterska z logistyki — Cyfryzacja łańcucha dostaw (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/cyfryzacja-lancucha-dostaw-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-logistyka-cyfryzacja-lancucha-dostaw.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/cyfryzacja-lancucha-dostaw-mgr-pl.docx",
+          "fileName": "Praca-magisterska-logistyka-cyfryzacja-lancucha-dostaw.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
     }
   ],
   "settings": {

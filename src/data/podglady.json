@@ -118,5 +118,23 @@
     "spis": "/prace-podglad/odpowiedzialnosc-dyscyplinarna-urzednikow-spis.webp",
     "przypisy": "/prace-podglad/odpowiedzialnosc-dyscyplinarna-urzednikow-przypisy.webp",
     "tabela": "/prace-podglad/odpowiedzialnosc-dyscyplinarna-urzednikow-tabela.webp"
+  },
+  "praca-mgr-logistyka-integracja-dostawcow": {
+    "tytulowa": "/prace-podglad/integracja-dostawcow-w-lancuchu-dostaw-tytulowa.webp",
+    "spis": "/prace-podglad/integracja-dostawcow-w-lancuchu-dostaw-spis.webp",
+    "przypisy": "/prace-podglad/integracja-dostawcow-w-lancuchu-dostaw-przypisy.webp",
+    "tabela": "/prace-podglad/integracja-dostawcow-w-lancuchu-dostaw-tabela.webp"
+  },
+  "praca-mgr-logistyka-ostatnia-mila": {
+    "tytulowa": "/prace-podglad/logistyka-ostatniej-mili-tytulowa.webp",
+    "spis": "/prace-podglad/logistyka-ostatniej-mili-spis.webp",
+    "przypisy": "/prace-podglad/logistyka-ostatniej-mili-przypisy.webp",
+    "tabela": "/prace-podglad/logistyka-ostatniej-mili-tabela.webp"
+  },
+  "praca-mgr-logistyka-cyfryzacja": {
+    "tytulowa": "/prace-podglad/cyfryzacja-lancucha-dostaw-tytulowa.webp",
+    "spis": "/prace-podglad/cyfryzacja-lancucha-dostaw-spis.webp",
+    "przypisy": "/prace-podglad/cyfryzacja-lancucha-dostaw-przypisy.webp",
+    "tabela": "/prace-podglad/cyfryzacja-lancucha-dostaw-tabela.webp"
   }
 }
