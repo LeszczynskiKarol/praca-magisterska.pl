@@ -310,7 +310,9 @@ Kolejne tematy z administracji (kategoria ma już próg, więc te są na rozrost
 ### LOGISTYKA — kategoria otwarta 18.09, 3 prace
 
 🛒 **Integracja dostawców w łańcuchu dostaw** — 36 pozycji, 94% ze stroną, 45 stron, z badaniem
-własnym (IDI) i aneksem. Z crona 14.08 — **jest też publicznie na smart-edu.ai** (do decyzji).
+własnym (IDI) i aneksem. Z crona 14.08; **ukryta na smart-edu 18.09** (`ukryj-prace.ps1`) —
+wisiała tam w całości za darmo, zebrała 3 wyświetlenia w 35 dni. Przy każdej pracy z crona
+przenoszonej do sklepu sprawdź `isPublished` i ukryj ją na smart-edu.
 🛒 **Logistyka ostatniej mili w dostawach miejskich** (`logistyka-018`) — 27 pozycji, 94%, 60 stron.
 🛒 **Cyfryzacja łańcucha dostaw** (`logistyka-010`) — 28 pozycji, 94%, 59 stron.
 
