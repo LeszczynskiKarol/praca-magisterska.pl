@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -48,6 +49,13 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="ze stosunków międzynarodowych" href="/tematy/stosunki-miedzynarodowe/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="stosunków międzynarodowych"
+    productName="Jak napisać pracę magisterską ze stosunków międzynarodowych"
+    icon="🌍"
+    landingHref="/sklep/jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych/"
+  />
 
   <h2>Polityka zagraniczna Polski</h2>
 
