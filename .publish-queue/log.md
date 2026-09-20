@@ -1,2 +1,3 @@
 - 2026-09-18: Jak napisać pracę magisterską z historii (001-jak-napisac-prace-magisterska-z-historii)
 - 2026-09-19: Jak napisać pracę magisterską ze stosunków międzynarodowych (002-jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych)
+- 2026-09-20: Jak napisać pracę magisterską z turystyki i rekreacji (003-jak-napisac-prace-magisterska-z-turystyki-i-rekreacji)

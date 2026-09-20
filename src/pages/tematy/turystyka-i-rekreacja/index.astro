@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -43,6 +44,13 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z turystyki i rekreacji" href="/tematy/turystyka-i-rekreacja/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="turystyki i rekreacji"
+    productName="Jak napisać pracę magisterską z turystyki i rekreacji"
+    icon="🏔️"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-turystyki-i-rekreacji/"
+  />
 
   <h2>Turystyka kulturowa i dziedzictwo</h2>
 
