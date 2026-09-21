@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -35,6 +36,13 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z geografii" href="/tematy/geografia/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="geografii"
+    productName="Jak napisać pracę magisterską z geografii"
+    icon="🗺️"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-geografii/"
+  />
 
   <h2>Geografia społeczno-ekonomiczna</h2>
 
