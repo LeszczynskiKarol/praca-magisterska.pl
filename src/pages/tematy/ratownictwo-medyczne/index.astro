@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -35,6 +36,13 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z ratownictwa medycznego" href="/tematy/ratownictwo-medyczne/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="ratownictwa medycznego"
+    productName="Jak napisać pracę magisterską z ratownictwa medycznego"
+    icon="🚑"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-ratownictwa-medycznego/"
+  />
 
   <h2>Medyczne czynności ratunkowe i resuscytacja</h2>
 
