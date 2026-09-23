@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -43,6 +44,13 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z budownictwa" href="/tematy/budownictwo/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="budownictwa"
+    productName="Jak napisać pracę magisterską z budownictwa"
+    icon="🏗️"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-budownictwa/"
+  />
 
   <h2>Konstrukcje żelbetowe</h2>
 
