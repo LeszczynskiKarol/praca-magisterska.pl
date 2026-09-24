@@ -4,3 +4,4 @@
 - 2026-09-21: Jak napisać pracę magisterską z geografii (004-jak-napisac-prace-magisterska-z-geografii)
 - 2026-09-22: Jak napisać pracę magisterską z ratownictwa medycznego (005-jak-napisac-prace-magisterska-z-ratownictwa-medycznego)
 - 2026-09-23: Jak napisać pracę magisterską z budownictwa (006-jak-napisac-prace-magisterska-z-budownictwa)
+- 2026-09-24: Jak napisać pracę magisterską z architektury (007-jak-napisac-prace-magisterska-z-architektury)
