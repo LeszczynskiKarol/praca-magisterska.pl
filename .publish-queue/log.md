@@ -5,3 +5,4 @@
 - 2026-09-22: Jak napisać pracę magisterską z ratownictwa medycznego (005-jak-napisac-prace-magisterska-z-ratownictwa-medycznego)
 - 2026-09-23: Jak napisać pracę magisterską z budownictwa (006-jak-napisac-prace-magisterska-z-budownictwa)
 - 2026-09-24: Jak napisać pracę magisterską z architektury (007-jak-napisac-prace-magisterska-z-architektury)
+- 2026-09-25: Jak napisać pracę magisterską z kognitywistyki (008-jak-napisac-prace-magisterska-z-kognitywistyki)
