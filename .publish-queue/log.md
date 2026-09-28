@@ -8,3 +8,4 @@
 - 2026-09-25: Jak napisać pracę magisterską z kognitywistyki (008-jak-napisac-prace-magisterska-z-kognitywistyki)
 - 2026-09-26: Jak napisać pracę magisterską z rolnictwa (009-jak-napisac-prace-magisterska-z-rolnictwa)
 - 2026-09-27: Jak napisać pracę magisterską z kulturoznawstwa (010-jak-napisac-prace-magisterska-z-kulturoznawstwa)
+- 2026-09-28: Jak napisać pracę magisterską z filologii germańskiej (011-jak-napisac-prace-magisterska-z-filologii-germanskiej)

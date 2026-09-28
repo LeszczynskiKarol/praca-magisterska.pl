@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -34,6 +35,13 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z filologii germańskiej" href="/tematy/filologia-germanska/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="filologii germańskiej"
+    productName="Jak napisać pracę magisterską z filologii germańskiej"
+    icon="🇩🇪"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-filologii-germanskiej/"
+  />
 
   <h2>Językoznawstwo opisowe języka niemieckiego</h2>
 
