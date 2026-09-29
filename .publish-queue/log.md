@@ -9,3 +9,4 @@
 - 2026-09-26: Jak napisać pracę magisterską z rolnictwa (009-jak-napisac-prace-magisterska-z-rolnictwa)
 - 2026-09-27: Jak napisać pracę magisterską z kulturoznawstwa (010-jak-napisac-prace-magisterska-z-kulturoznawstwa)
 - 2026-09-28: Jak napisać pracę magisterską z filologii germańskiej (011-jak-napisac-prace-magisterska-z-filologii-germanskiej)
+- 2026-09-29: Jak napisać pracę magisterską z filologii hiszpańskiej (012-jak-napisac-prace-magisterska-z-filologii-hiszpanskiej)

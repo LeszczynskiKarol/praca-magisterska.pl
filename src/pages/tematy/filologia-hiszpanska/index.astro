@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -33,6 +34,13 @@ const relatedLinks = [
   </p>
 
   <WzorPracyCTA kierunekZ="z filologii hiszpańskiej" href="/tematy/filologia-hiszpanska/przykladowa-praca/" />
+
+  <EbookKierunkowyCTA
+    kierunek="filologii hiszpańskiej"
+    productName="Jak napisać pracę magisterską z filologii hiszpańskiej"
+    icon="🇪🇸"
+    landingHref="/sklep/jak-napisac-prace-magisterska-z-filologii-hiszpanskiej/"
+  />
 
   <h2>Językoznawstwo opisowe języka hiszpańskiego</h2>
 
