@@ -686,5 +686,34 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-bezpieczenstwo-narodowe-dezinformacja",
+    "slugHtml": "dezinformacja-media-spolecznosciowe-mgr-pl",
+    "slugPdf": "dezinformacja-media-spolecznosciowe-mgr-pl",
+    "kierunek": "bezpieczenstwo-narodowe",
+    "slug": "dezinformacja-media-spolecznosciowe",
+    "tytul": "Dezinformacja i operacje wpływu w mediach społecznościowych jako zagrożenie dla bezpieczeństwa",
+    "stron": 78,
+    "slow": 24694,
+    "przypisy": 105,
+    "przypisyZeStrona": 48,
+    "pozycjeBibliografii": 21,
+    "pozycjeZLinkiem": 21,
+    "tabele": 14,
+    "rysunki": 5,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Dezinformacja i operacje wpływu — ujęcie teoretyczne i typologiczne",
+      "Rozdział 2. Media społecznościowe jako środowisko operacji wpływu",
+      "Rozdział 3. Metodologia badań własnych",
+      "Rozdział 4. Dezinformacja w polskich mediach społecznościowych — wyniki badań własnych",
+      "Zakończenie",
+      "Bibliografia",
+      "Aneks"
+    ]
   }
 ]

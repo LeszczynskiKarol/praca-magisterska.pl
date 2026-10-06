@@ -142,5 +142,11 @@
     "spis": "/prace-podglad/zarzadzanie-kryzysowe-gmina-spis.webp",
     "przypisy": "/prace-podglad/zarzadzanie-kryzysowe-gmina-przypisy.webp",
     "tabela": "/prace-podglad/zarzadzanie-kryzysowe-gmina-tabela.webp"
+  },
+  "praca-mgr-bezpieczenstwo-narodowe-dezinformacja": {
+    "tytulowa": "/prace-podglad/dezinformacja-media-spolecznosciowe-tytulowa.webp",
+    "spis": "/prace-podglad/dezinformacja-media-spolecznosciowe-spis.webp",
+    "przypisy": "/prace-podglad/dezinformacja-media-spolecznosciowe-przypisy.webp",
+    "tabela": "/prace-podglad/dezinformacja-media-spolecznosciowe-tabela.webp"
   }
 }

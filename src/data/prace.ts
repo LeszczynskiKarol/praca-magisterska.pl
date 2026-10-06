@@ -338,6 +338,12 @@ export const OPISY: Record<string, string> = {
     "zespół i centrum zarządzania kryzysowego, gminny plan zarządzania kryzysowego, ocena ryzyka, ewakuacja " +
     "i systemy ostrzegania. Rozdział badawczy pokazuje schemat sondażu diagnostycznego wśród uczestników " +
     "systemu w gminie, z kwestionariuszem w aneksie.",
+  "praca-mgr-bezpieczenstwo-narodowe-dezinformacja":
+    "Praca o dezinformacji jako zagrożeniu dla bezpieczeństwa: pojęcie i typologia fałszywych informacji, " +
+    "operacje wpływu (aktorzy, cele, techniki), modele teoretyczne analizy, architektura platform " +
+    "społecznościowych i mechanizmy amplifikacji, zagrożenia dla procesów wyborczych oraz regulacje (m.in. DSA). " +
+    "Rozdział badawczy łączy ilościową analizę treści z ankietą CAWI o kompetencjach medialnych; " +
+    "kwestionariusz i klucz kategoryzacyjny w aneksie.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -368,6 +374,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-logistyka-ostatnia-mila": "logistyka ostatniej mili w miastach",
   "praca-mgr-logistyka-cyfryzacja": "cyfryzacja łańcucha dostaw",
   "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina": "zarządzanie kryzysowe w gminie",
+  "praca-mgr-bezpieczenstwo-narodowe-dezinformacja": "dezinformacja w mediach społecznościowych",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({
