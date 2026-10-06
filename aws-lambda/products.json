@@ -951,6 +951,26 @@
       "category": "Praca wzorcowa"
     },
     {
+      "id": "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina",
+      "name": "Praca magisterska z bezpieczeństwa narodowego — System zarządzania kryzysowego w Polsce: organizacja na poziomie gminy (wzór, PDF + Word)",
+      "price": 5900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/zarzadzanie-kryzysowe-gmina-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina.pdf",
+          "label": "PDF"
+        },
+        {
+          "s3Key": "prace/zarzadzanie-kryzysowe-gmina-mgr-pl.docx",
+          "fileName": "Praca-magisterska-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina.docx",
+          "label": "Word (DOCX)"
+        }
+      ],
+      "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
+      "category": "Praca wzorcowa"
+    },
+    {
       "id": "zestaw-praca-mgr-psychologia-instagram",
       "name": "Zestaw: Praca magisterska z psychologii — Instagram a obraz ciała i zaburzenia odżywiania u dziewcząt 14–18 lat + przewodnik „Jak napisać pracę magisterską z psychologii”",
       "price": 7900,
@@ -1570,6 +1590,33 @@
       "category": "Zestaw",
       "pracaId": "praca-mgr-logistyka-cyfryzacja",
       "ebookId": "ebook-magisterska-logistyka"
+    },
+    {
+      "id": "zestaw-praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina",
+      "name": "Zestaw: Praca magisterska z bezpieczeństwa narodowego — System zarządzania kryzysowego w Polsce: organizacja na poziomie gminy + przewodnik „Jak napisać pracę magisterską z bezpieczeństwa narodowego”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/zarzadzanie-kryzysowe-gmina-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/zarzadzanie-kryzysowe-gmina-mgr-pl.docx",
+          "fileName": "Praca-magisterska-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-bezpieczenstwa-narodowego.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-bezpieczenstwa-narodowego.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina",
+      "ebookId": "ebook-magisterska-bezpieczenstwo-narodowe"
     }
   ],
   "settings": {

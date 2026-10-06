@@ -658,5 +658,33 @@
       "Zakończenie",
       "Bibliografia"
     ]
+  },
+  {
+    "productId": "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina",
+    "slugHtml": "zarzadzanie-kryzysowe-gmina-mgr-pl",
+    "slugPdf": "zarzadzanie-kryzysowe-gmina-mgr-pl",
+    "kierunek": "bezpieczenstwo-narodowe",
+    "slug": "zarzadzanie-kryzysowe-gmina",
+    "tytul": "System zarządzania kryzysowego w Polsce – organizacja na poziomie gminy",
+    "stron": 67,
+    "slow": 21685,
+    "przypisy": 58,
+    "przypisyZeStrona": 44,
+    "pozycjeBibliografii": 22,
+    "pozycjeZLinkiem": 21,
+    "tabele": 12,
+    "rysunki": 2,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Prawne i organizacyjne podstawy systemu zarządzania kryzysowego w Polsce",
+      "Rozdział 2. Organizacja i zadania systemu zarządzania kryzysowego na poziomie gminy",
+      "Rozdział 3. Planowanie kryzysowe i procedury reagowania na poziomie gminy",
+      "Rozdział 4. Funkcjonowanie systemu zarządzania kryzysowego w wybranej gminie — badanie własne",
+      "Zakończenie",
+      "Bibliografia"
+    ]
   }
 ]

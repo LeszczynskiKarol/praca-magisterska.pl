@@ -414,6 +414,9 @@ def zbuduj(zrodlo: Path, tytul: str, kierunek: str, typ: str, out: Path) -> None
     print(f"→ PDF:  {baza.name}.pdf")
     przez_pandoc(zloz(dla_pdf=True), [
         "--pdf-engine=xelatex",
+        # Bez tego MiKTeX z AutoInstall=„pytaj” czeka bez końca na niewidoczne okienko
+        # instalacji brakującego pakietu (06.10.2026: lm-math po aktualizacji do 25.12).
+        "--pdf-engine-opt=--enable-installer",
         "-H", str(HERE / "header-praca.tex"),
         # 12 pt — regulaminowy stopień pisma pracy dyplomowej. Domyślne
         # 10 pt pandoca ścisnęło pierwszy skład do 53 stron zamiast ~85.

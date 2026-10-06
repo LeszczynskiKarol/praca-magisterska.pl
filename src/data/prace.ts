@@ -154,6 +154,26 @@ export const KIERUNKI: Record<string, Kierunek> = {
       "rekomendacje wyprowadzone z analizy, dopasowane do skali i branży przedsiębiorstwa",
     ],
   },
+  "bezpieczenstwo-narodowe": {
+    slug: "bezpieczenstwo-narodowe",
+    nazwa: "Bezpieczeństwo narodowe",
+    dopelniacz: "z bezpieczeństwa narodowego",
+    przymiotnik: "z zakresu bezpieczeństwa",
+    opis:
+      "Praca z bezpieczeństwa narodowego jest oceniana za to, czy autor łączy analizę przepisów " +
+      "z oceną tego, jak system działa w praktyce. Recenzent sprawdza, czy akty prawne są powołane " +
+      "w aktualnym brzmieniu, z tekstem jednolitym i promulgatorem, czy autor odróżnia zarządzanie " +
+      "kryzysowe od stanów nadzwyczajnych i od ochrony ludności, oraz czy wnioski wynikają z analizy, " +
+      "a nie z ogólnych deklaracji. Wzór poniżej pokazuje tę ścieżkę na gminnym systemie zarządzania " +
+      "kryzysowego, z uwzględnieniem ustawy o ochronie ludności i obronie cywilnej z 2024 roku.",
+    czegoOczekujePromotor: [
+      "akty prawne w aktualnym brzmieniu — tekst jednolity z oznaczeniem Dz. U.",
+      "rozróżnienie zarządzania kryzysowego, stanów nadzwyczajnych i ochrony ludności",
+      "kompetencje organów przypisane do konkretnych przepisów, a nie opisane ogólnie",
+      "ocena praktyki — planów, procedur, ćwiczeń — a nie samo streszczenie ustawy",
+      "rekomendacje wyprowadzone z analizy i dopasowane do skali jednostki",
+    ],
+  },
 };
 
 // Krótki opis każdej pracy — to, co kupujący czyta przed decyzją. Mówi, o czym
@@ -312,6 +332,12 @@ export const OPISY: Record<string, string> = {
     "zaawansowane narzędzia — analityka i uczenie maszynowe w prognozowaniu popytu, rozproszony rejestr, " +
     "cyfrowy bliźniak — oraz metodyka oceny efektów wdrożenia, bariery i przyczyny niepowodzeń projektów. " +
     "Opiera się na literaturze przedmiotu, danych zastanych i studiach przypadków, bez badania ankietowego.",
+  "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina":
+    "Praca o gminnym systemie zarządzania kryzysowego: podstawy prawne według aktualnych tekstów jednolitych, " +
+    "w tym ustawy o ochronie ludności i obronie cywilnej obowiązującej od 2025 roku, kompetencje wójta, gminny " +
+    "zespół i centrum zarządzania kryzysowego, gminny plan zarządzania kryzysowego, ocena ryzyka, ewakuacja " +
+    "i systemy ostrzegania. Rozdział badawczy pokazuje schemat sondażu diagnostycznego wśród uczestników " +
+    "systemu w gminie, z kwestionariuszem w aneksie.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -341,6 +367,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-logistyka-integracja-dostawcow": "integracja dostawców w łańcuchu dostaw",
   "praca-mgr-logistyka-ostatnia-mila": "logistyka ostatniej mili w miastach",
   "praca-mgr-logistyka-cyfryzacja": "cyfryzacja łańcucha dostaw",
+  "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina": "zarządzanie kryzysowe w gminie",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({

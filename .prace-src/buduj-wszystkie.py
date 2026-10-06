@@ -52,6 +52,7 @@ NAZWY = {
     # w pozostałych. Nowy kierunek trzeba tu dopisać ZANIM pójdzie do składu.
     "administracja": "Administracja",
     "logistyka": "Logistyka",
+    "bezpieczenstwo-narodowe": "Bezpieczeństwo narodowe",
 }
 
 # Znaki, które powstają z polskich liter, gdy CP1250 czyta się jako Latin-1.
