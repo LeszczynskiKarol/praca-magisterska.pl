@@ -715,5 +715,34 @@
       "Bibliografia",
       "Aneks"
     ]
+  },
+  {
+    "productId": "praca-mgr-bezpieczenstwo-narodowe-cyberbezpieczenstwo",
+    "slugHtml": "system-cyberbezpieczenstwa-rp-mgr-pl",
+    "slugPdf": "system-cyberbezpieczenstwa-rp-mgr-pl",
+    "kierunek": "bezpieczenstwo-narodowe",
+    "slug": "system-cyberbezpieczenstwa-rp",
+    "tytul": "System cyberbezpieczeństwa RP – organizacja, zadania i wyzwania",
+    "stron": 72,
+    "slow": 24577,
+    "przypisy": 63,
+    "przypisyZeStrona": 57,
+    "pozycjeBibliografii": 20,
+    "pozycjeZLinkiem": 20,
+    "tabele": 9,
+    "rysunki": 4,
+    "rozdzialy": [
+      "Streszczenie",
+      "Abstract",
+      "Wykaz skrótów",
+      "Wstęp",
+      "Rozdział 1. Prawne i konceptualne podstawy krajowego systemu cyberbezpieczeństwa",
+      "Rozdział 2. Struktura instytucjonalna krajowego systemu cyberbezpieczeństwa",
+      "Rozdział 3. Zadania i mechanizmy operacyjne systemu cyberbezpieczeństwa RP",
+      "Rozdział 4. Wyzwania i perspektywy rozwoju systemu cyberbezpieczeństwa RP",
+      "Zakończenie",
+      "Bibliografia",
+      "Aneks"
+    ]
   }
 ]

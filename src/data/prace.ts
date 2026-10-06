@@ -345,6 +345,12 @@ export const OPISY: Record<string, string> = {
     "społecznościowych i mechanizmy amplifikacji, zagrożenia dla procesów wyborczych oraz regulacje (m.in. DSA). " +
     "Rozdział badawczy łączy ilościową analizę treści z ankietą CAWI o kompetencjach medialnych; " +
     "kwestionariusz i klucz kategoryzacyjny w aneksie.",
+  "praca-mgr-bezpieczenstwo-narodowe-cyberbezpieczenstwo":
+    "Praca o krajowym systemie cyberbezpieczeństwa według stanu prawnego po nowelizacji ustawy o KSC " +
+    "z 23 stycznia 2026 r. wdrażającej dyrektywę NIS2: podmioty kluczowe i ważne zamiast operatorów usług " +
+    "kluczowych, CSIRT GOV, MON, TELCO i CSIRT sektorowe, organy właściwe, zarządzanie incydentami, " +
+    "a także reforma ochrony infrastruktury krytycznej po wdrożeniu dyrektywy CER (Krajowa Ocena Ryzyka, " +
+    "podmioty krytyczne). Praca teoretyczno-prawna, bez badania ankietowego.",
 };
 
 // Tytuł do <title> — pełny nie mieści się w wyniku wyszukiwania obok frazy
@@ -376,6 +382,7 @@ export const TYTULY_KROTKIE: Record<string, string> = {
   "praca-mgr-logistyka-cyfryzacja": "cyfryzacja łańcucha dostaw",
   "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina": "zarządzanie kryzysowe w gminie",
   "praca-mgr-bezpieczenstwo-narodowe-dezinformacja": "dezinformacja w mediach społecznościowych",
+  "praca-mgr-bezpieczenstwo-narodowe-cyberbezpieczenstwo": "system cyberbezpieczeństwa RP po NIS2",
 };
 
 export const PRACE = (metryki as Metryka[]).map((m) => ({
