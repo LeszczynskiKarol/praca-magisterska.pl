@@ -334,7 +334,8 @@ export const OPISY: Record<string, string> = {
     "Opiera się na literaturze przedmiotu, danych zastanych i studiach przypadków, bez badania ankietowego.",
   "praca-mgr-bezpieczenstwo-narodowe-zarzadzanie-kryzysowe-gmina":
     "Praca o gminnym systemie zarządzania kryzysowego: podstawy prawne według aktualnych tekstów jednolitych, " +
-    "w tym ustawy o ochronie ludności i obronie cywilnej obowiązującej od 2025 roku, kompetencje wójta, gminny " +
+    "w tym ustawy o ochronie ludności i obronie cywilnej oraz nowelizacji u.z.k. z 2026 roku wdrażającej dyrektywę CER " +
+    "(plan zarządzania ryzykiem i plan reagowania kryzysowego), kompetencje wójta, gminny " +
     "zespół i centrum zarządzania kryzysowego, gminny plan zarządzania kryzysowego, ocena ryzyka, ewakuacja " +
     "i systemy ostrzegania. Rozdział badawczy pokazuje schemat sondażu diagnostycznego wśród uczestników " +
     "systemu w gminie, z kwestionariuszem w aneksie.",
