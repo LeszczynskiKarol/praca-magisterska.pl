@@ -55,7 +55,7 @@ const maxZrodel = prace.length ? Math.max(...prace.map((p) => p.pozycjeBibliogra
             <a href={p.url} class="text-primary-800 hover:underline font-medium leading-snug">
               {p.tytul}
             </a>
-            <span class="text-gray-500 text-sm"> — {p.stron} {odmien(p.stron, "strona", "strony", "stron")}</span>
+            <span class="text-gray-500 text-sm">{` — ${p.stron} ${odmien(p.stron, "strona", "strony", "stron")}`}</span>
           </li>
         ))}
       </ul>
