@@ -44,3 +44,4 @@ aws-lambda/get-download/products.json
 
 # Kopie policy S3 przed zmianą — ślad operacyjny, nie kod
 .aws-backup/
+__pycache__/
