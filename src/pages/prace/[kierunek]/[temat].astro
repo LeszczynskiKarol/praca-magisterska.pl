@@ -22,6 +22,8 @@ import {
   odmien,
   CENA_PLN,
 } from "../../../data/prace";
+import { ebookKierunku } from "../../../data/ebooki";
+import produktyJson from "../../../../aws-lambda/products.json";
 
 export function getStaticPaths() {
   return PRACE.map((p) => ({
@@ -32,6 +34,13 @@ export function getStaticPaths() {
 
 const { praca } = Astro.props;
 const k = KIERUNKI[praca.kierunek];
+
+// Zestaw praca + przewodnik kierunkowy (scripts/zestawy.py). Pokazujemy go tylko,
+// gdy produkt naprawdę istnieje w products.json — inaczej checkout zwróci 400.
+const ebook = ebookKierunku(praca.kierunek);
+const zestaw = produktyJson.products.find((p) => p.id === `zestaw-${praca.productId}`);
+const cenaZestawu = zestaw ? zestaw.price / 100 : 0;
+const cenaOsobno = ebook ? CENA_PLN + ebook.cena : 0;
 const inne = praceKierunku(praca.kierunek).filter((p) => p.slug !== praca.slug);
 const maBadanie = praca.productId !== "praca-mgr-pedagogika-czas-ekranowy";
 
@@ -138,6 +147,27 @@ const PODGLADY_OPISY = [
                 Płatność Stripe · PDF i Word dostępne natychmiast po opłaceniu
               </span>
             </div>
+
+            {zestaw && ebook && (
+              <div class="mt-6 rounded-2xl border border-white/15 bg-white/5 p-5 max-w-2xl">
+                <p class="text-white font-semibold mb-1">
+                  Zestaw z przewodnikiem „{ebook.tytul}”
+                </p>
+                <p class="text-indigo-200 text-sm leading-relaxed mb-4">
+                  Praca pokazuje gotowy efekt, przewodnik prowadzi przez pisanie własnej: dobór metody,
+                  narzędzia, analiza wyników, uwagi recenzentów. Razem {cenaZestawu} zł zamiast {cenaOsobno} zł.
+                </p>
+                <KupPrace
+                  productId={zestaw.id}
+                  cena={cenaZestawu}
+                  cenaPrzed={cenaOsobno}
+                  nazwa={zestaw.name}
+                  etykieta="Kup zestaw"
+                  kategoria="Zestaw"
+                  wyglad="drugi"
+                />
+              </div>
+            )}
           </div>
 
           <div class="hidden lg:block">
@@ -367,12 +397,25 @@ const PODGLADY_OPISY = [
           <p class="text-indigo-100 mb-8 max-w-xl mx-auto leading-relaxed">
             Pliki dostajesz od razu po opłaceniu — bez zapisu na newsletter i bez czekania.
           </p>
-          <KupPrace
-            productId={praca.productId}
-            cena={CENA_PLN}
-            nazwa={praca.tytul}
-            etykieta="Kup wzór pracy"
-          />
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <KupPrace
+              productId={praca.productId}
+              cena={CENA_PLN}
+              nazwa={praca.tytul}
+              etykieta="Kup wzór pracy"
+            />
+            {zestaw && (
+              <KupPrace
+                productId={zestaw.id}
+                cena={cenaZestawu}
+                cenaPrzed={cenaOsobno}
+                nazwa={zestaw.name}
+                etykieta="Zestaw z przewodnikiem"
+                kategoria="Zestaw"
+                wyglad="drugi"
+              />
+            )}
+          </div>
         </div>
       </div>
     </section>

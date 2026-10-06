@@ -10,7 +10,7 @@ OUT="$2"
 DEST="$ROOT/public/downloads"
 mkdir -p "$DEST"
 
-# Strona promo na końcu każdego wzoru — poza formalnym oświadczeniem do podpisu.
+# Strona z ofertą na końcu każdego wzoru — poza formalnym oświadczeniem do podpisu.
 # Oświadczenie dostaje też nagłówek bez stopki reklamowej (header-plain.tex).
 BUILD_SRC="$SRC"
 HEADER="$HERE/header.tex"
@@ -21,7 +21,8 @@ if [[ "$(basename "$SRC")" != wzor-oswiadczenia* ]]; then
   BUILD_SRC="$(mktemp --suffix=.md)"
   cat "$SRC" > "$BUILD_SRC"
   printf '\n\n' >> "$BUILD_SRC"
-  cat "$HERE/promo-page.md" >> "$BUILD_SRC"
+  # Oferta dobrana do kierunku z nazwy pliku (prace z katalogu / ebook) — promo-kierunek.py
+  python "$HERE/promo-kierunek.py" "$SRC" >> "$BUILD_SRC"
   trap 'rm -f "$BUILD_SRC"' EXIT
 fi
 
@@ -33,7 +34,7 @@ pandoc "$BUILD_SRC" \
 
 echo "→ PDF:  $OUT.pdf"
 pandoc "$BUILD_SRC" \
-  --pdf-engine=xelatex \
+  --pdf-engine=xelatex   --pdf-engine-opt=--enable-installer \
   -H "$HEADER" \
   --lua-filter="$HERE/center.lua" \
   -V lang=pl \

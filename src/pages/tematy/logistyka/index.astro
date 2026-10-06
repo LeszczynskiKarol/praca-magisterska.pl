@@ -2,6 +2,7 @@
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import EbookKierunkowyCTA from "../../../components/EbookKierunkowyCTA.astro";
 import WzorPracyCTA from "../../../components/WzorPracyCTA.astro";
+import PraceKierunkoweCTA from "../../../components/PraceKierunkoweCTA.astro";
 
 const breadcrumbs = [
   { label: "Kierunki", href: "/tematy/" },
@@ -44,7 +45,7 @@ const relatedLinks = [
     możliwe do realizacji z wykorzystaniem odpowiednich metod badawczych.
   </p>
 
-  <WzorPracyCTA kierunekZ="z logistyki" href="/tematy/logistyka/przykladowa-praca/" />
+  <PraceKierunkoweCTA kierunek="logistyka" />
 
   <EbookKierunkowyCTA
     kierunek="logistyki"

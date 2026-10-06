@@ -8,6 +8,12 @@ interface Props {
   etykieta?: string;
   nazwa: string;
   pelnaSzerokosc?: boolean;
+  /** item_category w GA4: „Praca wzorcowa" albo „Zestaw". */
+  kategoria?: string;
+  /** Cena przekreślona obok właściwej (zestaw: suma cen osobno). */
+  cenaPrzed?: number;
+  /** „drugi" — przycisk obrysowany, dla opcji obok głównego zakupu. */
+  wyglad?: "glowny" | "drugi";
 }
 
 const {
@@ -16,6 +22,9 @@ const {
   etykieta = "Kup wzór pracy",
   nazwa,
   pelnaSzerokosc = false,
+  kategoria = "Praca wzorcowa",
+  cenaPrzed,
+  wyglad = "glowny",
 } = Astro.props;
 
 const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod";
@@ -23,15 +32,19 @@ const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod"
 
 <button
   class:list={[
-    "kup-prace bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-105 shadow-lg shadow-accent/30 text-lg disabled:opacity-60 disabled:cursor-wait disabled:hover:scale-100",
+    "kup-prace font-bold rounded-xl transition-all disabled:opacity-60 disabled:cursor-wait disabled:hover:scale-100",
+    wyglad === "glowny"
+      ? "bg-gradient-to-r from-accent to-purple-500 hover:from-purple-500 hover:to-accent text-white py-4 px-8 hover:scale-105 shadow-lg shadow-accent/30 text-lg"
+      : "bg-white/10 hover:bg-white/20 border-2 border-white/40 hover:border-white/70 text-white py-3 px-6 text-base",
     pelnaSzerokosc ? "w-full flex items-center justify-center gap-2" : "inline-flex items-center gap-2",
   ]}
   data-product-id={productId}
   data-product-name={nazwa}
   data-product-price={cena}
+  data-product-category={kategoria}
 >
   <span>{etykieta}</span>
-  <span class="opacity-80">· {cena} zł</span>
+  <span class="opacity-80">· {cenaPrzed && <s class="opacity-70 font-normal mr-1">{cenaPrzed} zł</s>}{cena} zł</span>
 </button>
 
 <script is:inline define:vars={{ API_URL }}>
@@ -60,7 +73,7 @@ const API_URL = "https://kiv8tougqc.execute-api.eu-central-1.amazonaws.com/prod"
         item_name: button.dataset.productName,
         price: Number(button.dataset.productPrice),
         quantity: 1,
-        item_category: "Praca wzorcowa",
+        item_category: button.dataset.productCategory || "Praca wzorcowa",
       };
 
       if (typeof window.gtag === "function") {

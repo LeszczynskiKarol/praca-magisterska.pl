@@ -1,0 +1,163 @@
+{
+ "_ogolny": {
+  "href": "/sklep/praca-magisterska-ebook/",
+  "tytul": "Jak napisać pracę magisterską od A do Z",
+  "cena": 39,
+  "stron": 250
+ },
+ "_cenaKierunkowy": 49,
+ "kierunki": {
+  "administracja": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-administracji/",
+   "tytul": "Jak napisać pracę magisterską z administracji"
+  },
+  "architektura": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-architektury/",
+   "tytul": "Jak napisać pracę magisterską z architektury"
+  },
+  "bezpieczenstwo-narodowe": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-bezpieczenstwa-narodowego/",
+   "tytul": "Jak napisać pracę magisterską z bezpieczeństwa narodowego"
+  },
+  "budownictwo": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-budownictwa/",
+   "tytul": "Jak napisać pracę magisterską z budownictwa"
+  },
+  "dietetyka": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-dietetyki/",
+   "tytul": "Jak napisać pracę magisterską z dietetyki"
+  },
+  "dziennikarstwo": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-dziennikarstwa/",
+   "tytul": "Jak napisać pracę magisterską z dziennikarstwa"
+  },
+  "ekonomia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-ekonomii/",
+   "tytul": "Jak napisać pracę magisterską z ekonomii"
+  },
+  "filologia-angielska": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-filologii-angielskiej/",
+   "tytul": "Jak napisać pracę magisterską z filologii angielskiej"
+  },
+  "filologia-germanska": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-filologii-germanskiej/",
+   "tytul": "Jak napisać pracę magisterską z filologii germańskiej"
+  },
+  "filologia-hiszpanska": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-filologii-hiszpanskiej/",
+   "tytul": "Jak napisać pracę magisterską z filologii hiszpańskiej"
+  },
+  "filologia-polska": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-filologii-polskiej/",
+   "tytul": "Jak napisać pracę magisterską z filologii polskiej"
+  },
+  "finanse-i-rachunkowosc": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-finansow-i-rachunkowosci/",
+   "tytul": "Jak napisać pracę magisterską z finansów i rachunkowości"
+  },
+  "fizjoterapia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-fizjoterapii/",
+   "tytul": "Jak napisać pracę magisterską z fizjoterapii"
+  },
+  "geografia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-geografii/",
+   "tytul": "Jak napisać pracę magisterską z geografii"
+  },
+  "historia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-historii/",
+   "tytul": "Jak napisać pracę magisterską z historii"
+  },
+  "informatyka": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-informatyki/",
+   "tytul": "Jak napisać pracę magisterską z informatyki"
+  },
+  "kognitywistyka": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-kognitywistyki/",
+   "tytul": "Jak napisać pracę magisterską z kognitywistyki"
+  },
+  "kosmetologia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-kosmetologii/",
+   "tytul": "Jak napisać pracę magisterską z kosmetologii"
+  },
+  "kryminologia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-kryminologii/",
+   "tytul": "Jak napisać pracę magisterską z kryminologii"
+  },
+  "kulturoznawstwo": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-kulturoznawstwa/",
+   "tytul": "Jak napisać pracę magisterską z kulturoznawstwa"
+  },
+  "logistyka": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-logistyki/",
+   "tytul": "Jak napisać pracę magisterską z logistyki"
+  },
+  "marketing": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-marketingu/",
+   "tytul": "Jak napisać pracę magisterską z marketingu"
+  },
+  "ochrona-srodowiska": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-ochrony-srodowiska/",
+   "tytul": "Jak napisać pracę magisterską z ochrony środowiska"
+  },
+  "pedagogika": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-pedagogiki/",
+   "tytul": "Jak napisać pracę magisterską z pedagogiki"
+  },
+  "pedagogika-specjalna": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-pedagogiki-specjalnej/",
+   "tytul": "Jak napisać pracę magisterską z pedagogiki specjalnej"
+  },
+  "pielegniarstwo": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-pielegniarstwa/",
+   "tytul": "Jak napisać pracę magisterską z pielęgniarstwa"
+  },
+  "politologia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-politologii/",
+   "tytul": "Jak napisać pracę magisterską z politologii"
+  },
+  "praca-socjalna": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-pracy-socjalnej/",
+   "tytul": "Jak napisać pracę magisterską z pracy socjalnej"
+  },
+  "prawo": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-prawa/",
+   "tytul": "Jak napisać pracę magisterską z prawa"
+  },
+  "psychologia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-psychologii/",
+   "tytul": "Jak napisać pracę magisterską z psychologii"
+  },
+  "ratownictwo-medyczne": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-ratownictwa-medycznego/",
+   "tytul": "Jak napisać pracę magisterską z ratownictwa medycznego"
+  },
+  "resocjalizacja": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-resocjalizacji/",
+   "tytul": "Jak napisać pracę magisterską z resocjalizacji"
+  },
+  "rolnictwo": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-rolnictwa/",
+   "tytul": "Jak napisać pracę magisterską z rolnictwa"
+  },
+  "socjologia": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-socjologii/",
+   "tytul": "Jak napisać pracę magisterską z socjologii"
+  },
+  "stosunki-miedzynarodowe": {
+   "href": "/sklep/jak-napisac-prace-magisterska-ze-stosunkow-miedzynarodowych/",
+   "tytul": "Jak napisać pracę magisterską ze stosunków międzynarodowych"
+  },
+  "turystyka-i-rekreacja": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-turystyki-i-rekreacji/",
+   "tytul": "Jak napisać pracę magisterską z turystyki i rekreacji"
+  },
+  "zarzadzanie": {
+   "href": "/sklep/jak-napisac-prace-magisterska-z-zarzadzania/",
+   "tytul": "Jak napisać pracę magisterską z zarządzania"
+  },
+  "zdrowie-publiczne": {
+   "href": "/sklep/jak-napisac-prace-magisterska-ze-zdrowia-publicznego/",
+   "tytul": "Jak napisać pracę magisterską ze zdrowia publicznego"
+  }
+ }
+}

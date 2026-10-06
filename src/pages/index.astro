@@ -3,7 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import SmartEduCTA from '../components/SmartEduCTA.astro';
+import PraceWzorcoweCTA from '../components/PraceWzorcoweCTA.astro';
 
 // Poradniki
 const poradniki = [
@@ -220,8 +220,8 @@ const faqSchema = {
               📗 Ebook: jak napisać pracę magisterską
               <span class="ml-2 bg-white/25 text-white text-sm font-bold px-2 py-0.5 rounded">39 zł</span>
             </a>
-            <a href="https://www.smart-edu.ai/pl/masters-thesis?utm_source=praca-magisterska.pl&amp;utm_medium=cta&amp;utm_content=hero" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full sm:w-auto">
-              Napisz pracę z AI →
+            <a href="/prace/" class="btn-secondary w-full sm:w-auto">
+              Gotowe prace wzorcowe →
             </a>
           </div>
           <p class="mt-5 text-sm text-gray-500 animate-slide-up" style="animation-delay: 0.25s;">
@@ -256,11 +256,11 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- Smart-Edu CTA -->
+    <!-- Prace wzorcowe CTA -->
     <section class="py-12 bg-white">
       <div class="container-custom">
         <div class="max-w-5xl mx-auto">
-          <SmartEduCTA variant="full" />
+          <PraceWzorcoweCTA variant="full" />
         </div>
       </div>
     </section>
@@ -675,8 +675,8 @@ const faqSchema = {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
-            <a href="https://www.smart-edu.ai/pl/masters-thesis?utm_source=praca-magisterska.pl&amp;utm_medium=cta&amp;utm_content=bottom-cta" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              Wygeneruj pracę z AI →
+            <a href="/prace/" class="btn-secondary">
+              Zobacz gotowe prace →
             </a>
           </div>
         </div>

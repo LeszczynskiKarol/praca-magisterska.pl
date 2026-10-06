@@ -2,7 +2,7 @@
 // src/layouts/ArticleLayout.astro
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
-import SmartEduCTA from '../components/SmartEduCTA.astro';
+import PraceWzorcoweCTA from '../components/PraceWzorcoweCTA.astro';
 import EbookCTA from '../components/EbookCTA.astro';
 import Layout from './Layout.astro';
 
@@ -169,13 +169,8 @@ const breadcrumbSchema = {
 
           <!-- Article Footer -->
           <div class="mt-12 pt-8 border-t border-gray-200">
-            <!-- Inline CTA -->
-            <SmartEduCTA variant="inline" />
-
             <!-- Ebook / sklep CTA -->
-            <div class="mt-4">
-              <EbookCTA variant="inline" />
-            </div>
+            <EbookCTA variant="inline" />
 
             <!-- Related Links -->
             {relatedLinks.length > 0 && (
@@ -226,8 +221,8 @@ const breadcrumbSchema = {
         {showSidebar && (
           <aside class="lg:col-span-4">
             <div class="sticky top-28 space-y-6">
-              <!-- Smart-Edu CTA -->
-              <SmartEduCTA variant="sidebar" />
+              <!-- Prace wzorcowe CTA -->
+              <PraceWzorcoweCTA variant="sidebar" />
 
               <!-- Ebook / sklep CTA -->
               <EbookCTA variant="sidebar" />

@@ -1,5 +1,18 @@
 ---
-// Reużywalne pudełko „do pobrania" (PDF + Word) dla poradników i stron tematów.
+// Reużywalne pudełko „do pobrania” (PDF + Word) dla poradników i stron tematów.
+//
+// Po kliknięciu „Pobierz” pod przyciskami odsłania się blok z ofertą (od 2026-10-06).
+// Pobranie wzoru to moment najwyższej intencji na stronie: 747 pobrań w 90 dni,
+// a /prace/psychologia/ miało w tym czasie 29 odsłon przy 307 na stronie wzoru.
+// Treść bloku zależy od kierunku, który wykrywamy z nazwy pliku
+// (przykladowa-praca-magisterska-<kierunek>.pdf), więc strony nie podają go same:
+//   1. kierunek ma prace w katalogu → do 3 kart prac + ebook kierunkowy jedną linią
+//   2. kierunek ma tylko ebook       → karta ebooka kierunkowego + odnośnik do /prace/
+//   3. wzór poradnikowy (bez kier.)  → ebook ogólny z darmowym podglądem rozdziału
+//      o metodologii + odnośnik do /prace/
+import { praceKierunku, maKategorie, KIERUNKI, CENA_PLN, odmien } from "../data/prace";
+import { EBOOK_OGOLNY, ebookKierunku } from "../data/ebooki";
+
 interface FileLink {
   href: string;
   label: string;
@@ -10,6 +23,8 @@ interface Props {
   description?: string;
   files: FileLink[];
   ebookHint?: boolean;
+  /** Nadpisuje kierunek wykryty z nazwy pliku (slug jak w /tematy/<slug>/). */
+  kierunek?: string;
 }
 const {
   title = "📄 Pobierz wzór – PDF i Word",
@@ -17,9 +32,21 @@ const {
   files,
   ebookHint = false,
 } = Astro.props;
+
+const wykryty = files
+  .map((f) => f.href.match(/przykladowa-praca-magisterska-([a-z-]+)\.(?:pdf|docx)$/)?.[1])
+  .find(Boolean);
+const kierunek = Astro.props.kierunek ?? wykryty ?? null;
+
+const prace = kierunek ? praceKierunku(kierunek).slice(0, 3) : [];
+const wszystkichPrac = kierunek ? praceKierunku(kierunek).length : 0;
+const k = kierunek ? KIERUNKI[kierunek] : undefined;
+const ebookK = kierunek ? ebookKierunku(kierunek) : null;
+const praceUrl = kierunek && maKategorie(kierunek) ? `/prace/${kierunek}/` : "/prace/";
+const wariant = prace.length > 0 ? "prace" : ebookK ? "ebook-kierunkowy" : "ebook-ogolny";
 ---
 
-<div class="download-box">
+<div class="download-box" data-download-box data-kierunek={kierunek ?? ""} data-wariant={wariant}>
   <p class="download-title">{title}</p>
   {description && <p class="download-desc">{description}</p>}
   <div class="download-actions">
@@ -36,12 +63,118 @@ const {
     }
   </div>
   {ebookHint && (
-    <p class="download-hint">
+    <p class="download-hint" data-hint>
       Chcesz przejść przez pisanie każdego z tych rozdziałów krok po kroku?
-      Zobacz ebook <a href="/sklep/praca-magisterska-ebook/">„Jak napisać pracę magisterską od A do Z"</a> (250 stron, 39 zł).
+      Zobacz ebook <a href="/sklep/praca-magisterska-ebook/">„Jak napisać pracę magisterską od A do Z”</a> (250 stron, 39 zł).
     </p>
   )}
+
+  <div class="upsell" data-upsell hidden>
+    {wariant === "prace" && k && (
+      <>
+        <p class="upsell-lead">
+          <strong>Pobierasz szkielet pracy.</strong> Tak wygląda praca {k.dopelniacz} napisana w całości,
+          z przypisami do konkretnych stron w źródłach:
+        </p>
+        <ul class="upsell-cards">
+          {prace.map((p) => (
+            <li>
+              <a href={p.url} class="upsell-card" data-upsell-link="praca">
+                <span class="upsell-card-title">{p.tytulKrotki.charAt(0).toUpperCase() + p.tytulKrotki.slice(1)}</span>
+                <span class="upsell-card-meta">
+                  {p.stron} {odmien(p.stron, "strona", "strony", "stron")} · {p.przypisy} {odmien(p.przypisy, "przypis", "przypisy", "przypisów")} · {p.pozycjeBibliografii} {odmien(p.pozycjeBibliografii, "pozycja", "pozycje", "pozycji")} bibliografii
+                </span>
+                <span class="upsell-card-price">{CENA_PLN} zł · PDF + Word</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="upsell-more">
+          {wszystkichPrac > prace.length && (
+            <a href={praceUrl} data-upsell-link="kategoria">Wszystkie prace {k.dopelniacz} ({wszystkichPrac}) →</a>
+          )}
+          {ebookK && (
+            <span>
+              {wszystkichPrac > prace.length ? " · " : ""}Wolisz napisać sam? Przewodnik{" "}
+              <a href={ebookK.href} data-upsell-link="ebook-kierunkowy">„{ebookK.tytul}”</a> ({ebookK.cena} zł).
+            </span>
+          )}
+        </p>
+      </>
+    )}
+
+    {wariant === "ebook-kierunkowy" && ebookK && (
+      <>
+        <p class="upsell-lead">
+          <strong>Wzór pokazuje układ pracy.</strong> Jak wypełnić każdy rozdział treścią — dobór metody,
+          narzędzia, analiza wyników, typowe uwagi recenzentów — opisuje przewodnik:
+        </p>
+        <a href={ebookK.href} class="upsell-card upsell-card-wide" data-upsell-link="ebook-kierunkowy">
+          <span class="upsell-card-title">„{ebookK.tytul}”</span>
+          <span class="upsell-card-meta">PDF + EPUB · dostęp od razu po płatności</span>
+          <span class="upsell-card-price">{ebookK.cena} zł</span>
+        </a>
+        <p class="upsell-more">
+          Chcesz zobaczyć kompletną pracę z przypisami i bibliografią? <a href="/prace/" data-upsell-link="katalog">Gotowe prace wzorcowe</a> ({CENA_PLN} zł).
+        </p>
+      </>
+    )}
+
+    {wariant === "ebook-ogolny" && (
+      <>
+        <p class="upsell-lead">
+          <strong>Wzór to gotowy układ.</strong> Jak napisać każdą z tych części tak, żeby przeszła u promotora,
+          opisuje krok po kroku ebook:
+        </p>
+        <a href={EBOOK_OGOLNY.href} class="upsell-card upsell-card-wide" data-upsell-link="ebook-ogolny">
+          <span class="upsell-card-title">„{EBOOK_OGOLNY.tytul}”</span>
+          <span class="upsell-card-meta">{EBOOK_OGOLNY.stron} stron, 19 rozdziałów, szablony i checklisty</span>
+          <span class="upsell-card-price">{EBOOK_OGOLNY.cena} zł</span>
+        </a>
+        <p class="upsell-more">
+          <a href={`${EBOOK_OGOLNY.href}#podglad`} data-upsell-link="ebook-podglad">Przejrzyj za darmo rozdział o metodologii badań →</a>
+          {" · "}Albo zobacz <a href="/prace/" data-upsell-link="katalog">kompletne prace wzorcowe</a> ({CENA_PLN} zł).
+        </p>
+      </>
+    )}
+  </div>
 </div>
+
+<script>
+  // Odsłonięcie oferty po kliknięciu „Pobierz”. Pobieranie idzie normalnie (atrybut
+  // download), blok pojawia się pod przyciskami — bez modala i bez przesuwania treści
+  // przed interakcją, więc nie psuje CLS.
+  type Gtag = (...args: unknown[]) => void;
+  const gtag = () => (window as unknown as { gtag?: Gtag }).gtag;
+
+  document.querySelectorAll<HTMLElement>("[data-download-box]").forEach((box) => {
+    const upsell = box.querySelector<HTMLElement>("[data-upsell]");
+    if (!upsell) return;
+    const kierunek = box.dataset.kierunek || "(brak)";
+    const wariant = box.dataset.wariant || "";
+
+    box.querySelectorAll(".download-btn").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        if (!upsell.hidden) return;
+        upsell.hidden = false;
+        box.querySelector<HTMLElement>("[data-hint]")?.setAttribute("hidden", "");
+        gtag()?.("event", "upsell_view", { placement: "download_box", kierunek, wariant });
+      })
+    );
+
+    upsell.querySelectorAll<HTMLAnchorElement>("[data-upsell-link]").forEach((a) =>
+      a.addEventListener("click", () =>
+        gtag()?.("event", "upsell_click", {
+          placement: "download_box",
+          kierunek,
+          wariant,
+          target: a.dataset.upsellLink,
+          link_url: a.getAttribute("href"),
+        })
+      )
+    );
+  });
+</script>
 
 <style>
   .download-box {
@@ -91,13 +224,92 @@ const {
     font-size: 0.875rem;
     color: #4b5563;
   }
-  .download-hint a {
+  .download-hint a,
+  .upsell a {
     color: #4f46e5;
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
-  .download-hint a:hover {
+  .download-hint a:hover,
+  .upsell a:hover {
     color: #4338ca;
+  }
+
+  .upsell {
+    margin-top: 1.1rem;
+    padding-top: 1.1rem;
+    border-top: 1px dashed #c7d2fe;
+    animation: upsell-in 0.25s ease-out;
+  }
+  .upsell[hidden] {
+    display: none;
+  }
+  .upsell-lead {
+    margin: 0 0 0.8rem;
+    color: #1f2937;
+  }
+  .upsell-cards {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.8rem;
+    display: grid;
+    gap: 0.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .upsell-cards li {
+    margin: 0;
+    padding: 0;
+  }
+  .upsell-cards li::before {
+    content: none;
+  }
+  .upsell .upsell-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #c7d2fe;
+    border-radius: 0.6rem;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    color: #111827;
+    font-weight: 400;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .upsell .upsell-card:hover {
+    border-color: #4f46e5;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.12);
+    color: #111827;
+  }
+  .upsell-card-wide {
+    margin-bottom: 0.8rem;
+  }
+  .upsell-card-title {
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .upsell-card-meta {
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+  .upsell-card-price {
+    margin-top: auto;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #4338ca;
+  }
+  .upsell-more {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #4b5563;
+  }
+  @keyframes upsell-in {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .upsell { animation: none; }
   }
 </style>

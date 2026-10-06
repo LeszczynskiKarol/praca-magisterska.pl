@@ -27,6 +27,7 @@ import {
   odmien,
   CENA_PLN,
 } from "../../../data/prace";
+import { ebookKierunku } from "../../../data/ebooki";
 
 export function getStaticPaths() {
   const zKategoria = kierunkiZKategoria().map((k) => ({
@@ -53,6 +54,7 @@ const celStuba = prace[0]?.url ?? "/prace/";
 const sumaStron = prace.reduce((s, p) => s + p.stron, 0);
 const sumaZrodel = prace.reduce((s, p) => s + p.pozycjeBibliografii, 0);
 const bohater = prace[0];
+const ebook = ebookKierunku(kierunek!);
 ---
 
 {
@@ -294,6 +296,32 @@ const bohater = prace[0];
         </div>
       </div>
     </section>
+
+    <!-- EBOOK KIERUNKOWY — druga ścieżka: dla tych, którzy chcą napisać pracę sami -->
+    {ebook && (
+      <section class="pb-14">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="rounded-2xl border border-indigo-100 bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6">
+            <div class="flex-1">
+              <p class="text-xs uppercase tracking-wide text-primary-700 font-semibold mb-2">Wolisz napisać pracę sam?</p>
+              <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 leading-tight">„{ebook.tytul}”</h2>
+              <p class="text-gray-700 leading-relaxed">
+                Przewodnik dla kierunku: dobór metody i narzędzi, analiza wyników, pisanie kolejnych
+                rozdziałów i najczęstsze uwagi recenzentów. Dobrze uzupełnia pracę wzorcową — wzór
+                pokazuje gotowy efekt, przewodnik prowadzi do własnego.
+              </p>
+            </div>
+            <div class="shrink-0 text-center">
+              <a href={ebook.href} class="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-purple-500 text-white font-bold py-3 px-6 rounded-xl transition-transform hover:scale-105 cursor-pointer">
+                Zobacz przewodnik
+                <Ikona nazwa="strzalka" klasa="w-4 h-4" />
+              </a>
+              <p class="text-sm text-gray-600 mt-2">{ebook.cena} zł · PDF + EPUB</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
 
     <!-- LINKOWANIE WEWNĘTRZNE -->
     <section class="pb-20">

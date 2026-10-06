@@ -949,6 +949,627 @@
       ],
       "emailSubject": "🎓 Twoja praca wzorcowa jest gotowa do pobrania",
       "category": "Praca wzorcowa"
+    },
+    {
+      "id": "zestaw-praca-mgr-psychologia-instagram",
+      "name": "Zestaw: Praca magisterska z psychologii — Instagram a obraz ciała i zaburzenia odżywiania u dziewcząt 14–18 lat + przewodnik „Jak napisać pracę magisterską z psychologii”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/instagram-obraz-ciala-zaburzenia-odzywiania-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-instagram.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/instagram-obraz-ciala-zaburzenia-odzywiania-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-instagram.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-psychologii.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-psychologia-instagram",
+      "ebookId": "ebook-magisterska-psychologia"
+    },
+    {
+      "id": "zestaw-praca-mgr-psychologia-prokrastynacja",
+      "name": "Zestaw: Praca magisterska z psychologii — Prokrastynacja akademicka studentów medycyny a lęk przed oceną i perfekcjonizm + przewodnik „Jak napisać pracę magisterską z psychologii”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/prokrastynacja-akademicka-medycyna-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-prokrastynacja.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/prokrastynacja-akademicka-medycyna-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-prokrastynacja.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-psychologii.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-psychologia-prokrastynacja",
+      "ebookId": "ebook-magisterska-psychologia"
+    },
+    {
+      "id": "zestaw-praca-mgr-psychologia-stres-psp",
+      "name": "Zestaw: Praca magisterska z psychologii — Stres zawodowy i strategie radzenia sobie u funkcjonariuszy PSP + przewodnik „Jak napisać pracę magisterską z psychologii”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/stres-funkcjonariuszy-psp-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-stres-psp.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/stres-funkcjonariuszy-psp-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-stres-psp.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-psychologii.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-psychologia-stres-psp",
+      "ebookId": "ebook-magisterska-psychologia"
+    },
+    {
+      "id": "zestaw-praca-mgr-psychologia-wypalenie-nauczycieli",
+      "name": "Zestaw: Praca magisterska z psychologii — Wypalenie zawodowe nauczycieli edukacji wczesnoszkolnej po nauczaniu zdalnym + przewodnik „Jak napisać pracę magisterską z psychologii”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/wypalenie-zawodowe-nauczycieli-edukacji-wczesnoszkolnej-po-okresie-nauczania-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-wypalenie-nauczycieli.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/wypalenie-zawodowe-nauczycieli-edukacji-wczesnoszkolnej-po-okresie-nauczania-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-wypalenie-nauczycieli.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-psychologii.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-psychologia-wypalenie-nauczycieli",
+      "ebookId": "ebook-magisterska-psychologia"
+    },
+    {
+      "id": "zestaw-praca-mgr-pielegniarstwo-wypalenie",
+      "name": "Zestaw: Praca magisterska z pielęgniarstwa — Wypalenie zawodowe pielęgniarek anestezjologicznych i intensywnej opieki + przewodnik „Jak napisać pracę magisterską z pielęgniarstwa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/wypalenie-pielegniarek-anestezjologicznych-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pielegniarstwo-wypalenie.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/wypalenie-pielegniarek-anestezjologicznych-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pielegniarstwo-wypalenie.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-pielegniarstwo-wypalenie",
+      "ebookId": "ebook-magisterska-pielegniarstwo"
+    },
+    {
+      "id": "zestaw-praca-mgr-pedagogika-czas-ekranowy",
+      "name": "Zestaw: Praca magisterska z pedagogiki — Wpływ czasu ekranowego na rozwój mowy dzieci 2–5 lat + przewodnik „Jak napisać pracę magisterską z pedagogiki”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/czas-ekranowy-rozwoj-mowy-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pedagogika-czas-ekranowy.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/czas-ekranowy-rozwoj-mowy-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pedagogika-czas-ekranowy.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pedagogiki.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-pedagogiki.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-pedagogika-czas-ekranowy",
+      "ebookId": "ebook-magisterska-pedagogika"
+    },
+    {
+      "id": "zestaw-praca-mgr-psychologia-depresja-poporodowa",
+      "name": "Zestaw: Praca magisterska z psychologii — Wsparcie społeczne a przebieg depresji poporodowej + przewodnik „Jak napisać pracę magisterską z psychologii”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/depresja-poporodowa-wsparcie-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-psychologia-depresja-poporodowa.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/depresja-poporodowa-wsparcie-mgr-pl.docx",
+          "fileName": "Praca-magisterska-psychologia-depresja-poporodowa.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-psychologii.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-psychologii.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-psychologia-depresja-poporodowa",
+      "ebookId": "ebook-magisterska-psychologia"
+    },
+    {
+      "id": "zestaw-praca-mgr-pielegniarstwo-cukrzyca",
+      "name": "Zestaw: Praca magisterska z pielęgniarstwa — Edukacja pielęgniarska a wyrównanie metaboliczne cukrzycy + przewodnik „Jak napisać pracę magisterską z pielęgniarstwa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/edukacja-pielegniarska-cukrzyca-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pielegniarstwo-cukrzyca.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/edukacja-pielegniarska-cukrzyca-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pielegniarstwo-cukrzyca.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-pielegniarstwo-cukrzyca",
+      "ebookId": "ebook-magisterska-pielegniarstwo"
+    },
+    {
+      "id": "zestaw-praca-mgr-pedagogika-gotowosc-szkolna",
+      "name": "Zestaw: Praca magisterska z pedagogiki — Gotowość szkolna sześciolatków a osiągnięcia w klasie I + przewodnik „Jak napisać pracę magisterską z pedagogiki”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/gotowosc-szkolna-szesciolatkow-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pedagogika-gotowosc-szkolna.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/gotowosc-szkolna-szesciolatkow-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pedagogika-gotowosc-szkolna.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pedagogiki.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-pedagogiki.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-pedagogika-gotowosc-szkolna",
+      "ebookId": "ebook-magisterska-pedagogika"
+    },
+    {
+      "id": "zestaw-praca-mgr-pielegniarstwo-niewydolnosc-serca",
+      "name": "Zestaw: Praca magisterska z pielęgniarstwa — Jakość życia pacjentów z niewydolnością serca NYHA III i IV + przewodnik „Jak napisać pracę magisterską z pielęgniarstwa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/niewydolnosc-serca-jakosc-zycia-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pielegniarstwo-niewydolnosc-serca.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/niewydolnosc-serca-jakosc-zycia-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pielegniarstwo-niewydolnosc-serca.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-pielegniarstwa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-pielegniarstwo-niewydolnosc-serca",
+      "ebookId": "ebook-magisterska-pielegniarstwo"
+    },
+    {
+      "id": "zestaw-praca-mgr-pedagogika-cyberprzemoc",
+      "name": "Zestaw: Praca magisterska z pedagogiki — Cyberprzemoc a funkcjonowanie psychospołeczne ofiar + przewodnik „Jak napisać pracę magisterską z pedagogiki”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/cyberprzemoc-funkcjonowanie-ofiar-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-pedagogika-cyberprzemoc.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/cyberprzemoc-funkcjonowanie-ofiar-mgr-pl.docx",
+          "fileName": "Praca-magisterska-pedagogika-cyberprzemoc.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-pedagogiki.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-pedagogiki.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-pedagogika-cyberprzemoc",
+      "ebookId": "ebook-magisterska-pedagogika"
+    },
+    {
+      "id": "zestaw-praca-mgr-prawo-blad-medyczny",
+      "name": "Zestaw: Praca magisterska z prawa — Odszkodowanie i zadośćuczynienie za błąd medyczny + przewodnik „Jak napisać pracę magisterską z prawa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/odszkodowanie-blad-medyczny-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-blad-medyczny.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/odszkodowanie-blad-medyczny-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-blad-medyczny.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-prawa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-prawa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-prawo-blad-medyczny",
+      "ebookId": "ebook-magisterska-prawo"
+    },
+    {
+      "id": "zestaw-praca-mgr-prawo-mobbing",
+      "name": "Zestaw: Praca magisterska z prawa — Mobbing w miejscu pracy + przewodnik „Jak napisać pracę magisterską z prawa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/mobbing-w-miejscu-pracy-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-mobbing.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/mobbing-w-miejscu-pracy-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-mobbing.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-prawa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-prawa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-prawo-mobbing",
+      "ebookId": "ebook-magisterska-prawo"
+    },
+    {
+      "id": "zestaw-praca-mgr-prawo-rodo",
+      "name": "Zestaw: Praca magisterska z prawa — Ochrona danych osobowych w RODO + przewodnik „Jak napisać pracę magisterską z prawa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/rodo-ochrona-danych-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-rodo.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/rodo-ochrona-danych-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-rodo.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-prawa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-prawa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-prawo-rodo",
+      "ebookId": "ebook-magisterska-prawo"
+    },
+    {
+      "id": "zestaw-praca-mgr-prawo-rozwod",
+      "name": "Zestaw: Praca magisterska z prawa — Rozwód z orzekaniem o winie + przewodnik „Jak napisać pracę magisterską z prawa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/rozwod-orzekanie-o-winie-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-rozwod.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/rozwod-orzekanie-o-winie-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-rozwod.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-prawa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-prawa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-prawo-rozwod",
+      "ebookId": "ebook-magisterska-prawo"
+    },
+    {
+      "id": "zestaw-praca-mgr-prawo-zachowek",
+      "name": "Zestaw: Praca magisterska z prawa — Zachowek w prawie spadkowym + przewodnik „Jak napisać pracę magisterską z prawa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/zachowek-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-zachowek.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/zachowek-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-zachowek.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-prawa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-prawa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-prawo-zachowek",
+      "ebookId": "ebook-magisterska-prawo"
+    },
+    {
+      "id": "zestaw-praca-mgr-prawo-obrona-konieczna",
+      "name": "Zestaw: Praca magisterska z prawa — Obrona konieczna po nowelizacji 2018 + przewodnik „Jak napisać pracę magisterską z prawa”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/obrona-konieczna-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-prawo-obrona-konieczna.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/obrona-konieczna-mgr-pl.docx",
+          "fileName": "Praca-magisterska-prawo-obrona-konieczna.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-prawa.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-prawa.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-prawo-obrona-konieczna",
+      "ebookId": "ebook-magisterska-prawo"
+    },
+    {
+      "id": "zestaw-praca-mgr-administracja-wojt",
+      "name": "Zestaw: Praca magisterska z administracji — Kompetencje wójta, burmistrza i prezydenta miasta + przewodnik „Jak napisać pracę magisterską z administracji”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/kompetencje-wojta-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-administracja-kompetencje-wojta.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/kompetencje-wojta-mgr-pl.docx",
+          "fileName": "Praca-magisterska-administracja-kompetencje-wojta.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-administracji.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-administracji.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-administracja-wojt",
+      "ebookId": "ebook-magisterska-administracja"
+    },
+    {
+      "id": "zestaw-praca-mgr-administracja-nadzor-wojewody",
+      "name": "Zestaw: Praca magisterska z administracji — Nadzór wojewody nad działalnością samorządu terytorialnego + przewodnik „Jak napisać pracę magisterską z administracji”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/nadzor-wojewody-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-administracja-nadzor-wojewody.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/nadzor-wojewody-mgr-pl.docx",
+          "fileName": "Praca-magisterska-administracja-nadzor-wojewody.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-administracji.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-administracji.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-administracja-nadzor-wojewody",
+      "ebookId": "ebook-magisterska-administracja"
+    },
+    {
+      "id": "zestaw-praca-mgr-administracja-odpowiedzialnosc-dyscyplinarna",
+      "name": "Zestaw: Praca magisterska z administracji — Odpowiedzialność dyscyplinarna urzędników służby cywilnej + przewodnik „Jak napisać pracę magisterską z administracji”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/odpowiedzialnosc-dyscyplinarna-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-administracja-odpowiedzialnosc-dyscyplinarna.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/odpowiedzialnosc-dyscyplinarna-mgr-pl.docx",
+          "fileName": "Praca-magisterska-administracja-odpowiedzialnosc-dyscyplinarna.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-administracji.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-administracji.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-administracja-odpowiedzialnosc-dyscyplinarna",
+      "ebookId": "ebook-magisterska-administracja"
+    },
+    {
+      "id": "zestaw-praca-mgr-logistyka-integracja-dostawcow",
+      "name": "Zestaw: Praca magisterska z logistyki — Integracja dostawców w łańcuchu dostaw + przewodnik „Jak napisać pracę magisterską z logistyki”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/integracja-dostawcow-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-logistyka-integracja-dostawcow.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/integracja-dostawcow-mgr-pl.docx",
+          "fileName": "Praca-magisterska-logistyka-integracja-dostawcow.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-logistyki.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-logistyki.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-logistyka-integracja-dostawcow",
+      "ebookId": "ebook-magisterska-logistyka"
+    },
+    {
+      "id": "zestaw-praca-mgr-logistyka-ostatnia-mila",
+      "name": "Zestaw: Praca magisterska z logistyki — Logistyka ostatniej mili w dostawach miejskich + przewodnik „Jak napisać pracę magisterską z logistyki”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/ostatnia-mila-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-logistyka-ostatnia-mila.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/ostatnia-mila-mgr-pl.docx",
+          "fileName": "Praca-magisterska-logistyka-ostatnia-mila.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-logistyki.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-logistyki.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-logistyka-ostatnia-mila",
+      "ebookId": "ebook-magisterska-logistyka"
+    },
+    {
+      "id": "zestaw-praca-mgr-logistyka-cyfryzacja",
+      "name": "Zestaw: Praca magisterska z logistyki — Cyfryzacja łańcucha dostaw + przewodnik „Jak napisać pracę magisterską z logistyki”",
+      "price": 7900,
+      "currency": "pln",
+      "files": [
+        {
+          "s3Key": "prace/cyfryzacja-lancucha-dostaw-mgr-pl.pdf",
+          "fileName": "Praca-magisterska-logistyka-cyfryzacja-lancucha-dostaw.pdf",
+          "label": "Praca – PDF"
+        },
+        {
+          "s3Key": "prace/cyfryzacja-lancucha-dostaw-mgr-pl.docx",
+          "fileName": "Praca-magisterska-logistyka-cyfryzacja-lancucha-dostaw.docx",
+          "label": "Praca – Word (DOCX)"
+        },
+        {
+          "s3Key": "ebooks/kierunki/jak-napisac-prace-magisterska-z-logistyki.zip",
+          "fileName": "Jak-napisac-prace-magisterska-z-logistyki.zip",
+          "label": "Przewodnik (PDF + EPUB, ZIP)"
+        }
+      ],
+      "emailSubject": "🎓 Twój zestaw: praca wzorcowa + przewodnik",
+      "category": "Zestaw",
+      "pracaId": "praca-mgr-logistyka-cyfryzacja",
+      "ebookId": "ebook-magisterska-logistyka"
     }
   ],
   "settings": {
