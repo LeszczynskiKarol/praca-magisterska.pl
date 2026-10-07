@@ -1,9 +1,13 @@
 ---
 // Sekcja „O autorze" — wiarygodność poradników (sklep, landingi ebooków).
+// Linki do cytado/smart-edu tylko tam, gdzie linki=true (/sklep/) — bez sitewide linków
+// z własnych serwisów (zob. sprzątanie sieci linków cytado 06.10.2026).
 interface Props {
   tlo?: string;
+  linki?: boolean;
 }
-const { tlo = "bg-slate-50" } = Astro.props;
+const { tlo = "bg-slate-50", linki = false } = Astro.props;
+const link = "text-primary-700 font-medium underline hover:text-primary-800";
 ---
 
 <section id="autor" class={`py-16 ${tlo}`}>
@@ -37,11 +41,12 @@ const { tlo = "bg-slate-50" } = Astro.props;
           zbierają to w jednym miejscu, uporządkowane etap po etapie i pod konkretny kierunek studiów.
         </p>
         <p>
-          Zbudowałem też dwa narzędzia dla piszących prace. W
-          <a href="https://cytado.com/" class="text-primary-700 font-medium underline hover:text-primary-800">cytado.com, serwisie do bibliografii i przypisów</a>,
-          każde twierdzenie dostaje prawdziwe źródło z numerem strony. Z kolei
-          <a href="https://www.smart-edu.ai/pl/masters-thesis?utm_source=praca-magisterska.pl&utm_medium=cta&utm_content=autor" class="text-primary-700 font-medium underline hover:text-primary-800">smart-edu.ai, narzędzie do pracy nad tekstem pracy dyplomowej</a>,
-          prowadzi od konspektu przez kolejne rozdziały.
+          Zbudowałem też dwa narzędzia dla piszących prace.
+          {linki ? <a href="https://cytado.com/" class={link}>cytado.com</a> : "cytado.com"}
+          to serwis do bibliografii i przypisów, w którym każde twierdzenie dostaje prawdziwe źródło
+          z numerem strony.
+          {linki ? <a href="https://www.smart-edu.ai/pl/masters-thesis?utm_source=praca-magisterska.pl&utm_medium=cta&utm_content=autor" class={link}>smart-edu.ai</a> : "smart-edu.ai"}
+          pomaga w pracy nad tekstem pracy dyplomowej, od konspektu po kolejne rozdziały.
         </p>
         <p>
           Poza tym tworzę podręczniki oraz materiały edukacyjne i akademickie.
