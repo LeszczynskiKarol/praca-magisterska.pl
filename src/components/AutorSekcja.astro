@@ -1,0 +1,54 @@
+---
+// Sekcja „O autorze" — wiarygodność poradników (sklep, landingi ebooków).
+interface Props {
+  tlo?: string;
+}
+const { tlo = "bg-slate-50" } = Astro.props;
+---
+
+<section id="autor" class={`py-16 ${tlo}`}>
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Kto stoi za poradnikami?</h2>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-10 grid md:grid-cols-[180px_1fr] gap-8 items-start">
+      <div class="flex flex-col items-center text-center">
+        <img
+          src="/autor/karol-leszczynski.webp"
+          alt="Karol Leszczyński, autor poradników"
+          width="160"
+          height="160"
+          loading="lazy"
+          decoding="async"
+          class="w-40 h-40 rounded-full object-cover ring-4 ring-primary-100"
+        />
+        <p class="mt-4 font-bold text-slate-900">Karol Leszczyński</p>
+        <p class="text-sm text-slate-500">autor poradników, Toruń</p>
+      </div>
+
+      <div class="text-slate-700 space-y-4 leading-relaxed">
+        <p>
+          Przez lata pomagałem studentom przygotować prace licencjackie i magisterskie: dobrać temat,
+          ułożyć plan, zaprojektować badanie, uporządkować bibliografię, zredagować tekst i przygotować się
+          do obrony. Pomogłem w ten sposób dziesiątkom osób, zawsze tak, żeby praca pozostała ich własną pracą.
+        </p>
+        <p>
+          Większość pytań powtarzała się z roku na rok, więc tę wiedzę przeniosłem do internetu.
+          Na praca-magisterska.pl dzielę się tym, co sprawdziło się w praktyce, a poradniki w tym sklepie
+          zbierają to w jednym miejscu, uporządkowane etap po etapie i pod konkretny kierunek studiów.
+        </p>
+        <p>
+          Zbudowałem też dwa narzędzia dla piszących prace. W
+          <a href="https://cytado.com/" class="text-primary-700 font-medium underline hover:text-primary-800">cytado.com, serwisie do bibliografii i przypisów</a>,
+          każde twierdzenie dostaje prawdziwe źródło z numerem strony. Z kolei
+          <a href="https://www.smart-edu.ai/pl/masters-thesis?utm_source=praca-magisterska.pl&utm_medium=cta&utm_content=autor" class="text-primary-700 font-medium underline hover:text-primary-800">smart-edu.ai, narzędzie do pracy nad tekstem pracy dyplomowej</a>,
+          prowadzi od konspektu przez kolejne rozdziały.
+        </p>
+        <p>
+          Poza tym tworzę podręczniki oraz materiały edukacyjne i akademickie.
+          Więcej o mojej pracy przeczytasz na
+          <a href="https://www.karol-leszczynski.pl/" rel="author" class="text-primary-700 font-medium underline hover:text-primary-800">karol-leszczynski.pl</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
